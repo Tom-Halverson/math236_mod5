@@ -49,8 +49,6 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -549,7 +547,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <p>Let <span class="math inline">\(W \subset \mathbb{R}^6\)</span> be the set of solutions to
 <span class="math display">\[\begin{align}
 x_1 + x_2 + x_3 + x_4 + x_5 + x_6 &amp;= 0 \\
-x_1 - x_2 + x_3 - x_4 + x_5 - x_6 &amp;= 0 
+x_1 + x_2 - x_3 + x_4 + x_5 - x_6 &amp;= 0 
 \end{align}\]</span></p>
 <ol style="list-style-type: lower-alpha">
 <li>Find a basis for <span class="math inline">\(W\)</span> by using row reduction on the appropriate matrix.</li>
@@ -658,7 +656,7 @@ Here is code that loads in the voting records. Each row contains the senator’s
 <span id="cb15-4"><a href="problem-set-8.html#cb15-4"></a></span>
 <span id="cb15-5"><a href="problem-set-8.html#cb15-5"></a>record &lt;-<span class="st"> </span><span class="kw">read_csv</span>(senate.vote.file, <span class="dt">col_names =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
-## ── Column specification ───────────────────────────────────────────────────────────────────────────────
+## ── Column specification ──────────────────────────────────────────────────────────────────
 ## cols(
 ##   .default = col_double(),
 ##   Name = col_character(),
