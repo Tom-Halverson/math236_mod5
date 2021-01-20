@@ -51,6 +51,65 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="m236.css" type="text/css" />
 </head>
@@ -74,8 +133,8 @@
 <li class="chapter" data-level="1.1" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#characterize-the-solution-set"><i class="fa fa-check"></i><b>1.1</b> Characterize the Solution Set</a></li>
 <li class="chapter" data-level="1.2" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#find-the-parametric-solution"><i class="fa fa-check"></i><b>1.2</b> Find the Parametric Solution</a></li>
 <li class="chapter" data-level="1.3" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#elementary-row-operations-are-reversible"><i class="fa fa-check"></i><b>1.3</b> Elementary row operations are reversible</a></li>
-<li class="chapter" data-level="1.4" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#traffic-flow"><i class="fa fa-check"></i><b>1.4</b> Traffic Flow</a></li>
-<li class="chapter" data-level="1.5" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#parabolas-through-two-points"><i class="fa fa-check"></i><b>1.5</b> Parabolas Through Two Points</a></li>
+<li class="chapter" data-level="1.4" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#designer-parabolas"><i class="fa fa-check"></i><b>1.4</b> Designer Parabolas</a></li>
+<li class="chapter" data-level="1.5" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#traffic-flow"><i class="fa fa-check"></i><b>1.5</b> Traffic Flow</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
 <li class="chapter" data-level="2" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>2</b> Important Definitions</a><ul>
@@ -115,35 +174,42 @@
 <li class="chapter" data-level="8.2" data-path="week-7-8-learning-goals.html"><a href="week-7-8-learning-goals.html#vocabulary-5"><i class="fa fa-check"></i><b>8.2</b> Vocabulary</a></li>
 <li class="chapter" data-level="8.3" data-path="week-7-8-learning-goals.html"><a href="week-7-8-learning-goals.html#conceptual-thinking-5"><i class="fa fa-check"></i><b>8.3</b> Conceptual Thinking</a></li>
 </ul></li>
-<li class="part"><span><b>III Quiz Review</b></span></li>
-<li class="chapter" data-level="9" data-path="quiz-1-review.html"><a href="quiz-1-review.html"><i class="fa fa-check"></i><b>9</b> Quiz 1 Review</a><ul>
-<li class="chapter" data-level="9.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#overview"><i class="fa fa-check"></i><b>9.1</b> Overview</a><ul>
-<li class="chapter" data-level="9.1.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#vocabulary-and-concepts"><i class="fa fa-check"></i><b>9.1.1</b> Vocabulary and Concepts</a></li>
-<li class="chapter" data-level="9.1.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#skills"><i class="fa fa-check"></i><b>9.1.2</b> Skills</a></li>
+<li class="part"><span><b>III LineaR Algebra</b></span></li>
+<li class="chapter" data-level="9" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html"><i class="fa fa-check"></i><b>9</b> Linear Systems in R</a><ul>
+<li class="chapter" data-level="9.1" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#building-vectors-and-matrices"><i class="fa fa-check"></i><b>9.1</b> Building Vectors and Matrices</a></li>
+<li class="chapter" data-level="9.2" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-a-linear-system"><i class="fa fa-check"></i><b>9.2</b> Solving a Linear System</a></li>
+<li class="chapter" data-level="9.3" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-another-linear-system"><i class="fa fa-check"></i><b>9.3</b> Solving another Linear System</a></li>
+<li class="chapter" data-level="9.4" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#appendix-dimensionless-vectors-in-r"><i class="fa fa-check"></i><b>9.4</b> Appendix: Dimensionless Vectors in R</a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#practice-problems"><i class="fa fa-check"></i><b>9.2</b> Practice Problems</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section"><i class="fa fa-check"></i><b>9.2.1</b> </a></li>
-<li class="chapter" data-level="9.2.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-1"><i class="fa fa-check"></i><b>9.2.2</b> </a></li>
-<li class="chapter" data-level="9.2.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-2"><i class="fa fa-check"></i><b>9.2.3</b> </a></li>
-<li class="chapter" data-level="9.2.4" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-3"><i class="fa fa-check"></i><b>9.2.4</b> </a></li>
-<li class="chapter" data-level="9.2.5" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-4"><i class="fa fa-check"></i><b>9.2.5</b> </a></li>
-<li class="chapter" data-level="9.2.6" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-5"><i class="fa fa-check"></i><b>9.2.6</b> </a></li>
-<li class="chapter" data-level="9.2.7" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-6"><i class="fa fa-check"></i><b>9.2.7</b> </a></li>
-<li class="chapter" data-level="9.2.8" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-7"><i class="fa fa-check"></i><b>9.2.8</b> </a></li>
-<li class="chapter" data-level="9.2.9" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-8"><i class="fa fa-check"></i><b>9.2.9</b> </a></li>
-<li class="chapter" data-level="9.2.10" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-9"><i class="fa fa-check"></i><b>9.2.10</b> </a></li>
+<li class="part"><span><b>IV Quiz Review</b></span></li>
+<li class="chapter" data-level="10" data-path="quiz-1-review.html"><a href="quiz-1-review.html"><i class="fa fa-check"></i><b>10</b> Quiz 1 Review</a><ul>
+<li class="chapter" data-level="10.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#overview"><i class="fa fa-check"></i><b>10.1</b> Overview</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#vocabulary-and-concepts"><i class="fa fa-check"></i><b>10.1.1</b> Vocabulary and Concepts</a></li>
+<li class="chapter" data-level="10.1.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#skills"><i class="fa fa-check"></i><b>10.1.2</b> Skills</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#solutions-to-practice-problems"><i class="fa fa-check"></i><b>9.3</b> Solutions to Practice Problems</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-10"><i class="fa fa-check"></i><b>9.3.1</b> </a></li>
-<li class="chapter" data-level="9.3.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-11"><i class="fa fa-check"></i><b>9.3.2</b> </a></li>
-<li class="chapter" data-level="9.3.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-12"><i class="fa fa-check"></i><b>9.3.3</b> </a></li>
-<li class="chapter" data-level="9.3.4" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-13"><i class="fa fa-check"></i><b>9.3.4</b> </a></li>
-<li class="chapter" data-level="9.3.5" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-14"><i class="fa fa-check"></i><b>9.3.5</b> </a></li>
-<li class="chapter" data-level="9.3.6" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-15"><i class="fa fa-check"></i><b>9.3.6</b> </a></li>
-<li class="chapter" data-level="9.3.7" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-16"><i class="fa fa-check"></i><b>9.3.7</b> </a></li>
-<li class="chapter" data-level="9.3.8" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-17"><i class="fa fa-check"></i><b>9.3.8</b> </a></li>
-<li class="chapter" data-level="9.3.9" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-18"><i class="fa fa-check"></i><b>9.3.9</b> </a></li>
-<li class="chapter" data-level="9.3.10" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-19"><i class="fa fa-check"></i><b>9.3.10</b> </a></li>
+<li class="chapter" data-level="10.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#practice-problems"><i class="fa fa-check"></i><b>10.2</b> Practice Problems</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section"><i class="fa fa-check"></i><b>10.2.1</b> </a></li>
+<li class="chapter" data-level="10.2.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-1"><i class="fa fa-check"></i><b>10.2.2</b> </a></li>
+<li class="chapter" data-level="10.2.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-2"><i class="fa fa-check"></i><b>10.2.3</b> </a></li>
+<li class="chapter" data-level="10.2.4" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-3"><i class="fa fa-check"></i><b>10.2.4</b> </a></li>
+<li class="chapter" data-level="10.2.5" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-4"><i class="fa fa-check"></i><b>10.2.5</b> </a></li>
+<li class="chapter" data-level="10.2.6" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-5"><i class="fa fa-check"></i><b>10.2.6</b> </a></li>
+<li class="chapter" data-level="10.2.7" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-6"><i class="fa fa-check"></i><b>10.2.7</b> </a></li>
+<li class="chapter" data-level="10.2.8" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-7"><i class="fa fa-check"></i><b>10.2.8</b> </a></li>
+<li class="chapter" data-level="10.2.9" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-8"><i class="fa fa-check"></i><b>10.2.9</b> </a></li>
+<li class="chapter" data-level="10.2.10" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-9"><i class="fa fa-check"></i><b>10.2.10</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#solutions-to-practice-problems"><i class="fa fa-check"></i><b>10.3</b> Solutions to Practice Problems</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-10"><i class="fa fa-check"></i><b>10.3.1</b> </a></li>
+<li class="chapter" data-level="10.3.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-11"><i class="fa fa-check"></i><b>10.3.2</b> </a></li>
+<li class="chapter" data-level="10.3.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-12"><i class="fa fa-check"></i><b>10.3.3</b> </a></li>
+<li class="chapter" data-level="10.3.4" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-13"><i class="fa fa-check"></i><b>10.3.4</b> </a></li>
+<li class="chapter" data-level="10.3.5" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-14"><i class="fa fa-check"></i><b>10.3.5</b> </a></li>
+<li class="chapter" data-level="10.3.6" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-15"><i class="fa fa-check"></i><b>10.3.6</b> </a></li>
+<li class="chapter" data-level="10.3.7" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-16"><i class="fa fa-check"></i><b>10.3.7</b> </a></li>
+<li class="chapter" data-level="10.3.8" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-17"><i class="fa fa-check"></i><b>10.3.8</b> </a></li>
+<li class="chapter" data-level="10.3.9" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-18"><i class="fa fa-check"></i><b>10.3.9</b> </a></li>
+<li class="chapter" data-level="10.3.10" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-19"><i class="fa fa-check"></i><b>10.3.10</b> </a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -252,73 +318,31 @@ B=\left[
 \right]\]</span></p></li>
 </ol>
 </div>
+<div id="designer-parabolas" class="section level2">
+<h2><span class="header-section-number">1.4</span> Designer Parabolas</h2>
+<p>In each part below, set up and solve a linear system of equations to find <strong>all</strong> possible parabolas of the form
+<span class="math display">\[
+f(x) = a + b x + c x^2
+\]</span>
+that satisfy the given conditions. You can either solve these by hand or by using RStudio or WolframAlpha. If you use software, submit the commands that you used to solve the system.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(f(x)\)</span> passes through the three points: <span class="math inline">\((1,3), (3,11),(2,4)\)</span>.</p></li>
+<li><p><span class="math inline">\(f(x)\)</span> passes through the three points: <span class="math inline">\((1,3), (3,11),(3,10)\)</span>.</p></li>
+<li><p><span class="math inline">\(f(x)\)</span> passes through the three points: <span class="math inline">\((1,3)\)</span> and <span class="math inline">\((3,11)\)</span>.</p></li>
+</ol>
+</div>
 <div id="traffic-flow" class="section level2">
-<h2><span class="header-section-number">1.4</span> Traffic Flow</h2>
-<p>Below you find a section of one-way streets in downtown St Paul, where the arrows indicate traffic direction.
-The traffic control center has installed electronic sensors that count the numbers of vehicles passing through the 6
-streets that lead into and out of this area. Assume that the total flow that enters each intersection equals the the total flow that leaves
-each intersection (we will ignore parking and staying).</p>
+<h2><span class="header-section-number">1.5</span> Traffic Flow</h2>
+<p>Below you find a section of one-way streets in downtown St Paul, where the arrows indicate traffic direction. The traffic control center has installed electronic sensors that count the numbers of vehicles passing through the 6 streets that lead into and out of this area. Assume that the total flow that enters each intersection equals the the total flow that leaves each intersection (we will ignore parking and staying).</p>
 <center>
 <p><img src="images/ps1-traffic.png" style="width:50.0%" /></p>
 </center>
 <ol style="list-style-type: lower-alpha">
 <li><p>Create a system of linear equations to find the possible flow values for the inner streets <span class="math inline">\(x_1, x_2, x_3, x_4\)</span>.</p></li>
-<li><p>Use RStudio to find the solution set. Write your answer in parametric form.</p></li>
-<li><p>Your answer to part 2 finds an infinite solution set. In terms of <strong>traffic flow</strong>, explain why there can be more than one solution. Thinking about cars traveling along streets, why is there some flexibility in the overall flow of cars?</p></li>
-<li><p>Now critique the model as presented. What solutions to the linear system are problematic for our original traffic flow problem? What additional conditions should we require for a valid solution?</p></li>
+<li><p>Use RStudio to find the solution set. Give the general solution to this system of equations.</p></li>
+<li><p>Your answer to part b should ber an infinite solution set. Give two distinct solutions that are realistic in terms of <strong>traffic flow</strong>.</p></li>
+<li><p>Is it possible to close down the street labeled by <span class="math inline">\(x_2\)</span> for road construction? That is, is it possible to have <span class="math inline">\(x_2 = 0\)</span> and to meet the other conditions?</p></li>
 </ol>
-</div>
-<div id="parabolas-through-two-points" class="section level2">
-<h2><span class="header-section-number">1.5</span> Parabolas Through Two Points</h2>
-<p>You will find the family of all possible parabolas
-<span class="math display">\[
-f(x) = a x^2 + b x + c
-\]</span>
-through two given points. Note that there will be an infinite number of such polynomials: there are three unknowns, but only two constraints. So there will be at least one free variable. Here are the plots of the two different families of parabolas that you will consider.</p>
-<center>
-<img src="images/ps1-parab1.png" style="width:40.0%" />
-<img src="images/ps1-parab2.png" style="width:40.0%" />
-</center>
-<ol style="list-style-type: lower-alpha">
-<li><p>For each pair of points below:</p>
-<ul>
-<li>Create linear system that represents the problem</li>
-<li>Use RStudio to find the RREF of the augmented matrix for the system and</li>
-<li>Write down the general formula for the family of parabolas <span class="math inline">\(f(x)\)</span> that contain the points.</li>
-</ul>
-<p>Here are the pairs of points.</p>
-<ol style="list-style-type: lower-roman">
-<li><p><span class="math inline">\(p_1 = (1,0)\)</span> and <span class="math inline">\(p_2 = (5,0)\)</span></p></li>
-<li><p><span class="math inline">\(q_1= (1,-3)\)</span> and <span class="math inline">\(q_2 = (5,10)\)</span></p></li>
-</ol></li>
-<li><p>Part (a.i) characterizes the family of parabolas that contain the points
-<span class="math inline">\(p_1\)</span> and <span class="math inline">\(p_2\)</span>. Let’s refer to this family of parabolas as our “<span class="math inline">\(p_1,p_2\)</span> family.” Pick any two functions <span class="math inline">\(g_1(x)\)</span> and <span class="math inline">\(g_2(x)\)</span> from this <span class="math inline">\(p_1,p_2\)</span> family of parabolas. Now consider the parabola
-<span class="math display">\[
-g(x) = g_1(x) - g_2(x).
-\]</span>
-Show that <span class="math inline">\(g(1)=0\)</span> and <span class="math inline">\(g(5)=0\)</span>. This means that <span class="math inline">\(g(x)\)</span> is also in our <span class="math inline">\(p_1,p_2\)</span> family! (That’s really cool!)</p></li>
-<li><p>Part (a.ii) characterizes the family of parabolas that contain the points
-<span class="math inline">\(q_1\)</span> and <span class="math inline">\(q_2\)</span>. Let’s refer to this family of parabolas as our “<span class="math inline">\(q_1,q_2\)</span> family.” Pick any two functions <span class="math inline">\(h_1(x)\)</span> and <span class="math inline">\(h_2(x)\)</span> in this <span class="math inline">\(q_1,q_2\)</span> family. Now consider the parabola
-<span class="math display">\[
-h(x) = h_1(x) - h_2(x).
-\]</span>
-Show that <span class="math inline">\(h(1) \neq -3\)</span> and <span class="math inline">\(h(5) \neq 10\)</span>. This means that <span class="math inline">\(h(x)\)</span> is NOT in our <span class="math inline">\(q_1,q_2\)</span> family. (So this family is not as nice as the previous one.)</p></li>
-<li><p>Now explain why the parabola <span class="math inline">\(h(x)\)</span> from part 3 is actually a member of the <span class="math inline">\(p_1, p_2\)</span> family. (So maybe this family is nicer than we thought!)</p></li>
-</ol>
-<!-- 
-4. Now take a step back. I want you to make some observations about these two families, and the relation between them.  In particular: 
-    + What special property of the $p_1,p_2$ family leads to the nice behavior of $g(x)$ part 2? (Or equivalently: what goes wrong for the $q_1,q_2$ family in part 3?) 
-     + What **can** you say about the parabola $h(x) = h_1(x) - h_2(x)$ in part 3? 
-     + What is the connection between the $q_1, q_2$ family and the $p_1, p_2$ family? 
--->
-<p><strong>Remark:</strong> This problem is about families of parabolas. But at its core, this is actually a problem about linear algebra.</p>
-<ul>
-<li>Obviously, we used linear algebra to solve part 1, but there is linear algebra in the other parts as well!</li>
-<li>We define <span class="math inline">\(g(x) = g_1(x) - g_2(x)\)</span> by taking a <strong>linear combination</strong> of two functions. (Just like we take linear combinations of vectors.)</li>
-<li>What leads to the “nice” behavior of the <span class="math inline">\(p_1, p_2\)</span> family in part 2? It’s because the <span class="math inline">\(y\)</span>-values of the constraining points are both 0. We will soon learn about <strong>homogeneous</strong> linear systems whose right hand sides are all zero. These homogeneous systems have some very special properties.</li>
-<li>The <span class="math inline">\(q_1, q_2\)</span> family is “not nice” because it a <strong>nonhomogenous system</strong>.</li>
-<li>Just as there is a connection betwen the <span class="math inline">\(p_1,p_2\)</span> family and the <span class="math inline">\(q_1, q_2\)</span> family, we will soon learn that there is a connection between homogeneous systems and nonhomogeneous systems.</li>
-</ul>
 
 </div>
 </div>

@@ -2,9 +2,15 @@
 
 # Linear Systems in R
 
-Let's learn how to use R to solve systems of linear equations! [Download this Rmd file.](https://github.com/mathbeveridge/math236_f20/blob/main/01-linear-systems.Rmd)
+## Getting started with R
 
-First, we will create vectors and matrices  Then we will see how to create an augmented matrix and then apply Gaussian Elimination to obtain is reduced row echelon form.
+To use RStudio, you have two choices:
+
+1) Use the cloud version by logging in to  [Rstudio.macalester.edu](https://rstudio.macalester.edu/). This is the easiest way to use RStudio and works great for our course. 
+
+2) You can also download the free desktop version of RStudio. If you plan to go on to take more MSCS classes, especially in statistics and data science, you may want to use the desktop version. Download the desktop version following the instructions here: [rstudio.com/products](https://rstudio.com/products/rstudio/).
+
+Now, let's learn how to use R to solve systems of linear equations! [Download this Rmd file.](https://github.com/mathbeveridge/math236_f20/blob/main/01-linear-systems.Rmd) First, we will create vectors and matrices  Then we will see how to create an augmented matrix and then apply Gaussian Elimination to obtain is reduced row echelon form.
 
 Gaussian elimination is performed by the `rref()` command. However, this command is not loaded into R by default. So we have have to tell RStudio to use the **practical math** package, which is known as `pracma`. 
 So we need to run the following command once at the beginning of our session.

@@ -144,12 +144,26 @@ B=\left[
 \end{array}
 \right]$$
 
+## Designer Parabolas
+
+In each part below, set up and solve a linear system of equations to find **all** possible parabolas of the form
+$$
+f(x) = a + b x + c x^2
+$$ 
+that satisfy the given conditions. You can either solve these by hand or by using RStudio or WolframAlpha. If you use software, submit the commands that you used to solve the system.
+
+a. $f(x)$ passes through the three points: $(1,3), (3,11),(2,4)$.
+
+b. $f(x)$ passes through the three points: $(1,3), (3,11),(3,10)$.
+
+c. $f(x)$ passes through the three points: $(1,3)$ and $(3,11)$.
+
+
+
+
 ## Traffic Flow
 
-Below you find a section of one-way streets in downtown St Paul, where the arrows indicate traffic direction. 
-The traffic control center has installed electronic sensors that count the numbers of vehicles passing through the 6
-streets that lead into and out of this area.  Assume that the total flow that enters each intersection equals the the total flow that leaves 
-each intersection (we will ignore parking and staying). 
+Below you find a section of one-way streets in downtown St Paul, where the arrows indicate traffic direction.  The traffic control center has installed electronic sensors that count the numbers of vehicles passing through the 6 streets that lead into and out of this area.  Assume that the total flow that enters each intersection equals the the total flow that leaves each intersection (we will ignore parking and staying). 
 
 
 <center>
@@ -161,72 +175,13 @@ each intersection (we will ignore parking and staying).
 
 a. Create a system of linear equations to find the possible flow values for the inner streets $x_1, x_2, x_3, x_4$.
 
-b. Use RStudio to find the solution set. Write your answer in parametric form.  
+b. Use RStudio to find the solution set. Give the general solution to this system of equations.  
 
-c. Your  answer to part 2 finds an infinite solution set. In terms of **traffic flow**, explain  why there can be more than one solution. Thinking about cars traveling along streets, why is there some flexibility in the overall flow of cars? 
+c. Your  answer to part b should ber an infinite solution set. Give two distinct solutions that are realistic in terms of  **traffic flow**.
 
-d. Now critique the model as presented. What solutions to the linear system are problematic for our original traffic flow problem? What additional conditions should we require for a valid solution?
-
-
+d. Is it possible to close down the street labeled by $x_2$ for road construction? That is, is it possible to have $x_2 = 0$ and to meet the other conditions?
 
 
 
-## Parabolas Through Two Points
-
-You will find the family of all possible parabolas
-$$
-f(x) = a x^2 + b x + c
-$$ 
-through two given points. Note that there will be an infinite number of such polynomials: there are three unknowns, but only two constraints. So there will be at least one free variable. Here are the  plots of the two different families of parabolas that you will consider.
-
-<center>
-![](images/ps1-parab1.png){width=40%}
-![](images/ps1-parab2.png){width=40%}
-</center>
-
-a. For each pair of points below:
-
-    * Create linear system that represents the problem 
-    * Use RStudio to find the RREF of the augmented matrix for the system and 
-    * Write down the general formula for the family of parabolas $f(x)$ that contain the points.
-
-    Here are the pairs of points.
-    
-    i. $p_1 = (1,0)$ and $p_2 = (5,0)$
 
 
-    ii. $q_1= (1,-3)$ and $q_2 =  (5,10)$
-
-b. Part (a.i) characterizes the family of parabolas that contain the points 
-$p_1$ and $p_2$. Let's refer to this family of parabolas as our "$p_1,p_2$ family." Pick any two functions $g_1(x)$ and $g_2(x)$ from this $p_1,p_2$ family of parabolas. Now consider the parabola
-$$
-g(x) = g_1(x) - g_2(x).
-$$
-Show that $g(1)=0$ and $g(5)=0$. This means that $g(x)$ is also in our $p_1,p_2$ family! (That's really cool!)
-
-
-
-c. Part (a.ii) characterizes the family of parabolas that contain the points 
-$q_1$ and $q_2$. Let's refer to this family of parabolas as our "$q_1,q_2$ family."  Pick any two functions $h_1(x)$ and $h_2(x)$ in this $q_1,q_2$ family. Now consider the parabola
-$$
-h(x) = h_1(x) - h_2(x).
-$$
-Show that $h(1) \neq -3$ and $h(5) \neq 10$. This means that $h(x)$ is NOT in our $q_1,q_2$ family. (So this family is not as nice as the previous one.)
-
-
-d. Now explain why the parabola $h(x)$ from part 3 is actually a member of the $p_1, p_2$ family. (So maybe this family is nicer than we thought!)
-
-<!-- 
-4. Now take a step back. I want you to make some observations about these two families, and the relation between them.  In particular: 
-    + What special property of the $p_1,p_2$ family leads to the nice behavior of $g(x)$ part 2? (Or equivalently: what goes wrong for the $q_1,q_2$ family in part 3?) 
-     + What **can** you say about the parabola $h(x) = h_1(x) - h_2(x)$ in part 3? 
-     + What is the connection between the $q_1, q_2$ family and the $p_1, p_2$ family? 
--->
-
-**Remark:** This problem is about families of parabolas. But at its core, this is actually a problem about linear algebra. 
-
-* Obviously, we used linear algebra to solve part 1, but there is linear algebra in the other parts as well!
-* We define $g(x) = g_1(x) - g_2(x)$ by taking a **linear combination** of two functions. (Just like we take linear combinations of vectors.)
-* What leads to the "nice" behavior of the $p_1, p_2$ family in part 2? It's because the $y$-values of the constraining points are both 0. We will soon learn about **homogeneous** linear systems whose right hand sides are all zero. These homogeneous systems have some very special properties.
-* The $q_1, q_2$ family is "not nice" because it a **nonhomogenous system**.
-* Just as there is a connection betwen the $p_1,p_2$ family and the $q_1, q_2$ family, we will soon learn that there is a connection between homogeneous systems and nonhomogeneous systems.

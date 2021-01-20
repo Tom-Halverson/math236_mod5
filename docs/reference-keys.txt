@@ -2,8 +2,8 @@ problem-set-1-a
 characterize-the-solution-set
 find-the-parametric-solution
 elementary-row-operations-are-reversible
+designer-parabolas
 traffic-flow
-parabolas-through-two-points
 important-definitions
 vector-spaces
 matrices
@@ -34,6 +34,11 @@ week-7-8-learning-goals
 orthogonality-and-svd
 vocabulary-5
 conceptual-thinking-5
+linear-systems-in-r
+building-vectors-and-matrices
+solving-a-linear-system
+solving-another-linear-system
+appendix-dimensionless-vectors-in-r
 quiz-1-review
 overview
 vocabulary-and-concepts
