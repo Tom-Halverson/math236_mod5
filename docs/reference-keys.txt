@@ -1,4 +1,4 @@
-problem-set-1
+problem-set-1-a
 characterize-the-solution-set
 find-the-parametric-solution
 elementary-row-operations-are-reversible
