@@ -35,6 +35,7 @@ orthogonality-and-svd
 vocabulary-5
 conceptual-thinking-5
 linear-systems-in-r
+getting-started-with-r
 building-vectors-and-matrices
 solving-a-linear-system
 solving-another-linear-system

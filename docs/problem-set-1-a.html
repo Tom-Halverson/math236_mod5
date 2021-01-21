@@ -176,10 +176,11 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 </ul></li>
 <li class="part"><span><b>III LineaR Algebra</b></span></li>
 <li class="chapter" data-level="9" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html"><i class="fa fa-check"></i><b>9</b> Linear Systems in R</a><ul>
-<li class="chapter" data-level="9.1" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#building-vectors-and-matrices"><i class="fa fa-check"></i><b>9.1</b> Building Vectors and Matrices</a></li>
-<li class="chapter" data-level="9.2" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-a-linear-system"><i class="fa fa-check"></i><b>9.2</b> Solving a Linear System</a></li>
-<li class="chapter" data-level="9.3" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-another-linear-system"><i class="fa fa-check"></i><b>9.3</b> Solving another Linear System</a></li>
-<li class="chapter" data-level="9.4" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#appendix-dimensionless-vectors-in-r"><i class="fa fa-check"></i><b>9.4</b> Appendix: Dimensionless Vectors in R</a></li>
+<li class="chapter" data-level="9.1" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#getting-started-with-r"><i class="fa fa-check"></i><b>9.1</b> Getting started with R</a></li>
+<li class="chapter" data-level="9.2" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#building-vectors-and-matrices"><i class="fa fa-check"></i><b>9.2</b> Building Vectors and Matrices</a></li>
+<li class="chapter" data-level="9.3" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-a-linear-system"><i class="fa fa-check"></i><b>9.3</b> Solving a Linear System</a></li>
+<li class="chapter" data-level="9.4" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-another-linear-system"><i class="fa fa-check"></i><b>9.4</b> Solving another Linear System</a></li>
+<li class="chapter" data-level="9.5" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#appendix-dimensionless-vectors-in-r"><i class="fa fa-check"></i><b>9.5</b> Appendix: Dimensionless Vectors in R</a></li>
 </ul></li>
 <li class="part"><span><b>IV Quiz Review</b></span></li>
 <li class="chapter" data-level="10" data-path="quiz-1-review.html"><a href="quiz-1-review.html"><i class="fa fa-check"></i><b>10</b> Quiz 1 Review</a><ul>
@@ -236,9 +237,9 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <h1><span class="header-section-number">Section 1</span> Problem Set 1-A</h1>
 <ul>
 <li>Due: Tuesday January 26 by noon CST.</li>
-<li>Upload your solutions to Moodle in a PDF.</li>
-<li>Please feel free to <strong>use RStudio for all row reductions.</strong></li>
-<li>You can download the <a href="https://github.com/Tom-Halverson/math236_s21/blob/main/PS1A-problem-set-1A.Rmd">Rmd source file for this problem set</a>.</li>
+<li>Week 1 and Week 8 are half weeks, so those two assignments will be split in two and called Problem Sets 1A and 1B.</li>
+<li>Upload your solutions to problems 1–4 by writing them out by hand, scanning them to pdf using a scanning software such as AdobeScan, assembling them into a single PDF, and uploading it to Moodle.</li>
+<li>Problem 1.5 is to be done using RStudio. To solve it, create an Rmarkdown file, knit it to .html, and upload the .html on Moodle along with the PDF for questions 1-4.</li>
 </ul>
 <div id="characterize-the-solution-set" class="section level2">
 <h2><span class="header-section-number">1.1</span> Characterize the Solution Set</h2>
@@ -324,7 +325,7 @@ B=\left[
 <span class="math display">\[
 f(x) = a + b x + c x^2
 \]</span>
-that satisfy the given conditions. You can either solve these by hand or by using RStudio or WolframAlpha. If you use software, submit the commands that you used to solve the system.</p>
+that satisfy the given conditions. For full credit, please solve these by hand, doing all row reductions that bring the system of equations to Reduced Row Echelon Form. On future assignments, you can solve problems like this using either RStudio or WolframAlpha. You are welcome (and, in fact, encouraged) to check your answers using software.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p><span class="math inline">\(f(x)\)</span> passes through the three points: <span class="math inline">\((1,3), (3,11),(2,4)\)</span>.</p></li>
 <li><p><span class="math inline">\(f(x)\)</span> passes through the three points: <span class="math inline">\((1,3), (3,11),(3,10)\)</span>.</p></li>
@@ -339,8 +340,8 @@ that satisfy the given conditions. You can either solve these by hand or by usin
 </center>
 <ol style="list-style-type: lower-alpha">
 <li><p>Create a system of linear equations to find the possible flow values for the inner streets <span class="math inline">\(x_1, x_2, x_3, x_4\)</span>.</p></li>
-<li><p>Use RStudio to find the solution set. Give the general solution to this system of equations.</p></li>
-<li><p>Your answer to part b should ber an infinite solution set. Give two distinct solutions that are realistic in terms of <strong>traffic flow</strong>.</p></li>
+<li><p>Using RStudio, enter the augmented matrix of this system, and solve it using the rref command. Type out the general solution to this system of equations.</p></li>
+<li><p>Your answer to part b should be an infinite solution set. Give two distinct solutions that are realistic in terms of <strong>traffic flow</strong>.</p></li>
 <li><p>Is it possible to close down the street labeled by <span class="math inline">\(x_2\)</span> for road construction? That is, is it possible to have <span class="math inline">\(x_2 = 0\)</span> and to meet the other conditions?</p></li>
 </ol>
 
