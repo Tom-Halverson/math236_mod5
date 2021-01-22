@@ -1,6 +1,6 @@
 problem-set-1-a
 characterize-the-solution-set
-find-the-parametric-solution
+find-the-general-solution
 elementary-row-operations-are-reversible
 designer-parabolas
 traffic-flow

@@ -48,7 +48,7 @@ $\left[
 \right]$
 
 
-## Find the Parametric Solution
+## Find the General Solution
 
 Each of the following matrices is the reduced row echelon form of the augmented matrix of a system of linear equations. Give the general solution to each system. 
 
