@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 1 Problem Set 2 | PS2-problem-set-2.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 1 Problem Set 2 | PS2-problem-set-2.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 1 Problem Set 2 | PS2-problem-set-2.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+<link rel="stylesheet" href="m236.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href = "./">MATH 236: Linear Algebra</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#problem-set-2"><i class="fa fa-check"></i><b>1</b> Problem Set 2</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#parametric-vector-form"><i class="fa fa-check"></i><b>1.1</b> Parametric Vector Form</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#rref-for-a-linear-system"><i class="fa fa-check"></i><b>1.2</b> RREF for a linear system</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#rref-for-a-set-of-vectors"><i class="fa fa-check"></i><b>1.3</b> RREF for a set of vectors</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#removing-free-variable-columns-from-a-matrix"><i class="fa fa-check"></i><b>1.4</b> Removing free variable columns from a matrix</a></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#a-square-matrix"><i class="fa fa-check"></i><b>1.5</b> A square matrix</a></li>
+<li class="chapter" data-level="1.6" data-path=""><a href="#combining-solutions-to-a-mathsfx-mathsfb"><i class="fa fa-check"></i><b>1.6</b> Combining solutions to <span class="math inline">\(A \mathsf{x} = \mathsf{b}\)</span></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="problem-set-2" class="section level1">
+<h1><span class="header-section-number">Section 1</span> Problem Set 2</h1>
+<ul>
+<li>Due: Friday November 6 by 5:00pm CST.</li>
+<li>Upload your solutions to Moodle in a PDF.</li>
+<li>Please feel free to <strong>use RStudio for all row reductions.</strong></li>
+<li>You can download the <a href="https://github.com/mathbeveridge/math236_f20/blob/main/PS2-problem-set-2.Rmd">Rmd source file for this problem set</a>.</li>
+</ul>
+<p>The Problem Set covers sections 1.3, 1.4, 1.5.</p>
+<div id="parametric-vector-form" class="section level2">
+<h2><span class="header-section-number">1.1</span> Parametric Vector Form</h2>
+<p>Here is the augmented matrix for a system of linear equations <span class="math inline">\(\mathsf{A} \mathsf{x} = \mathsf{b}\)</span>, and its RREF.
+Give the complete solution to this system in <strong>parametric vector form</strong>.</p>
+<p><span class="math display">\[\left[
+\begin{array}{ccccc|c}
+ 1 &amp; 1 &amp; -1 &amp; -1 &amp; 2 &amp; 1 \\
+ 1 &amp; 0 &amp; -2 &amp; 1 &amp; 1 &amp; 3 \\
+ -2 &amp; 1 &amp; 5 &amp; 1 &amp; -6 &amp; 2 \\
+ -3 &amp; 0 &amp; 6 &amp; 2 &amp; -8 &amp; 1 \\
+ 0 &amp; 1 &amp; 1 &amp; 2 &amp; -3 &amp; 6 \\
+ 1 &amp; 0 &amp; -2 &amp; -1 &amp; 3 &amp; -1 \\
+\end{array}
+\right] \longrightarrow \left[
+\begin{array}{ccccc|c}
+ 1 &amp; 0 &amp; -2 &amp; 0 &amp; 2 &amp; 1 \\
+ 0 &amp; 1 &amp; 1 &amp; 0 &amp; -1 &amp; 2 \\
+ 0 &amp; 0 &amp; 0 &amp; 1 &amp; -1 &amp; 2 \\
+ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+\end{array}
+\right]
+\]</span></p>
+</div>
+<div id="rref-for-a-linear-system" class="section level2">
+<h2><span class="header-section-number">1.2</span> RREF for a linear system</h2>
+<p>Here is the reduced row echelon form of a matrix <span class="math inline">\(\mathsf{A}\)</span> (you are not given the matrix <span class="math inline">\(\mathsf{A}\)</span>).
+<span class="math display">\[
+\mathsf{A} \longrightarrow \left[
+\begin{array}{cccc}
+ 1 &amp; -2 &amp; 0 &amp; 4 \\
+ 0 &amp; 0 &amp; 1 &amp; -5 \\
+ 0 &amp; 0 &amp; 0 &amp; 0 \\
+\end{array}
+\right]
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Give the parametric equations of the general solution to the homogenous equation <span class="math inline">\(\mathsf{A} \mathsf{x} = {\bf 0}\)</span>.</p></li>
+<li><p>Describe the geometric form of your answer to part (a). For example, you answer should be something like: “it is a plane in <span class="math inline">\(\mathbb{R}^3\)</span>” or “it is a line in <span class="math inline">\(\mathbb{R}^7\)</span>” or “it is a point in <span class="math inline">\(\mathbb{R}^4\)</span>.”</p></li>
+<li><p>Suppose that we also know that <span class="math inline">\(\mathsf{A}\begin{bmatrix} 4 \\ 1 \\ -3 \\ 2 \\ \end{bmatrix} = \begin{bmatrix} 22 \\ -13 \\ 7 \\ \end{bmatrix}\)</span>. Then give the general solution to
+<span class="math inline">\(\mathsf{A} \mathsf{x}= \begin{bmatrix} 22 \\ -13\\ 7 \\ \end{bmatrix}\)</span> in parametric form.</p></li>
+</ol>
+</div>
+<div id="rref-for-a-set-of-vectors" class="section level2">
+<h2><span class="header-section-number">1.3</span> RREF for a set of vectors</h2>
+<p>Suppose that we have five vectors
+<span class="math inline">\(\mathsf{v}_1, \mathsf{v}_2,\mathsf{v}_3,\mathsf{v}_4,\mathsf{v}_5\)</span> in <span class="math inline">\(\mathbb{R}^4\)</span> and that the matrix
+<span class="math display">\[
+A = \left[
+\begin{array}{ccc}
+\mid &amp; \mid  &amp; \mid &amp; \mid &amp; \mid \\
+\mathsf{v}_1 &amp; \mathsf{v}_2 &amp; \mathsf{v}_3 &amp;\mathsf{v}_4 &amp;\mathsf{v}_5  \\
+\mid &amp; \mid  &amp; \mid &amp; \mid &amp; \mid 
+\end{array}
+\right]
+\]</span>
+has reduced row echelon form
+<span class="math display">\[
+\begin{bmatrix}
+1 &amp; 0 &amp; -3 &amp; 0 &amp; 2  \\
+0 &amp; 1 &amp; 4 &amp; 0 &amp;  1  \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 1  \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 
+\end{bmatrix}.
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Do the vectors <span class="math inline">\(\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3, \mathsf{v}_4, \mathsf{v}_5\)</span> span <span class="math inline">\(\mathbb{R}^4\)</span>? Justify your answer.</p></li>
+<li><p>Is the vector <span class="math inline">\(\mathsf{v}_3\)</span> in <span class="math inline">\(\mathrm{span}(\mathsf{v}_1,\mathsf{v}_2)\)</span>? Justify your answer.</p></li>
+<li><p>Pick any <span class="math inline">\(\mathsf{b}\)</span> in <span class="math inline">\(\mathrm{span}(\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3, \mathsf{v}_4, \mathsf{v}_5)\)</span>. Is there always a unqiue way to write <span class="math inline">\(\mathsf{b}\)</span> as a linear combination of <span class="math inline">\(\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3, \mathsf{v}_4, \mathsf{v}_5\)</span>? Justify your answer.</p></li>
+</ol>
+</div>
+<div id="removing-free-variable-columns-from-a-matrix" class="section level2">
+<h2><span class="header-section-number">1.4</span> Removing free variable columns from a matrix</h2>
+<p>Consider the matrix</p>
+<p><span class="math display">\[
+A =\left[
+\begin{array}{cccccc}
+ 6 &amp; 5 &amp; -3 &amp; 4 &amp; 2 &amp; -9 \\
+ -7 &amp; -6 &amp; 4 &amp; -5 &amp; -7 &amp; 16 \\
+ -4 &amp; -3 &amp; -1 &amp; 0 &amp; -8 &amp; 9 \\
+ 8 &amp; 7 &amp; -5 &amp; 6 &amp; 1 &amp; -12 
+\end{array}
+\right].
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Use RStudio to show that the columns of <span class="math inline">\(\mathsf{A}\)</span> span <span class="math inline">\(\mathbb{R}^4\)</span>.</li>
+<li>Write down matrix <span class="math inline">\(\mathsf{A}&#39;\)</span> that you get by removing the free variable columns from <span class="math inline">\(\mathsf{A}\)</span>.</li>
+<li>Without using additional calculations on RStudio, explain why the new system <span class="math inline">\(\mathsf{A}&#39; \mathsf{x} = \mathsf{b}\)</span> is <strong>consistent</strong> and has a <strong>unique solution</strong> for every choice of <span class="math inline">\(\mathsf{b} \in \mathbb{R}^4\)</span>.</li>
+</ol>
+</div>
+<div id="a-square-matrix" class="section level2">
+<h2><span class="header-section-number">1.5</span> A square matrix</h2>
+<p>Suppose that <span class="math inline">\(A\)</span> is a <span class="math inline">\(5\times 5\)</span> matrix and <span class="math inline">\(\mathsf{b}\)</span> is a vector in <span class="math inline">\(\mathbb{R}^5\)</span> with the property that
+<span class="math inline">\(A\mathsf{x}=\mathsf{b}\)</span> has a unique solution. Explain why the columns of <span class="math inline">\(A\)</span> must span <span class="math inline">\(\mathbb{R}^5\)</span>. Use the reduced row echelon form of <span class="math inline">\(A\)</span> in your explanation.</p>
+</div>
+<div id="combining-solutions-to-a-mathsfx-mathsfb" class="section level2">
+<h2><span class="header-section-number">1.6</span> Combining solutions to <span class="math inline">\(A \mathsf{x} = \mathsf{b}\)</span></h2>
+<p>Suppose that <span class="math inline">\(\mathsf{x}_1\)</span> and <span class="math inline">\(\mathsf{x}_2\)</span> are solutions to <span class="math inline">\(\mathsf{A} \mathsf{x} = \mathsf{b}\)</span> (where <span class="math inline">\(\mathsf{b} \not= \mathsf{0}\)</span>).</p>
+<ol style="list-style-type: lower-alpha">
+<li>Decide if any of the following are also solutions to <span class="math inline">\(\mathsf{A} \mathsf{x} = \mathsf{b}\)</span>.
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(\mathsf{x}_1+ \mathsf{x}_2\)</span></li>
+<li><span class="math inline">\(\mathsf{x}_1 - \mathsf{x}_2\)</span></li>
+<li><span class="math inline">\(\frac{1}{2} ( \mathsf{x}_1 + \mathsf{x}_2)\)</span></li>
+<li><span class="math inline">\(\frac{5}{2} \mathsf{x}_1 - \frac{3}{2} \mathsf{x}_2\)</span>.</li>
+</ol></li>
+<li>Under what conditions on <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> is <span class="math inline">\(\mathsf{x} = c \mathsf{x}_1 + d \mathsf{x}_2\)</span> a solution to <span class="math inline">\(\mathsf{A} \mathsf{x} = \mathsf{b}\)</span>? Justify your answer.</li>
+<li>Let <span class="math inline">\(\mathsf{u}\)</span> be the vector that <em>points to</em> <span class="math inline">\(1/3\)</span> of the way from the tip of <span class="math inline">\(\mathsf{v}\)</span> to the tip of <span class="math inline">\(\mathsf{w}\)</span> as depicted below.
+<ol style="list-style-type: lower-roman">
+<li>Write <span class="math inline">\(\mathsf{u}\)</span> as a linear combination of <span class="math inline">\(\mathsf{v}\)</span> and <span class="math inline">\(\mathsf{w}\)</span> (hint: think about <span class="math inline">\(\mathsf{w} - \mathsf{v}\)</span>)</li>
+<li>If <span class="math inline">\(\mathsf{v}\)</span> and <span class="math inline">\(\mathsf{w}\)</span> are solutions to <span class="math inline">\(A x = \mathsf{b}\)</span> then show that <span class="math inline">\(\mathsf{u}\)</span> is also a solution to <span class="math inline">\(A \mathsf{x} = \mathsf{b}\)</span>.</li>
+</ol></li>
+</ol>
+<center>
+<img src="images/ps2-three-vec.png" style="width:30.0%" />
+</center>
+<!--
+\begin{tikzpicture}
+
+\draw[-latex, very thick,green] (0,0) -- (2,8/3);
+\draw[-latex, very thick,blue] (0,0) -- (1,3);
+\draw[-latex, very thick,blue] (0,0) -- (4,2);
+\draw[-latex, very thick,red] (1,3) -- (4,2);
+
+\node at (1.55,1.75) {$\mathsf{u}$};
+\node at (.3,1.75) {$\mathsf{v}$};
+\node at (2.75,1) {$\mathsf{w}$};
+
+\end{tikzpicture}
+-->
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
