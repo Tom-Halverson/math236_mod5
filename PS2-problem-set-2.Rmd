@@ -6,7 +6,9 @@
 * Upload your solutions to Moodle in a PDF. 
 * Please feel free to **use RStudio for all row reductions.**
 * In problems where you use RStudio for row reduction and are not asked to turn in an R markdown file, you can write something like this:
+<center>
 ![](images/used-R.jpg){width=50%}
+</center>
 
 * You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_f21/blob/main/PS2-problem-set-2.Rmd).
 
