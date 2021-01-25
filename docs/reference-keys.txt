@@ -11,7 +11,7 @@ rref-for-a-set-of-vectors
 removing-free-variable-columns-from-a-matrix
 a-square-matrix
 combining-solutions-to-a-mathsfx-mathsfb
-more-are-coming.
+more-problems-are-coming.
 important-definitions
 vector-spaces
 matrices

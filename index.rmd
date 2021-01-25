@@ -9,13 +9,13 @@ output:
         twitter: false
 documentclass: book
 link-citations: yes
-github-repo: mathbeveridge/math236_f20
+github-repo: Tom-Halverson/math236_s21
 description: "This is the class activity manual for MATH 236 at Macalester College."
 ---
 
 
 **Macalester College**    
-**Fall 2020**
+**Spring 2021**
 
 # Preface {-}
 
