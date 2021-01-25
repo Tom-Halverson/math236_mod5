@@ -2,12 +2,12 @@
 
 # Problem Set 2
 
-* Due: Friday November 6 by 5:00pm CST. 
+* Due: Tuesday February 2 by 10:00am CST. 
 * Upload your solutions to Moodle in a PDF. 
 * Please feel free to **use RStudio for all row reductions.**
-* You can download the [Rmd source file  for this problem set](https://github.com/mathbeveridge/math236_f20/blob/main/PS2-problem-set-2.Rmd).
+* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_f21/blob/main/PS2-problem-set-2.Rmd).
 
-The Problem Set covers sections 1.3, 1.4, 1.5.
+The Problem Set covers sections 1.3, 1.4, 1.5, and 1.7.
 
 
 ## Parametric Vector Form
@@ -155,6 +155,9 @@ c. Let $\mathsf{u}$ be the vector that *points to* $1/3$ of the way from the tip
 \end{tikzpicture}
 -->
 
+### More are coming. 
+
+This will be complete by Wednesday class.
 
 
 

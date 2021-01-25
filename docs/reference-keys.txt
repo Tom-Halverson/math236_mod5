@@ -4,6 +4,14 @@ find-the-general-solution
 elementary-row-operations-are-reversible
 designer-parabolas
 traffic-flow
+problem-set-2
+parametric-vector-form
+rref-for-a-linear-system
+rref-for-a-set-of-vectors
+removing-free-variable-columns-from-a-matrix
+a-square-matrix
+combining-solutions-to-a-mathsfx-mathsfb
+more-are-coming.
 important-definitions
 vector-spaces
 matrices
