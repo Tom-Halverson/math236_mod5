@@ -1,3 +1,4 @@
+tab:unnamed-chunk-2
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -11,7 +12,9 @@ rref-for-a-set-of-vectors
 removing-free-variable-columns-from-a-matrix
 a-square-matrix
 combining-solutions-to-a-mathsfx-mathsfb
-more-problems-are-coming.
+a-balanced-diet
+missing-column
+linear-system
 important-definitions
 vector-spaces
 matrices
