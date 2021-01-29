@@ -253,8 +253,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
             <section class="normal" id="section-">
 <div id="linear-dependence" class="section level1">
 <h1><span class="header-section-number">Section 11</span> Linear Dependence</h1>
-<p>In this activity, we will explore linear dependence and independence in the context of solving nonhomogeneous <span class="math inline">\(A x = b\)</span> and homogeneous equations <span class="math inline">\(A x = 0\)</span>.</p>
-<p>explore linear transformations of the plane! <a href="https://github.com/Tom-Halverson/math236_s21/blob/main/02-linear-dependence.Rmd">Download this Rmd file.</a></p>
+<p>In this activity, we will explore linear dependence and independence in the context of solving nonhomogeneous <span class="math inline">\(A x = b\)</span> and homogeneous equations <span class="math inline">\(A x = 0\)</span>. <a href="https://github.com/Tom-Halverson/math236_s21/blob/main/02-linear-dependence.Rmd">Download this Rmd file.</a></p>
 <p>Remember that we will use the <code>pracma</code> package to get the <code>rref</code> function, so we first load it in:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="linear-dependence.html#cb36-1"></a><span class="kw">require</span>(<span class="st">&quot;pracma&quot;</span>)</span></code></pre></div>
 <div id="example-1-a-7x9-integer-matrix" class="section level2">
@@ -321,7 +320,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 \end{bmatrix}
 \]</span></p>
 <p>Describe this solution space (by fixing up this sentence, which is incorrect right now):</p>
-<p>the set of solutions to A x= b is a <em>plane</em> in <span class="math inline">\(\mathbb{r,echo=TRUE}^9\)</span>.</p>
+<p>the set of solutions to A x= b is a <em>plane</em> in <span class="math inline">\(\mathbb{R}^9\)</span>.</p>
 </div>
 <div id="solution-to-the-nonhomogeneous-equations-ax-0" class="section level3">
 <h3><span class="header-section-number">11.1.2</span> Solution to the nonhomogeneous equations Ax = 0</h3>
@@ -423,16 +422,16 @@ c_9 \vec{a}_9.
 ## [3,]  0.365  0.500  0.784  0.222 -0.020 -0.134
 ## [4,]  0.482 -0.407 -0.831  0.867 -0.440 -0.844
 ## [5,] -0.362 -0.597 -0.594  0.493  0.209 -0.310</code></pre>
-<p>and here is a vector d in <span class="math inline">\(\mathbb{r,echo=TRUE}^5\)</span>.</p>
+<p>and here is a vector d in <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="linear-dependence.html#cb55-1"></a>d =<span class="st"> </span><span class="kw">c</span>(<span class="fl">5.886</span>, <span class="fl">-4.001</span>, <span class="fl">3.701</span>, <span class="fl">-6.621</span>, <span class="fl">-2.199</span>)</span>
 <span id="cb55-2"><a href="linear-dependence.html#cb55-2"></a>d</span></code></pre></div>
 <pre><code>## [1]  5.886 -4.001  3.701 -6.621 -2.199</code></pre>
 <p>Try answering some of these questions:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Are the columns of B linearly independent?</li>
-<li>Do the columns of B span <span class="math inline">\(\mathbb{r,echo=TRUE}^5\)</span>?</li>
+<li>Do the columns of B span <span class="math inline">\(\mathbb{R}^5\)</span>?</li>
 <li>Give the parametric solution to B x = d.</li>
-<li>What is the geometric form of this solution (e.g., a plane in <span class="math inline">\(\mathbb{r,echo=TRUE}^4\)</span>)?</li>
+<li>What is the geometric form of this solution (e.g., a plane in <span class="math inline">\(\mathbb{R}^4\)</span>)?</li>
 <li>Remove redundancies from the columns of B to get a new matrix B2 and use solve to solve the equation B2 x = d. Which of the parametric solutions to you get.</li>
 </ol>
 </div>
@@ -441,30 +440,30 @@ c_9 \vec{a}_9.
 <p>The following code generates a random 5 x 5 matrix. Every time you enter it, it will give you a new matrix. Use this to try to figure out how likely it is that a random square matrix has linearly dependent columns.</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="linear-dependence.html#cb57-1"></a>R1 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">5</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">5</span>)</span>
 <span id="cb57-2"><a href="linear-dependence.html#cb57-2"></a>R1</span></code></pre></div>
-<pre><code>##           [,1]      [,2]      [,3]      [,4]       [,5]
-## [1,] 0.4725430 0.4420221 0.9869793 0.9192385 0.22152292
-## [2,] 0.3405411 0.1070633 0.3983064 0.1227617 0.00636711
-## [3,] 0.7029415 0.7173838 0.7302028 0.6667385 0.98255774
-## [4,] 0.8582663 0.4959346 0.4504397 0.6548602 0.04125042
-## [5,] 0.4507080 0.4199364 0.4801652 0.7615181 0.97485686</code></pre>
+<pre><code>##            [,1]       [,2]      [,3]      [,4]      [,5]
+## [1,] 0.22252710 0.59288402 0.9704920 0.5508111 0.1745376
+## [2,] 0.06384596 0.28461953 0.3948376 0.2471688 0.9873028
+## [3,] 0.55766130 0.60263756 0.8614628 0.1733015 0.2042792
+## [4,] 0.61732854 0.86602040 0.5188010 0.9168015 0.5217717
+## [5,] 0.82538111 0.03099592 0.4483875 0.2566165 0.5815597</code></pre>
 <p>Try the same using the following code that generates a random 5 x 6 matrix.</p>
 <div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="linear-dependence.html#cb59-1"></a>R2 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">6</span>)</span>
 <span id="cb59-2"><a href="linear-dependence.html#cb59-2"></a>R2</span></code></pre></div>
-<pre><code>##             [,1]      [,2]      [,3]       [,4]      [,5]      [,6]
-## [1,] 0.035548901 0.3644605 0.7498908 0.72775351 0.8242078 0.3781127
-## [2,] 0.004426643 0.6928708 0.6057478 0.04259308 0.1929570 0.2098822
-## [3,] 0.317041570 0.5952174 0.3169503 0.48345578 0.4647125 0.2234719
-## [4,] 0.807899385 0.2228979 0.7482968 0.13203262 0.5968643 0.0434485
-## [5,] 0.134351600 0.5861484 0.4303917 0.19689912 0.6679317 0.1778277</code></pre>
+<pre><code>##           [,1]       [,2]       [,3]      [,4]       [,5]      [,6]
+## [1,] 0.3347590 0.54668848 0.29848703 0.3584528 0.83759208 0.8848945
+## [2,] 0.5334141 0.03967309 0.08682763 0.9091794 0.56595770 0.7173059
+## [3,] 0.2639109 0.87685704 0.70413070 0.8694342 0.79058280 0.6132912
+## [4,] 0.3809717 0.51122670 0.10474474 0.6473365 0.84933445 0.1133991
+## [5,] 0.3018991 0.60199760 0.50556628 0.6096005 0.08971861 0.9411766</code></pre>
 <p>Try the same using the following code that generates a random 5 x 4 matrix.</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="linear-dependence.html#cb61-1"></a>R3 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">4</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)</span>
 <span id="cb61-2"><a href="linear-dependence.html#cb61-2"></a>R3</span></code></pre></div>
-<pre><code>##            [,1]       [,2]       [,3]      [,4]
-## [1,] 0.88937703 0.56619874 0.10712518 0.5598933
-## [2,] 0.09014007 0.49212489 0.19659010 0.2868498
-## [3,] 0.47279599 0.16738288 0.01685317 0.3540460
-## [4,] 0.30728486 0.06787316 0.77598237 0.1387309
-## [5,] 0.54839586 0.83622115 0.90854435 0.4507624</code></pre>
+<pre><code>##           [,1]      [,2]      [,3]      [,4]
+## [1,] 0.3925311 0.6977938 0.6530652 0.8560205
+## [2,] 0.9599944 0.1415112 0.6282313 0.8364191
+## [3,] 0.3828050 0.8743353 0.6957353 0.5897994
+## [4,] 0.3004735 0.2012054 0.9809752 0.4570591
+## [5,] 0.3357909 0.5318909 0.8459341 0.7051955</code></pre>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="linear-dependence.html#cb63-1"></a><span class="kw">rref</span>(R3)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    0    0    0
@@ -472,7 +471,7 @@ c_9 \vec{a}_9.
 ## [3,]    0    0    1    0
 ## [4,]    0    0    0    1
 ## [5,]    0    0    0    0</code></pre>
-<p>In each of these cases, how likely is it that the columns of the matrix spans all of <span class="math inline">\(\mathbb{r,echo=TRUE}^4\)</span>?</p>
+<p>In each of these cases, how likely is it that the columns of the matrix spans all of <span class="math inline">\(\mathbb{R}^4\)</span>?</p>
 
 </div>
 </div>
