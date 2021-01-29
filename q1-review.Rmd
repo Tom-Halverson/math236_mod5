@@ -5,7 +5,7 @@
 
 ## Overview
 
-Our first quiz covers sections 1.1 - 1.9 in Lay's book. This corresponds to Problem Sets 1,2,3.
+Our first quiz covers sections 1.1 - 1.8 and part of 1.9 in Lay's book. This corresponds to Problem Sets 1 and 2. In 1.8 and 1.9, it will cover the definition of a linear transformation as well as one-to-one and onto, but it will not cover the matrix of a linear transformation.
 
 
 ### Vocabulary and Concepts
@@ -49,8 +49,6 @@ You should be able to perform these linear algebra tasks.
 * Decide if a set of vectors span $\mathbb{R}^n$
 * Manipulate matrix vector products using: $A(x + y) = Ax + Ay$ and $A(c x) = c A x$
 * Determine whether a linear transformation is one-to-one and/or onto
-* Find the standard matrix for a linear transformation
-* Give geometric descriptions of linear transformations $T: \mathbb{R}^2 \rightarrow \mathbb{R}^2$
 
 
 ## Practice Problems
@@ -214,12 +212,6 @@ A =
 \end{bmatrix}
 $$
 
-###
-
-Let $T: \mathbb{R}^n \to \mathbb{R}^m$ be a linear transformation.  Let $\mathsf{u}, \mathsf{v}, \mathsf{w}$ be a linearly independent set in $\mathbb{R}^n$, and suppose that $T(\mathsf{u}), T(\mathsf{v}), T(\mathsf{w})$ is a linearly dependent set in $\mathbb{R}^m$.
-
-a. State precisely what it means for $T(\mathsf{u}), T(\mathsf{v}), T(\mathsf{w})$ to be linearly dependent.
-b. Use the properties of a linear transformation to demonstrate that $T(\mathsf{x}) = \mathbf{0}$ has a nontrivial solution.
 
 ## Solutions to Practice Problems
 
@@ -296,19 +288,9 @@ $$
 
 ###
 
-There are lots of right answers to this one. In my first matrix, I will just add the first two columns to get the thrid column. Then I will add one to one to the bottom right entry of the matrix.
-$$
-\begin{bmatrix}
-1& 0 & 1 \\
-0& 1& 1 \\
-2& 2& 4 \\
-\end{bmatrix}  \qquad\qquad 
-\begin{bmatrix}
-1& 0 & 1 \\
-0& 1& 1 \\
-2& 2& 5 \\
-\end{bmatrix}
-$$
+This is on PS2.
+
+
 
 ###
  
@@ -372,16 +354,3 @@ $$77,083,679
 \end{bmatrix}.
 $$
 
-###
-
-a. There are scalars $c_1, c_2, c_3$ not all zero such that $c_1 T(\mathsf{u}) + c_2 T(\mathsf{v}) + c_3 T(\mathsf{w}) = \mathbf{0}$.
-b. We have
-$$
-\mathbf{0} = c_1 T(\mathsf{u}) + c_2 T(\mathsf{v}) + c_3 T(\mathsf{w}) =
- T(c_1 \mathsf{u} + c_2 \mathsf{v}+ c_3 \mathsf{w})
-$$
-However, we know that $\mathsf{u}, \mathsf{v},\mathsf{w}$ are linearly independent, so 
-$$
-c_1 \mathsf{u} + c_2 \mathsf{v}+ c_3 \mathsf{w} \neq \mathbf{0}.
-$$
-This is a nonzero vector that maps to the zero vector. Therefore $T$ is not one-to-one.
