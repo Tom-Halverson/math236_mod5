@@ -109,7 +109,7 @@ $$
 
   b. Is the vector $\mathsf{v}_3$  in $\mathrm{span}(\mathsf{v}_1,\mathsf{v}_2)$? Justify your answer.
 
-  c. Pick any $\mathsf{b}$ in $\mathrm{span}(\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3, \mathsf{v}_4, \mathsf{v}_5)$. Is there always a unqiue way to write $\mathsf{b}$ as a linear combination of $\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3, \mathsf{v}_4, \mathsf{v}_5$? Justify your answer.
+  c. Pick any $\mathsf{b}$ in $\mathrm{span}(\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3, \mathsf{v}_4, \mathsf{v}_5)$. Is there always a unique way to write $\mathsf{b}$ as a linear combination of $\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3, \mathsf{v}_4, \mathsf{v}_5$? Justify your answer.
 
 
 
@@ -130,7 +130,7 @@ A =\left[
 \right].
 $$
 
-  a. Use RStudio to show that the columns  of $\mathsf{A}$ span $\mathbb{R}^4$. You don't need to turn in an R file here, just report any row reductions that you perform.
+  a. Use RStudio to show that the columns  of $\mathsf{A}$ span $\mathbb{R}^4$. You don't need to turn in an R file here, just report the reduced row echelon form that you get.
   b. Write down the new matrix $\mathsf{A}'$ gotten by removing the free variable columns from $\mathsf{A}$. 
   c. Without using additional calculations on RStudio, explain why the new system $\mathsf{A}' \mathsf{x} = \mathsf{b}$ is **consistent**  and has a **unique solution** for every choice of $\mathsf{b} \in  \mathbb{R}^4$.
 
