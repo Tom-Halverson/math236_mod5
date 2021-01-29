@@ -1,0 +1,204 @@
+
+# Linear Dependence
+
+In this activity, we will explore linear dependence and independence in the context of solving nonhomogeneous $A x = b$ and homogeneous equations $A x = 0$. [Download this Rmd file.](https://github.com/Tom-Halverson/math236_s21/blob/main/02-linear-dependence.Rmd)
+
+
+Remember that we will use the `pracma` package to get the `rref` function, so we first load it in:
+```{r,echo=TRUE}
+require("pracma")
+```
+
+## Example 1: a 7x9 integer matrix
+
+Here is a 7 x 9 coeefficient matrix that we will use. These commands define it and echo it back.
+```{r, echo=TRUE}
+A = cbind(
+  c(3, 0, 0, 1, -2, -4, 1), 
+  c(5, -5, 0, 3, 3, 1, 4), 
+  c(3, 5, -1,  1, -3, -3, 5), 
+  c(4, -1, -2, 0, -1, 2, -3), 
+  c(0, 17, 3, 0, -17, -29,  8), 
+  c(-4, -1, -5, -2, -1, -4, 3), 
+  c(5, 3, -4, -5, -2, -3, -1), 
+  c(0, 5, -3, -2, -1, -5, 0),
+  c(37, -10, -27, -29, 4, 7, -24))
+A
+```
+
+And here is a vector b that we hope to use in solving A x = b.
+
+```{r,echo=TRUE}
+b = c(382, 51, -321, -314, -86, -170, -153)
+b
+```
+
+You can augment A with b, and call it Ab, using `cbind`:
+
+```{r,echo=TRUE}
+Ab = cbind(A,b)
+Ab
+```
+
+And row reduce using `rref`
+```{r,echo=TRUE}
+rref(Ab)
+```
+
+### Solution to the nonhomogeneous equations Ax = b
+
+Write out the solution to Ax=b in *parametric* form using the following formatting. You just need to fill in the correct values of the vectors:
+$$
+\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \\ x_8 \\ x_9 \end{bmatrix}
+=
+\begin{bmatrix} 8 \\ 10 \\ -19 \\ 21 \\ 0 \\ 6 \\ 61 \\ 8 \\ 0 \end{bmatrix}
++ s
+\begin{bmatrix} 
+-5 \\ 2 \\ -1 \\ 2 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0 
+\end{bmatrix}
++ t
+\begin{bmatrix} 
+2 \\ -2 \\ 3 \\ -3 \\ 0 \\ 0 \\ -6 \\ 0 \\ 1 
+\end{bmatrix}
+$$
+
+Describe this solution space (by fixing up this sentence, which is incorrect right now): 
+
+
+the set of solutions to A x= b  is a *plane* in $\mathbb{R}^9$.
+
+
+### Solution to the nonhomogeneous equations Ax = 0
+
+Now, describe the set of solutions to the homogeneous equations A x = 0. Again, you can just edit this:
+$$
+\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \\ x_8 \\ x_9 \end{bmatrix}
+=
+\begin{bmatrix} p1 \\ p2 \\ p3 \\ p4 \\ p5 \\ p6 \\ p7 \\ p8 \\ p9 \end{bmatrix}
++ s
+\begin{bmatrix} 
+u1 \\ u2 \\ u3 \\ u4 \\ u5 \\ u6 \\ u7 \\ u8 \\ u9 
+\end{bmatrix}
++ t
+\begin{bmatrix} 
+v1 \\ v2 \\ v3 \\ v4 \\ v5 \\ v6 \\ v7 \\ v8 \\ v9 
+\end{bmatrix}
+$$
+
+And describe, in words, the geometric relationship between the solutions to Ax=b and Ax=0.
+
+your answer here
+
+### Linearly dependent columns
+
+The columns of the matrix A are *linearly dependent.* You can see that in rref(A). 
+
+```{r,echo=TRUE}
+rref(A)
+```
+
+
+Discuss in your group how you see it. Then write out a dependence relation among the columns by filling in numbers for the weights in this equation
+
+$$
+0 = 
+c_1 \vec{a}_1 + 
+c_2 \vec{a}_2 +
+c_3 \vec{a}_3 +
+c_4 \vec{a}_4 +
+c_5 \vec{a}_5 +
+c_6 \vec{a}_6 +
+c_7 \vec{a}_7 +
+c_8 \vec{a}_8 +
+c_9 \vec{a}_9.
+$$
+**Challenge**: give a dependency relation that none of the other groups in the class have.
+
+This is telling us that there is some redundancy in the matrix A. Remove columns from A to get a new matrix M whose columns are *linearly independent.* You can do this by removing the appropriate columns from the code below:
+
+```{r,echo=TRUE}
+M = cbind(    # you need to edit this matrix
+  c(3, 0, 0, 1, -2, -4, 1), 
+  c(5, -5, 0, 3, 3, 1, 4), 
+  c(3, 5, -1,  1, -3, -3, 5), 
+  c(4, -1, -2, 0, -1, 2, -3), 
+  c(0, 17, 3, 0, -17, -29,  8), 
+  c(-4, -1, -5, -2, -1, -4, 3), 
+  c(5, 3, -4, -5, -2, -3, -1), 
+  c(0, 5, -3, -2, -1, -5, 0), 
+  c(37, -10, -27, -29, 4, 7, -24)
+  )
+M
+rref(M)
+```
+
+Your matrix should now be square (7x7) with linearly independent columns. R has a build in solve command, `solve`, that works for matrices of this form (i.e., square with linearly independent columns). You can try it here. First you need to un-comment-out the solve command. I have it commented out right now, because it does not work with the matrix M (above) until you remove its redundancies. 
+
+```{r,echo=TRUE}
+# solve(M,b)
+```
+
+Now, you should get a *unique* solution to the equation M x = b, since M has no free variables, and it should be one of the solutions to the original question A x = b. Which solution is it? That is, which of the many solutions to A x = b are you getting here (forw which values of the paramters?).
+
+Compare this with trying to use solve on the original equation A x = b with linearly dependent columns. The solve command in the next bit of code is commented out. Delete the comment command and try executing it.
+
+```{r,echo=TRUE}
+# solve(A,b)
+```
+
+## A 5 x 6 Numerical Matrix
+
+So far, all of the matrices we've worked with in this class have integer values. This is only so that the calulations are nice to do by hand. All of our theory works over the real numbers. Here we will look at a real matrix with numerical values, something you might  find when dealing with real-world data. 
+
+```{r,echo=TRUE}
+B = cbind(
+  c(0.717, -0.274, 0.365, 0.482, -0.362), 
+  c(0.587, -0.545, 0.5, -0.407, -0.597), 
+  c(-0.441, 0.886, 0.784, -0.831, -0.594), 
+  c(0.923, -0.466, 0.222, 0.867, 0.493), 
+  c(-0.42, -0.745, -0.02, -0.44, 0.209), 
+  c(0.621, 0.049, -0.134, -0.844, -0.31)
+  )
+B
+```
+and here is a vector d in $\mathbb{R}^5$.
+
+```{r,echo=TRUE}
+d = c(5.886, -4.001, 3.701, -6.621, -2.199)
+d
+```
+
+Try answering some of these questions:
+
+a. Are the columns of B linearly independent?
+b. Do the columns of B span $\mathbb{R}^5$?
+c. Give the parametric solution to B x = d.
+d. What is the geometric form of this solution (e.g., a plane in $\mathbb{R}^4$)?
+e. Remove redundancies from the columns of B to get a new matrix B2 and use solve to solve the equation B2 x = d. Which of the parametric solutions to you get.
+
+
+## Random Matrices
+
+The following code generates a random 5 x 5 matrix. Every time you enter it, it will give you a new matrix. Use this to try to figure out how likely it is that a random square matrix has linearly dependent columns. 
+
+```{r,echo=TRUE}
+R1 = matrix(runif(5*5), nrow = 5, ncol = 5)
+R1
+```
+
+Try the same using the following code that generates a random 5 x 6 matrix. 
+
+```{r,echo=TRUE}
+R2 = matrix(runif(5*6), nrow = 5, ncol = 6)
+R2
+```
+
+Try the same using the following code that generates a random 5 x 4 matrix. 
+
+```{r,echo=TRUE}
+R3 = matrix(runif(5*4), nrow = 5, ncol = 4)
+R3
+rref(R3)
+```
+
+In each of these cases, how likely is it that the columns of the matrix spans all of $\mathbb{R}^4$?

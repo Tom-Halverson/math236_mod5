@@ -1,4 +1,4 @@
-tab:unnamed-chunk-27
+tab:unnamed-chunk-2
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -51,6 +51,13 @@ building-vectors-and-matrices
 solving-a-linear-system
 solving-another-linear-system
 appendix-dimensionless-vectors-in-r
+linear-dependence
+example-1-a-7x9-integer-matrix
+solution-to-the-nonhomogeneous-equations-ax-b
+solution-to-the-nonhomogeneous-equations-ax-0
+linearly-dependent-columns
+a-5-x-6-numerical-matrix
+random-matrices
 quiz-1-review
 overview
 vocabulary-and-concepts

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>MATH 236: Linear Algebra</title>
+  <title>Section 11 2D Linear Dependence | MATH 236: Linear Algebra</title>
   <meta name="description" content="This is the class activity manual for MATH 236 at Macalester College." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="MATH 236: Linear Algebra" />
+  <meta property="og:title" content="Section 11 2D Linear Dependence | MATH 236: Linear Algebra" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="Tom-Halverson/math236_s21" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MATH 236: Linear Algebra" />
+  <meta name="twitter:title" content="Section 11 2D Linear Dependence | MATH 236: Linear Algebra" />
   
   <meta name="twitter:description" content="This is the class activity manual for MATH 236 at Macalester College." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="problem-set-1-a.html"/>
+<link rel="prev" href="linear-systems-in-r.html"/>
+<link rel="next" href="quiz-1-review.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -193,14 +193,14 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="10.4" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-another-linear-system"><i class="fa fa-check"></i><b>10.4</b> Solving another Linear System</a></li>
 <li class="chapter" data-level="10.5" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#appendix-dimensionless-vectors-in-r"><i class="fa fa-check"></i><b>10.5</b> Appendix: Dimensionless Vectors in R</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="linear-dependence.html"><a href="linear-dependence.html"><i class="fa fa-check"></i><b>11</b> Linear Dependence</a><ul>
-<li class="chapter" data-level="11.1" data-path="linear-dependence.html"><a href="linear-dependence.html#example-1-a-7x9-integer-matrix"><i class="fa fa-check"></i><b>11.1</b> Example 1: a 7x9 integer matrix</a><ul>
-<li class="chapter" data-level="11.1.1" data-path="linear-dependence.html"><a href="linear-dependence.html#solution-to-the-nonhomogeneous-equations-ax-b"><i class="fa fa-check"></i><b>11.1.1</b> Solution to the nonhomogeneous equations Ax = b</a></li>
-<li class="chapter" data-level="11.1.2" data-path="linear-dependence.html"><a href="linear-dependence.html#solution-to-the-nonhomogeneous-equations-ax-0"><i class="fa fa-check"></i><b>11.1.2</b> Solution to the nonhomogeneous equations Ax = 0</a></li>
-<li class="chapter" data-level="11.1.3" data-path="linear-dependence.html"><a href="linear-dependence.html#linearly-dependent-columns"><i class="fa fa-check"></i><b>11.1.3</b> Linearly dependent columns</a></li>
+<li class="chapter" data-level="11" data-path="d-linear-dependence.html"><a href="d-linear-dependence.html"><i class="fa fa-check"></i><b>11</b> 2D Linear Dependence</a><ul>
+<li class="chapter" data-level="11.1" data-path="d-linear-dependence.html"><a href="d-linear-dependence.html#example-1-a-7x9-integer-matrix"><i class="fa fa-check"></i><b>11.1</b> Example 1: a 7x9 integer matrix</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="d-linear-dependence.html"><a href="d-linear-dependence.html#solution-to-the-nonhomogeneous-equations-ax-b"><i class="fa fa-check"></i><b>11.1.1</b> Solution to the nonhomogeneous equations Ax = b</a></li>
+<li class="chapter" data-level="11.1.2" data-path="d-linear-dependence.html"><a href="d-linear-dependence.html#solution-to-the-nonhomogeneous-equations-ax-0"><i class="fa fa-check"></i><b>11.1.2</b> Solution to the nonhomogeneous equations Ax = 0</a></li>
+<li class="chapter" data-level="11.1.3" data-path="d-linear-dependence.html"><a href="d-linear-dependence.html#linearly-dependent-columns"><i class="fa fa-check"></i><b>11.1.3</b> Linearly dependent columns</a></li>
 </ul></li>
-<li class="chapter" data-level="11.2" data-path="linear-dependence.html"><a href="linear-dependence.html#a-5-x-6-numerical-matrix"><i class="fa fa-check"></i><b>11.2</b> A 5 x 6 Numerical Matrix</a></li>
-<li class="chapter" data-level="11.3" data-path="linear-dependence.html"><a href="linear-dependence.html#random-matrices"><i class="fa fa-check"></i><b>11.3</b> Random Matrices</a></li>
+<li class="chapter" data-level="11.2" data-path="d-linear-dependence.html"><a href="d-linear-dependence.html#a-5-x-6-numerical-matrix"><i class="fa fa-check"></i><b>11.2</b> A 5 x 6 Numerical Matrix</a></li>
+<li class="chapter" data-level="11.3" data-path="d-linear-dependence.html"><a href="d-linear-dependence.html#random-matrices"><i class="fa fa-check"></i><b>11.3</b> Random Matrices</a></li>
 </ul></li>
 <li class="part"><span><b>IV Quiz Review</b></span></li>
 <li class="chapter" data-level="12" data-path="quiz-1-review.html"><a href="quiz-1-review.html"><i class="fa fa-check"></i><b>12</b> Quiz 1 Review</a><ul>
@@ -251,19 +251,179 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">MATH 236: Linear Algebra</h1>
+<div id="d-linear-dependence" class="section level1">
+<h1><span class="header-section-number">Section 11</span> 2D Linear Dependence</h1>
+<p>In this activity, we will explore linear dependence and independence in the context of solving nonhomogeneous <span class="math inline">\(A x = b\)</span> and homogeneous equations <span class="math inline">\(A x = 0\)</span>.</p>
+<p>explore linear transformations of the plane! <a href="https://github.com/Tom-Halverson/math236_s21/blob/main/02-linear-dependence.Rmd">Download this Rmd file.</a></p>
+<p>Remember that we will use the <code>pracma</code> package to get the <code>rref</code> function, so we first load it in:</p>
+<div id="example-1-a-7x9-integer-matrix" class="section level2">
+<h2><span class="header-section-number">11.1</span> Example 1: a 7x9 integer matrix</h2>
+<p>Here is a 7 x 9 coeefficient matrix that we will use. These commands define it and echo it back.</p>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+## [1,]    3    5    3    4    0   -4    5    0   37
+## [2,]    0   -5    5   -1   17   -1    3    5  -10
+## [3,]    0    0   -1   -2    3   -5   -4   -3  -27
+## [4,]    1    3    1    0    0   -2   -5   -2  -29
+## [5,]   -2    3   -3   -1  -17   -1   -2   -1    4
+## [6,]   -4    1   -3    2  -29   -4   -3   -5    7
+## [7,]    1    4    5   -3    8    3   -1    0  -24</code></pre>
+<p>And here is a vector b that we hope to use in solving A x = b.</p>
+<pre><code>## [1]  382   51 -321 -314  -86 -170 -153</code></pre>
+<p>You can augment A with b, and call it Ab, using <code>cbind</code>:</p>
+<pre><code>##                                      b
+## [1,]  3  5  3  4   0 -4  5  0  37  382
+## [2,]  0 -5  5 -1  17 -1  3  5 -10   51
+## [3,]  0  0 -1 -2   3 -5 -4 -3 -27 -321
+## [4,]  1  3  1  0   0 -2 -5 -2 -29 -314
+## [5,] -2  3 -3 -1 -17 -1 -2 -1   4  -86
+## [6,] -4  1 -3  2 -29 -4 -3 -5   7 -170
+## [7,]  1  4  5 -3   8  3 -1  0 -24 -153</code></pre>
+<p>And row reduce using <code>rref</code></p>
+<pre><code>##                            b
+## [1,] 1 0 0 0  5 0 0 0 -2   8
+## [2,] 0 1 0 0 -2 0 0 0  2  10
+## [3,] 0 0 1 0  1 0 0 0 -3 -19
+## [4,] 0 0 0 1 -2 0 0 0  3  21
+## [5,] 0 0 0 0  0 1 0 0  0   6
+## [6,] 0 0 0 0  0 0 1 0  6  61
+## [7,] 0 0 0 0  0 0 0 1  0   8</code></pre>
+<div id="solution-to-the-nonhomogeneous-equations-ax-b" class="section level3">
+<h3><span class="header-section-number">11.1.1</span> Solution to the nonhomogeneous equations Ax = b</h3>
+<p>Write out the solution to Ax=b in <em>parametric</em> form using the following formatting. You just need to fill in the correct values of the vectors:
+<span class="math display">\[
+\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \\ x_8 \\ x_9 \end{bmatrix}
+=
+\begin{bmatrix} 8 \\ 10 \\ -19 \\ 21 \\ 0 \\ 6 \\ 61 \\ 8 \\ 0 \end{bmatrix}
++ s
+\begin{bmatrix} 
+-5 \\ 2 \\ -1 \\ 2 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0 
+\end{bmatrix}
++ t
+\begin{bmatrix} 
+2 \\ -2 \\ 3 \\ -3 \\ 0 \\ 0 \\ -6 \\ 0 \\ 1 
+\end{bmatrix}
+\]</span></p>
+<p>Describe this solution space (by fixing up this sentence, which is incorrect right now):</p>
+<p>the set of solutions to A x= b is a <em>plane</em> in <span class="math inline">\(\mathbb{R}^9\)</span>.</p>
 </div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p>This is the class handbook for Math 236 Linear Algebra at Macalester College. The content here was made by <a href="https://mathbeveridge.github.io">Andrew Beveridge</a>
-and <a href="https://www.macalester.edu/~halverson/">Tom Halverson</a> and other faculty in the <a href="https://www.macalester.edu/mscs/">Department of Mathematics, Statistics and Computer Science</a> at <a href="https://www.macalester.edu/">Macalester College</a>.</p>
-<p><br>
-<br>
-<br></p>
-<p><img src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></p>
-<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+<div id="solution-to-the-nonhomogeneous-equations-ax-0" class="section level3">
+<h3><span class="header-section-number">11.1.2</span> Solution to the nonhomogeneous equations Ax = 0</h3>
+<p>Now, describe the set of solutions to the homogeneous equations A x = 0. Again, you can just edit this:
+<span class="math display">\[
+\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7 \\ x_8 \\ x_9 \end{bmatrix}
+=
+\begin{bmatrix} p1 \\ p2 \\ p3 \\ p4 \\ p5 \\ p6 \\ p7 \\ p8 \\ p9 \end{bmatrix}
++ s
+\begin{bmatrix} 
+u1 \\ u2 \\ u3 \\ u4 \\ u5 \\ u6 \\ u7 \\ u8 \\ u9 
+\end{bmatrix}
++ t
+\begin{bmatrix} 
+v1 \\ v2 \\ v3 \\ v4 \\ v5 \\ v6 \\ v7 \\ v8 \\ v9 
+\end{bmatrix}
+\]</span></p>
+<p>And describe, in words, the geometric relationship between the solutions to Ax=b and Ax=0.</p>
+<p>your answer here</p>
+</div>
+<div id="linearly-dependent-columns" class="section level3">
+<h3><span class="header-section-number">11.1.3</span> Linearly dependent columns</h3>
+<p>The columns of the matrix A are <em>linearly dependent.</em> You can see that in rref(A).</p>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+## [1,]    1    0    0    0    5    0    0    0   -2
+## [2,]    0    1    0    0   -2    0    0    0    2
+## [3,]    0    0    1    0    1    0    0    0   -3
+## [4,]    0    0    0    1   -2    0    0    0    3
+## [5,]    0    0    0    0    0    1    0    0    0
+## [6,]    0    0    0    0    0    0    1    0    6
+## [7,]    0    0    0    0    0    0    0    1    0</code></pre>
+<p>Discuss in your group how you see it. Then write out a dependence relation among the columns by filling in numbers for the weights in this equation</p>
+<p><span class="math display">\[
+0 = 
+c_1 \vec{a}_1 + 
+c_2 \vec{a}_2 +
+c_3 \vec{a}_3 +
+c_4 \vec{a}_4 +
+c_5 \vec{a}_5 +
+c_6 \vec{a}_6 +
+c_7 \vec{a}_7 +
+c_8 \vec{a}_8 +
+c_9 \vec{a}_9.
+\]</span>
+<strong>Challenge</strong>: give a dependency relation that none of the other groups in the class have.</p>
+<p>This is telling us that there is some redundancy in the matrix A. Remove columns from A to get a new matrix M whose columns are <em>linearly independent.</em> You can do this by removing the appropriate columns from the code below:</p>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+## [1,]    3    5    3    4    0   -4    5    0   37
+## [2,]    0   -5    5   -1   17   -1    3    5  -10
+## [3,]    0    0   -1   -2    3   -5   -4   -3  -27
+## [4,]    1    3    1    0    0   -2   -5   -2  -29
+## [5,]   -2    3   -3   -1  -17   -1   -2   -1    4
+## [6,]   -4    1   -3    2  -29   -4   -3   -5    7
+## [7,]    1    4    5   -3    8    3   -1    0  -24</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+## [1,]    1    0    0    0    5    0    0    0   -2
+## [2,]    0    1    0    0   -2    0    0    0    2
+## [3,]    0    0    1    0    1    0    0    0   -3
+## [4,]    0    0    0    1   -2    0    0    0    3
+## [5,]    0    0    0    0    0    1    0    0    0
+## [6,]    0    0    0    0    0    0    1    0    6
+## [7,]    0    0    0    0    0    0    0    1    0</code></pre>
+<p>Your matrix should now be square (7x7) with linearly independent columns. R has a build in solve command, <code>solve</code>, that works for matrices of this form (i.e., square with linearly independent columns). You can try it here. First you need to un-comment-out the solve command. I have it commented out right now, because it does not work with the matrix M (above) until you remove its redundancies.</p>
+<p>Now, you should get a <em>unique</em> solution to the equation M x = b, since M has no free variables, and it should be one of the solutions to the original question A x = b. Which solution is it? That is, which of the many solutions to A x = b are you getting here (forw which values of the paramters?).</p>
+<p>Compare this with trying to use solve on the original equation A x = b with linearly dependent columns. The solve command in the next bit of code is commented out. Delete the comment command and try executing it.</p>
+</div>
+</div>
+<div id="a-5-x-6-numerical-matrix" class="section level2">
+<h2><span class="header-section-number">11.2</span> A 5 x 6 Numerical Matrix</h2>
+<p>So far, all of the matrices we’ve worked with in this class have integer values. This is only so that the calulations are nice to do by hand. All of our theory works over the real numbers. Here we will look at a real matrix with numerical values, something you might find when dealing with real-world data.</p>
+<pre><code>##        [,1]   [,2]   [,3]   [,4]   [,5]   [,6]
+## [1,]  0.717  0.587 -0.441  0.923 -0.420  0.621
+## [2,] -0.274 -0.545  0.886 -0.466 -0.745  0.049
+## [3,]  0.365  0.500  0.784  0.222 -0.020 -0.134
+## [4,]  0.482 -0.407 -0.831  0.867 -0.440 -0.844
+## [5,] -0.362 -0.597 -0.594  0.493  0.209 -0.310</code></pre>
+<p>and here is a vector d in <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
+<pre><code>## [1]  5.886 -4.001  3.701 -6.621 -2.199</code></pre>
+<p>Try answering some of these questions:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Are the columns of B linearly independent?</li>
+<li>Do the columns of B span <span class="math inline">\(\mathbb{R}^5\)</span>?</li>
+<li>Give the parametric solution to B x = d.</li>
+<li>What is the geometric form of this solution (e.g., a plane in <span class="math inline">\(\mathbb{R}^4\)</span>)?</li>
+<li>Remove redundancies from the columns of B to get a new matrix B2 and use solve to solve the equation B2 x = d. Which of the parametric solutions to you get.</li>
+</ol>
+</div>
+<div id="random-matrices" class="section level2">
+<h2><span class="header-section-number">11.3</span> Random Matrices</h2>
+<p>The following code generates a random 5 x 5 matrix. Every time you enter it, it will give you a new matrix. Use this to try to figure out how likely it is that a random square matrix has linearly dependent columns.</p>
+<pre><code>##           [,1]       [,2]       [,3]       [,4]       [,5]
+## [1,] 0.9760106 0.62968712 0.40548161 0.59729676 0.03054783
+## [2,] 0.5002510 0.91445033 0.06472146 0.57008042 0.80095637
+## [3,] 0.5749148 0.07866412 0.77279069 0.58008817 0.82678681
+## [4,] 0.7173648 0.50078408 0.92602775 0.07596718 0.06500328
+## [5,] 0.8368916 0.40049444 0.06435790 0.58314881 0.46744992</code></pre>
+<p>Try the same using the following code that generates a random 5 x 6 matrix.</p>
+<pre><code>##           [,1]      [,2]      [,3]       [,4]      [,5]      [,6]
+## [1,] 0.7426167 0.6236361 0.9788542 0.81644809 0.5578797 0.9619311
+## [2,] 0.8919341 0.8859504 0.9302083 0.41307801 0.8520649 0.5922210
+## [3,] 0.8520221 0.9020843 0.7661788 0.80667301 0.9844180 0.2310736
+## [4,] 0.8338545 0.8503236 0.9265152 0.08913691 0.8849268 0.8170287
+## [5,] 0.2453064 0.5035554 0.6746583 0.43902284 0.7883192 0.1056833</code></pre>
+<p>Try the same using the following code that generates a random 5 x 4 matrix.</p>
+<pre><code>##           [,1]      [,2]      [,3]      [,4]
+## [1,] 0.5865097 0.1827977 0.9392248 0.8925259
+## [2,] 0.3609577 0.5746488 0.3824399 0.7338909
+## [3,] 0.3424713 0.3267390 0.1775965 0.3169951
+## [4,] 0.7829957 0.2081633 0.2208063 0.4867825
+## [5,] 0.3702749 0.4691476 0.3803416 0.2062327</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    0    0    0
+## [2,]    0    1    0    0
+## [3,]    0    0    1    0
+## [4,]    0    0    0    1
+## [5,]    0    0    0    0</code></pre>
+<p>In each of these cases, how likely is it that the columns of the matrix spans all of <span class="math inline">\(\mathbb{R}^4\)</span>?</p>
 
+</div>
 </div>
 
 
@@ -273,8 +433,8 @@ and <a href="https://www.macalester.edu/~halverson/">Tom Halverson</a> and other
           </div>
         </div>
       </div>
-
-<a href="problem-set-1-a.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="linear-systems-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="quiz-1-review.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
