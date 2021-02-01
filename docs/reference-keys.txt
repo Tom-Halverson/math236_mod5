@@ -15,6 +15,10 @@ combining-solutions-to-a-mathsfx-mathsfb
 a-balanced-diet
 missing-column
 linear-system
+problem-set-3
+properties-of-linear-transformations
+partial-information-about-a-linear-transformation
+house-renovations
 important-definitions
 vector-spaces
 matrices

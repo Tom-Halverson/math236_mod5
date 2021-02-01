@@ -1,90 +1,25 @@
 
 # Problem Set 3
 
-* Due: Tuesday November 10 by 11:55pm CST. 
+* Due: Tuesday Febrary 9 by noon CST. 
 * Upload your solutions to Moodle in a PDF. 
 * Please feel free to **use RStudio for all row reductions.**
 * You can download the [Rmd source file  for this problem set](https://github.com/mathbeveridge/math236_f20/blob/main/PS3-problem-set-3.Rmd).
 
-The Problem Set covers sections 1.7, 1.8, 1.9.
+The Problem Set covers sections 1.8, 1.9, 2.1, 2.2.
 
 
-```{r setup, include=FALSE}
-library(knitr)
-opts_chunk$set(echo = FALSE,
-               out.width = "75%", 
-               fig.align = "center")
-```
+#```{r setup, include=FALSE}
+#library(knitr)
+#opts_chunk$set(echo = FALSE,
+#               out.width = "75%", 
+#               fig.align = "center")
+#```
 
 ```{r, echo=FALSE}
 require(pracma)
 ```
 
-
-##  Three vectors in $\mathbb{R}^4$
-
-\item Consider the vectors $\mathbf{u}$, $\mathbf{v}$, and $\mathbf{w}$ given by 
-$$
- \qquad
-\mathbf{u} = \begin{bmatrix} 1 \\  0 \\   2 \\  -1 \end{bmatrix}, \qquad
-\mathbf{v} = \begin{bmatrix} 2 \\ -1 \\  3 \\  1 \end{bmatrix}, \qquad
-\mathbf{w} = \begin{bmatrix} 1 \\  -2 \\   2 \\ 1 \end{bmatrix}.
-$$
-Use RStudio to answer the following questions. 
-
-  1. Are $\mathbf{u}$, $\mathbf{v}$, and $\mathbf{w}$ linearly independent?
-  
-  1. Is the vector $\mathbf{b} = \begin{bmatrix} 4 \\ 4 \\  2 \\  4 \end{bmatrix}$   in the span  of vectors $\mathbf{u}$, $\mathbf{v}$, and $\mathbf{w}$?
-  
-  1. Is  the vector $\mathbf{b} = \begin{bmatrix} 2 \\ 1 \\  3 \\  1 \end{bmatrix}$ in the span  of vectors $\mathbf{u}$, $\mathbf{v}$, and $\mathbf{w}$?
-
-
-## A Balanced Diet
-  
-<!-- https://lvs.com.au/wp-content/uploads/2015/10/protein-fat-carb-counter.pdf -->
-
-An athlete wants to consume  a daily diet of 200 grams of carbohydrates, 60 grams of fats and 160 grams of  proteins. Here are some of their favorite foods.
-
-
-```{r}
-food.data <- data.frame(
-   food = c ("almonds", "avocado",  "beans", "bread", "cheese", "chicken", "egg", "milk", "zucchini"),
-   carbs = c(3,15,20,12,1,0,1,12,6),
-   fats = c(8,31,1,1,5,13,5,8,0), 
-   proteins = c(5,4,8,2,3,50,6,8,2)
-)
-
-knitr::kable(
-  food.data, booktabs = TRUE,
-  caption = 'Food Carb/Fat/Protein (grams)'
-)
-```
-
-Answer the following  questions, using RStudio for your calculations. Each response must use **two or more** of the following terms:  linear combination, span, linearly dependent, linearly independent. 
-
-
-1. Explain why they **cannot** achieve their daily goal by eating only almonds, milk and zucchini.
-
-2. Explain why they **cannot** achieve their daily goal by eating only almonds, beans and cheese.
-
-3. Find a valid one-day diet consisting of almonds, chicken, and zucchini. 
-
-
-
-
-## A Problem about Span and Linear Dependence
-
-Let $\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3$ and  $\mathsf{w}_1, \mathsf{w}_2, \mathsf{w}_3, \mathsf{w}_4$ all be vectors in $\mathbb{R}^4$. Suppose that $\{ \mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3 \}$ is a linearly independent set, and that
-$$
-\mathrm{span}(\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3) 
-=
-\mathrm{span}(\mathsf{w}_1, \mathsf{w}_2, \mathsf{w}_3, \mathsf{w}_4).
-$$
-Prove that $\mathsf{w}_1, \mathsf{w}_2, \mathsf{w}_3, \mathsf{w}_4$ must be linearly dependent.
-You can do this by either:
-
-* Explaning why there must be a nontrivial linear combination $c_1 \mathsf{w}_1 + c_2 \mathsf{w}_2 + c \mathsf{w}_3 + c \mathsf{w}_4 = \mathbf{0}$, or
-* Showing that the $4 \times 4$ matrix $\begin{bmatrix} \mathsf{w}_1 & \mathsf{w}_2 & \mathsf{w}_3 & \mathsf{w}_4 \end{bmatrix}$ does not have a pivot in every column.
 
 
 
@@ -171,4 +106,5 @@ abline(h=-6:6, v=-6:6, col="gray", lty="dotted")
 polygon(house[1,], house[2,], col = "gray", border = "blue")
 ```
 
+More coming!
 
