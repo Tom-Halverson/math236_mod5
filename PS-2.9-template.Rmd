@@ -20,7 +20,7 @@ A
 ```
 #### (a) Linear Dependence
 
-Show that the columns of A are linearly independent by finding two different dependency relations among them. You can write your answer a form  like 5 a1+ 4 a2 + 3 a3 + 2 a4 + a5 = 0, where a1, a2, etc are the columns of A. 
+Show that the columns of A are linearly dependent by finding two different dependency relations among them. You can write your answer a form  like 5 a1+ 4 a2 + 3 a3 + 2 a4 + a5 = 0, where a1, a2, etc are the columns of A. 
 
 ```{r}
 
