@@ -7,49 +7,48 @@ require(pracma)
 ```
 
 
-You've probably heard of fractals: mathematical sets with a self-similar structure. Each smaller part is a miniature copy of the whole structure. Today, we will see how to use linear transformations and homogeneous coordiantes to generate a fractal.
+Fractals are mathematical sets with a self-similar structure. Each smaller part is a miniature copy of the whole structure. Today, we will see how to use linear transformations and homogeneous coordintes to generate a fractal.
 
 
-
-We will generate a fractal by repeatedly  applying the following 3D linear transformations. 
+We will generate a fractal by repeatedlyapplying the following 3D linear transformations. 
 
 ```{r}
-A1 = cbind(c(.86,-.03,0),c(.03,.86,0),c(0,1.5,1)) 
-A2 = cbind(c(.2,.21,0),c(-.25,.23,0),c(0,1.5,1)) 
-A3 = cbind(c(-.15,.25,0),c(.27,.27,0),c(0,.45,1)) 
-A4 = cbind(c(0,0,0),c(.0,.17,0),c(0,0,1)) 
+(A1 = cbind(c(.86,-.03,0),c(.03,.86,0),c(0,1.5,1)))
+(A2 = cbind(c(.2,.21,0),c(-.25,.23,0),c(0,1.5,1)))
+(A3 = cbind(c(-.15,.27,0),c(.25,.26,0),c(0,.45,1)))
+(A4 = cbind(c(0,0,0),c(.0,.17,0),c(0,0,1)))
 ```
+Observe that, via homogenous coordinates, each of them does some transformation in $\mathbb{R}^2$ and some translation.
 
-
-We pick one of these four transformations  using some randomness.  Most of the  time  we apply matrix  A1. Occasionally, we  apply matrix A2 or  A3. And rarely  we apply A4.
+We choose among these four transformations using some randomness: 83% of the time we use A1, 8% of the time we use A2, 8% of the time we use A3, and 1% of the time we use A4. This is done in the following function. 
 
 
 ```{r}
-get_lt <- function() {
-  val = rand()
+get_matrix <- function(x) {
+  val = runif(1) # generate a random number between 0 an 1
   if (val < .83) {
-    A = A1
+    A1  # return A1
   } else if (val < .91) {
-    A = A2
+    A2  # return A2
   } else if (val < .99) {
-    A = A3
+    A3  # return A3 
   } else {
-    A = A4
+    A4   # return A4 
   }
-  
-  A
 }
 ```
 
-So let's generate a fractal!
+Now, we start with the point (0,0,1) in homogeneous coordinates. And apply this function over and over again to the previous point that was just computed, plotting the new point each time. 
 
 ```{r,fig.height=5,fig.width=5}
-pt = c(0,0,1)
+pt = c(0,0,1) # starting point
 
-plot(pt[1], pt[2], pch='.', xlim=c(-5,5), ylim=c(-1,12))
-for (i in 1:1000) {
-  points(pt[1], pt[2], pch='.')
-  pt = get_lt() %*% pt
+plot(pt[1], pt[2], pch='.', xlim=c(-5,5), ylim=c(-1,12)) # set up the plot
+
+for (i in 1:2000) # loop
+  {
+  points(pt[1], pt[2], pch='.',col='forest green')
+  pt = get_matrix() %*% pt
 }
 
 ```
@@ -59,34 +58,70 @@ for (i in 1:1000) {
 
 So what is happening? Let's look at the effect of each of these linear transformations on my house
 
+Here is what A1 does to the house.  This happens 91% of the time.
 ```{r,fig.height=5,fig.width=5}
 
 house = cbind(c(0,0,1), c(0,3/4,1), c(1/2,3/4,1), c(1/2,0,1), c(1,0,1), c(1,1,1), c(5/4,1,1), c(0,2,1), c(-5/4,1,1), c(-1,1,1), c(-1,0,1), c(0,0,1));
 
-(A = A2)
-house2 = A^2 %*% house
-(house2)
+house2 = A1 %*% house
 
-plot(house[1,],house[2,],type="n",xlim=c(-.125,.125),ylim=c(1,2.5),xlab="x",ylab="y")
+plot(house[1,],house[2,],type="n",xlim=c(-5,5),ylim=c(-5,5),xlab="x",ylab="y")
 abline(h=-6:6, v=-6:6, col="gray", lty="dotted")
-#polygon(house[1,], house[2,], col = "gray", border = "blue")
-polygon(house2[1,], house2[2,], col = "cyan", border = "black")
+polygon(house[1,], house[2,], col = "gray", border = "blue")
+polygon(house2[1,], house2[2,], col = "forest green", border = "black")
 ```
 
-##  Watching a series of points.
-
-Let's  see what happens when  we  repeatedly apply the same mapping.
-
+Here is what A2 does to the house. This happens 8% of the time.
 ```{r,fig.height=5,fig.width=5}
-pt = c(0,0,1)
 
-plot(pt[1], pt[2], pch=1, xlim=c(-2,2), ylim=c(-1,2))
-for (i in 1:1000) {
-  points(pt[1], pt[2], pch=1)
-  pt = A1 %*% pt
+house = cbind(c(0,0,1), c(0,3/4,1), c(1/2,3/4,1), c(1/2,0,1), c(1,0,1), c(1,1,1), c(5/4,1,1), c(0,2,1), c(-5/4,1,1), c(-1,1,1), c(-1,0,1), c(0,0,1));
+
+house2 = A2 %*% house
+
+plot(house[1,],house[2,],type="n",xlim=c(-5,5),ylim=c(-5,5),xlab="x",ylab="y")
+abline(h=-6:6, v=-6:6, col="gray", lty="dotted")
+polygon(house[1,], house[2,], col = "gray", border = "blue")
+polygon(house2[1,], house2[2,], col = "forest green", border = "black")
+```
+Here is what A3 does to the house. This happens 8% of the time.
+```{r,fig.height=5,fig.width=5}
+
+house = cbind(c(0,0,1), c(0,3/4,1), c(1/2,3/4,1), c(1/2,0,1), c(1,0,1), c(1,1,1), c(5/4,1,1), c(0,2,1), c(-5/4,1,1), c(-1,1,1), c(-1,0,1), c(0,0,1));
+
+house2 = A3 %*% house
+
+plot(house[1,],house[2,],type="n",xlim=c(-5,5),ylim=c(-5,5),xlab="x",ylab="y")
+abline(h=-6:6, v=-6:6, col="gray", lty="dotted")
+polygon(house[1,], house[2,], col = "gray", border = "blue")
+polygon(house2[1,], house2[2,], col = "forest green", border = "black")
+```
+Here is what A4 does to the house. This happens 1% of the time.
+```{r,fig.height=5,fig.width=5}
+
+house = cbind(c(0,0,1), c(0,3/4,1), c(1/2,3/4,1), c(1/2,0,1), c(1,0,1), c(1,1,1), c(5/4,1,1), c(0,2,1), c(-5/4,1,1), c(-1,1,1), c(-1,0,1), c(0,0,1));
+
+house2 = A4 %*% house
+
+plot(house[1,],house[2,],type="n",xlim=c(-5,5),ylim=c(-5,5),xlab="x",ylab="y")
+abline(h=-6:6, v=-6:6, col="gray", lty="dotted")
+polygon(house[1,], house[2,], col = "gray", border = "blue")
+polygon(house2[1,], house2[2,], col = "forest green", border = "forest green")
+```
+```{r,fig.height=5,fig.width=5}
+
+house = cbind(c(0,0,1), c(0,3/4,1), c(1/2,3/4,1), c(1/2,0,1), c(1,0,1), c(1,1,1), c(5/4,1,1), c(0,2,1), c(-5/4,1,1), c(-1,1,1), c(-1,0,1), c(0,0,1));
+
+plot(house[1,],house[2,],type="n",xlim=c(-5,5),ylim=c(-.5,10),xlab="x",ylab="y")
+abline(h=-6:6, v=-6:6, col="gray", lty="dotted") # set up the plot
+
+for (i in 1:1000) # loop
+  {
+  polygon(house[1,], house[2,], col = "forest green", border = "black")
+  house = get_matrix() %*% house
 }
 
 ```
+
 ##  Your Turn
 
 Make some small adjustments to one of these matrices. Explore the impact of the fractal. Can you make it spikier?  Bushier?

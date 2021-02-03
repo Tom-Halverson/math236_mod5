@@ -1,20 +1,13 @@
 
 # Problem Set 3
 
-* Due: Tuesday Febrary 9 by noon CST. 
+* Due: Tuesday February 9 by noon CST. 
 * Upload your solutions to Moodle in a PDF. 
 * Please feel free to **use RStudio for all row reductions.**
 * You can download the [Rmd source file  for this problem set](https://github.com/mathbeveridge/math236_f20/blob/main/PS3-problem-set-3.Rmd).
 
 The Problem Set covers sections 1.8, 1.9, 2.1, 2.2.
 
-
-#```{r setup, include=FALSE}
-#library(knitr)
-#opts_chunk$set(echo = FALSE,
-#               out.width = "75%", 
-#               fig.align = "center")
-#```
 
 ```{r, echo=FALSE}
 require(pracma)
@@ -24,7 +17,7 @@ require(pracma)
 
 
 ## Properties of Linear Transformations
-Here are the row reductions to reduced row echelon form of 4 matrices.
+Here are the row reductions pf 4  matrices into reduced row echelon form.
 $$
 \begin{array}{ll}
 A \longrightarrow \begin{bmatrix} 1 & 0 & 5 & -3 & 0\\ 0 & 1 & -2 & 8  & 0 \\ 0 & 0 & 0 & 0 & 1  \\ 0 & 0 & 0 & 0 &  0 \\ 0 & 0 & 0  & 0 &  0 \end{bmatrix} \qquad
@@ -38,42 +31,32 @@ D \longrightarrow \begin{bmatrix} 1 & 0 & 0 & 0  \\ 0 & 1 & 0  & 0  \\ 0 & 0 & 1
 \end{array}
 $$
 
-In each case, if $T$ is the linear transformation given by the matrix product $T(x) = M x$, where $M$ is an $m \times n$ matrix ($m$ rows and $n$ columns) then $T: \mathbb{R}^n \to \mathbb{R}^m$ is a transformation from domain $\mathbb{R}^n$ to codomain (aka target) $\mathbb{R}^m$. 
+In each case, if $T_M$ is the linear transformation given by the matrix product $T_M(x) = M x$, where $M$ is the given matrix, then $T_M: \mathbb{R}^n \to \mathbb{R}^m$ is a transformation from domain $\mathbb{R}^n$ to codomain (aka target) $\mathbb{R}^m$. 
 
-Determine the appropriate values for $n$ and $m$, and decide whether $T$ is one-to-one and/or onto. Submit your answers in table form, as shown below.
+Determine the appropriate values for $n$ and $m$, and decide whether $T_M$ is one-to-one and/or onto. Submit your answers in table form, as shown below.
 $$
 \begin{array} {|c|c|c|c|c|} 
 \hline
-\text{matrix } M &  n  &  m & \text{one-to-one?} & \text{onto?} \\ \hline
-A &\phantom{\Big\vert XX}&\phantom{\Big\vert XX}&& \\ \hline
-B &\phantom{\Big\vert XX}&&& \\ \hline
-C &\phantom{\Big\vert XX}&&& \\ \hline
-D &\phantom{\Big\vert XX}&&& \\ \hline
+\text{transformation}  &  n  &  m & \text{one-to-one?} & \text{onto?} \\ \hline
+T_A &\phantom{\Big\vert XX}&\phantom{\Big\vert XX}&& \\ \hline
+T_B &\phantom{\Big\vert XX}&&& \\ \hline
+T_C &\phantom{\Big\vert XX}&&& \\ \hline
+T_D &\phantom{\Big\vert XX}&&& \\ \hline
 \end{array} \hskip5in
 $$
 
 
 ## Partial Information about a Linear Transformation
 
-$T: \mathbb{R}^4 \rightarrow \mathbb{R}^3$ is a linear transformation such that: 
+We are given that $T: \mathbb{R}^4 \rightarrow \mathbb{R}^3$ is a linear transformation such that: 
 $$
-T\left(\begin{bmatrix} 1 \\ 2 \\ 2 \\ 0 \end{bmatrix} \right)
-=
-\begin{bmatrix}  ~4~ \\ -1~ \\ 2 \end{bmatrix}
-\quad \mbox{and} \quad
-T\left(\begin{bmatrix} 2 \\ -1~ \\ 1 \\ 3 \end{bmatrix} \right)
-=
-\begin{bmatrix} ~2~ \\ 6  \\ -1~ \end{bmatrix}
-\quad \mbox{and} \quad
-T\left(\begin{bmatrix} 3 \\ 0 \\ 2 \\ 2 \end{bmatrix} \right)
-=
-\begin{bmatrix} 6 \\ 5  \\ 1 \end{bmatrix}
+T\left(\begin{bmatrix} 3 \\ ~2~ \\ 1 \\ 2 \end{bmatrix} \right)=\begin{bmatrix}  ~2~ \\ 3 \\ 6 \end{bmatrix}
+\qquad\hbox{and}\qquad
+T\left(\begin{bmatrix}~~2 \\ -1 \\ 0 \\ -1 \end{bmatrix} \right)=\begin{bmatrix} 2 \\ ~0~  \\ 1 \end{bmatrix}.
 $$
-
-  1. Do we have enough information to  determine whether $T$ is one-to-one? If no, then explain why not. If yes, then do so, along with a justification.
-
-
-  2. Do we have enough information to determine whether $T$ is onto? If no, then  explain why not. If yes, then do so, along with  a justification.
+If that is all we know about $T$, then do we have enough information to compute the value of $T$ below? 
+$$T\left(\begin{bmatrix} 5 \\ 8 \\ ~3~ \\ 8 \end{bmatrix} \right) = \hskip5in$$
+If yes, then compute it (showing how you do so). If no, then explain why not.
 
 
 
