@@ -19,6 +19,9 @@ problem-set-3
 properties-of-linear-transformations
 partial-information-about-a-linear-transformation
 house-renovations
+matrix-of-a-nonlinear-transformation
+a-proof
+archaeological-seriation
 important-definitions
 vector-spaces
 matrices

@@ -151,6 +151,9 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="3.1" data-path="problem-set-3.html"><a href="problem-set-3.html#properties-of-linear-transformations"><i class="fa fa-check"></i><b>3.1</b> Properties of Linear Transformations</a></li>
 <li class="chapter" data-level="3.2" data-path="problem-set-3.html"><a href="problem-set-3.html#partial-information-about-a-linear-transformation"><i class="fa fa-check"></i><b>3.2</b> Partial Information about a Linear Transformation</a></li>
 <li class="chapter" data-level="3.3" data-path="problem-set-3.html"><a href="problem-set-3.html#house-renovations"><i class="fa fa-check"></i><b>3.3</b> House Renovations</a></li>
+<li class="chapter" data-level="3.4" data-path="problem-set-3.html"><a href="problem-set-3.html#matrix-of-a-nonlinear-transformation"><i class="fa fa-check"></i><b>3.4</b> Matrix of a Nonlinear Transformation?</a></li>
+<li class="chapter" data-level="3.5" data-path="problem-set-3.html"><a href="problem-set-3.html#a-proof"><i class="fa fa-check"></i><b>3.5</b> A Proof</a></li>
+<li class="chapter" data-level="3.6" data-path="problem-set-3.html"><a href="problem-set-3.html#archaeological-seriation"><i class="fa fa-check"></i><b>3.6</b> Archaeological Seriation</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
 <li class="chapter" data-level="4" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>4</b> Important Definitions</a><ul>
@@ -323,6 +326,54 @@ house = cbind(c(0,0), c(0,3/4), c(1/2,3/4), c(1/2,0), c(1,0), c(1,1), c(5/4,1), 
 plot(house[1,],house[2,],type=&quot;n&quot;,xlim=c(-6,6),ylim=c(-6,6),xlab=&quot;x&quot;,ylab=&quot;y&quot;, asp=1)
 abline(h=-6:6, v=-6:6, col=&quot;gray&quot;, lty=&quot;dotted&quot;)
 polygon(house[1,], house[2,], col = &quot;gray&quot;, border = &quot;blue&quot;)</code></pre>
+</div>
+<div id="matrix-of-a-nonlinear-transformation" class="section level2">
+<h2><span class="header-section-number">3.4</span> Matrix of a Nonlinear Transformation?</h2>
+<p>This problem illustrates what happens if you try to make the matrix of a transformation that is not linear. Consider the transformation <span class="math inline">\(T\)</span> defined by
+<span class="math display">\[
+T \left( \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} \right)
+=
+\begin{bmatrix} x_1 + x_2^2 + x_3 \\ 2 x_2 + x_1 x_3 + 1 \\ 2 x_1 + 3 x_2 + x_3 \end{bmatrix}
+\]</span></p>
+<p>This is not a linear transformation. Let’s see what happens if we compute its matrix anyway. Compute <span class="math inline">\(T(\mathbf{e}_1)\)</span>, <span class="math inline">\(T(\mathbf{e}_2)\)</span>, and <span class="math inline">\(T(\mathbf{e}_3)\)</span>, and put the vectors you get in the columns of a matrix <span class="math inline">\(A\)</span>. Then compute the product below:
+<span class="math display">\[
+\underbrace{\begin{bmatrix} 
+\cdot &amp; \cdot &amp; \cdot \\
+\cdot &amp; \cdot &amp; \cdot \\
+\cdot &amp; \cdot &amp; \cdot \\
+\end{bmatrix}}_{A}
+\begin{bmatrix} x_1 \\ x_ 2 \\ x_3 \end{bmatrix}
+= 
+\]</span>
+Explain how the result of this computation demonstrates that <span class="math inline">\(T\)</span> is not linear.</p>
+</div>
+<div id="a-proof" class="section level2">
+<h2><span class="header-section-number">3.5</span> A Proof</h2>
+<p>Let <span class="math inline">\(T: \mathbb{R}^n \to \mathbb{R}^m\)</span> be a linear transformation. Suppose that <span class="math inline">\(\{v_1, v_2, v_3, v_4\}\)</span> is a linearly independent set of vectors in <span class="math inline">\(\mathbb{R}^n\)</span> but the set of images <span class="math inline">\(\{T(v_1), T(v_2), T(v_3), T(v_4)\}\)</span> is a linearly dependent set in <span class="math inline">\(\mathbb{R}^m\)</span>. In the following steps, you will prove that <span class="math inline">\(T\)</span> must be one-to-one.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Write out clearly, using the definition, what it means for <span class="math inline">\(\{v_1, v_2, v_3, v_4\}\)</span> to be linearly independent.</p></li>
+<li><p>Write out clearly, using the definition, what it means for <span class="math inline">\(\{T(v_1), T(v_2), T(v_3), T(v_4)\}\)</span> to be linearly dependent.</p></li>
+<li><p>Use the definition of linear transformation and parts (a) and (b) above to argue that <span class="math inline">\(T(x) = \vec{0}\)</span> for some nonzero vector <span class="math inline">\(x \in \mathbb{R}^n\)</span>.</p></li>
+<li><p>Explain why this tells us that <span class="math inline">\(T\)</span> is not one-to-one.</p></li>
+</ol>
+</div>
+<div id="archaeological-seriation" class="section level2">
+<h2><span class="header-section-number">3.6</span> Archaeological Seriation</h2>
+<p>The matrix <span class="math inline">\(A\)</span> below is used in archaeological dating. Its rows correspond to four different grave sites <span class="math inline">\(G_1, G_2, G_3, G_4\)</span> and its columns correspond to five types of pottery<span class="math inline">\(P_1, P_2, P_3, P_4, P_5\)</span>. There is a 1 in position <span class="math inline">\(i\)</span>-<span class="math inline">\(j\)</span> if pottery type <span class="math inline">\(P_j\)</span> is found in grave <span class="math inline">\(G_i\)</span> (and a 0 otherwise).
+<span class="math display">\[
+A=\begin{array}{c|ccccc}
+&amp; P_1 &amp; P_2 &amp; P_3 &amp; P_4 &amp; P_5 \\
+\hline
+ G_1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\
+G_2 &amp;  0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
+G_3 &amp;  0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 \\
+G_4  &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+\end{array}
+\]</span></p>
+<ol style="list-style-type: decimal">
+<li><p>Compute the matrix <span class="math inline">\(\mathbf{G} = A A^T\)</span>, where <span class="math inline">\(A^T\)</span> is the <em>transpose</em> of <span class="math inline">\(A\)</span>, meaning that the rows and columns have been interchanged.</p></li>
+<li><p>Give the meaning of the <span class="math inline">\(i\)</span>-<span class="math inline">\(j\)</span> entry of <span class="math inline">\(\mathbf{G}\)</span> (the entry in row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span>). State clearly the meaning of this entry using complete sentences (or sentence) and explain why it has this meaning.</p></li>
+</ol>
 <p>More coming!</p>
 
 </div>

@@ -89,5 +89,58 @@ abline(h=-6:6, v=-6:6, col="gray", lty="dotted")
 polygon(house[1,], house[2,], col = "gray", border = "blue")
 ```
 
+## Matrix of a Nonlinear Transformation?
+
+This problem illustrates what happens if you try to make the matrix of a transformation that is not linear. Consider the transformation $T$ defined by
+$$
+T \left( \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} \right)
+=
+\begin{bmatrix} x_1 + x_2^2 + x_3 \\ 2 x_2 + x_1 x_3 + 1 \\ 2 x_1 + 3 x_2 + x_3 \end{bmatrix}
+$$
+
+This is not a linear transformation. Let's see what happens if we compute its matrix anyway. Compute $T(\mathbf{e}_1)$, $T(\mathbf{e}_2)$, and $T(\mathbf{e}_3)$, and put the vectors you get in the columns of a matrix $A$. Then compute the product below:
+$$
+\underbrace{\begin{bmatrix} 
+\cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot \\
+\cdot & \cdot & \cdot \\
+\end{bmatrix}}_{A}
+\begin{bmatrix} x_1 \\ x_ 2 \\ x_3 \end{bmatrix}
+= 
+$$
+Explain how the result of this computation demonstrates that $T$ is not linear.
+
+## A Proof 
+
+
+Let $T: \mathbb{R}^n \to \mathbb{R}^m$ be a linear transformation. Suppose that $\{v_1, v_2, v_3, v_4\}$ is a linearly independent set of vectors in $\mathbb{R}^n$ but the set of images $\{T(v_1), T(v_2), T(v_3), T(v_4)\}$ is a linearly dependent set in $\mathbb{R}^m$. In the following steps, you will prove that $T$ must be one-to-one.
+
+
+a. Write out clearly, using the definition, what it means for $\{v_1, v_2, v_3, v_4\}$ to be linearly independent. 
+
+b. Write out clearly, using the definition, what it means for $\{T(v_1), T(v_2), T(v_3), T(v_4)\}$ to be linearly dependent.
+
+c. Use the definition of linear transformation and parts (a) and (b) above to argue that $T(x) = \vec{0}$ for some nonzero vector $x \in \mathbb{R}^n$.
+
+d. Explain why this tells us that $T$ is not one-to-one.
+
+## Archaeological Seriation
+
+The matrix $A$ below is used in  archaeological dating. Its rows correspond to four different grave sites $G_1, G_2, G_3, G_4$ and its columns correspond to five types of pottery$P_1, P_2, P_3, P_4, P_5$. There is a 1 in position $i$-$j$ if pottery type $P_j$ is found in grave $G_i$ (and a 0 otherwise).
+$$
+A=\begin{array}{c|ccccc}
+& P_1 & P_2 & P_3 & P_4 & P_5 \\
+\hline
+ G_1 & 1 & 1 & 0 & 1 & 1 \\
+G_2 &  0 & 0 & 1 & 0 & 1 \\
+G_3 &  0 & 1 & 1 & 0 & 1 \\
+G_4  & 1 & 1 & 1 & 1 & 1 \\
+\end{array}
+$$
+
+1. Compute the matrix $\mathbf{G} = A A^T$, where $A^T$ is the *transpose* of $A$, meaning that the rows and columns have been interchanged.
+
+2. Give the meaning of the $i$-$j$ entry of $\mathbf{G}$ (the entry in row $i$ and column $j$). State clearly the meaning of this entry using complete sentences (or sentence) and explain why it has this meaning.
+
 More coming!
 
