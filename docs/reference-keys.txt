@@ -21,7 +21,10 @@ partial-information-about-a-linear-transformation
 house-renovations
 matrix-of-a-nonlinear-transformation
 a-proof
+inner-and-outer-products
 archaeological-seriation
+rental-car
+adjacency-matrix
 important-definitions
 vector-spaces
 matrices

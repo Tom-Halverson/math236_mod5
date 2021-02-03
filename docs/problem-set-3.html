@@ -153,7 +153,10 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="3.3" data-path="problem-set-3.html"><a href="problem-set-3.html#house-renovations"><i class="fa fa-check"></i><b>3.3</b> House Renovations</a></li>
 <li class="chapter" data-level="3.4" data-path="problem-set-3.html"><a href="problem-set-3.html#matrix-of-a-nonlinear-transformation"><i class="fa fa-check"></i><b>3.4</b> Matrix of a Nonlinear Transformation?</a></li>
 <li class="chapter" data-level="3.5" data-path="problem-set-3.html"><a href="problem-set-3.html#a-proof"><i class="fa fa-check"></i><b>3.5</b> A Proof</a></li>
-<li class="chapter" data-level="3.6" data-path="problem-set-3.html"><a href="problem-set-3.html#archaeological-seriation"><i class="fa fa-check"></i><b>3.6</b> Archaeological Seriation</a></li>
+<li class="chapter" data-level="3.6" data-path="problem-set-3.html"><a href="problem-set-3.html#inner-and-outer-products"><i class="fa fa-check"></i><b>3.6</b> Inner and Outer Products</a></li>
+<li class="chapter" data-level="3.7" data-path="problem-set-3.html"><a href="problem-set-3.html#archaeological-seriation"><i class="fa fa-check"></i><b>3.7</b> Archaeological Seriation</a></li>
+<li class="chapter" data-level="3.8" data-path="problem-set-3.html"><a href="problem-set-3.html#rental-car"><i class="fa fa-check"></i><b>3.8</b> Rental Car</a></li>
+<li class="chapter" data-level="3.9" data-path="problem-set-3.html"><a href="problem-set-3.html#adjacency-matrix"><i class="fa fa-check"></i><b>3.9</b> Adjacency Matrix</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
 <li class="chapter" data-level="4" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>4</b> Important Definitions</a><ul>
@@ -265,7 +268,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li>Due: Tuesday February 9 by noon CST.</li>
 <li>Upload your solutions to Moodle in a PDF.</li>
 <li>Please feel free to <strong>use RStudio for all row reductions.</strong></li>
-<li>You can download the <a href="https://github.com/mathbeveridge/math236_f20/blob/main/PS3-problem-set-3.Rmd">Rmd source file for this problem set</a>.</li>
+<li>You can download the <a href="https://github.com/Tom-Halverson/math236_f20/blob/main/PS3-problem-set-3.Rmd">Rmd source file for this problem set</a>.</li>
 </ul>
 <p>The Problem Set covers sections 1.8, 1.9, 2.1, 2.2.</p>
 <div id="properties-of-linear-transformations" class="section level2">
@@ -306,7 +309,7 @@ T\left(\begin{bmatrix}~~2 \\ -1 \\ 0 \\ -1 \end{bmatrix} \right)=\begin{bmatrix}
 \]</span>
 If that is all we know about <span class="math inline">\(T\)</span>, then do we have enough information to compute the value of <span class="math inline">\(T\)</span> below?
 <span class="math display">\[T\left(\begin{bmatrix} 5 \\ 8 \\ ~3~ \\ 8 \end{bmatrix} \right) = \hskip5in\]</span>
-If yes, then compute it (showing how you do so). If no, then explain why not.</p>
+If yes, then compute it (showing how you do so). If no, then explain why not. Hint: try to write the third input vector as a linear combination of the first two.</p>
 </div>
 <div id="house-renovations" class="section level2">
 <h2><span class="header-section-number">3.3</span> House Renovations</h2>
@@ -319,13 +322,6 @@ If yes, then compute it (showing how you do so). If no, then explain why not.</p
 <li>Transformation #2</li>
 </ol>
 <p><img src="images/ps3-house1.png" style="width:40.0%" /> <span class="math inline">\(\qquad \qquad\)</span> <img src="images/ps3-house3.png" style="width:40.0%" /></p>
-<p>For your convenience, here is the code to make the original plot of the house.</p>
-<pre><code>par(pty=&quot;s&quot;)
-house = cbind(c(0,0), c(0,3/4), c(1/2,3/4), c(1/2,0), c(1,0), c(1,1), c(5/4,1), c(0,2), c(-5/4,1), c(-1,1), c(-1,0), c(0,0));
-
-plot(house[1,],house[2,],type=&quot;n&quot;,xlim=c(-6,6),ylim=c(-6,6),xlab=&quot;x&quot;,ylab=&quot;y&quot;, asp=1)
-abline(h=-6:6, v=-6:6, col=&quot;gray&quot;, lty=&quot;dotted&quot;)
-polygon(house[1,], house[2,], col = &quot;gray&quot;, border = &quot;blue&quot;)</code></pre>
 </div>
 <div id="matrix-of-a-nonlinear-transformation" class="section level2">
 <h2><span class="header-section-number">3.4</span> Matrix of a Nonlinear Transformation?</h2>
@@ -357,8 +353,39 @@ Explain how the result of this computation demonstrates that <span class="math i
 <li><p>Explain why this tells us that <span class="math inline">\(T\)</span> is not one-to-one.</p></li>
 </ol>
 </div>
+<div id="inner-and-outer-products" class="section level2">
+<h2><span class="header-section-number">3.6</span> Inner and Outer Products</h2>
+<p>We can also think of vectors as matrix. A column vector is an <span class="math inline">\(n \times 1\)</span> matrix and a row vector is a <span class="math inline">\(1 \times n\)</span> matrix.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Compute the following products. These matrix products are called <em>inner products</em> (or dot products) of the vectors.</li>
+</ol>
+<p><span class="math display">\[
+\begin{bmatrix} 4 &amp; -1 &amp; 2 &amp; 3\end{bmatrix}
+\begin{bmatrix} 1 \\ 2 \\1  \\3  \\\end{bmatrix} = \hskip3in
+\]</span>
+<span class="math display">\[
+\begin{bmatrix} 4 &amp; -1 &amp; 2 &amp; 3\end{bmatrix}
+\begin{bmatrix} 1 \\ 1 \\1  \\1  \\\end{bmatrix} = \hskip3in
+\]</span>
+<span class="math display">\[
+\begin{bmatrix} 4 &amp; -1 &amp; 2 &amp; 3\end{bmatrix}
+\begin{bmatrix} 2 \\ 5 \\ 0  \\ -1  \\\end{bmatrix} = \hskip3in
+\]</span>
+b. Now compute the following products. These are called <em>outer products</em>.</p>
+<p><span class="math display">\[
+\begin{bmatrix} 1 \\ 2 \\1  \\3  \\\end{bmatrix}
+\begin{bmatrix} 1 &amp; -5 &amp; 2 &amp; 3\end{bmatrix} = \hskip3in
+\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix} 1 \\ 2 \\1  \\3  \\\end{bmatrix}
+\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1\end{bmatrix} =\hskip3in
+\]</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Row reduce both of the matrices that you get in part b (this should be easy to do by hand,but you can use R if you want to). How many pivots do you get? Explain why you always get this number of pivots when you row reduce an outer product.</li>
+</ol>
+</div>
 <div id="archaeological-seriation" class="section level2">
-<h2><span class="header-section-number">3.6</span> Archaeological Seriation</h2>
+<h2><span class="header-section-number">3.7</span> Archaeological Seriation</h2>
 <p>The matrix <span class="math inline">\(A\)</span> below is used in archaeological dating. Its rows correspond to four different grave sites <span class="math inline">\(G_1, G_2, G_3, G_4\)</span> and its columns correspond to five types of pottery<span class="math inline">\(P_1, P_2, P_3, P_4, P_5\)</span>. There is a 1 in position <span class="math inline">\(i\)</span>-<span class="math inline">\(j\)</span> if pottery type <span class="math inline">\(P_j\)</span> is found in grave <span class="math inline">\(G_i\)</span> (and a 0 otherwise).
 <span class="math display">\[
 A=\begin{array}{c|ccccc}
@@ -374,7 +401,48 @@ G_4  &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
 <li><p>Compute the matrix <span class="math inline">\(\mathbf{G} = A A^T\)</span>, where <span class="math inline">\(A^T\)</span> is the <em>transpose</em> of <span class="math inline">\(A\)</span>, meaning that the rows and columns have been interchanged.</p></li>
 <li><p>Give the meaning of the <span class="math inline">\(i\)</span>-<span class="math inline">\(j\)</span> entry of <span class="math inline">\(\mathbf{G}\)</span> (the entry in row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span>). State clearly the meaning of this entry using complete sentences (or sentence) and explain why it has this meaning.</p></li>
 </ol>
-<p>More coming!</p>
+</div>
+<div id="rental-car" class="section level2">
+<h2><span class="header-section-number">3.8</span> Rental Car</h2>
+<p>Solve this problem using R and turn in a markdown file knitted to .html.</p>
+<p>A group of Macalester alumni open a rental car company specializing in renting electric cars. As a start, they have opened offices in St. Paul, Rochester, and Duluth. Through market research they find that of the cars rented in St. Paul, 85% will get returned in St. Paul, 9% will get returned in Rochester, and 6% will get returned in Duluth. Of the cars rented in Rochester, 40% will get returned in St. Paul, 50% will get returned in Rochester, and 10% in Duluth. Of the cars rented in Duluth, 35% will get returned in St. Paul, 55% in Rochester, and 60% in Duluth. This information is represented in the matrix below.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="problem-set-3.html#cb1-1"></a>StP =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">85</span>,.<span class="dv">09</span>,.<span class="dv">06</span>)</span>
+<span id="cb1-2"><a href="problem-set-3.html#cb1-2"></a>Roch =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">30</span>,.<span class="dv">60</span>,.<span class="dv">10</span>)</span>
+<span id="cb1-3"><a href="problem-set-3.html#cb1-3"></a>Dul =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">35</span>,.<span class="dv">05</span>,.<span class="dv">60</span>) </span>
+<span id="cb1-4"><a href="problem-set-3.html#cb1-4"></a>M =<span class="st"> </span><span class="kw">cbind</span>(StP,Roch,Dul)</span>
+<span id="cb1-5"><a href="problem-set-3.html#cb1-5"></a>M</span></code></pre></div>
+<pre><code>##       StP Roch  Dul
+## [1,] 0.85  0.3 0.35
+## [2,] 0.09  0.6 0.05
+## [3,] 0.06  0.1 0.60</code></pre>
+<p>Such a matrix is called a <em>probability</em> matrix or a <em>stochastic</em> matrix because it contains numbers between 0 and 1 and each of its columns sum to 1.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>The owners are trying to use this data to estimate how much of their fleet will be at each location on average in the long run. Assume that initially they locate 20 cars in each city. This can be recorded by the vector <code>v0 = c(20,20,20)</code>. Apply, M to v0, call this vector v1, and explain, using how the matrix-vector product works, why v1 represents the number of cars at each location one day later (for simplicity, we assume that each rental is for 1 day).</p></li>
+<li><p>Now apply M to v1 and call it v2. This should represent the number of cars at each location 2 days later. Also compute the square of the matrix M and call it M2. Confirm that M2 times v0 is the same as M times v1.</p></li>
+<li><p>Write a for loop that applies M over and over again to see what happens to the distribution of cars in the long-run (we will learn how to do this in class but you can also probably just google it). Does this sequence stabilize or does it keep changing after each application? If it does stabilize, how long does it take to stabilize (to within 0.1 cars at each location).</p></li>
+<li><p>Does the starting distribution matter? Try 4 different starting distributions (with a total of 60 cars) and see what the final distribution looks like in each case. For one of your 4 starting distributions, try all 60 cars at one of the locations.</p></li>
+</ol>
+</div>
+<div id="adjacency-matrix" class="section level2">
+<h2><span class="header-section-number">3.9</span> Adjacency Matrix</h2>
+<p>You can do this problem in R or by hand. Consider the matrix <span class="math inline">\(A\)</span> defined here</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="problem-set-3.html#cb3-1"></a>A =<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>( <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> ,<span class="dv">0</span>), <span class="kw">c</span>(<span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span>, <span class="dv">0</span> ),<span class="kw">c</span>( <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span>, <span class="dv">0</span> ),</span>
+<span id="cb3-2"><a href="problem-set-3.html#cb3-2"></a>  <span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span>, <span class="dv">0</span> ),<span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span>, <span class="dv">1</span> ), <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb3-3"><a href="problem-set-3.html#cb3-3"></a>A</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    0    1    0    1    1    0
+## [2,]    1    0    1    1    0    0
+## [3,]    0    1    0    1    1    0
+## [4,]    1    1    1    0    1    0
+## [5,]    1    0    0    1    0    1
+## [6,]    0    0    0    0    1    0</code></pre>
+<p>This matrix represents the connections in the network diagram below. There is a 1 in position <span class="math inline">\((i,j)\)</span> of the matrix if there is a connection (an edge) between vertex <span class="math inline">\(i\)</span> and vertex <span class="math inline">\(j\)</span> and there is a 0 if there is not.</p>
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-5-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Compute <span class="math inline">\(A v\)</span> where <span class="math inline">\(v\)</span> is the vector of all 1’s. Explain what this new vector tells us about the graph.</p></li>
+<li><p>Compute <span class="math inline">\(A^2 = A A\)</span>, the square of the matrix <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Look at the <span class="math inline">\((2,5)\)</span> entry of <span class="math inline">\(A^2\)</span>. Explain what this entry says about connections in the network. Do the same for the <span class="math inline">\((2,3)\)</span> and the <span class="math inline">\((2,6)\)</span> entry of <span class="math inline">\(A^2\)</span>.</p></li>
+</ol>
 
 </div>
 </div>

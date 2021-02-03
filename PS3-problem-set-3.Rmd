@@ -4,16 +4,9 @@
 * Due: Tuesday February 9 by noon CST. 
 * Upload your solutions to Moodle in a PDF. 
 * Please feel free to **use RStudio for all row reductions.**
-* You can download the [Rmd source file  for this problem set](https://github.com/mathbeveridge/math236_f20/blob/main/PS3-problem-set-3.Rmd).
+* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_f20/blob/main/PS3-problem-set-3.Rmd).
 
 The Problem Set covers sections 1.8, 1.9, 2.1, 2.2.
-
-
-```{r, echo=FALSE}
-require(pracma)
-```
-
-
 
 
 ## Properties of Linear Transformations
@@ -56,7 +49,7 @@ T\left(\begin{bmatrix}~~2 \\ -1 \\ 0 \\ -1 \end{bmatrix} \right)=\begin{bmatrix}
 $$
 If that is all we know about $T$, then do we have enough information to compute the value of $T$ below? 
 $$T\left(\begin{bmatrix} 5 \\ 8 \\ ~3~ \\ 8 \end{bmatrix} \right) = \hskip5in$$
-If yes, then compute it (showing how you do so). If no, then explain why not.
+If yes, then compute it (showing how you do so). If no, then explain why not. Hint: try to write the third input vector as a linear combination of the first two.
 
 
 
@@ -78,16 +71,6 @@ Find the matrix of a linear transformation $T: \mathbb{R}^2 \to \mathbb{R}^2$ th
 ![](images/ps3-house1.png){width=40%} $\qquad \qquad$ ![](images/ps3-house3.png){width=40%}
 
 
-For your convenience, here is the code to make the original plot of the house.
-
-```
-par(pty="s")
-house = cbind(c(0,0), c(0,3/4), c(1/2,3/4), c(1/2,0), c(1,0), c(1,1), c(5/4,1), c(0,2), c(-5/4,1), c(-1,1), c(-1,0), c(0,0));
-
-plot(house[1,],house[2,],type="n",xlim=c(-6,6),ylim=c(-6,6),xlab="x",ylab="y", asp=1)
-abline(h=-6:6, v=-6:6, col="gray", lty="dotted")
-polygon(house[1,], house[2,], col = "gray", border = "blue")
-```
 
 ## Matrix of a Nonlinear Transformation?
 
@@ -124,6 +107,40 @@ c. Use the definition of linear transformation and parts (a) and (b) above to ar
 
 d. Explain why this tells us that $T$ is not one-to-one.
 
+## Inner and Outer Products
+
+We can also think of vectors as matrix. A column vector is an $n \times 1$ matrix and a row vector is a $1 \times n$ matrix. 
+
+a. Compute the following products. These matrix products are called *inner products* (or dot products) of the vectors.
+
+
+$$
+\begin{bmatrix} 4 & -1 & 2 & 3\end{bmatrix}
+\begin{bmatrix} 1 \\ 2 \\1  \\3  \\\end{bmatrix} = \hskip3in
+$$
+$$
+\begin{bmatrix} 4 & -1 & 2 & 3\end{bmatrix}
+\begin{bmatrix} 1 \\ 1 \\1  \\1  \\\end{bmatrix} = \hskip3in
+$$
+$$
+\begin{bmatrix} 4 & -1 & 2 & 3\end{bmatrix}
+\begin{bmatrix} 2 \\ 5 \\ 0  \\ -1  \\\end{bmatrix} = \hskip3in
+$$
+b. Now compute the following products. These are called *outer products*.  
+
+$$
+\begin{bmatrix} 1 \\ 2 \\1  \\3  \\\end{bmatrix}
+\begin{bmatrix} 1 & -5 & 2 & 3\end{bmatrix} = \hskip3in
+$$
+
+$$
+\begin{bmatrix} 1 \\ 2 \\1  \\3  \\\end{bmatrix}
+\begin{bmatrix} 1 & 1 & 1 & 1\end{bmatrix} =\hskip3in
+$$
+
+c. Row reduce both of the matrices that you get in part b (this should be easy to do by hand,but you can use R if you want to). How many pivots do you get? Explain why you always get this number of pivots when you row reduce an outer product.
+
+
 ## Archaeological Seriation
 
 The matrix $A$ below is used in  archaeological dating. Its rows correspond to four different grave sites $G_1, G_2, G_3, G_4$ and its columns correspond to five types of pottery$P_1, P_2, P_3, P_4, P_5$. There is a 1 in position $i$-$j$ if pottery type $P_j$ is found in grave $G_i$ (and a 0 otherwise).
@@ -142,5 +159,54 @@ $$
 
 2. Give the meaning of the $i$-$j$ entry of $\mathbf{G}$ (the entry in row $i$ and column $j$). State clearly the meaning of this entry using complete sentences (or sentence) and explain why it has this meaning.
 
-More coming!
+## Rental Car
+
+Solve this problem using R and turn in a markdown file knitted to .html. 
+
+A group of Macalester alumni open a rental car company specializing in  renting electric cars. As a start, they have opened offices in St. Paul, Rochester, and Duluth. Through market research they find that of the cars rented in St. Paul, 85% will get returned in St. Paul, 9% will get returned in Rochester, and 6% will get returned in Duluth. Of the cars rented in Rochester, 40% will get returned in St. Paul, 50% will get returned in Rochester, and 10% in Duluth. Of the cars rented in Duluth, 35% will get returned in St. Paul, 55% in Rochester, and 60% in Duluth. This information is represented in the matrix below.
+
+```{r,echo=TRUE}
+StP = c(.85,.09,.06)
+Roch = c(.30,.60,.10)
+Dul = c(.35,.05,.60) 
+M = cbind(StP,Roch,Dul)
+M
+```
+Such a matrix is called a *probability* matrix or a *stochastic* matrix because it  contains numbers between 0 and 1 and each of its columns sum to 1.
+
+a. The owners are trying to use this data to estimate how much of their fleet will be at each location on average in the long run. Assume that initially they locate 20 cars in each city. This can be recorded by the vector `v0 = c(20,20,20)`. Apply, M to v0, call this vector v1, and explain, using how the matrix-vector product works, why v1 represents the number of cars at each location one day later (for simplicity, we assume that each rental is for 1 day).
+
+b. Now apply M to v1 and call it v2. This should represent the number of cars at each location 2 days later. Also compute the square of the matrix M and call it M2. Confirm that M2 times v0 is the same as M times v1. 
+
+c. Write a for loop that applies M over and over again to see what happens to the distribution of cars in the long-run (we will learn how to do this in class but you can also probably just google it). Does this sequence stabilize or does it keep changing after each application? If it does stabilize, how long does it take to stabilize (to within 0.1 cars at each location).
+
+d. Does the starting distribution matter? Try 4 different starting distributions (with a total of 60 cars) and see what the final distribution looks like in each case. For one of your 4 starting distributions, try all 60 cars at one of the locations.
+
+
+## Adjacency Matrix
+
+You can do this problem in R or by hand. Consider the matrix $A$ defined here
+```{r,echo=TRUE}
+A = rbind(c( 0 , 1 , 0 , 1 , 1 ,0), c(1 , 0 , 1 , 1 , 0, 0 ),c( 0 , 1 , 0 , 1 , 1, 0 ),
+  c( 1 , 1 , 1 , 0 , 1, 0 ),c( 1 , 0 , 0 , 1 , 0, 1 ), c(0, 0, 0, 0, 1, 0))
+A
+```
+
+This matrix represents the connections in the network diagram below. There is a 1 in position $(i,j)$ of the matrix if there is a connection (an edge) between vertex $i$ and vertex $j$ and there is a 0 if there is not.
+
+```{r,echo=FALSE}
+suppressPackageStartupMessages(library(igraph))
+g=graph_from_adjacency_matrix(A,mode='undirected')
+V(g)$label = c(1,2,3,4,5,6)
+plot(g)
+```
+
+a. Compute $A v$ where $v$ is the vector of all 1's. Explain what this new vector tells us about the graph.
+
+b. Compute $A^2 = A A$, the square of the matrix $A$.
+
+c. Look at the $(2,5)$ entry of $A^2$. Explain what this entry says about connections in the network. Do the same for the $(2,3)$ and the $(2,6)$ entry of $A^2$.
+
+
+
 
