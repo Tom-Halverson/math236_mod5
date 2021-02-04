@@ -60,6 +60,11 @@ B %*% solve(B)
 8. Multiply A by its inverse and look closely at the answer you get. 
 
 ```{r,echo=TRUE}
+solve(A)
+A %*% solve(A)
+```
+
+```{r,echo=TRUE}
 
 ```
 
@@ -72,4 +77,6 @@ B %*% solve(B)
 ```
 
 10. Enter the matrix A in problem 3.7 in the homework. Then compute the matrix G which is A times its transpose. Discuss its meaning.
+
+
 

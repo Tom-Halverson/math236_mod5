@@ -96,7 +96,7 @@ Explain how the result of this computation demonstrates that $T$ is not linear.
 ## A Proof 
 
 
-Let $T: \mathbb{R}^n \to \mathbb{R}^m$ be a linear transformation. Suppose that $\{v_1, v_2, v_3, v_4\}$ is a linearly independent set of vectors in $\mathbb{R}^n$ but the set of images $\{T(v_1), T(v_2), T(v_3), T(v_4)\}$ is a linearly dependent set in $\mathbb{R}^m$. In the following steps, you will prove that $T$ must be one-to-one.
+Let $T: \mathbb{R}^n \to \mathbb{R}^m$ be a linear transformation. Suppose that $\{v_1, v_2, v_3, v_4\}$ is a linearly independent set of vectors in $\mathbb{R}^n$ but the set of images $\{T(v_1), T(v_2), T(v_3), T(v_4)\}$ is a linearly dependent set in $\mathbb{R}^m$. In the following steps, you will prove that $T$ is not one-to-one.
 
 
 a. Write out clearly, using the definition, what it means for $\{v_1, v_2, v_3, v_4\}$ to be linearly independent. 
