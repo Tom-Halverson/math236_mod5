@@ -275,29 +275,29 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <h1><span class="header-section-number">Section 13</span> Matrix Multiplication</h1>
 <p><a href="https://github.com/Tom-Halverson/math236_s21/blob/main/03-matrix-multiplication.Rmd">Download this Rmd file from GitHub</a></p>
 <p>Here we will practice multiplying matrices in R. First, let’s define a few matrices.I’m using a trick here. By putting the assignment in parentheses, it assigns the matrix and displays it.s</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="matrix-multiplication.html#cb69-1"></a>(<span class="dt">A =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="matrix-multiplication.html#cb70-1"></a>(<span class="dt">A =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>)))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    4    1
 ## [2,]    2    5    1
 ## [3,]    3    6   -1</code></pre>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="matrix-multiplication.html#cb71-1"></a>(<span class="dt">B =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="matrix-multiplication.html#cb72-1"></a>(<span class="dt">B =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">1</span>)))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    1    0
 ## [2,]   -1    1    2
 ## [3,]    1    1    1</code></pre>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="matrix-multiplication.html#cb73-1"></a>(<span class="dt">C =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="matrix-multiplication.html#cb74-1"></a>(<span class="dt">C =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    2    1    1    3
 ## [2,]    1    0   -3    2
 ## [3,]    1    1    1    1</code></pre>
 <p>We multiply using the <code>%*%</code> command. As seen here:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="matrix-multiplication.html#cb75-1"></a>A <span class="op">%*%</span><span class="st"> </span>B</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="matrix-multiplication.html#cb76-1"></a>A <span class="op">%*%</span><span class="st"> </span>B</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]   -2    6    9
 ## [2,]   -2    8   11
 ## [3,]   -4    8   11</code></pre>
 <p>Note that</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="matrix-multiplication.html#cb77-1"></a>B <span class="op">%*%</span><span class="st"> </span>A</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="matrix-multiplication.html#cb78-1"></a>B <span class="op">%*%</span><span class="st"> </span>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    3    9    2
 ## [2,]    7   13   -2
@@ -308,7 +308,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li><p>The <em>transpose</em> of a matrix is computed by <code>t(A)</code>. Compute the transpose of the matrices A, B, C and be sure that you all understand what it does.</p></li>
 <li><p>The command <code>diag(n)</code> gives the n x n <em>identity matrix</em>. This is denoted <span class="math inline">\(I_n\)</span>. For example, here is <span class="math inline">\(I_3\)</span>.</p></li>
 </ol>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="matrix-multiplication.html#cb79-1"></a><span class="kw">diag</span>(<span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="matrix-multiplication.html#cb80-1"></a><span class="kw">diag</span>(<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    0    0
 ## [2,]    0    1    0
@@ -319,12 +319,12 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li><p>Multiply C by an identity matrix I C and C I. You might need a different size on the left and on the right.</p></li>
 <li><p>Our topic for Thursday (tomorrow) is the inverse of a matrix. You compute the inverse of the matrix A with <code>solve(A)</code>. Try this</p></li>
 </ol>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="matrix-multiplication.html#cb81-1"></a><span class="kw">solve</span>(B)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="matrix-multiplication.html#cb82-1"></a><span class="kw">solve</span>(B)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,] -0.5 -0.5    1
 ## [2,]  1.5  0.5   -1
 ## [3,] -1.0  0.0    1</code></pre>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="matrix-multiplication.html#cb83-1"></a>B <span class="op">%*%</span><span class="st"> </span><span class="kw">solve</span>(B)</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="matrix-multiplication.html#cb84-1"></a>B <span class="op">%*%</span><span class="st"> </span><span class="kw">solve</span>(B)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    0    0
 ## [2,]    0    1    0
@@ -332,12 +332,12 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <ol start="8" style="list-style-type: decimal">
 <li>Multiply A by its inverse and look closely at the answer you get.</li>
 </ol>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="matrix-multiplication.html#cb85-1"></a><span class="kw">solve</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="matrix-multiplication.html#cb86-1"></a><span class="kw">solve</span>(A)</span></code></pre></div>
 <pre><code>##            [,1]       [,2]       [,3]
 ## [1,] -1.8333333  1.6666667 -0.1666667
 ## [2,]  0.8333333 -0.6666667  0.1666667
 ## [3,] -0.5000000  1.0000000 -0.5000000</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="matrix-multiplication.html#cb87-1"></a>A <span class="op">%*%</span><span class="st"> </span><span class="kw">solve</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="matrix-multiplication.html#cb88-1"></a>A <span class="op">%*%</span><span class="st"> </span><span class="kw">solve</span>(A)</span></code></pre></div>
 <pre><code>##              [,1]          [,2]          [,3]
 ## [1,] 1.000000e+00  0.000000e+00  0.000000e+00
 ## [2,] 3.330669e-16  1.000000e+00 -1.110223e-16
@@ -345,15 +345,15 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <ol start="9" style="list-style-type: decimal">
 <li>Some matrices do not have inverses. Try computing the inverse of the following matrices. We will discuss this tomorrow!</li>
 </ol>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="matrix-multiplication.html#cb89-1"></a>(<span class="dt">M1 =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="matrix-multiplication.html#cb90-1"></a>(<span class="dt">M1 =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>)))</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    3   -2
 ## [2,]    5    1</code></pre>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="matrix-multiplication.html#cb91-1"></a>(<span class="dt">M2 =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">3</span>),<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">4</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="matrix-multiplication.html#cb92-1"></a>(<span class="dt">M2 =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">3</span>),<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">4</span>)))</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    4    5
 ## [2,]    3    4</code></pre>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="matrix-multiplication.html#cb93-1"></a>(<span class="dt">M3 =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">5</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="matrix-multiplication.html#cb94-1"></a>(<span class="dt">M3 =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">5</span>)))</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    4   10
 ## [2,]    2    5</code></pre>
