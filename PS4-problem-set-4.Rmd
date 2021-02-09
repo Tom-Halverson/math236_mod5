@@ -47,9 +47,7 @@ $$
 F  = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} ~\Bigg\vert~ \ x_3 = x_1 + x_2, x_4 = x_2 + x_3, x_5 = x_3 + x_4 \right\} \subseteq \mathbb{R}^5.   \hskip5in
 $$
 
-a. Show that $F$ is a subspace of $\mathbb{R}^5$.
-
-b. Find a basis of $F$.
+Find a basis for $F$. Be sure to show that your vectors span $F$ and are linearly independent.
 
 
 ## Vectors Rescaled
