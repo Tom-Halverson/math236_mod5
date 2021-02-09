@@ -49,9 +49,7 @@ $$
 
 a. Show that $F$ is a subspace of $\mathbb{R}^5$.
 
-b. Find a set of vectors which span $F$.
-
-c. Find a basis of $F$.
+b. Find a basis of $F$.
 
 
 ## Vectors Rescaled
