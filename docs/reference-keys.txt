@@ -25,6 +25,15 @@ inner-and-outer-products
 archaeological-seriation
 rental-car
 adjacency-matrix
+problem-set-4
+rainy-day-in-la
+fibonacci-vectors
+vectors-rescaled
+polynomial-vector-spaces
+column-and-null-space
+extend-to-a-basis
+getting-into-a-subspace
+a-vector-in-both-cola-and-nula
 important-definitions
 vector-spaces
 matrices
