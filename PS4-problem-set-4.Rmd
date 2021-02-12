@@ -3,6 +3,8 @@
 
 * Due: Wednesday February 17 by noon CST. 
 * Upload your solutions to Moodle in a PDF. 
+* Please feel free to **use RStudio for all row reductions.**
+* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_s21/blob/main/PS4-problem-set-4.Rmd).
 
 
 
