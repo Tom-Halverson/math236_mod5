@@ -200,7 +200,17 @@ Let $\mathcal{M} = \{ \mathsf{H}_1, \mathsf{H}_2, \mathsf{H_3} \}$. Then $\mathc
 
 a. Express $\mathsf{H}_4$ in the tetrahedral basis. Hint: first compute $\mathsf{H}_1+\mathsf{H}_2+\mathsf{H}_3+\mathsf{H}_4$ using the coordinates above. You do not need to do any row reductions for this question.
 
-b. Chemists are interested in symmetry operations. These are linear transformations such that the atom looks the same after the transformation as it did before. For example one such operation is rotation $r_4$ by 120$^o$ around the  $\mathsf{H}_4$ axis. This rotation sends $\mathsf{H}_1$ to $\mathsf{H}_3$, $\mathsf{H}_3$ to $\mathsf{H}_2$, and $\mathsf{H}_2$ to $\mathsf{H}_1$. Give the matrix of $r_4$  in the $\mathcal{M}$ basis:
+b. Give the change of basis matrix $T$ that converts from the tetrahderal basis $\mathcal{M}$ to the standard basis $\mathcal{S}$.
+
+c. Chemists are interested in symmetry operations. These are linear transformations such that the atom looks the same after the transformation as it did before. For example one such operation is rotation $r_4$ by 120$^o$ around the  $\mathsf{H}_4$ axis. This rotation sends $\mathsf{H}_1$ to $\mathsf{H}_3$, $\mathsf{H}_3$ to $\mathsf{H}_2$, and $\mathsf{H}_2$ to $\mathsf{H}_1$. Give the matrix of $r_4$  in the $\mathcal{M}$ basis:
+
+```{r}
+r4.M = cbind(c(0,0,0),c(0,0,0),c(0,0,0))
+rownames(r4.M) <- c("H1","H2","H3")
+colnames(r4.M) <- c("H1","H2","H3")
+r4.M
+```
+
 
 More coming!
 

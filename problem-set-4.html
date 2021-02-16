@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 1 Problem Set 4 | PS4-problem-set-4.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 1 Problem Set 4 | PS4-problem-set-4.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 1 Problem Set 4 | PS4-problem-set-4.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="m236.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href = "./">MATH 236: Linear Algebra</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#problem-set-4"><i class="fa fa-check"></i><b>1</b> Problem Set 4</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#rainy-day-in-la"><i class="fa fa-check"></i><b>1.1</b> Rainy Day in LA</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#fibonacci-vectors"><i class="fa fa-check"></i><b>1.2</b> Fibonacci Vectors</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#vectors-rescaled"><i class="fa fa-check"></i><b>1.3</b> Vectors Rescaled</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#polynomial-vector-spaces"><i class="fa fa-check"></i><b>1.4</b> Polynomial Vector Spaces</a></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#column-and-null-space"><i class="fa fa-check"></i><b>1.5</b> Column and Null Space</a></li>
+<li class="chapter" data-level="1.6" data-path=""><a href="#extend-to-a-basis"><i class="fa fa-check"></i><b>1.6</b> Extend to a basis</a></li>
+<li class="chapter" data-level="1.7" data-path=""><a href="#getting-into-a-subspace"><i class="fa fa-check"></i><b>1.7</b> Getting Into a Subspace</a></li>
+<li class="chapter" data-level="1.8" data-path=""><a href="#a-vector-in-both-cola-and-nula"><i class="fa fa-check"></i><b>1.8</b> A Vector in Both Col(A) and Nul(A)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="problem-set-4" class="section level1">
+<h1><span class="header-section-number">Section 1</span> Problem Set 4</h1>
+<ul>
+<li>Due: Wednesday February 17 by noon CST.</li>
+<li>Upload your solutions to Moodle in a PDF.</li>
+<li>Please feel free to <strong>use RStudio for all row reductions.</strong></li>
+<li>You can download the <a href="https://github.com/Tom-Halverson/math236_s21/blob/main/PS4-problem-set-4.Rmd">Rmd source file for this problem set</a>.</li>
+</ul>
+<p>The Problem Set covers sections 2.2-2.3 on Matrix Inverses and 4.1-4.3 on Subspaces and Bases.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">require</span>(<span class="st">&#39;pracma&#39;</span>)</span></code></pre></div>
+<pre><code>## Loading required package: pracma</code></pre>
+<div id="rainy-day-in-la" class="section level2">
+<h2><span class="header-section-number">1.1</span> Rainy Day in LA</h2>
+<p>In Los Angeles if it rains today, there is a 50% chance it will rain tomorrow, but it if is sunny today, there is a 90% chance it will be sunny tomorrow. This is modeled in the rain-sunshine probability matrix P.
+<span class="math display">\[
+P = 
+\begin{array}{c|cc|}
+&amp;\text{rain}&amp;\text{sun}\\
+\hline
+\text{rain}&amp;1/2&amp;1/10\\
+\text{sun}&amp;1/2&amp;9/10\\
+\hline
+\end{array}
+\]</span>
+This matrix works as follows: if the rain-sunshine probability today is (40, 60) (that is, 40% chance rain and 60% chance sunshine), then the rain-sunshine probability tomorrow is (26, 74) as seen by the calculation below.
+<span class="math display">\[
+\begin{bmatrix}
+1/2 &amp; 1/10 \\
+1/2 &amp; 9/10 \\
+\end{bmatrix} \begin{bmatrix} 40 \\ 60 \end{bmatrix} = \begin{bmatrix} 26 \\ 74 \end{bmatrix}
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Find the rain-sunshine probability the day after tomorrow.</p></li>
+<li><p>Compute <span class="math inline">\(P^2\)</span> and explain the meaning of each of the four entries in the matrix.</p></li>
+<li><p>Find <span class="math inline">\(P^{-1}\)</span> and and use it find the rain-sunshine probability <em>yesterday</em> if the rain-sunshine probability today is (40, 60).</p></li>
+</ol>
+</div>
+<div id="fibonacci-vectors" class="section level2">
+<h2><span class="header-section-number">1.2</span> Fibonacci Vectors</h2>
+<p>The Fibonacci vectors <span class="math inline">\(F\)</span> in <span class="math inline">\(\mathbb{R}^5\)</span> are defined below:
+<span class="math display">\[
+F  = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} ~\Bigg\vert~ \ x_3 = x_1 + x_2, x_4 = x_2 + x_3, x_5 = x_3 + x_4 \right\} \subseteq \mathbb{R}^5.   \hskip5in
+\]</span></p>
+<p>Find a basis for <span class="math inline">\(F\)</span>. Be sure to show that your vectors span <span class="math inline">\(F\)</span> and are linearly independent.</p>
+</div>
+<div id="vectors-rescaled" class="section level2">
+<h2><span class="header-section-number">1.3</span> Vectors Rescaled</h2>
+<p>If the function <span class="math inline">\(T: \mathbb{R}^n \to \mathbb{R}^n\)</span> is a linear transformation, then show that the set below is a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>
+<span class="math display">\[
+E_2 = \{\ \vec{x} \in \mathbb{R}^n \mid T(\vec{x}) = 2 \vec{x} \}.
+\]</span>
+Is there anything special about 2 in the definition? If it were replaced by another scalar, would it still be a subspace?</p>
+</div>
+<div id="polynomial-vector-spaces" class="section level2">
+<h2><span class="header-section-number">1.4</span> Polynomial Vector Spaces</h2>
+<p>This problem refers to the information about the vector space of polynomials <span class="math inline">\(\mathcal{P}_n\)</span> found in the Day 13 class notes.</p>
+<p>Here are three subsets of <span class="math inline">\(\mathcal{P}_4\)</span>. Decide if they are subspaces. In each case, if it is not a subspace, give examples using specific polynomials to show that one of the rules is broken, and if it is a subspace, show that the subspace rule holds for any two polynomials <span class="math inline">\(p(x), q(x)\)</span> and any constant <span class="math inline">\(c \in \mathbb{R}\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(U = \{ p(x) \in \mathcal{P}_4 \mid p(1) = 0 \}\)</span></p></li>
+<li><p><span class="math inline">\(V = \{ p(x) \in \mathcal{P}_4 \mid p(0) = 1 \}\)</span></p></li>
+<li><p><span class="math inline">\(W= \{ p(x) \in \mathcal{P}_4 \mid p&#39;(1) = 0 \}\)</span></p></li>
+</ol>
+</div>
+<div id="column-and-null-space" class="section level2">
+<h2><span class="header-section-number">1.5</span> Column and Null Space</h2>
+<p>Find a basis for the column space <span class="math inline">\(Col(A)\)</span> and the null space <span class="math inline">\(Nul(A)\)</span> of the following matrix <span class="math inline">\(A\)</span> below</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>(<span class="dt">A =</span> <span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">-1</span>),<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">-2</span>),</span>
+<span id="cb3-2"><a href="#cb3-2"></a>           <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">-2</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>,  <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">-1</span>, <span class="dv">-3</span> )))</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    1    2    0    2    0   -1
+## [2,]    1    2    1    1    0   -2
+## [3,]    2    4   -2    6    1    2
+## [4,]    1    2    0    2   -1   -3</code></pre>
+</div>
+<div id="extend-to-a-basis" class="section level2">
+<h2><span class="header-section-number">1.6</span> Extend to a basis</h2>
+<p>I am interested in the vectors below. I know that they do not span <span class="math inline">\(\mathbb{R}^5\)</span>, because there are not enough of them, but I want to extend this set to a basis of <span class="math inline">\(\mathbb{R}^5\)</span> by adding some vectors to the set.
+<span class="math display">\[
+\begin{bmatrix} 5\\ 4\\ 3\\ 1\\ 2 \end{bmatrix},
+\begin{bmatrix} 4\\ 4\\ 3\\ 1\\ 2 \end{bmatrix}, 
+\begin{bmatrix} 1\\ 1\\ 1\\ 1\\ 1\end{bmatrix}. 
+\]</span>
+I searched online for ideas and one suggested that I make the matrix below and row reduce it.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>(<span class="dt">A =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">diag</span>(<span class="dv">5</span>)))</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+## [1,]    5    4    1    1    0    0    0    0
+## [2,]    4    4    1    0    1    0    0    0
+## [3,]    3    3    1    0    0    1    0    0
+## [4,]    1    1    1    0    0    0    1    0
+## [5,]    2    2    1    0    0    0    0    1</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li><p>Row reduce this matrix.</p></li>
+<li><p>Use the result to come up with a basis for <span class="math inline">\(\mathbb{R}^5\)</span> that includes my original 3 vectors</p></li>
+<li><p>Explain why this method works.</p></li>
+</ol>
+</div>
+<div id="getting-into-a-subspace" class="section level2">
+<h2><span class="header-section-number">1.7</span> Getting Into a Subspace</h2>
+<p>Let <span class="math inline">\(S \subset \mathbb{R}^n\)</span> be a subspace and let <span class="math inline">\(\mathsf{v}, \mathsf{w} \in \mathbb{R}^n\)</span>. For each of the following statements, either give a specific example or explain why it cannot happen.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If <span class="math inline">\(\mathsf{v}\)</span> is in <span class="math inline">\(S\)</span> but <span class="math inline">\(\mathsf{w}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span>, can <span class="math inline">\(\mathsf{v} + \mathsf{w}\)</span> be in <span class="math inline">\(S\)</span>?</p></li>
+<li><p>If <span class="math inline">\(\mathsf{v}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span> and <span class="math inline">\(\mathsf{w}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span>, can <span class="math inline">\(\mathsf{v} + \mathsf{w}\)</span> be in <span class="math inline">\(S\)</span>?</p></li>
+<li><p>If <span class="math inline">\(\mathsf{v}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span> and <span class="math inline">\(c\)</span> is a nonzero constant, can <span class="math inline">\(c\mathsf{v}\)</span> be in <span class="math inline">\(S\)</span>?</p></li>
+</ol>
+</div>
+<div id="a-vector-in-both-cola-and-nula" class="section level2">
+<h2><span class="header-section-number">1.8</span> A Vector in Both Col(A) and Nul(A)</h2>
+<p>Give a <span class="math inline">\(3 \times 3\)</span> matrix <span class="math inline">\(A\)</span> for which the vector <span class="math inline">\(\mathsf{v} = \begin{bmatrix}3 \\ -2 \\ 5 \end{bmatrix}\)</span> is in both <span class="math inline">\(\mathrm{Col}(A)\)</span> and <span class="math inline">\(\mathrm{Nul}(A)\)</span>. Be sure to demonstrate that <span class="math inline">\(\mathsf{v} \in \mathrm{Col}(A)\)</span> and <span class="math inline">\(\mathsf{v} \in \mathrm{Nul}(A)\)</span>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
