@@ -9,13 +9,16 @@
 
 Our second quiz covers the following sections:
 
-* 2.1: Matrix Multiplication and the Matrix of a Linear Transformation
-* 2.2: Matrix Inverses
-* 2.3: The Invertible Matrix Theorem
-* 4.1: Subspaces of $\mathbb{R}^n$
-* 4.2: Null Space and Column Space
-* 4.3: Bases
-* 4.4: Coordinates 
+* Linear Transformations
+    + 2.1: Matrix Multiplication and the Matrix of a Linear Transformation
+    + 2.2: Matrix Inverses
+    + 2.3: [The Invertible Matrix Theorem](https://moodle.macalester.edu/pluginfile.php/59258/mod_resource/content/1/IVT.pdf)
+
+* Subspaces
+    + 4.1: Subspaces of $\mathbb{R}^n$
+    + 4.2: Null Space and Column Space
+    + 4.3: Bases
+    + 4.4: Coordinates 
 
 This corresponds to Problem Sets 3 and 4.
 
