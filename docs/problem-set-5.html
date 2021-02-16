@@ -500,8 +500,13 @@ Z = \left\{
 <p>Let <span class="math inline">\(\mathcal{M} = \{ \mathsf{H}_1, \mathsf{H}_2, \mathsf{H_3} \}\)</span>. Then <span class="math inline">\(\mathcal{M}\)</span> is a basis of <span class="math inline">\(\mathbb{R}^3\)</span>, which we will call the <strong>tetrahedral basis.</strong> You can see from the plot that these vectors are linearly independent (not all on the same plane)</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Express <span class="math inline">\(\mathsf{H}_4\)</span> in the tetrahedral basis. Hint: first compute <span class="math inline">\(\mathsf{H}_1+\mathsf{H}_2+\mathsf{H}_3+\mathsf{H}_4\)</span> using the coordinates above. You do not need to do any row reductions for this question.</p></li>
+<li><p>Give the change of basis matrix <span class="math inline">\(T\)</span> that converts from the tetrahderal basis <span class="math inline">\(\mathcal{M}\)</span> to the standard basis <span class="math inline">\(\mathcal{S}\)</span>.</p></li>
 <li><p>Chemists are interested in symmetry operations. These are linear transformations such that the atom looks the same after the transformation as it did before. For example one such operation is rotation <span class="math inline">\(r_4\)</span> by 120<span class="math inline">\(^o\)</span> around the <span class="math inline">\(\mathsf{H}_4\)</span> axis. This rotation sends <span class="math inline">\(\mathsf{H}_1\)</span> to <span class="math inline">\(\mathsf{H}_3\)</span>, <span class="math inline">\(\mathsf{H}_3\)</span> to <span class="math inline">\(\mathsf{H}_2\)</span>, and <span class="math inline">\(\mathsf{H}_2\)</span> to <span class="math inline">\(\mathsf{H}_1\)</span>. Give the matrix of <span class="math inline">\(r_4\)</span> in the <span class="math inline">\(\mathcal{M}\)</span> basis:</p></li>
 </ol>
+<pre><code>##    H1 H2 H3
+## H1  0  0  0
+## H2  0  0  0
+## H3  0  0  0</code></pre>
 <p>More coming!</p>
 </div>
 <div id="eigenbasis" class="section level2">
