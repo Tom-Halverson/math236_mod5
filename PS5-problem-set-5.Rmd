@@ -1,156 +1,208 @@
 
 # Problem Set 5
 
-* Due: Friday November 20 by 11:55pm CST. 
+* Due: Tuesday February 23 by 11:59am CST. 
 * Upload your solutions to Moodle in a PDF. 
 * Please feel free to **use RStudio for all row reductions.**
-* You can download the [Rmd source file  for this problem set](https://github.com/mathbeveridge/math236_f20/blob/main/PS5-problem-set-5.Rmd).
+* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_s21/blob/main/PS5-problem-set-5.Rmd).
 
 
-The Problem Set covers sections 4.1, 4.2, 4.3 and 4.4. 
+The Problem Set covers sections 4.4, 4.5, 3.1, 5.1 
 
 
+## A Tale of Two Bases
 
 
-
-
-
-## A Subspace from Two Linear Transformations
-
-Suppose  that $T: \mathbb{R}^n \to \mathbb{R}^m$ and  $S: \mathbb{R}^n \to \mathbb{R}^m$ are linear transformations. 
- Let $V  \subset  \mathbb{R}^n$ be  the set 
+I recommend using R on this problem. Consider the subspace $S$ of $\mathbb{R}^5$ below.
 $$
-V = \{ \mathsf{v}  \in \mathbb{R}^n\mid T(\mathsf{v})  = S(\mathsf{v}) \}.
-$$
-
-Prove that the set $V$ is a subspace by showing that:
-
-a. If $\mathsf{v} \in V$ and $\mathsf{w} \in V$ then  $\mathsf{v}+\mathsf{w} \in V$
-
-
-b. If $\mathsf{v} \in V$ and $c \in \mathbb{R}$ then  $c \mathsf{v} \in V$
-
-
-
-
-
-## Getting Into a Subspace
-
-Let $S \subset \mathbb{R}^n$ be a subspace and let $\mathsf{v}, \mathsf{w} \in \mathbb{R}^n$. For  each of the following statements, either give  a specific example  or explain why it cannot happen.
-
-
-a. If $\mathsf{v}$ is in $S$ but  $\mathsf{w}$ is **not** in $S$, can  $\mathsf{v} + \mathsf{w}$ be in $S$?  
-
-
-
-b. If $\mathsf{v}$ is **not** in $S$ and  $\mathsf{w}$ is **not** in $S$, can  $\mathsf{v} + \mathsf{w}$ be in $S$? 
-
-
-
-c. If $\mathsf{v}$ is **not** in  $S$ and $c$ is a  nonzero constant, can $c\mathsf{v}$ be  in $S$?
-
-
-
-## Creating a Basis from Another Basis
-
-Suppose that $\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3$ is a basis of $\mathbb{R}^3$. Let
-$$
-\mathsf{w}_1 = \mathsf{v}_1, \quad \mathsf{w}_2 = \mathsf{v}_1 +  \mathsf{v}_2, \quad  \mathsf{w}_3= \mathsf{v}_1 +  \mathsf{v}_2 +  \mathsf{v}_3.
-$$
-Prove that $\mathsf{w}_1, \mathsf{w}_2, \mathsf{w}_3$ is  also a  basis for $\mathbb{R}^3$ as follows:
-
-a.  Show that $\mathsf{w}_1, \mathsf{w}_2, \mathsf{w}_3$ are linearly independent as follows:
-    * We know that whenever $a_1 \mathsf{v}_1 + a_2 \mathsf{v}_2 + a_3 \mathsf{v}_3 = \mathbf{0}$, this means that  $a_1 = a_2 = a_3 = 0$.
-    * Now consider a linear combination $b_1 \mathsf{w}_1 + b_2  \mathsf{w}_2 + b_3 \mathsf{w}_3 = \mathbf{0}$. Use the previous fact to show that $b_1 = b_2 = b_3 = 0$.    
-
-
-b. Show that $\mathsf{w}_1, \mathsf{w}_2, \mathsf{w}_3$ span  $\mathbb{R}^3$ as follows:
-    * We know that for any $\mathsf{b} \in \mathbb{R}^3$, there  exist $a_1, a_2, a_3 \in \mathbb{R}$ such that $\mathsf{b} = a_1 \mathsf{v}_1 + a_2 \mathsf{v}_2 + a_3 \mathsf{v}_3$.
-    * Use the previous fact to show that there also exist $c_1, c_2, c_3 \in \mathbb{R}$ such that $\mathsf{c} =  b_1 \mathsf{w}_1 + b_2 \mathsf{w}_2 + b_3 \mathsf{w}_3$.
-
-
-
-## A Vector that is in Both Col(A) and Nul}(A)
-
-Give a $3 \times 3$ matrix $A$ for which the vector $\mathsf{v} = \begin{bmatrix}3 \\ -2 \\ 5   \end{bmatrix}$ is in both $\mathrm{Col}(A)$ and $\mathrm{Nul}(A)$. Be sure to demonstrate that $\mathsf{v} \in \mathrm{Col}(A)$ and $\mathsf{v} \in \mathrm{Nul}(A)$.
-
-
-
-## Changing Coordinate Systems
-
-Here are three  bases for $\mathbb{R}^4$:
-
-
-\begin{align}
-{\cal S}  &= \left\{
+S = \textsf{span}\left(
 \begin{bmatrix}
-1 \\ 0 \\ 0 \\ 0
+ 1  \\
+ 1  \\
+ 1  \\
+ 1  \\
+ 2  \\
 \end{bmatrix},
-\quad
 \begin{bmatrix}
-0 \\ 1 \\ 0 \\ 0
+1  \\
+2  \\
+3  \\
+0  \\
+-1 \\
 \end{bmatrix},
-\quad
 \begin{bmatrix}
-0 \\0 \\ 1 \\ 0
+0  \\
+0  \\
+0 \\
+1  \\
+ 2  \\
 \end{bmatrix},
-\quad
 \begin{bmatrix}
-0 \\ 0 \\ 0 \\ 1
+ -1  \\
+ 1  \\
+ 3  \\
+ 0  \\
+ -2  \\
+\end{bmatrix},
+\begin{bmatrix}
+2 \\
+1 \\
+ 0 \\
+  1 \\
+ 3 \\
 \end{bmatrix}
-\right\},
-\\
-\\
-{\cal B}  &= \left\{
-\begin{bmatrix}
-1 \\ 1 \\ 1 \\ 1
-\end{bmatrix},
-\quad
-\begin{bmatrix}
-1 \\ 1 \\ -1~ \\ -1~
-\end{bmatrix},
-\quad
-\begin{bmatrix}
-1 \\ -1~ \\ 0 \\ 0
-\end{bmatrix},
-\quad
-\begin{bmatrix}
-0 \\ 0 \\ 1 \\ -1~
-\end{bmatrix}
-\right\},
-\\
-\\
-{\cal C}  &= \left\{
-\begin{bmatrix}
-1 \\ 1 \\ 1 \\ 0
-\end{bmatrix},
-\quad
-\begin{bmatrix}
-1 \\ 1 \\ -1~ \\ 0
-\end{bmatrix},
-\quad
-\begin{bmatrix}
-1 \\ -1~ \\ 0 \\ 1
-\end{bmatrix},
-\quad
-\begin{bmatrix}
-1 \\ -1~ \\ 0 \\ -1~
-\end{bmatrix}
-\right\}.
-\end{align}
+\right)
+$$
 
-Let $P_{\cal B}$ be the change-of-coordinates matrix from basis ${\cal B}$ to the standard basis ${\cal S}$, and let 
-$P_{\cal C}$ be the change-of-coordinates matrix from basis ${\cal C}$ to the standard basis ${\cal S}$.
+a. Give a basis of $S$ consisting of some or all of the vectors used to define $S$ above. 
+
+b. Give a basis of $S$ that has the nice standard basis property (i.e., the 0s and 1s) property).
+
+c. For the two vectors below, decide if they are in $S$. If the vector is in $S$ then give its coordinates in each of your bases from part (b). If you can do one of these "by hand" then explain how.
+$$
+\mathbf{w} = \begin{bmatrix} 8 \\ 11 \\ 14 \\ 7 \\ 11 \end{bmatrix}, \qquad 
+\mathbf{v} = \begin{bmatrix} 3 \\ 3 \\ 3 \\ 1 \\ 1 \end{bmatrix}.
+$$
+
+## Dimension
+
+Find the dimension of the subspace $Z$ of $\mathbb{R}^5$ of *zero-sum* vectors below
+$$
+Z = \left\{
+\begin{bmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix}
+\ \Bigg\vert\ \  x_1 + x_2 + x_3 + x_4 + x_5 = 0\ 
+\right\}
+$$
 
 
-a.  Find $P_{\cal B}^{-1}$, which is the change-of-coordinates matrix from the standard basis ${\cal S}$ to basis ${\cal B}$.
-b.  Find $P_{\cal C}^{-1}$, which is the change-of-coordinates matrix from the standard basis ${\cal S}$ to basis ${\cal C}$.
-c. Find the change-of-coordinates matrix from  basis ${\cal B}$ to basis ${\cal C}$.
-d. Find the change-of-coordinates matrix from  basis ${\cal C}$ to basis ${\cal B}$.
-e. Consider  the vector $\mathsf{v}$ where
-$$ [\mathsf{v}]_{\cal B} =  \begin{bmatrix}  ~3.5 \\ -1.0 \\ -0.5 \\ ~1.5 \end{bmatrix}_{\cal B}.$$
-    Find $[ \mathsf{v} ]_{\cal C}.$ Then calculate both $P_{\cal B} [\mathsf{v}]_{\cal B}$ and $P_{\cal C} [\mathsf{v}]_{\cal C}$ to confirm that they both produce the  same vector $\mathsf{v} =[\mathsf{v}]_{\cal S}$.
+## Determinant Properties
+
+Turn in an R-markdown file with your solution to this problem. You can compute determinants in R using the `det` command. Here you will explore some properties of determinants.
+```{r}
+(A = rbind(c(3, 0, -1, 1, 2), c(1, 1, -1, 1, 1), c(-2, -3, -2, 3, 1), c(1, 3, 1, 3, 0),
+c(1, 3, 0, -2, 0)))
+```
+
+a. Compute the determinant of $A$.
+b. Compute the determinant of $A^2$. How does it compare to $det(A)$?
+c. Compute the determinant of $A^{-1}$. How does it compare to $det(A)$?
+d. Swap two rows of $A$ and then compute the determinant of $A$. 
+e. Multiply the 4th row of $A$ by 7 and then compute the determinant. How does it compare to $det(A)$?
+f. Compute the determinant of $7A$. How does it compare to $det(A)$?
+g. Let $B$ be the matrix below, and compute $det(B)$, $det(A B)$, and $det(A) det(B)$.
+
+```{r}
+(B = rbind(c(1, 2,1, 1, 1), c(1, 2, 0, 1, -1), c(-2, -1, -2,0, 1), c(1, 0, 1, 3, 0),
+c(1, 0, 0, 1,1)))
+```
+
+## Matrix Rank
+
+Fill in the entries of the table  with **T** = true or **F** = false or **I** = not enough information to know. (Hint: draw a "picture" of the RREF of $\mathsf{A}$ in each case).  
+
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+</style>
 
 
+<div class="col3">
+**(a)** $\mathsf{A}$ is invertible
 
-**Remark:** Both $\cal{B}$ and $\cal{C}$ are examples of *wavelet* bases. Wavelets and similar bases are useful for image processing and image compression.
+**(b)** $\mathsf{rref}(\mathsf{A}) = I$
+
+**(c)** $\mathsf{A}$ has 8 pivots
+
+**(d)** $\mathsf{A} \mathbf{0} = \mathbf{0}$ 
+
+**(e)** $\mathsf{A} \mathsf{x} = \mathbf{0}$ has more than one solution.
+
+**(f)** $T$ is one-to-one
+
+**(g)** $T$ is onto
+
+**(h)** $\mathsf{A} \mathsf{x} = \mathsf{b}$ has at least one solution for all $\mathsf{b} \in \mathbb{R}^8$.
+
+**(i)** The columns of $\mathsf{A}$ span $\mathbb{R}^8$.
+
+**(j)** There is a vector $\mathsf{b} \in \mathbb{R}^8$ such that $\mathsf{A} \mathsf{x} = \mathsf{b}$ has no solutions.
+
+**(k)** There is a vector  $\mathsf{b} \in \mathbb{R}^8$ such that $\mathsf{A} \mathsf{x} = \mathsf{b}$ has infinitely many solutions.
+
+**(l)** There is a vector $\mathsf{b} \in \mathbb{R}^8$ such that $\mathsf{A} \mathsf{x} = \mathsf{b}$ has exactly 17 solutions.
+
+**(m)** There is a vector $b \in \mathbb{R}^8$ that can be written as a linear combination of the columns of $\mathsf{A}$ in more than one way.
+
+**(n)** The rows of $\mathsf{A}$ span a 7 dimensional subspace of $\mathbb{R}^8$.
+
+**(o)** The columns of $\mathsf{A}$ are linearly independent.
+
+**(p)** The rows of $\mathsf{A}$ are linearly independent 
+
+</div>
+
+
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+& T: \mathbb{R}^8 \to \mathbb{R}^8  & T: \mathbb{R}^8 \to \mathbb{R}^8 & T: \mathbb{R}^7 \to \mathbb{R}^8  & T: \mathbb{R}^9 \to \mathbb{R}^8  \\
+&  \text{$\mathsf{A}$  has rank 7} & \text{$\mathsf{A}$ has rank 8} & \text{$\mathsf{A}$  has rank 7} &  \text{$\mathsf{A}$  has rank 8} \\
+\hline
+(a) & & & & \\ \hline
+(b) & & & & \\ \hline
+(c) & & & & \\ \hline
+(d) & & & & \\ \hline
+(e) & & & & \\ \hline
+(f) & & & & \\ \hline
+(g) & & & & \\ \hline
+(h) & & & & \\ \hline
+(i) & & & & \\ \hline
+(j) & & & & \\ \hline
+(k) & & & & \\ \hline
+(l) & & & & \\ \hline
+(m) & & & & \\ \hline
+(n) & & & & \\ \hline
+(o) & & & & \\ \hline
+(p) & & & & \\ \hline
+\end{array}
+$$
+
+
+## A Tetrahedral Basis
+
+In practice, we change bases because problems are computationally easier in another coordinate system or because we learn something by looking at a problem from the point of view of a different coordinate system. The following example illustrates this with ideas that arises both in chemistry and computer graphics. Below is the tetrahedral molecule methane, $\mathsf{CH}_4$. Its coordinates can be described in 3-dimensional space by the vectors below.
+
+$$
+\mathsf{C}=\begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix},
+\mathsf{H}_1=\begin{bmatrix} 0 \\ 0 \\ \frac{3}{2\sqrt{6}} \end{bmatrix},
+\mathsf{H}_2=\begin{bmatrix}
+ -\frac{1}{2 \sqrt{3}} \\ -\frac{1}{2} \\ -\frac{1}{2 \sqrt{6}}
+\end{bmatrix},
+\mathsf{H}_3=\begin{bmatrix}
+ -\frac{1}{2 \sqrt{3}} \\ \frac{1}{2} \\ -\frac{1}{2 \sqrt{6}} 
+ \end{bmatrix},
+\mathsf{H}_4=\begin{bmatrix}
+ \frac{1}{\sqrt{3}} \\0 \\-\frac{1}{2 \sqrt{6}}
+ \end{bmatrix}
+$$
+
+![](images/ps5-methane.png){width=40%}
+
+Let $\mathcal{M} = \{ \mathsf{H}_1, \mathsf{H}_2, \mathsf{H_3} \}$. Then $\mathcal{M}$ is a basis of $\mathbb{R}^3$, which we will call the **tetrahedral basis.** You can see from the plot that these vectors are linearly independent (not all on the same plane)
+
+a. Express $\mathsf{H}_4$ in the tetrahedral basis. Hint: first compute $\mathsf{H}_1+\mathsf{H}_2+\mathsf{H}_3+\mathsf{H}_4$ using the coordinates above. You do not need to do any row reductions for this question.
+
+b. Chemists are interested in symmetry operations. These are linear transformations such that the atom looks the same after the transformation as it did before. For example one such operation is rotation $r_4$ by 120$^o$ around the  $\mathsf{H}_4$ axis. This rotation sends $\mathsf{H}_1$ to $\mathsf{H}_3$, $\mathsf{H}_3$ to $\mathsf{H}_2$, and $\mathsf{H}_2$ to $\mathsf{H}_1$. Give the matrix of $r_4$  in the $\mathcal{M}$ basis:
+
+## Eigenbasis
+
+## Homogeneous Coordinates
+

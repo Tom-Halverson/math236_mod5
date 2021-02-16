@@ -119,6 +119,6 @@ c. If $\mathsf{v}$ is **not** in  $S$ and $c$ is a  nonzero constant, can $c\mat
 
 ## A Vector in Both Col(A) and Nul(A)
 
-Give a $3 \times 3$ matrix $A$ for which the vector $\mathsf{v} = \begin{bmatrix}3 \\ -2 \\ 5   \end{bmatrix}$ is in both $\mathrm{Col}(A)$ and $\mathrm{Nul}(A)$. Be sure to demonstrate that $\mathsf{v} \in \mathrm{Col}(A)$ and $\mathsf{v} \in \mathrm{Nul}(A)$.
+Give a $3 \times 3$ matrix $A$ for which the vector $\mathsf{v} = \begin{bmatriA x}3 \\ -2 \\ 5   \end{bmatrix}$ is in both $\mathrm{Col}(A)$ and $\mathrm{Nul}(A)$. Be sure to demonstrate that $\mathsf{v} \in \mathrm{Col}(A)$ and $\mathsf{v} \in \mathrm{Nul}(A)$.
 
 

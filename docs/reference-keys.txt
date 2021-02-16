@@ -34,6 +34,14 @@ column-and-null-space
 extend-to-a-basis
 getting-into-a-subspace
 a-vector-in-both-cola-and-nula
+problem-set-5
+a-tale-of-two-bases
+dimension
+determinant-properties
+matrix-rank
+a-tetrahedral-basis
+eigenbasis
+homogeneous-coordinates
 important-definitions
 vector-spaces
 matrices
