@@ -56,7 +56,7 @@ $$
 
 a. Give a basis of $S$ consisting of some or all of the vectors used to define $S$ above. 
 
-b. Give a basis of $S$ that has the nice standard basis property (i.e., the 0s and 1s) property).
+b. Give a basis of $S$ that has the nice standard basis property (i.e., the 0s and 1s property).
 
 c. For the two vectors below, decide if they are in $S$. If the vector is in $S$ then give its coordinates in each of your bases from part (b). If you can do one of these "by hand" then explain how.
 $$
@@ -202,7 +202,13 @@ a. Express $\mathsf{H}_4$ in the tetrahedral basis. Hint: first compute $\mathsf
 
 b. Chemists are interested in symmetry operations. These are linear transformations such that the atom looks the same after the transformation as it did before. For example one such operation is rotation $r_4$ by 120$^o$ around the  $\mathsf{H}_4$ axis. This rotation sends $\mathsf{H}_1$ to $\mathsf{H}_3$, $\mathsf{H}_3$ to $\mathsf{H}_2$, and $\mathsf{H}_2$ to $\mathsf{H}_1$. Give the matrix of $r_4$  in the $\mathcal{M}$ basis:
 
+More coming!
+
 ## Eigenbasis
 
+Coming!
+
 ## Homogeneous Coordinates
+
+Coming!
 
