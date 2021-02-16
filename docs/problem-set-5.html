@@ -390,12 +390,14 @@ S = \textsf{span}\left(
 Z = \left\{
 \begin{bmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix}
 \ \Bigg\vert\ \  x_1 + x_2 + x_3 + x_4 + x_5 = 0\ 
-\right\}
+\right\}.
 \]</span></p>
 </div>
 <div id="determinant-properties" class="section level2">
 <h2><span class="header-section-number">5.3</span> Determinant Properties</h2>
 <p>Turn in an R-markdown file with your solution to this problem. You can compute determinants in R using the <code>det</code> command. Here you will explore some properties of determinants.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="problem-set-5.html#cb9-1"></a>(<span class="dt">A =</span> <span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">-1</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">-1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>, <span class="dv">-3</span>, <span class="dv">-2</span>, <span class="dv">3</span>, <span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>),</span>
+<span id="cb9-2"><a href="problem-set-5.html#cb9-2"></a><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">-2</span>, <span class="dv">0</span>)))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]    3    0   -1    1    2
 ## [2,]    1    1   -1    1    1
@@ -411,6 +413,8 @@ Z = \left\{
 <li>Compute the determinant of <span class="math inline">\(7A\)</span>. How does it compare to <span class="math inline">\(det(A)\)</span>?</li>
 <li>Let <span class="math inline">\(B\)</span> be the matrix below, and compute <span class="math inline">\(det(B)\)</span>, <span class="math inline">\(det(A B)\)</span>, and <span class="math inline">\(det(A) det(B)\)</span>.</li>
 </ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="problem-set-5.html#cb11-1"></a>(<span class="dt">B =</span> <span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>,<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">-1</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>, <span class="dv">-1</span>, <span class="dv">-2</span>,<span class="dv">0</span>, <span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>),</span>
+<span id="cb11-2"><a href="problem-set-5.html#cb11-2"></a><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">1</span>)))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]    1    2    1    1    1
 ## [2,]    1    2    0    1   -1
