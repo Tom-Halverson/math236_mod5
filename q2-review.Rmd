@@ -38,9 +38,9 @@ The best way to study is to do practice problems. The Quiz will have calculation
 You should understand these concepts and be able to read and use these terms correctly:
 
 * all of the [Important Definitions found here][Important Definitions].
+* matrix multiplication
 * matrix inverses
 * the Invertible Matrix Theorem
-* homogeneous coordinates
 * subspaces
 * null space and column space of a matrix
 * kernel and image of a linear transformation
@@ -57,7 +57,6 @@ You should be able to perform these linear algebra tasks.
 
 * solve matrix algebra equations
 * find a matrix inverse
-* use homogeneous coordinates to transform and translate images in the plane.
 * show that a subset is a subspace or demonstrate that it is not a subspace
 * describe the null space and the column space
 * determine if a vector is in a null space or column space
