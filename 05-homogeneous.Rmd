@@ -44,9 +44,9 @@ polygon(house[1,], house[2,], col = "gray", border = "blue")
 
 Next, we translate by $\begin{bmatrix} 3 \\ - 4 \end{bmatrix}$  by using the linear transformation
 $$
-T \left( \begin{bmatrix} x \\ y \\ z \end{bmatrix} \right)
+T \left( \begin{bmatrix} x \\ y \\ 1 \end{bmatrix} \right)
 = \begin{bmatrix} 1 & 0 & 3  \\ 0 & 1 & -4 \\ 0 & 0 & 1 \end{bmatrix} 
-\begin{bmatrix} x \\ y \\ z \end{bmatrix}=
+\begin{bmatrix} x \\ y \\ 1 \end{bmatrix}=
 \begin{bmatrix} x+3 \\ y - 4 \\ 1 \end{bmatrix}.
 $$
 
