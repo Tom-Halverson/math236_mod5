@@ -221,7 +221,34 @@ e. Give the matrix in the $\mathcal{M}$-basis for the following symmetry transfo
 
 ## Eigenbasis
 
-coming
+Consider the matrix $A$ below
+$$
+A = \frac{1}{3} 
+\begin{bmatrix}
+ -14 & 13 & -2 \\ 
+ -20 & 19 & -2 \\
+ -23 & 19 & 1 \\
+\end{bmatrix}
+$$
+and consider the following set basis of $\mathbb{R}^3$ (you don't have to check that it is a basis).
+$$
+\mathcal{B} = \left\{ 
+v_1 = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, 
+v_2 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix},
+v_3 = \begin{bmatrix} -1 \\ -1 \\ 2 \end{bmatrix} 
+\right\}
+$$
+
+a. By hand, compute $A v_1$, $A v_2$, and $A v_3$ and see that each of these vectors is an eigenvector. From this, find the corresponding eigenvalues $\lambda_1, \lambda_2, \lambda_3$. A basis consisting of eigenvectors of $A$ is called an **eigenbasis**. We will see that they often, but not always, exist.
+
+b. Let $B$ be the change of basis matrix from $\mathcal{B}$ to $\mathcal{S}$ (the standard basis), and compute the product $B^{-1} A B$. You can use `R`. Just report the matrix $B$ and the matrix $B^{-1} A B$. If you look closely at your answer, you should see something nice. Report what you see. 
+
+```{r,echo-TRUE}
+A = 1/3 * cbind(c(-14,-20,-23),c(13,19,19),c(-2,-2,1))
+```
+
+
+c. 
 
 ## House Party
 
