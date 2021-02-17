@@ -216,10 +216,12 @@ d. It is a pain to describe these transformations in the standard basis, but it 
 
 ![](images/ps5-change-basis-methane.png){width=100%}
 
-e. Give the matrix in the $\mathcal{M}$-basis for the following symmetry transformations: (ii) The rotation $r_2$ around the $\mathsf{H}_2$ axis sending $\mathsf{H}_1$ to $\mathsf{H}_3$, $\mathsf{H}_3$ to $\mathsf{H}_4$, and $\mathsf{H}_4$ to $\mathsf{H}_1$. (iii) The reflection $\sigma_{1,2}$  across the plane containing $\mathsf{H}_1, \mathsf{H}_2,$ and $\mathsf{C}$.You do not need to give these in standard coordinates.
+e. Give the matrix in the $\mathcal{M}$-basis for the following symmetry transformations: (ii) The rotation $r_2$ around the $\mathsf{H}_2$ axis sending $\mathsf{H}_1$ to $\mathsf{H}_3$, $\mathsf{H}_3$ to $\mathsf{H}_4$, and $\mathsf{H}_4$ to $\mathsf{H}_1$. (iii) The reflection $\sigma_{1,2}$  across the plane containing $\mathsf{H}_1, \mathsf{H}_2,$ and $\mathsf{C}$. You do not need to give these in standard coordinates.
 
 
+## Eigenbasis
 
+coming
 
 ### House Party
 
