@@ -40,7 +40,7 @@ dimension
 determinant-properties
 matrix-rank
 a-tetrahedral-basis
-homogeneous-coordinates
+house-party
 important-definitions
 vector-spaces
 matrices
@@ -92,13 +92,13 @@ reflection
 shear-transformations
 dimension-reduction
 your-turn
-homogeneous-coordinates-1
+homogeneous-coordinates
 translation
 rotation-and-then-translation
 your-turn-1
 translation-and-then-rotation
 house-of-orange
-house-party
+house-party-1
 quiz-1-review
 overview
 vocabulary-and-concepts
