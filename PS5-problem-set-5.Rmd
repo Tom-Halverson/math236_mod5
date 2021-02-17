@@ -223,7 +223,7 @@ e. Give the matrix in the $\mathcal{M}$-basis for the following symmetry transfo
 
 coming
 
-### House Party
+## House Party
 
 
 Here is a plot of the grey house and four other houses, colored cyan, red, gold, and purple Reproduce this image using homogeneous coordinates. See [Homogeneous Coordinates][Homogeneous Coordinates].
