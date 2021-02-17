@@ -176,6 +176,7 @@ $$
 $$
 
 
+
 ## A Tetrahedral Basis
 
 In practice, we change bases because problems are computationally easier in another coordinate system or because we learn something by looking at a problem from the point of view of a different coordinate system. The following example illustrates this with ideas that arises both in chemistry and computer graphics. Below is the tetrahedral molecule methane, $\mathsf{CH}_4$. Its coordinates can be described in 3-dimensional space by the vectors below.
@@ -194,31 +195,127 @@ $$
  \end{bmatrix}
 $$
 
-![](images/ps5-methane.png){width=40%}
+![](images/ps5-methane.png){width=35%}
 
 Let $\mathcal{M} = \{ \mathsf{H}_1, \mathsf{H}_2, \mathsf{H_3} \}$. Then $\mathcal{M}$ is a basis of $\mathbb{R}^3$, which we will call the **tetrahedral basis.** You can see from the plot that these vectors are linearly independent (not all on the same plane)
 
 a. Express $\mathsf{H}_4$ in the tetrahedral basis. Hint: first compute $\mathsf{H}_1+\mathsf{H}_2+\mathsf{H}_3+\mathsf{H}_4$ using the coordinates above. You do not need to do any row reductions for this question.
 
-b. Give the change of basis matrix $T$ that converts from the tetrahderal basis $\mathcal{M}$ to the standard basis $\mathcal{S}$.
+b. Give the change of basis matrix $T$ that converts from the tetrahderal basis $\mathcal{M}$ to the standard basis $\mathcal{S}$ and compute its inverse that converts from the standard basis back to $\mathcal{M}$.
 
-c. Chemists are interested in symmetry operations. These are linear transformations such that the atom looks the same after the transformation as it did before. For example one such operation is rotation $r_4$ by 120$^o$ around the  $\mathsf{H}_4$ axis. This rotation sends $\mathsf{H}_1$ to $\mathsf{H}_3$, $\mathsf{H}_3$ to $\mathsf{H}_2$, and $\mathsf{H}_2$ to $\mathsf{H}_1$. Give the matrix of $r_4$  in the $\mathcal{M}$ basis:
+c. Chemists are interested in symmetry operations. These are linear transformations such that the atom looks the same after the transformation as it did before. For example one such operation is rotation $r_4$ by 120$^o$ around the  $\mathsf{H}_4$ axis. This rotation sends $\mathsf{H}_1$ to $\mathsf{H}_3$, $\mathsf{H}_3$ to $\mathsf{H}_2$, and $\mathsf{H}_2$ to $\mathsf{H}_1$. Give the matrix of $r_4$  in the $\mathcal{M}$ basis.
 
-```{r}
+```{r,echo=TRUE}
 r4.M = cbind(c(0,0,0),c(0,0,0),c(0,0,0))
 rownames(r4.M) <- c("H1","H2","H3")
 colnames(r4.M) <- c("H1","H2","H3")
 r4.M
 ```
 
+d. It is a pain to describe these transformations in the standard basis, but it is easy and elegant to do so in the methane basis. We can now use the change-of-basis matrix to get the matrix in the standard basis. Compute the rotation in the standard basis by multiplying out these matrices in R. Use your matrices from parts b and c.
 
-More coming!
+![](images/ps5-change-basis-methane.png){width=100%}
 
-## Eigenbasis
+e. Give the matrix in the $\mathcal{M}$-basis for the following symmetry transformations: (ii) The rotation $r_2$ around the $\mathsf{H}_2$ axis sending $\mathsf{H}_1$ to $\mathsf{H}_3$, $\mathsf{H}_3$ to $\mathsf{H}_4$, and $\mathsf{H}_4$ to $\mathsf{H}_1$. (iii) The reflection $\sigma_{1,2}$  across the plane containing $\mathsf{H}_1, \mathsf{H}_2,$ and $\mathsf{C}$.You do not need to give these in standard coordinates.
 
-Coming!
+
+
 
 ## Homogeneous Coordinates
 
-Coming!
+Here is a nature scene with a bird and a palm tree.
 
+
+
+
+```{r,bird1,fig.height=5,fig.width=5, echo=TRUE}
+bird = rbind(c(20, 21.3, 23.3, 21.6, 20.7, 21.7, 20.9, 20.3, 18.9, 18.1, 18.3, 19.6, 19.2, 19.1, 19.2, 19.4, 20), 
+             c(20, 21.7, 20.9, 21.1, 19.3, 18.7, 18, 18.9, 18, 15.4, 18.6, 19.6, 20, 20.2, 20.3, 20.3, 20), 
+             c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+fronds = rbind(c(10, 8, 6, 4, 2, 2.5, 4, 6, 9, 10, 10, 9, 7, 5, 2.5, 4, 6, 8, 9, 10, 10, 11, 11, 10.5, 12, 12.5, 12.5, 10, 10, 13, 15, 15.5, 15.5, 14, 12, 10, 10, 12, 14, 14, 13.5, 13, 12, 10),
+               c(16, 16, 16, 15, 11, 15, 17, 17.5, 17, 16, 16, 17.5, 19, 19.5, 18.5, 20, 20.5, 20, 19, 16, 16, 18, 20, 20.5, 20, 19, 18, 16, 16, 17, 16, 15, 13.5, 15, 16, 16, 16, 15, 13, 11, 9, 11, 13, 16),
+               c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+trunk = rbind(c(10, 9, 8, 7.5, 7.5, 8, 10, 8, 6.5, 6, 5, 5, 6, 7, 10),
+              c(16, 14, 12, 10, 8, 5, 2.5, 2, 2, 3, 6, 9, 12, 14, 16),
+              c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+# intialize the plot
+plot(bird[1,],bird[2,],type="n",xlim=c(0,25),ylim=c(0,25),xlab="x",ylab="y")
+abline(h=0:25, v=0:25, col="gray", lty="dotted")
+# plot the bird, trunk and fronds
+polygon(bird[1,], bird[2,], col = "gray", border = "blue")
+polygon(fronds[1,], fronds[2,], col = "orange", border = "black")
+polygon(trunk[1,], trunk[2,], col = "brown", border = "black")
+```
+
+
+<!-- ![](images/ps4-scene1.png){width=60%} -->
+
+However, I've decided that I want to make some changes.
+
+* I want to **rotate the bird** by  $-\pi/2$ around the point  $(20,20)$ where its head meets its wing.
+* I want to **enlarge the fronds** (leaves) of the  plam tree to be bigger by $25\%$.
+* I like the trunk just as it is (no changes!), so the fronds should still meet at the point $(10,16)$.
+* I want to change  the colors to make it happier. 
+
+For example, here is what I want it to look like (though maybe there is a better color choice).
+
+![](images/ps4-scene2.png){width=60%}
+
+However, I'm not sure how to do this because:
+
+* I only know how to rotate vectors around the point $(0,0)$. So how can I rotate around the point $(20,20)$?
+* Likewise, I only know how to expand vectors from the point $(0,0)$. So how can I expand outward from the point $(10,16)$?
+
+I heard someone say that translations via homogeneous coordinates will help to solve my problem. But I'm not sure what to do. Help!
+
+Please submit:
+
+* The numerical $3 \times 3$ matrix `birdmap` that you used for the bird, and an explanation of how you made it.
+* The numerical $3 \times 3$ matrix `leafmap` that you used for the leaves, and an explanation of how you made it.
+* Your resulting plot where you use happier [colors of your choice](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf) that are **unique to you** and express your personal style. (An artist statement is optional.)
+
+
+For your convenience, here is some template code for you. Once you fill in the proper transformation, this code  will make the final picture. Currently, it updates the colors, but  doesn't change  the bird or the fronds (because it is using the identity transformation).
+
+
+
+```{r,bird2,fig.height=5,fig.width=5, echo=TRUE}
+#####################
+######## update this code with the appropriate linear transformations
+birdmap = cbind(c(1,0,0),c(0,1,0),c(0,0,1))
+leafmap = cbind(c(1,0,0),c(0,1,0),c(0,0,1))
+#####################
+######## you do not need to change this the code below this line
+newbird = birdmap %*% bird
+newfronds = leafmap %*% fronds
+# initialize the plot
+plot(newbird[1,],newbird[2,],type="n",xlim=c(0,25),ylim=c(0,25),xlab="x",ylab="y")
+abline(h=0:25, v=0:25, col="gray", lty="dotted")
+polygon(newbird[1,], newbird[2,], col = "cyan", border = "blue")
+polygon(newfronds[1,], newfronds[2,], col = "green", border = "black")
+polygon(trunk[1,], trunk[2,], col = "brown", border = "black")
+```
+
+
+Finally, here is some R code that might be helpful. It overlays the original and the new version, so that you can directly compare them. Here is what the final comparison should look like:
+
+![](images/ps4-scene3.png){width=60%}
+
+
+
+```{r,bird3,fig.height=5,fig.width=5, echo=TRUE}
+# initialize the plot
+plot(newbird[1,],newbird[2,],type="n",xlim=c(0,25),ylim=c(0,25),xlab="x",ylab="y")
+abline(h=0:25, v=0:25, col="gray", lty="dotted")
+# plot the new bird and new fronds
+polygon(newbird[1,], newbird[2,], col = "gray", border = "blue")
+polygon(newfronds[1,], newfronds[2,], col = "orange", border = "black")
+# plot the original bird, fronds  and trunk
+polygon(bird[1,], bird[2,], col = "cyan", border = "blue")
+polygon(fronds[1,], fronds[2,], col = "green", border = "black")
+polygon(trunk[1,], trunk[2,], col = "brown", border = "black")
+```
+
+
+
+**Remark:** This truly is how computer animation works! We use different effects for each object, and need to use homogeneous coordinates to get our desired results.

@@ -1,7 +1,7 @@
 
-# 2D Translations with Homogeneous Coordinates
+# Homogeneous Coordinates
 
-[Download this Rmd file](https://github.com/mathbeveridge/math236_f20/blob/main/04-translations.Rmd)
+[Download this Rmd file](https://github.com/Tom-Halverson/math236_s21/blob/main/05-homogeneous.Rmd)
 
 A **translation** of the plane shifts every vector by a constant vector. For example, the mapping
 $$
@@ -46,19 +46,12 @@ Next, we translate by $\begin{bmatrix} 3 \\ - 4 \end{bmatrix}$  by using the lin
 $$
 T \left( \begin{bmatrix} x \\ y \\ z \end{bmatrix} \right)
 = \begin{bmatrix} 1 & 0 & 3  \\ 0 & 1 & -4 \\ 0 & 0 & 1 \end{bmatrix} 
-\begin{bmatrix} x \\ y \\ z \end{bmatrix}.
-$$
-Let's check that this has the desired effect on a homogeneous coordinate vector:
-$$
-T \left( \begin{bmatrix} x \\ y \\ 1 \end{bmatrix} \right)
-= \begin{bmatrix} 1 & 0 & 3  \\ 0 & 1 & -4 \\ 0 & 0 & 1 \end{bmatrix} 
-\begin{bmatrix} x \\ y \\ 1 \end{bmatrix}
-=
+\begin{bmatrix} x \\ y \\ z \end{bmatrix}=
 \begin{bmatrix} x+3 \\ y - 4 \\ 1 \end{bmatrix}.
 $$
-It worked! Note that **this linear transformation maps every horizontal plane to itself**. For the plane $z=1$ (and only for this plane!) we get the exact translation that we desire. So it is **crucial** that $z=1$. That's the magic of homogeneous coordinates.
 
-Let's do this calculation in R and plot the first two coordiantes:
+
+Now, let's do this calculation in R and plot the first two coordiantes:
 
 ```{r,homogeneous2,fig.height=4,fig.width=4, echo=TRUE}
 
@@ -73,9 +66,9 @@ polygon(house[1,], house[2,], col = "gray", border = "blue")
 polygon(house2[1,], house2[2,], col = "pink", border = "black")
 ```
 
-## Translation and then Rotation
+## Rotation and then Translation
 
-We know plenty 2D linear transformation, including rotation, reflection  and shear mappings. We can turn any of them into a 3D transformation by appending a row and a column with a 1 in the lower right corner and  zero everywhere else. For example, the 2D rotation
+We know plenty of interesting 2D linear transformations, including rotation, reflection  and shear mappings. We can turn any of them into a 3D transformation by appending a row and a column with a 1 in the lower right corner and  zero everywhere else. For example, the 2D rotation
 $$
 \begin{bmatrix} \cos \theta & -\sin \theta~   \\ \sin \theta & \cos \theta \end{bmatrix} 
 $$
@@ -85,29 +78,29 @@ $$
 $$
 This mapping rotates 3D space around the $z$-axis.
 
-So let's combine two operations: a translation and a rotation.  First, let's translate by $\begin{bmatrix} -2 \\ 1 \end{bmatrix}$ and then rotate counterclockwise by $2 \pi/3$. And remember: the matrix **closest** to the vector acts first. So if we want to translate first, the translation matrix needs to be to the right of the rotation matrix:
+So let's combine two operations: a rotation and a translation  First, let's rotate  counterclockwise by $2 \pi/3$ and then translate by $\begin{bmatrix} -2 \\ 4 \end{bmatrix}$. And remember: the matrix **closest** to the vector acts first. So if we want to translate first, the translation matrix needs to be to the right of the rotation matrix:
 
 
 $$
 T \left( \begin{bmatrix} x \\ y \\ z \end{bmatrix} \right)
 = 
-\begin{bmatrix} \cos \frac{2\pi}{3} & -\sin\frac{2\pi}{3}~ & 0  \\ \sin\frac{2\pi}{3} & \cos\frac{2\pi}{3} & 0 \\ 0 & 0 & 1 \end{bmatrix} 
 \begin{bmatrix} 1 & 0 & -2  \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{bmatrix} 
+\begin{bmatrix} \cos \frac{2\pi}{3} & -\sin\frac{2\pi}{3}~ & 0  \\ \sin\frac{2\pi}{3} & \cos\frac{2\pi}{3} & 0 \\ 0 & 0 & 1 \end{bmatrix} 
 \begin{bmatrix} x \\ y \\ z \end{bmatrix}.
 $$
 
 ```{r,homogeneous3,fig.height=5,fig.width=5, echo=TRUE}
 
-
-translate = cbind(c(1,0,0),c(0,1,0),c(-2,1,1))
-translate
-
 t = 2*pi/3
 rot = cbind(c(cos(t),sin(t),0),c(-sin(t),cos(t),0),c(0,0,1)) 
 rot
 
-A =   rot %*% translate 
-A # display A
+translate = cbind(c(1,0,0),c(0,1,0),c(-2,4,1))
+translate
+
+
+A =   translate %*% rot 
+A 
 house3 = A %*% house
 
 plot(house[1,],house[2,],type="n",xlim=c(-6,6),ylim=c(-6,6),xlab="x",ylab="y")
@@ -116,38 +109,27 @@ polygon(house[1,], house[2,], col = "gray", border = "blue")
 polygon(house3[1,], house3[2,], col = "green", border = "black")
 ```
 
-## Rotation and then Translation 
-
-Let's **reverse the order** of these matrices and see that we get a **different transformation**.
+ 
 
 
-```{r,homogeneous4,fig.height=5,fig.width=5}
 
-
-A = translate %*% rot
-A # display A
-house3 = A %*% house
-
-plot(house[1,],house[2,],type="n",xlim=c(-6,6),ylim=c(-6,6),xlab="x",ylab="y")
-abline(h=-6:6, v=-6:6, col="gray", lty="dotted")
-polygon(house[1,], house[2,], col = "gray", border = "blue")
-polygon(house3[1,], house3[2,], col = "cyan", border = "black")
-```
-
-Indeed, these two transformations are different! So the order matters.
 
 
 
 ## Your Turn  
 
-Here are a couple of plots that you should try to reproduce using homogeneous coordinates.
+### Translation and then Rotation
+
+Let's **reverse the order** of these matrices in the previous example and see that we get a **different transformation**. Remember, order matters: matrix multiplication is not commutative. So try changing the problem to first translating and then rotating. But first, in your group, try guessing where the house will go and then do it in R. Does the house end up where you expected it to be?
+
 
 ### House of Orange
 
 Here is a picture of a gray house and a larger, upside-down orange house. **Work as a group** to reproduce this image using homogeneous coordinates. 
 
 
-![](images/04-house-orange.png){width=50%}
+
+![](https://raw.githubusercontent.com/Tom-Halverson/math236_s21/main/images/04-house-orange.png){width=70%}
 
 You will have to use a combination of translation, rotation, and expansion.  You will do this by multiplying three matrices. **Think carefully and experiment.** Remember that the order of your matrices matters, and the rightmost one happens first. 
 
@@ -172,10 +154,12 @@ polygon(house[1,], house[2,], col = "gray", border = "blue")
 
 ### House Party
 
-Here is a plot of the grey house and four other houses, colored cyan, red, gold and green. Reproduce this image using homogeneous coordinates. **Work as a group! You can collaborate, or divide and conquer.** Be ready to help one another out!
+This problem is on PS5.
+
+Here is a plot of the grey house and four other houses, colored cyan, red, gold, and purple Reproduce this image using homogeneous coordinates. 
 
 
-![](images/04-house-party.png){width=50%}
+![](https://raw.githubusercontent.com/Tom-Halverson/math236_s21/main/images/04-house-party.png){width=70%}
 
 ```{r,homogeneous6,fig.height=5,fig.width=5,echo=TRUE}
 
