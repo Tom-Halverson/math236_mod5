@@ -53,6 +53,9 @@ S = \textsf{span}\left(
 \end{bmatrix}
 \right)
 $$
+```{r,echo=TRUE}
+A = cbind(c(1,1,1,1,2),c(1, 2, 3, 0, -1),c(0, 0, 0, 1, 2), c(-1, 1, 3, 0, -2),c(2, 1, 0, 1, 3))
+```
 
 a. Give a basis of $S$ consisting of some or all of the vectors used to define $S$ above. 
 
@@ -201,7 +204,7 @@ Let $\mathcal{M} = \{ \mathsf{H}_1, \mathsf{H}_2, \mathsf{H_3} \}$. Then $\mathc
 
 a. Express $\mathsf{H}_4$ in the tetrahedral basis. Hint: first compute $\mathsf{H}_1+\mathsf{H}_2+\mathsf{H}_3+\mathsf{H}_4$ using the coordinates above. You do not need to do any row reductions for this question.
 
-b. Give the change of basis matrix $T$ that converts from the tetrahederal basis $\mathcal{M}$ to the standard basis $\mathcal{S}$ and compute its inverse that converts from the standard basis back to $\mathcal{M}$.
+b. Give the change of basis matrix $T$ that converts from the tetrahedral basis $\mathcal{M}$ to the standard basis $\mathcal{S}$ and compute its inverse that converts from the standard basis back to $\mathcal{M}$.
 
 c. Chemists are interested in symmetry operations. These are linear transformations such that the atom looks the same after the transformation as it did before. For example one such operation is rotation $r_4$ by 120$^o$ around the  $\mathsf{H}_4$ axis. This rotation sends $\mathsf{H}_1$ to $\mathsf{H}_3$, $\mathsf{H}_3$ to $\mathsf{H}_2$, and $\mathsf{H}_2$ to $\mathsf{H}_1$. Give the matrix of $r_4$  in the $\mathcal{M}$ basis.
 
