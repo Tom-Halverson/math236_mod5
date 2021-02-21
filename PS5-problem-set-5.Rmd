@@ -89,8 +89,8 @@ c(1, 3, 0, -2, 0)))
 a. Compute the determinant of $A$.
 b. Compute the determinant of $A^2$. How does it compare to $det(A)$?
 c. Compute the determinant of $A^{-1}$. How does it compare to $det(A)$?
-d. Swap two rows of $A$ and then compute the determinant of $A$. 
-e. Multiply the 4th row of $A$ by 7 and then compute the determinant. How does it compare to $det(A)$?
+d. Swap two rows of $A$ and then compute the determinant of the matrix that you get. 
+e. Multiply the 4th row of the original matrix $A$ by 7 and then compute the determinant of the matrix you get. How does it compare to $det(A)$?
 f. Compute the determinant of $7A$. How does it compare to $det(A)$?
 g. Let $B$ be the matrix below, and compute $det(B)$, $det(A B)$, and $det(A) det(B)$.
 
