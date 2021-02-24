@@ -1,12 +1,12 @@
 
 #  Problem Set 6
 
-* Due: Tuesday March 02 by 11:59am CST. 
+* Due: Wednesday March 03 by 11:59am CST (since Monday is a wellness day). 
 * Upload your solutions to Moodle in a PDF. 
 * You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_s21/blob/main/PS6-problem-set-6.Rmd).
 
 
-The Problem Set covers sections 5.1, 5.2, 5.3, 5.5.
+The Problem Set covers sections 5.1, 5.2, 5.3, 5.6.
 
 
 
@@ -36,8 +36,7 @@ a. Write a loop in `R` that starts with the vector `v = c(1,0)` (i.e., a rainy d
 
 ## The Square Root of a Matrix?
 
-The matrix $A  =\begin{bmatrix} 7 & 2 \\ -4 & 1 \end{bmatrix}$ has characteristic polynomial
-$\lambda^2 - 8 \lambda + 15 = (\lambda -3)(\lambda - 5).$
+The matrix $A  =\begin{bmatrix} 7 & 2 \\ -4 & 1 \end{bmatrix}$ has characteristic polynomial $c(\lambda) = \lambda^2 - 8 \lambda + 15 = (\lambda -3)(\lambda - 5).$
 
 
 a. Describe the eigenspaces of $A$.
@@ -55,7 +54,7 @@ $$
 \mathsf{v}_3 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix},\  \lambda_3 = 0.
 $$
 
-a. Without the matrix $M$, compute $M^{10} \mathsf{v}$ where $\mathsf{v} = \begin{bmatrix}7\\3\\4\end{bmatrix}$.
+a. Without using the matrix $M$, compute $M^{10} \mathsf{v}$ where $\mathsf{v} = \begin{bmatrix}7\\3\\4\end{bmatrix}$. (That is, use only the eigen-information.)
 
 a. Describe all vectors $\mathsf{v}$, if there are any, such that $M^{n} \mathsf{v}  \to {\bf 0}$ as $n \to \infty$.
 
@@ -76,34 +75,48 @@ $$
  \begin{bmatrix} \phantom{\Big\vert} 
 \frac{57}{50} r_t -  \frac{6}{50}  c_t \\ \phantom{\Big\vert} \frac{4}{50} r_t +  \frac{43}{50} c_t \end{bmatrix},
 $$
-The eigenvalues of this matrix are:
+The eigenvalues and eigenvectors of this matrix are:
 $$
-\lambda_1 =  \frac{11}{10} =  \frac{55}{50}, \qquad \lambda_2 =  \frac{9}{10} = \frac{45}{50}
+\begin{array}{lcl}
+\lambda_1 =  \frac{11}{10} =  1.1, & \qquad & \lambda_2 =  \frac{9}{10} = 0.9 \\
+\mathsf{v}_1 = \begin{bmatrix} 3 \\ 1 \end{bmatrix} &&
+\mathsf{v}_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}
+\end{array}
 $$
-And eigenvalues and eigenvectors are:
 
-```{r}
+```{r,echo=TRUE}
 A = cbind(c(57/50,4/50),c(-6/50,43/50))
 eigen(A)
 ```
 
-a. Find  corresponding eigenvectors and \emph{diagonalize} this matrix.
-
-
 
 a. If $r_0 =  10$ roadrunners and $c_0 = 15$ coyotes are introduced to the area, then give \emph{closed formulas} for the population of coyotes $c_t$ and roadrunners $r_t$ after $t$ years.
 
-
 a.  In the long-term, in this model, what is the ratio of roadrunners to coyotes?
 
+a. When another college tried the same experiment in their Arboretum, they introduced $r_0 =  5$ roadrunners and $c_0 = 10$ coyotes and both populations died off (as is verified in the computation below). Explain why this is happens using the eigenvalues and eigenvectors.
+
+```{r,echo=TRUE}
+A = cbind(c(57/50,4/50),c(-6/50,43/50))
+v = c(5,10)
+for (i in 1:100) {v = A %*% v}
+v
+```
+
+## Same Eigenvectors
+
+Here are two matrices
+```{r,echo=TRUE}
+(A = cbind(c(-8, 3, 29), c(-40, 24, 46), c(10, 3, 11)))
+(B = cbind(c(4, 3, 35), c(-49, 42, 55), c(13, 3, 26)))
+```
 
 
-a. When another college tried the same experiment in their Arboretum, they introduced $r_0 =  5$ roadrunners and $c_0 = 10$ coyotes and both populations  quickly died off.  Explain why this is happening (using the model) and give the rate at which the populations die off.
 
+a. Use R to show that they have the same eigenvectors but different eigenvalues.
 
-## Matrices With Same Eigenvectors Commute
+a. Show that $A B = B A$ (even though we know that, in general, matrices do not commute).
 
+a. Now let $A$ and $B$ be any $n \times n$ matrices which have the same eigenvectors. Prove that $AB = BA$. Hint: use the diagonalization of these two matrices. 
 
-
-
-
+## A little more is coming
