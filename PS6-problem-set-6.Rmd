@@ -94,7 +94,7 @@ a. If $r_0 =  10$ roadrunners and $c_0 = 15$ coyotes are introduced to the area,
 
 a.  In the long-term, in this model, what is the ratio of roadrunners to coyotes?
 
-a. When another college tried the same experiment in their Arboretum, they introduced $r_0 =  5$ roadrunners and $c_0 = 10$ coyotes and both populations died off (as is verified in the computation below). Explain why this is happens using the eigenvalues and eigenvectors.
+a. When another college tried the same experiment in their Arboretum, they introduced $r_0 =  5$ roadrunners and $c_0 = 10$ coyotes and both populations died off (as is verified in the computation below). Explain why this happens using the eigenvalues and eigenvectors.
 
 ```{r,echo=TRUE}
 A = cbind(c(57/50,4/50),c(-6/50,43/50))

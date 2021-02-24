@@ -2,7 +2,7 @@
 
 # Dynamical Systems in 2D
 
-[Download this Rmd file](https://github.com/mathbeveridge/math236_f20/blob/main/06-dynamical-system.Rmd)
+[Download this Rmd file](https://github.com/Tom-Halverson/math236_s21/blob/main/07-dynamical-system.Rmd)
 
 
 Let $A$ be a square $n \times n$ matrix and let $\mathsf{x}_0 \in \mathbb{R}^n$. A **dynamical system** is a sequence of vectors $\mathsf{x}_0,\mathsf{x}_1,\mathsf{x}_2, \ldots, \mathsf{x}_t, \ldots$ where
@@ -11,12 +11,11 @@ $$
 $$
 The sequence $\mathsf{x}_0,\mathsf{x}_1,\mathsf{x}_2, \ldots, \mathsf{x}_t, \ldots$ is called the **trajectory** for initial vector $\mathsf{x}_0$.
 
-A dynamical system evolves over time. The long-term behavior is governed by the eigenvalues of matrix $A$
-We will look at some $2 \times 2$ dynamical systems to develop some intuition about eigensystems.
+A dynamical system evolves over time. The long-term behavior is governed by the eigenvalues of matrix $A$. We will look at visualizations of some $2 \times 2$ dynamical systems to develop some intuition about eigensystems.
 
 ## Helper Function to Plot Dynamical Systems
 
-I have written some code that makes some helpful plots. You should run this code chunk before the others.
+Here is some special code,  written by Professor Beveridge, that makes helpful plots. You need to  **execute this code chunk** before the others.
 
 ```{r, echo=TRUE}
 get_traj <- function(mat, x0, num) {
@@ -26,10 +25,8 @@ get_traj <- function(mat, x0, num) {
     traj = cbind(traj, mat %*% traj[,dim(traj)[2]])
     traj
   }
-  
   return(traj)
 }
-
 
 plot_traj <- function(mat, x0, num) {
   traj = get_traj(mat,x0,num)
@@ -37,31 +34,23 @@ plot_traj <- function(mat, x0, num) {
 }
 
 trajectory_plot <- function(mat, t=20, datamax=5, plotmax=10, numpoints=10, showEigenspaces=TRUE) {
-
   # initialize plot
   par(pty = "s")
   plot(c(0),c(0),type="n",
        xlim=c(-plotmax,plotmax),ylim=c(-plotmax,plotmax),
        xlab='x', ylab='y')
   abline(h=-plotmax:plotmax, v=-plotmax:plotmax, col="gray")
-  
   mygrid <- expand.grid(x=seq(from = -datamax, by = 2*datamax/numpoints, l = numpoints+1),
                       y=seq(from =  -datamax, by = 2*datamax/numpoints, l = numpoints+1))
-
-
   for (t in 1:dim(mygrid)[1]) {
     plot_traj(A,c(mygrid[t,1],mygrid[t,2]),t)
   }
-  
   if (showEigenspaces) {
     eigen = eigen(A)
-    
     #mylabel = cat('lambda=', eigen$values[1], 'and lambda=', eigen$values[2])
     #title(xlab=mylabel)
-    
     v1 = zapsmall(eigen$vectors[,1])
     v2 = zapsmall(eigen$vectors[,2])
-
     if (! class(v1[1]) == "complex") {
       if (v1[1] == 0) {
         abline(v=0)
@@ -91,32 +80,7 @@ A = \frac{1}{30}
 31 & 4 \\ 2 & 29
 \end{bmatrix}.
 $$
-
-Here is some code that creates a single trajectory for $0 \leq t \leq 30$ starting at 
-$\mathsf{x}_0 = 
-\begin{bmatrix}
--0.5 & 1
-\end{bmatrix}.$
-The colors of the points follow the rainbow ordering at $t$ increases.
-
-
-```{r, dynsys1, fig.height=4, fig.width=4, echo=TRUE}
-
-A = 1/30 * cbind(c(31,2),c(4,29))
-x0 = c(-0.5,1)
-
-# initialize the plot
-plot(c(0),c(0),type="n",xlim=c(-5,5),ylim=c(-5,5),xlab="x",ylab="y")
-abline(h=-5:5, v=-5:5, col="gray")
-
-
-plot_traj(A,x0,30)
-
-
-```
-
-We get a more complete picture when we plot multiple trajectories at once. 
-So I have written a helper function to plot the trajectories of a grid of points. It also plots the eigenspaces for the matrix. You can specify 
+We get the most complete picture when we plot multiple trajectories at once. So we use the helper function `trajectory_plot` to plot the trajectories of a grid of points. It also plots the eigenspaces for the matrix. You can specify 
 
 * the matrix A
 * the number of iterations
@@ -125,24 +89,74 @@ So I have written a helper function to plot the trajectories of a grid of points
 * the number of points along the side of the grid
 
 
-```{r, dynsys2, echo=TRUE}
+```{r, dynsys1, fig.height=7, fig.width=7,echo=TRUE}
 A = 1/30 * cbind(c(31,2),c(4,29))
-
 trajectory_plot(A, t=30, datamax=5, plotmax=15, numpoints=5)
-
 ```
 
-Perhaps this system is best understood by comparing what we see with the eigenvector and eigenvalues.
-
-
-
+This system is best understood by comparing what we see with the eigenvector and eigenvalues.
 ```{r, echo=TRUE}
 eigen(A)
 ```
-
 We can see that we have slight expansion along $[ 2, 1]^{\top}$ and slight contraction along $[-1,1]$. The long term behavior is an expansion in the direction of $[2, 1]^{\top}$.
 
+## CheckPoint Question for today
 
+Here is the checkpoint question for today (for which you found a closed-form solution).
+```{r,echo=TRUE}
+A = 1/110 * cbind(c(97,-8),c(6,123))
+eigen(A)
+```
+
+And here is the corresponding plot of the dynamical system:
+```{r, dynsys2, fig.height=7, fig.width=7,echo=TRUE}
+A = 1/110 * cbind(c(97,-8),c(6,123))
+trajectory_plot(A, t=30, datamax=15, plotmax=25, numpoints=5)
+```
+
+## Discussion Question 1
+
+In class, we looked at a matrix with eigenvalues 1 and 1/2, and we plotted a trajectory starting at $(8,7)$ by hand. Its eigensystem is shown here:
+
+```{r, dynsys3, fig.height=7, fig.width=7,echo=TRUE}
+A = rbind(c(0.4, 0.4), c(-0.15, 1.1))
+eigen(A)
+```
+
+And here is a trajectory plot
+```{r, dynsys4, fig.height=7, fig.width=7,echo=TRUE}
+trajectory_plot(A, t=30, datamax=10, plotmax=15, numpoints=5)
+```
+
+## Discussion Question 2
+
+Here the  matrix has the same eigenvectors, but now the eigenvalues are 1.0 and 0.9. It's a little easier to see when the smaller eigenvalue converges more slowly.
+
+```{r, dynsys5, fig.height=7, fig.width=7,echo=TRUE}
+A = rbind(c(0.88, 0.08), c(-0.03, 1.02))
+eigen(A)
+trajectory_plot(A, t=30, datamax=10, plotmax=15, numpoints=5)
+```
+
+## Discussion Question 3
+
+Here the  matrix has the same eigenvectors, but now the eigenvalues are 1.1 and 0.9. 
+
+```{r, dynsys6, fig.height=7, fig.width=7,echo=TRUE}
+A = rbind(c(0.86, 0.16), c(-0.06, 1.14))
+eigen(A)
+trajectory_plot(A, t=30, datamax=10, plotmax=15, numpoints=5)
+```
+## Discussion Question 3
+
+Finally, here again the  matrix has the same eigenvectors, but now the eigenvalues are 0.99 and 0.9. 
+
+
+```{r, dynsys7, fig.height=7, fig.width=7,echo=TRUE}
+A = rbind(c(0.882, 0.072), c(-0.027, 1.008))
+eigen(A)
+trajectory_plot(A, t=50, datamax=10, plotmax=15, numpoints=5)
+```
 
 
 ## Your Turn
@@ -161,12 +175,9 @@ If your original plot is confusing, **try changing the parameters** (initial squ
 
 Here is some code for you to adapt for the examples.
 
-```
-'```{r, echo=TRUE}
+```{r,fig.height=7, fig.width=7, echo=TRUE}
 A = cbind(c(1,0),c(0,1))
-
 trajectory_plot(A, t=30, datamax=5, plotmax=10, numpoints=10)
-
 eigen(A)
 
 ```

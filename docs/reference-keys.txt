@@ -1,4 +1,4 @@
-tab:unnamed-chunk-2
+tab:unnamed-chunk-9
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -114,6 +114,18 @@ rental-car-example
 northern-spotted-owl
 the-dynamical-system
 eigenanalysis
+dynamical-systems-in-2d
+helper-function-to-plot-dynamical-systems
+our-first-example
+checkpoint-question-for-today
+discussion-question-1
+discussion-question-2
+discussion-question-3
+your-turn-2
+example-1
+example-2
+example-3
+example-4
 quiz-1-review
 overview
 vocabulary-and-concepts
