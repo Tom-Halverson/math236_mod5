@@ -1,0 +1,247 @@
+
+# Eigenvectors
+
+[Download this Rmd file](https://github.com/Tom-Halverson/math236_s21/blob/main/06-eigenvectors.Rmd)
+
+
+## Computing Eigenvectors and Eigenvalues
+
+To compute eigenvalues and eigenvectors in `R` we use the `eigen` command. For example if our matrix is
+```{r,echo=TRUE}
+(A =  cbind(c(-14,-20,-23),c(13,19,19),c(-2,-2,1)))
+```
+Then we compute its eigenvalues and eigenvectors as
+```{r,echo=TRUE}
+eigen(A)
+```
+One thing to notice about the eigenvectors is that they are scaled to have length one (they are **unit vectors**). So they often do not look like what we expect. Note for example that the first vector above is a multiple of $(1,2,3)^T$, the second is a multiple of $(-1,-1,2)^T$ and the third is a multiple of $(1,1,1)^T$.
+
+We can extract the eigenvectors and eigenvalues as follows
+```{r,echo=TRUE}
+vals = eigen(A)$values
+vecs = eigen(A)$vectors
+```
+Then, for example, we can see if a vector is an eigenvector as follows. Here I will check the first eigenvalue and first eigenvector:
+```{r,echo=TRUE}
+lambda1 = vals[1]
+v1 = vecs[,1]
+A %*% v1
+lambda1 * v1
+```
+From this, we see that $A v_1 = \lambda_1 v_1$.
+
+Recall that every scalar multiple of an eigenvector is also an eigenvector of that same eigenvalue. The vectors are currently scaled to have length 1. Another useful scaling is to have them sum to 1. You can accomplish this by dividing them by the sum of their entries. For example,
+```{r,echo=TRUE}
+v1 = v1/sum(v1)
+v1
+```
+
+
+## Diagonalization
+
+In class we diagonalized a few matrices. Here we show how to do this in `R`. 
+
+(a) Here is the first matrix from the checkpoint question CP-5.3.
+
+```{r,echo=TRUE}
+(A = cbind(c(-5,-6,-7),c(6,7,8),c(-2,-2,-2)))
+vals = eigen(A)$values
+vals
+vecs = eigen(A)$vectors
+vecs
+solve(vecs) %*% A %*% vecs
+```
+Here, we are diagonalizing $A$ by multiplying $P^{-1} A P = D$ where $P$ is the matrix of eigenvectors and $D$ is the diagonal matrix of eigenvalues. 
+
+We can use `zapsmall` to round or "zap" very small numbers to 0, and it then looks more like what we are expecting.
+```{r,echo=TRUE}
+zapsmall(solve(vecs) %*% A %*% vecs)
+```
+
+
+(b) Now we diagonalize the second matrix from CP-5.3 You will recall that this one has a repeated eigenvalue (algebraic multiplicity 2), but it has a 2-dimensional eigenspace (geometric multiplicity 2), so it is digonalizable.
+```{r,echo=TRUE}
+B = cbind(c(3,-1,2),c(-1,3,2),c(2,2,0))
+eigen(B)
+vals = eigen(B)$values
+vecs = eigen(B)$vectors
+zapsmall(solve(vecs) %*% B %*% vecs)
+```
+
+(c) The third matrix from CP-5.3 is not diagonalizable. It has an eigenvalue of algebraic multiplicity 2 and geometric multiplicity 1. Note that it gives the same two eigenvectors for $v_2$ and $v_3$, because the eigenspace $E_2$ is only 1 dimensional.
+```{r,echo=TRUE}
+C = cbind(c(3,-1,1),c(2,2,1),c(1,1,2))
+eigen(C)
+```
+
+## Rental Car Example
+
+In problem PS 3.8, you studied a transition matrix for where cars got returned if they are rented from one of three rental locations: St. Paul, Rochester, and Duluth. Note that the columns of this matrix are probablilities, and as such, the are nonnegative and sum to 1. Such a matrix is called a **Markov** or **stochastic** matrix. 
+
+```{r,echo=TRUE}
+StP = c(.85,.09,.06)
+Roch = c(.30,.60,.10)
+Dul = c(.35,.05,.60) 
+M = cbind(StP,Roch,Dul)
+rownames(M) <- c("StP","Roch","Dul")
+M
+```
+
+In this assignment you imagined that there were 20 cars at each location, i.e., `v = cbind(20,20,20)` and you applied the matrix over and over again to this vector watching it converge to a steady state. 
+
+```{r,echo=TRUE}
+v = c(20,20,20)
+for (i in 1: 100) { v = M %*% v }
+v
+```
+
+Stochastic matrices always have eigenvalue $\lambda = 1$. As can be seen here:
+```{r,echo=TRUE}
+eigen(M)
+```
+Note that the first eigenvalue is 1, and that the second and third eigenvalues (and eigenvectors) are complex and have both real and imaginary parts. If some of the eigenvalues have imaginary parts, then it outputs them all in complex form.
+
+Here we extract just the real part of the first eigenvector (since its imaginary part is 0), and we rescale it both to sum to 1 and to sum to 60.
+```{r,echo=TRUE}
+v = Re(eigen(M)$vectors[,1])
+(v = v /sum(v))
+60*v
+```
+Notice that this is the *exact same* as the steady-state vector that we got by iterating. The steady-state that this system wants to be in --- with 40.97 cars in St. Paul, 10.31 cars in Rochester, and 8.72 cars in Duluth. It makes sense that a steady-state vector is an eigenvector with eigenvalue $\lambda = 1$. That the system converges to this state is eigen-magic that we will learn about soon.
+
+
+## Northern Spotted Owl
+
+This is the opening example in Chapter 5 of the textbook on page 265. It comes from a 1992 study of the northern spotted owl, which was threatened with extinction due to the loss of forest habitat due to logging in the Pacific Northwest. This is currently a story featured in an NPR Podcast called [Timber Wars](https://www.npr.org/podcasts/906829608/timber-wars).
+
+
+### The Dynamical System
+
+The vector
+$$
+x_n = \begin{bmatrix} j_n \\ s_n \\ a_n \end{bmatrix}
+$$
+is an *age-stage* vector in which $j_n, s_n$, and $a_n$ are the number of female owls in the juvenile (up to 1 year), subadult (1-2 year), and adult (over 2 year) age groups in year $n$.
+
+The dynamics that take us from one year to the next is given by, the recursive relation $x_{n+1} = A x+n$, where $A$ is the matrix shown here. This is an age-stage matrix model that was published in [*Conservation Biology*](https://www.fs.usda.gov/treesearch/pubs/3519).
+$$
+\begin{bmatrix} j_{n+1} \\ s_{n+1} \\ a_{n+1} \end{bmatrix}
+= 
+\begin{bmatrix} 0 & 0 & 0.33 \\ 0.18 & 0 & 0 \\ 0 & 0.71 & 0.94 \end{bmatrix}
+\begin{bmatrix} j_n \\ s_n \\ a_n \end{bmatrix}
+$$
+If we multiply this system out, we get
+$$
+\begin{array} {rcl}
+j_{n+1} &=& 0.33 a_n    \\
+s_{n+1} &=& 0.18 j_n     \\
+a_{n+1} &=& 0.71 s_n + 0.94 a_n    
+\end{array}
+$$
+We see that, in this model, 0.33 represents the fertility or *fecundity* rate. That is, it is the proportion of new juveniles next year to adults this year (the proportion of offspring the adult population is producing). The 0.18 is the survival rate from juvenile to subadult, 0.71 is the survival rate from subadult to adult, and 0.94 proportion of adults that survive from one year to the next.
+
+
+To see the dynamics play out over time, we will start with an original population of owls is distributed into age groups as follows.
+$$
+x_0 = \begin{bmatrix} 100 \\ 76 \\ 502 \end{bmatrix}
+$$
+We will write a loop to apply the matrix $A$ over and over again. This time we will make a table and store each value in the table.
+
+```{r,echo=TRUE}
+A = cbind(c(0,0.18,0),c(0,0,.71),c(0.33,0,0.94)) # the population dynamics matrix
+x0 = c(100,76,502) # the inital value
+N = 10  # iterate N=10 times
+X = matrix(0,nrow=nrow(A),ncol=N+1) # initialize an all 0 matrix to store values in
+X[,1] = x0 # the first column is the initial population
+for (i in 2:(N+1)) {  # loopn from 2 to N+1
+  X[,i] = A %*% X[,i-1] # Apply A to column i-1 and put the value in column i
+}
+X # display the table
+```
+
+Having saved the information, we can now plot the data, Note that it appears to support the claim the claim that the owls are threatened with extinction.
+```{r,echo=TRUE}
+tot = X[1,] + X[2,] + X[3,]
+t = seq(1,N+1)
+plot(t,X[1,],type='l',col='blue',ylim=c(0,1000),ylab="population",xlab="year",main="Spotted Owl Population")
+points(t,X[1,],col='blue',pch=20,cex=.8)
+lines(t,X[2,],col='orange')
+points(t,X[2,],col='orange',pch=20,cex=.8)
+lines(t,X[3,],col='red')
+points(t,X[3,],col='red',pch=20,cex=.8)
+points(t,tot,col='black',pch=20,cex=.8)
+lines(t,tot,col='black')
+legend(8, 1050, legend=c("juvenile", "subadults", "adults","total"), col=c('blue','orange','red','black'), lty=1)
+```
+Let's run the iteration further. This time, we won't display the table (gets too big), and we will just show the plot of 100 iterations
+
+```{r,echo=TRUE}
+A = cbind(c(0,0.18,0),c(0,0,.71),c(0.33,0,0.94)) # the population dynamics matrix
+x0 = c(100,76,502) # the inital value
+N = 100  # iterate N=10 times
+X = matrix(0,nrow=nrow(A),ncol=N+1) # initialize an all 0 matrix to store values in
+X[,1] = x0 # the first column is the initial population
+for (i in 2:(N+1)) {  # loopn from 2 to N+1
+  X[,i] = A %*% X[,i-1] # Apply A to column i-1 and put the value in column i
+}
+tot = X[1,] + X[2,] + X[3,]
+t = seq(1,N+1)
+plot(t,X[1,],type='l',col='blue',ylim=c(0,1000),ylab="population",xlab="year",main="Spotted Owl Population")
+points(t,X[1,],col='blue',pch=20,cex=.8)
+lines(t,X[2,],col='orange')
+points(t,X[2,],col='orange',pch=20,cex=.8)
+lines(t,X[3,],col='red')
+points(t,X[3,],col='red',pch=20,cex=.8)
+points(t,tot,col='black',pch=20,cex=.8)
+lines(t,tot,col='black')
+legend(8, 1050, legend=c("juvenile", "subadults", "adults","total"), col=c('blue','orange','red','black'), lty=1)
+```
+
+They do seem to be dying out. 
+
+### Eigenanalysis 
+
+Now we check the eigenvectors and eigenvalues to see if they help us understand what is going on. 
+
+```{r,echo=TRUE}
+eigen(A)
+```
+
+The first eigenvalue is $\lambda_1 = 0.98$, and the other two are complex. R always lists the eigenvalues from largest to smallest, so in this case the largets eigenvalue is less than one. That means that in that direction, the population is dying off by 2% each year. 
+
+If we extract the corresponding eigenvector, and scale it to sum to 1, we get
+```{r,echo=TRUE}
+v1 = eigen(A)$vectors[,1] # get the first eigenvector
+v1 = Re(v1) # drop the imaginary part
+v1/sum(v1)  # scale it to sum to 1
+```
+What this is telling us that as the population dies off, it does so in this eigenvector direction with 24.0% of the population being juveniles, 4.4% subadults, and 71.5% adults. 
+
+The owls were going extinct because of the logging in the Pacific Northwest. Suppose that we make the case that by stopping logging we will increase the survival rate from juvenile to subadult from 0.18 to 0.26 (by improving the habititat the juvinile owls have a better chance of surviving the first year). In this case, the eigenvalues and eigenvectors becomes:
+```{r,echo=TRUE}
+A = cbind(c(0,0.26,0),c(0,0,.71),c(0.33,0,0.94))
+eigen(A)
+```
+
+Notice that the largest eigenvalue now becomes 1. And if we iterate, we see that the population does not die off (it even grows slightly).
+```{r}
+A = cbind(c(0,0.26,0),c(0,0,.71),c(0.33,0,0.94)) # the population dynamics matrix
+x0 = c(100,76,502) # the inital value
+N = 100  # iterate N=10 times
+X = matrix(0,nrow=nrow(A),ncol=N+1) # initialize an all 0 matrix to store values in
+X[,1] = x0 # the first column is the initial population
+for (i in 2:(N+1)) {  # loopn from 2 to N+1
+  X[,i] = A %*% X[,i-1] # Apply A to column i-1 and put the value in column i
+}
+tot = X[1,] + X[2,] + X[3,]
+t = seq(1,N+1)
+plot(t,X[1,],type='l',col='blue',ylim=c(0,1000),ylab="population",xlab="year",main="Spotted Owl Population")
+points(t,X[1,],col='blue',pch=20,cex=.8)
+lines(t,X[2,],col='orange')
+points(t,X[2,],col='orange',pch=20,cex=.8)
+lines(t,X[3,],col='red')
+points(t,X[3,],col='red',pch=20,cex=.8)
+points(t,tot,col='black',pch=20,cex=.8)
+lines(t,tot,col='black')
+legend(8, 1050, legend=c("juvenile", "subadults", "adults","total"), col=c('blue','orange','red','black'), lty=1)
+```

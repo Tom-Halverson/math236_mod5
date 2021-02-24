@@ -1,4 +1,4 @@
-tab:unnamed-chunk-2
+tab:unnamed-chunk-89
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -100,6 +100,13 @@ your-turn-1
 translation-and-then-rotation
 house-of-orange
 house-party-1
+eigenvectors
+computing-eigenvectors-and-eigenvalues
+diagonalization
+rental-car-example
+northern-spotted-owl
+the-dynamical-system
+eigenanalysis
 quiz-1-review
 overview
 vocabulary-and-concepts

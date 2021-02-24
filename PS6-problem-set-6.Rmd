@@ -1,15 +1,35 @@
 
 #  Problem Set 6
 
-* Due: Friday December 04 by 11:55pm CST. 
+* Due: Tuesday March 02 by 11:59am CST. 
 * Upload your solutions to Moodle in a PDF. 
-* Please feel free to **use RStudio for all calculations, including row reduction, matrix multiplication, eigenvector calculation and inverse matrices.**
-* You can download the [Rmd source file  for this problem set](https://github.com/mathbeveridge/math236_f20/blob/main/PS6-problem-set-6.Rmd).
+* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_s21/blob/main/PS6-problem-set-6.Rmd).
 
 
-The Problem Set covers sections 5.1, 5.2, 5.3, 5.5 and Network Analysis. 
+The Problem Set covers sections 5.1, 5.2, 5.3, 5.5.
 
 
+
+## Rain and Sunshine Revisited
+
+On PS4, we encountered the rain-sunshine matrix $A$ below
+$$
+A = \begin{bmatrix}
+1/2 & 1/10 \\
+1/2 & 9/10 \\
+\end{bmatrix}.
+$$
+Perform the following calculations **by hand** and show your work.
+
+a. Find the characteristic polynomial of $A$ and find its eigenvalues.
+
+a. Find an eigenvector for each eigenvalue and describe the eigenspaces.
+
+a. Diagonalize $A$.
+
+a.  Use your answer to (c) to give a formula for $A^n$ and use this formula to compute $\displaystyle{\lim_{n\to \infty}} A^n$.
+
+a. Write a loop in `R` that starts with the vector `v = c(1,0)` (i.e., a rainy day vector) and applies the matrix `A = cbind(c(1/2,1/2),c(1/10,9/10))` over and over again (100 times). Explain how your answer compares to the answer to the previous problem.
 
 
 
@@ -24,7 +44,7 @@ a. Describe the eigenspaces of $A$.
 a. Diagonalize $A$.
 a. Find a matrix that makes sense to call $\sqrt{A}$. Then show that when you square this matrix, you really do get matrix $A$.
 
-## A  Matrix Mystery
+## Matrix Reconstruction
 
 An unknown $3 \times 3$ matrix $M$ has eigenvectors and corresponding eigenvalues:
 $$
@@ -35,115 +55,54 @@ $$
 \mathsf{v}_3 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix},\  \lambda_3 = 0.
 $$
 
-a. Find (exactly, if possible, or approximately otherwise) the vector $M^{10} \mathsf{v}$ where $\mathsf{v} = \begin{bmatrix}7\\3\\4\end{bmatrix}$.
+a. Without the matrix $M$, compute $M^{10} \mathsf{v}$ where $\mathsf{v} = \begin{bmatrix}7\\3\\4\end{bmatrix}$.
 
-a.  Describe all vectors $\mathsf{v}$, if there are any, such that $M^{n} \mathsf{v}  \to {\bf 0}$ as $n \to \infty$.
+a. Describe all vectors $\mathsf{v}$, if there are any, such that $M^{n} \mathsf{v}  \to {\bf 0}$ as $n \to \infty$.
 
-a.  Is it possible to reconstruct $M$ from the evidence given? If so, then do it!  If not, explain what further information is needed.
+a. Is it possible to reconstruct $M$ from the evidence given? If so, then do it!  If not, explain what further information is needed.
 
+## Coyotes and Roadrunners
 
-
-
-
-
-## Upper Triangular Matrix with a Constant Diagonal
-
-Let $A$ be a $3 \times 3$ upper triangular matrix of the form
+(This problem can be done by hand or in R) This summer, Macalester's Ordway Natural History Study Area will  be stocked with a population of coyotes and roadrunners so that Math 236 students can study real-life predator-prey dynamics. From similar experiments, we expect the predator-prey dynamics to be governed by linear model below. The eigenvalues of the matrix are also given.
 $$
-A = \begin{bmatrix}
-d & a & b \\
-0  & d & c \\
-0 & 0 & d
-\end{bmatrix}
+\begin{bmatrix} \phantom{\Big\vert} r_{t+1}\phantom{\Big\vert}  \\ \phantom{\Big\vert} c_{t+1}\phantom{\Big\vert}  \phantom{\Big\vert} \end{bmatrix}
+=\left[
+\begin{array}{cc}
+\phantom{\Big\vert} \frac{57}{50} & -\frac{6}{50} \\
+\phantom{\Big\vert} \frac{4}{50} & \frac{43}{50} \\
+\end{array}
+\right] \begin{bmatrix} \phantom{\Big\vert} r_t \phantom{\Big\vert}  \\ \phantom{\Big\vert} c_t \phantom{\Big\vert} \end{bmatrix}
+=
+ \begin{bmatrix} \phantom{\Big\vert} 
+\frac{57}{50} r_t -  \frac{6}{50}  c_t \\ \phantom{\Big\vert} \frac{4}{50} r_t +  \frac{43}{50} c_t \end{bmatrix},
 $$
-where $d \neq 0$ and at least one of $a,b,c$ is nonzero. Explain why $A$ is not diagonalizable.
-
-
-
-
-## Block Diagonalization of a  $4 \times 4$ Matrix
-
-
-The $4 \times 4$ matrix
+The eigenvalues of this matrix are:
 $$
-A = \begin{bmatrix}
-2 & -1 & 1 & -1 \\
-1 & -3 & 3 & 2 \\
-2 & -9 & 7 & 0 \\
-2 & -4 & 2 & 0
-\end{bmatrix}
+\lambda_1 =  \frac{11}{10} =  \frac{55}{50}, \qquad \lambda_2 =  \frac{9}{10} = \frac{45}{50}
 $$
-has complex eigenvalues $a \pm bi$ and $c \pm di$. 
+And eigenvalues and eigenvectors are:
 
-a. Use RStudio to find the eigenvalues $a \pm bi$ and $c \pm di$, as well as "human friendly" eigenvectors 
-
-    + $\mathsf{v} = \mathsf{v}_1 + i \mathsf{v}_2$ for eigenvalue $a + bi$, and 
-    + $\mathsf{w} = \mathsf{w}_1 + i \mathsf{w}_2$ for eigenvalue $c + di$. 
-
-    Hint: the command `zapsmall()` might be helpful.
-
-
-a. This matrix A can be factored as $A  =  P B P^{-1}$ where $B$ is a "block diagonal"  matrix of the form
-$$
-B = \begin{bmatrix} a & -b & 0  & 0 \\
-b & a & 0 & 0 \\
-0 & 0 & c & -d \\
-0 & 0 & d & c 
-\end{bmatrix}
-$$
-and
-$$
-P = \begin{bmatrix} \mathrm{Im} (\mathsf{v}) & \mathrm{Re} (\mathsf{v}) &  \mathrm{Im} (\mathsf{w}) & \mathrm{Re}( \mathsf{w})
-\end{bmatrix}
-=\begin{bmatrix} \mathsf{v}_2 & \mathsf{v}_1 &  \mathsf{w}_2 &  \mathsf{w}_1
-\end{bmatrix}
-$$
-where the constants $a,b,c,d$ and the vectors $\mathsf{v}, \mathsf{w}$ are as described in part (a). Use RStudio to find the $4 \times 4$ matrices $B$, $P$ and its inverse $P^{-1}$. 
-
-    Hints: 
-
-    * You can use  the command `solve(M)` to find the inverse of matrix $M$.
-    * You can confirm that your answer is correct by computing $P B P^{-1}$ and checking that this equals the original matrix $A$.
-
-
-
-## Network Analysis of Risk Territories
-
-*Risk* is a classic board game of conflict and diplomacy played on a map of the world. Players try to capture territories by moving their armies through adjancent territories. Here is what the game map looks like, with the countries colored by continent. 
-
-<center>
-
-![Risk Game Board (image: wikipedia)](https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Risk_game_map_fixed.png/800px-Risk_game_map_fixed.png){width=80%}
-
-
-
-</center>
-
-Here is a network representation of the gameboard, created from an adjacency matrix.
-
-```{r networkRisk, fig.height=8, fig.width=8, echo=TRUE}
-library(igraph)
-
-risk <- read.csv("https://raw.github.com/mathbeveridge/math236_f20/main/data/riskmatrix.csv")
-A = data.matrix(risk)
-countries =  names(risk)
-g=graph_from_adjacency_matrix(A,mode='undirected')
-
-coords = layout_nicely(g)
-plot(g, layout=coords, vertex.size = 10, vertex.label.cex=0.75, vertex.color='khaki', vertex.frame.color="black")
-
+```{r}
+A = cbind(c(57/50,4/50),c(-6/50,43/50))
+eigen(A)
 ```
 
-Calculate Gould's Index for this network. Use this Gould's Index ranking to **identify the most central territory in each of the six continents in this worldwide network**.  [Here is a list of territories by continent](https://en.wikipedia.org/wiki/Risk_(game)#Territories) (Africa, Asia, Australia, Europe, North America, South America) to help you to classify the territories. 
+a. Find  corresponding eigenvectors and \emph{diagonalize} this matrix.
 
-Turn in a table with six rows. These six rows should be ordered by Gould's index. Each row should contain: 
 
-* name of the continent
-* name of the territory with the largest Gould Index,
-* the degree of the territory,
-* the Gould's Index value for the territory.
 
-**Important:** You do not need to show your work for this problem! Just turn the table (handwritten is fine) of your results.
+a. If $r_0 =  10$ roadrunners and $c_0 = 15$ coyotes are introduced to the area, then give \emph{closed formulas} for the population of coyotes $c_t$ and roadrunners $r_t$ after $t$ years.
+
+
+a.  In the long-term, in this model, what is the ratio of roadrunners to coyotes?
+
+
+
+a. When another college tried the same experiment in their Arboretum, they introduced $r_0 =  5$ roadrunners and $c_0 = 10$ coyotes and both populations  quickly died off.  Explain why this is happening (using the model) and give the rate at which the populations die off.
+
+
+## Matrices With Same Eigenvectors Commute
+
 
 
 

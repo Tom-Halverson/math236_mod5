@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 1 Problem Set 6 | PS6-problem-set-6.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 1 Problem Set 6 | PS6-problem-set-6.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 1 Problem Set 6 | PS6-problem-set-6.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="m236.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href = "./">MATH 236: Linear Algebra</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#problem-set-6"><i class="fa fa-check"></i><b>1</b> Problem Set 6</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#rain-and-sunshine-revisited"><i class="fa fa-check"></i><b>1.1</b> Rain and Sunshine Revisited</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#the-square-root-of-a-matrix"><i class="fa fa-check"></i><b>1.2</b> The Square Root of a Matrix?</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#matrix-reconstruction"><i class="fa fa-check"></i><b>1.3</b> Matrix Reconstruction</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#coyotes-and-roadrunners"><i class="fa fa-check"></i><b>1.4</b> Coyotes and Roadrunners</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="problem-set-6" class="section level1">
+<h1><span class="header-section-number">Section 1</span> Problem Set 6</h1>
+<ul>
+<li>Due: Tuesday March 02 by 11:59am CST.</li>
+<li>Upload your solutions to Moodle in a PDF.</li>
+<li>You can download the <a href="https://github.com/Tom-Halverson/math236_s21/blob/main/PS6-problem-set-6.Rmd">Rmd source file for this problem set</a>.</li>
+</ul>
+<p>The Problem Set covers sections 5.1, 5.2, 5.3, 5.5.</p>
+<div id="rain-and-sunshine-revisited" class="section level2">
+<h2><span class="header-section-number">1.1</span> Rain and Sunshine Revisited</h2>
+<p>On PS4, we encountered the rain-sunshine matrix <span class="math inline">\(A\)</span> below
+<span class="math display">\[
+A = \begin{bmatrix}
+1/2 &amp; 1/10 \\
+1/2 &amp; 9/10 \\
+\end{bmatrix}.
+\]</span>
+Perform the following calculations <strong>by hand</strong> and show your work.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Find the characteristic polynomial of <span class="math inline">\(A\)</span> and find its eigenvalues.</p></li>
+<li><p>Find an eigenvector for each eigenvalue and describe the eigenspaces.</p></li>
+<li><p>Diagonalize <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Use your answer to (c) to give a formula for <span class="math inline">\(A^n\)</span> and use this formula to compute <span class="math inline">\(\displaystyle{\lim_{n\to \infty}} A^n\)</span>.</p></li>
+<li><p>Write a loop in <code>R</code> that starts with the vector <code>v = c(1,0)</code> (i.e., a rainy day vector) and applies the matrix <code>A = cbind(c(1/2,1/2),c(1/10,9/10))</code> over and over again (100 times). Explain how your answer compares to the answer to the previous problem.</p></li>
+</ol>
+</div>
+<div id="the-square-root-of-a-matrix" class="section level2">
+<h2><span class="header-section-number">1.2</span> The Square Root of a Matrix?</h2>
+<p>The matrix <span class="math inline">\(A =\begin{bmatrix} 7 &amp; 2 \\ -4 &amp; 1 \end{bmatrix}\)</span> has characteristic polynomial
+<span class="math inline">\(\lambda^2 - 8 \lambda + 15 = (\lambda -3)(\lambda - 5).\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Describe the eigenspaces of <span class="math inline">\(A\)</span>.</li>
+<li>Diagonalize <span class="math inline">\(A\)</span>.</li>
+<li>Find a matrix that makes sense to call <span class="math inline">\(\sqrt{A}\)</span>. Then show that when you square this matrix, you really do get matrix <span class="math inline">\(A\)</span>.</li>
+</ol>
+</div>
+<div id="matrix-reconstruction" class="section level2">
+<h2><span class="header-section-number">1.3</span> Matrix Reconstruction</h2>
+<p>An unknown <span class="math inline">\(3 \times 3\)</span> matrix <span class="math inline">\(M\)</span> has eigenvectors and corresponding eigenvalues:
+<span class="math display">\[
+\mathsf{v}_1 = \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, \  \lambda_1 = 1;
+\qquad
+\mathsf{v}_2 = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix},\  \lambda_2 = \frac{9}{10};
+\qquad
+\mathsf{v}_3 = \begin{bmatrix} -1 \\ 1 \\ 0 \end{bmatrix},\  \lambda_3 = 0.
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Without the matrix <span class="math inline">\(M\)</span>, compute <span class="math inline">\(M^{10} \mathsf{v}\)</span> where <span class="math inline">\(\mathsf{v} = \begin{bmatrix}7\\3\\4\end{bmatrix}\)</span>.</p></li>
+<li><p>Describe all vectors <span class="math inline">\(\mathsf{v}\)</span>, if there are any, such that <span class="math inline">\(M^{n} \mathsf{v} \to {\bf 0}\)</span> as <span class="math inline">\(n \to \infty\)</span>.</p></li>
+<li><p>Is it possible to reconstruct <span class="math inline">\(M\)</span> from the evidence given? If so, then do it! If not, explain what further information is needed.</p></li>
+</ol>
+</div>
+<div id="coyotes-and-roadrunners" class="section level2">
+<h2><span class="header-section-number">1.4</span> Coyotes and Roadrunners</h2>
+<p>(This problem can be done by hand or in R) This summer, Macalester’s Ordway Natural History Study Area will be stocked with a population of coyotes and roadrunners so that Math 236 students can study real-life predator-prey dynamics. From similar experiments, we expect the predator-prey dynamics to be governed by linear model below. The eigenvalues of the matrix are also given.
+<span class="math display">\[
+\begin{bmatrix} \phantom{\Big\vert} r_{t+1}\phantom{\Big\vert}  \\ \phantom{\Big\vert} c_{t+1}\phantom{\Big\vert}  \phantom{\Big\vert} \end{bmatrix}
+=\left[
+\begin{array}{cc}
+\phantom{\Big\vert} \frac{57}{50} &amp; -\frac{6}{50} \\
+\phantom{\Big\vert} \frac{4}{50} &amp; \frac{43}{50} \\
+\end{array}
+\right] \begin{bmatrix} \phantom{\Big\vert} r_t \phantom{\Big\vert}  \\ \phantom{\Big\vert} c_t \phantom{\Big\vert} \end{bmatrix}
+=
+ \begin{bmatrix} \phantom{\Big\vert} 
+\frac{57}{50} r_t -  \frac{6}{50}  c_t \\ \phantom{\Big\vert} \frac{4}{50} r_t +  \frac{43}{50} c_t \end{bmatrix},
+\]</span>
+The eigenvalues of this matrix are:
+<span class="math display">\[
+\lambda_1 =  \frac{11}{10} =  \frac{55}{50}, \qquad \lambda_2 =  \frac{9}{10} = \frac{45}{50}
+\]</span>
+And eigenvalues and eigenvectors are:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">57</span><span class="op">/</span><span class="dv">50</span>,<span class="dv">4</span><span class="op">/</span><span class="dv">50</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">6</span><span class="op">/</span><span class="dv">50</span>,<span class="dv">43</span><span class="op">/</span><span class="dv">50</span>))</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">eigen</span>(A)</span></code></pre></div>
+<pre><code>## eigen() decomposition
+## $values
+## [1] 1.1 0.9
+## 
+## $vectors
+##           [,1]      [,2]
+## [1,] 0.9486833 0.4472136
+## [2,] 0.3162278 0.8944272</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li><p>Find corresponding eigenvectors and  this matrix.</p></li>
+<li><p>If <span class="math inline">\(r_0 = 10\)</span> roadrunners and <span class="math inline">\(c_0 = 15\)</span> coyotes are introduced to the area, then give  for the population of coyotes <span class="math inline">\(c_t\)</span> and roadrunners <span class="math inline">\(r_t\)</span> after <span class="math inline">\(t\)</span> years.</p></li>
+<li><p>In the long-term, in this model, what is the ratio of roadrunners to coyotes?</p></li>
+<li><p>When another college tried the same experiment in their Arboretum, they introduced <span class="math inline">\(r_0 = 5\)</span> roadrunners and <span class="math inline">\(c_0 = 10\)</span> coyotes and both populations quickly died off. Explain why this is happening (using the model) and give the rate at which the populations die off.</p></li>
+</ol>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
