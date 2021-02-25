@@ -244,6 +244,6 @@ a. Give a trajectory plot of this matrix using the `trajectory_plot` command fro
 a. Use R to find the eigenvalues and eigenvectors. 
 a. Write out the eigenvalues in the form $\lambda = a \pm b i$ and the eigenvectors in the form $\vec{v} = \vec{u} \pm \vec{w} i.$
 a. Use this information to find the scaling factor $|\lambda|$ for this matrix and the angle of rotation $\arctan(b/a)$. Give your answer in degrees.
-a. Compare your answers from part (c) to the plots above to confirm that the system is doing what the eigenvalues predict.
+a. Compare your answers from part (d) to the plots above to confirm that the system is doing what the eigenvalues predict.
 
 

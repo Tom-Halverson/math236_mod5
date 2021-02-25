@@ -1,0 +1,26 @@
+---
+title: "day25.Rmd"
+author: "Math 236"
+date: "2/25/2021"
+output: html_document
+---
+
+```{r}
+A = cbind(c(-1,1),c(-4,-1))
+eigen(A)
+Arg(eigen(A)$values)/(2 * pi)*360
+```
+
+```{r,fig.height=4, fig.width=6}
+# plot
+N = 21
+start = c(1,0)
+X = matrix(0,nrow=2,ncol=N)
+X[,1] = start
+for (i in 2:N) {X[,i] = A %*% X[,i-1]}
+
+plot(X[1,],X[2,],col='blue',xlim=c(-10000,10000),ylim=c(-10000,10000),xlab='x',ylab='y',pch=20,cex=1,type="l")
+points(start[1],start[2],col="red")
+grid(nx=10,ny=10)
+```
+
