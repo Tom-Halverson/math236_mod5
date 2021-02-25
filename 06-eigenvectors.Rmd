@@ -245,3 +245,27 @@ points(t,tot,col='black',pch=20,cex=.8)
 lines(t,tot,col='black')
 legend(8, 1050, legend=c("juvenile", "subadults", "adults","total"), col=c('blue','orange','red','black'), lty=1)
 ```
+
+Finally, we go back to the original system, which is dying out, but start with a totally different age distribution. You can see the non-dominant eigevectors dying out quickly at the beginning and the dominant eigenvector, of eigenvalue 0.98, taking over. 
+
+```{r,echo=TRUE}
+A = cbind(c(0,0.18,0),c(0,0,.71),c(0.33,0,0.94)) # the population dynamics matrix
+x0 = c(70,600,8) # the inital value
+N = 20  # iterate N=100 times
+X = matrix(0,nrow=nrow(A),ncol=N+1) # initialize an all 0 matrix to store values in
+X[,1] = x0 # the first column is the initial population
+for (i in 2:(N+1)) {  # loopn from 2 to N+1
+  X[,i] = A %*% X[,i-1] # Apply A to column i-1 and put the value in column i
+}
+tot = X[1,] + X[2,] + X[3,]
+t = seq(1,N+1)
+plot(t,X[1,],type='l',col='blue',ylim=c(0,1000),ylab="population",xlab="year",main="Spotted Owl Population")
+points(t,X[1,],col='blue',pch=20,cex=.8)
+lines(t,X[2,],col='orange')
+points(t,X[2,],col='orange',pch=20,cex=.8)
+lines(t,X[3,],col='red')
+points(t,X[3,],col='red',pch=20,cex=.8)
+points(t,tot,col='black',pch=20,cex=.8)
+lines(t,tot,col='black')
+legend(8, 1050, legend=c("juvenile", "subadults", "adults","total"), col=c('blue','orange','red','black'), lty=1)
+```

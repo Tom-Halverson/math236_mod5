@@ -553,14 +553,14 @@ We will write a loop to apply the matrix <span class="math inline">\(A\)</span> 
 <span id="cb182-7"><a href="eigenvectors.html#cb182-7"></a>  X[,i] =<span class="st"> </span>A <span class="op">%*%</span><span class="st"> </span>X[,i<span class="dv">-1</span>] <span class="co"># Apply A to column i-1 and put the value in column i</span></span>
 <span id="cb182-8"><a href="eigenvectors.html#cb182-8"></a>}</span>
 <span id="cb182-9"><a href="eigenvectors.html#cb182-9"></a>X <span class="co"># display the table</span></span></code></pre></div>
-<pre><code>##      [,1]   [,2]     [,3]     [,4]      [,5]      [,6]     [,7]      [,8]      [,9]     [,10]
-## [1,]  100 165.66 173.5272 167.3330 164.27953 161.74110 159.0937 156.47643 153.90912 151.38419
-## [2,]   76  18.00  29.8188  31.2349  30.11993  29.57032  29.1134  28.63687  28.16576  27.70364
-## [3,]  502 525.84 507.0696 497.8168 490.12454 482.10222 474.1710 466.39127 458.73997 451.21326
-##          [,11]
-## [1,] 148.90038
-## [2,]  27.24915
-## [3,] 443.81005</code></pre>
+<pre><code>##      [,1]   [,2]     [,3]     [,4]      [,5]      [,6]     [,7]      [,8]      [,9]
+## [1,]  100 165.66 173.5272 167.3330 164.27953 161.74110 159.0937 156.47643 153.90912
+## [2,]   76  18.00  29.8188  31.2349  30.11993  29.57032  29.1134  28.63687  28.16576
+## [3,]  502 525.84 507.0696 497.8168 490.12454 482.10222 474.1710 466.39127 458.73997
+##          [,10]     [,11]
+## [1,] 151.38419 148.90038
+## [2,]  27.70364  27.24915
+## [3,] 451.21326 443.81005</code></pre>
 <p>Having saved the information, we can now plot the data, Note that it appears to support the claim the claim that the owls are threatened with extinction.</p>
 <div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="eigenvectors.html#cb184-1"></a>tot =<span class="st"> </span>X[<span class="dv">1</span>,] <span class="op">+</span><span class="st"> </span>X[<span class="dv">2</span>,] <span class="op">+</span><span class="st"> </span>X[<span class="dv">3</span>,]</span>
 <span id="cb184-2"><a href="eigenvectors.html#cb184-2"></a>t =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>,N<span class="op">+</span><span class="dv">1</span>)</span>
@@ -573,7 +573,7 @@ We will write a loop to apply the matrix <span class="math inline">\(A\)</span> 
 <span id="cb184-9"><a href="eigenvectors.html#cb184-9"></a><span class="kw">points</span>(t,tot,<span class="dt">col=</span><span class="st">&#39;black&#39;</span>,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">8</span>)</span>
 <span id="cb184-10"><a href="eigenvectors.html#cb184-10"></a><span class="kw">lines</span>(t,tot,<span class="dt">col=</span><span class="st">&#39;black&#39;</span>)</span>
 <span id="cb184-11"><a href="eigenvectors.html#cb184-11"></a><span class="kw">legend</span>(<span class="dv">8</span>, <span class="dv">1050</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;juvenile&quot;</span>, <span class="st">&quot;subadults&quot;</span>, <span class="st">&quot;adults&quot;</span>,<span class="st">&quot;total&quot;</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&#39;blue&#39;</span>,<span class="st">&#39;orange&#39;</span>,<span class="st">&#39;red&#39;</span>,<span class="st">&#39;black&#39;</span>), <span class="dt">lty=</span><span class="dv">1</span>)</span></code></pre></div>
-<p><img src="math236_handbook_files/figure-html/unnamed-chunk-77-1.png" width="75%" style="display: block; margin: auto;" />
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-70-1.png" width="75%" style="display: block; margin: auto;" />
 Let’s run the iteration further. This time, we won’t display the table (gets too big), and we will just show the plot of 100 iterations</p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="eigenvectors.html#cb185-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.18</span>,<span class="dv">0</span>),<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">71</span>),<span class="kw">c</span>(<span class="fl">0.33</span>,<span class="dv">0</span>,<span class="fl">0.94</span>)) <span class="co"># the population dynamics matrix</span></span>
 <span id="cb185-2"><a href="eigenvectors.html#cb185-2"></a>x0 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">76</span>,<span class="dv">502</span>) <span class="co"># the inital value</span></span>
@@ -594,7 +594,7 @@ Let’s run the iteration further. This time, we won’t display the table (gets
 <span id="cb185-17"><a href="eigenvectors.html#cb185-17"></a><span class="kw">points</span>(t,tot,<span class="dt">col=</span><span class="st">&#39;black&#39;</span>,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">8</span>)</span>
 <span id="cb185-18"><a href="eigenvectors.html#cb185-18"></a><span class="kw">lines</span>(t,tot,<span class="dt">col=</span><span class="st">&#39;black&#39;</span>)</span>
 <span id="cb185-19"><a href="eigenvectors.html#cb185-19"></a><span class="kw">legend</span>(<span class="dv">8</span>, <span class="dv">1050</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;juvenile&quot;</span>, <span class="st">&quot;subadults&quot;</span>, <span class="st">&quot;adults&quot;</span>,<span class="st">&quot;total&quot;</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&#39;blue&#39;</span>,<span class="st">&#39;orange&#39;</span>,<span class="st">&#39;red&#39;</span>,<span class="st">&#39;black&#39;</span>), <span class="dt">lty=</span><span class="dv">1</span>)</span></code></pre></div>
-<p><img src="math236_handbook_files/figure-html/unnamed-chunk-78-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-71-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>They do seem to be dying out.</p>
 </div>
 <div id="eigenanalysis" class="section level3">
@@ -630,7 +630,28 @@ Let’s run the iteration further. This time, we won’t display the table (gets
 ## [2,] 0.0810836+0i  0.6450012+0.0000000i  0.6450012+0.0000000i
 ## [3,] 0.9465778+0i -0.4436732-0.1119384i -0.4436732+0.1119384i</code></pre>
 <p>Notice that the largest eigenvalue now becomes 1. And if we iterate, we see that the population does not die off (it even grows slightly).
-<img src="math236_handbook_files/figure-html/unnamed-chunk-82-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<img src="math236_handbook_files/figure-html/unnamed-chunk-75-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>Finally, we go back to the original system, which is dying out, but start with a totally different age distribution. You can see the non-dominant eigevectors dying out quickly at the beginning and the dominant eigenvector, of eigenvalue 0.98, taking over.</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="eigenvectors.html#cb192-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">0</span>,<span class="fl">0.18</span>,<span class="dv">0</span>),<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,.<span class="dv">71</span>),<span class="kw">c</span>(<span class="fl">0.33</span>,<span class="dv">0</span>,<span class="fl">0.94</span>)) <span class="co"># the population dynamics matrix</span></span>
+<span id="cb192-2"><a href="eigenvectors.html#cb192-2"></a>x0 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">70</span>,<span class="dv">600</span>,<span class="dv">8</span>) <span class="co"># the inital value</span></span>
+<span id="cb192-3"><a href="eigenvectors.html#cb192-3"></a>N =<span class="st"> </span><span class="dv">20</span>  <span class="co"># iterate N=100 times</span></span>
+<span id="cb192-4"><a href="eigenvectors.html#cb192-4"></a>X =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="dt">nrow=</span><span class="kw">nrow</span>(A),<span class="dt">ncol=</span>N<span class="op">+</span><span class="dv">1</span>) <span class="co"># initialize an all 0 matrix to store values in</span></span>
+<span id="cb192-5"><a href="eigenvectors.html#cb192-5"></a>X[,<span class="dv">1</span>] =<span class="st"> </span>x0 <span class="co"># the first column is the initial population</span></span>
+<span id="cb192-6"><a href="eigenvectors.html#cb192-6"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span>(N<span class="op">+</span><span class="dv">1</span>)) {  <span class="co"># loopn from 2 to N+1</span></span>
+<span id="cb192-7"><a href="eigenvectors.html#cb192-7"></a>  X[,i] =<span class="st"> </span>A <span class="op">%*%</span><span class="st"> </span>X[,i<span class="dv">-1</span>] <span class="co"># Apply A to column i-1 and put the value in column i</span></span>
+<span id="cb192-8"><a href="eigenvectors.html#cb192-8"></a>}</span>
+<span id="cb192-9"><a href="eigenvectors.html#cb192-9"></a>tot =<span class="st"> </span>X[<span class="dv">1</span>,] <span class="op">+</span><span class="st"> </span>X[<span class="dv">2</span>,] <span class="op">+</span><span class="st"> </span>X[<span class="dv">3</span>,]</span>
+<span id="cb192-10"><a href="eigenvectors.html#cb192-10"></a>t =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>,N<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb192-11"><a href="eigenvectors.html#cb192-11"></a><span class="kw">plot</span>(t,X[<span class="dv">1</span>,],<span class="dt">type=</span><span class="st">&#39;l&#39;</span>,<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>,<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1000</span>),<span class="dt">ylab=</span><span class="st">&quot;population&quot;</span>,<span class="dt">xlab=</span><span class="st">&quot;year&quot;</span>,<span class="dt">main=</span><span class="st">&quot;Spotted Owl Population&quot;</span>)</span>
+<span id="cb192-12"><a href="eigenvectors.html#cb192-12"></a><span class="kw">points</span>(t,X[<span class="dv">1</span>,],<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">8</span>)</span>
+<span id="cb192-13"><a href="eigenvectors.html#cb192-13"></a><span class="kw">lines</span>(t,X[<span class="dv">2</span>,],<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span>
+<span id="cb192-14"><a href="eigenvectors.html#cb192-14"></a><span class="kw">points</span>(t,X[<span class="dv">2</span>,],<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">8</span>)</span>
+<span id="cb192-15"><a href="eigenvectors.html#cb192-15"></a><span class="kw">lines</span>(t,X[<span class="dv">3</span>,],<span class="dt">col=</span><span class="st">&#39;red&#39;</span>)</span>
+<span id="cb192-16"><a href="eigenvectors.html#cb192-16"></a><span class="kw">points</span>(t,X[<span class="dv">3</span>,],<span class="dt">col=</span><span class="st">&#39;red&#39;</span>,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">8</span>)</span>
+<span id="cb192-17"><a href="eigenvectors.html#cb192-17"></a><span class="kw">points</span>(t,tot,<span class="dt">col=</span><span class="st">&#39;black&#39;</span>,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">8</span>)</span>
+<span id="cb192-18"><a href="eigenvectors.html#cb192-18"></a><span class="kw">lines</span>(t,tot,<span class="dt">col=</span><span class="st">&#39;black&#39;</span>)</span>
+<span id="cb192-19"><a href="eigenvectors.html#cb192-19"></a><span class="kw">legend</span>(<span class="dv">8</span>, <span class="dv">1050</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;juvenile&quot;</span>, <span class="st">&quot;subadults&quot;</span>, <span class="st">&quot;adults&quot;</span>,<span class="st">&quot;total&quot;</span>), <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&#39;blue&#39;</span>,<span class="st">&#39;orange&#39;</span>,<span class="st">&#39;red&#39;</span>,<span class="st">&#39;black&#39;</span>), <span class="dt">lty=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-76-1.png" width="75%" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
