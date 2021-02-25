@@ -1,0 +1,280 @@
+
+
+# Complex Eigenvalues
+
+[Download this Rmd file](https://github.com/Tom-Halverson/math236_s21/blob/main/08-complex-eigenvalues.Rmd)
+
+Now we will explore what happens if the matrix has complex eigenvalues.
+
+## Rotation-Dilation
+
+First we explore a special case of 2x2 matrices with complex eigenvalues of the following form:
+$$
+R=\begin{bmatrix}
+a & -b \\
+b & a \\
+\end{bmatrix}
+$$
+As we see in the image below, this matrix rotates by angle of $\theta$ and expands (dilates) or contracts by a factor of $r$ where
+$$
+\begin{align}
+\theta &= \arctan(b/a) \\
+r &= \sqrt{a^2 + b^2}
+\end{align}
+$$
+![](images/rotation-dilation.png){width=75%}
+
+Furthermore the eigenvalues of this matrix are the complex values
+$$
+\lambda_1 = a + b i \qquad \lambda_2 = a - b i
+$$
+where $i = \sqrt{-1}$. These eigenvalues are conjugate pairs and are often written as
+$\lambda = a \pm b i$. They come from applying the quadratic formula to the characteristic polynomial and getting a negative discriminant under the square root. It is important to note that both **the angle of rotation $\theta$ and the dilation factor $r$ are contained in the eigenvalues.** The fact that these are the eigenvalues is derived in the video. We will illustrate it here in three examples.
+
+### Example 1
+
+Our first example has $a = .9$ and $b = .2$.
+```{r}
+(A = cbind(c(.9,.2),c(-.2,.9)))
+```
+
+We look at its eigenvectors and eigenvalues and see that $\lambda = .9 \pm .2 i$:
+```{r,echo=TRUE}
+eigen(A)
+```
+Notics that the eigenvectors also come in conjugate pairs, with a real and a complex part. This always happens.
+$$
+\vec{\mathsf{v}} = 
+\begin{bmatrix}0.707 \\ 0.000 \end{bmatrix} \pm 
+\begin{bmatrix} 0.000 \\ .707 \end{bmatrix}  i
+$$
+Now, let's find the **angle of rotation**. We will use the `Arg` command which finds the angle (in radians) of a complex number. We also convert it to degrees here. 
+
+```{r,echo=TRUE}
+vals = eigen(A)$values
+v1 = vals[1]
+Arg(v1)  # gives the argument, or angle, of a complex number (in radians)
+Arg(v1) / (2*pi) * 360 # convert to degrees
+```
+
+For good measure, we can compare with using the `arctan` function.
+
+```{r,echo=TRUE}
+atan(.2/.9)  
+```
+
+Next we find the **dilation/contraction factor**. We can do so using the `Mod` command, which finds the "modulus" or absolute value or length of a complex number.
+
+```{r}
+Mod(v1) # gives the length of a complex number
+```
+
+And, again for good measure, we compare with using the Pythagorean theorem:
+```{r}
+sqrt(.9^2 + .2^2)  
+```
+
+Now, we observe the trajectory of a single point $(0,1)^T$ under this matrix. In this picture you can see that it is contracting and rotating by 12.5 degrees. Note that 360/12.5 is about 29, and it takes 29 applications to go once around the circle. You can count them in the plot below. Furthermore, $(0.9219544)^29 =0.095$ and after 29 applications the vector is about 1/10 of its original length.
+
+```{r,fig.width=6, fig.height=6}
+
+N = 50
+start = c(1,0)
+X = matrix(0,nrow=2,ncol=N)
+X[,1] = start
+for (i in 2:N) {X[,i] = A %*% X[,i-1]}
+
+plot(X[1,],X[2,],col='blue',xlim=c(-1,1),ylim=c(-1,1),xlab='x',ylab='y',pch=20,cex=1)
+points(start[1],start[2],col="red")
+grid(nx=10,ny=10)
+```
+
+
+
+
+```{r, echo=FALSE}
+get_traj <- function(mat, x0, num) {
+  traj = cbind(x0) 
+  num
+  for (i in 1:num) {
+    traj = cbind(traj, mat %*% traj[,dim(traj)[2]])
+    traj
+  }
+  return(traj)
+}
+
+plot_traj <- function(mat, x0, num) {
+  traj = get_traj(mat,x0,num)
+  points(traj[1,],traj[2,], pch=20, col=rainbow(length(traj)))
+}
+
+trajectory_plot <- function(mat, t=20, datamax=5, plotmax=10, numpoints=10, showEigenspaces=TRUE) {
+  # initialize plot
+  par(pty = "s")
+  plot(c(0),c(0),type="n",
+       xlim=c(-plotmax,plotmax),ylim=c(-plotmax,plotmax),
+       xlab='x', ylab='y')
+  abline(h=-plotmax:plotmax, v=-plotmax:plotmax, col="gray")
+  mygrid <- expand.grid(x=seq(from = -datamax, by = 2*datamax/numpoints, l = numpoints+1),
+                      y=seq(from =  -datamax, by = 2*datamax/numpoints, l = numpoints+1))
+  for (t in 1:dim(mygrid)[1]) {
+    plot_traj(A,c(mygrid[t,1],mygrid[t,2]),t)
+  }
+  if (showEigenspaces) {
+    eigen = eigen(A)
+    #mylabel = cat('lambda=', eigen$values[1], 'and lambda=', eigen$values[2])
+    #title(xlab=mylabel)
+    v1 = zapsmall(eigen$vectors[,1])
+    v2 = zapsmall(eigen$vectors[,2])
+    if (! class(v1[1]) == "complex") {
+      if (v1[1] == 0) {
+        abline(v=0)
+      } else {
+        abline(a=0,b=v1[2]/v1[1], col="blue")
+      } 
+      
+      if (v2[1] == 0) {
+        abline(v=0)
+      } else {
+        abline(a=0,b=v2[2]/v2[1], col="blue")
+      }   
+    }
+    
+  }
+}
+```
+
+We can also use `trajectory_plot` from [Dynamical Systems in 2D] to watch what happens to a whole grid of points under this transformation. It is beautiful!
+
+```{r,fig.height=7, fig.width=7, echo=TRUE}
+trajectory_plot(A, t=30, datamax=5, plotmax=5, numpoints=10)
+```
+
+### Example 2
+
+Here is a second example of a rotation-dilation matrix, this time with $a = .96$ and $b = .28$.
+
+```{r,echo=TRUE}
+(A = cbind(c(.96,.28),c(-.28,.96)))
+eigen(A)
+```
+
+We check the angle of rotation and the dilation factor
+
+```{r,echo=TRUE}
+vals = eigen(A)$values
+v1 = vals[1]
+Arg(v1)  # gives the argument, or angle, of a complex number (in radians)
+Arg(v1) / (2*pi) * 360 # convert to degrees
+Mod(v1)  # gives the length of a complex number
+```
+Notice that the dilation factor is 1, which is seen in the following plots. Here are 21 iterations:
+
+```{r,fig.height=4, fig.width=4}
+# plot
+N = 21
+start = c(1,0)
+X = matrix(0,nrow=2,ncol=N)
+X[,1] = start
+for (i in 2:N) {X[,i] = A %*% X[,i-1]}
+
+plot(X[1,],X[2,],col='blue',xlim=c(-1,1),ylim=c(-1,1),xlab='x',ylab='y',pch=20,cex=1)
+points(start[1],start[2],col="red")
+grid(nx=10,ny=10)
+```
+
+And here are 200 iterations
+```{r,fig.height=4, fig.width=4}
+# plot
+N = 200
+start = c(1,0)
+X = matrix(0,nrow=2,ncol=N)
+X[,1] = start
+for (i in 2:N) {X[,i] = A %*% X[,i-1]}
+
+plot(X[1,],X[2,],col='blue',xlim=c(-1,1),ylim=c(-1,1),xlab='x',ylab='y',pch=20,cex=1)
+points(start[1],start[2],col="red")
+grid(nx=10,ny=10)
+```
+
+And a trajectory plot:
+```{r,fig.height=7, fig.width=7}
+trajectory_plot(A, t=30, datamax=5, plotmax=5, numpoints=10)
+```
+
+### Example 3
+
+A third and final example.
+
+```{r,echo=TRUE}
+(A = cbind(c(.99,.16),c(-.16,.99)))
+eigen(A)
+vals = eigen(A)$values
+v1 = vals[1]
+Arg(v1) / (2*pi) * 360 # convert to degrees
+Mod(v1)  # gives the length of a complex number
+```
+
+We see that the dilation factor is $r = 1.0028$ and the angle of rotation is $9.18$ degrees. Here are 100 iterations.
+
+
+```{r,fig.width=4, fig.height=4}
+# plot
+N = 100
+start = c(1,0)
+X = matrix(0,nrow=2,ncol=N)
+X[,1] = start
+for (i in 2:N) {X[,i] = A %*% X[,i-1]}
+
+plot(X[1,],X[2,],col='blue',xlim=c(-2,2),ylim=c(-2,2),xlab='x',ylab='y',pch=20,cex=1)
+points(start[1],start[2],col="red")
+grid(nx=10,ny=10)
+```
+
+And a trajectory plot:
+```{r,fig.height=7, fig.width=7}
+trajectory_plot(A, t=100, datamax=5, plotmax=5, numpoints=10)
+```
+
+
+## General 2x2 Matrices with Complex Eigenvalues
+
+Now suppose we have a 2x2 matrix with complex eigenvalues $\lambda = a \pm b i$ and complex eigenvectors $\mathsf{v} = \mathsf{u } \pm \mathsf{w} i$ that is not in rotation-dilation form. Here is an example:
+$$
+A = \begin{bmatrix} 1.19 & -0.38 \\ 0.29 & 0.78 \end{bmatrix}
+$$
+It has eigenvalues and eigenvectors
+$$
+\lambda = 0.985 \pm 0.261 i \qquad \mathsf{v} = 
+\begin{bmatrix} 0.753 \\ 0.406 \end{bmatrix} \pm 
+\begin{bmatrix} 0.000 \\ -0.517 \end{bmatrix} i
+$$
+as seen here:
+
+```{r}
+(A = cbind(c(1.19,0.29),c(-.38,.78)))
+eigen(A)
+```
+
+The angle of rotation and factor of dilation are $\theta = 14.8$ degrees and $r = 1.019$ as we see from these computations:
+```{r}
+vals = eigen(A)$values
+v1 = vals[1]
+Arg(v1) / (2*pi) * 360 # convert to degrees
+Mod(v1)  # gives the length of a complex number
+```
+
+A trajectory plot shows us that it is still rotating by 14.8 degrees and dilating by 1.019, but it is taking more of an elliptical pattern.
+```{r,fig.width=4, fig.height=4}
+
+N = 50
+start = c(1,0)
+X = matrix(0,nrow=2,ncol=N)
+X[,1] = start
+for (i in 2:N) {X[,i] = A %*% X[,i-1]}
+
+plot(X[1,],X[2,],col='blue',xlim=c(-3,3),ylim=c(-3,3),xlab='x',ylab='y',pch=20,cex=1)
+points(start[1],start[2],col="red")
+grid(nx=10,ny=10)
+```
+To see precisely what happens, we change to basis $\{\mathsf{w}, \mathsf{u}}$ where $\mathsf{w}$ and $\mathsf{u}$ are the imaginary and real parts of the eigenvector $\mathsf{v} =\mathsf{u}  +  \mathsf{w} i$.
