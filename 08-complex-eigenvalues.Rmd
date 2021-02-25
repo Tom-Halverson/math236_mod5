@@ -65,12 +65,12 @@ atan(.2/.9)
 
 Next we find the **dilation/contraction factor**. We can do so using the `Mod` command, which finds the "modulus" or absolute value or length of a complex number.
 
-```{r}
+```{r,echo=TRUE}
 Mod(v1) # gives the length of a complex number
 ```
 
 And, again for good measure, we compare with using the Pythagorean theorem:
-```{r}
+```{r,echo=TRUE}
 sqrt(.9^2 + .2^2)  
 ```
 

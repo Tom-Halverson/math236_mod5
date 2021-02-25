@@ -43,10 +43,10 @@ trajectory_plot <- function(mat, t=20, datamax=5, plotmax=10, numpoints=10, show
   mygrid <- expand.grid(x=seq(from = -datamax, by = 2*datamax/numpoints, l = numpoints+1),
                       y=seq(from =  -datamax, by = 2*datamax/numpoints, l = numpoints+1))
   for (t in 1:dim(mygrid)[1]) {
-    plot_traj(A,c(mygrid[t,1],mygrid[t,2]),t)
+    plot_traj(mat,c(mygrid[t,1],mygrid[t,2]),t)
   }
   if (showEigenspaces) {
-    eigen = eigen(A)
+    eigen = eigen(mat)
     #mylabel = cat('lambda=', eigen$values[1], 'and lambda=', eigen$values[2])
     #title(xlab=mylabel)
     v1 = zapsmall(eigen$vectors[,1])
