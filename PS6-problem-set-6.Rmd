@@ -119,4 +119,75 @@ a. Show that $A B = B A$ (even though we know that, in general, matrices do not 
 
 a. Now let $A$ and $B$ be any $n \times n$ matrices which have the same eigenvectors. Prove that $AB = BA$. Hint: use the diagonalization of these two matrices. 
 
-## A little more is coming
+## Hunt Creek
+
+Age-structured population models like we saw in the [Spotted Owl Example](https://tom-halverson.github.io/math236_s21/eigenvectors.html#northern-spotted-owl) are often called **Leslie Matrices**, named after the British ecologist P.H. Leslie. Here is the Leslie Matrix of a population of brook trout in Hunt Creek in Michigan. The population is categorized into 5 age categories: fingerlings (0,1), yearlings (1-2), young adults (2-3), adults (3-4), and adults (4-5). Right now the population is seen to be dying off. 
+
+The vector $p(t)$ denotes the population at year $t$ broken into the 5 age categories: $$p(t) =  (f (t), y(t), ya(t), a_1(t), a_2(t))^T$$ and the matrix $L$ gives next year's population from this year's population:  $p_{t+1} = L p_t$.  Below is the Leslie matrix for this example.
+
+$$
+\begin{bmatrix}
+f (t+1) \\
+y(t+1) \\
+ya(t+1) \\
+a_1(t+1) \\
+a_2(t+1)
+\end{bmatrix}
+= \begin{bmatrix}
+0 & 0 & 37 & 64 & 82 \\
+0.06 & 0 & 0 & 0 & 0 \\
+0&0.28 & 0 & 0 & 0  \\
+0&0&0.16& 0 & 0   \\
+0&0&0&0.08& 0    \\
+\end{bmatrix}
+\begin{bmatrix}
+f (t) \\
+y(t) \\
+ya(t) \\
+a_1(t) \\
+a_2(t)
+\end{bmatrix}
+=
+\begin{bmatrix}
+37 ya(t) + 64 a_1(t) + 82 a_2(t) \\
+0.06 f(t) \\
+0.28y(t) \\
+0.16 ya(t) \\
+0.08 a_1(t)
+\end{bmatrix}
+$$
+
+```{r,echo=TRUE}
+L = cbind(c(0,.06,0,0,0),c(0,0,.28,0,0),c(37,0,0,.16,0),c(64,0,0,0,.08),c(82,0,0,0,0.00))
+```
+
+The trout population in the creek is known to be dying off largely due to poisoning by the insecticide rotenone. The model demonstrates this behavior here, as can be seen in the folowing plot, which starts with 200 trout in each age group. *You shouldn't need to edit this plot.*
+
+```{r}
+start = c(200,200,200,200,200)  # the starting distribution
+N = 35              # N is the number of iterations
+X = matrix(0,nrow=5,ncol=N)  #  Store the results in a 3 x N matrix called X
+X[,1] = start  # put start in the first column of X
+# loop N times and put your results in X
+for (i in 2:N) {X[,i] = L %*% X[,i-1]}
+# Then plot the results
+t = seq(1,N)  # time
+plot(t,X[1,],type='l',col=1,ylim=c(0,8000),ylab="population",xlab="time (year)",
+     main="Population in Age Group")
+for (i in 1:5) {
+  lines(t,X[i,],col=i)
+  points(t,X[i,],col=i,pch=20,cex=.8)}
+legend(22, 7600, legend=c("Fingerlings (0-1)", "Yearlings  (1-2)", "Young Adults (2-3)","Adults (3-4)","Adults (4-5)"), col=1:5, lty=1)
+```
+
+a. Give the meaning of the values 37, 64, 82, 0.06, 0.28, 0.16, 0.08 that appear in this matrix.
+
+b. Compute the eigenvectors and eigenvalues of $L$ and relate what you find to population dynamics. In particular, use the eigen-information to
+
+* Give the overall population growth rate.
+* Give the limiting age distribution: that is, the long-run distribution of the population into the different age categories. Give your answer as proportions which sum to 1.
+
+c. You are seeking funding from the Michigan DNR to support a cleanup effort. As part of your proposal, you argue that you believe that such a cleanup will most impact the youngest fish and will improve the survival rate of fingerlings to yearlings. Figure out (by trial and error) how high this survival rate will need to grow in order for the population to stop dying off. Justify your answer with eigenvalues and a plot. You should just be able to duplicate the code for the plot above (after changing the matrix).
+
+## 
+
