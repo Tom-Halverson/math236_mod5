@@ -1,4 +1,4 @@
-tab:unnamed-chunk-41
+tab:unnamed-chunk-2
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -128,6 +128,13 @@ example-1
 example-2
 example-3
 example-4
+complex-eigenvalues
+rotation-dilation
+example-1-1
+example-2-1
+example-3-1
+general-2x2-matrices-with-complex-eigenvalues
+a-3d-example
 quiz-1-review
 overview
 vocabulary-and-concepts

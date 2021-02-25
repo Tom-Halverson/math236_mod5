@@ -276,14 +276,5 @@ legend(8, 1050, legend=c("juvenile", "subadults", "adults","total"), col=c('blue
 
 
 
-Now, I'm going to try to rotation-dilationalize this matrix. The block diagonalization consists of a 1x1 block of the real eigenvalue and a 2x2 block of the rotation-dilation part of the complex eigenvalues.
-
-```{r}
-A = cbind(c(0,0.18,0),c(0,0,.71),c(0.33,0,0.94))
-eigen(A)
-vecs = eigen(A)$vectors
-P = Re(cbind(vecs[,1],Im(vecs[,2]),Re(vecs[,2])))
-P
-zapsmall(solve(P) %*% A %*% P)
-```
+s
 
