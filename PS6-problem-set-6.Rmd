@@ -119,6 +119,15 @@ a. Show that $A B = B A$ (even though we know that, in general, matrices do not 
 
 a. Now let $A$ and $B$ be any $n \times n$ matrices which have the same eigenvectors. Prove that $AB = BA$. Hint: use the diagonalization of these two matrices. 
 
+## Halverson Numbers
+
+In class, we saw how to use eigenvalues and eigenvectors to find a closed formula (Binet's formula) for the Fibonacci numbers.  The not-quite-so-well-celebrated Halverson numbers are defined by $h_0 = 0$, $h_1 = 1$, and $h_{n+1} = 3 h_{n-1} +  2 h_{n}$.  They start out as $0,1,2,7,20,61,182,547,1640,4921,14762$. Find the Halverson matrix $\mathbf{H}$ that satisfies the relation below and then use its eigensystem to give closed formula for $h_n$.
+$$
+\mathbf{H} \begin{bmatrix} h_{n-1} \\ h_{n} \end{bmatrix} = 
+\begin{bmatrix} h_{n} \\ h_{n+1} \end{bmatrix}. 
+\hskip5in
+$$
+
 ## Hunt Creek
 
 Age-structured population models like we saw in the [Spotted Owl Example](https://tom-halverson.github.io/math236_s21/eigenvectors.html#northern-spotted-owl) are often called **Leslie Matrices**, named after the British ecologist P.H. Leslie. Here is the Leslie Matrix of a population of brook trout in Hunt Creek in Michigan. The population is categorized into 5 age categories: fingerlings (0,1), yearlings (1-2), young adults (2-3), adults (3-4), and adults (4-5). Right now the population is seen to be dying off. 
@@ -163,7 +172,7 @@ L = cbind(c(0,.06,0,0,0),c(0,0,.28,0,0),c(37,0,0,.16,0),c(64,0,0,0,.08),c(82,0,0
 
 The trout population in the creek is known to be dying off largely due to poisoning by the insecticide rotenone. The model demonstrates this behavior here, as can be seen in the folowing plot, which starts with 200 trout in each age group. *You shouldn't need to edit this plot.*
 
-```{r}
+```{r,echo=TRUE}
 start = c(200,200,200,200,200)  # the starting distribution
 N = 35              # N is the number of iterations
 X = matrix(0,nrow=5,ncol=N)  #  Store the results in a 3 x N matrix called X
@@ -189,5 +198,52 @@ b. Compute the eigenvectors and eigenvalues of $L$ and relate what you find to p
 
 c. You are seeking funding from the Michigan DNR to support a cleanup effort. As part of your proposal, you argue that you believe that such a cleanup will most impact the youngest fish and will improve the survival rate of fingerlings to yearlings. Figure out (by trial and error) how high this survival rate will need to grow in order for the population to stop dying off. Justify your answer with eigenvalues and a plot. You should just be able to duplicate the code for the plot above (after changing the matrix).
 
-## 
+## Glucose-Insulin
+
+The hormone insulin helps regulate glucose metabolism in your blood. The presene of insulin helps your body absorb excess glucose. Here $G_t$ (glucose) and $H_t$ (insulin) are measued as excess values (in mg per 100 ml of blood) above the steady state. 
+$$
+\begin{bmatrix} G_{t+1} \\ H_{t+1} \end{bmatrix}
+=
+\begin{bmatrix}
+0.9 & -0.4 \\
+0.1 & 0.9 \\
+\end{bmatrix}
+\begin{bmatrix} G_t \\ H_t \end{bmatrix}= 
+\begin{bmatrix} 0.9 G_t - 0.4 H_t \\ 0.1 G_t + 0.9 H_t \end{bmatrix}
+$$
+
+Here is what happens if we start at $(1,0)$ and iterate. That is we start with 1 unit excess glucose. Observe that the system spirals back to the steady state of $(0,0)$.
+```{r,fig.width=6, fig.height=6}
+A = cbind(c(.9,.1),c(-.4,.9))
+start = c(1,0)
+N = 50
+
+X = matrix(0,nrow=2,ncol=N)
+X[,1] = start
+
+for (i in 2:N) {X[,i] = A %*% X[,i-1]}
+plot(X[1,],X[2,],col='blue',xlim=c(-0.4,1.0),ylim=c(-0.4,0.4),xlab='glucose',ylab='insulin',pch=20,cex=1)
+points(start[1],start[2],col="red")
+grid(nx=10,ny=10)
+```
+
+
+
+We can plot the indivdual glucose and insulin coordinates over time. These are the x and y coordinates of the points in the above plot. You see the insulin responding to the excess glucose, and then the glucose being absorbed by the presence of insulin, and so on ...
+
+```{r}
+t = seq(1,N)
+plot(t,X[1,],type='l',col='blue',ylim=c(-1,1),ylab="concentration (mg/ml)",xlab="time(hours)",main="Glucose-Insulin Over Time")
+lines(t,X[2,],col='darkorange')
+legend(10, 0.7, legend=c("Glucose", "Insulin"), col=c("blue", "darkorange"), lty=1)
+```
+
+The key point here is that the spiraling in the (x,y) plane or oscillating in the (x,t) plane corresponds to the presence of *complex eigenvalues*.  Your job is to perform an eigen-analysis of this problem:
+
+a. Give a trajectory plot of this matrix using the `trajectory_plot` command from [Dynamical Systems in 2D].
+a. Use R to find the eigenvalues and eigenvectors. 
+a. Write out the eigenvalues in the form $\lambda = a \pm b i$ and the eigenvectors in the form $\vec{v} = \vec{u} \pm \vec{w} i.$
+a. Use this information to find the scaling factor $|\lambda|$ for this matrix and the angle of rotation $\arctan(b/a)$. Give your answer in degrees.
+a. Compare your answers from part (c) to the plots above to confirm that the system is doing what the eigenvalues predict.
+
 

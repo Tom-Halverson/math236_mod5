@@ -1,4 +1,4 @@
-tab:unnamed-chunk-28
+tab:unnamed-chunk-2
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -48,8 +48,9 @@ the-square-root-of-a-matrix
 matrix-reconstruction
 coyotes-and-roadrunners
 same-eigenvectors
+halverson-numbers
 hunt-creek
-section
+glucose-insulin
 important-definitions
 vector-spaces
 matrices
@@ -132,6 +133,7 @@ overview
 vocabulary-and-concepts
 skills
 practice-problems
+section
 section-1
 section-2
 section-3
@@ -140,8 +142,8 @@ section-5
 section-6
 section-7
 section-8
-section-9
 solutions-to-practice-problems
+section-9
 section-10
 section-11
 section-12
@@ -150,12 +152,12 @@ section-14
 section-15
 section-16
 section-17
-section-18
 quiz-2-review
 overview-1
 vocabulary-and-concepts-1
 skills-1
 practice-problems-1
+section-18
 section-19
 section-20
 section-21
@@ -166,8 +168,8 @@ section-25
 section-26
 section-27
 section-28
-section-29
 solutions-to-practice-problems-1
+section-29
 section-30
 section-31
 section-32
@@ -178,4 +180,3 @@ section-36
 section-37
 section-38
 section-39
-section-40
