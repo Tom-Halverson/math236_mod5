@@ -62,7 +62,7 @@ a. Is it possible to reconstruct $M$ from the evidence given? If so, then do it!
 
 ## Coyotes and Roadrunners
 
-(This problem can be done by hand or in R) This summer, Macalester's Ordway Natural History Study Area will  be stocked with a population of coyotes and roadrunners so that Math 236 students can study real-life predator-prey dynamics. From similar experiments, we expect the predator-prey dynamics to be governed by linear model below. The eigenvalues of the matrix are also given.
+This summer, Macalester's Ordway Natural History Study Area will  be stocked with a population of coyotes and roadrunners so that Math 236 students can study real-life predator-prey dynamics. From similar experiments, we expect the predator-prey dynamics to be governed by linear model below. The eigenvalues of the matrix are also given.
 $$
 \begin{bmatrix} \phantom{\Big\vert} r_{t+1}\phantom{\Big\vert}  \\ \phantom{\Big\vert} c_{t+1}\phantom{\Big\vert}  \phantom{\Big\vert} \end{bmatrix}
 =\left[
@@ -96,6 +96,7 @@ a.  In the long-term, in this model, what is the ratio of roadrunners to coyotes
 
 a. When another college tried the same experiment in their Arboretum, they introduced $r_0 =  5$ roadrunners and $c_0 = 10$ coyotes and both populations died off (as is verified in the computation below). Explain why this happens using the eigenvalues and eigenvectors.
 
+
 ```{r,echo=TRUE}
 A = cbind(c(57/50,4/50),c(-6/50,43/50))
 v = c(5,10)
@@ -119,14 +120,6 @@ a. Show that $A B = B A$ (even though we know that, in general, matrices do not 
 
 a. Now let $A$ and $B$ be any $n \times n$ matrices which have the same eigenvectors. Prove that $AB = BA$. Hint: use the diagonalization of these two matrices. 
 
-## Halverson Numbers
-
-In class, we saw how to use eigenvalues and eigenvectors to find a closed formula (Binet's formula) for the Fibonacci numbers.  The not-quite-so-well-celebrated Halverson numbers are defined by $h_0 = 0$, $h_1 = 1$, and $h_{n+1} = 3 h_{n-1} +  2 h_{n}$.  They start out as $0,1,2,7,20,61,182,547,1640,4921,14762$. Find the Halverson matrix $\mathbf{H}$ that satisfies the relation below and then use its eigensystem to give closed formula for $h_n$.
-$$
-\mathbf{H} \begin{bmatrix} h_{n-1} \\ h_{n} \end{bmatrix} = 
-\begin{bmatrix} h_{n} \\ h_{n+1} \end{bmatrix}. 
-\hskip5in
-$$
 
 ## Hunt Creek
 

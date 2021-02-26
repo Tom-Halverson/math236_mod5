@@ -1,4 +1,4 @@
-tab:unnamed-chunk-13
+tab:unnamed-chunk-12
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -48,7 +48,6 @@ the-square-root-of-a-matrix
 matrix-reconstruction
 coyotes-and-roadrunners
 same-eigenvectors
-halverson-numbers
 hunt-creek
 glucose-insulin
 important-definitions
@@ -123,6 +122,7 @@ checkpoint-question-for-today
 discussion-question-1
 discussion-question-2
 discussion-question-3
+discussion-question-4
 your-turn-2
 example-1
 example-2

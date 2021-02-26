@@ -42,8 +42,8 @@ trajectory_plot <- function(mat, t=20, datamax=5, plotmax=10, numpoints=10, show
   abline(h=-plotmax:plotmax, v=-plotmax:plotmax, col="gray")
   mygrid <- expand.grid(x=seq(from = -datamax, by = 2*datamax/numpoints, l = numpoints+1),
                       y=seq(from =  -datamax, by = 2*datamax/numpoints, l = numpoints+1))
-  for (t in 1:dim(mygrid)[1]) {
-    plot_traj(mat,c(mygrid[t,1],mygrid[t,2]),t)
+  for (i in 1:dim(mygrid)[1]) {
+    plot_traj(mat,c(mygrid[i,1],mygrid[i,2]),t)
   }
   if (showEigenspaces) {
     eigen = eigen(mat)
@@ -111,7 +111,7 @@ eigen(A)
 And here is the corresponding plot of the dynamical system:
 ```{r, dynsys2, fig.height=7, fig.width=7,echo=TRUE}
 A = 1/110 * cbind(c(97,-8),c(6,123))
-trajectory_plot(A, t=30, datamax=15, plotmax=25, numpoints=5)
+trajectory_plot(A, t=10, datamax=15, plotmax=25, numpoints=5)
 ```
 
 ## Discussion Question 1
@@ -147,7 +147,8 @@ A = rbind(c(0.86, 0.16), c(-0.06, 1.14))
 eigen(A)
 trajectory_plot(A, t=30, datamax=10, plotmax=15, numpoints=5)
 ```
-## Discussion Question 3
+
+## Discussion Question 4
 
 Finally, here again the  matrix has the same eigenvectors, but now the eigenvalues are 0.99 and 0.9. 
 

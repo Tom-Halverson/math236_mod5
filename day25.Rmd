@@ -19,7 +19,7 @@ X = matrix(0,nrow=2,ncol=N)
 X[,1] = start
 for (i in 2:N) {X[,i] = A %*% X[,i-1]}
 
-plot(X[1,],X[2,],col='blue',xlim=c(-10000,10000),ylim=c(-10000,10000),xlab='x',ylab='y',pch=20,cex=1,type="l")
+plot(X[1,],X[2,],col='blue',xlim=c(-100000,100000),ylim=c(-100000,100000),xlab='x',ylab='y',pch=20,cex=1,type="l")
 points(start[1],start[2],col="red")
 grid(nx=10,ny=10)
 ```
