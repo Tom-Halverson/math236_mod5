@@ -380,21 +380,19 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <h2><span class="header-section-number">12.1</span> Eigensystems</h2>
 <p>I should be able to do the following <strong>tasks</strong>:</p>
 <ul>
-<li>Check whether a given vector <span class="math inline">\(\mathsf{v}\)</span> is an eigenvector for square matrix <span class="math inline">\(A\)</span>.</li>
-<li>Find the eigenvalues of a matrix <span class="math inline">\(2 \times 2\)</span> matrix by hand, using the characteristic equation</li>
-<li>Find the eigenvalues of a triangular matix by inspection.</li>
-<li>Given the eigenvalues of matrix <span class="math inline">\(A\)</span>, find the eigenvectors by solving <span class="math inline">\((A \lambda I) = \mathbf{0}\)</span>.</li>
-<li>Find the eigenvalues and (“human readable”) eigenvectors of an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> using <code>eigen(A)</code> on RStudio.</li>
-<li>Determine whether a matrix is diagonalizable.</li>
-<li>Factor a diagonalizable <span class="math inline">\(n \times n\)</span> matrix as <span class="math inline">\(A = PDP^{-1}\)</span> where <span class="math inline">\(D\)</span> is a diagonal matrix of eigenvalues and <span class="math inline">\(P\)</span> is the matrix whose columns are the corresponding eignvectors.</li>
-<li>Use RStudio to find complex eigenvalues and (“human readable”) eigenvectors of a square matrix.</li>
-<li>Factor a <span class="math inline">\(2 \times 2\)</span> scaling-rotation matrix as <span class="math inline">\(A = P C P^{-1}\)</span> where <span class="math inline">\(C\)</span> is a scaling-rotation matrix <span class="math inline">\(\begin{bmatrix} a &amp; -b \\ b &amp; a \end{bmatrix}\)</span> and <span class="math inline">\(P = [ \mathsf{w}, \mathsf{u}]\)</span> where <span class="math inline">\(\mathsf{v} = \mathsf{u} + i \mathsf{w}\)</span> is the eigenvector for <span class="math inline">\(\lambda = a + b i\)</span>.</li>
-<li>Use RStudio to find the Gould Index of a network</li>
-<li>Use RStudio to create a 2D plot of pairs of eigenvalues of a square matrix</li>
-<li>Use the dominant eigenvalue and dominant eigenvector to determine the long-term behavior of a dynamical system</li>
-<li>Create a trajectory of a <span class="math inline">\(2 \times 2\)</span> dynamical system (either using RStudio or by using a given vector field plot) and then relate the trajectory to the eigenvectors and eigenvalues</li>
-<li>Interpret the constants in the <span class="math inline">\(2 \times 2\)</span> matrix for two interacting populations (competition, predator-prey, mutualism, etc)</li>
-<li>Use RStudio to investigate the animal population modeled with a Leslie matrix.</li>
+<li><p>Check whether a given vector <span class="math inline">\(\mathsf{v}\)</span> is an eigenvector for square matrix <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Find the eigenvalues of a matrix <span class="math inline">\(2 \times 2\)</span> matrix by hand, using the characteristic equation</p></li>
+<li><p>Find the eigenvalues of a triangular matix by inspection.</p></li>
+<li><p>Given the eigenvalues of matrix <span class="math inline">\(A\)</span>, find the eigenvectors by solving <span class="math inline">\((A \lambda I) = \mathbf{0}\)</span>.</p></li>
+<li><p>Find the eigenvalues and (“human readable”) eigenvectors of an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> using <code>eigen(A)</code> on RStudio.</p></li>
+<li><p>Determine whether a matrix is diagonalizable.</p></li>
+<li><p>Factor a diagonalizable <span class="math inline">\(n \times n\)</span> matrix as <span class="math inline">\(A = PDP^{-1}\)</span> where <span class="math inline">\(D\)</span> is a diagonal matrix of eigenvalues and <span class="math inline">\(P\)</span> is the matrix whose columns are the corresponding eignvectors.</p></li>
+<li><p>Use RStudio to find complex eigenvalues and (“human readable”) eigenvectors of a square matrix.</p></li>
+<li><p>Factor a <span class="math inline">\(2 \times 2\)</span> scaling-rotation matrix as <span class="math inline">\(A = P C P^{-1}\)</span> where <span class="math inline">\(C\)</span> is a scaling-rotation matrix <span class="math inline">\(\begin{bmatrix} a &amp; -b \\ b &amp; a \end{bmatrix}\)</span> and <span class="math inline">\(P = [ \mathsf{w}, \mathsf{u}]\)</span> where <span class="math inline">\(\mathsf{v} = \mathsf{u} + i \mathsf{w}\)</span> is the eigenvector for <span class="math inline">\(\lambda = a + b i\)</span>.</p></li>
+<li><p>Use RStudio to create a 2D plot of pairs of eigenvalues of a square matrix</p></li>
+<li><p>Use the dominant eigenvalue and dominant eigenvector to determine the long-term behavior of a dynamical system</p></li>
+<li><p>Create a trajectory of a <span class="math inline">\(2 \times 2\)</span> dynamical system (either using RStudio or by using a given vector field plot) and then relate the trajectory to the eigenvectors and eigenvalues</p></li>
+<li><p>Use RStudio to investigate the animal population modeled with a Leslie matrix.</p></li>
 </ul>
 </div>
 <div id="vocabulary-4" class="section level2">
@@ -408,7 +406,6 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li>algebraic multiplicity of an eigenvalue</li>
 <li>geometric multiplicity of an eigenvalue</li>
 <li>scaling-rotation matrix</li>
-<li>Gould Index</li>
 <li>discrete dynamical system</li>
 <li>trajectory</li>
 <li>dominant eigenvalue and dominant eigenvector</li>
@@ -420,17 +417,15 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <h2><span class="header-section-number">12.3</span> Conceptual Thinking</h2>
 <p>I should understand and be able to explain the following <strong>concepts</strong>:</p>
 <ul>
-<li>An eigenspace of <span class="math inline">\(A\)</span> is a subspace that is fixed under the linear transformation <span class="math inline">\(T(\mathsf{x}) = A \mathsf{x}\)</span>.</li>
-<li>An eigenvalue <span class="math inline">\(\lambda\)</span> with <span class="math inline">\(1 &lt;| \lambda |\)</span> corresponds to expansion.</li>
-<li>An eigenvalue <span class="math inline">\(\lambda\)</span> with <span class="math inline">\(0 &lt; | \lambda | &lt; 1\)</span> corresponds to contraction.</li>
-<li>A complex eigenvalue corresponds to a rotation in a 2D subspace.</li>
-<li>The eigenspace for <span class="math inline">\(\lambda\)</span> is the subspace <span class="math inline">\(\mathrm{Nul}(A - \lambda I)\)</span>.</li>
-<li>A matrix is not diagonalizable when it has complex eigenvalues.</li>
-<li>A matrix is not diagonalizable when it has an eigenvalue whose algebraic mutiplicity is strictly larger than its geometrix multiplicity.</li>
-<li>The Gould Index measures the centrality of a vertex in the network.</li>
-<li>The eigenvalues of a matrix “encode some of the patterns” found in the matrix. Larger magnitude eigenvalues indicate more important patterns.</li>
-<li>The long-term behavior of a dynamical system is determined by its dominent eigenvalue and eigenvector.</li>
-<li>Any population model predicts one of: long term growth, extinction, convergence to a stable population, or convergence to a stable orbit of populations.</li>
+<li><p>An eigenspace of <span class="math inline">\(A\)</span> is a subspace that is fixed under the linear transformation <span class="math inline">\(T(\mathsf{x}) = A \mathsf{x}\)</span>.</p></li>
+<li><p>An eigenvalue <span class="math inline">\(\lambda\)</span> with <span class="math inline">\(1 &lt;| \lambda |\)</span> corresponds to expansion.</p></li>
+<li><p>An eigenvalue <span class="math inline">\(\lambda\)</span> with <span class="math inline">\(0 &lt; | \lambda | &lt; 1\)</span> corresponds to contraction.</p></li>
+<li><p>A complex eigenvalue corresponds to a rotation in a 2D subspace.</p></li>
+<li><p>The eigenspace for <span class="math inline">\(\lambda\)</span> is the subspace <span class="math inline">\(\mathrm{Nul}(A - \lambda I)\)</span>.</p></li>
+<li><p>A matrix is not diagonalizable when it has complex eigenvalues.</p></li>
+<li><p>A matrix is not diagonalizable when it has an eigenvalue whose algebraic mutiplicity is strictly larger than its geometrix multiplicity.</p></li>
+<li><p>The long-term behavior of a dynamical system is determined by its dominant eigenvalue and eigenvector.</p></li>
+<li><p>Population model predicts one of: long term growth, extinction, convergence to a stable population.</p></li>
 </ul>
 
 </div>

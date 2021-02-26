@@ -19,11 +19,10 @@ I should be able to do the following **tasks**:
 * Factor a diagonalizable $n \times n$ matrix as $A = PDP^{-1}$ where $D$ is a diagonal matrix of eigenvalues and $P$ is the matrix whose columns are the corresponding eignvectors.
 * Use RStudio to find complex eigenvalues and ("human readable") eigenvectors of a square matrix.
 * Factor a $2 \times 2$ scaling-rotation matrix as $A = P C P^{-1}$ where $C$ is a  scaling-rotation matrix $\begin{bmatrix} a & -b \\ b & a \end{bmatrix}$  and $P = [ \mathsf{w}, \mathsf{u}]$ where $\mathsf{v} = \mathsf{u} + i \mathsf{w}$ is the eigenvector for $\lambda = a + b i$.
-* Use RStudio to find the Gould Index of a network
 * Use RStudio to create a 2D plot of pairs of eigenvalues of a square matrix
 * Use the dominant eigenvalue and dominant eigenvector to determine the long-term behavior of a dynamical system
 * Create a trajectory of a $2 \times 2$ dynamical system (either using RStudio or by using a given vector field plot) and then relate the trajectory to the eigenvectors and eigenvalues
-* Interpret the constants in the  $2 \times 2$ matrix for two interacting populations (competition, predator-prey,  mutualism, etc)
+
 * Use RStudio to investigate the animal population modeled with  a Leslie matrix.
 
 ## Vocabulary
@@ -37,7 +36,6 @@ I should know and be able to use and explain the following **terms** or **proper
 * algebraic multiplicity of an eigenvalue
 * geometric multiplicity of an eigenvalue
 * scaling-rotation matrix
-* Gould Index
 * discrete dynamical system
 * trajectory
 * dominant eigenvalue  and dominant eigenvector
@@ -55,10 +53,9 @@ I should understand and be able to explain the following **concepts**:
 * The eigenspace for $\lambda$ is the subspace $\mathrm{Nul}(A  - \lambda I)$.
 * A matrix is  not diagonalizable when it has complex eigenvalues.
 * A matrix is not diagonalizable when it has an eigenvalue whose algebraic mutiplicity is strictly larger than its geometrix multiplicity.
-* The Gould Index measures the centrality of a vertex in the network.
-* The eigenvalues of a matrix "encode some of the patterns" found in the matrix. Larger magnitude  eigenvalues indicate more important patterns.
-* The long-term behavior of a  dynamical system is determined by its dominent eigenvalue and eigenvector.
-* Any population model predicts one of: long term growth, extinction, convergence to a stable population, or convergence to a stable orbit of populations.
+
+* The long-term behavior of a  dynamical system is determined by its dominant eigenvalue and eigenvector.
+* Population model predicts one of: long term growth, extinction, convergence to a stable population.
 
 
 
