@@ -1,0 +1,109 @@
+
+
+# Geometry in $\mathbb{R}^n$
+
+[Download this Rmd file](https://github.com/Tom-Halverson/math236_s21/blob/main/09-geometry.Rmd)
+
+```{r,echo=FALSE}
+require('pracma')
+```
+
+
+## Dot Product
+
+We will look at the gometry of $n$-dimensional vectors. For example, here are three vectors in $\mathbb{R}^6$.
+```{r}
+u = cbind(c(1,2,3,4,5,6))
+v = cbind(c(1,1,3,3,5,5))
+w = cbind(c(0,-1,-1,1,-1,1))
+```
+
+We can compute the **dot product** two different ways. If you have included lit `pracma` library, you can use the `dot` command. 
+```{r}
+dot(u,v)
+dot(v,w)
+dot(u,w)
+```
+
+We can also compute the dot product in native `R` by multiplying $u^T v$. It is important to remember that this works.
+
+```{r}
+t(u) %*% v
+t(v) %*% w
+t(u) %*% w
+```
+## Length, Distance, Angle
+
+The **length** of a vector can be computed using $\sqrt{u\cdot u}$ or as the built in 2-norm of a vector. The reason it is the 2-norm is because we are squaring (second power) and taking the square root.
+```{r}
+sqrt(t(u) %*% u)
+norm(u,'2')
+```
+
+The **distance** between two vectors, is the length of the difference between them
+```{r}
+sqrt(t(u-v) %*% (u-v))
+norm(u-v,'2')
+```
+The **angle** between two vectors is given by the formula
+$$
+\theta  = \arccos\left(\frac{ v \cdot w } {||v|| ||w||} \right)
+$$
+which can be comuted using arccosine function `acos`.
+```{r}
+acos( t(u) %*% v / (sqrt(t(u) %*% u)*sqrt(t(v) %*% v)))
+```
+Sometimes we use the cosine of the angle between the two vectors (we will see an example of this in the homework)
+$$
+\cos(\theta)  = \frac{ v \cdot w } {||v|| ||w||}
+$$
+which is computed as
+```{r}
+ t(u) %*% v / (sqrt(t(u) %*% u)*sqrt(t(v) %*% v))
+```
+This is a number between -1 and 1, with numbers close to 1 meaning that they are closely aligned, numbers close to 0 meaning that they are close to orthogonal, and numbers close to -1 meaning that they are close to opposite.
+```{r}
+ t(u) %*% w / (sqrt(t(u) %*% u)*sqrt(t(w) %*% w))
+ t(v) %*% w / (sqrt(t(v) %*% v)*sqrt(t(w) %*% w))
+```
+
+## Orthogonal Complement
+
+The **orthogonal complement** of a vector space $W$ is 
+$$
+W^\perp = \left\{ v \in \mathbb{R}^n \mid v \cdot w = 0 \text{ for every } w \in W \right\}.
+$$
+The orthogonal complement is a subspace. Furthermore, it is enough to check that $w$ is orthogonal to a basis of $W$. Tnat is, you don't have to check every vector in $W$; if you are orthogonal to the basis then you are orthogonal to $W$.
+
+For example, if 
+$$
+W = \mathsf{span} \left\{ 
+\begin{bmatrix} 1\\2\\3\\4\\5 \end{bmatrix},
+\begin{bmatrix} 1\\1\\1\\1\\1 \end{bmatrix},
+\begin{bmatrix} 1\\2\\2\\2\\1 \end{bmatrix},
+\begin{bmatrix} 3\\5\\6\\7\\7 \end{bmatrix},
+\begin{bmatrix} 0\\2\\1\\0\\-4\end{bmatrix}
+\right\},
+$$
+then we can put the vectors of $W$ into the rows of a matrix. So in this case, we make the matrix
+```{r}
+A = rbind(c(1, 2, 3, 4, 5), c(1, 1, 1, 1, 1), c(1, 2, 2, 2, 1), c(3, 5, 6, 7, 7), c(0, 2, 1, 0, -4))
+A
+```
+Now, $W$ is the *row space* of $A$. That is, $W = \mathsf{Row}(A)$. And the row space is orthogonal to the null space. Therefore $W^\perp = \mathsf{Nul}(A)$, so we row reduce,
+```{r}
+rref(A)
+```
+There are 2 free variables, so the null space and, thus, $W^\perp$ are 2 dimensional. We describe a basis of the null space
+$$
+W^\perp = \mathsf{Nul}(A) = \mathsf{span} \left\{
+\begin{bmatrix} 0 \\ 1 \\ -2 \\ 1 \\ 0 \end{bmatrix},
+\begin{bmatrix} -1 \\ 4 \\ -4 \\ 0 \\ 1 \end{bmatrix}
+\right\}.
+$$
+We can check that these vectors are orthogonal to $W$ by multiplying
+```{r}
+A %*% cbind(c(0,1,-2,1,0),c(-1,4,-4,0,1))
+```
+
+
