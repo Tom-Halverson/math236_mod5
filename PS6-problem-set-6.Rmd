@@ -233,7 +233,9 @@ legend(10, 0.7, legend=c("Glucose", "Insulin"), col=c("blue", "darkorange"), lty
 
 The key point here is that the spiraling in the (x,y) plane or oscillating in the (x,t) plane corresponds to the presence of *complex eigenvalues*.  Your job is to perform an eigen-analysis of this problem:
 
-a. Give a trajectory plot of this matrix using the `trajectory_plot` command from [Dynamical Systems in 2D].
+a. Give a trajectory plot of this matrix using the `trajectory_plot` command from [Dynamical Systems in 2D]. Note: you need to copy the `trajectory_plot` code to your homework markdown file. When you do so, open the R chunk that contains it with ` ```{r,echo=FALSE}`. Then when you knit, it won't include all the code in the output.
+
+
 a. Use R to find the eigenvalues and eigenvectors. 
 a. Write out the eigenvalues in the form $\lambda = a \pm b i$ and the eigenvectors in the form $\vec{v} = \vec{u} \pm \vec{w} i.$
 a. Use this information to find the scaling factor $|\lambda|$ for this matrix and the angle of rotation $\arctan(b/a)$. Give your answer in degrees.
