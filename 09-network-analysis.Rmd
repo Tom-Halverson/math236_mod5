@@ -207,7 +207,7 @@ gould = gould/sum(gould)
 # Compute the dynamical system
 N = 30
 X = matrix(0,nrow=nrow(B),ncol=N+1)
-X[,1] = rep(1,nrow(B))
+X[,1] = rep(1,nrow(B))/nrow(B)
 for (i in 1:N) {  
    X[,i+1] = B %*%  X[,i]
    X[,i+1] = X[,i+1]/sum(X[,i+1])

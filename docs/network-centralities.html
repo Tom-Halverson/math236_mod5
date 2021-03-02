@@ -715,7 +715,7 @@ we know that dynamical systems converge to the <strong>dominant eigenvector</str
 <span id="cb284-6"><a href="network-centralities.html#cb284-6"></a><span class="co"># Compute the dynamical system</span></span>
 <span id="cb284-7"><a href="network-centralities.html#cb284-7"></a>N =<span class="st"> </span><span class="dv">30</span></span>
 <span id="cb284-8"><a href="network-centralities.html#cb284-8"></a>X =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>,<span class="dt">nrow=</span><span class="kw">nrow</span>(B),<span class="dt">ncol=</span>N<span class="op">+</span><span class="dv">1</span>)</span>
-<span id="cb284-9"><a href="network-centralities.html#cb284-9"></a>X[,<span class="dv">1</span>] =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>,<span class="kw">nrow</span>(B))</span>
+<span id="cb284-9"><a href="network-centralities.html#cb284-9"></a>X[,<span class="dv">1</span>] =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span>,<span class="kw">nrow</span>(B))<span class="op">/</span><span class="kw">nrow</span>(B)</span>
 <span id="cb284-10"><a href="network-centralities.html#cb284-10"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>N) {  </span>
 <span id="cb284-11"><a href="network-centralities.html#cb284-11"></a>   X[,i<span class="op">+</span><span class="dv">1</span>] =<span class="st"> </span>B <span class="op">%*%</span><span class="st">  </span>X[,i]</span>
 <span id="cb284-12"><a href="network-centralities.html#cb284-12"></a>   X[,i<span class="op">+</span><span class="dv">1</span>] =<span class="st"> </span>X[,i<span class="op">+</span><span class="dv">1</span>]<span class="op">/</span><span class="kw">sum</span>(X[,i<span class="op">+</span><span class="dv">1</span>])</span>
@@ -726,19 +726,19 @@ we know that dynamical systems converge to the <strong>dominant eigenvector</str
 <span id="cb284-17"><a href="network-centralities.html#cb284-17"></a><span class="kw">rownames</span>(Y) =<span class="st"> </span>airports</span>
 <span id="cb284-18"><a href="network-centralities.html#cb284-18"></a><span class="kw">colnames</span>(Y) =<span class="st"> </span><span class="kw">cbind</span>(<span class="st">&quot;n=0&quot;</span>,<span class="st">&quot;n=1&quot;</span>,<span class="st">&quot;n=2&quot;</span>,<span class="st">&quot;n=10&quot;</span>,<span class="st">&quot;n=20&quot;</span>,<span class="st">&quot;n=30&quot;</span>,<span class="st">&quot;Gould&quot;</span>)</span>
 <span id="cb284-19"><a href="network-centralities.html#cb284-19"></a>Y</span></code></pre></div>
-<pre><code>##     n=0        n=1        n=2       n=10       n=20       n=30      Gould
-## ATL   1 0.08695652 0.08173077 0.07640399 0.07637073 0.07637062 0.07637062
-## LAX   1 0.13043478 0.13942308 0.14675521 0.14676475 0.14676474 0.14676474
-## ORD   1 0.06521739 0.07211538 0.07842281 0.07845441 0.07845446 0.07845446
-## MSP   1 0.10869565 0.11538462 0.11242772 0.11239338 0.11239329 0.11239329
-## DEN   1 0.13043478 0.13461538 0.14082110 0.14086400 0.14086410 0.14086410
-## JFK   1 0.06521739 0.06250000 0.06612665 0.06611175 0.06611172 0.06611172
-## SFO   1 0.10869565 0.12500000 0.12997042 0.12998468 0.12998472 0.12998472
-## SEA   1 0.13043478 0.12500000 0.12281194 0.12280789 0.12280792 0.12280792
-## PHL   1 0.04347826 0.02884615 0.02085358 0.02083114 0.02083107 0.02083107
-## PDX   1 0.04347826 0.03846154 0.03350515 0.03349742 0.03349744 0.03349744
-## MDW   1 0.04347826 0.03846154 0.03350515 0.03349742 0.03349744 0.03349744
-## LGA   1 0.04347826 0.03846154 0.03839628 0.03842243 0.03842249 0.03842249</code></pre>
+<pre><code>##            n=0        n=1        n=2       n=10       n=20       n=30      Gould
+## ATL 0.08333333 0.08695652 0.08173077 0.07640399 0.07637073 0.07637062 0.07637062
+## LAX 0.08333333 0.13043478 0.13942308 0.14675521 0.14676475 0.14676474 0.14676474
+## ORD 0.08333333 0.06521739 0.07211538 0.07842281 0.07845441 0.07845446 0.07845446
+## MSP 0.08333333 0.10869565 0.11538462 0.11242772 0.11239338 0.11239329 0.11239329
+## DEN 0.08333333 0.13043478 0.13461538 0.14082110 0.14086400 0.14086410 0.14086410
+## JFK 0.08333333 0.06521739 0.06250000 0.06612665 0.06611175 0.06611172 0.06611172
+## SFO 0.08333333 0.10869565 0.12500000 0.12997042 0.12998468 0.12998472 0.12998472
+## SEA 0.08333333 0.13043478 0.12500000 0.12281194 0.12280789 0.12280792 0.12280792
+## PHL 0.08333333 0.04347826 0.02884615 0.02085358 0.02083114 0.02083107 0.02083107
+## PDX 0.08333333 0.04347826 0.03846154 0.03350515 0.03349742 0.03349744 0.03349744
+## MDW 0.08333333 0.04347826 0.03846154 0.03350515 0.03349742 0.03349744 0.03349744
+## LGA 0.08333333 0.04347826 0.03846154 0.03839628 0.03842243 0.03842249 0.03842249</code></pre>
 </div>
 <div id="step-5" class="section level3">
 <h3><span class="header-section-number">22.3.4</span> Step 5</h3>
