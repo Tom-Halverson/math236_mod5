@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 1 Problem Set 8 | PS8-problem-set-8.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 1 Problem Set 8 | PS8-problem-set-8.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 1 Problem Set 8 | PS8-problem-set-8.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="m236.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href = "./">MATH 236: Linear Algebra</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#problem-set-8"><i class="fa fa-check"></i><b>1</b> Problem Set 8</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#two-orthogonality-properties"><i class="fa fa-check"></i><b>1.1</b> Two Orthogonality Properties</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#bases-for-a-subspace-and-its-orthogonal-complement"><i class="fa fa-check"></i><b>1.2</b> Bases for a Subspace and its Orthogonal Complement</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#eigensystem-of-a-symmetric-matrix"><i class="fa fa-check"></i><b>1.3</b> Eigensystem of a Symmetric Matrix</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#modeling-fertility-in-1888-switzerland"><i class="fa fa-check"></i><b>1.4</b> Modeling Fertility in 1888 Switzerland</a></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#cosine-similarity-for-us-senators"><i class="fa fa-check"></i><b>1.5</b> Cosine Similarity for US Senators</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="problem-set-8" class="section level1">
+<h1><span class="header-section-number">Section 1</span> Problem Set 8</h1>
+<ul>
+<li>Due: Tuesday December 15 by 11:55pm CST.</li>
+<li>Upload your solutions to Moodle in a PDF.</li>
+<li>Please feel free to <strong>use RStudio for all calculations</strong>, including row reduction, matrix multiplication, eigenvector calculation, inverse matrices, and the Gram-Schmidt process.</li>
+<li>You can download the <a href="https://github.com/mathbeveridge/math236_f20/blob/main/PS8-problem-set-8.Rmd">Rmd source file for this problem set</a>.</li>
+<li>Four out of five questions require you to use RStudio. I’ve provided a <a href="https://github.com/mathbeveridge/math236_f20/blob/main/PS8-template.Rmd">PS8 solution template</a> if you want to use it.</li>
+</ul>
+<p>This problem set covers Sections 6.1 - 6.5 Orthogonality and the explorations on [Voting Patterns in the US Senate][Voting Patterns in the US Senate] and [Least Squares Approximation][Least Squares Approximation].</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">require</span>(pracma)</span></code></pre></div>
+<pre><code>## Loading required package: pracma</code></pre>
+<div id="two-orthogonality-properties" class="section level2">
+<h2><span class="header-section-number">1.1</span> Two Orthogonality Properties</h2>
+<p>Give rigorous proofs for each of the following problems. Here “rigorous” means that the heart of your explanation must use equations and calculations to explicitly justify any intuitive reasoning that you provide.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Let <span class="math inline">\(W\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^5\)</span> with orthonormal basis <span class="math inline">\(\mathsf{w}_1, \mathsf{w}_2, \mathsf{w}_3\)</span>. Let <span class="math inline">\(W^{\perp}\)</span> be its orthogonal complement with orthonormal basis <span class="math inline">\(\mathsf{v}_1, \mathsf{v}_2\)</span>. Prove that if <span class="math inline">\(\mathsf{u}\)</span> is in both <span class="math inline">\(W\)</span> and <span class="math inline">\(W^{\perp}\)</span> then <span class="math inline">\(\mathsf{u}\)</span> must be the zero vector.</p></li>
+<li><p>Let <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> both be <span class="math inline">\(n \times n\)</span> orthogonal matrices. Prove that the matrix <span class="math inline">\(UV\)</span> is also an orthogonal matrix.</p></li>
+</ol>
+</div>
+<div id="bases-for-a-subspace-and-its-orthogonal-complement" class="section level2">
+<h2><span class="header-section-number">1.2</span> Bases for a Subspace and its Orthogonal Complement</h2>
+<p>Let <span class="math inline">\(W \subset \mathbb{R}^6\)</span> be the set of solutions to
+<span class="math display">\[\begin{align}
+x_1 + x_2 + x_3 + x_4 + x_5 + x_6 &amp;= 0 \\
+x_1 + x_2 - x_3 + x_4 + x_5 - x_6 &amp;= 0 
+\end{align}\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Find a basis for <span class="math inline">\(W\)</span> by using row reduction on the appropriate matrix.</li>
+<li>Use your answer from (a) to find a “human readable” orthogonal basis for <span class="math inline">\(W\)</span> where the entries have integer values.</li>
+<li>Find a basis for <span class="math inline">\(W^{\perp}\)</span> without using the Gram-Schmidt process.</li>
+<li>Use your answer from (c) to find a “human readable” orthogonal basis for <span class="math inline">\(W^{\perp}\)</span> where the entries have integer values.</li>
+</ol>
+<p><strong>Turn in:</strong> Your code and its output. You must make it clear what your final answers are for each problem.</p>
+</div>
+<div id="eigensystem-of-a-symmetric-matrix" class="section level2">
+<h2><span class="header-section-number">1.3</span> Eigensystem of a Symmetric Matrix</h2>
+<p>Recall that a square <span class="math inline">\(n \times n\)</span> matrix is symmetric when <span class="math inline">\(A^{\top} = A\)</span>. We learned that the eigenvectors of a symmetric matric form an orthogonal basis of <span class="math inline">\(\mathbb{R}^n\)</span>. In this problem, you will confirm that this holds for the following symmetric matrix</p>
+<p><span class="math display">\[
+A = 
+\begin{bmatrix}
+ 0 &amp;  8 &amp; 10 &amp; -4 \\
+ 8 &amp; 4 &amp; 28 &amp; 6 \\
+ 10 &amp; 28 &amp; 3 &amp; -4 \\
+ -4 &amp; 6 &amp; -4 &amp; -7
+\end{bmatrix}
+. 
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Find the eigenvalues and eigenvectors of <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Confirm that the eigenvectors returned by R are an orthonormal set. (Pro tip: you can do this in one calculation!)</p></li>
+<li><p>Express the vector <span class="math inline">\(\mathsf{v} = \begin{bmatrix} 2 &amp; -4 &amp; -9 &amp; -2 \end{bmatrix}^{\top}\)</span> as a linear combination of the eigenvectors. Use the fact that the eigenvectors are orthonormal. (Don’t augment and row reduce.)</p></li>
+<li><p>Let <span class="math inline">\(P\)</span> be the matrix of these normalized, orthogonal eigenvectors.
+Diagonalize <span class="math inline">\(A\)</span> using <span class="math inline">\(P\)</span>. Just write out <span class="math inline">\(A = P D P^{-1}\)</span>. Congratulations: you have <strong>orthogonally diagonalized</strong> the symmetric matrix <span class="math inline">\(A\)</span>!</p></li>
+</ol>
+<p><strong>Turn in:</strong> Your R code and the output for each part. For parts (c) and (d), you need to make it clear what your final answers are.</p>
+</div>
+<div id="modeling-fertility-in-1888-switzerland" class="section level2">
+<h2><span class="header-section-number">1.4</span> Modeling Fertility in 1888 Switzerland</h2>
+<p>RStudio comes with some sample datasets, including <code>swiss</code>, an 1888 dataset of Swiss socio-economic data. In 1888, Switzerland was entering a demographic transition: birth rates were beginning to decrease as the country entered the industrial age.</p>
+<p>The rows correspond to 47 French-speaking provinces. These provinces were at different stages of industrialization.
+There are 6 socio-economic columns, all scaled to the range <span class="math inline">\([0,100]\)</span>.</p>
+<ul>
+<li>Fertility <code>fert</code>: standardized fertility rate</li>
+<li>Agriculture <code>agric</code>: percent of men in agricultural occupations</li>
+<li>Examination <code>exam</code>: percent of draftees receiving highest mark on army examination</li>
+<li>Education <code>educ</code>: percent education beyond primary school for draftees</li>
+<li>Catholic <code>cath</code>: percent Catholic (instead of Protestant)</li>
+<li>Infant.Mortality <code>mort</code>: percent of live births who live less than one year</li>
+</ul>
+We want to find the best-fit linear model
+<center>
+fert = <span class="math inline">\(c_1\)</span> + <span class="math inline">\(c_2\)</span> agric + <span class="math inline">\(c_3\)</span> exam + <span class="math inline">\(c_4\)</span> educ + <span class="math inline">\(c_5\)</span> cath + <span class="math inline">\(c_6\)</span> mort.
+</center>
+<p>Obviously, <em>this data set shows its age</em>. We are attempting to model fertility rates of <strong>women</strong> by using indirect measures about <strong>male occupation and education levels</strong>. This is problematic and would have to be addressed in a thorough analysis. We limit our use of this classic data to illustrate the method of least squares.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Model this problem as a least-squares approximation of an inconsistent system <span class="math inline">\(A \mathsf{x} = \mathsf{y}\)</span>. Find the least squares solution <span class="math inline">\(\hat{\mathsf{x}}\)</span> and confirm that the residual vector <span class="math inline">\(\mathsf{z}\)</span> is orthogonal to the columns of <span class="math inline">\(A\)</span>.</p>
+<p>To get you started, here is some convenient code to get the column vectors of the <code>swiss</code> dataset.</p></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>fert =<span class="st"> </span>swiss[,<span class="dv">1</span>]</span>
+<span id="cb3-2"><a href="#cb3-2"></a>agric =<span class="st"> </span>swiss[,<span class="dv">2</span>]</span>
+<span id="cb3-3"><a href="#cb3-3"></a>exam =<span class="st"> </span>swiss[,<span class="dv">3</span>]</span>
+<span id="cb3-4"><a href="#cb3-4"></a>educ =<span class="st"> </span>swiss[,<span class="dv">4</span>]</span>
+<span id="cb3-5"><a href="#cb3-5"></a>cath =<span class="st"> </span>swiss[,<span class="dv">5</span>]</span>
+<span id="cb3-6"><a href="#cb3-6"></a>mort =<span class="st"> </span>swiss[,<span class="dv">6</span>]</span></code></pre></div>
+<p><strong>Turn in:</strong> Your code and the output.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>The residual vector <span class="math inline">\(\mathsf{z}\)</span> measures the quality of fit of our model. But how do we turn this into a meaningful quantity?
+One method is to look at the <strong>coefficient of determination</strong>, which is more commonly refered to as the “<span class="math inline">\(R^2\)</span> value.”</p>
+<p>Let <span class="math inline">\(\mathsf{y} = [ y_1, y_2, \ldots, y_n ]^{\top}\)</span> be our target vector with least squares solution <span class="math inline">\(\hat{\mathsf{y}} = A \hat{\mathsf{x}}\)</span> and residual vector <span class="math inline">\(\mathsf{z} = \mathsf{y} - \hat{\mathsf{y}}\)</span>. Let
+<span class="math display">\[
+a = \frac{1}{n} ( y_1 + y_2 + \cdots + y_n)
+\]</span>
+be the average of the entries of target vector <span class="math inline">\(\mathsf{y}\)</span> and let <span class="math inline">\(\mathsf{y}^* = [a, a, \ldots, a]\)</span>. (We call this vector “y star”, so <code>ystar</code> would be a fine name in R.) The <span class="math inline">\(R^2\)</span> value is
+<span class="math display">\[
+R^2 = 1 - \frac{\| \mathsf{y} - \hat{\mathsf{y}} \| }{\| \mathsf{y} - \mathsf{y}^* \|} = 1 - \frac{\| \mathsf{z} \|}{\| \mathsf{y} - \mathsf{y}^* \|}.
+\]</span>
+This is a number in <span class="math inline">\([0,1]\)</span>. If the <span class="math inline">\(R^2\)</span> value is near 1, then our model does a good job at “explaining” the behavior of <span class="math inline">\(\mathsf{y}\)</span> via a linear combination of the columns of <span class="math inline">\(A\)</span>.</p>
+<p>Find the <span class="math inline">\(R^2\)</span> value for our least squares solution to the Swiss data. Here are some helpful functions:</p>
+<ul>
+<li><code>sum(vec)</code> returns the sum of the entries of the vector <code>vec</code></li>
+<li><code>length(vec)</code> returns the number of entries in the vector <code>vec</code></li>
+<li><code>rep(a, n)</code> creates a constant vector of length <span class="math inline">\(n\)</span> where every entry is <span class="math inline">\(a\)</span>.</li>
+<li><code>Norm(vec)</code> from the <code>pracma</code> package returns the magnitude (Euclidean length) of the vector <code>vec</code>.</li>
+</ul>
+<p><strong>Turn in:</strong> Your code and the <span class="math inline">\(R^2\)</span> value that you calculated.</p>
+<p><strong>Remark:</strong> There is certainly more to say about ethical use of data, as well as <span class="math inline">\(R^2\)</span> values and fitting models to data. To learn more, you should take STAT 155 Introduction to Statistical Modeling.</p></li>
+</ol>
+</div>
+<div id="cosine-similarity-for-us-senators" class="section level2">
+<h2><span class="header-section-number">1.5</span> Cosine Similarity for US Senators</h2>
+<p>In high dimensional space <span class="math inline">\(\mathbb{R}^n\)</span> a common measure of similarity between two vectors is <strong>cosine similarity</strong>: the cosine of the angle <span class="math inline">\(\theta\)</span> between the vectors. We calculate this value as follows:
+<span class="math display">\[
+\cos(\theta) = \frac{ \mathsf{v} \cdot \mathsf{w}} {\| \mathsf{v}\| \, \|\mathsf{w}\|} = \frac{ \mathsf{v} \cdot \mathsf{w}} {\sqrt{\mathsf{v} \cdot \mathsf{v}} \sqrt{\mathsf{w} \cdot \mathsf{w}}}.
+\]</span>
+This measure has the following nice properties:</p>
+<ul>
+<li><span class="math inline">\(-1 \le \cos(\theta) \le 1\)</span>,</li>
+<li><span class="math inline">\(\cos(\theta)\)</span> is close to 1 if <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span> are closely aligned,</li>
+<li><span class="math inline">\(\cos(\theta)\)</span> is close to 0 if <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span> are are orthogonal,</li>
+<li><span class="math inline">\(\cos(\theta)\)</span> is close to <span class="math inline">\(-1\)</span> if <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span> are polar opposites.</li>
+</ul>
+<p>Let’s use cosine similarity to compare the 99 US Senators (one senate seat was not filled at the time) from the 109th US Congress (2007-2008).</p>
+Here is code that loads in the voting records. Each row contains the senator’s name, party affiliation, state, and then their record on 46 resolutions. The votes are encoded as a sequence of
+0s, 1s, and -1s, where 1 means a ‘aye’ vote, -1 means a ‘nay’ vote, and 0 means the senator abstained. For example, the row corresponding to Joseph Biden is
+<center>
+<code>biden = ["Biden", "D", "DE", -1, -1, 1, 1, ... , 1, -1]</code>.
+</center>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">library</span>(readr)</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>senate.vote.file =<span class="st"> &quot;https://raw.github.com/mathbeveridge/math236_f20//main/data/SenateVoting109.csv&quot;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>record &lt;-<span class="st"> </span><span class="kw">read_csv</span>(senate.vote.file, <span class="dt">col_names =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   .default = col_double(),
+##   Name = col_character(),
+##   Party = col_character(),
+##   State = col_character()
+## )
+## ℹ Use `spec()` for the full column specifications.</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>clinton =<span class="st"> </span>record[record<span class="op">$</span>Name <span class="op">==</span><span class="st"> &#39;Clinton&#39;</span>,]</span>
+<span id="cb6-2"><a href="#cb6-2"></a>collins =<span class="st"> </span>record[record<span class="op">$</span>Name <span class="op">==</span><span class="st"> &#39;Collins&#39;</span>,]</span>
+<span id="cb6-3"><a href="#cb6-3"></a>frist =<span class="st"> </span>record[record<span class="op">$</span>Name <span class="op">==</span><span class="st"> &#39;Frist&#39;</span>,]</span>
+<span id="cb6-4"><a href="#cb6-4"></a>mccain =<span class="st"> </span>record[record<span class="op">$</span>Name <span class="op">==</span><span class="st"> &#39;McCain&#39;</span>,]</span>
+<span id="cb6-5"><a href="#cb6-5"></a>obama =<span class="st"> </span>record[record<span class="op">$</span>Name <span class="op">==</span><span class="st"> &#39;Obama&#39;</span>,]</span>
+<span id="cb6-6"><a href="#cb6-6"></a>reid =<span class="st"> </span>record[record<span class="op">$</span>Name <span class="op">==</span><span class="st"> &#39;Reid&#39;</span>,]</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
+<span id="cb6-10"><a href="#cb6-10"></a>  <span class="kw">head</span>(record[,<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>],<span class="dv">10</span>), <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb6-11"><a href="#cb6-11"></a>  <span class="dt">caption =</span> <span class="st">&#39;First 10 rows of the 109th US Senate voting records&#39;</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>)</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 1.1: </span>First 10 rows of the 109th US Senate voting records</caption>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Party</th>
+<th align="left">State</th>
+<th align="right">V01</th>
+<th align="right">V02</th>
+<th align="right">V03</th>
+<th align="right">V04</th>
+<th align="right">V05</th>
+<th align="right">V06</th>
+<th align="right">V07</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Akaka</td>
+<td align="left">D</td>
+<td align="left">HI</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="even">
+<td align="left">Alexander</td>
+<td align="left">R</td>
+<td align="left">TN</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Allard</td>
+<td align="left">R</td>
+<td align="left">CO</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Allen</td>
+<td align="left">R</td>
+<td align="left">VA</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Baucus</td>
+<td align="left">D</td>
+<td align="left">MT</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="even">
+<td align="left">Bayh</td>
+<td align="left">D</td>
+<td align="left">IN</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="odd">
+<td align="left">Bennett</td>
+<td align="left">R</td>
+<td align="left">UT</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">Biden</td>
+<td align="left">D</td>
+<td align="left">DE</td>
+<td align="right">-1</td>
+<td align="right">-1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="odd">
+<td align="left">Bingaman</td>
+<td align="left">D</td>
+<td align="left">NM</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">-1</td>
+</tr>
+<tr class="even">
+<td align="left">Bond</td>
+<td align="left">R</td>
+<td align="left">MO</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: lower-alpha">
+<li><p>Your first task is to implement our cosine function.</p>
+<ul>
+<li><code>get_vote_cosine_similarity(senator1, senator2)</code> returns the cosine of the angle between the vote vectors of <code>get_votes(senator1)</code> and <code>get_votes(senator2)</code></li>
+</ul>
+<p><strong>Note:</strong> The R command <code>length(vec)</code> returns the number of entries in the vector <code>vec</code>. You can get the magnitude (Euclidean length) of vector <code>vec</code> using the <code>pracma</code> function <code>Norm(vec)</code>.</p>
+<p>To get you started, we have written the helper function <code>get_votes(senator)</code>. This function returns the vote vector for the senator. These are the values in columns 3 to 49.</p>
+<p><strong>Turn In:</strong> Your implementation of the function.</p></li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># returns the vote vector for the senator</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>get_votes &lt;-<span class="st"> </span><span class="cf">function</span>(senator) {</span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="co">#unlist makes this dataframe row into a regular vector</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="kw">return</span> (<span class="kw">unlist</span>(senator[,<span class="dv">4</span><span class="op">:</span><span class="dv">49</span>])) </span>
+<span id="cb7-5"><a href="#cb7-5"></a>}</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co"># Implement this function!</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="co"># Return the cosine of the angle between the vote vectors </span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="co"># of senator1 and senator2</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>get_vote_cosine_similarity &lt;-<span class="st"> </span><span class="cf">function</span>(senator1, senator2) {</span>
+<span id="cb7-11"><a href="#cb7-11"></a>  votes1 =<span class="st"> </span><span class="kw">get_votes</span>(senator1)</span>
+<span id="cb7-12"><a href="#cb7-12"></a>  votes2 =<span class="st"> </span><span class="kw">get_votes</span>(senator2)</span>
+<span id="cb7-13"><a href="#cb7-13"></a>  </span>
+<span id="cb7-14"><a href="#cb7-14"></a>  <span class="co"># your code goes here!</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>  <span class="co"># find the cosine of the angle between votes1 and votes2</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>  cosine =<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>  </span>
+<span id="cb7-18"><a href="#cb7-18"></a>  <span class="kw">return</span> (cosine)</span>
+<span id="cb7-19"><a href="#cb7-19"></a>}</span></code></pre></div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>Find the cosine of the angles between every pair of the following senators of note:</p>
+<ul>
+<li><code>clinton</code>: Hilary Clinton (D, NY), presidential candidate 2016</li>
+<li><code>mccain</code>: John McCain (R, AZ), presidential candidate 2008</li>
+<li><code>obama</code>: Barack Obama (D, IL), president 2008-2016</li>
+<li><code>collins</code>: Susan Collins (R, ME), moderate Republican</li>
+</ul>
+<p>Does the cosine similarity pick up on the fact that Senator Collins is a “moderate Republican”?</p>
+<p><strong>Turn In:</strong> Your code and the output. Comment on the similarities between all pairs of senators.</p></li>
+<li><p>The senate majority leader of the 109th Congress was Bill Frist (R, TN). The senate minority leader was Harry Reid (D, NV).</p>
+<ul>
+<li><p>Create a function <code>classify_senator(senator)</code> that returns “R” or “D” depending on the cosine similarity of <code>senator</code> to <code>frist</code> and to <code>reid</code>.
+You will have to write <a href="https://www.tutorialspoint.com/r/r_if_else_statement.htm">an “if … else statement” (here is the syntax)</a>.</p></li>
+<li><p>Then run the <code>classify_all()</code> function that we have written for you. You will see how many senators are <em>misclassified</em>, meaning that their votes are more similar to the leader of the opposing party.</p></li>
+</ul>
+<p><strong>Note:</strong> Your misclassified list will include Jim Jeffords (I, VT), a Republican who became and Independent in 2001 and then caucused with the Democrats. Your classifer correctly aligns the Independent Jeffords with the Democrats.</p>
+<p><strong>Turn In:</strong> Your code and the output. Comment on how many senators are misclassified, as well as their party affiliations.</p></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># Implement this function!</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="co"># return &quot;R&quot; if senator is closer to frist</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co"># return &quot;D&quot; if senator is closer to reid</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a>classify_senator &lt;-<span class="st"> </span><span class="cf">function</span>(senator) {</span>
+<span id="cb8-5"><a href="#cb8-5"></a></span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="co"># your code goes here!</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="co"># use the get_vote_cosine_similarity() method to compare senator with frist and reid</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>  val =<span class="st"> &quot;R&quot;</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>  </span>
+<span id="cb8-10"><a href="#cb8-10"></a>  <span class="kw">return</span> (val)</span>
+<span id="cb8-11"><a href="#cb8-11"></a>}</span>
+<span id="cb8-12"><a href="#cb8-12"></a></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="co"># returns a dataframe containing all misclassified senator names</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="co"># and their party affiliations</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a>classify_all &lt;-<span class="st"> </span><span class="cf">function</span>() {</span>
+<span id="cb8-16"><a href="#cb8-16"></a></span>
+<span id="cb8-17"><a href="#cb8-17"></a>  mismatch =<span class="st"> </span><span class="kw">vector</span>()</span>
+<span id="cb8-18"><a href="#cb8-18"></a>  </span>
+<span id="cb8-19"><a href="#cb8-19"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">99</span>) {</span>
+<span id="cb8-20"><a href="#cb8-20"></a>    senator =<span class="st"> </span>record[i,]</span>
+<span id="cb8-21"><a href="#cb8-21"></a>    party =<span class="st"> </span><span class="kw">classify_senator</span>(senator)</span>
+<span id="cb8-22"><a href="#cb8-22"></a>    <span class="cf">if</span> (party <span class="op">!=</span><span class="st">  </span>record[i,<span class="dv">2</span>]) {</span>
+<span id="cb8-23"><a href="#cb8-23"></a>      mismatch =<span class="st"> </span><span class="kw">c</span>(mismatch, i)</span>
+<span id="cb8-24"><a href="#cb8-24"></a>    }</span>
+<span id="cb8-25"><a href="#cb8-25"></a>  }</span>
+<span id="cb8-26"><a href="#cb8-26"></a>  </span>
+<span id="cb8-27"><a href="#cb8-27"></a>  record[mismatch,<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]</span>
+<span id="cb8-28"><a href="#cb8-28"></a>}</span>
+<span id="cb8-29"><a href="#cb8-29"></a></span>
+<span id="cb8-30"><a href="#cb8-30"></a></span>
+<span id="cb8-31"><a href="#cb8-31"></a><span class="co"># Uncomment the next line to classify all senators!</span></span>
+<span id="cb8-32"><a href="#cb8-32"></a></span>
+<span id="cb8-33"><a href="#cb8-33"></a><span class="co"># classify_all()</span></span></code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

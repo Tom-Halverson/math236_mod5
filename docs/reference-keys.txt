@@ -1,4 +1,4 @@
-tab:unnamed-chunk-38
+tab:unnamed-chunk-2
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -135,6 +135,18 @@ example-2-1
 example-3-1
 general-2x2-matrices-with-complex-eigenvalues
 a-3d-example
+network-centralities
+graphs-and-networks
+adjacency-matrices
+graph-layouts
+degree-centrality
+goulds-index
+step-1-add-layovers
+step-2-dynamical-system
+step-4-eigen-analysis
+step-5
+gould-index-summary
+your-turn-the-rise-of-moscow
 geometry-in-mathbbrn
 dot-product
 length-distance-angle

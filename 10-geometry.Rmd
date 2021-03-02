@@ -2,7 +2,7 @@
 
 # Geometry in $\mathbb{R}^n$
 
-[Download this Rmd file](https://github.com/Tom-Halverson/math236_s21/blob/main/09-geometry.Rmd)
+[Download this Rmd file](https://github.com/Tom-Halverson/math236_s21/blob/main/10-geometry.Rmd)
 
 ```{r,echo=FALSE}
 require('pracma')
