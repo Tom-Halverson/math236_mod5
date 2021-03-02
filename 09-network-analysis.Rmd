@@ -56,14 +56,14 @@ There are a variety of graph layout algorithms which place the vertices in the p
 
 ```{r,  network3, fig.height=6, fig.width=6, echo=TRUE}
 coords = layout_in_circle(g)
-plot(g, layout=coords, vertex.size = 30,vertex.label.cex=0.65, vertex.color='tan1', vertex.frame.color="dodgerblue")
+plot(g, layout=coords, vertex.size = 30,vertex.label.cex=0.85, vertex.color='tan1', vertex.frame.color="dodgerblue")
 ```
 
 The **Fruchterman-Reingold algorithm** is one of the most popular graph vertex layout algorithms. It is a force-directed layout that tries to get a nice-looking graph where edges are similar in length and cross each other as little as possible. The algorithm simulates the graph as a physical system. Vertices are electrically charged particles that repulse each other when they get too close. The edges act as springs that attract connected vertices closer together. As a result, vertices are evenly distributed through the chart area. The resulting layout is intuitive: vertices which share more connections are closer to each other. 
 
 ```{r, network4, fig.height=6, fig.width=6, echo=TRUE}
 coords = layout_with_fr(g)
-plot(g, layout=coords, vertex.size = 30, vertex.label.cex=0.65, vertex.color='tan1', vertex.frame.color="dodgerblue")
+plot(g, layout=coords, vertex.size = 30, vertex.label.cex=0.85, vertex.color='tan1', vertex.frame.color="dodgerblue")
 ```
 
 We can also choose to layout vertices by hand:
@@ -73,7 +73,7 @@ locations = rbind(
   c(20,0),c(-10,0),c(11,7),c(10,15),c(3,12),c(25,10),
   c(-10,10),c(-12,15),c(20,6),c(-15,12),c(12,4),c(25,13)
 )
-plot(g,vertex.size=20, layout=locations, vertex.label.cex=0.65, vertex.color='tan1', vertex.frame.color="dodgerblue")
+plot(g,vertex.size=20, layout=locations, vertex.label.cex=0.85, vertex.color='tan1', vertex.frame.color="dodgerblue")
 ```
 
 
@@ -94,7 +94,7 @@ The result is a **normalized vector** $\mathsf{p}$ whose entries sum to 1. Each 
 v=rep(1,nrow(A)) # all 1s vector
 d = A %*% v  # degrees
 p=d/sum(d)   # proportion of degrees
-dp = cbind(d,p) # show d and u together side-by-side in a matrix
+dp = cbind(d,p) # show d and p together side-by-side in a matrix
 rownames(dp) = airports
 colnames(dp) = c("degree","proportion")
 dp
