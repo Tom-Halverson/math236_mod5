@@ -654,7 +654,13 @@ This shows that $A^{-1} v = \frac{1}{\lambda} v$ so $v$ is an eigenvector of $A^
 b. (method 1)  If $A$ is diagonal, then there is a basis $\{v_1, v_2, \ldots, v_n\}$ of eigenvectors of $A$ with eigenvalues $\lambda_1, \lambda_2, \ldots, \lambda_n$. By the previous par, $\{v_1, v_2, \ldots, v_n\}$ are eigenvectors of $A^{-1}$ with eigenvalues $1/\lambda_1, 1/\lambda_2, \ldots, 1/\lambda_n$. Thus $A^{-1}$ has the same eigenbasis, and the diagonalization of $A^{-1}$ is
 $$
 A^{-1} = 
-\underbrace{\begin{bmatrix} v_1 & v_2 & \cdots & v_n \end{bmatrix}}_P
+\underbrace{
+\begin{bmatrix} 
+\vert &\vert &&\vert \\
+v_1 & v_2 & \cdots & v_n \\
+\vert &\vert &&\vert \\
+\end{bmatrix}
+}_P
 \begin{bmatrix} 
 1/\lambda_1 & & & \\
 &  1/\lambda_2 & & \\
