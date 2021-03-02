@@ -27,3 +27,18 @@ a. Use Gould's Index to decide whether Moscow's dominance was solely due to its 
 a. Compare the Gould's Index and Degree Centrality rankings and note any interesting findings. See Section \@ref(step-5) for help.
 
 
+## Orthogonal Complements
+
+
+Here are two subspaces of $\mathbb{R}^5$ that we have seen before
+$$
+\begin{align}
+\mathsf{Z} & = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} \ \bigg\vert \ x_1 + x_2 + x_3 + x_4 + x_5 = 0 \right\}.
+\\
+\mathsf{F} & = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} \ \bigg\vert \  x_3 =  x_1 + x_2, x_4 = x_2 + x_3, x_5 = x_3 + x_4 \right\}.
+\end{align}
+$$
+Find the orthogonal complement of each subspace in $\mathbb{R}^5$. For each example, compute $\dim(W) + \dim(W^\perp)$.
+
+
+

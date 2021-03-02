@@ -52,6 +52,7 @@ hunt-creek
 glucose-insulin
 problem-set-7
 the-rise-of-moscow
+orthogonal-complements
 important-definitions
 vector-spaces
 matrices
