@@ -1,7 +1,7 @@
 
 # Problem Set 8
 
-* Due: Tuesday December 15 by 11:55pm CST. 
+* Due: Tuesday March 9 by 11:55pm CST. 
 * Upload your solutions to Moodle in a PDF. 
 * Please feel free to **use RStudio for all calculations**, including row reduction, matrix multiplication, eigenvector calculation, inverse matrices, and the Gram-Schmidt process.
 * You can download the [Rmd source file  for this problem set](https://github.com/mathbeveridge/math236_f20/blob/main/PS8-problem-set-8.Rmd).
