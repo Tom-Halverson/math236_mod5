@@ -659,7 +659,7 @@ Here we calculate <span class="math inline">\(\mathsf{v}_1, \ldots, \mathsf{v}_{
 <div id="step-4-eigen-analysis" class="section level3">
 <h3><span class="header-section-number">22.3.3</span> Step 4: Eigen-analysis</h3>
 <p>We see that the vectors are converging to a common direction, and
-we know that dynamical systems converge to the <strong>dominant eigenvector</strong> (if there is one). We can see below that there is one a dominant eigenvector in this case.</p>
+we know that dynamical systems converge to the <strong>dominant eigenvector</strong> (if there is one). We can see below that there is a dominant eigenvector in this case.</p>
 <div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="network-centralities.html#cb282-1"></a><span class="kw">eigen</span>(B)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
@@ -722,23 +722,23 @@ we know that dynamical systems converge to the <strong>dominant eigenvector</str
 <span id="cb284-13"><a href="network-centralities.html#cb284-13"></a>}</span>
 <span id="cb284-14"><a href="network-centralities.html#cb284-14"></a></span>
 <span id="cb284-15"><a href="network-centralities.html#cb284-15"></a><span class="co"># Display the data</span></span>
-<span id="cb284-16"><a href="network-centralities.html#cb284-16"></a>Y =<span class="st"> </span><span class="kw">cbind</span>(X[,<span class="dv">1</span>],X[,<span class="dv">11</span>],X[,<span class="dv">21</span>],X[,<span class="dv">31</span>],gould)</span>
+<span id="cb284-16"><a href="network-centralities.html#cb284-16"></a>Y =<span class="st"> </span><span class="kw">cbind</span>(X[,<span class="dv">1</span>],X[,<span class="dv">2</span>],X[,<span class="dv">3</span>],X[,<span class="dv">11</span>],X[,<span class="dv">21</span>],X[,<span class="dv">31</span>],gould)</span>
 <span id="cb284-17"><a href="network-centralities.html#cb284-17"></a><span class="kw">rownames</span>(Y) =<span class="st"> </span>airports</span>
-<span id="cb284-18"><a href="network-centralities.html#cb284-18"></a><span class="kw">colnames</span>(Y) =<span class="st"> </span><span class="kw">cbind</span>(<span class="st">&quot;n=0&quot;</span>,<span class="st">&quot;n=10&quot;</span>,<span class="st">&quot;n=20&quot;</span>,<span class="st">&quot;n=30&quot;</span>,<span class="st">&quot;Gould&quot;</span>)</span>
+<span id="cb284-18"><a href="network-centralities.html#cb284-18"></a><span class="kw">colnames</span>(Y) =<span class="st"> </span><span class="kw">cbind</span>(<span class="st">&quot;n=0&quot;</span>,<span class="st">&quot;n=1&quot;</span>,<span class="st">&quot;n=2&quot;</span>,<span class="st">&quot;n=10&quot;</span>,<span class="st">&quot;n=20&quot;</span>,<span class="st">&quot;n=30&quot;</span>,<span class="st">&quot;Gould&quot;</span>)</span>
 <span id="cb284-19"><a href="network-centralities.html#cb284-19"></a>Y</span></code></pre></div>
-<pre><code>##     n=0       n=10       n=20       n=30      Gould
-## ATL   1 0.07640399 0.07637073 0.07637062 0.07637062
-## LAX   1 0.14675521 0.14676475 0.14676474 0.14676474
-## ORD   1 0.07842281 0.07845441 0.07845446 0.07845446
-## MSP   1 0.11242772 0.11239338 0.11239329 0.11239329
-## DEN   1 0.14082110 0.14086400 0.14086410 0.14086410
-## JFK   1 0.06612665 0.06611175 0.06611172 0.06611172
-## SFO   1 0.12997042 0.12998468 0.12998472 0.12998472
-## SEA   1 0.12281194 0.12280789 0.12280792 0.12280792
-## PHL   1 0.02085358 0.02083114 0.02083107 0.02083107
-## PDX   1 0.03350515 0.03349742 0.03349744 0.03349744
-## MDW   1 0.03350515 0.03349742 0.03349744 0.03349744
-## LGA   1 0.03839628 0.03842243 0.03842249 0.03842249</code></pre>
+<pre><code>##     n=0        n=1        n=2       n=10       n=20       n=30      Gould
+## ATL   1 0.08695652 0.08173077 0.07640399 0.07637073 0.07637062 0.07637062
+## LAX   1 0.13043478 0.13942308 0.14675521 0.14676475 0.14676474 0.14676474
+## ORD   1 0.06521739 0.07211538 0.07842281 0.07845441 0.07845446 0.07845446
+## MSP   1 0.10869565 0.11538462 0.11242772 0.11239338 0.11239329 0.11239329
+## DEN   1 0.13043478 0.13461538 0.14082110 0.14086400 0.14086410 0.14086410
+## JFK   1 0.06521739 0.06250000 0.06612665 0.06611175 0.06611172 0.06611172
+## SFO   1 0.10869565 0.12500000 0.12997042 0.12998468 0.12998472 0.12998472
+## SEA   1 0.13043478 0.12500000 0.12281194 0.12280789 0.12280792 0.12280792
+## PHL   1 0.04347826 0.02884615 0.02085358 0.02083114 0.02083107 0.02083107
+## PDX   1 0.04347826 0.03846154 0.03350515 0.03349742 0.03349744 0.03349744
+## MDW   1 0.04347826 0.03846154 0.03350515 0.03349742 0.03349744 0.03349744
+## LGA   1 0.04347826 0.03846154 0.03839628 0.03842243 0.03842249 0.03842249</code></pre>
 </div>
 <div id="step-5" class="section level3">
 <h3><span class="header-section-number">22.3.4</span> Step 5</h3>
@@ -747,28 +747,28 @@ we know that dynamical systems converge to the <strong>dominant eigenvector</str
 <li>the vertices sized by Gould’s Index</li>
 <li>the labels sized by degree centrality</li>
 </ul>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="network-centralities.html#cb286-1"></a><span class="kw">plot</span>(g, <span class="dt">layout=</span>locations, <span class="dt">vertex.size=</span><span class="dv">250</span><span class="op">*</span>gould,<span class="dt">vertex.label.cex=</span><span class="dv">7</span><span class="op">*</span>p, <span class="dt">vertex.color=</span><span class="st">&#39;tan1&#39;</span>, <span class="dt">vertex.frame.color=</span><span class="st">&quot;dodgerblue&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="network-centralities.html#cb286-1"></a><span class="kw">plot</span>(g, <span class="dt">layout=</span>locations, <span class="dt">vertex.size=</span><span class="dv">250</span><span class="op">*</span>gould,<span class="dt">vertex.label.cex=</span><span class="dv">8</span><span class="op">*</span>p, <span class="dt">vertex.color=</span><span class="st">&#39;tan1&#39;</span>, <span class="dt">vertex.frame.color=</span><span class="st">&quot;dodgerblue&quot;</span> )</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/network6-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>And we show the data containing Gould’s Index and the Degree Centrality. We order the data using the Gould Index and then compare the two. Observe that degree centrality and Gould’s Index do not always agree.</p>
 <div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="network-centralities.html#cb287-1"></a>Z =<span class="st"> </span><span class="kw">cbind</span>(gould,p) </span>
-<span id="cb287-2"><a href="network-centralities.html#cb287-2"></a>ii=<span class="kw">order</span>(gould,<span class="dt">decreasing=</span><span class="ot">TRUE</span>)</span>
-<span id="cb287-3"><a href="network-centralities.html#cb287-3"></a>Z =<span class="st"> </span>Z[ii,]</span>
-<span id="cb287-4"><a href="network-centralities.html#cb287-4"></a><span class="kw">rownames</span>(Z)=airports</span>
-<span id="cb287-5"><a href="network-centralities.html#cb287-5"></a><span class="kw">colnames</span>(Z)=<span class="kw">c</span>(<span class="st">&#39;Gould&#39;</span>, <span class="st">&#39;Degree&#39;</span>)</span>
+<span id="cb287-2"><a href="network-centralities.html#cb287-2"></a><span class="kw">rownames</span>(Z)=airports</span>
+<span id="cb287-3"><a href="network-centralities.html#cb287-3"></a><span class="kw">colnames</span>(Z)=<span class="kw">c</span>(<span class="st">&#39;Gould&#39;</span>, <span class="st">&#39;Degree&#39;</span>)</span>
+<span id="cb287-4"><a href="network-centralities.html#cb287-4"></a>ii=<span class="kw">order</span>(gould,<span class="dt">decreasing=</span><span class="ot">TRUE</span>)</span>
+<span id="cb287-5"><a href="network-centralities.html#cb287-5"></a>Z =<span class="st"> </span>Z[ii,]</span>
 <span id="cb287-6"><a href="network-centralities.html#cb287-6"></a>Z</span></code></pre></div>
 <pre><code>##          Gould     Degree
-## ATL 0.14676474 0.14705882
-## LAX 0.14086410 0.14705882
-## ORD 0.12998472 0.11764706
-## MSP 0.12280792 0.14705882
-## DEN 0.11239329 0.11764706
-## JFK 0.07845446 0.05882353
-## SFO 0.07637062 0.08823529
-## SEA 0.06611172 0.05882353
-## PHL 0.03842249 0.02941176
+## LAX 0.14676474 0.14705882
+## DEN 0.14086410 0.14705882
+## SFO 0.12998472 0.11764706
+## SEA 0.12280792 0.14705882
+## MSP 0.11239329 0.11764706
+## ORD 0.07845446 0.05882353
+## ATL 0.07637062 0.08823529
+## JFK 0.06611172 0.05882353
+## LGA 0.03842249 0.02941176
 ## PDX 0.03349744 0.02941176
 ## MDW 0.03349744 0.02941176
-## LGA 0.02083107 0.02941176</code></pre>
+## PHL 0.02083107 0.02941176</code></pre>
 <p><strong>Discuss with your group:</strong> Degree centrality and Gould’s Index give different rankings. Look at the table and observe that:</p>
 <ul>
 <li>LAX, DEN and SEA have the same degree centrality. However LAX and DEN have higher Gould Index than SEA.</li>

@@ -191,7 +191,7 @@ X
 ### Step 4: Eigen-analysis 
 
 We see that the vectors are converging to a common direction, and 
-we know that dynamical systems converge to the **dominant eigenvector** (if there is one). We can see below that there is one a dominant eigenvector in this case. 
+we know that dynamical systems converge to the **dominant eigenvector** (if there is one). We can see below that there is a dominant eigenvector in this case. 
 ```{r, echo=TRUE}
 eigen(B)
 ```
@@ -214,9 +214,9 @@ for (i in 1:N) {
 }
 
 # Display the data
-Y = cbind(X[,1],X[,11],X[,21],X[,31],gould)
+Y = cbind(X[,1],X[,2],X[,3],X[,11],X[,21],X[,31],gould)
 rownames(Y) = airports
-colnames(Y) = cbind("n=0","n=10","n=20","n=30","Gould")
+colnames(Y) = cbind("n=0","n=1","n=2","n=10","n=20","n=30","Gould")
 Y
 ```
 
@@ -229,16 +229,16 @@ Now let's plot the network with:
 * the labels sized by degree centrality
 
 ```{r, network6, fig.height=6, fig.width=6, echo=TRUE}
-plot(g, layout=locations, vertex.size=250*gould,vertex.label.cex=7*p, vertex.color='tan1', vertex.frame.color="dodgerblue" )
+plot(g, layout=locations, vertex.size=250*gould,vertex.label.cex=8*p, vertex.color='tan1', vertex.frame.color="dodgerblue" )
 ```
 
 And we show the data containing Gould's Index and the Degree Centrality. We order the data using the Gould Index and then compare the two. Observe that degree centrality and Gould's Index do not always agree.
 ```{r, echo=TRUE}
 Z = cbind(gould,p) 
-ii=order(gould,decreasing=TRUE)
-Z = Z[ii,]
 rownames(Z)=airports
 colnames(Z)=c('Gould', 'Degree')
+ii=order(gould,decreasing=TRUE)
+Z = Z[ii,]
 Z
 ```
 
