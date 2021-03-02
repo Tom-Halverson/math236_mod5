@@ -668,8 +668,7 @@ v_1 & v_2 & \cdots & v_n \\
 & &   &   1/\lambda_n \\
 \end{bmatrix} P^{-1}
 $$
-
-b. (method 2) If $A = P D P^{-1}$ then by the fact that the order reverses when computing inverses (the shoes-and-socks property), we have $A^{-1} = (P D P^{-1})^{-1} = (P^{-1})^{-1} D^{-1} P^{-1} = P D^{-1} P^{-1}.$ Furthermore $D^{-1}$ is a diagonal matrix such that
+(method 2) If $A = P D P^{-1}$ then by the fact that the order reverses when computing inverses (the shoes-and-socks property), we have $A^{-1} = (P D P^{-1})^{-1} = (P^{-1})^{-1} D^{-1} P^{-1} = P D^{-1} P^{-1}.$ Furthermore $D^{-1}$ is a diagonal matrix such that
 $$
 \text{if} \qquad D = 
 \begin{bmatrix} 

@@ -1056,7 +1056,7 @@ v &amp; = &amp; \lambda A^{-1} v \\
 \]</span>
 This shows that <span class="math inline">\(A^{-1} v = \frac{1}{\lambda} v\)</span> so <span class="math inline">\(v\)</span> is an eigenvector of <span class="math inline">\(A^{-1}\)</span> with eigenvalue <span class="math inline">\(\frac{1}{\lambda}\)</span></p>
 <ol start="2" style="list-style-type: lower-alpha">
-<li><p>(method 1) If <span class="math inline">\(A\)</span> is diagonal, then there is a basis <span class="math inline">\(\{v_1, v_2, \ldots, v_n\}\)</span> of eigenvectors of <span class="math inline">\(A\)</span> with eigenvalues <span class="math inline">\(\lambda_1, \lambda_2, \ldots, \lambda_n\)</span>. By the previous par, <span class="math inline">\(\{v_1, v_2, \ldots, v_n\}\)</span> are eigenvectors of <span class="math inline">\(A^{-1}\)</span> with eigenvalues <span class="math inline">\(1/\lambda_1, 1/\lambda_2, \ldots, 1/\lambda_n\)</span>. Thus <span class="math inline">\(A^{-1}\)</span> has the same eigenbasis, and the diagonalization of <span class="math inline">\(A^{-1}\)</span> is
+<li>(method 1) If <span class="math inline">\(A\)</span> is diagonal, then there is a basis <span class="math inline">\(\{v_1, v_2, \ldots, v_n\}\)</span> of eigenvectors of <span class="math inline">\(A\)</span> with eigenvalues <span class="math inline">\(\lambda_1, \lambda_2, \ldots, \lambda_n\)</span>. By the previous par, <span class="math inline">\(\{v_1, v_2, \ldots, v_n\}\)</span> are eigenvectors of <span class="math inline">\(A^{-1}\)</span> with eigenvalues <span class="math inline">\(1/\lambda_1, 1/\lambda_2, \ldots, 1/\lambda_n\)</span>. Thus <span class="math inline">\(A^{-1}\)</span> has the same eigenbasis, and the diagonalization of <span class="math inline">\(A^{-1}\)</span> is
 <span class="math display">\[
 A^{-1} = 
 \underbrace{
@@ -1072,8 +1072,8 @@ v_1 &amp; v_2 &amp; \cdots &amp; v_n \\
 &amp;    &amp; \ddots \\
 &amp; &amp;   &amp;   1/\lambda_n \\
 \end{bmatrix} P^{-1}
-\]</span></p></li>
-<li><p>(method 2) If <span class="math inline">\(A = P D P^{-1}\)</span> then by the fact that the order reverses when computing inverses (the shoes-and-socks property), we have <span class="math inline">\(A^{-1} = (P D P^{-1})^{-1} = (P^{-1})^{-1} D^{-1} P^{-1} = P D^{-1} P^{-1}.\)</span> Furthermore <span class="math inline">\(D^{-1}\)</span> is a diagonal matrix such that
+\]</span>
+(method 2) If <span class="math inline">\(A = P D P^{-1}\)</span> then by the fact that the order reverses when computing inverses (the shoes-and-socks property), we have <span class="math inline">\(A^{-1} = (P D P^{-1})^{-1} = (P^{-1})^{-1} D^{-1} P^{-1} = P D^{-1} P^{-1}.\)</span> Furthermore <span class="math inline">\(D^{-1}\)</span> is a diagonal matrix such that
 <span class="math display">\[
 \text{if} \qquad D = 
 \begin{bmatrix} 
@@ -1091,7 +1091,7 @@ D^{-1} =
 &amp;   &amp; &amp;  &amp; 1/\lambda_n \\
 \end{bmatrix}
 \]</span>
-Note that <span class="math inline">\(A\)</span> is invertible, 0 is not an eigenvalue, so each <span class="math inline">\(1/\lambda_i\)</span> does not cause division by 0.</p></li>
+Note that <span class="math inline">\(A\)</span> is invertible, 0 is not an eigenvalue, so each <span class="math inline">\(1/\lambda_i\)</span> does not cause division by 0.</li>
 </ol>
 
 </div>
