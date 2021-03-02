@@ -1,7 +1,7 @@
 
 #  Network Centralities
 
-[Download this Rmd file](https://github.com/Tom-Halverson/math236_fs21/blob/main/09-network-analysis.Rmd)
+[Download this Rmd file](https://drive.google.com/open?id=1haGbDsQh5OmaRwCbP9X07AmI0F1wDN5u)
 
 
 In this example, we will use a package called `igraph`. To install it, you need to go to the packages window (bottom right), choose `install`, and search for and install `igraph` from the packages window.
