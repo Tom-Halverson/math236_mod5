@@ -119,7 +119,30 @@ c. The **residual vector** is the vector $\mathsf{r}  = \mathsf{v} - \mathsf{p}$
 
 d. Show that $\mathsf{r}$ is orthogonal to $\mathsf{f}_1$ and $\mathsf{f}_2$.
 
-d. Compute $||\mathsf{r}||$. This is the distance from $\mathsf{v}$ to $\mathsf{F}$.
+d. Compute $||\mathsf{r}||$. This is the distance from $\mathsf{v}$ to $\mathsf{F}$ (i.e., how far $\mathsf{v}$ is from being Fibonacci).
+
+## Least Squares Solution to $\mathsf{A} x = \mathsf{b}$
+
+Find the least-squares solution to the following inconsistent matrix equation $\mathsf{A} x  = \mathsf{b}$. 
+$$
+\left[
+\begin{array}{ccc}
+ 1 & 1 & 2 \\
+ 1 & 0 & 2 \\
+ -1 & 1 & 1 \\
+ 1 & 0 & 1 \\
+ 1 & 1 & 1 \\
+\end{array}
+\right] \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
+\begin{bmatrix} 7 \\  11 \\ -3 \\ 10 \\ 7 \end{bmatrix}. \hskip5in
+$$
+Here are the steps you should follow:
+
+a. Make the normal equations: $\mathsf{A}^T \mathsf{A} x = \mathsf{A}^T \mathsf{b}$.
+b. Solve the normal equations for $\hat{x}$ (by hand or software).
+c. Get the projection $\hat{\mathsf{b}}$ of $\mathsf{b}$ onto $\mathrm{Col}(\mathsf{A})$ by $\hat{\mathsf{b}} = \mathsf{A} \hat{x}$.
+d. Get the residual $\mathsf{r}  = \mathsf{b} - \hat{\mathsf{b}}$ and compute its length.
+
 
 
 

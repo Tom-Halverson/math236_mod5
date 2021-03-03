@@ -192,6 +192,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="7.3" data-path="problem-set-7.html"><a href="problem-set-7.html#orthogonal-diagonalization"><i class="fa fa-check"></i><b>7.3</b> Orthogonal Diagonalization</a></li>
 <li class="chapter" data-level="7.4" data-path="problem-set-7.html"><a href="problem-set-7.html#cosine-similarity"><i class="fa fa-check"></i><b>7.4</b> Cosine Similarity</a></li>
 <li class="chapter" data-level="7.5" data-path="problem-set-7.html"><a href="problem-set-7.html#fibonacci-orthogonality"><i class="fa fa-check"></i><b>7.5</b> Fibonacci Orthogonality</a></li>
+<li class="chapter" data-level="7.6" data-path="problem-set-7.html"><a href="problem-set-7.html#least-squares-solution-to-mathsfa-x-mathsfb"><i class="fa fa-check"></i><b>7.6</b> Least Squares Solution to <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span></a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
 <li class="chapter" data-level="8" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>8</b> Important Definitions</a><ul>
@@ -538,7 +539,30 @@ This measure has the following nice properties:</p>
 This formula requires that the basis be orthogonal.</p></li>
 <li><p>The <strong>residual vector</strong> is the vector <span class="math inline">\(\mathsf{r} = \mathsf{v} - \mathsf{p}\)</span>. Compute <span class="math inline">\(\mathsf{r}\)</span>.</p></li>
 <li><p>Show that <span class="math inline">\(\mathsf{r}\)</span> is orthogonal to <span class="math inline">\(\mathsf{f}_1\)</span> and <span class="math inline">\(\mathsf{f}_2\)</span>.</p></li>
-<li><p>Compute <span class="math inline">\(||\mathsf{r}||\)</span>. This is the distance from <span class="math inline">\(\mathsf{v}\)</span> to <span class="math inline">\(\mathsf{F}\)</span>.</p></li>
+<li><p>Compute <span class="math inline">\(||\mathsf{r}||\)</span>. This is the distance from <span class="math inline">\(\mathsf{v}\)</span> to <span class="math inline">\(\mathsf{F}\)</span> (i.e., how far <span class="math inline">\(\mathsf{v}\)</span> is from being Fibonacci).</p></li>
+</ol>
+</div>
+<div id="least-squares-solution-to-mathsfa-x-mathsfb" class="section level2">
+<h2><span class="header-section-number">7.6</span> Least Squares Solution to <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span></h2>
+<p>Find the least-squares solution to the following inconsistent matrix equation <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span>.
+<span class="math display">\[
+\left[
+\begin{array}{ccc}
+ 1 &amp; 1 &amp; 2 \\
+ 1 &amp; 0 &amp; 2 \\
+ -1 &amp; 1 &amp; 1 \\
+ 1 &amp; 0 &amp; 1 \\
+ 1 &amp; 1 &amp; 1 \\
+\end{array}
+\right] \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
+\begin{bmatrix} 7 \\  11 \\ -3 \\ 10 \\ 7 \end{bmatrix}. \hskip5in
+\]</span>
+Here are the steps you should follow:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Make the normal equations: <span class="math inline">\(\mathsf{A}^T \mathsf{A} x = \mathsf{A}^T \mathsf{b}\)</span>.</li>
+<li>Solve the normal equations for <span class="math inline">\(\hat{x}\)</span> (by hand or software).</li>
+<li>Get the projection <span class="math inline">\(\hat{\mathsf{b}}\)</span> of <span class="math inline">\(\mathsf{b}\)</span> onto <span class="math inline">\(\mathrm{Col}(\mathsf{A})\)</span> by <span class="math inline">\(\hat{\mathsf{b}} = \mathsf{A} \hat{x}\)</span>.</li>
+<li>Get the residual <span class="math inline">\(\mathsf{r} = \mathsf{b} - \hat{\mathsf{b}}\)</span> and compute its length.</li>
 </ol>
 
 </div>
