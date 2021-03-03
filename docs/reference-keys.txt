@@ -1,4 +1,4 @@
-tab:unnamed-chunk-9
+tab:unnamed-chunk-33
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -53,6 +53,7 @@ glucose-insulin
 problem-set-7
 the-rise-of-moscow
 orthogonal-complements
+orthogonal-diagonalization
 important-definitions
 vector-spaces
 matrices

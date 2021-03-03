@@ -189,6 +189,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="7" data-path="problem-set-7.html"><a href="problem-set-7.html"><i class="fa fa-check"></i><b>7</b> Problem Set 7</a><ul>
 <li class="chapter" data-level="7.1" data-path="problem-set-7.html"><a href="problem-set-7.html#the-rise-of-moscow"><i class="fa fa-check"></i><b>7.1</b> The Rise of Moscow</a></li>
 <li class="chapter" data-level="7.2" data-path="problem-set-7.html"><a href="problem-set-7.html#orthogonal-complements"><i class="fa fa-check"></i><b>7.2</b> Orthogonal Complements</a></li>
+<li class="chapter" data-level="7.3" data-path="problem-set-7.html"><a href="problem-set-7.html#orthogonal-diagonalization"><i class="fa fa-check"></i><b>7.3</b> Orthogonal Diagonalization</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
 <li class="chapter" data-level="8" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>8</b> Important Definitions</a><ul>
@@ -464,6 +465,27 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 \end{align}
 \]</span>
 Find the orthogonal complement of each subspace in <span class="math inline">\(\mathbb{R}^5\)</span>. For each example, compute <span class="math inline">\(\dim(W) + \dim(W^\perp)\)</span>.</p>
+</div>
+<div id="orthogonal-diagonalization" class="section level2">
+<h2><span class="header-section-number">7.3</span> Orthogonal Diagonalization</h2>
+<p>Recall that a square <span class="math inline">\(n \times n\)</span> matrix is symmetric when <span class="math inline">\(A^{\top} = A\)</span>. We learned that the eigenvectors of a symmetric matrix form an orthogonal basis of <span class="math inline">\(\mathbb{R}^n\)</span>. In this problem, you will confirm that this holds for the following symmetric matrix
+<span class="math display">\[
+A = 
+\begin{bmatrix}
+ 0 &amp;  8 &amp; 10 &amp; -4 \\
+ 8 &amp; 4 &amp; 28 &amp; 6 \\
+ 10 &amp; 28 &amp; 3 &amp; -4 \\
+ -4 &amp; 6 &amp; -4 &amp; -7
+\end{bmatrix}. 
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Find the eigenvalues and eigenvectors of <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Confirm that the eigenvectors returned by R are an orthonormal set (do this in a single calculation).</p></li>
+<li><p>Express the vector <span class="math inline">\(\mathsf{v} = \begin{bmatrix} 2 &amp; -4 &amp; -9 &amp; -2 \end{bmatrix}^{\top}\)</span> as a linear combination of the eigenvectors. Use the fact that the eigenvectors are orthonormal. (Don’t augment and row reduce.)</p></li>
+<li><p>Let <span class="math inline">\(P\)</span> be the matrix of these normalized, orthogonal eigenvectors.
+Diagonalize <span class="math inline">\(A\)</span> using <span class="math inline">\(P\)</span>. Just write out <span class="math inline">\(A = P D P^{-1}\)</span>. Congratulations: you have <strong>orthogonally diagonalized</strong> the symmetric matrix <span class="math inline">\(A\)</span>!</p></li>
+</ol>
+<p><strong>Turn in:</strong> Your R code and the output for each part. For parts (c) and (d), you need to make it clear what your final answers are.</p>
 
 </div>
 </div>
