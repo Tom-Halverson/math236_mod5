@@ -55,6 +55,7 @@ the-rise-of-moscow
 orthogonal-complements
 orthogonal-diagonalization
 cosine-similarity
+fibonacci-orthogonality
 important-definitions
 vector-spaces
 matrices

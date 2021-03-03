@@ -191,6 +191,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="7.2" data-path="problem-set-7.html"><a href="problem-set-7.html#orthogonal-complements"><i class="fa fa-check"></i><b>7.2</b> Orthogonal Complements</a></li>
 <li class="chapter" data-level="7.3" data-path="problem-set-7.html"><a href="problem-set-7.html#orthogonal-diagonalization"><i class="fa fa-check"></i><b>7.3</b> Orthogonal Diagonalization</a></li>
 <li class="chapter" data-level="7.4" data-path="problem-set-7.html"><a href="problem-set-7.html#cosine-similarity"><i class="fa fa-check"></i><b>7.4</b> Cosine Similarity</a></li>
+<li class="chapter" data-level="7.5" data-path="problem-set-7.html"><a href="problem-set-7.html#fibonacci-orthogonality"><i class="fa fa-check"></i><b>7.5</b> Fibonacci Orthogonality</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
 <li class="chapter" data-level="8" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>8</b> Important Definitions</a><ul>
@@ -515,6 +516,29 @@ This measure has the following nice properties:</p>
 <span id="cb27-6"><a href="problem-set-7.html#cb27-6"></a>}</span></code></pre></div>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>more cool stuff coming tonight!</li>
+</ol>
+</div>
+<div id="fibonacci-orthogonality" class="section level2">
+<h2><span class="header-section-number">7.5</span> Fibonacci Orthogonality</h2>
+<p>In problem 1, you saw that the vector space of Fibonacci vectors <span class="math inline">\(\mathsf{F} \subseteq \mathbb{R}^5\)</span> is a 2-dimensional subspace of <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Below is an orthogonal basis of <span class="math inline">\(\mathsf{F}\)</span>. Check that the basis vectors <span class="math inline">\(\{\mathsf{f}_1, \mathsf{f}_2\}\)</span> are in <span class="math inline">\(\mathsf{F}\)</span> and are orthogonal.
+<span class="math display">\[
+\mathsf{F} = \mathsf{span} \left\{
+ \mathsf{f}_1 = \begin{bmatrix} 1 \\ 0 \\ 1 \\ 1 \\ 2 \end{bmatrix}, 
+ \mathsf{f}_2 = \begin{bmatrix} -9 \\ 7 \\ -2 \\ 5 \\ 3\end{bmatrix}
+ \right\}, \hskip.5in
+ \mathsf{v}  =  \begin{bmatrix} 1 \\ 2 \\ 3 \\ 5 \\ 7\end{bmatrix}.\hskip.5in
+\]</span>
+<img src="images/projectFib.png" style="width:70.0%" /></p></li>
+<li><p>The vector <span class="math inline">\(\mathsf{v}\)</span> above is  in <span class="math inline">\(\mathsf{F}\)</span> (check that!). Its <strong>projection</strong> <span class="math inline">\(\mathsf{p}\)</span> onto <span class="math inline">\(\mathsf{F}\)</span> is given by the formula below. Compute <span class="math inline">\(\mathsf{p}\)</span>. This is closest approximation of <span class="math inline">\(\mathsf{f}\)</span> with a Fibonacci vector.
+<span class="math display">\[
+\mathsf{p} = \frac{ (\mathsf{v} \cdot  \mathsf{f}_1)}{ ( \mathsf{f}_1 \cdot  \mathsf{f}_1)} \mathsf{f}_1 +  \frac{ (\mathsf{v} \cdot  \mathsf{f}_2)}{ ( \mathsf{f}_2 \cdot  \mathsf{f}_2)}  \mathsf{f}_2.
+\]</span>
+This formula requires that the basis be orthogonal.</p></li>
+<li><p>The <strong>residual vector</strong> is the vector <span class="math inline">\(\mathsf{r} = \mathsf{v} - \mathsf{p}\)</span>. Compute <span class="math inline">\(\mathsf{r}\)</span>.</p></li>
+<li><p>Show that <span class="math inline">\(\mathsf{r}\)</span> is orthogonal to <span class="math inline">\(\mathsf{f}_1\)</span> and <span class="math inline">\(\mathsf{f}_2\)</span>.</p></li>
+<li><p>Compute <span class="math inline">\(||\mathsf{r}||\)</span>. This is the distance from <span class="math inline">\(\mathsf{v}\)</span> to <span class="math inline">\(\mathsf{F}\)</span>.</p></li>
 </ol>
 
 </div>

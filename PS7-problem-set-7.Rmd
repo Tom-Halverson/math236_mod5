@@ -94,3 +94,33 @@ cosine_similarity <- function(u, v) {
 
 b. more cool stuff coming tonight!
 
+## Fibonacci Orthogonality
+
+In problem 1, you saw that the vector space of Fibonacci vectors $\mathsf{F} \subseteq \mathbb{R}^5$ is a 2-dimensional subspace of $\mathbb{R}^5$. 
+
+
+a. Below is an orthogonal basis of $\mathsf{F}$. Check that the basis vectors $\{\mathsf{f}_1, \mathsf{f}_2\}$ are in $\mathsf{F}$ and are orthogonal.
+$$
+\mathsf{F} = \mathsf{span} \left\{
+ \mathsf{f}_1 = \begin{bmatrix} 1 \\ 0 \\ 1 \\ 1 \\ 2 \end{bmatrix}, 
+ \mathsf{f}_2 = \begin{bmatrix} -9 \\ 7 \\ -2 \\ 5 \\ 3\end{bmatrix}
+ \right\}, \hskip.5in
+ \mathsf{v}  =  \begin{bmatrix} 1 \\ 2 \\ 3 \\ 5 \\ 7\end{bmatrix}.\hskip.5in
+$$
+![](images/projectFib.png){width=70%}
+
+b. The vector $\mathsf{v}$ above is \emph{not} in $\mathsf{F}$ (check that!). Its **projection** $\mathsf{p}$ onto $\mathsf{F}$ is given by the formula below. Compute $\mathsf{p}$. This is closest approximation of $\mathsf{f}$ with a Fibonacci vector.
+$$
+\mathsf{p} = \frac{ (\mathsf{v} \cdot  \mathsf{f}_1)}{ ( \mathsf{f}_1 \cdot  \mathsf{f}_1)} \mathsf{f}_1 +  \frac{ (\mathsf{v} \cdot  \mathsf{f}_2)}{ ( \mathsf{f}_2 \cdot  \mathsf{f}_2)}  \mathsf{f}_2.
+$$
+This formula requires that the basis be orthogonal.
+
+c. The **residual vector** is the vector $\mathsf{r}  = \mathsf{v} - \mathsf{p}$. Compute $\mathsf{r}$.
+
+d. Show that $\mathsf{r}$ is orthogonal to $\mathsf{f}_1$ and $\mathsf{f}_2$.
+
+d. Compute $||\mathsf{r}||$. This is the distance from $\mathsf{v}$ to $\mathsf{F}$.
+
+
+
+
