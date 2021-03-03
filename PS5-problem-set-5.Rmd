@@ -61,7 +61,7 @@ a. Give a basis of $S$ consisting of some or all of the vectors used to define $
 
 b. Give a basis of $S$ that has the nice standard basis property (i.e., the 0s and 1s property).
 
-c. For the two vectors below, decide if they are in $S$. If the vector is in $S$ then give its coordinates in each of your bases from part (b). If you can do one of these "by hand" then explain how.
+c. For the two vectors below, decide if they are in $S$. If the vector is in $S$ then give its coordinates in each of your bases from parts (a) and (b). If you can do one of these "by hand" then explain how.
 $$
 \mathbf{w} = \begin{bmatrix} 8 \\ 11 \\ 14 \\ 7 \\ 11 \end{bmatrix}, \qquad 
 \mathbf{v} = \begin{bmatrix} 3 \\ 3 \\ 3 \\ 1 \\ 1 \end{bmatrix}.

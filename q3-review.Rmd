@@ -250,7 +250,17 @@ a. Show that if $v$ is an eigenvector of $A$ with eigenvalue $\lambda$, then $v$
 
 b.  If $A$ is diagonalizable with diagonalization $A = P D P^{-1}$, then show that $A^{-1}$ is diagonalizable and find its diagonalization from that of $A$.
 
+### 
 
+Suppose that $A$ is an $n \times n$ matrix with eigenvector $\vec w$ of eigenvalue 5 and eigenvector $\vec v$ of eigenvalue -3. 
+
+a. Is $\vec v + \vec w$ an eigenvector of $A$, and if so, what is its eigenvalue?
+
+b. Is $2021 \vec v$ an eigenvector of $A$, and if so what is its eigenvalue?
+
+c. Is $\vec w$ an eigenvector of $A^2$, and if so what is its eigenvalue?
+
+d. Is $\vec v$ an eigenvector of $A - 2021 I_n$ and if so, what is its eigenvalue?
  
 ## Solutions to Practice Problems
 

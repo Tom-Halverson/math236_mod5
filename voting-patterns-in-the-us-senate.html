@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 1 Voting Patterns in the US Senate | 08-voting-patterns.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 1 Voting Patterns in the US Senate | 08-voting-patterns.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 1 Voting Patterns in the US Senate | 08-voting-patterns.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="m236.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href = "./">MATH 236: Linear Algebra</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#voting-patterns-in-the-us-senate"><i class="fa fa-check"></i><b>1</b> Voting Patterns in the US Senate</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#the-data"><i class="fa fa-check"></i><b>1.1</b> The Data</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#the-88th-congressional-session-1964"><i class="fa fa-check"></i><b>1.2</b> The 88th Congressional Session (1964)</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#using-the-eigenbasis"><i class="fa fa-check"></i><b>1.3</b> Using the Eigenbasis</a><ul>
+<li class="chapter" data-level="1.3.1" data-path=""><a href="#using-the-dominant-eigenvectors."><i class="fa fa-check"></i><b>1.3.1</b> Using the Dominant Eigenvectors.</a></li>
+<li class="chapter" data-level="1.3.2" data-path=""><a href="#patterns-in-the-first-two-eigenvectors"><i class="fa fa-check"></i><b>1.3.2</b> Patterns in the First Two Eigenvectors</a></li>
+<li class="chapter" data-level="1.3.3" data-path=""><a href="#creating-a-table-sorted-by-an-eigenvector"><i class="fa fa-check"></i><b>1.3.3</b> Creating a Table Sorted by an Eigenvector</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#your-turn"><i class="fa fa-check"></i><b>1.4</b> Your Turn</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="voting-patterns-in-the-us-senate" class="section level1">
+<h1><span class="header-section-number">Section 1</span> Voting Patterns in the US Senate</h1>
+<p><a href="https://raw.github.com/mathbeveridge/math236_f20//main/08-voting-patterns.Rmd">Download this Rmd file</a></p>
+<p>In 2014, the <a href="https://www.pewresearch.org/politics/2014/06/12/political-polarization-in-the-american-public/">Pew Research Center published a report</a> about the increasing polarization of US politics. They wrote:</p>
+<blockquote>
+<p>Republicans and Democrats are more divided along ideological lines – and partisan antipathy is deeper and more extensive – than at any point in the last two decades. These trends manifest themselves in myriad ways, both in politics and in everyday life.</p>
+</blockquote>
+<p>Is this really true, or is this just hype? Let’s see what linear algebra can tell us about the evolution of voting patterns in the US Senate from 1964 to 2012.</p>
+<div id="the-data" class="section level2">
+<h2><span class="header-section-number">1.1</span> The Data</h2>
+<p>We will analyze datasets corresponding to US Senate votes during a 2-year Congressional Session.
+Our data sets are 12 years apart, and were chosen to coincide with US election years.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>tabledata =<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">84</span>, <span class="st">&#39;1963-1965&#39;</span>, <span class="st">&#39;Lyndon Johnson vs Richard Nixon&#39;</span>, <span class="dv">534</span>),</span>
+<span id="cb1-2"><a href="#cb1-2"></a>                  <span class="kw">c</span>(<span class="dv">94</span>, <span class="st">&#39;1975-1977&#39;</span>,  <span class="st">&#39;Jimmy Carter vs Gerald Ford&#39;</span>, <span class="dv">1311</span>),</span>
+<span id="cb1-3"><a href="#cb1-3"></a>                  <span class="kw">c</span>(<span class="dv">100</span>, <span class="st">&#39;1987-1989&#39;</span>, <span class="st">&#39;George H. W. Bush vs Michael Dukakis&#39;</span>, <span class="dv">799</span>),</span>
+<span id="cb1-4"><a href="#cb1-4"></a>                  <span class="kw">c</span>(<span class="dv">106</span>, <span class="st">&#39;1999-2001&#39;</span>, <span class="st">&#39;George W. Bush vs Al Gore&#39;</span>, <span class="dv">672</span>),</span>
+<span id="cb1-5"><a href="#cb1-5"></a>                  <span class="kw">c</span>(<span class="dv">112</span>, <span class="st">&#39;2011-2013&#39;</span>, <span class="st">&#39;Barack Obama vs John McCain&#39;</span>, <span class="dv">486</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a>)</span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a>tableframe =<span class="st"> </span><span class="kw">data.frame</span>(tabledata)</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="kw">names</span>(tableframe) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Session&#39;</span>, <span class="st">&#39;Years&#39;</span>, <span class="st">&#39;US Election&#39;</span>, <span class="st">&#39;# Floor Votes&#39;</span>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
+<span id="cb1-12"><a href="#cb1-12"></a>  tableframe, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb1-13"><a href="#cb1-13"></a>  <span class="dt">caption =</span> <span class="st">&#39;Congressional Sessions of the US Senate&#39;</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>)</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-1">Table 1.1: </span>Congressional Sessions of the US Senate</caption>
+<thead>
+<tr class="header">
+<th align="left">Session</th>
+<th align="left">Years</th>
+<th align="left">US Election</th>
+<th align="left"># Floor Votes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">84</td>
+<td align="left">1963-1965</td>
+<td align="left">Lyndon Johnson vs Richard Nixon</td>
+<td align="left">534</td>
+</tr>
+<tr class="even">
+<td align="left">94</td>
+<td align="left">1975-1977</td>
+<td align="left">Jimmy Carter vs Gerald Ford</td>
+<td align="left">1311</td>
+</tr>
+<tr class="odd">
+<td align="left">100</td>
+<td align="left">1987-1989</td>
+<td align="left">George H. W. Bush vs Michael Dukakis</td>
+<td align="left">799</td>
+</tr>
+<tr class="even">
+<td align="left">106</td>
+<td align="left">1999-2001</td>
+<td align="left">George W. Bush vs Al Gore</td>
+<td align="left">672</td>
+</tr>
+<tr class="odd">
+<td align="left">112</td>
+<td align="left">2011-2013</td>
+<td align="left">Barack Obama vs John McCain</td>
+<td align="left">486</td>
+</tr>
+</tbody>
+</table>
+<p>Here is a list our our data files, which we will load from Github. The original data can be found at <a href="https://voteview.com/">voteview.com</a>. There are two files for each year.</p>
+<ul>
+<li>A csv file containing a matrix whose <span class="math inline">\((i,j)\)</span> entry counts the number of times Senator <span class="math inline">\(i\)</span> and Senator <span class="math inline">\(j\)</span> cast the same vote on an issue. There are actually <a href="https://voteview.com/articles/data_help_votes">nine different possibilities</a>, including Yea, Nay, Present, Abstention and “Not a member of the chamber when the vote was taken.”</li>
+<li>A csv file containing senator information: name, state and party affiliation.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>senate.<span class="fl">1964.</span>files =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;https://raw.github.com/mathbeveridge/math236_f20/main/data/Senate088matrix.csv&#39;</span>, <span class="st">&#39;https://raw.github.com/mathbeveridge/math236_f20//main/data/Senate088senators.csv&#39;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>senate.<span class="fl">1976.</span>files =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;https://raw.github.com/mathbeveridge/math236_f20/main/data/Senate094matrix.csv&#39;</span>, <span class="st">&#39;https://raw.github.com/mathbeveridge/math236_f20//main/data/Senate094senators.csv&#39;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a>senate.<span class="fl">1988.</span>files =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;https://raw.github.com/mathbeveridge/math236_f20/main/data/Senate100matrix.csv&#39;</span>, <span class="st">&#39;https://raw.github.com/mathbeveridge/math236_f20//main/data/Senate100senators.csv&#39;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a>senate.<span class="fl">2000.</span>files =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;https://raw.github.com/mathbeveridge/math236_f20/main/data/Senate106matrix.csv&#39;</span>, <span class="st">&#39;https://raw.github.com/mathbeveridge/math236_f20//main/data/Senate106senators.csv&#39;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a>senate.<span class="fl">2012.</span>files =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;https://raw.github.com/mathbeveridge/math236_f20/main/data/Senate112matrix.csv&#39;</span>, <span class="st">&#39;https://raw.github.com/mathbeveridge/math236_f20//main/data/Senate112senators.csv&#39;</span>)</span></code></pre></div>
+</div>
+<div id="the-88th-congressional-session-1964" class="section level2">
+<h2><span class="header-section-number">1.2</span> The 88th Congressional Session (1964)</h2>
+<p>Let’s load in our data.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># pick the data set that we want to look at</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>senate.files =<span class="st"> </span>senate.<span class="fl">1964.</span>files</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co"># First we load in the information about the senators.</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co"># We will use these names as our labels.</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="co"># We also set up the colors we will use for our data points.</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>senators &lt;-<span class="st"> </span><span class="kw">read.csv</span>(senate.files[<span class="dv">2</span>], <span class="dt">header=</span><span class="ot">FALSE</span>)</span>
+<span id="cb3-9"><a href="#cb3-9"></a></span>
+<span id="cb3-10"><a href="#cb3-10"></a>sen.name =<span class="st"> </span>senators[,<span class="dv">2</span>]</span>
+<span id="cb3-11"><a href="#cb3-11"></a>sen.party =<span class="st"> </span>senators[,<span class="dv">4</span>]</span>
+<span id="cb3-12"><a href="#cb3-12"></a></span>
+<span id="cb3-13"><a href="#cb3-13"></a>sen.color=<span class="kw">rep</span>(<span class="st">&quot;goldenrod&quot;</span>, <span class="kw">length</span>(senators))</span>
+<span id="cb3-14"><a href="#cb3-14"></a>sen.color[sen.party<span class="op">==</span><span class="st">&#39;D&#39;</span>]=<span class="st">&quot;cornflowerblue&quot;</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a>sen.color[sen.party<span class="op">==</span><span class="st">&#39;R&#39;</span>]=<span class="st">&quot;firebrick&quot;</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a></span>
+<span id="cb3-17"><a href="#cb3-17"></a></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="co"># Next we load in the square matrix that measures how often senators voted together. </span></span>
+<span id="cb3-19"><a href="#cb3-19"></a><span class="co"># We add names for the columns and rows.</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a>votes &lt;-<span class="st"> </span><span class="kw">read.csv</span>(senate.files[<span class="dv">1</span>], <span class="dt">header=</span><span class="ot">FALSE</span>)</span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="kw">names</span>(votes) &lt;-<span class="st"> </span>sen.name</span>
+<span id="cb3-22"><a href="#cb3-22"></a><span class="kw">row.names</span>(votes) &lt;-<span class="st"> </span>sen.name</span>
+<span id="cb3-23"><a href="#cb3-23"></a></span>
+<span id="cb3-24"><a href="#cb3-24"></a></span>
+<span id="cb3-25"><a href="#cb3-25"></a>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
+<span id="cb3-26"><a href="#cb3-26"></a>  <span class="kw">head</span>(votes), <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb3-27"><a href="#cb3-27"></a>  <span class="dt">caption =</span> <span class="st">&#39;Congressional Sessions of the US Senate&#39;</span></span>
+<span id="cb3-28"><a href="#cb3-28"></a>)</span></code></pre></div>
+<table style="width:100%;">
+<caption><span id="tab:unnamed-chunk-3">Table 1.2: </span>Congressional Sessions of the US Senate</caption>
+<colgroup>
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+<col width="0%" />
+<col width="0%" />
+<col width="0%" />
+<col width="1%" />
+<col width="1%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">AIKEN George David</th>
+<th align="right">ALLOTT Gordon Llewellyn</th>
+<th align="right">ANDERSON Clinton Presba</th>
+<th align="right">BARTLETT Edward Lewis (Bob)</th>
+<th align="right">BEALL James Glenn</th>
+<th align="right">BENNETT Wallace Foster</th>
+<th align="right">BIBLE Alan Harvey</th>
+<th align="right">BOGGS James Caleb</th>
+<th align="right">BREWSTER Daniel Baugh</th>
+<th align="right">BURDICK Quentin Northrup</th>
+<th align="right">BYRD Harry Flood</th>
+<th align="right">BYRD Robert Carlyle</th>
+<th align="right">CANNON Howard Walter</th>
+<th align="right">CARLSON Frank</th>
+<th align="right">CASE Clifford Philip</th>
+<th align="right">CHURCH Frank Forrester</th>
+<th align="right">CLARK Joseph Sill</th>
+<th align="right">COOPER John Sherman</th>
+<th align="right">COTTON Norris H.</th>
+<th align="right">CURTIS Carl Thomas</th>
+<th align="right">DIRKSEN Everett McKinley</th>
+<th align="right">DODD Thomas Joseph</th>
+<th align="right">DOUGLAS Paul Howard</th>
+<th align="right">EASTLAND James Oliver</th>
+<th align="right">ELLENDER Allen Joseph</th>
+<th align="right">ENGLE Clair</th>
+<th align="right">ERVIN Samuel James Jr.</th>
+<th align="right">FONG Hiram Leong</th>
+<th align="right">FULBRIGHT James William</th>
+<th align="right">GOLDWATER Barry Morris</th>
+<th align="right">GORE Albert Arnold</th>
+<th align="right">GRUENING Ernest Henry</th>
+<th align="right">HART Philip Aloysius</th>
+<th align="right">HARTKE Rupert Vance</th>
+<th align="right">HAYDEN Carl Trumbull</th>
+<th align="right">HICKENLOOPER Bourke Blakemore</th>
+<th align="right">HILL Joseph Lister</th>
+<th align="right">HOLLAND Spessard Lindsey</th>
+<th align="right">HRUSKA Roman Lee</th>
+<th align="right">HUMPHREY Hubert Horatio Jr.</th>
+<th align="right">INOUYE Daniel Ken</th>
+<th align="right">JACKSON Henry Martin (Scoop)</th>
+<th align="right">JAVITS Jacob Koppel</th>
+<th align="right">JOHNSTON Olin DeWitt Talmadge</th>
+<th align="right">JORDAN Benjamin Everett</th>
+<th align="right">KEATING Kenneth Barnard</th>
+<th align="right">KEFAUVER Carey Estes</th>
+<th align="right">KUCHEL Thomas Henry</th>
+<th align="right">LAUSCHE Frank John</th>
+<th align="right">LONG Edward Vaughn</th>
+<th align="right">LONG Russell Billiu</th>
+<th align="right">MAGNUSON Warren Grant</th>
+<th align="right">MANSFIELD Michael Joseph (Mike)</th>
+<th align="right">McCARTHY Eugene Joseph</th>
+<th align="right">McCLELLAN John Little</th>
+<th align="right">McGEE Gale William</th>
+<th align="right">McGOVERN George Stanley</th>
+<th align="right">McNAMARA Patrick Vincent</th>
+<th align="right">METCALF Lee Warren</th>
+<th align="right">MONRONEY Almer Stillwell Mike</th>
+<th align="right">MORSE Wayne Lyman</th>
+<th align="right">MORTON Thruston Ballard</th>
+<th align="right">MOSS Frank Edward (Ted)</th>
+<th align="right">MUNDT Karl Earl</th>
+<th align="right">MUSKIE Edmund Sixtus</th>
+<th align="right">NEUBERGER Maurine Brown</th>
+<th align="right">PASTORE John Orlando</th>
+<th align="right">PROUTY Winston Lewis</th>
+<th align="right">PROXMIRE William</th>
+<th align="right">RANDOLPH Jennings</th>
+<th align="right">RIBICOFF Abraham Alexander</th>
+<th align="right">ROBERTSON Absalom Willis</th>
+<th align="right">RUSSELL Richard Brevard Jr.</th>
+<th align="right">SALTONSTALL Leverett</th>
+<th align="right">SCOTT Hugh Doggett Jr.</th>
+<th align="right">SMATHERS George Armistead</th>
+<th align="right">SMITH Margaret Chase</th>
+<th align="right">SPARKMAN John Jackson</th>
+<th align="right">STENNIS John Cornelius</th>
+<th align="right">SYMINGTON William Stuart (Stuart)</th>
+<th align="right">TALMADGE Herman Eugene</th>
+<th align="right">WILLIAMS Harrison Arlington Jr.</th>
+<th align="right">WILLIAMS John James</th>
+<th align="right">YARBOROUGH Ralph Webster</th>
+<th align="right">YOUNG Milton Ruben</th>
+<th align="right">YOUNG Stephen Marvin</th>
+<th align="right">DOMINICK Peter Hoyt</th>
+<th align="right">BAYH Birch Evans</th>
+<th align="right">EDMONDSON James Howard</th>
+<th align="right">JORDAN Leonard Beck (Len)</th>
+<th align="right">KENNEDY Edward Moore (Ted)</th>
+<th align="right">McINTYRE Thomas James</th>
+<th align="right">MECHEM Edwin Leard</th>
+<th align="right">MILLER Jack Richard</th>
+<th align="right">NELSON Gaylord Anton</th>
+<th align="right">PEARSON James Blackwood</th>
+<th align="right">PELL Claiborne de Borda</th>
+<th align="right">SIMPSON Milward Lee</th>
+<th align="right">TOWER John Goodwin</th>
+<th align="right">THURMOND James Strom</th>
+<th align="right">WALTERS Herbert Sanford</th>
+<th align="right">SALINGER Pierre Emil George</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">AIKEN George David</td>
+<td align="right">0</td>
+<td align="right">321</td>
+<td align="right">252</td>
+<td align="right">302</td>
+<td align="right">336</td>
+<td align="right">287</td>
+<td align="right">282</td>
+<td align="right">384</td>
+<td align="right">286</td>
+<td align="right">297</td>
+<td align="right">155</td>
+<td align="right">246</td>
+<td align="right">245</td>
+<td align="right">318</td>
+<td align="right">366</td>
+<td align="right">294</td>
+<td align="right">254</td>
+<td align="right">316</td>
+<td align="right">259</td>
+<td align="right">248</td>
+<td align="right">302</td>
+<td align="right">301</td>
+<td align="right">322</td>
+<td align="right">172</td>
+<td align="right">175</td>
+<td align="right">58</td>
+<td align="right">201</td>
+<td align="right">377</td>
+<td align="right">183</td>
+<td align="right">128</td>
+<td align="right">215</td>
+<td align="right">248</td>
+<td align="right">292</td>
+<td align="right">259</td>
+<td align="right">185</td>
+<td align="right">308</td>
+<td align="right">198</td>
+<td align="right">218</td>
+<td align="right">243</td>
+<td align="right">310</td>
+<td align="right">326</td>
+<td align="right">302</td>
+<td align="right">339</td>
+<td align="right">183</td>
+<td align="right">199</td>
+<td align="right">379</td>
+<td align="right">33</td>
+<td align="right">394</td>
+<td align="right">287</td>
+<td align="right">275</td>
+<td align="right">155</td>
+<td align="right">262</td>
+<td align="right">258</td>
+<td align="right">278</td>
+<td align="right">201</td>
+<td align="right">288</td>
+<td align="right">298</td>
+<td align="right">285</td>
+<td align="right">289</td>
+<td align="right">301</td>
+<td align="right">265</td>
+<td align="right">266</td>
+<td align="right">280</td>
+<td align="right">306</td>
+<td align="right">316</td>
+<td align="right">256</td>
+<td align="right">320</td>
+<td align="right">425</td>
+<td align="right">334</td>
+<td align="right">292</td>
+<td align="right">318</td>
+<td align="right">173</td>
+<td align="right">181</td>
+<td align="right">326</td>
+<td align="right">321</td>
+<td align="right">160</td>
+<td align="right">416</td>
+<td align="right">217</td>
+<td align="right">187</td>
+<td align="right">292</td>
+<td align="right">190</td>
+<td align="right">305</td>
+<td align="right">296</td>
+<td align="right">219</td>
+<td align="right">290</td>
+<td align="right">296</td>
+<td align="right">286</td>
+<td align="right">287</td>
+<td align="right">227</td>
+<td align="right">323</td>
+<td align="right">221</td>
+<td align="right">331</td>
+<td align="right">215</td>
+<td align="right">328</td>
+<td align="right">316</td>
+<td align="right">297</td>
+<td align="right">306</td>
+<td align="right">248</td>
+<td align="right">187</td>
+<td align="right">182</td>
+<td align="right">124</td>
+<td align="right">26</td>
+</tr>
+<tr class="even">
+<td align="left">ALLOTT Gordon Llewellyn</td>
+<td align="right">321</td>
+<td align="right">0</td>
+<td align="right">221</td>
+<td align="right">251</td>
+<td align="right">293</td>
+<td align="right">326</td>
+<td align="right">266</td>
+<td align="right">344</td>
+<td align="right">237</td>
+<td align="right">250</td>
+<td align="right">171</td>
+<td align="right">196</td>
+<td align="right">234</td>
+<td align="right">322</td>
+<td align="right">289</td>
+<td align="right">237</td>
+<td align="right">172</td>
+<td align="right">296</td>
+<td align="right">260</td>
+<td align="right">286</td>
+<td align="right">286</td>
+<td align="right">255</td>
+<td align="right">239</td>
+<td align="right">163</td>
+<td align="right">193</td>
+<td align="right">50</td>
+<td align="right">191</td>
+<td align="right">326</td>
+<td align="right">137</td>
+<td align="right">139</td>
+<td align="right">157</td>
+<td align="right">218</td>
+<td align="right">219</td>
+<td align="right">200</td>
+<td align="right">147</td>
+<td align="right">287</td>
+<td align="right">179</td>
+<td align="right">227</td>
+<td align="right">269</td>
+<td align="right">235</td>
+<td align="right">257</td>
+<td align="right">271</td>
+<td align="right">272</td>
+<td align="right">169</td>
+<td align="right">205</td>
+<td align="right">296</td>
+<td align="right">14</td>
+<td align="right">310</td>
+<td align="right">285</td>
+<td align="right">237</td>
+<td align="right">141</td>
+<td align="right">237</td>
+<td align="right">203</td>
+<td align="right">222</td>
+<td align="right">211</td>
+<td align="right">235</td>
+<td align="right">230</td>
+<td align="right">204</td>
+<td align="right">227</td>
+<td align="right">253</td>
+<td align="right">230</td>
+<td align="right">285</td>
+<td align="right">235</td>
+<td align="right">323</td>
+<td align="right">246</td>
+<td align="right">178</td>
+<td align="right">239</td>
+<td align="right">340</td>
+<td align="right">278</td>
+<td align="right">240</td>
+<td align="right">247</td>
+<td align="right">204</td>
+<td align="right">177</td>
+<td align="right">284</td>
+<td align="right">292</td>
+<td align="right">127</td>
+<td align="right">323</td>
+<td align="right">183</td>
+<td align="right">199</td>
+<td align="right">244</td>
+<td align="right">196</td>
+<td align="right">232</td>
+<td align="right">288</td>
+<td align="right">190</td>
+<td align="right">294</td>
+<td align="right">228</td>
+<td align="right">339</td>
+<td align="right">221</td>
+<td align="right">225</td>
+<td align="right">344</td>
+<td align="right">159</td>
+<td align="right">263</td>
+<td align="right">244</td>
+<td align="right">320</td>
+<td align="right">236</td>
+<td align="right">327</td>
+<td align="right">234</td>
+<td align="right">321</td>
+<td align="right">240</td>
+<td align="right">208</td>
+<td align="right">129</td>
+<td align="right">17</td>
+</tr>
+<tr class="odd">
+<td align="left">ANDERSON Clinton Presba</td>
+<td align="right">252</td>
+<td align="right">221</td>
+<td align="right">0</td>
+<td align="right">304</td>
+<td align="right">258</td>
+<td align="right">175</td>
+<td align="right">302</td>
+<td align="right">248</td>
+<td align="right">322</td>
+<td align="right">303</td>
+<td align="right">106</td>
+<td align="right">254</td>
+<td align="right">298</td>
+<td align="right">215</td>
+<td align="right">290</td>
+<td align="right">287</td>
+<td align="right">279</td>
+<td align="right">227</td>
+<td align="right">170</td>
+<td align="right">142</td>
+<td align="right">187</td>
+<td align="right">286</td>
+<td align="right">279</td>
+<td align="right">138</td>
+<td align="right">161</td>
+<td align="right">82</td>
+<td align="right">173</td>
+<td align="right">256</td>
+<td align="right">193</td>
+<td align="right">114</td>
+<td align="right">213</td>
+<td align="right">256</td>
+<td align="right">308</td>
+<td align="right">284</td>
+<td align="right">213</td>
+<td align="right">180</td>
+<td align="right">186</td>
+<td align="right">179</td>
+<td align="right">132</td>
+<td align="right">303</td>
+<td align="right">338</td>
+<td align="right">287</td>
+<td align="right">276</td>
+<td align="right">203</td>
+<td align="right">190</td>
+<td align="right">280</td>
+<td align="right">40</td>
+<td align="right">284</td>
+<td align="right">190</td>
+<td align="right">265</td>
+<td align="right">178</td>
+<td align="right">278</td>
+<td align="right">255</td>
+<td align="right">296</td>
+<td align="right">155</td>
+<td align="right">276</td>
+<td align="right">308</td>
+<td align="right">305</td>
+<td align="right">303</td>
+<td align="right">310</td>
+<td align="right">255</td>
+<td align="right">191</td>
+<td align="right">298</td>
+<td align="right">201</td>
+<td align="right">321</td>
+<td align="right">253</td>
+<td align="right">301</td>
+<td align="right">235</td>
+<td align="right">271</td>
+<td align="right">283</td>
+<td align="right">303</td>
+<td align="right">129</td>
+<td align="right">136</td>
+<td align="right">223</td>
+<td align="right">248</td>
+<td align="right">186</td>
+<td align="right">295</td>
+<td align="right">200</td>
+<td align="right">165</td>
+<td align="right">289</td>
+<td align="right">182</td>
+<td align="right">299</td>
+<td align="right">166</td>
+<td align="right">238</td>
+<td align="right">219</td>
+<td align="right">263</td>
+<td align="right">182</td>
+<td align="right">302</td>
+<td align="right">290</td>
+<td align="right">203</td>
+<td align="right">280</td>
+<td align="right">332</td>
+<td align="right">135</td>
+<td align="right">215</td>
+<td align="right">299</td>
+<td align="right">214</td>
+<td align="right">289</td>
+<td align="right">144</td>
+<td align="right">111</td>
+<td align="right">114</td>
+<td align="right">137</td>
+<td align="right">21</td>
+</tr>
+<tr class="even">
+<td align="left">BARTLETT Edward Lewis (Bob)</td>
+<td align="right">302</td>
+<td align="right">251</td>
+<td align="right">304</td>
+<td align="right">0</td>
+<td align="right">288</td>
+<td align="right">201</td>
+<td align="right">363</td>
+<td align="right">291</td>
+<td align="right">349</td>
+<td align="right">386</td>
+<td align="right">133</td>
+<td align="right">318</td>
+<td align="right">323</td>
+<td align="right">258</td>
+<td align="right">335</td>
+<td align="right">359</td>
+<td align="right">335</td>
+<td align="right">264</td>
+<td align="right">182</td>
+<td align="right">162</td>
+<td align="right">213</td>
+<td align="right">351</td>
+<td align="right">355</td>
+<td align="right">150</td>
+<td align="right">187</td>
+<td align="right">83</td>
+<td align="right">196</td>
+<td align="right">313</td>
+<td align="right">237</td>
+<td align="right">75</td>
+<td align="right">264</td>
+<td align="right">340</td>
+<td align="right">370</td>
+<td align="right">328</td>
+<td align="right">252</td>
+<td align="right">216</td>
+<td align="right">245</td>
+<td align="right">221</td>
+<td align="right">154</td>
+<td align="right">395</td>
+<td align="right">419</td>
+<td align="right">349</td>
+<td align="right">332</td>
+<td align="right">263</td>
+<td align="right">230</td>
+<td align="right">332</td>
+<td align="right">48</td>
+<td align="right">317</td>
+<td align="right">205</td>
+<td align="right">328</td>
+<td align="right">209</td>
+<td align="right">335</td>
+<td align="right">325</td>
+<td align="right">361</td>
+<td align="right">196</td>
+<td align="right">362</td>
+<td align="right">377</td>
+<td align="right">375</td>
+<td align="right">374</td>
+<td align="right">389</td>
+<td align="right">328</td>
+<td align="right">208</td>
+<td align="right">334</td>
+<td align="right">230</td>
+<td align="right">401</td>
+<td align="right">327</td>
+<td align="right">377</td>
+<td align="right">284</td>
+<td align="right">336</td>
+<td align="right">349</td>
+<td align="right">379</td>
+<td align="right">162</td>
+<td align="right">175</td>
+<td align="right">249</td>
+<td align="right">286</td>
+<td align="right">215</td>
+<td align="right">334</td>
+<td align="right">250</td>
+<td align="right">185</td>
+<td align="right">333</td>
+<td align="right">206</td>
+<td align="right">378</td>
+<td align="right">193</td>
+<td align="right">285</td>
+<td align="right">256</td>
+<td align="right">326</td>
+<td align="right">200</td>
+<td align="right">348</td>
+<td align="right">291</td>
+<td align="right">220</td>
+<td align="right">292</td>
+<td align="right">400</td>
+<td align="right">141</td>
+<td align="right">233</td>
+<td align="right">379</td>
+<td align="right">215</td>
+<td align="right">377</td>
+<td align="right">159</td>
+<td align="right">110</td>
+<td align="right">144</td>
+<td align="right">150</td>
+<td align="right">37</td>
+</tr>
+<tr class="odd">
+<td align="left">BEALL James Glenn</td>
+<td align="right">336</td>
+<td align="right">293</td>
+<td align="right">258</td>
+<td align="right">288</td>
+<td align="right">0</td>
+<td align="right">274</td>
+<td align="right">290</td>
+<td align="right">357</td>
+<td align="right">279</td>
+<td align="right">290</td>
+<td align="right">170</td>
+<td align="right">227</td>
+<td align="right">249</td>
+<td align="right">307</td>
+<td align="right">330</td>
+<td align="right">250</td>
+<td align="right">243</td>
+<td align="right">278</td>
+<td align="right">268</td>
+<td align="right">249</td>
+<td align="right">254</td>
+<td align="right">315</td>
+<td align="right">306</td>
+<td align="right">152</td>
+<td align="right">156</td>
+<td align="right">57</td>
+<td align="right">191</td>
+<td align="right">355</td>
+<td align="right">168</td>
+<td align="right">149</td>
+<td align="right">194</td>
+<td align="right">256</td>
+<td align="right">286</td>
+<td align="right">270</td>
+<td align="right">174</td>
+<td align="right">271</td>
+<td align="right">183</td>
+<td align="right">194</td>
+<td align="right">255</td>
+<td align="right">280</td>
+<td align="right">310</td>
+<td align="right">292</td>
+<td align="right">327</td>
+<td align="right">201</td>
+<td align="right">207</td>
+<td align="right">367</td>
+<td align="right">24</td>
+<td align="right">352</td>
+<td align="right">248</td>
+<td align="right">264</td>
+<td align="right">158</td>
+<td align="right">256</td>
+<td align="right">223</td>
+<td align="right">260</td>
+<td align="right">188</td>
+<td align="right">262</td>
+<td align="right">276</td>
+<td align="right">266</td>
+<td align="right">258</td>
+<td align="right">275</td>
+<td align="right">275</td>
+<td align="right">255</td>
+<td align="right">247</td>
+<td align="right">295</td>
+<td align="right">284</td>
+<td align="right">241</td>
+<td align="right">292</td>
+<td align="right">349</td>
+<td align="right">326</td>
+<td align="right">286</td>
+<td align="right">310</td>
+<td align="right">175</td>
+<td align="right">182</td>
+<td align="right">287</td>
+<td align="right">347</td>
+<td align="right">145</td>
+<td align="right">368</td>
+<td align="right">179</td>
+<td align="right">170</td>
+<td align="right">307</td>
+<td align="right">198</td>
+<td align="right">295</td>
+<td align="right">278</td>
+<td align="right">216</td>
+<td align="right">267</td>
+<td align="right">293</td>
+<td align="right">292</td>
+<td align="right">266</td>
+<td align="right">236</td>
+<td align="right">318</td>
+<td align="right">219</td>
+<td align="right">315</td>
+<td align="right">238</td>
+<td align="right">304</td>
+<td align="right">295</td>
+<td align="right">306</td>
+<td align="right">289</td>
+<td align="right">249</td>
+<td align="right">225</td>
+<td align="right">189</td>
+<td align="right">124</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="left">BENNETT Wallace Foster</td>
+<td align="right">287</td>
+<td align="right">326</td>
+<td align="right">175</td>
+<td align="right">201</td>
+<td align="right">274</td>
+<td align="right">0</td>
+<td align="right">249</td>
+<td align="right">337</td>
+<td align="right">178</td>
+<td align="right">183</td>
+<td align="right">238</td>
+<td align="right">198</td>
+<td align="right">212</td>
+<td align="right">296</td>
+<td align="right">233</td>
+<td align="right">185</td>
+<td align="right">135</td>
+<td align="right">270</td>
+<td align="right">317</td>
+<td align="right">343</td>
+<td align="right">290</td>
+<td align="right">199</td>
+<td align="right">189</td>
+<td align="right">212</td>
+<td align="right">226</td>
+<td align="right">37</td>
+<td align="right">244</td>
+<td align="right">284</td>
+<td align="right">162</td>
+<td align="right">220</td>
+<td align="right">162</td>
+<td align="right">200</td>
+<td align="right">167</td>
+<td align="right">156</td>
+<td align="right">124</td>
+<td align="right">336</td>
+<td align="right">189</td>
+<td align="right">238</td>
+<td align="right">328</td>
+<td align="right">176</td>
+<td align="right">205</td>
+<td align="right">215</td>
+<td align="right">223</td>
+<td align="right">203</td>
+<td align="right">231</td>
+<td align="right">251</td>
+<td align="right">14</td>
+<td align="right">263</td>
+<td align="right">282</td>
+<td align="right">188</td>
+<td align="right">191</td>
+<td align="right">178</td>
+<td align="right">151</td>
+<td align="right">163</td>
+<td align="right">241</td>
+<td align="right">189</td>
+<td align="right">176</td>
+<td align="right">161</td>
+<td align="right">173</td>
+<td align="right">208</td>
+<td align="right">203</td>
+<td align="right">267</td>
+<td align="right">181</td>
+<td align="right">360</td>
+<td align="right">185</td>
+<td align="right">151</td>
+<td align="right">188</td>
+<td align="right">305</td>
+<td align="right">246</td>
+<td align="right">198</td>
+<td align="right">189</td>
+<td align="right">239</td>
+<td align="right">244</td>
+<td align="right">261</td>
+<td align="right">264</td>
+<td align="right">148</td>
+<td align="right">274</td>
+<td align="right">204</td>
+<td align="right">253</td>
+<td align="right">207</td>
+<td align="right">245</td>
+<td align="right">184</td>
+<td align="right">349</td>
+<td align="right">177</td>
+<td align="right">286</td>
+<td align="right">184</td>
+<td align="right">329</td>
+<td align="right">171</td>
+<td align="right">198</td>
+<td align="right">393</td>
+<td align="right">109</td>
+<td align="right">223</td>
+<td align="right">307</td>
+<td align="right">321</td>
+<td align="right">181</td>
+<td align="right">300</td>
+<td align="right">195</td>
+<td align="right">370</td>
+<td align="right">303</td>
+<td align="right">290</td>
+<td align="right">143</td>
+<td align="right">17</td>
+</tr>
+</tbody>
+</table>
+<p>Looking at this table, we see that</p>
+<ul>
+<li>Aiken voted with Allott 321 times.</li>
+<li>Aiken voted with Anderson 252 times.</li>
+<li>Allot voted with Anderson 221 times.</li>
+<li>And so on.</li>
+</ul>
+<p>We also should note that ** each “coordinate” represents a senator. Coordinate 1 is “Aiken.” Coordinate 2 is “Allot,” etc. This interpretation will be important later!</p>
+</div>
+<div id="using-the-eigenbasis" class="section level2">
+<h2><span class="header-section-number">1.3</span> Using the Eigenbasis</h2>
+<p>As the table above notes, there are 102 Senators in our data set. So each Senator is represented by a vector in <span class="math inline">\(\mathbb{R}^{102}\)</span>. This vector represents how similar the Senator is to each colleague. <strong>But just because our data lives in <span class="math inline">\(\mathbb{R}^{102}\)</span> doesn’t mean that it is inherently 102-dimensional!</strong> We can draw a line in <span class="math inline">\(\mathbb{R}^3\)</span>. That line is 1-dimensional, even though it lives in a higher dimensional space.</p>
+<p><strong>Maybe if we find a good basis for</strong> <span class="math inline">\(\mathbb{R}^{102}\)</span> then we can detect some interesting features of the data set. So what happens if we use an eigenbasis? We know that this basis is custom-made for our matrix. Here is what we will observe:</p>
+<ul>
+<li>The basis of eigenvector of our matrix will pick up some patterns in our data.</li>
+<li>The eigenvectors corresponding to the largest eigenvalues are the most important ones when modeling our column space. This is where the patterns are!</li>
+<li>The eigenvectors for the small eigenvalues don’t really matter. They just pick up “noise” in the data.</li>
+</ul>
+<p>In other words:</p>
+<ul>
+<li>Our data set will be “essentially low dimensional” (maybe only 3D or 4D) even though it lives in a high dimensional space.</li>
+<li>Moreover, the structure of the eigenvectors (for the large eigenvalues) will reflect the prevalent patterns in the data.</li>
+</ul>
+<div id="using-the-dominant-eigenvectors." class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Using the Dominant Eigenvectors.</h3>
+<p>First we will find the eigenvalues and eigenvectors.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>mat =<span class="st"> </span><span class="kw">data.matrix</span>(votes)</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>eigsys =<span class="st"> </span><span class="kw">eigen</span>(mat)</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>eigsys<span class="op">$</span>values</span></code></pre></div>
+<pre><code>##   [1] 24198.14970  4385.33792  2523.42898   413.59778   274.12291   219.84394
+##   [7]    93.86570   -19.59596   -39.68442   -73.58725   -84.08451  -124.18257
+##  [13]  -137.88542  -155.95645  -162.94701  -176.71449  -183.14311  -197.74427
+##  [19]  -203.16191  -219.90337  -222.98559  -225.77864  -236.01870  -240.90787
+##  [25]  -249.06305  -257.49697  -263.81555  -268.10860  -272.63265  -275.30214
+##  [31]  -279.92416  -280.34948  -287.69592  -292.00408  -296.93484  -299.17667
+##  [37]  -303.67128  -309.89778  -314.33373  -318.90633  -320.25895  -321.98658
+##  [43]  -326.58688  -327.83596  -332.06144  -336.46538  -338.76991  -343.48455
+##  [49]  -346.38591  -348.16746  -349.23190  -350.47588  -358.25692  -359.24338
+##  [55]  -360.90037  -363.21807  -365.17417  -370.46006  -371.56674  -374.12517
+##  [61]  -379.23090  -380.38760  -382.65978  -384.71680  -388.62093  -389.78271
+##  [67]  -391.81075  -394.10770  -396.11524  -400.65534  -401.80357  -405.81092
+##  [73]  -407.44165  -410.46333  -411.66607  -412.99086  -416.39535  -418.09114
+##  [79]  -418.76583  -422.02379  -424.59269  -426.38701  -428.84359  -430.30353
+##  [85]  -431.59921  -435.24536  -435.91447  -437.63064  -439.58808  -443.56104
+##  [91]  -445.20242  -447.99489  -451.15747  -453.68351  -454.57543  -458.33775
+##  [97]  -461.38347  -463.97462  -467.11710  -469.27240  -474.43223  -475.75931</code></pre>
+<p>What do we see?</p>
+<ul>
+<li><p>The largest eigenvalue <span class="math inline">\(\approx 24200\)</span> is huge compared to the others! There is a <strong>huge gap</strong> after that. So this eigenspace is the most important (by far)!</p></li>
+<li><p>The second and third eigenvectors are still pretty big <span class="math inline">\(\approx 4400\)</span> and <span class="math inline">\(\approx 2500\)</span>. But then we have another <strong>big gap</strong>: the rest have magnitudes below 500.</p></li>
+</ul>
+<p>So it seems like this data set is “roughly” 3-dimensional. Of course, this isn’t technically correct because our matrix is invertible (all the eigenvalues are nonzero). But you can think of this data set as a “cloud of points” around a 3D subspace of <span class="math inline">\(\mathbb{R}^{102}\)</span>.</p>
+</div>
+<div id="patterns-in-the-first-two-eigenvectors" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Patterns in the First Two Eigenvectors</h3>
+<p>Let’s create a plot of the first two eigenvectors. Each point represents a Senator.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># let&#39;s give simple names to our top eigenvectors</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>v1 =<span class="st"> </span>eigsys<span class="op">$</span>vectors[,<span class="dv">1</span>]</span>
+<span id="cb6-3"><a href="#cb6-3"></a>v2 =<span class="st"> </span>eigsys<span class="op">$</span>vectors[,<span class="dv">2</span>]</span>
+<span id="cb6-4"><a href="#cb6-4"></a>v3 =<span class="st"> </span>eigsys<span class="op">$</span>vectors[,<span class="dv">3</span>]</span>
+<span id="cb6-5"><a href="#cb6-5"></a>v4 =<span class="st"> </span>eigsys<span class="op">$</span>vectors[,<span class="dv">4</span>]</span>
+<span id="cb6-6"><a href="#cb6-6"></a>v5 =<span class="st"> </span>eigsys<span class="op">$</span>vectors[,<span class="dv">5</span>]</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co"># Plot use v1 for the x-axis and v2 for the y-axis</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="co"># We color the points by the party of the Senator</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>xdir =<span class="st"> </span>v1</span>
+<span id="cb6-12"><a href="#cb6-12"></a>ydir =<span class="st"> </span>v2</span>
+<span id="cb6-13"><a href="#cb6-13"></a></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="kw">plot</span>(xdir, ydir, <span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span><span class="dv">1</span>, <span class="dt">col=</span>sen.color)</span></code></pre></div>
+<p><img src="08-voting-patterns_files/figure-html/senate1964-1.png" width="480" /></p>
+<p>During class, we will talk about how to think about this picture. We will also compare this plot to plots made using the other eigenvectors.</p>
+</div>
+<div id="creating-a-table-sorted-by-an-eigenvector" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Creating a Table Sorted by an Eigenvector</h3>
+<p>When we get to more contemporary data, it will be fun later on to look at the names of the Senators who get large (positive or negative) eigenvector scores. Here is some code to help with that.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>myorder=<span class="st"> </span><span class="kw">order</span>(v1)</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>eigendata =<span class="st"> </span><span class="kw">data.frame</span>(<span class="kw">cbind</span>(v1,v2, sen.party))</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="kw">rownames</span>(eigendata)=sen.name</span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a>myorder=<span class="st"> </span><span class="kw">order</span>(v1)</span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
+<span id="cb7-10"><a href="#cb7-10"></a>  <span class="kw">head</span>(eigendata[myorder,]), <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb7-11"><a href="#cb7-11"></a>  <span class="dt">caption =</span> <span class="st">&#39;One Extreme&#39;</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a>)</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-5">Table 1.3: </span>One Extreme</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">v1</th>
+<th align="left">v2</th>
+<th align="left">sen.party</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">INOUYE Daniel Ken</td>
+<td align="left">-0.124510990388193</td>
+<td align="left">0.0960716902237526</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">McINTYRE Thomas James</td>
+<td align="left">-0.123097587465213</td>
+<td align="left">0.0793272186071726</td>
+<td align="left">D</td>
+</tr>
+<tr class="odd">
+<td align="left">SMITH Margaret Chase</td>
+<td align="left">-0.120654354853401</td>
+<td align="left">0.0290668793843522</td>
+<td align="left">R</td>
+</tr>
+<tr class="even">
+<td align="left">MUSKIE Edmund Sixtus</td>
+<td align="left">-0.118947766632202</td>
+<td align="left">0.0997692334878442</td>
+<td align="left">D</td>
+</tr>
+<tr class="odd">
+<td align="left">MONRONEY Almer Stillwell Mike</td>
+<td align="left">-0.118641982145802</td>
+<td align="left">0.0596868115454118</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">HUMPHREY Hubert Horatio Jr.</td>
+<td align="left">-0.118613491347109</td>
+<td align="left">0.112820684546629</td>
+<td align="left">D</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>myrevorder =<span class="st"> </span><span class="kw">order</span>(<span class="op">-</span>v1)</span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="kw">head</span>(eigendata[myrevorder,]), <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb8-5"><a href="#cb8-5"></a>  <span class="dt">caption =</span> <span class="st">&#39;The Other Extreme&#39;</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>)</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-5">Table 1.3: </span>The Other Extreme</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">v1</th>
+<th align="left">v2</th>
+<th align="left">sen.party</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">SALINGER Pierre Emil George</td>
+<td align="left">-0.011895821132766</td>
+<td align="left">0.00841073422406016</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">KEFAUVER Carey Estes</td>
+<td align="left">-0.0154423731600536</td>
+<td align="left">0.0140931934686823</td>
+<td align="left">D</td>
+</tr>
+<tr class="odd">
+<td align="left">ENGLE Clair</td>
+<td align="left">-0.0307343177099913</td>
+<td align="left">0.0102249015658184</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">GOLDWATER Barry Morris</td>
+<td align="left">-0.0482357085359829</td>
+<td align="left">-0.118817158736983</td>
+<td align="left">R</td>
+</tr>
+<tr class="odd">
+<td align="left">WALTERS Herbert Sanford</td>
+<td align="left">-0.0605618365871763</td>
+<td align="left">-0.0767520789280585</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">BYRD Harry Flood</td>
+<td align="left">-0.0665699568843238</td>
+<td align="left">-0.172435813910847</td>
+<td align="left">D</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="your-turn" class="section level2">
+<h2><span class="header-section-number">1.4</span> Your Turn</h2>
+<p>The data for the 88th Congressional Session (1964) does not seem very partisan. Democrats and Republicans are finding plenty of common ground. When we look at the “extremes” we find some recognizable names, including Hubert Humphrey (D) and Barry Goldwater (R). But there is no clear “left” or “right” pattern to the party affiliation.</p>
+<p>What about the remaining 5 data sets? It’s your turn to explore and discuss.</p>
+<p>The code above has been written for ease of reuse.</p>
+<ul>
+<li>Go back to the top and change the following line:</li>
+</ul>
+<pre><code># pick the data set that we want to look at
+senate.files = senate.1964.files</code></pre>
+<p>to one of the other options: <code>senate.1976.files, senate.1988.files, senate.2000.files, senate.2012.files</code></p>
+<ul>
+<li><p>Do a similar analysis as described above, as well as the things we tried in class together.</p>
+<ul>
+<li>Find the eigenvalues. Where are the gaps? What is the rough “dimension” of each data set?</li>
+<li>Plotting the two dominant eigenvectors. Do you see evidence of political divission?</li>
+<li>Then try plotting other pairs of eigenvectors. Which ones are just noise?</li>
+<li>Create tables of the two extreme for the dominant eigenvectors. Do you see any names that you recognize?</li>
+</ul></li>
+<li><p>Finally, you have some evidence to help you to answer the orignal question: “Is US Politics more polarized than ever before?”</p></li>
+</ul>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

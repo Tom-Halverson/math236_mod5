@@ -1,8 +1,14 @@
+---
+title: "NetworkCentrality"
+author: "Math 236"
+date: "3/2/2021"
+output: html_document
+---
+
 
 #  Network Centralities
 
-
-[Download this Rmd file](https://github.com/Tom-Halverson/math236_fs21/blob/main/NetworkCentrality.Rmd)
+[Download this Rmd file](https://github.com/Tom-Halverson/math236_fs21/blob/main/09-network-analysis.Rmd)
 
 
 In this example, we will use a package called `igraph`. To install it, you need to go to the packages window (bottom right), choose `install`, and search for and install `igraph` from the packages window.

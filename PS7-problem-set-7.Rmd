@@ -40,5 +40,57 @@ $$
 $$
 Find the orthogonal complement of each subspace in $\mathbb{R}^5$. For each example, compute $\dim(W) + \dim(W^\perp)$.
 
+## Orthogonal Diagonalization
 
+Recall that a square $n \times n$ matrix is symmetric when $A^{\top} = A$. We learned that the eigenvectors of a symmetric matrix form an orthogonal basis of $\mathbb{R}^n$. In this problem, you will confirm that this holds for the following symmetric matrix
+$$
+A = 
+\begin{bmatrix}
+ 0 &  8 & 10 & -4 \\
+ 8 & 4 & 28 & 6 \\
+ 10 & 28 & 3 & -4 \\
+ -4 & 6 & -4 & -7
+\end{bmatrix}. 
+$$
+
+a. Find the eigenvalues and eigenvectors of $A$.
+
+b. Confirm that the eigenvectors returned by R are an orthonormal set (do this in a single calculation).
+
+c. Express the vector $\mathsf{v} = \begin{bmatrix} 2 & -4 &  -9  & -2 \end{bmatrix}^{\top}$ as a linear combination of the eigenvectors. Use the fact that the eigenvectors are orthonormal. (Don't augment and row reduce.)
+
+d.  Let $P$ be the matrix of these normalized, orthogonal eigenvectors.
+Diagonalize $A$ using $P$. Just write out $A = P D P^{-1}$. Congratulations: you have **orthogonally diagonalized** the symmetric matrix $A$!
+
+**Turn in:** Your R code and the output for each part. For parts (c) and (d), you need to make it clear what your final answers are. 
+
+## Cosine Similarity 
+
+In high dimensional space $\mathbb{R}^n$ a common measure of similarity between two vectors  is  **cosine similarity**:  the cosine of the angle $\theta$ between the vectors. We calculate this value as follows:
+$$
+\cos(\theta) = \frac{ \mathsf{u} \cdot \mathsf{v}} {\| \mathsf{u}\| \, \|\mathsf{v}\|} = \frac{ \mathsf{u} \cdot \mathsf{v}} {\sqrt{\mathsf{u} \cdot \mathsf{u}} \sqrt{\mathsf{v} \cdot \mathsf{v}}}.
+$$
+This measure has the following nice properties:
+
+* $-1 \le \cos(\theta) \le 1$,
+* $\cos(\theta)$ is close to 1 if $\mathsf{u}$ and $\mathsf{v}$ are closely aligned,
+* $\cos(\theta)$ is close to 0 if  $\mathsf{u}$ and $\mathsf{v}$ are are orthogonal, 
+* $\cos(\theta)$ is close to $-1$ if $\mathsf{u}$ and $\mathsf{v}$ are polar opposites.
+* $\cos(\theta)$ is positive if $\theta$ is acute (less than $90^o$).
+* $\cos(\theta)$ is negative if $\theta$ is obtuse (greater than $90^o$).
+
+
+
+a. Write a function `cosine_similarity` that takes as input two vectors $\mathsf{u}$ and $\mathsf{v}$ and returns the value of $\cos(\theta)$ for the angle $\theta$ between $\mathsf{u}$ and $\mathsf{v}$. Below is a shell of the code that you need. Right now it always just returns 1.You need to fix that up. Demonstrate that your code works on some vectors in $\mathbb{R}^5$. Use vectors that are orthogonal, closely aligned, and close to polar opposites.
+
+```{r,echo=TRUE}
+cosine_similarity <- function(u, v) {
+  # your code goes here!
+  # find the cosine of the angle between u and v
+  cosine = 1
+  return (cosine)
+}
+```
+
+b. more cool stuff coming tonight!
 

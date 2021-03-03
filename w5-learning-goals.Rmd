@@ -13,17 +13,22 @@ I should be able to do the following **tasks**:
 * Check whether a given vector $\mathsf{v}$ is an  eigenvector for square matrix $A$.
 * Find the eigenvalues of a matrix $2 \times 2$ matrix by hand, using the  characteristic equation
 * Find the eigenvalues of a triangular matix by inspection.
-* Given the eigenvalues of matrix $A$, find the eigenvectors by solving $(A \lambda I) = \mathbf{0}$.
-* Find the eigenvalues and ("human readable") eigenvectors of an  $n \times n$ matrix $A$ using `eigen(A)` on RStudio.
+* Given the eigenvalues of matrix $A$, find the eigenvectors by solving $(A - \lambda I) = \mathbf{0}$.
+* Find the eigenvalues and eigenvectors of an  $n \times n$ matrix $A$ using `eigen(A)` on RStudio.
 * Determine whether a matrix is diagonalizable.
 * Factor a diagonalizable $n \times n$ matrix as $A = PDP^{-1}$ where $D$ is a diagonal matrix of eigenvalues and $P$ is the matrix whose columns are the corresponding eignvectors.
-* Use RStudio to find complex eigenvalues and ("human readable") eigenvectors of a square matrix.
-* Factor a $2 \times 2$ scaling-rotation matrix as $A = P C P^{-1}$ where $C$ is a  scaling-rotation matrix $\begin{bmatrix} a & -b \\ b & a \end{bmatrix}$  and $P = [ \mathsf{w}, \mathsf{u}]$ where $\mathsf{v} = \mathsf{u} + i \mathsf{w}$ is the eigenvector for $\lambda = a + b i$.
-* Use RStudio to create a 2D plot of pairs of eigenvalues of a square matrix
-* Use the dominant eigenvalue and dominant eigenvector to determine the long-term behavior of a dynamical system
-* Create a trajectory of a $2 \times 2$ dynamical system (either using RStudio or by using a given vector field plot) and then relate the trajectory to the eigenvectors and eigenvalues
+* Compute matrix powers using the diagonalization.
+* Use RStudio to find complex eigenvalues and eigenvectors of a square matrix.
 
-* Use RStudio to investigate the animal population modeled with  a Leslie matrix.
+* Factor a $2 \times 2$ scaling-rotation matrix as $A = P C P^{-1}$ where $C$ is a  scaling-rotation matrix $\begin{bmatrix} a & -b \\ b & a \end{bmatrix}$  and $P = [ \mathsf{w}, \mathsf{u}]$ where $\mathsf{v} = \mathsf{u} + i \mathsf{w}$ is the eigenvector for $\lambda = a + b i$.
+
+* Find the angle of rotation and the scaling factor in a $2 \times 2$ matrix with complex eigenvalues.
+
+* Use the dominant eigenvalue and dominant eigenvector to determine the long-term behavior of a dynamical system.
+
+* Use eigenvalues to investigate a population modeled with a Leslie matrix.
+
+* Give a close-formula for a dynamical system using the eigen decomposition of a matrix
 
 ## Vocabulary
 
@@ -50,7 +55,7 @@ I should understand and be able to explain the following **concepts**:
 * An eigenvalue $\lambda$ with $1 <| \lambda |$ corresponds to expansion.
 * An eigenvalue $\lambda$ with $0 < | \lambda | < 1$ corresponds to contraction.
 * A complex  eigenvalue  corresponds  to a rotation in a 2D subspace.
-* The eigenspace for $\lambda$ is the subspace $\mathrm{Nul}(A  - \lambda I)$.
+* The eigenspace for $\lambda$ is the subspace $E_\lambda = \mathrm{Nul}(A  - \lambda I)$.
 * A matrix is  not diagonalizable when it has complex eigenvalues.
 * A matrix is not diagonalizable when it has an eigenvalue whose algebraic mutiplicity is strictly larger than its geometrix multiplicity.
 

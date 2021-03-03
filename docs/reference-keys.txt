@@ -1,4 +1,4 @@
-tab:unnamed-chunk-33
+tab:unnamed-chunk-2
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -54,6 +54,7 @@ problem-set-7
 the-rise-of-moscow
 orthogonal-complements
 orthogonal-diagonalization
+cosine-similarity
 important-definitions
 vector-spaces
 matrices
@@ -224,8 +225,8 @@ section-49
 section-50
 section-51
 section-52
-solutions-to-practice-problems-2
 section-53
+solutions-to-practice-problems-2
 section-54
 section-55
 section-56
@@ -238,3 +239,4 @@ section-62
 section-63
 section-64
 section-65
+section-66
