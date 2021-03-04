@@ -518,7 +518,24 @@ This measure has the following nice properties:</p>
 <span id="cb27-5"><a href="problem-set-7.html#cb27-5"></a>  <span class="kw">return</span> (cosine)</span>
 <span id="cb27-6"><a href="problem-set-7.html#cb27-6"></a>}</span></code></pre></div>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>more cool stuff coming tonight!</li>
+<li><p>In the file <a href="https://drive.google.com/open?id=1oN6-rlOBdDj7LLzzwFC4RGkKiLIUJDcV">US_Senate_s21.Rmd</a> you will find vectors of the voting record of the Senate in the 109th US Congress (2007-2008). You will see how to take the dot product of the voting record of two different senators. The dot product is always an integer. Explain what it counts. It is the number of something or possibly the difference of two things.</p></li>
+<li><p>Use your <code>cosine_similary</code> function to find the cosine similarity between every pair of the following senators:</p>
+<ul>
+<li>Hilary Clinton (D, NY), presidential candidate 2016</li>
+<li>John McCain (R, AZ), presidential candidate 2008</li>
+<li>Barack Obama (D, IL), president 2008-2016</li>
+<li>Susan Collins (R, ME), moderate Republican</li>
+</ul></li>
+</ol>
+<p>Does the cosine similarity pick up on the fact that Senator Collins is a “moderate Republican”?</p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><p>The senate majority leader of the 109th Congress was Bill Frist (R, TN), and the senate minority leader was Harry Reid (D, NV).</p>
+<ul>
+<li><p>Create a function <code>classify_senator(senator)</code> that returns “R” or “D” depending on the cosine similarity of <code>senator</code> to <code>frist</code> and to <code>reid</code>. You will have to write <a href="https://www.tutorialspoint.com/r/r_if_else_statement.htm">an “if … else statement” (here is the syntax)</a>.</p></li>
+<li><p>There is a chunk of code in the R file I’ve given you that gets you started.</p></li>
+<li><p>Then run the my_classification code that we have given. I dentify any senators that have been <em>misclassified</em> using this method, meaning that their votes are more similar to the leader of the opposing party.</p></li>
+<li><p>Jim Jeffords (I, VT) was a Republican who became and Independent in 2001 and then caucused with the Democrats. How does your classifier handle Jeffords?</p></li>
+</ul></li>
 </ol>
 </div>
 <div id="fibonacci-orthogonality" class="section level2">

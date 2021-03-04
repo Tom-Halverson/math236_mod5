@@ -92,7 +92,28 @@ cosine_similarity <- function(u, v) {
 }
 ```
 
-b. more cool stuff coming tonight!
+
+b. In the file [US_Senate_s21.Rmd](https://drive.google.com/open?id=1oN6-rlOBdDj7LLzzwFC4RGkKiLIUJDcV) you will find vectors of the voting record of the Senate in the 109th US Congress (2007-2008). You will see how to take the dot product of the voting record of two different senators. The dot product is always an integer. Explain what it counts. It is the number of something or possibly the difference of two things.
+
+c. Use your `cosine_similary` function to find the cosine similarity between every pair of the following senators:
+
+    + Hilary Clinton (D, NY), presidential candidate 2016
+    + John McCain (R, AZ), presidential candidate 2008
+    + Barack Obama (D, IL), president 2008-2016
+    + Susan Collins (R, ME), moderate Republican
+
+Does the cosine similarity pick up on the fact that Senator Collins is a "moderate Republican"?
+
+d. The senate majority leader of the 109th Congress was Bill Frist (R, TN), and the senate minority leader was Harry Reid (D, NV). 
+
+    * Create a function  `classify_senator(senator)` that returns "R" or "D" depending on the cosine similarity of `senator` to `frist` and to `reid`. You will have to write [an "if ... else statement" (here is the syntax)](https://www.tutorialspoint.com/r/r_if_else_statement.htm).
+  
+    * There is a chunk of code in the R file I've given you that gets you started.
+
+    * Then run the my_classification code that we have given. I dentify any senators that have been *misclassified* using this method, meaning that their votes are more similar to the leader of the opposing party. 
+    
+    * Jim Jeffords (I, VT) was a Republican who became and Independent in 2001 and then caucused with the Democrats. How does your classifier handle Jeffords?
+
 
 ## Fibonacci Orthogonality
 
