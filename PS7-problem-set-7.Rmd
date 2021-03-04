@@ -159,10 +159,11 @@ $$
 $$
 Here are the steps you should follow:
 
-a. Make the normal equations: $\mathsf{A}^T \mathsf{A} x = \mathsf{A}^T \mathsf{b}$.
-b. Solve the normal equations for $\hat{x}$ (by hand or software).
-c. Get the projection $\hat{\mathsf{b}}$ of $\mathsf{b}$ onto $\mathrm{Col}(\mathsf{A})$ by $\hat{\mathsf{b}} = \mathsf{A} \hat{x}$.
-d. Get the residual $\mathsf{r}  = \mathsf{b} - \hat{\mathsf{b}}$ and compute its length.
+a. Show that this system of equations is inconsistent.
+b. Make the normal equations: $\mathsf{A}^T \mathsf{A} x = \mathsf{A}^T \mathsf{b}$.
+c. Solve the normal equations for $\hat{x}$ (by hand or software).
+d. Get the projection $\hat{\mathsf{b}}$ of $\mathsf{b}$ onto $\mathrm{Col}(\mathsf{A})$ by $\hat{\mathsf{b}} = \mathsf{A} \hat{x}$.
+e. Get the residual $\mathsf{r}  = \mathsf{b} - \hat{\mathsf{b}}$ and compute its length.
 
 
 
