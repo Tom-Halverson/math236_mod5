@@ -383,25 +383,32 @@ So one eigenvector is $[0,0,1]^{\top}$
 
 ###
 
+In this problem, we are to think about the geometry of a 2D transformation, and see if we can find any vectors which get re-scaled by the transformation. The direction of these vectors cannot change (other than to flip to the opposite direction).
 
-a. This is a mapping that maps 2D space onto 1D space. We "lose a dimension" which means that $\dim(\mbox{Nul}(A))=1$. This means that $\lambda=0$ is an eigenvalue because there is a nonzero vector $\mathsf{x}$ such that $A \mathsf{x} = \mathbf{0} = 0 \mathsf{x}$. We know that the other eigenvalue is nonzero, since we are mapping onto  a line. However, we  can't say anything more without additional information.
+a. This maps all of $\mathbb{R}^2$ to a line. Therefore it is not one-to-one, nor onto, and so it is not invertible. This means that 0 is an eigenvector. Any vector that is already on the line must stay on the line, so it is an eigenvector, but we don't know its eigenvalue. Thus, the eigenvalues are $\lambda_1 = 1$ and  $\lambda_2=0$.
+
+
   
-b. The eigenvalues are $\lambda_1 = 1$ and $\lambda_2=-1$. Let $L = \mbox{span}( [a,b]^{\top}$ ) be the line of reflection.
-- If $\mathsf{v} = [a,b]^{\top}$ is on $L$, then $T(\mathsf{v}) = \mathsf{v}$.Since $\mathsf{v}$ is on the line of reflection, it doesn't change. 
-- The vector $\mathsf{w} = [-b,a]^{\top}$ is perpendicular to $L$, so $T(\mathsf{w}) = -\mathsf{w}$.
-  Perhaps this one is easiest to undertand by looking at a particular example. Let's look at a reflection across the $y$-axis. This means that $A [ x, y]^{\top} = [-x, y]^{\top}$. In particular, we have $A [ 1, 0]^{\top} =  [ -x, 0]^{\top} = - [ x, 0]^{\top}$. So $-1$ is an eigenvalue. Meanwhile, we also have $A [ 0, 1]^{\top} =  [ 0, 1]^{\top}$ So 1 is an eigenvalue.
+b. There are two kinds of eigenvectors. Those vectors on the line are fixed, so they are eigenvectors of eigenvalue 1. Vectors that are perpendicular to the line get sent to their negatives, so they are eigenvectors of eigenvalue $-1$. Thus, the eigenvalues are $\lambda_1 = 1$ and  $\lambda_2=-1$.
+
+
+Perhaps this one is easiest to understand by looking at a particular example. Let's look at a reflection across the $y$-axis. This means that $A [ x, y]^{\top} = [-x, y]^{\top}$. In particular, we have $A [ 1, 0]^{\top} =  [ -x, 0]^{\top} = - [ x, 0]^{\top}$. So $-1$ is an eigenvalue. Meanwhile, we also have $A [ 0, 1]^{\top} =  [ 0, 1]^{\top}$ So 1 is an eigenvalue.
   
-c. The eigenvalues are $\lambda_1 = \lambda_2=-1$ because
+c. In this transformation, every vector gets sent to its negative. 
 $$
 T\left( \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \right)
 = \begin{bmatrix} -x_1 \\ -x_2 \end{bmatrix}
 = \begin{bmatrix} -1 & 0 \\ 0 & -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
 $$
-d. There is one eigenvalue $\lambda=1$ with algebraic multiplicity 2. However, it only has geometric multiplicity 1. We know that a  shear matrix is not diagonalizable. A shear always fixes one direction (the $x$-axis or the $y$-axis). Since these vectors map to themselves, we know that 1 is an eigenvalue. A shear matrix is always of the form
+This means that every vector is an eigenvector of eigenvalue $-1$. The eigenvalues are $\lambda_1 = \lambda_2=-1$.
 
-We can also give a matrix proof. A 2D horizontal  shear matrix is of the form
-$\begin{bmatrix} 1 & a \\ 0 & 1 \end{bmatrix}$. A 2D vertical shear matrix is of the form
-$\begin{bmatrix} 1 & 0 \\ a & 1 \end{bmatrix}$. Direct calculation shows that $\lambda=1$  has algebraic multiplicity 2 and geometric multiplicity 1. So there are no other eigenvalues.
+d. A horizontal shear (we did not talk about these very much) has a matrix of the form
+$$
+\begin{bmatrix} 1 & a \\ 0 & 1 \end{bmatrix}
+\begin{bmatrix} x \\ y \end{bmatrix}
+= \begin{bmatrix} x + a y \\ y \end{bmatrix}
+$$
+It fixes the $x$-axis since $(x,0)^\top$ maps to $(x,0)^\top$, but no other directions are fixed. You can see by the fact that the matrix is upper triangluar that the eigenvalues are on the diagonal and are $\lambda_1 = \lambda_2 = 1$. Note: if you calculate, you find that the geometric multiplicity of $\lambda = 1$ is 1 (only the $x$-axis), and this matrix is not diagonalizable. The only eigenspace is the $x$-axis.
 
 
 
@@ -623,17 +630,11 @@ b. In the long run, $42.5\%$ of days are wet  and $57.5\%$ of days are dry.
 
 a. Here is the Leslie matrix, as well as some eigensystem computations.
 ```{r, echo=TRUE}
-
 L = cbind(c(0,.8,0),c(0,0,.9),c(.4,0,.8))
 L
-
-syst = eigen(L)
-
-syst
-
-
-syst$vectors[,1] / sum(syst$vectors[,1])
-
+vecs = eigen(L)$vectors
+v = vecs[,1]
+Re(v/sum(v)) # get it to sum to 1 AND remove the 0 imaginary part
 ```
 
 b. The eigenvalues are $1.058, -0.129 \pm 0.506 i$.

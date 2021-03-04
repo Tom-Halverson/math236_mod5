@@ -779,27 +779,28 @@ So one eigenvector is <span class="math inline">\([0,0,1]^{\top}\)</span></p></l
 </div>
 <div id="section-55" class="section level3">
 <h3><span class="header-section-number">27.3.2</span> </h3>
+<p>In this problem, we are to think about the geometry of a 2D transformation, and see if we can find any vectors which get re-scaled by the transformation. The direction of these vectors cannot change (other than to flip to the opposite direction).</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>This is a mapping that maps 2D space onto 1D space. We “lose a dimension” which means that <span class="math inline">\(\dim(\mbox{Nul}(A))=1\)</span>. This means that <span class="math inline">\(\lambda=0\)</span> is an eigenvalue because there is a nonzero vector <span class="math inline">\(\mathsf{x}\)</span> such that <span class="math inline">\(A \mathsf{x} = \mathbf{0} = 0 \mathsf{x}\)</span>. We know that the other eigenvalue is nonzero, since we are mapping onto a line. However, we can’t say anything more without additional information.</p></li>
-<li><p>The eigenvalues are <span class="math inline">\(\lambda_1 = 1\)</span> and <span class="math inline">\(\lambda_2=-1\)</span>. Let <span class="math inline">\(L = \mbox{span}( [a,b]^{\top}\)</span> ) be the line of reflection.</p></li>
+<li><p>This maps all of <span class="math inline">\(\mathbb{R}^2\)</span> to a line. Therefore it is not one-to-one, nor onto, and so it is not invertible. This means that 0 is an eigenvector. Any vector that is already on the line must stay on the line, so it is an eigenvector, but we don’t know its eigenvalue. Thus, the eigenvalues are <span class="math inline">\(\lambda_1 = 1\)</span> and <span class="math inline">\(\lambda_2=0\)</span>.</p></li>
+<li><p>There are two kinds of eigenvectors. Those vectors on the line are fixed, so they are eigenvectors of eigenvalue 1. Vectors that are perpendicular to the line get sent to their negatives, so they are eigenvectors of eigenvalue <span class="math inline">\(-1\)</span>. Thus, the eigenvalues are <span class="math inline">\(\lambda_1 = 1\)</span> and <span class="math inline">\(\lambda_2=-1\)</span>.</p></li>
 </ol>
-<ul>
-<li>If <span class="math inline">\(\mathsf{v} = [a,b]^{\top}\)</span> is on <span class="math inline">\(L\)</span>, then <span class="math inline">\(T(\mathsf{v}) = \mathsf{v}\)</span>.Since <span class="math inline">\(\mathsf{v}\)</span> is on the line of reflection, it doesn’t change.</li>
-<li>The vector <span class="math inline">\(\mathsf{w} = [-b,a]^{\top}\)</span> is perpendicular to <span class="math inline">\(L\)</span>, so <span class="math inline">\(T(\mathsf{w}) = -\mathsf{w}\)</span>.
-Perhaps this one is easiest to undertand by looking at a particular example. Let’s look at a reflection across the <span class="math inline">\(y\)</span>-axis. This means that <span class="math inline">\(A [ x, y]^{\top} = [-x, y]^{\top}\)</span>. In particular, we have <span class="math inline">\(A [ 1, 0]^{\top} = [ -x, 0]^{\top} = - [ x, 0]^{\top}\)</span>. So <span class="math inline">\(-1\)</span> is an eigenvalue. Meanwhile, we also have <span class="math inline">\(A [ 0, 1]^{\top} = [ 0, 1]^{\top}\)</span> So 1 is an eigenvalue.</li>
-</ul>
+<p>Perhaps this one is easiest to understand by looking at a particular example. Let’s look at a reflection across the <span class="math inline">\(y\)</span>-axis. This means that <span class="math inline">\(A [ x, y]^{\top} = [-x, y]^{\top}\)</span>. In particular, we have <span class="math inline">\(A [ 1, 0]^{\top} = [ -x, 0]^{\top} = - [ x, 0]^{\top}\)</span>. So <span class="math inline">\(-1\)</span> is an eigenvalue. Meanwhile, we also have <span class="math inline">\(A [ 0, 1]^{\top} = [ 0, 1]^{\top}\)</span> So 1 is an eigenvalue.</p>
 <ol start="3" style="list-style-type: lower-alpha">
-<li>The eigenvalues are <span class="math inline">\(\lambda_1 = \lambda_2=-1\)</span> because
+<li><p>In this transformation, every vector gets sent to its negative.
 <span class="math display">\[
 T\left( \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \right)
 = \begin{bmatrix} -x_1 \\ -x_2 \end{bmatrix}
 = \begin{bmatrix} -1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
-\]</span></li>
-<li>There is one eigenvalue <span class="math inline">\(\lambda=1\)</span> with algebraic multiplicity 2. However, it only has geometric multiplicity 1. We know that a shear matrix is not diagonalizable. A shear always fixes one direction (the <span class="math inline">\(x\)</span>-axis or the <span class="math inline">\(y\)</span>-axis). Since these vectors map to themselves, we know that 1 is an eigenvalue. A shear matrix is always of the form</li>
+\]</span>
+This means that every vector is an eigenvector of eigenvalue <span class="math inline">\(-1\)</span>. The eigenvalues are <span class="math inline">\(\lambda_1 = \lambda_2=-1\)</span>.</p></li>
+<li><p>A horizontal shear (we did not talk about these very much) has a matrix of the form
+<span class="math display">\[
+\begin{bmatrix} 1 &amp; a \\ 0 &amp; 1 \end{bmatrix}
+\begin{bmatrix} x \\ y \end{bmatrix}
+= \begin{bmatrix} x + a y \\ y \end{bmatrix}
+\]</span>
+It fixes the <span class="math inline">\(x\)</span>-axis since <span class="math inline">\((x,0)^\top\)</span> maps to <span class="math inline">\((x,0)^\top\)</span>, but no other directions are fixed. You can see by the fact that the matrix is upper triangluar that the eigenvalues are on the diagonal and are <span class="math inline">\(\lambda_1 = \lambda_2 = 1\)</span>. Note: if you calculate, you find that the geometric multiplicity of <span class="math inline">\(\lambda = 1\)</span> is 1 (only the <span class="math inline">\(x\)</span>-axis), and this matrix is not diagonalizable. The only eigenspace is the <span class="math inline">\(x\)</span>-axis.</p></li>
 </ol>
-<p>We can also give a matrix proof. A 2D horizontal shear matrix is of the form
-<span class="math inline">\(\begin{bmatrix} 1 &amp; a \\ 0 &amp; 1 \end{bmatrix}\)</span>. A 2D vertical shear matrix is of the form
-<span class="math inline">\(\begin{bmatrix} 1 &amp; 0 \\ a &amp; 1 \end{bmatrix}\)</span>. Direct calculation shows that <span class="math inline">\(\lambda=1\)</span> has algebraic multiplicity 2 and geometric multiplicity 1. So there are no other eigenvalues.</p>
 </div>
 <div id="section-56" class="section level3">
 <h3><span class="header-section-number">27.3.3</span> </h3>
@@ -1031,20 +1032,10 @@ Here are some R calculations to check the answer for (a) and to find the values 
 ## [1,]  0.0  0.0  0.4
 ## [2,]  0.8  0.0  0.0
 ## [3,]  0.0  0.9  0.8</code></pre>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="quiz-3-review.html#cb360-1"></a>syst =<span class="st"> </span><span class="kw">eigen</span>(L)</span>
-<span id="cb360-2"><a href="quiz-3-review.html#cb360-2"></a></span>
-<span id="cb360-3"><a href="quiz-3-review.html#cb360-3"></a>syst</span></code></pre></div>
-<pre><code>## eigen() decomposition
-## $values
-## [1]  1.0575217+0.0000000i -0.1287609+0.5057227i -0.1287609-0.5057227i
-## 
-## $vectors
-##              [,1]                  [,2]                  [,3]
-## [1,] 0.3417536+0i -0.1097728+0.4311448i -0.1097728-0.4311448i
-## [2,] 0.2585317+0i  0.6820256+0.0000000i  0.6820256+0.0000000i
-## [3,] 0.9035297+0i -0.5097632-0.2775729i -0.5097632+0.2775729i</code></pre>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="quiz-3-review.html#cb362-1"></a>syst<span class="op">$</span>vectors[,<span class="dv">1</span>] <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(syst<span class="op">$</span>vectors[,<span class="dv">1</span>])</span></code></pre></div>
-<pre><code>## [1] 0.2272578+0i 0.1719172+0i 0.6008250+0i</code></pre>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="quiz-3-review.html#cb360-1"></a>vecs =<span class="st"> </span><span class="kw">eigen</span>(L)<span class="op">$</span>vectors</span>
+<span id="cb360-2"><a href="quiz-3-review.html#cb360-2"></a>v =<span class="st"> </span>vecs[,<span class="dv">1</span>]</span>
+<span id="cb360-3"><a href="quiz-3-review.html#cb360-3"></a><span class="kw">Re</span>(v<span class="op">/</span><span class="kw">sum</span>(v)) <span class="co"># get it to sum to 1 AND remove the 0 imaginary part</span></span></code></pre></div>
+<pre><code>## [1] 0.2272578 0.1719172 0.6008250</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li>The eigenvalues are <span class="math inline">\(1.058, -0.129 \pm 0.506 i\)</span>.</li>
 <li>If we start outside of the span of the dominant eigenvalue, then the trajectory will wiggle with a mild oscillation with an overall growth trend of <span class="math inline">\(1.058\)</span>, or <span class="math inline">\(5.8\%\)</span>.</li>
