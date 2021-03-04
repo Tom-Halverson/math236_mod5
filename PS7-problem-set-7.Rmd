@@ -4,7 +4,7 @@
 * Due: Tuesday March 09 by 11:59am CST. 
 * Upload your solutions to Moodle in a PDF. 
 * Please feel free to **use RStudio for all calculations, including row reduction, matrix multiplication, eigenvector calculation and inverse matrices.**
-* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_fs21/blob/main/PS7-problem-set-7.Rmd).
+* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_s21/blob/main/PS7-problem-set-7.Rmd).
 
 This problem set covers [Network Centralities] and Sections 6.1, 6.2, and 6.3 on Orthogonal Projections.
 
@@ -30,7 +30,7 @@ a. Compare the Gould's Index and Degree Centrality rankings and note any interes
 ## Orthogonal Complements
 
 
-Here are two subspaces of $\mathbb{R}^5$ that we have seen before
+Here are two subspaces of $\mathbb{R}^5$ that we have seen before. (See PS4.2 and PS5.2)
 $$
 \begin{align}
 \mathsf{Z} & = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} \ \bigg\vert \ x_1 + x_2 + x_3 + x_4 + x_5 = 0 \right\}.

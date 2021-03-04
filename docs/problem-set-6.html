@@ -605,7 +605,7 @@ a_2(t)
 <span id="cb26-12"><a href="problem-set-6.html#cb26-12"></a>  <span class="kw">lines</span>(t,X[i,],<span class="dt">col=</span>i)</span>
 <span id="cb26-13"><a href="problem-set-6.html#cb26-13"></a>  <span class="kw">points</span>(t,X[i,],<span class="dt">col=</span>i,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">8</span>)}</span>
 <span id="cb26-14"><a href="problem-set-6.html#cb26-14"></a><span class="kw">legend</span>(<span class="dv">22</span>, <span class="dv">7600</span>, <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Fingerlings (0-1)&quot;</span>, <span class="st">&quot;Yearlings  (1-2)&quot;</span>, <span class="st">&quot;Young Adults (2-3)&quot;</span>,<span class="st">&quot;Adults (3-4)&quot;</span>,<span class="st">&quot;Adults (4-5)&quot;</span>), <span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span>, <span class="dt">lty=</span><span class="dv">1</span>)</span></code></pre></div>
-<p><img src="math236_handbook_files/figure-html/unnamed-chunk-33-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-18-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Give the meaning of the values 37, 64, 82, 0.06, 0.28, 0.16, 0.08 that appear in this matrix.</p></li>
 <li><p>Compute the eigenvectors and eigenvalues of <span class="math inline">\(L\)</span> and relate what you find to population dynamics. In particular, use the eigen-information to</p></li>
@@ -632,9 +632,9 @@ a_2(t)
 \begin{bmatrix} 0.9 G_t - 0.4 H_t \\ 0.1 G_t + 0.9 H_t \end{bmatrix}
 \]</span></p>
 <p>Here is what happens if we start at <span class="math inline">\((1,0)\)</span> and iterate. That is we start with 1 unit excess glucose. Observe that the system spirals back to the steady state of <span class="math inline">\((0,0)\)</span>.
-<img src="math236_handbook_files/figure-html/unnamed-chunk-34-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<img src="math236_handbook_files/figure-html/unnamed-chunk-19-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>We can plot the indivdual glucose and insulin coordinates over time. These are the x and y coordinates of the points in the above plot. You see the insulin responding to the excess glucose, and then the glucose being absorbed by the presence of insulin, and so on …</p>
-<p><img src="math236_handbook_files/figure-html/unnamed-chunk-35-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-20-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>The key point here is that the spiraling in the (x,y) plane or oscillating in the (x,t) plane corresponds to the presence of <em>complex eigenvalues</em>. Your job is to perform an eigen-analysis of this problem:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Give a trajectory plot of this matrix using the <code>trajectory_plot</code> command from <a href="dynamical-systems-in-2d.html#dynamical-systems-in-2d">Dynamical Systems in 2D</a>. Note: you need to copy the <code>trajectory_plot</code> code to your homework markdown file. When you do so, open the R chunk that contains it with <code>```{r,echo=FALSE}</code>. Then when you knit, it won’t include all the code in the output.</p></li>
