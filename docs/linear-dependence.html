@@ -193,7 +193,6 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="7.4" data-path="problem-set-7.html"><a href="problem-set-7.html#cosine-similarity"><i class="fa fa-check"></i><b>7.4</b> Cosine Similarity</a></li>
 <li class="chapter" data-level="7.5" data-path="problem-set-7.html"><a href="problem-set-7.html#fibonacci-orthogonality"><i class="fa fa-check"></i><b>7.5</b> Fibonacci Orthogonality</a></li>
 <li class="chapter" data-level="7.6" data-path="problem-set-7.html"><a href="problem-set-7.html#least-squares-solution-to-mathsfa-x-mathsfb"><i class="fa fa-check"></i><b>7.6</b> Least Squares Solution to <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span></a></li>
-<li class="chapter" data-level="7.7" data-path="problem-set-7.html"><a href="problem-set-7.html#least-squares-fit"><i class="fa fa-check"></i><b>7.7</b> Least-Squares Fit</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
 <li class="chapter" data-level="8" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>8</b> Important Definitions</a><ul>
@@ -628,30 +627,30 @@ c_9 \vec{a}_9.
 <p>The following code generates a random 5 x 5 matrix. Every time you enter it, it will give you a new matrix. Use this to try to figure out how likely it is that a random square matrix has linearly dependent columns.</p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="linear-dependence.html#cb84-1"></a>R1 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">5</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">5</span>)</span>
 <span id="cb84-2"><a href="linear-dependence.html#cb84-2"></a>R1</span></code></pre></div>
-<pre><code>##            [,1]      [,2]       [,3]       [,4]       [,5]
-## [1,] 0.56836598 0.1163330 0.00391277 0.80042297 0.61714101
-## [2,] 0.74504544 0.4204706 0.44515897 0.14500244 0.01069054
-## [3,] 0.04925794 0.8358115 0.33213692 0.09622533 0.50968326
-## [4,] 0.15127281 0.6560805 0.13201078 0.92911485 0.29933646
-## [5,] 0.11479003 0.3481520 0.45058881 0.29424955 0.47545513</code></pre>
+<pre><code>##            [,1]      [,2]       [,3]       [,4]      [,5]
+## [1,] 0.09068967 0.2657999 0.13113738 0.78624391 0.5999074
+## [2,] 0.73947612 0.4911291 0.27246982 0.50220343 0.2793200
+## [3,] 0.96444763 0.4426490 0.70468143 0.08909929 0.8649903
+## [4,] 0.38199704 0.1013997 0.05518703 0.29067548 0.3455884
+## [5,] 0.71167180 0.1247809 0.01323543 0.58685812 0.6177357</code></pre>
 <p>Try the same using the following code that generates a random 5 x 6 matrix.</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="linear-dependence.html#cb86-1"></a>R2 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">6</span>)</span>
 <span id="cb86-2"><a href="linear-dependence.html#cb86-2"></a>R2</span></code></pre></div>
-<pre><code>##            [,1]      [,2]        [,3]      [,4]       [,5]      [,6]
-## [1,] 0.06316875 0.1617535 0.545778725 0.1643978 0.70589427 0.4524147
-## [2,] 0.08743210 0.4766170 0.076592872 0.1226094 0.05030065 0.5534608
-## [3,] 0.29625325 0.3847642 0.284146896 0.9027624 0.49072566 0.5235426
-## [4,] 0.66484513 0.3700043 0.931798547 0.5562011 0.78261598 0.4273122
-## [5,] 0.62248828 0.5716363 0.005956872 0.3243708 0.13526550 0.3386757</code></pre>
+<pre><code>##           [,1]      [,2]       [,3]       [,4]      [,5]      [,6]
+## [1,] 0.5915988 0.2160800 0.27610994 0.30231412 0.4304135 0.6548953
+## [2,] 0.5560638 0.3594267 0.89026948 0.09581299 0.5177430 0.4054829
+## [3,] 0.2880126 0.7074447 0.89080828 0.02096005 0.1218285 0.6917242
+## [4,] 0.4497247 0.2651214 0.06868794 0.26105569 0.2300928 0.2351299
+## [5,] 0.0650436 0.2826004 0.51565653 0.20365772 0.8173623 0.7510391</code></pre>
 <p>Try the same using the following code that generates a random 5 x 4 matrix.</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="linear-dependence.html#cb88-1"></a>R3 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">4</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)</span>
 <span id="cb88-2"><a href="linear-dependence.html#cb88-2"></a>R3</span></code></pre></div>
-<pre><code>##           [,1]      [,2]      [,3]      [,4]
-## [1,] 0.3692745 0.2900566 0.6981695 0.8894349
-## [2,] 0.8674444 0.3904817 0.8088539 0.6484710
-## [3,] 0.9542284 0.1374403 0.6233025 0.2305872
-## [4,] 0.3362074 0.7429894 0.5537033 0.1473657
-## [5,] 0.7229421 0.8626383 0.6354588 0.2535737</code></pre>
+<pre><code>##           [,1]       [,2]       [,3]      [,4]
+## [1,] 0.4665595 0.09215609 0.35450325 0.4992373
+## [2,] 0.2929864 0.30098289 0.02739534 0.1728717
+## [3,] 0.6606981 0.02752827 0.74512979 0.2765216
+## [4,] 0.8008550 0.50854203 0.38182910 0.6027380
+## [5,] 0.9795993 0.33026591 0.09372851 0.1558559</code></pre>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="linear-dependence.html#cb90-1"></a><span class="kw">rref</span>(R3)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    0    0    0
