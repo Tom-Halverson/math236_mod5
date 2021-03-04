@@ -699,7 +699,17 @@ $$
 Note that $A$ is invertible, 0 is not an eigenvalue, so each $1/\lambda_i$ does not cause division by 0.
 
  
+###
 
+We are given that $A w = 5 w$ and $A v = -3 v$.
+
+a. $A (v + w) = A v + A w = -3 v + 5 w \not = \lambda(v + w)$ for any $\lambda$, so $v + w$ is not an eigenvector of $A$. Note: it would be if they had the same eigenvalue.
+
+b. $A (2021 v) = 2021 A v = 2021 (-3) v = (-3) (2021 v)$ so $2021 v$ is an eigenvector also of eigenvalue $-3$.
+
+c. $A^2 w = A (A w) = A (5 w) = 5 (A w) = 5 (5 w) = 25 w$, so $w$ is an eigenvector of $A^2$ of eigenvalue 25.
+
+d. $(A - 20201I_n)v = A v - 2021 I_n v = -3 v - 2021 v = -2024 v$, so $v$ is an eigenvector of $(A - 20201I_n)$ of eigenvalue $-2024$.
 
 
 

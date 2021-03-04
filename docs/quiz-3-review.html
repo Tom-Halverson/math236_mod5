@@ -193,6 +193,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="7.4" data-path="problem-set-7.html"><a href="problem-set-7.html#cosine-similarity"><i class="fa fa-check"></i><b>7.4</b> Cosine Similarity</a></li>
 <li class="chapter" data-level="7.5" data-path="problem-set-7.html"><a href="problem-set-7.html#fibonacci-orthogonality"><i class="fa fa-check"></i><b>7.5</b> Fibonacci Orthogonality</a></li>
 <li class="chapter" data-level="7.6" data-path="problem-set-7.html"><a href="problem-set-7.html#least-squares-solution-to-mathsfa-x-mathsfb"><i class="fa fa-check"></i><b>7.6</b> Least Squares Solution to <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span></a></li>
+<li class="chapter" data-level="7.7" data-path="problem-set-7.html"><a href="problem-set-7.html#least-squares-fit"><i class="fa fa-check"></i><b>7.7</b> Least-Squares Fit</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
 <li class="chapter" data-level="8" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>8</b> Important Definitions</a><ul>
@@ -415,6 +416,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="27.3.11" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-64"><i class="fa fa-check"></i><b>27.3.11</b> </a></li>
 <li class="chapter" data-level="27.3.12" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-65"><i class="fa fa-check"></i><b>27.3.12</b> </a></li>
 <li class="chapter" data-level="27.3.13" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-66"><i class="fa fa-check"></i><b>27.3.13</b> </a></li>
+<li class="chapter" data-level="27.3.14" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-67"><i class="fa fa-check"></i><b>27.3.14</b> </a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -1107,6 +1109,16 @@ D^{-1} =
 \end{bmatrix}
 \]</span>
 Note that <span class="math inline">\(A\)</span> is invertible, 0 is not an eigenvalue, so each <span class="math inline">\(1/\lambda_i\)</span> does not cause division by 0.</li>
+</ol>
+</div>
+<div id="section-67" class="section level3">
+<h3><span class="header-section-number">27.3.14</span> </h3>
+<p>We are given that <span class="math inline">\(A w = 5 w\)</span> and <span class="math inline">\(A v = -3 v\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(A (v + w) = A v + A w = -3 v + 5 w \not = \lambda(v + w)\)</span> for any <span class="math inline">\(\lambda\)</span>, so <span class="math inline">\(v + w\)</span> is not an eigenvector of <span class="math inline">\(A\)</span>. Note: it would be if they had the same eigenvalue.</p></li>
+<li><p><span class="math inline">\(A (2021 v) = 2021 A v = 2021 (-3) v = (-3) (2021 v)\)</span> so <span class="math inline">\(2021 v\)</span> is an eigenvector also of eigenvalue <span class="math inline">\(-3\)</span>.</p></li>
+<li><p><span class="math inline">\(A^2 w = A (A w) = A (5 w) = 5 (A w) = 5 (5 w) = 25 w\)</span>, so <span class="math inline">\(w\)</span> is an eigenvector of <span class="math inline">\(A^2\)</span> of eigenvalue 25.</p></li>
+<li><p><span class="math inline">\((A - 20201I_n)v = A v - 2021 I_n v = -3 v - 2021 v = -2024 v\)</span>, so <span class="math inline">\(v\)</span> is an eigenvector of <span class="math inline">\((A - 20201I_n)\)</span> of eigenvalue <span class="math inline">\(-2024\)</span>.</p></li>
 </ol>
 
 </div>

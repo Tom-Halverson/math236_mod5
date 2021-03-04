@@ -145,5 +145,5 @@ d. Get the residual $\mathsf{r}  = \mathsf{b} - \hat{\mathsf{b}}$ and compute it
 
 
 
-
+## Least-Squares Fit
 

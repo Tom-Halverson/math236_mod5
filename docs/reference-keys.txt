@@ -1,4 +1,4 @@
-tab:unnamed-chunk-2
+tab:unnamed-chunk-21
 problem-set-1-a
 characterize-the-solution-set
 find-the-general-solution
@@ -57,6 +57,7 @@ orthogonal-diagonalization
 cosine-similarity
 fibonacci-orthogonality
 least-squares-solution-to-mathsfa-x-mathsfb
+least-squares-fit
 important-definitions
 vector-spaces
 matrices
@@ -242,3 +243,4 @@ section-63
 section-64
 section-65
 section-66
+section-67
