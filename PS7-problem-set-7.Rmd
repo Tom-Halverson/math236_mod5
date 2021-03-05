@@ -12,6 +12,10 @@ This problem set covers [Network Centralities] and Sections 6.1, 6.2, and 6.3 on
 
 ## The Rise of Moscow
 
+Here is a video I made in Module 1 explaining the [Airline Network](https://macalester.voicethread.com/myvoice/thread/15733200) example.
+
+If you collaborated on this one with classmates (and I hope you did), please include the names of the students that you worked with.
+
 Read [Network Centralities] and analyze the network of trade routes in medieval Russia given to you there.
 
 a. Create a vector containing the normalized Degree Centralities. See Section \@ref(degree-centrality) for help.
