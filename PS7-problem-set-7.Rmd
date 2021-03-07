@@ -134,7 +134,7 @@ $$
 $$
 ![](images/projectFib.png){width=70%}
 
-b. The vector $\mathsf{v}$ above is \emph{not} in $\mathsf{F}$ (check that!). Its **projection** $\mathsf{p}$ onto $\mathsf{F}$ is given by the formula below. Compute $\mathsf{p}$. This is closest approximation of $\mathsf{f}$ with a Fibonacci vector.
+b. The vector $\mathsf{v}$ above is **not** in $\mathsf{F}$ (check that!). Its **projection** $\mathsf{p}$ onto $\mathsf{F}$ is given by the formula below. Compute $\mathsf{p}$. This is closest approximation of $\mathsf{f}$ with a Fibonacci vector.
 $$
 \mathsf{p} = \frac{ (\mathsf{v} \cdot  \mathsf{f}_1)}{ ( \mathsf{f}_1 \cdot  \mathsf{f}_1)} \mathsf{f}_1 +  \frac{ (\mathsf{v} \cdot  \mathsf{f}_2)}{ ( \mathsf{f}_2 \cdot  \mathsf{f}_2)}  \mathsf{f}_2.
 $$

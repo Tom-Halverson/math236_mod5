@@ -17,17 +17,12 @@ I should be able to do the following **tasks**:
 * Find the orthogonal projection of one vector onto another
 * Find the orthogonal projection of one vector onto a subspace (using an orthogonal basis)
 * Find the orthogonal complement of a subspace
-* Use the Gram-Schmidt process to create an orthonormal basis (starting from a given basis)
 * Find the least squares approximation for an inconsistent system
 * Formulate a curve fitting problem as an inconsistent linear system $A \mathsf{x} = \mathsf{b}$
 * Orthogonally diagonalize a symmetric matrix as $A=PDP^{\top}$.
 * Find the spectral decomposition $A = \lambda_1 \mathsf{v}_1 \mathsf{v}_1^{\top} + 
 \lambda_2 \mathsf{v}_2 \mathsf{v}_2^{\top} + \cdots + \lambda_n \mathsf{v}_n \mathsf{v}_n^{\top}$ of a symmetric matrix $A$
 * Use an orthogonal diagonalization to find the best rank $k$ approximation of symmetric matrix $A$
-* Find the singular value decomposition $A = U \Sigma V^{\top}$ of a rectangular matrix $A$
-* Use the singular value decomposition $A = U \Sigma V^{\top}$ to find orthonormal bases for $\mbox{Row}(A), \mbox{Nul}(A), \mbox{Col}(A), \mbox{Nul}(A^{\top})$ 
-* Find the SVD spectral decomposition $A = \sigma_1 \mathsf{u}_1 \mathsf{v}_1^{\top} + \sigma_2 \mathsf{u}_2 \mathsf{v}_2^{\top} + \cdots + \lambda_n \mathsf{u}_r \mathsf{v}_r^{\top}$ of a rank $r$ matrix $A$
-* Use SVD to find the best rank $k$ approximation of a matrix $A$ 
 
 ## Vocabulary
 
@@ -44,7 +39,6 @@ I should know and be able to use and explain the following **terms** or **proper
 * orthogonal projection
 * orthogonal basis
 * orthonormal basis
-* Gram-Schmidt process
 * normal equations for a least squares approximation
 * least squares solution
 * residual vector
@@ -52,10 +46,6 @@ I should know and be able to use and explain the following **terms** or **proper
 * orthogonally diagonalizable
 * outer product of two vectors $\mathsf{v} \, \mathsf{w}^{\top}$
 * spectral decomposition of a symmetric matrix
-* singular value decomposition
-* singular value, left singular vector, right singular vector
-* SVD spectral decomposition of a rectangular matrix
-* image compression
 
 ## Conceptual Thinking
 
@@ -69,8 +59,4 @@ I should understand and be able to explain the following **concepts**:
 * Cosine similarity is a useful way to compare vectors, especially in high-dimensional vector spaces.
 * The residual vector measures the quality of fit of a least squares solution
 * The outer product $\mathsf{v}\,  \mathsf{w}^{\top}$ is a square matrix with rank 1
-* Singular value decomposition is a generalization of orthogonal diagonalization
-* The singular values of $A$ are the square roots of the eigenvalues of $A^{\top}A$.
-* The spectral decomposition of a matrix allows us to approximate a matrix with a linear combination of rank 1 matrices. 
-* The relative magnitudes of the eigenvectors/singular values  indicate the quality of the spectral decomposition approximation.
 

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 1 Problem Set 7 | PS7-problem-set-7.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 1 Problem Set 7 | PS7-problem-set-7.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 1 Problem Set 7 | PS7-problem-set-7.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="m236.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href = "./">MATH 236: Linear Algebra</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#problem-set-7"><i class="fa fa-check"></i><b>1</b> Problem Set 7</a><ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#the-rise-of-moscow"><i class="fa fa-check"></i><b>1.1</b> The Rise of Moscow</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#orthogonal-complements"><i class="fa fa-check"></i><b>1.2</b> Orthogonal Complements</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#orthogonal-diagonalization"><i class="fa fa-check"></i><b>1.3</b> Orthogonal Diagonalization</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#cosine-similarity"><i class="fa fa-check"></i><b>1.4</b> Cosine Similarity</a></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#fibonacci-orthogonality"><i class="fa fa-check"></i><b>1.5</b> Fibonacci Orthogonality</a></li>
+<li class="chapter" data-level="1.6" data-path=""><a href="#least-squares-solution-to-mathsfa-x-mathsfb"><i class="fa fa-check"></i><b>1.6</b> Least Squares Solution to <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="problem-set-7" class="section level1">
+<h1><span class="header-section-number">Section 1</span> Problem Set 7</h1>
+<ul>
+<li>Due: Tuesday March 09 by 11:59am CST.</li>
+<li>Upload your solutions to Moodle in a PDF.</li>
+<li>Please feel free to <strong>use RStudio for all calculations, including row reduction, matrix multiplication, eigenvector calculation and inverse matrices.</strong></li>
+<li>You can download the <a href="https://github.com/Tom-Halverson/math236_s21/blob/main/PS7-problem-set-7.Rmd">Rmd source file for this problem set</a>.</li>
+</ul>
+<p>This problem set covers [Network Centralities] and Sections 6.1, 6.2, and 6.3 on Orthogonal Projections.</p>
+<div id="the-rise-of-moscow" class="section level2">
+<h2><span class="header-section-number">1.1</span> The Rise of Moscow</h2>
+<p>Here is a video I made in Module 1 explaining the <a href="https://macalester.voicethread.com/myvoice/thread/15733200">Airline Network</a> example.</p>
+<p>If you collaborated on this one with classmates (and I hope you did), please include the names of the students that you worked with.</p>
+<p>Read [Network Centralities] and analyze the network of trade routes in medieval Russia given to you there.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Create a vector containing the normalized Degree Centralities. See Section <a href="#degree-centrality"><strong>??</strong></a> for help.</p></li>
+<li><p>Create a vector containing the Gould Index values. See Section <a href="#gould-index-summary"><strong>??</strong></a> for help.</p></li>
+<li><p>Plot the network where the size of the vertices is determined by Gould’s Index and the size of the label is determined by degree centrality.</p></li>
+<li><p>Create a data frame that contains Gould’s Index and Degree Centralities. The rows should be labeled with the city names and the columns should be named by the centrality measures. Sort according to Gould’s Index.</p></li>
+<li><p>Use Gould’s Index to decide whether Moscow’s dominance was solely due to its geographic location.</p></li>
+<li><p>Compare the Gould’s Index and Degree Centrality rankings and note any interesting findings. See Section <a href="#step-5"><strong>??</strong></a> for help.</p></li>
+</ol>
+</div>
+<div id="orthogonal-complements" class="section level2">
+<h2><span class="header-section-number">1.2</span> Orthogonal Complements</h2>
+<p>Here are two subspaces of <span class="math inline">\(\mathbb{R}^5\)</span> that we have seen before. (See PS4.2 and PS5.2)
+<span class="math display">\[
+\begin{align}
+\mathsf{Z} &amp; = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} \ \bigg\vert \ x_1 + x_2 + x_3 + x_4 + x_5 = 0 \right\}.
+\\
+\mathsf{F} &amp; = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} \ \bigg\vert \  x_3 =  x_1 + x_2, x_4 = x_2 + x_3, x_5 = x_3 + x_4 \right\}.
+\end{align}
+\]</span>
+Find the orthogonal complement of each subspace in <span class="math inline">\(\mathbb{R}^5\)</span>. For each example, compute <span class="math inline">\(\dim(W) + \dim(W^\perp)\)</span>.</p>
+</div>
+<div id="orthogonal-diagonalization" class="section level2">
+<h2><span class="header-section-number">1.3</span> Orthogonal Diagonalization</h2>
+<p>Recall that a square <span class="math inline">\(n \times n\)</span> matrix is symmetric when <span class="math inline">\(A^{\top} = A\)</span>. We learned that the eigenvectors of a symmetric matrix form an orthogonal basis of <span class="math inline">\(\mathbb{R}^n\)</span>. In this problem, you will confirm that this holds for the following symmetric matrix
+<span class="math display">\[
+A = 
+\begin{bmatrix}
+ 0 &amp;  8 &amp; 10 &amp; -4 \\
+ 8 &amp; 4 &amp; 28 &amp; 6 \\
+ 10 &amp; 28 &amp; 3 &amp; -4 \\
+ -4 &amp; 6 &amp; -4 &amp; -7
+\end{bmatrix}. 
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Find the eigenvalues and eigenvectors of <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Confirm that the eigenvectors returned by R are an orthonormal set (do this in a single calculation).</p></li>
+<li><p>Express the vector <span class="math inline">\(\mathsf{v} = \begin{bmatrix} 2 &amp; -4 &amp; -9 &amp; -2 \end{bmatrix}^{\top}\)</span> as a linear combination of the eigenvectors. Use the fact that the eigenvectors are orthonormal. (Don’t augment and row reduce.)</p></li>
+<li><p>Let <span class="math inline">\(P\)</span> be the matrix of these normalized, orthogonal eigenvectors.
+Diagonalize <span class="math inline">\(A\)</span> using <span class="math inline">\(P\)</span>. Just write out <span class="math inline">\(A = P D P^{-1}\)</span>. Congratulations: you have <strong>orthogonally diagonalized</strong> the symmetric matrix <span class="math inline">\(A\)</span>!</p></li>
+</ol>
+<p><strong>Turn in:</strong> Your R code and the output for each part. For parts (c) and (d), you need to make it clear what your final answers are.</p>
+</div>
+<div id="cosine-similarity" class="section level2">
+<h2><span class="header-section-number">1.4</span> Cosine Similarity</h2>
+<p>In high dimensional space <span class="math inline">\(\mathbb{R}^n\)</span> a common measure of similarity between two vectors is <strong>cosine similarity</strong>: the cosine of the angle <span class="math inline">\(\theta\)</span> between the vectors. We calculate this value as follows:
+<span class="math display">\[
+\cos(\theta) = \frac{ \mathsf{u} \cdot \mathsf{v}} {\| \mathsf{u}\| \, \|\mathsf{v}\|} = \frac{ \mathsf{u} \cdot \mathsf{v}} {\sqrt{\mathsf{u} \cdot \mathsf{u}} \sqrt{\mathsf{v} \cdot \mathsf{v}}}.
+\]</span>
+This measure has the following nice properties:</p>
+<ul>
+<li><span class="math inline">\(-1 \le \cos(\theta) \le 1\)</span>,</li>
+<li><span class="math inline">\(\cos(\theta)\)</span> is close to 1 if <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span> are closely aligned,</li>
+<li><span class="math inline">\(\cos(\theta)\)</span> is close to 0 if <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span> are are orthogonal,</li>
+<li><span class="math inline">\(\cos(\theta)\)</span> is close to <span class="math inline">\(-1\)</span> if <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span> are polar opposites.</li>
+<li><span class="math inline">\(\cos(\theta)\)</span> is positive if <span class="math inline">\(\theta\)</span> is acute (less than <span class="math inline">\(90^o\)</span>).</li>
+<li><span class="math inline">\(\cos(\theta)\)</span> is negative if <span class="math inline">\(\theta\)</span> is obtuse (greater than <span class="math inline">\(90^o\)</span>).</li>
+</ul>
+<ol style="list-style-type: lower-alpha">
+<li>Write a function <code>cosine_similarity</code> that takes as input two vectors <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span> and returns the value of <span class="math inline">\(\cos(\theta)\)</span> for the angle <span class="math inline">\(\theta\)</span> between <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span>. Below is a shell of the code that you need. Right now it always just returns 1.You need to fix that up. Demonstrate that your code works on some vectors in <span class="math inline">\(\mathbb{R}^5\)</span>. Use vectors that are orthogonal, closely aligned, and close to polar opposites.</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>cosine_similarity &lt;-<span class="st"> </span><span class="cf">function</span>(u, v) {</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="co"># your code goes here!</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="co"># find the cosine of the angle between u and v</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  cosine =<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="kw">return</span> (cosine)</span>
+<span id="cb1-6"><a href="#cb1-6"></a>}</span></code></pre></div>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>In the file <a href="https://drive.google.com/open?id=1oN6-rlOBdDj7LLzzwFC4RGkKiLIUJDcV">US_Senate_s21.Rmd</a> you will find vectors of the voting record of the Senate in the 109th US Congress (2007-2008). You will see how to take the dot product of the voting record of two different senators. The dot product is always an integer. Explain what it counts. It is the number of something or possibly the difference of two things.</p></li>
+<li><p>Use your <code>cosine_similary</code> function to find the cosine similarity between every pair of the following senators:</p>
+<ul>
+<li>Hilary Clinton (D, NY), presidential candidate 2016</li>
+<li>John McCain (R, AZ), presidential candidate 2008</li>
+<li>Barack Obama (D, IL), president 2008-2016</li>
+<li>Susan Collins (R, ME), moderate Republican</li>
+</ul></li>
+</ol>
+<p>Does the cosine similarity pick up on the fact that Senator Collins is a “moderate Republican”?</p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><p>The senate majority leader of the 109th Congress was Bill Frist (R, TN), and the senate minority leader was Harry Reid (D, NV).</p>
+<ul>
+<li><p>Create a function <code>classify_senator(senator)</code> that returns “R” or “D” depending on the cosine similarity of <code>senator</code> to <code>frist</code> and to <code>reid</code>. You will have to write <a href="https://www.tutorialspoint.com/r/r_if_else_statement.htm">an “if … else statement” (here is the syntax)</a>.</p></li>
+<li><p>There is a chunk of code in the R file I’ve given you that gets you started.</p></li>
+<li><p>Then run the my_classification code that we have given. I dentify any senators that have been <em>misclassified</em> using this method, meaning that their votes are more similar to the leader of the opposing party.</p></li>
+<li><p>Jim Jeffords (I, VT) was a Republican who became and Independent in 2001 and then caucused with the Democrats. How does your classifier handle Jeffords?</p></li>
+</ul></li>
+</ol>
+</div>
+<div id="fibonacci-orthogonality" class="section level2">
+<h2><span class="header-section-number">1.5</span> Fibonacci Orthogonality</h2>
+<p>In problem 1, you saw that the vector space of Fibonacci vectors <span class="math inline">\(\mathsf{F} \subseteq \mathbb{R}^5\)</span> is a 2-dimensional subspace of <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Below is an orthogonal basis of <span class="math inline">\(\mathsf{F}\)</span>. Check that the basis vectors <span class="math inline">\(\{\mathsf{f}_1, \mathsf{f}_2\}\)</span> are in <span class="math inline">\(\mathsf{F}\)</span> and are orthogonal.
+<span class="math display">\[
+\mathsf{F} = \mathsf{span} \left\{
+ \mathsf{f}_1 = \begin{bmatrix} 1 \\ 0 \\ 1 \\ 1 \\ 2 \end{bmatrix}, 
+ \mathsf{f}_2 = \begin{bmatrix} -9 \\ 7 \\ -2 \\ 5 \\ 3\end{bmatrix}
+ \right\}, \hskip.5in
+ \mathsf{v}  =  \begin{bmatrix} 1 \\ 2 \\ 3 \\ 5 \\ 7\end{bmatrix}.\hskip.5in
+\]</span>
+<img src="images/projectFib.png" style="width:70.0%" /></p></li>
+<li><p>The vector <span class="math inline">\(\mathsf{v}\)</span> above is <strong>not</strong> in <span class="math inline">\(\mathsf{F}\)</span> (check that!). Its <strong>projection</strong> <span class="math inline">\(\mathsf{p}\)</span> onto <span class="math inline">\(\mathsf{F}\)</span> is given by the formula below. Compute <span class="math inline">\(\mathsf{p}\)</span>. This is closest approximation of <span class="math inline">\(\mathsf{f}\)</span> with a Fibonacci vector.
+<span class="math display">\[
+\mathsf{p} = \frac{ (\mathsf{v} \cdot  \mathsf{f}_1)}{ ( \mathsf{f}_1 \cdot  \mathsf{f}_1)} \mathsf{f}_1 +  \frac{ (\mathsf{v} \cdot  \mathsf{f}_2)}{ ( \mathsf{f}_2 \cdot  \mathsf{f}_2)}  \mathsf{f}_2.
+\]</span>
+This formula requires that the basis be orthogonal.</p></li>
+<li><p>The <strong>residual vector</strong> is the vector <span class="math inline">\(\mathsf{r} = \mathsf{v} - \mathsf{p}\)</span>. Compute <span class="math inline">\(\mathsf{r}\)</span>.</p></li>
+<li><p>Show that <span class="math inline">\(\mathsf{r}\)</span> is orthogonal to <span class="math inline">\(\mathsf{f}_1\)</span> and <span class="math inline">\(\mathsf{f}_2\)</span>.</p></li>
+<li><p>Compute <span class="math inline">\(||\mathsf{r}||\)</span>. This is the distance from <span class="math inline">\(\mathsf{v}\)</span> to <span class="math inline">\(\mathsf{F}\)</span> (i.e., how far <span class="math inline">\(\mathsf{v}\)</span> is from being Fibonacci).</p></li>
+</ol>
+</div>
+<div id="least-squares-solution-to-mathsfa-x-mathsfb" class="section level2">
+<h2><span class="header-section-number">1.6</span> Least Squares Solution to <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span></h2>
+<p>Find the least-squares solution to the following inconsistent matrix equation <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span>.
+<span class="math display">\[
+\left[
+\begin{array}{ccc}
+ 1 &amp; 1 &amp; 2 \\
+ 1 &amp; 0 &amp; 2 \\
+ -1 &amp; 1 &amp; 1 \\
+ 1 &amp; 0 &amp; 1 \\
+ 1 &amp; 1 &amp; 1 \\
+\end{array}
+\right] \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} = 
+\begin{bmatrix} 7 \\  11 \\ -3 \\ 10 \\ 7 \end{bmatrix}. \hskip5in
+\]</span>
+Here are the steps you should follow:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Show that this system of equations is inconsistent.</li>
+<li>Make the normal equations: <span class="math inline">\(\mathsf{A}^T \mathsf{A} x = \mathsf{A}^T \mathsf{b}\)</span>.</li>
+<li>Solve the normal equations for <span class="math inline">\(\hat{x}\)</span> (by hand or software).</li>
+<li>Get the projection <span class="math inline">\(\hat{\mathsf{b}}\)</span> of <span class="math inline">\(\mathsf{b}\)</span> onto <span class="math inline">\(\mathrm{Col}(\mathsf{A})\)</span> by <span class="math inline">\(\hat{\mathsf{b}} = \mathsf{A} \hat{x}\)</span>.</li>
+<li>Get the residual <span class="math inline">\(\mathsf{r} = \mathsf{b} - \hat{\mathsf{b}}\)</span> and compute its length.</li>
+</ol>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

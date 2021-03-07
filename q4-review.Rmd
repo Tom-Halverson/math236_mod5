@@ -5,7 +5,13 @@
 
 ## Overview
 
-Our fourth quiz covers sections 6.1-6.5, 7.1 and 7.4  in Lay's book. This corresponds to Problem Set 8.
+Our fourth quiz has two goals
+
+1. It will cover the new material from Sections 6.1-6.5 and 7.1
+2. It will have some comprehensive material. 
+
+The comprehensive material will not be tricky. My goal is to be sure that you understand the fundamentals of the course. 
+
 
 The best way to study is to do practice problems. The Quiz will have calculation problems (like Edfinity) and more conceptual problems (like the problem sets). Here are some ways to practice:
 
@@ -16,9 +22,67 @@ The best way to study is to do practice problems. The Quiz will have calculation
 * Try to resolve the Problem Sets and compare your answers to the solutions.
 * Do the practice problems below. Compare your answers to the solutions.
 
-### Vocabulary, Concepts and Skills
+## Vocabulary, Concepts and Skills
 
 See the [Week 7-8 Learning Goals](week-7-8-learning-goals) for the list of vocabulary, concepts and skills.
+
+## Comprehensive Review
+
+Here are some terms and ideas that you should know:
+
+* Pivot position.
+* Elementary row operations.
+* Ways to compute and think about $A v$ in both words and symbols.
+* Linear combination.
+* $Span(v_1, . . . , v_k).$ In particular, you should be able to visualize $Span(v)$, $Span(u,v)$ and give geometric interpretations of these sets  in $\mathbb{R}^2$ or $\mathbb{R}^3$.
+* Linearly independent and linearly dependent.
+* Linear transformation.
+* Domain, codomain, image, range, onto, and one-to-one.
+* The transpose of a matrix, the inverse of a matrix, invertible matrix.
+* Subspace.
+* Null space, column space, and row space of a matrix.
+* Kernel and range of a linear transformation.
+* Basis and dimension. 
+* Rank.
+* Eigenvalue, eigenvector, eigenspace.
+* Characteristic polynomial and characteristic equation.
+* Diagonalizable matrix.
+* Dot product, length of a vector, angle between vectors, cosine similarity
+* Orthogonal vectors, orthogonal spaces.
+* Orthogonal complement of a subspace.
+* Orthogonal basis, orthonormal basis, orthogonal matrix.
+* Orthogonal projection, least squares solutions.
+* Orthogonal diagonalization of symmetric matrix
+
+## Skills
+
+* Form an augmented matrix and reduce a matrix or augmented matrix into row echelon or reduced row echelon form. Determine whether a given matrix is in either of those forms. Determine whether a particular form of a matrix is a possible row echelon or reduced echelon form.
+*
+Determine whether a system is consistent and if it has a unique solution. Write the general solution in parametric vector form. Describe the set of solutions geometrically.
+
+* Interpret a system of equations as  (i) a vector equation (ii) a matrix equation.
+*
+Determine when a vector is in a subset spanned by specified vectors.
+Exhibit a vector as a linear combination of specified vectors.
+Determine whether a specified vector is in the range of a linear transformation.
+*
+Determine whether the columns of an $m \times n$ matrix span $\mathbb{R}^m$.
+Determine whether the columns are linearly independent.
+*
+Compute a matrix-vector product, and interpret it as a linear combination of the columns of $A$. Use linearity of matrix multiplication to compute $A(u + v)$ or $A(c u)$.
+* Find the  matrix of a linear transformation.
+* Determine whether a transformation is linear.
+Determine whether a linear transformation $T( x)=A x$ is one-to-one or onto, using the properties of the matrix $A$.
+* Determine whether a subset of vectors is a subspace.
+* Determine whether a set of vectors is linearly independent and whether it is a basis for some subspace or vector space. Find a basis for a vector space, or for the null space or column space of a matrix, or for the kernel or range of a linear transformation. Find the dimension of a vector space or subspace. Find the dimension of the null space (number of free variables) and column space (number of pivot columns) of a matrix.
+* Find and interpret the rank of a matrix.
+* Calculate the characteristic equation, eigenvalues, and eigenvectors of a square matrix. Find eigenvectors for a specific eigenvalue. Check if a vector is an eigenvector of a given matrix.
+* Determine whether a square matrix is diagonalizable. Factor a diagonalizable matrix into $A=PDP^{-1}$, where $D$ is a diagonal matrix.
+* Use eigenvalues and eigenvectors to analyze the long-term behavior of discrete dynamical systems.
+* Find the length of a vector, the distance between two vectors, or the angle between two vectors. 
+* Determine whether a set of vectors are orthogonal. Determine whether a vector is orthogonal to a subspace or whether two subspaces are orthogonal, by checking whether their basis vectors are orthogonal. 
+* Find the orthogonal projection of (i) one vector onto another vector, or (ii) one vector onto a subspace (using an orthogonal basis for the subspace). Find the distance between a vector and a space (by computing the residual).
+* Set up the matrix equation to find the ``best-fitting'' function to a set of data using least squares. Interpret the normal equations $A^{\top}A x = A^{\top}b$. Find the least squares approximation by solving the normal equations $\hat{x}=(A^{\top}A)^{-1}A^{\top}b$. 
 
 
 
@@ -38,22 +102,15 @@ b. Find the distance between $\mathsf{v}$ and $\mathsf{w}$.
 
 c. Find the cosine of the angle between $\mathsf{v}$ and $\mathsf{v}$.
 
-a. Find $\mbox{proj}_{\mathsf{v}} \mathsf{w}$. 
+d. Find $\mbox{proj}_{\mathsf{v}} \mathsf{w}$. 
 
-
-
-
-b. Let $W=\mbox{span} (\mathsf{v}, \mathsf{w})$. Create an orthonormal basis $\mathsf{u}_1, \mathsf{u}_2$ for $W$ such that $\mathsf{u}_1$ is a vector in the same direction as $\mathsf{v}$.
+e. Let $W=\mbox{span} (\mathsf{v}, \mathsf{w})$. Use the residual from the previous projection to create an orthonormal basis $\mathsf{u}_1, \mathsf{u}_2$ for $W$ such that $\mathsf{u}_1$ is a vector in the same direction as $\mathsf{v}$.
 
 
 ###
 
 Let $\mathsf{u} \neq 0$ be a vector in $\mathbb{R}^n$. Define the function $T: \mathbb{R}^n \rightarrow \mathbb{R}^n$ by
-$T(\mathsf{x}) = \mbox{proj}_{\mathsf{u}} \mathsf{x}$. 
-
-a. Prove that $T: \mathbb{R}^n \rightarrow \mathbb{R}^n$ is a linear transformation.
-
-b. Recall that the kernel of $T$ is the subspace $\mbox{ker}(T) = \{ \mathsf{x} \in \mathbb{R}^n \mid T(x) = \mathbf{0} \}$. Describe  $\mbox{ker}(T)$ as explicitly as you can.
+$T(\mathsf{x}) = \mbox{proj}_{\mathsf{u}} \mathsf{x}$. Recall that the kernel of $T$ is the subspace $\mbox{ker}(T) = \{ \mathsf{x} \in \mathbb{R}^n \mid T(x) = \mathbf{0} \}$. Describe  $\mbox{ker}(T)$ as explicitly as you can.
 
 
 
@@ -105,33 +162,9 @@ $$
 $$
 
 a. Find a basis for $W$. What is the dimension of this subspace?
-b. Use the Gram-Schmidt process on your answer to part (a) to find an orthonormal basis for $W$
-c. Find a basis for $W^{\perp}$
-d. Use the Gram-Schmidt process on your answer from part (c) to find an orthogonal basis for $W^{\perp}$.
+b. Find a basis for $W^{\perp}$
 
 
-### 
-
-Let $\mathsf{u}_1, \mathsf{u}_1, \ldots, \mathsf{u}_n$ be an **orthonormal** basis for $\mathbb{R}^n$. Pick any $\mathsf{v} \in \mathbb{R}^n$. Show that
-$$
-\| \mathsf{v} \| = \sqrt{ ( \mathsf{v} \cdot \mathsf{u}_1)^2 + (\mathsf{v} \cdot \mathsf{u}_2)^2 + \cdots +(\mathsf{v} \cdot \mathsf{u}_n)^2}.
-$$
-
-<!--
-* Use the Gram-Schmidt process to find an orthogonal basis for $W$.
-* Find a basis for $W^{\perp}
-
-```
-A = cbind(c(3,0,0,4,0),c(1,1,0,-1,1),c(0,1,2,-1,2))
-A = cbind(c(1,-2,1,0,1),c(-1,3,-1,1,-1),c(1,0,1,4,5),c(0,2,0,0,-4))
-
-gramSchmidt(A)
-```
-
--->
-
-
-<!-- least squares -->
 
 ###
 
@@ -156,7 +189,7 @@ a. Show that this system is inconsistent.
 b. Find the projected value $\hat{\mathsf{b}}$,  and the residual $\mathsf{z}$.
 c. How close is your approximate solution to the desired target vector?
 
-<!--
+
 ###
 
 Here is an inconsistent system of equations:
@@ -172,8 +205,7 @@ b. Find the least squares solution to the problem.
 
 c. How close is your approximate solution to the desired target vector?
 
-### 
--->
+
 
 ###
 According to the [COVID Tracking Project](https://covidtracking.com/), Minnesota had $54,463$ positive COVID-19 cases between March 6 and 31 July, 2020. As of 16 December, 2020, that count has reached $386,412$. 
@@ -193,28 +225,32 @@ a. Find the best fitting exponential function $f(t) = a e^{k t}$ for the number 
 
 b. Run the following code to plot your function. This code assumes that your least squares solution is given by `xhat`. Does it look like a good fit?
 
-```
+```{r}
+xhat = c(0,0)  #this is wrong
 a = exp(xhat[1])
 k = xhat[2]
+x = 0:(length(covid.mn)-1)
 
 f=function(y){a * exp(k*(y))}
 
 plot(x,f(x)+ covid.start,type="l",lwd=3,ylab="new positive COVID-19 cases", xlab="days since July 31, 2020", main="best fit exponential function")
 points(x,covid.mn + covid.start,pch=20,cex=.7,col="red")
-
 ```
 
 
 ###
 
 Consider the symmetric matrix 
-$$A = \begin{bmatrix}
+$$
+A = \begin{bmatrix}
    3  &  0 & 34  &  3 \\
    0  &  6 & -34  &  0 \\
   34 & -34 &  74  & 34 \\
    3  &  0  & 34  &  3
 \end{bmatrix}
 $$
+
+
 a. Use RStudio to find the eigenvalues $\lambda_1 > \lambda_2 > \lambda_3 > \lambda_4$ and their corresponding eigenvectors $\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3, \mathsf{v}_3$. Confirm that these eigenvectors form an orthonormal set.
 
 b. Is the linear transformation $T(\mathsf{x}) = Ax$ invertible? How do you know?
@@ -225,61 +261,6 @@ A = \lambda_{1} \mathsf{v}_1 \mathsf{v}_1^{\top} + \lambda_{2} \mathsf{v}_2 \mat
 $$
 
 d. Use your answer in part (d) to find the best rank 2 approximation for $A$. (Be careful!)
-
-
-
-
-
-### 
-The matrix
-$$
-A = \left[
-\begin{array}{cccc}
- 1 & 2 &  5 \\
- 2 & 3 &  6 \\
- -1 & 2 &  3 \\
- -3 & 0 &  1 \\
- 1 & 4 &  5 \\
-\end{array}
-\right]
-$$
-
-has singular value decomposition
-
-$$
-\left[
-\begin{array}{cccccc}
- 0.48 & -0.02 & 0.55 & 0.63 & -0.27 \\
- 0.61 & -0.24 & 0.32 & -0.63 & 0.27 \\
- 0.30 & 0.43 & -0.24 & -0.32 & -0.75 \\
- 0.032 & 0.87 & 0.22 & 0.00 & 0.44 \\
- 0.56 & -0.01 & -0.70 & 0.32 & 0.31 \\
-\end{array}
-\right]
-\left[
-\begin{array}{cccc}
- 11.4 & 0 & 0 \\
- 0 & 3.60 & 0 \\
- 0 & 0 & 1.39 \\
- 0 & 0 & 0 \\
- 0 & 0 & 0 \\
-\end{array}
-\right]
-\left[
-\begin{array}{cccc}
- 0.16 & -0.98 & 0.062 \\
- 0.49 & 0.026 & -0.87 \\
- 0.86 & 0.17 & 0.49 \\
-\end{array}
-\right].
-$$
-
-a. Find an orthonormal basis for each of the four fundamental subspaces $\mbox{Nul}(A), \mbox{Col}(A), \mbox{Row}(A), \mbox{Nul}(A^{\top})$.  
-b. Confirm that your basis for $\mbox{Nul}(A)$ is orthogonal to your basis for $\mbox{Row}(A)$
-c. Explain how we know that the mapping $T(\mathsf{x}) = A\mathsf{x}$ is one-to-one.
-d. Since the mapping $T: \mathbb{R}^3 \rightarrow \mathbb{R}^5$ is one-to-one. It maps a cube in $\mathbb{R}^3$  to a 3D "retangular cuboid" in $\mathbb{R}^5$. Does the 3D volume expand, contract, or stay constant after the mapping? How do you know?
-e. What is the best rank 1 approximation of the matrix $A$?
-
 
 
 ###
@@ -301,6 +282,7 @@ B = \begin{bmatrix}
 \end{bmatrix}.
 $$
 
+
 a. Find a basis for $\mbox{Nul}(A)$ and $\mbox{Col}(A)$.
 
 b. Is the linear transformation $T(\mathsf{x}) = A \mathsf{x}$ one-to-one? Onto?
@@ -309,75 +291,68 @@ c. How is the SVD for $A$ related to the SVD for $B$? What properties will they 
 
 d. Now find the SVD of both $A$ and $B$, and test your conjectures. Compare the singular values, the right singular vectors and the left singular vectors. Be sure to compare each of the four fundamental subspaces: $\mbox{Nul}(M), \mbox{Col}(M), \mbox{Row}(M), \mbox{Nul}(M^{\top})$. 
 
-<!--
-```
-v1 = c(1,3,-3,0,0)
-v2 = c(1,-2,4,2,-1)
-v3 = c(0,1,0,3,2)
-v4 = c(2,0,0,-1,3)
+##  
+$\mathsf{A}$  is a $4 \times 5$ matrix and $b \in \mathbb{R}^4$. The augmented matrix $[\,\mathsf{A}\mid b\,]$ row reduces as shown here. 
+$$
+[\,\mathsf{A}\mid b\,] = 
+\left[
+\begin{array}{ccccc|c}
+ \vert & \vert & \vert & \vert & \vert &\vert\\
+ v_1 & v_2 &  v_3 &  v_4 &  v_5 & b\\
+ \vert & \vert & \vert & \vert & \vert &\vert\\
+ \end{array}
+\right] 
+  \longrightarrow
+\left[
+\begin{array}{rrrrr|r}
+ 1 & 0 & 2 & 0 & -1 &1\\
+ 0 & 1 & -1 & 0 & -1 &1\\
+ 0 & 0 & 0 & 1 & 1 &-2\\
+ 0 & 0 & 0 & 0 & 0 & 0
+ \end{array}
+\right]  
+$$
+a. Give all of the solutions to o $\mathsf{A} x = b$ in parametric form.
+ 
+b. Give a dependence relation among the columns of $\mathsf{A}$.
 
-w1 = v1+v2
-w2 = v4-v2+v3
-w3 = v4+v1
-w4 = v3 + v1-v4
+c. These true-false questions refer to the coefficient matrix $\mathsf{A}$ above. Decide if the statement is **T** = True or **F** = False. No justification necessary. 
 
-
-v1 = c(1,3,-3,1,0)
-#v2 = c(1,-2,4,0,-1)
-v3 = c(0,1,0,1,2)
-v4 = c(2,0,0,5,3)
-v2 = c(0,0,0,0,0)
-
-w1 = v1+v2
-w2 = v4-v2+v3
-w3 = v4+v1
-w4 = v3 + v1-v4
-
-B = rbind(w1,w2,w3,w4)
-B
-#U = rref(B)
-
-U
-
-svd(B)
-svd(U)
-```
--->
++ $\mathsf{A} x = b$ has a solution for all $b \in \mathbb{R}^4$.
++  The columns of $\mathsf{A}$ span $\mathbb{R}^4$.
++ If $\mathsf{A} x = b$ has a solution, then it has infinitely many solutions.
++  The linear transformation $x \mapsto \mathsf{A} x$ is one-to-one
++ The linear transformation $x \mapsto \mathsf{A} x$ is onto
 
 
+\newcommand{\A}{\mathsf{A}}
+\newcommand{\x}{\vec{\mathsf{x}}}
+\newcommand{\b}{\vec{\mathsf{b}}}
+\newcommand{\y}{\vec{\mathsf{y}}}
+\newcommand{\0}{\vec{\mathbf{0}}}
+\newcommand{\RR}{\mathbb{R}}
+
+##  
+
+Suppose that  $\A$ is an $n \times n$ matrix and that $\x_1$ and $\x_2$ are two solutions to $\A x = \b$ with $\b \not= \0$ and $\x_1 \not= \x_2$.
+
+a. Give a nonzero solution to $\A \x = \0$.
 
 
-###
+b. Give a solution to $\A \x = \b$ that no one else in the class has.
 
-Singular value decomposition can be used for clustering of high dimensional data. Indeed, the singular vectors encode the patterns in a matrix. So let's try this out on the Senate votes from the 109th Congress (from Problem Set 8). Let's load in the data and assign a color to each senator according to their party.
+Decide if the statement is **T** = True or **F** = False, or  **I**  = there is not enough information to know.
 
-
-```{r, echo=TRUE}
-library(readr)
-
-senate.vote.file = "https://raw.github.com/mathbeveridge/math236_f20//main/data/SenateVoting109.csv"
-
-senators <- read_csv(senate.vote.file, col_names = TRUE)
-
-sen.mat <- as.matrix(senators[4:49])
-
-sen.color=rep("goldenrod", dim(senators)[1])
-sen.color[senators$Party=='D']="cornflowerblue"
-sen.color[senators$Party=='R']="firebrick"
++ The equation $\A x = \y$ has a solution for all $\y \in \RR^n$
++ $\lambda = 0$ is an eigenvalue of $\A$
++ $\A$ is invertible
++ $\A$ is diagonalizable
 
 
 
-```
+## Watch this! 
 
-
-a. Find the singular value decomposition. Define `singval` to be the singular values. Plot them  using the command `plot(singval,pch=19,cex=.5,col='blue')`. How many "important" singular values are there? 
-
-
-b. Define `U` to be the matrix of left singular vectors. Plot the important singular vectors one by one. Here is a command to plot the first singular vector: ``plot(U[,1],pch=19,cex=.75,col=sen.color)`. Do any of the singular values distinguish Democrats from Republicans along the $y$-axis?
-
-
-**Remark**: When we explored [Voting Patterns in the US Senate](voting-patterns-in-the-us-senate), we were actually using singular value decomposition to explore those other datasets. In this problem, you looked at a rectangular matrix  $A$ for senators (rows) and votes (columns). In the previous exploration, you were given a square matrix that was (essentially) $AA^{\top} = (A^{\top}A)^{\top}$. So the eigenvectors of that square matrix are the singular values of the rectangular matrix $A$.
-
+The answer to at least one question on Quiz 4 is contained in [this video](https://www.youtube.com/watch?v=O4KCoNvRi6Y).
 
 ## Solutions to Practice Problems
 
@@ -401,6 +376,7 @@ c.
 $$ \cos \theta = \frac{\mathsf{v} \cdot \mathsf{w}}{\| \mathsf{v}  \| \, \|\mathsf{w} \| }
 = \frac{5-2+3}{\sqrt{3} \, \sqrt{38} } = \frac{2\sqrt{3}}{\sqrt{38} }
 $$
+
 d. 
 $$
 \hat{\mathsf{w}} = \mbox{proj}_{\mathsf{v}} \mathsf{w} = \frac{\mathsf{v} \cdot \mathsf{w}}{ \mathsf{v} \cdot \mathsf{v} } \, \mathsf{v} = \frac{5-2+3}{1+1+1}  \mathsf{v}  = 2 \mathsf{v} = 
@@ -425,24 +401,7 @@ $$
 
 ###
 
-a. We check that $T(\mathsf{x} + \mathsf{y}) = T(\mathsf{x}) + T(\mathsf{y})$ and that  $T(c\mathsf{x} ) = c \, T(\mathsf{x}).$ To make things a little more clear, let's write
-$$
-T(\mathsf{x}) = (\mathsf{x} \cdot \mathsf{u}) \, \frac{1}{\mathsf{u} \cdot \mathsf{u}} \mathsf{u} = (\mathsf{x} \cdot \mathsf{u}) \, \frac{1}{\|\mathsf{u} \|^2} \mathsf{u}.
-$$
-We have
-\begin{align}
-T(\mathsf{x} + \mathsf{y}) &= \big((\mathsf{x}+\mathsf{y}) \cdot \mathsf{u} \big) \, \frac{1}{\|\mathsf{u} \|^2} \mathsf{u}
-= \big(\mathsf{x} \cdot \mathsf{u}+ \mathsf{y} \cdot \mathsf{u} \big) \, \frac{1}{\|\mathsf{u} \|^2} \mathsf{u} \\
-&= \big(\mathsf{x} \cdot \mathsf{u} \big) \, \frac{1}{\|\mathsf{u} \|^2} \mathsf{u} +  \big(\mathsf{y} \cdot \mathsf{u} \big) \, \frac{1}{\|\mathsf{u} \|^2} \mathsf{u}
-= T(\mathsf{x}) + T( \mathsf{y})
-\end{align}
-and
-$$
-T(c\mathsf{x}) = \big(c\mathsf{x}\cdot \mathsf{u} \big) \, \frac{1}{\|\mathsf{u} \|^2} \mathsf{u}
-= c \big(\mathsf{x}\cdot \mathsf{u} \big) \, \frac{1}{\|\mathsf{u} \|^2} \mathsf{u}
-=  c \, T(\mathsf{x})
-$$
-b. Here are a few ways to describe $\mbox{ker}(T)$.
+ Here are a few ways to describe $\mbox{ker}(T)$.
     + $\mbox{ker}(T) = \{ \mathsf{x} \in \mathbb{R}^n \mid \mathsf{x} \cdot \mathsf{u} = 0 \}$.
     + $\mbox{ker}(T)$ is the set of vectors that are orthogonal to $\mathsf{u}$.
     + Let $A$ be the $1 \times n$ matrix $\mathsf{u}^{\top}$. Then $\mbox{ker}(T)= \mbox{Nul}(A)$.
@@ -536,21 +495,9 @@ A = cbind(c(1,-2,1,0,1), c(-1,3,-1,1,-1), c(0,0,1,3,1), c(0,2,0,0,4))
 rref(A)
 
 ```
-
-  So we need all four vectors to span the column space.
+So we need all four vectors to span the column space.
   
-b. 
-
-RStudio makes this so easy!
-```{r, echo=TRUE}
-
-gramSchmidt(A)
-
-```
-
-
-
-c. We obtain a basis for $W^{\perp}$ by finding $\mbox{Nul(A^{\top})}$ So let's row reduce $A^{\top}$
+b. We obtain a basis for $W^{\perp}$ by finding $\mbox{Nul(A^{\top})}$ So let's row reduce $A^{\top}$
 
 ```{r, echo=TRUE}
 rref(t(A))
@@ -558,12 +505,6 @@ rref(t(A))
 
 The vector  $\begin{bmatrix} 2 \\ -2 \\ -7 \\ 2 \\ 1\end{bmatrix}$ spans $W^{\perp}$
 
-d. Using Gram-Schmidt is overkill for this problem. I'll just divide by the length of the vector.
-
-```{r, echo=TRUE}
-vec = c(2,-2,-7,2,1)
-vec / Norm(vec)
-```
 
 ###
 
@@ -597,6 +538,7 @@ There is a pivot in the last column of this augmented matrix, so this system is 
 b.
 
 Here is the least squares calculation.
+
 ```{r, echo=TRUE}
 #solve the normal equation
 (xhat = solve(t(A) %*% A, t(A) %*% b))
@@ -710,8 +652,6 @@ $\lambda_1 = 108$ and $\lambda_4 = -28$.
 
 ```{r echo=TRUE}
 syst$values[1] * v1 %*% t(v1)  + syst$values[4] * v4 %*% t(v4)
-
-
 ```
 
 
@@ -798,38 +738,4 @@ rref(cbind(Acol, Bcol))
 
 
 a.
-
-```{r q4-senate1, echo=TRUE}
-
-
-decomp = svd(sen.mat)
-singval = decomp$d
-
-plot(singval,pch=19,cex=.5,col='blue')
-
-```
-
-There are two  very important eigenvectors. After those two gaps, the eigenvalues taper off more slowly. We certainly need more than the first two for a good approximation of the matrix. But the importance of the rest is more even.
-
-
-b. The first left singular vector picks up a mild (but not definitive) layering of Republicans and Democrats. The second left singular vector provides a clear separation!
-
-
-```{r q4-senate2, echo=TRUE}
-
-U = decomp$u
-
-plot(U[,1],pch=19,cex=.75,col=sen.color)
-
-```
-
-
-
-```{r q4-senate3, echo=TRUE}
-
-
-
-plot(U[,2],pch=19,cex=.75,col=sen.color)
-
-```
 
