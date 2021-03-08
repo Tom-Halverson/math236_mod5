@@ -206,7 +206,7 @@ In this visualization we see the following:
 
 Let's look at the residual and see that it is indeed orthogonal to the columns of $A$.
 
-```{r}
+```{r,echo=TRUE}
 yhat = A %*% xhat
 r = y - yhat
 res=cbind(y,yhat,r)
@@ -284,7 +284,7 @@ grid()
 
 Let's look again at the residual and see that it is indeed orthogonal to the columns of $A$ and see that the residual got shorter.
 
-```{r}
+```{r,echo=TRUE}
 yhat = A %*% xhat
 r = y - yhat
 res=cbind(y,yhat,r)

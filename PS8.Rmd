@@ -1,0 +1,127 @@
+---
+title: "Problem Set 8"
+author: "Your Name Here"
+date: "Due: Friday March 12 at noon CST"
+output:
+  html_document: default
+---
+
+Download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_s21/blob/main/PS8.Rmd).
+
+
+```{r}
+require(pracma)
+```
+
+
+# Problem Set 8
+
+Upload a completed, knitted .html version of this file on Moodle. 
+
+**Note:** If you are using this PS 7 Template then you need to submit a PDF file.
+
+## Projection onto a subspace without an orthogonal basis
+
+Last week we learned how to project onto a subspace, but our method required that we have an orthogonal basis. Here we will see that our least-squares method allows us to project onto a subspace with any (not-necessarily-orthgoonal) basis. Consider the following subspace of $\mathbb{R}^4$. We can turn it into a least-squares problem by making it the column space of a matrix $A$. That is $W = Col(A)$.
+$$
+W = span\left\{
+\begin{bmatrix} 1 \\ 2 \\ -1 \\ -2 \end{bmatrix}, 
+\begin{bmatrix} 1 \\ 2 \\ 3 \\ 4 \end{bmatrix}, 
+\begin{bmatrix} 1 \\ 0 \\ 1 \\ 0 \end{bmatrix}
+\right\}, \hskip.6in
+b = \begin{bmatrix} 9 \\ 5 \\ 5 \\ 8 \end{bmatrix}.
+$$
+```{r}
+(A = cbind(c(1,2,-1,-2),c(1,2,3,4),c(1,0,1,0)))
+b = c(9,5,5,8)
+```
+
+
+a. Perform a matrix computation on A to show that the basis is not orthogonal. 
+b. Show that b is not in W. 
+c. Find the least-squares projection of b onto W. Find both $\hat x$ and $\hat b$.
+d. Calculate the residual vector r, show that $r \in W^\perp$, and find $||r||$.
+e. Consider the following derivation from the normal equations:
+$$
+A^T A x = A^T b \qquad \Longrightarrow \qquad \hat x = (A^T A)^{-1} A^T b.
+$$
+The **pseudoinverse** is the matrix 
+$$
+A^+ = (A^T A)^{-1} A^T
+$$
+From what we see above it gives the *least-squares* solution to $A x = b$. Compute the matrix $A^+$, multiply it by $b$, and show that you get $\hat x$.
+
+f. Continuing this story,
+$$
+\hat b = A \hat x \qquad \Longrightarrow \qquad \hat b =  A (A^T A)^{-1} A^T b.
+$$
+The **projection** matrix onto the subspace $W$ is the matrix
+$$
+P = A (A^T A)^{-1} A^T.
+$$
+Compute the matrix $P$, apply it to $b$, and see that you get the projected value $\hat b$.
+g. Compute $P^2$ and compare it to $P$. Explain why this happens.
+f. Use it to project `b2 = c(1,2,3,4)` onto $W$.
+g. Find the eigenvalues of $P$. They are nice. Explain (briefly) where the eigenvectors of this matrix are in relation to $W$.
+
+
+## Least-squares polynomials
+
+Here is the problem that we discussed in class with a quadratic fit to it. Make a cubic, quartic, and quintic fit to this data. Turn in a plot of each. Comupute the length of the residual in each case. Which do you think is the best model of the data?
+
+
+```{r, echo=TRUE}
+x = c(1,2,3,4,5,6)
+y = c(7,2,1,3,7,7)
+(A = cbind(x^0,x,x^2))
+xhat = solve(t(A)%*%A,t(A)%*%y)
+yhat = A %*% xhat
+r = y - yhat
+t(r) %*% r
+```
+
+```{r ps8-quadplot, fig.width=4.5, fig.height=4.5, echo=FALSE}
+#plot the original set of points
+plot(x,y,pch=19,xlim=c(0,7),ylim=c(0,10), main='the best-fit quadratic function')
+# generate points for the fitted line and plot it
+tt = seq(0,7,len=100)  
+lines(tt,xhat[1]+xhat[2]*tt+xhat[3]*tt^2,col='blue')
+# add the residuals to the plot
+for (i in 1:length(x)) {
+  lines(c(x[i],x[i]),c(y[i],yhat[i]), col='red')
+}
+#add yhat to the plot
+points(x,yhat,pch=19,col='orange')
+#put the original points back on the plot last so we can see them 
+points(x,y,pch=19,col="black")
+grid()
+```
+
+## Fuel Efficiency
+
+Below is a classic data set of fuel efficiency in 38 different automobiles.
+```{r}
+MPG=c(16.9,15.5,19.2,18.5,30,27.5,27.2,30.9,20.3,17,21.6,16.2,20.6,20.8,18.6,18.1,17,17.6,16.5,18.2,26.5,21.9,34.1,35.1,27.4,31.5,29.5,28.4,28.8,26.8,33.5,34.2,31.8,37.3,30.5,22,21.5,31.9)
+lbs=c( 3967.6,3689.14,3280.55,3585.4,1961.05,2329.6,2093,2029.3,2575.3,2857.4,2543.45,3103.1,3075.8,2793.7,3294.2,3103.1,3494.4,3389.75,3599.05,3485.3,2352.35,2648.1,1797.25,1742.65,2429.7,1810.9,1942.85,2429.7,2361.45,2457,2325.96,2002,1838.2,1938.3,1992.9,2561.65,2366,1925)
+HP= c(155,142,125,150,68,95,97,75,103,125,115,133,105,85,110,120,130,129,138,135,88,109,65,80,80,71,68,90,115,115,90,70,65,69,78,97,110,71)
+Cyl=c(8,8,8,8,4,4,4,4,5,6,4,6,6,6,6,6,8,8,8,8,4,6,4,4,4,4,4,4,6,6,4,4,4,4,4,6,4,4)
+Car = c("BuickEstateWagon", "FordCountrySquireWagon", "ChevyMalibuWagon", "ChryslerLeBaronWagon", "Chevette", "ToyotaCorona", "Datsun510", "DodgeOmni", "Audi5000", "Volvo240GL", "Saab99GLE", "Peugeot694SL", "BuickCenturySpecial", "MercuryZephyr", "DodgeAspen", "AMCConcordD/L", "ChevyCapriceClassic", "FordLTD", "MercuryGrandMarquis", "DodgeStRegis", "FordMustang4", "FordMustangGhia", "MazdaGLC", "DodgeColt", "AMCSpirit", "VWScirocco", "HondaAccordLX", "BuickSkylark", "ChevyCitation", "OldsOmega", "PontiacPhoenix", "PlymouthHorizon", "Datsun210", "FiatStrada", "VWDasher", "Datsun810", "BMW320i", "VWRabbit")
+df = data.frame(cbind(lbs,HP,Cyl,MPG)) #Convert to data frame
+rownames(df)=Car
+df
+```
+
+a. Fit a linear model of the form
+$$
+mpg = a_0 + a_1 (lbs) + a_2 (HP) + a_3 (Cyl).
+$$
+Find the coefficients $a_0,a_1,a_2,a_3$ and the length of the residual. If you have taken Stat 155, you can see that we are doing the exact same thing by comparing your results with
+
+```{r}
+lm( MPG ~ lbs + HP + Cyl)
+```
+b. Add the cars weight in tons to your model and solve $mpg = a_0 + a_1 (lbs) + a_2 (HP) + a_3 (Cyl) + a_4 (tons).$ Compare the coefficients you get with those that you got in part a. Give a short explanation of what you see using some of the linear algebra language that we have learned in the course. 
+```{r}
+tons =  c(1.98, 1.84, 1.64, 1.79, 0.98, 1.16, 1.05, 1.01, 1.29, 1.43, 1.27, 1.55, 1.54, 1.40, 1.65, 1.55, 1.75, 1.69, 1.80, 1.74, 1.18, 1.32, 0.90, 0.87, 1.21, 0.91,0.97, 1.21, 1.18, 1.23, 1.16, 1.00, 0.92, 0.97, 1.00, 1.28, 1.18, 0.96)
+```
+ 

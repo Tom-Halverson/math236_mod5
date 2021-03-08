@@ -1,0 +1,242 @@
+---
+title: "Template for Problem Set 7"
+author: "Your Name Here"
+date: "Due Date Here"
+output:
+  html_document: default
+---
+
+
+# Problem Set 7
+
+**Note:** If you are using this PS 7 Template then you need to submit a PDF file.
+
+* The easiest way is to (1) knit to HMTL, (2) click the "Open in Browser" button, (3) In the opened tab, "Print... Save as PDF"
+ * There is a way to knit to PDF, but it is not working for me (error: missing framed.sty). I tried to install the missing resources, but I didn't get it to work. Given the effort involved, I think that the "easy way" HMTL -> Print to PDF is faster.
+
+```{r, echo=FALSE}
+
+# run this command to load some practical math functions
+require(pracma)
+
+# Creates a trajectory for the dynamical system
+# A = the matrix
+# start = the initial vector
+# N = number of iterations
+get_trajectory <- function(A, start, N) {
+    ### this code follows the populations for N steps
+  m = dim(A)[1]  # m is the number of rows of L
+  X = matrix(0, nrow=m, ncol=N)  #  Store the results in a (m x N) matrix called X
+  X[,1] = start  # put start in the first column of X
+  
+  # loop N times and put your results in X
+  for (i in 2:N) {
+    X[,i] = A %*% X[,i-1] 
+  }
+  
+  return(X)
+}
+
+
+# Plots a trajectory along a time axis
+# X  = the trajectory
+# title = the title for the plot
+# types = a vector of the names for each of the entries of the vector.
+plot_trajectory <- function(X, title, types) {
+
+  m = dim(X)[1]
+  N = dim(X)[2]
+
+  t = seq(1,N)  # time
+
+  print(dim(X))
+  print(dim(t))
+    
+  # Expand right side of clipping rect to make room for the legend
+  par(xpd=T, mar=par()$mar+c(0,0,0,10))
+  
+  ymin = min(0, 1.1 * min(X))
+  ymax = max(0, 1.1 * max(X))
+  
+  # Plot graph 
+  plot(t, X[1,], type='l', col=1, ylim=c(ymin,ymax), ylab="amount", xlab="time",  main=title)
+  
+  for (i in 1:m) {
+    lines(t, X[i,], col=i)
+    points(t,X[i,], col=i, pch=20, cex=.8)
+  }
+  
+  # Plot legend where you want
+  legend(N *1.1, ymax * .85, types, col=1:m, lty = 1)
+  
+  # Restore default clipping rect
+  par(mar=c(5, 4, 4, 2) + 0.1)
+}
+
+```
+
+
+## Glucose-Insulin System Model
+
+
+  a. My plot showing the trajectory and my observation about how long it takes for $\begin{bmatrix} G_{t} \\  H_{t} \end{bmatrix}$ to return  to homeostatis.  
+
+  b. My answer about $\lambda = a \pm b i$ and $|\lambda| = \sqrt{a^2 +  b^2}$ and $\theta = \tan^{-1} (a/b)$. I'll include the R commands for these calculations by using an `{r echo=TRUE}' block like this one.
+  
+```{r, echo=TRUE}
+
+# setting echo=TRUE means that the code will be shown in the knit output
+
+a=1/2
+b=sqrt(3)/2
+atan(a/b) * 360 / (2 * pi)
+
+```
+
+
+
+## Population Interaction Models
+
+
+
+a.  My answer about the constants $a,b,c,d$. I'll use the ``tabledata`` variable below.  I will replace each `'\t\t'` with the appropriate sentence **inside the quotemarks**, for example, `'a > 1'`
+
+
+```{r, echo=FALSE}
+
+
+tabledata = rbind(c('predation', '\t\t', '\t\t', '\t\t', '\t\t'),
+                  c('competition', '\t\t', '\t\t', '\t\t', '\t\t'),
+                  c('symbiosis', '\t\t', '\t\t', '\t\t', '\t\t'))
+
+
+tableframe = data.frame(tabledata)
+names(tableframe) = c('model', 'a', 'b', 'c', 'd')
+
+
+
+knitr::kable(
+  tableframe, booktabs = TRUE
+)
+```
+
+
+b. My answer matching each of $A,B,C$ to one of the models. I could use a bullet list by editing the answer below.
+
+* $A$ is predation/competition/symbiosis
+* $B$ is predation/competition/symbiosis
+* $C$ is predation/competition/symbiosis
+
+c. My answer matching each of $A,B,C$ to one of the vector fields I could use a bullet list by editing the answer below.
+
+* $A$ is Vector Field 1/2/3
+* $B$ is Vector Field 1/2/3
+* $C$ is Vector Field 1/2/3
+
+
+d. My answer about the initial population is $[X_0, Y_0]^{\top} = [1, 2.5]^{\top}$ for each model. I could use a bullet list by editing the answer below.
+
+- **Matrix $A$:** My description of the trajectory and its long term behavior, including the limiting population ratios $[a, b]^{\top}$.
+- **Matrix $B$:** My description of the trajectory and its long term behavior, including the limiting population ratios $[a, b]^{\top}$.
+- **Matrix $C$:** My description of the trajectory and its long term behavior, including the limiting population ratios $[a, b]^{\top}$.
+
+##  Blue Whale Population Dynamics
+
+
+
+```{r, echo=TRUE}
+(L=rbind(c(0,0,.19,.44,.5,.5,.45),
+         c(.77,0,0,0,0,0,0),
+         c(0,.77,0,0,0,0,0),
+         c(0,0,.77,0,0,0,0),
+         c(0,0,0,.77,0,0,0),
+         c(0,0,0,0,.77,0,0),
+         c(0,0,0,0,0,.77,.78)))
+
+```
+
+
+
+
+a. My plot of the blue whales for 40 years, and my observation about whether this is population growth, equilibirum or  extinction,  
+
+
+b. The R block with `{r echo=TRUE}` to calculate the eigensystem, and my conclusions about the growth rate and long term population ratios.
+
+
+c. My final R block with `{r echo=TRUE}` that shows my value for $h$ and confirms that the populations are stable in the long run. My observation about the long-term population ratios.
+
+
+## The Power Method for Eigenvalue Calculation
+
+ 
+
+```{r, echo=TRUE}
+A = cbind(c(4,2,4,8), c(2,2,4,4), c(4,4,9,1),c(8,4,1,5))
+
+A
+
+eigen(A)
+
+
+estimate_dominant_eigenvector <- function(A, numiter) {
+  n = dim(A)[1]
+  x = rep(1,n)
+  
+  for (i in 1:numiter) {
+    y = A %*% x
+    maxval = max(y)
+    minval = min(y)
+    
+    if (abs(maxval) > abs(minval)) {
+      m = maxval
+    }  else {
+      m = minval
+    }
+    
+    x = y/m
+  }
+  
+  est = 'estimate'
+  attr(est,'value') = m
+  attr(est, 'vector') = x
+  
+  return(est)
+}
+
+estimate_nearest_eigenvector <- function(A, c, numiter) {
+  n = dim(A)[1]
+  
+  B = A - c * diag(n)
+  Binv = solve(B)
+
+  est = estimate_dominant_eigenvector(Binv, numiter)
+  
+  val = attr(est, 'value')
+  newval = 1/val+c
+  
+  attr(est,'value') = newval
+  
+  return (est)
+}
+```
+
+
+a. My R code block with `{r echo=TRUE}` that shows the minimum `numiter` for `estimate_dominant_eigenvector' to converge to the right answer (up to 7 decimal places).
+
+
+b. My answer to the four parts of this question.
+
+    1. My answer that shows that  $(A - cI)v = (\lambda - c) v$
+
+    2. My answer that shows that the zero vector is the only solution to $(A-cI)x=0$.
+
+    3. My answer that shows $B v = \frac{1}{\lambda -c} v$.
+
+    4. My answer that explains why $\frac{1}{\lambda -c}$ is the dominant eigenvalue.
+
+&nbsp;
+
+c. My R code block with `{r echo=TRUE}` which shows that `estimate_nearest_eigenvalue' does find the correct eigenvalue for an initial guess of $c$.
+
+

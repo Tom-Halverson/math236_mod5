@@ -59,6 +59,10 @@ orthogonal-diagonalization
 cosine-similarity
 fibonacci-orthogonality
 least-squares-solution-to-mathsfa-x-mathsfb
+problem-set-8
+projection-onto-a-subspace-without-an-orthogonal-basis
+least-squares-polynomials
+fuel-efficiency
 important-definitions
 vector-spaces
 matrices
