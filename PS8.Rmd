@@ -6,7 +6,6 @@ output:
   html_document: default
 ---
 
-Download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_s21/blob/main/PS8.Rmd).
 
 
 ```{r}
@@ -16,7 +15,10 @@ require(pracma)
 
 # Problem Set 8
 
-Upload a completed, knitted .html version of this file on Moodle. 
+Download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_s21/blob/main/PS8.Rmd).
+
+
+Upload a completed, knitted .html version of this file on Moodle. If you have collaborated with others on this assignment (encouraged), please include their names here (no penalty).
 
 **Note:** If you are using this PS 7 Template then you need to submit a PDF file.
 
