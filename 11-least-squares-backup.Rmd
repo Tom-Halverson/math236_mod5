@@ -173,7 +173,7 @@ We can plot the points together with the solution using:
 ```{r quadplot2, fig.width=4.5, fig.height=4.5, echo=TRUE}
 
 #plot the original set of points
-plot(x,y,pch=19,xlim=c(0,7),ylim=c(0,8), main='the best-fit linear function')
+plot(x,y,pch=19,ylim=c(0,8), main='the best-fit linear function')
 
 # generate points for the fitted line and plot it
 tt = seq(1,6,len=100)  
@@ -203,19 +203,6 @@ In this visualization we see the following:
 * The orange points: the approximations `cbind(x,yhat)` of the data points `cbind(x,y)`. This represents entries of the projection `yhat`.
 
 * The red line segments: the distances between the original data points (block dots) and their approximations (orange dots). The lengths of these red segments are the entries of the residual vector `r`.
-
-Let's look at the residual and see that it is indeed orthogonal to the columns of $A$.
-
-```{r}
-yhat = A %*% xhat
-r = y - yhat
-res=cbind(y,yhat,r)
-colnames(res) = c("y","yhat","r")
-res
-t(A) %*% r
-sqrt(t(r) %*% r)
-```
-
 
 ## Fitting for a Quadratic Function
 
@@ -260,10 +247,10 @@ Notice that our solution is now $y = 10.3 - 5.1393 x + 0.8036 x^2$. The linear t
 ```{r quadplot3, fig.width=4.5, fig.height=4.5, echo=TRUE}
 
 #plot the original set of points
-plot(x,y,pch=19,xlim=c(0,7),ylim=c(0,8), main='the best-fit quadratic function')
+plot(x,y,pch=19,ylim=c(0,8), main='the best-fit linear function')
 
 # generate points for the fitted line and plot it
-tt = seq(0,7,len=100)  
+tt = seq(1,6,len=100)  
 lines(tt,xhat[1]+xhat[2]*tt+xhat[3]*tt^2,col='blue')
 
 # get yhat
@@ -282,15 +269,176 @@ points(x,y,pch=19,col="black")
 grid()
 ```
 
-Let's look again at the residual and see that it is indeed orthogonal to the columns of $A$ and see that the residual got shorter.
 
-```{r}
-yhat = A %*% xhat
-r = y - yhat
-res=cbind(y,yhat,r)
-colnames(res) = c("y","yhat","r")
-res
-t(A) %*% r
-sqrt(t(r) %*% r)
+
+### Your Turn
+
+Use the template code above to find `xhat`. This is the "least squares solution" that approximates  the coefficients $c, d$.
+
+```{r, echo=TRUE}
+# Replace with your code goes here.
+
+xhat = c(0,0)
+
 ```
 
+
+
+
+### Your turn
+
+If you have not already done so
+
+* Find the residual vector $z$.
+* Find the length of $z$. This is a measure of the quality of the approximation: the smaller, the better!
+* Confirm that $z$ is orthogonal to $\mbox{Col}(A)$. (You may want to use `zapsmall()`.)
+
+
+```{r, echo=TRUE}
+
+# your code goes here
+
+```
+
+
+
+
+
+
+### Your turn
+
+If you have not already done so, you should
+
+* Find the residual vector $z$. Compare the entries (positive, negative) with the red line segments in the plot above.
+* Find the length of $z$. This is a measure of the quality of the approximation: the smaller, the better!
+* Confirm that $z$ is orthogonal to $\mbox{Col}(A)$. (You may want to use `zapsmall()`.)
+
+
+```{r, echo=TRUE}
+
+# your code goes here
+
+```
+
+
+
+
+## A Linear Model for Production at a Hosiery Mill
+
+Here is a data set from a 1940's hosiery mill. It measures monthly production output and total production cost. The data come from the article "Statistical Cost Functions of a Hosiery Mill",  by Joel Dean in Studies in Business Administration, vol. 14, no. 3, 1941.
+```{r, echo=TRUE}
+units.produced =c(561.0, 506.16, 502.32, 519.48, 505.44, 501.36, 497.64, 
+   506.52, 492.36, 478.08, 469.8, 470.4, 474.24, 456.6, 469.92, 
+   463.08, 438.48, 444.36, 439.2, 450.96, 437.76, 459., 447.12, 
+   463.08, 490.68, 451.92, 465.48, 465.36, 440.4, 421.2, 405., 411.48,
+    387.12, 371.64, 338.4, 294.96, 243., 205.08, 172.2, 157.32, 114., 
+   116.88, 112.08, 90.12, 100.2, 75., 65.4, 45.48)
+
+production.cost = c(92.64, 88.81, 86.44, 88.8, 86.38, 89.87, 88.53, 91.11, 81.22,
+    83.72, 84.54, 85.66, 85.87, 85.23, 87.75, 92.62, 91.56, 84.12, 
+   81.22, 83.35, 82.29, 80.92, 76.92, 78.35, 74.57, 71.6, 65.64, 
+   62.09, 61.66, 77.14, 75.47, 70.37, 66.71, 64.37, 56.09, 50.25, 
+   43.65, 38.01, 31.4, 29.45, 29.02, 19.05, 20.36, 17.68, 19.23, 
+   14.92, 11.44, 12.69)
+```
+
+
+Fit a linear model between the units produced and the production cost.
+
+$$p=\beta_0+\beta_1 u,$$
+
+where $u$ is the number of units produced in a given month (in thousands), $p$ is the monthly production cost (in \$1000s). The constant $\beta_0$ represents the fixed costs for running the hosiery mill  and $\beta_1$ represents the variable cost per production of 1000 units.
+
+* Use least squares approximation to find the best fitting linear function for this data. Look at the previous two examples for how to create your matrix $A$.
+
+* Look at your least squared solution. What are the monthly fixed costs? What are the variable costs per 1000 units? 
+* Plot the data along with your linear function.
+* **Optional:** Compute the length of the residual vector
+* **Optional:** Confirm  that the residual vector is orthogonal to both columns of the coefficient matrix.
+
+```{r, echo=TRUE}
+# your least squares code goes here
+x = units.produced
+y = production.cost
+
+A  = NULL
+
+# you must define A and xhat
+```
+
+* **Note: this code assumes that you have defined `xhat` and `x` and `y` and `A`.
+
+
+```{r sqhosiery,fig.width=4.5, fig.height=4.5, echo=TRUE}
+
+if (! is.null(A)) {
+  plot(x,y,pch=19, main='hosiery mill production', xlab="monthly units produced (1000s)",ylab="monthly production cost ($1000s)")
+  yhat = A %*% xhat
+  tt = seq(0,600,by=.1)
+  lines(tt,xhat[1]+xhat[2]*tt,col='blue')
+}
+```
+
+
+## Global Fossil Fuel Emissions
+
+
+
+Now let's fit a curve to global fossil fuel emmissions between 1751 and 1998. The fossil fuel emissions are measured in megatons of carbon. Here is a plot of the data.
+
+```{r sqemission, echo=TRUE}
+year=c(1751:1998)
+emissions = c(3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 7, 7, 7, 8, 8, 10, 9, 9, 9, 10, 10, 10, 10, 10, 11, 11, 11, 11, 12, 13, 14, 14, 14, 14, 14, 15, 16, 16, 17, 17, 18, 18, 18, 24, 23, 23, 24, 24, 25, 29, 29, 30, 31, 33, 34, 36, 37, 39, 43, 43, 46, 47, 50, 54, 54, 57, 59, 69, 71, 76, 77, 78, 83, 91, 95, 97, 104, 112, 119, 122, 130, 135,
+142, 147, 156, 173, 184, 174, 188, 191, 194, 196, 210, 236, 243, 256, 272, 275, 277, 281, 295, 327, 327, 356, 372, 374, 370, 383, 406, 419, 440, 465, 507, 534, 552, 566, 617, 624, 663, 707, 784, 750, 785, 819, 836, 879, 943, 850, 838, 901, 955, 936, 806, 932, 803, 845, 970, 963, 975, 983, 1062, 1065, 1145, 1053, 940, 847, 893, 973, 1027, 1130, 1209, 1142, 1192, 1299, 1334, 1342, 1391, 1383, 1160, 1238, 1392, 1469, 1419, 1630, 1767, 1795, 1841, 1865, 2043, 2177, 2270, 2330, 2463, 2578, 2595, 2701, 2848, 3009, 3146, 3306, 3412, 3588, 3802, 4075, 4227, 4394, 4633, 4641, 4613, 4879, 5018, 5078, 5368, 5297, 5125, 5080, 5067, 5241, 5405, 5573, 5701, 5926, 6035, 6096, 6186, 6089, 6090, 6236, 6378, 6530, 6628, 6608)
+plot(year,emissions,pch=20,cex=.7,col="red")
+```
+
+The data suggest that the fossil fuel emissions $f$ follow an exponential model with respect to the year $y$:
+$$f = a e^{k(y-1750)},$$
+where $a$ and $k$ are the unknown constants. How do we fit our data in this case? Just take the logarithm of both sides! Doing so yields the following linear system:
+$$\log(f)=\log(a)+k(y-1750).$$
+
+* **Note:** This process works for any logarithm, but it is common to use the natural logarithm (use `log()` in R).
+* **Note:** To simplify even further,  define `time=year-1750` before forming your set of linear constraints. This results in the model
+
+$$ \log(f)=d+kx,$$
+where $b=\log(a)$ and $x$ is time (since 1750), 
+
+* Use least squares approximation to find the best fitting exponential function for this data. This will give you the values for $b$ and $k$, and once you know $b$, you can find $a = \exp(b)$. We have started the code for you by defining `x=year-1750` and `y=log(emissions)`.
+
+```{r, echo=TRUE}
+
+### your code goes here. 
+# be sure to define d and k and A
+
+x=year-1750
+y=log(emissions)
+
+A=NULL
+b=1
+k=1
+
+#####
+# your code above has found b and k
+
+(a = exp(b))
+k
+
+
+```
+
+
+
+* Run the code below to plot the original data along with your exponential model curve $f(t)$.
+
+* **Note:** This code assumes that you have already defined the values for `A` and `k` and `a`. Otherwise, it will not work!
+
+
+```{r, echo=TRUE}
+
+if (! is.null(A)) {
+  f=function(y){a * exp(k*(y-1750))}
+  plot(year,f(year),type="l",lwd=3,ylim=c(0,10000),ylab="emissions", main="best fit exponential function")
+  points(year,emissions,pch=20,cex=.7,col="red")
+}
+```

@@ -27,16 +27,15 @@ rmd_files: ["index.Rmd",
 "08-complex-eigenvalues.Rmd",
 "09-network-analysis.Rmd",
 "10-geometry.Rmd",
-# "07-network-analysis.Rmd",
+ "11-least-squares.Rmd",
 # "08-voting-patterns.Rmd",
 # "09-ecological-models.Rmd", 
 # "10-digit-recognition.Rmd",
-# "11-least-squares.Rmd",
 # "12-image-compression.Rmd",
 "q1-review.Rmd", 
 "q2-review.Rmd" , 
 "q3-review.Rmd" , 
- "q4-review.Rmd"
+"q4-review.Rmd"
 ]
 delete_merged_file: true
 language:
