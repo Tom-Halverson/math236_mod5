@@ -534,9 +534,11 @@ First, for good measure, let’s see if the system is inconsistent</p>
 ## [3,] 0 0 1</code></pre>
 <p>True indeed: <span class="math inline">\({\mathsf{b}}\not \in Col({\mathsf{A}})\)</span>.</p>
 <p>Now we compute the normal equations to see what they look like:</p>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="least-squares-approximation.html#cb312-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    2    3
 ## [2,]    3    6</code></pre>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="least-squares-approximation.html#cb314-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>b</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    2
 ## [2,]    0</code></pre>
@@ -553,22 +555,27 @@ First, for good measure, let’s see if the system is inconsistent</p>
 \tag{25.2}
 \end{equation}\]</span></p>
 <p>We can do this in the following nice, single R command</p>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="least-squares-approximation.html#cb316-1"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>b))</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    4
 ## [2,]   -2</code></pre>
 <p>To compute <span class="math inline">\(\hat {\mathsf{b}}\)</span> we use</p>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="least-squares-approximation.html#cb318-1"></a>(<span class="dt">bhat =</span> A <span class="op">%*%</span><span class="st"> </span>xhat)</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    2
 ## [2,]    0
 ## [3,]    2</code></pre>
 <p>And to get the residual, we use</p>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="least-squares-approximation.html#cb320-1"></a>(<span class="dt">r =</span> b <span class="op">-</span><span class="st"> </span>bhat)</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]   -1
 ## [2,]    1
 ## [3,]    1</code></pre>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="least-squares-approximation.html#cb322-1"></a><span class="kw">sqrt</span>(<span class="kw">t</span>(r) <span class="op">%*%</span><span class="st"> </span>r)</span></code></pre></div>
 <pre><code>##          [,1]
 ## [1,] 1.732051</code></pre>
 <p>We can also check that the residual is orthogonal to <span class="math inline">\(Col({\mathsf{A}})\)</span>:</p>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="least-squares-approximation.html#cb324-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>r</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    0
 ## [2,]    0</code></pre>
@@ -576,50 +583,50 @@ First, for good measure, let’s see if the system is inconsistent</p>
 <div id="template" class="section level2">
 <h2><span class="header-section-number">25.3</span> Template</h2>
 <p>The following R code does it all. You can use this as a <strong>template</strong> for future problems. Just enter the matrix A and the vector b.</p>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="least-squares-approximation.html#cb319-1"></a><span class="co"># Given: the matrix A</span></span>
-<span id="cb319-2"><a href="least-squares-approximation.html#cb319-2"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>))</span>
-<span id="cb319-3"><a href="least-squares-approximation.html#cb319-3"></a><span class="co"># Given: the target vector b</span></span>
-<span id="cb319-4"><a href="least-squares-approximation.html#cb319-4"></a>b =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>)</span>
-<span id="cb319-5"><a href="least-squares-approximation.html#cb319-5"></a></span>
-<span id="cb319-6"><a href="least-squares-approximation.html#cb319-6"></a><span class="co">#solve the normal equation</span></span>
-<span id="cb319-7"><a href="least-squares-approximation.html#cb319-7"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>b))</span>
-<span id="cb319-8"><a href="least-squares-approximation.html#cb319-8"></a><span class="co">##      [,1]</span></span>
-<span id="cb319-9"><a href="least-squares-approximation.html#cb319-9"></a><span class="co">## [1,]    4</span></span>
-<span id="cb319-10"><a href="least-squares-approximation.html#cb319-10"></a><span class="co">## [2,]   -2</span></span>
-<span id="cb319-11"><a href="least-squares-approximation.html#cb319-11"></a></span>
-<span id="cb319-12"><a href="least-squares-approximation.html#cb319-12"></a><span class="co"># find the projection</span></span>
-<span id="cb319-13"><a href="least-squares-approximation.html#cb319-13"></a>(<span class="dt">bhat =</span> A <span class="op">%*%</span><span class="st"> </span>xhat)</span>
-<span id="cb319-14"><a href="least-squares-approximation.html#cb319-14"></a><span class="co">##      [,1]</span></span>
-<span id="cb319-15"><a href="least-squares-approximation.html#cb319-15"></a><span class="co">## [1,]    2</span></span>
-<span id="cb319-16"><a href="least-squares-approximation.html#cb319-16"></a><span class="co">## [2,]    0</span></span>
-<span id="cb319-17"><a href="least-squares-approximation.html#cb319-17"></a><span class="co">## [3,]    2</span></span>
-<span id="cb319-18"><a href="least-squares-approximation.html#cb319-18"></a></span>
-<span id="cb319-19"><a href="least-squares-approximation.html#cb319-19"></a><span class="co"># find the residual vector</span></span>
-<span id="cb319-20"><a href="least-squares-approximation.html#cb319-20"></a>(<span class="dt">r =</span> b <span class="op">-</span><span class="st"> </span>bhat)</span>
-<span id="cb319-21"><a href="least-squares-approximation.html#cb319-21"></a><span class="co">##      [,1]</span></span>
-<span id="cb319-22"><a href="least-squares-approximation.html#cb319-22"></a><span class="co">## [1,]   -1</span></span>
-<span id="cb319-23"><a href="least-squares-approximation.html#cb319-23"></a><span class="co">## [2,]    1</span></span>
-<span id="cb319-24"><a href="least-squares-approximation.html#cb319-24"></a><span class="co">## [3,]    1</span></span>
-<span id="cb319-25"><a href="least-squares-approximation.html#cb319-25"></a></span>
-<span id="cb319-26"><a href="least-squares-approximation.html#cb319-26"></a><span class="co"># check that z is orthogonal to Col(A)</span></span>
-<span id="cb319-27"><a href="least-squares-approximation.html#cb319-27"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>r</span>
-<span id="cb319-28"><a href="least-squares-approximation.html#cb319-28"></a><span class="co">##      [,1]</span></span>
-<span id="cb319-29"><a href="least-squares-approximation.html#cb319-29"></a><span class="co">## [1,]    0</span></span>
-<span id="cb319-30"><a href="least-squares-approximation.html#cb319-30"></a><span class="co">## [2,]    0</span></span>
-<span id="cb319-31"><a href="least-squares-approximation.html#cb319-31"></a></span>
-<span id="cb319-32"><a href="least-squares-approximation.html#cb319-32"></a><span class="co"># measure the distance between bhat and b</span></span>
-<span id="cb319-33"><a href="least-squares-approximation.html#cb319-33"></a><span class="kw">sqrt</span>( <span class="kw">t</span>(r) <span class="op">%*%</span><span class="st"> </span>r)</span>
-<span id="cb319-34"><a href="least-squares-approximation.html#cb319-34"></a><span class="co">##          [,1]</span></span>
-<span id="cb319-35"><a href="least-squares-approximation.html#cb319-35"></a><span class="co">## [1,] 1.732051</span></span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="least-squares-approximation.html#cb326-1"></a><span class="co"># Given: the matrix A</span></span>
+<span id="cb326-2"><a href="least-squares-approximation.html#cb326-2"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb326-3"><a href="least-squares-approximation.html#cb326-3"></a><span class="co"># Given: the target vector b</span></span>
+<span id="cb326-4"><a href="least-squares-approximation.html#cb326-4"></a>b =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">3</span>)</span>
+<span id="cb326-5"><a href="least-squares-approximation.html#cb326-5"></a></span>
+<span id="cb326-6"><a href="least-squares-approximation.html#cb326-6"></a><span class="co">#solve the normal equation</span></span>
+<span id="cb326-7"><a href="least-squares-approximation.html#cb326-7"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>b))</span>
+<span id="cb326-8"><a href="least-squares-approximation.html#cb326-8"></a><span class="co">##      [,1]</span></span>
+<span id="cb326-9"><a href="least-squares-approximation.html#cb326-9"></a><span class="co">## [1,]    4</span></span>
+<span id="cb326-10"><a href="least-squares-approximation.html#cb326-10"></a><span class="co">## [2,]   -2</span></span>
+<span id="cb326-11"><a href="least-squares-approximation.html#cb326-11"></a></span>
+<span id="cb326-12"><a href="least-squares-approximation.html#cb326-12"></a><span class="co"># find the projection</span></span>
+<span id="cb326-13"><a href="least-squares-approximation.html#cb326-13"></a>(<span class="dt">bhat =</span> A <span class="op">%*%</span><span class="st"> </span>xhat)</span>
+<span id="cb326-14"><a href="least-squares-approximation.html#cb326-14"></a><span class="co">##      [,1]</span></span>
+<span id="cb326-15"><a href="least-squares-approximation.html#cb326-15"></a><span class="co">## [1,]    2</span></span>
+<span id="cb326-16"><a href="least-squares-approximation.html#cb326-16"></a><span class="co">## [2,]    0</span></span>
+<span id="cb326-17"><a href="least-squares-approximation.html#cb326-17"></a><span class="co">## [3,]    2</span></span>
+<span id="cb326-18"><a href="least-squares-approximation.html#cb326-18"></a></span>
+<span id="cb326-19"><a href="least-squares-approximation.html#cb326-19"></a><span class="co"># find the residual vector</span></span>
+<span id="cb326-20"><a href="least-squares-approximation.html#cb326-20"></a>(<span class="dt">r =</span> b <span class="op">-</span><span class="st"> </span>bhat)</span>
+<span id="cb326-21"><a href="least-squares-approximation.html#cb326-21"></a><span class="co">##      [,1]</span></span>
+<span id="cb326-22"><a href="least-squares-approximation.html#cb326-22"></a><span class="co">## [1,]   -1</span></span>
+<span id="cb326-23"><a href="least-squares-approximation.html#cb326-23"></a><span class="co">## [2,]    1</span></span>
+<span id="cb326-24"><a href="least-squares-approximation.html#cb326-24"></a><span class="co">## [3,]    1</span></span>
+<span id="cb326-25"><a href="least-squares-approximation.html#cb326-25"></a></span>
+<span id="cb326-26"><a href="least-squares-approximation.html#cb326-26"></a><span class="co"># check that z is orthogonal to Col(A)</span></span>
+<span id="cb326-27"><a href="least-squares-approximation.html#cb326-27"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>r</span>
+<span id="cb326-28"><a href="least-squares-approximation.html#cb326-28"></a><span class="co">##      [,1]</span></span>
+<span id="cb326-29"><a href="least-squares-approximation.html#cb326-29"></a><span class="co">## [1,]    0</span></span>
+<span id="cb326-30"><a href="least-squares-approximation.html#cb326-30"></a><span class="co">## [2,]    0</span></span>
+<span id="cb326-31"><a href="least-squares-approximation.html#cb326-31"></a></span>
+<span id="cb326-32"><a href="least-squares-approximation.html#cb326-32"></a><span class="co"># measure the distance between bhat and b</span></span>
+<span id="cb326-33"><a href="least-squares-approximation.html#cb326-33"></a><span class="kw">sqrt</span>( <span class="kw">t</span>(r) <span class="op">%*%</span><span class="st"> </span>r)</span>
+<span id="cb326-34"><a href="least-squares-approximation.html#cb326-34"></a><span class="co">##          [,1]</span></span>
+<span id="cb326-35"><a href="least-squares-approximation.html#cb326-35"></a><span class="co">## [1,] 1.732051</span></span></code></pre></div>
 </div>
 <div id="fitting-for-a-linear-function" class="section level2">
 <h2><span class="header-section-number">25.4</span> Fitting for a Linear Function</h2>
 <p>Here are some points that we’d like to fit to a linear function <span class="math inline">\(y = a_0 + a_1 x\)</span>.</p>
 <p><strong>Note:</strong> Here we use <code>y</code> instead of <code>b</code> because we like to write linear equations as “<span class="math inline">\(y = cx + d\)</span>.” So the expression “<span class="math inline">\(b = a_0 + a_1 x\)</span>” looks funny to us. So we will talk about <code>y</code> and <code>yhat</code> instead of <code>b</code> and <code>bhat</code>.</p>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="least-squares-approximation.html#cb320-1"></a>x =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span>
-<span id="cb320-2"><a href="least-squares-approximation.html#cb320-2"></a>y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">7</span>)</span>
-<span id="cb320-3"><a href="least-squares-approximation.html#cb320-3"></a><span class="kw">plot</span>(x,y,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">8</span>))</span>
-<span id="cb320-4"><a href="least-squares-approximation.html#cb320-4"></a><span class="kw">grid</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="least-squares-approximation.html#cb327-1"></a>x =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span>
+<span id="cb327-2"><a href="least-squares-approximation.html#cb327-2"></a>y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">7</span>)</span>
+<span id="cb327-3"><a href="least-squares-approximation.html#cb327-3"></a><span class="kw">plot</span>(x,y,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>))</span>
+<span id="cb327-4"><a href="least-squares-approximation.html#cb327-4"></a><span class="kw">grid</span>()</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/quadplot1-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>The linear equations that we want to fit are as follows.
 <span class="math display">\[
@@ -631,7 +638,7 @@ First, for good measure, let’s see if the system is inconsistent</p>
 \begin{bmatrix} 7 \\ 2 \\ 1 \\ 3 \\ 7 \\ 7 \end{bmatrix}.
 \]</span></p>
 <p>These equations are inconsistent, so we solve the normal equations <span class="math inline">\(A^T A x = A^T y\)</span> and find an approximate solution instead. <strong>Pro Tip:</strong> a clever way to create the desired matrix <span class="math inline">\(A\)</span> is to use the fact that <span class="math inline">\(x^0=1\)</span> for any number <span class="math inline">\(x\)</span>.</p>
-<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="least-squares-approximation.html#cb321-1"></a>(<span class="dt">A =</span> <span class="kw">cbind</span>(x<span class="op">^</span><span class="dv">0</span>,x))</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb328-1"><a href="least-squares-approximation.html#cb328-1"></a>(<span class="dt">A =</span> <span class="kw">cbind</span>(x<span class="op">^</span><span class="dv">0</span>,x))</span></code></pre></div>
 <pre><code>##        x
 ## [1,] 1 1
 ## [2,] 1 2
@@ -640,11 +647,11 @@ First, for good measure, let’s see if the system is inconsistent</p>
 ## [5,] 1 5
 ## [6,] 1 6</code></pre>
 <p>Let’s take a look at the normal equations:</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="least-squares-approximation.html#cb323-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb330-1"><a href="least-squares-approximation.html#cb330-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A</span></code></pre></div>
 <pre><code>##       x
 ##    6 21
 ## x 21 91</code></pre>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="least-squares-approximation.html#cb325-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y</span></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="least-squares-approximation.html#cb332-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y</span></code></pre></div>
 <pre><code>##   [,1]
 ##     27
 ## x  103</code></pre>
@@ -657,33 +664,33 @@ First, for good measure, let’s see if the system is inconsistent</p>
 = 
 \begin{bmatrix} 27 \\ 103 \end{bmatrix}.
 \]</span></p>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="least-squares-approximation.html#cb327-1"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y))</span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="least-squares-approximation.html#cb334-1"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y))</span></code></pre></div>
 <pre><code>##        [,1]
 ##   2.8000000
 ## x 0.4857143</code></pre>
-<p>This tells us that the desired intercept is <span class="math inline">\(a_0 = 2.8\)</span> and the desired slope is <span class="math inline">\(a_1 = 0.4856\)</span>.</p>
+<p>This tells us that the desired intercept is <span class="math inline">\(a_0 = 2.8\)</span>, the desired slope is <span class="math inline">\(a_1 = 0.4856\)</span>, and the linear model is <span class="math inline">\(y = 2.8 + 0.4856x\)</span>.</p>
 <p>We can plot the points together with the solution using:</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="least-squares-approximation.html#cb329-1"></a><span class="co">#plot the original set of points</span></span>
-<span id="cb329-2"><a href="least-squares-approximation.html#cb329-2"></a><span class="kw">plot</span>(x,y,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">7</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">8</span>), <span class="dt">main=</span><span class="st">&#39;the best-fit linear function&#39;</span>)</span>
-<span id="cb329-3"><a href="least-squares-approximation.html#cb329-3"></a></span>
-<span id="cb329-4"><a href="least-squares-approximation.html#cb329-4"></a><span class="co"># generate points for the fitted line and plot it</span></span>
-<span id="cb329-5"><a href="least-squares-approximation.html#cb329-5"></a>tt =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">6</span>,<span class="dt">len=</span><span class="dv">100</span>)  </span>
-<span id="cb329-6"><a href="least-squares-approximation.html#cb329-6"></a><span class="kw">lines</span>(tt,xhat[<span class="dv">1</span>]<span class="op">+</span>xhat[<span class="dv">2</span>]<span class="op">*</span>tt,<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</span>
-<span id="cb329-7"><a href="least-squares-approximation.html#cb329-7"></a></span>
-<span id="cb329-8"><a href="least-squares-approximation.html#cb329-8"></a><span class="co"># get yhat</span></span>
-<span id="cb329-9"><a href="least-squares-approximation.html#cb329-9"></a>yhat =<span class="st"> </span>A <span class="op">%*%</span><span class="st"> </span>xhat</span>
-<span id="cb329-10"><a href="least-squares-approximation.html#cb329-10"></a></span>
-<span id="cb329-11"><a href="least-squares-approximation.html#cb329-11"></a><span class="co"># add the residuals to the plot</span></span>
-<span id="cb329-12"><a href="least-squares-approximation.html#cb329-12"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x)) {</span>
-<span id="cb329-13"><a href="least-squares-approximation.html#cb329-13"></a>  <span class="kw">lines</span>(<span class="kw">c</span>(x[i],x[i]),<span class="kw">c</span>(y[i],yhat[i]), <span class="dt">col=</span><span class="st">&#39;red&#39;</span>)</span>
-<span id="cb329-14"><a href="least-squares-approximation.html#cb329-14"></a>}</span>
-<span id="cb329-15"><a href="least-squares-approximation.html#cb329-15"></a></span>
-<span id="cb329-16"><a href="least-squares-approximation.html#cb329-16"></a><span class="co">#add yhat to the plot</span></span>
-<span id="cb329-17"><a href="least-squares-approximation.html#cb329-17"></a><span class="kw">points</span>(x,yhat,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span>
-<span id="cb329-18"><a href="least-squares-approximation.html#cb329-18"></a></span>
-<span id="cb329-19"><a href="least-squares-approximation.html#cb329-19"></a><span class="co">#put the original points back on the plot last so we can see them </span></span>
-<span id="cb329-20"><a href="least-squares-approximation.html#cb329-20"></a><span class="kw">points</span>(x,y,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)</span>
-<span id="cb329-21"><a href="least-squares-approximation.html#cb329-21"></a><span class="kw">grid</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="least-squares-approximation.html#cb336-1"></a><span class="co">#plot the original set of points</span></span>
+<span id="cb336-2"><a href="least-squares-approximation.html#cb336-2"></a><span class="kw">plot</span>(x,y,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">7</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="dt">main=</span><span class="st">&#39;the best-fit linear function&#39;</span>)</span>
+<span id="cb336-3"><a href="least-squares-approximation.html#cb336-3"></a></span>
+<span id="cb336-4"><a href="least-squares-approximation.html#cb336-4"></a><span class="co"># generate points for the fitted line and plot it</span></span>
+<span id="cb336-5"><a href="least-squares-approximation.html#cb336-5"></a>tt =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>,<span class="dv">6</span>,<span class="dt">len=</span><span class="dv">100</span>)  </span>
+<span id="cb336-6"><a href="least-squares-approximation.html#cb336-6"></a><span class="kw">lines</span>(tt,xhat[<span class="dv">1</span>]<span class="op">+</span>xhat[<span class="dv">2</span>]<span class="op">*</span>tt,<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb336-7"><a href="least-squares-approximation.html#cb336-7"></a></span>
+<span id="cb336-8"><a href="least-squares-approximation.html#cb336-8"></a><span class="co"># get yhat</span></span>
+<span id="cb336-9"><a href="least-squares-approximation.html#cb336-9"></a>yhat =<span class="st"> </span>A <span class="op">%*%</span><span class="st"> </span>xhat</span>
+<span id="cb336-10"><a href="least-squares-approximation.html#cb336-10"></a></span>
+<span id="cb336-11"><a href="least-squares-approximation.html#cb336-11"></a><span class="co"># add the residuals to the plot</span></span>
+<span id="cb336-12"><a href="least-squares-approximation.html#cb336-12"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x)) {</span>
+<span id="cb336-13"><a href="least-squares-approximation.html#cb336-13"></a>  <span class="kw">lines</span>(<span class="kw">c</span>(x[i],x[i]),<span class="kw">c</span>(y[i],yhat[i]), <span class="dt">col=</span><span class="st">&#39;red&#39;</span>)</span>
+<span id="cb336-14"><a href="least-squares-approximation.html#cb336-14"></a>}</span>
+<span id="cb336-15"><a href="least-squares-approximation.html#cb336-15"></a></span>
+<span id="cb336-16"><a href="least-squares-approximation.html#cb336-16"></a><span class="co">#add yhat to the plot</span></span>
+<span id="cb336-17"><a href="least-squares-approximation.html#cb336-17"></a><span class="kw">points</span>(x,yhat,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span>
+<span id="cb336-18"><a href="least-squares-approximation.html#cb336-18"></a></span>
+<span id="cb336-19"><a href="least-squares-approximation.html#cb336-19"></a><span class="co">#put the original points back on the plot last so we can see them </span></span>
+<span id="cb336-20"><a href="least-squares-approximation.html#cb336-20"></a><span class="kw">points</span>(x,y,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb336-21"><a href="least-squares-approximation.html#cb336-21"></a><span class="kw">grid</span>()</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/quadplot2-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>In this visualization we see the following:</p>
 <ul>
@@ -720,7 +727,7 @@ In this case, the linear model that we’d like to solve is:
 \begin{bmatrix} 7 \\ 2 \\ 1 \\ 3 \\ 7 \\ 7 \end{bmatrix}.
 \]</span></p>
 <p>It is easy enough to add this to our matrix <span class="math inline">\(A\)</span>.</p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="least-squares-approximation.html#cb333-1"></a>(<span class="dt">A =</span> <span class="kw">cbind</span>(x<span class="op">^</span><span class="dv">0</span>,x,x<span class="op">^</span><span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="least-squares-approximation.html#cb340-1"></a>(<span class="dt">A =</span> <span class="kw">cbind</span>(x<span class="op">^</span><span class="dv">0</span>,x,x<span class="op">^</span><span class="dv">2</span>))</span></code></pre></div>
 <pre><code>##        x   
 ## [1,] 1 1  1
 ## [2,] 1 2  4
@@ -729,12 +736,12 @@ In this case, the linear model that we’d like to solve is:
 ## [5,] 1 5 25
 ## [6,] 1 6 36</code></pre>
 <p>In this case our normal equations are 3x3</p>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="least-squares-approximation.html#cb335-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A</span></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="least-squares-approximation.html#cb342-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A</span></code></pre></div>
 <pre><code>##        x     
 ##    6  21   91
 ## x 21  91  441
 ##   91 441 2275</code></pre>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="least-squares-approximation.html#cb337-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y</span></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="least-squares-approximation.html#cb344-1"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y</span></code></pre></div>
 <pre><code>##   [,1]
 ##     27
 ## x  103
@@ -748,33 +755,33 @@ In this case, the linear model that we’d like to solve is:
 \begin{bmatrix} 27 \\ 103 \\ 499 \end{bmatrix}.
 \]</span>
 Whose solution is computed by</p>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="least-squares-approximation.html#cb339-1"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y))</span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="least-squares-approximation.html#cb346-1"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y))</span></code></pre></div>
 <pre><code>##         [,1]
 ##   10.3000000
 ## x -5.1392857
 ##    0.8035714</code></pre>
 <p>Notice that our solution is now <span class="math inline">\(y = 10.3 - 5.1393 x + 0.8036 x^2\)</span>. The linear term is now negative, but there is a positive quadratic term. Let’s look at the same plo but with the addex <span class="math inline">\(x^2\)</span> term. We see that the residuals are smaller <strong>and</strong>, importantly, the model appears to better fit the data.</p>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="least-squares-approximation.html#cb341-1"></a><span class="co">#plot the original set of points</span></span>
-<span id="cb341-2"><a href="least-squares-approximation.html#cb341-2"></a><span class="kw">plot</span>(x,y,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">7</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">8</span>), <span class="dt">main=</span><span class="st">&#39;the best-fit quadratic function&#39;</span>)</span>
-<span id="cb341-3"><a href="least-squares-approximation.html#cb341-3"></a></span>
-<span id="cb341-4"><a href="least-squares-approximation.html#cb341-4"></a><span class="co"># generate points for the fitted line and plot it</span></span>
-<span id="cb341-5"><a href="least-squares-approximation.html#cb341-5"></a>tt =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">7</span>,<span class="dt">len=</span><span class="dv">100</span>)  </span>
-<span id="cb341-6"><a href="least-squares-approximation.html#cb341-6"></a><span class="kw">lines</span>(tt,xhat[<span class="dv">1</span>]<span class="op">+</span>xhat[<span class="dv">2</span>]<span class="op">*</span>tt<span class="op">+</span>xhat[<span class="dv">3</span>]<span class="op">*</span>tt<span class="op">^</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</span>
-<span id="cb341-7"><a href="least-squares-approximation.html#cb341-7"></a></span>
-<span id="cb341-8"><a href="least-squares-approximation.html#cb341-8"></a><span class="co"># get yhat</span></span>
-<span id="cb341-9"><a href="least-squares-approximation.html#cb341-9"></a>yhat =<span class="st"> </span>A <span class="op">%*%</span><span class="st"> </span>xhat</span>
-<span id="cb341-10"><a href="least-squares-approximation.html#cb341-10"></a></span>
-<span id="cb341-11"><a href="least-squares-approximation.html#cb341-11"></a><span class="co"># add the residuals to the plot</span></span>
-<span id="cb341-12"><a href="least-squares-approximation.html#cb341-12"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x)) {</span>
-<span id="cb341-13"><a href="least-squares-approximation.html#cb341-13"></a>  <span class="kw">lines</span>(<span class="kw">c</span>(x[i],x[i]),<span class="kw">c</span>(y[i],yhat[i]), <span class="dt">col=</span><span class="st">&#39;red&#39;</span>)</span>
-<span id="cb341-14"><a href="least-squares-approximation.html#cb341-14"></a>}</span>
-<span id="cb341-15"><a href="least-squares-approximation.html#cb341-15"></a></span>
-<span id="cb341-16"><a href="least-squares-approximation.html#cb341-16"></a><span class="co">#add yhat to the plot</span></span>
-<span id="cb341-17"><a href="least-squares-approximation.html#cb341-17"></a><span class="kw">points</span>(x,yhat,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span>
-<span id="cb341-18"><a href="least-squares-approximation.html#cb341-18"></a></span>
-<span id="cb341-19"><a href="least-squares-approximation.html#cb341-19"></a><span class="co">#put the original points back on the plot last so we can see them </span></span>
-<span id="cb341-20"><a href="least-squares-approximation.html#cb341-20"></a><span class="kw">points</span>(x,y,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)</span>
-<span id="cb341-21"><a href="least-squares-approximation.html#cb341-21"></a><span class="kw">grid</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="least-squares-approximation.html#cb348-1"></a><span class="co">#plot the original set of points</span></span>
+<span id="cb348-2"><a href="least-squares-approximation.html#cb348-2"></a><span class="kw">plot</span>(x,y,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">7</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="dt">main=</span><span class="st">&#39;the best-fit quadratic function&#39;</span>)</span>
+<span id="cb348-3"><a href="least-squares-approximation.html#cb348-3"></a></span>
+<span id="cb348-4"><a href="least-squares-approximation.html#cb348-4"></a><span class="co"># generate points for the fitted line and plot it</span></span>
+<span id="cb348-5"><a href="least-squares-approximation.html#cb348-5"></a>tt =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">7</span>,<span class="dt">len=</span><span class="dv">100</span>)  </span>
+<span id="cb348-6"><a href="least-squares-approximation.html#cb348-6"></a><span class="kw">lines</span>(tt,xhat[<span class="dv">1</span>]<span class="op">+</span>xhat[<span class="dv">2</span>]<span class="op">*</span>tt<span class="op">+</span>xhat[<span class="dv">3</span>]<span class="op">*</span>tt<span class="op">^</span><span class="dv">2</span>,<span class="dt">col=</span><span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb348-7"><a href="least-squares-approximation.html#cb348-7"></a></span>
+<span id="cb348-8"><a href="least-squares-approximation.html#cb348-8"></a><span class="co"># get yhat</span></span>
+<span id="cb348-9"><a href="least-squares-approximation.html#cb348-9"></a>yhat =<span class="st"> </span>A <span class="op">%*%</span><span class="st"> </span>xhat</span>
+<span id="cb348-10"><a href="least-squares-approximation.html#cb348-10"></a></span>
+<span id="cb348-11"><a href="least-squares-approximation.html#cb348-11"></a><span class="co"># add the residuals to the plot</span></span>
+<span id="cb348-12"><a href="least-squares-approximation.html#cb348-12"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x)) {</span>
+<span id="cb348-13"><a href="least-squares-approximation.html#cb348-13"></a>  <span class="kw">lines</span>(<span class="kw">c</span>(x[i],x[i]),<span class="kw">c</span>(y[i],yhat[i]), <span class="dt">col=</span><span class="st">&#39;red&#39;</span>)</span>
+<span id="cb348-14"><a href="least-squares-approximation.html#cb348-14"></a>}</span>
+<span id="cb348-15"><a href="least-squares-approximation.html#cb348-15"></a></span>
+<span id="cb348-16"><a href="least-squares-approximation.html#cb348-16"></a><span class="co">#add yhat to the plot</span></span>
+<span id="cb348-17"><a href="least-squares-approximation.html#cb348-17"></a><span class="kw">points</span>(x,yhat,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&#39;orange&#39;</span>)</span>
+<span id="cb348-18"><a href="least-squares-approximation.html#cb348-18"></a></span>
+<span id="cb348-19"><a href="least-squares-approximation.html#cb348-19"></a><span class="co">#put the original points back on the plot last so we can see them </span></span>
+<span id="cb348-20"><a href="least-squares-approximation.html#cb348-20"></a><span class="kw">points</span>(x,y,<span class="dt">pch=</span><span class="dv">19</span>,<span class="dt">col=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb348-21"><a href="least-squares-approximation.html#cb348-21"></a><span class="kw">grid</span>()</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/quadplot3-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>Let’s look again at the residual and see that it is indeed orthogonal to the columns of <span class="math inline">\(A\)</span> and see that the residual got shorter.</p>
 <pre><code>##      y     yhat         r

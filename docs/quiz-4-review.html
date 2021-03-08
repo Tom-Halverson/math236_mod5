@@ -665,14 +665,14 @@ x_1\\ x_2 \\ x_3
 <h3><span class="header-section-number">29.5.8</span> </h3>
 <p>According to the <a href="https://covidtracking.com/">COVID Tracking Project</a>, Minnesota had <span class="math inline">\(54,463\)</span> positive COVID-19 cases between March 6 and 31 July, 2020. As of 16 December, 2020, that count has reached <span class="math inline">\(386,412\)</span>.</p>
 <p>The vector <code>covid.mn</code> lists the total number of new COVID-19 cases in Minnesota between August 1, 2020 and December 16, 2020 (on top of the previously reported <span class="math inline">\(54,463\)</span>).</p>
-<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="quiz-4-review.html#cb399-1"></a>covid.start =<span class="st"> </span><span class="dv">54463</span></span>
-<span id="cb399-2"><a href="quiz-4-review.html#cb399-2"></a></span>
-<span id="cb399-3"><a href="quiz-4-review.html#cb399-3"></a>covid.mn =<span class="st"> </span><span class="kw">c</span>(<span class="dv">725</span>, <span class="dv">1484</span>, <span class="dv">2097</span>, <span class="dv">2699</span>, <span class="dv">3316</span>, <span class="dv">4177</span>, <span class="dv">4722</span>, <span class="dv">5638</span>, <span class="dv">6435</span>, <span class="dv">7053</span>, <span class="dv">7376</span>, <span class="dv">7840</span>, <span class="dv">8530</span>, <span class="dv">9260</span>, <span class="dv">9950</span>, <span class="dv">10689</span>, <span class="dv">11253</span>, <span class="dv">11598</span>, <span class="dv">12155</span>, <span class="dv">12845</span>, <span class="dv">13670</span>, <span class="dv">14404</span>, <span class="dv">15121</span>, <span class="dv">15835</span>, <span class="dv">16244</span>, <span class="dv">16773</span>, <span class="dv">17927</span>, <span class="dv">18777</span>, <span class="dv">19794</span>, <span class="dv">20726</span>, <span class="dv">21401</span>, <span class="dv">21892</span>, <span class="dv">22622</span>, <span class="dv">23660</span>, <span class="dv">24503</span>, <span class="dv">25417</span>, <span class="dv">26124</span>, <span class="dv">26762</span>, <span class="dv">27145</span>, <span class="dv">27405</span>, <span class="dv">27786</span>, <span class="dv">28253</span>, <span class="dv">29125</span>, <span class="dv">29848</span>, <span class="dv">30486</span>, <span class="dv">30888</span>, <span class="dv">31350</span>, <span class="dv">32259</span>, <span class="dv">33344</span>, <span class="dv">34258</span>, <span class="dv">35554</span>, <span class="dv">36479</span>, <span class="dv">36959</span>, <span class="dv">37637</span>, <span class="dv">38549</span>, <span class="dv">39726</span>, <span class="dv">41196</span>, <span class="dv">42271</span>, <span class="dv">43175</span>, <span class="dv">43984</span>, <span class="dv">44671</span>, <span class="dv">45737</span>, <span class="dv">46903</span>, <span class="dv">48324</span>, <span class="dv">49363</span>, <span class="dv">50336</span>, <span class="dv">51277</span>, <span class="dv">52188</span>, <span class="dv">53459</span>, <span class="dv">54849</span>, <span class="dv">56365</span>, <span class="dv">57805</span>, <span class="dv">58976</span>, <span class="dv">60111</span>, <span class="dv">61480</span>, <span class="dv">62643</span>, <span class="dv">64933</span>, <span class="dv">66627</span>, <span class="dv">68349</span>, <span class="dv">69976</span>, <span class="dv">71068</span>, <span class="dv">72128</span>, <span class="dv">73689</span>, <span class="dv">75400</span>, <span class="dv">77659</span>, <span class="dv">79339</span>, <span class="dv">80909</span>, <span class="dv">83073</span>, <span class="dv">84981</span>, <span class="dv">87848</span>, <span class="dv">91002</span>, <span class="dv">94009</span>, <span class="dv">96209</span>, <span class="dv">99157</span>, <span class="dv">102633</span>, <span class="dv">106460</span>, <span class="dv">110402</span>, <span class="dv">115844</span>, <span class="dv">120491</span>, <span class="dv">126399</span>, <span class="dv">130325</span>, <span class="dv">135218</span>, <span class="dv">140107</span>, <span class="dv">147332</span>, <span class="dv">152876</span>, <span class="dv">161565</span>, <span class="dv">169118</span>, <span class="dv">176555</span>, <span class="dv">182486</span>, <span class="dv">187580</span>, <span class="dv">195443</span>, <span class="dv">202237</span>, <span class="dv">208489</span>, <span class="dv">215694</span>, <span class="dv">222037</span>, <span class="dv">228453</span>, <span class="dv">234840</span>, <span class="dv">234840</span>, <span class="dv">240538</span>, <span class="dv">249560</span>, <span class="dv">258506</span>, <span class="dv">264300</span>, <span class="dv">267849</span>, <span class="dv">273014</span>, <span class="dv">279163</span>, <span class="dv">284510</span>, <span class="dv">290818</span>, <span class="dv">296399</span>, <span class="dv">301689</span>, <span class="dv">304740</span>, <span class="dv">309256</span>, <span class="dv">312755</span>, <span class="dv">316505</span>, <span class="dv">320935</span>, <span class="dv">324360</span>, <span class="dv">327378</span>, <span class="dv">329701</span>, <span class="dv">331949</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="quiz-4-review.html#cb406-1"></a>covid.start =<span class="st"> </span><span class="dv">54463</span></span>
+<span id="cb406-2"><a href="quiz-4-review.html#cb406-2"></a></span>
+<span id="cb406-3"><a href="quiz-4-review.html#cb406-3"></a>covid.mn =<span class="st"> </span><span class="kw">c</span>(<span class="dv">725</span>, <span class="dv">1484</span>, <span class="dv">2097</span>, <span class="dv">2699</span>, <span class="dv">3316</span>, <span class="dv">4177</span>, <span class="dv">4722</span>, <span class="dv">5638</span>, <span class="dv">6435</span>, <span class="dv">7053</span>, <span class="dv">7376</span>, <span class="dv">7840</span>, <span class="dv">8530</span>, <span class="dv">9260</span>, <span class="dv">9950</span>, <span class="dv">10689</span>, <span class="dv">11253</span>, <span class="dv">11598</span>, <span class="dv">12155</span>, <span class="dv">12845</span>, <span class="dv">13670</span>, <span class="dv">14404</span>, <span class="dv">15121</span>, <span class="dv">15835</span>, <span class="dv">16244</span>, <span class="dv">16773</span>, <span class="dv">17927</span>, <span class="dv">18777</span>, <span class="dv">19794</span>, <span class="dv">20726</span>, <span class="dv">21401</span>, <span class="dv">21892</span>, <span class="dv">22622</span>, <span class="dv">23660</span>, <span class="dv">24503</span>, <span class="dv">25417</span>, <span class="dv">26124</span>, <span class="dv">26762</span>, <span class="dv">27145</span>, <span class="dv">27405</span>, <span class="dv">27786</span>, <span class="dv">28253</span>, <span class="dv">29125</span>, <span class="dv">29848</span>, <span class="dv">30486</span>, <span class="dv">30888</span>, <span class="dv">31350</span>, <span class="dv">32259</span>, <span class="dv">33344</span>, <span class="dv">34258</span>, <span class="dv">35554</span>, <span class="dv">36479</span>, <span class="dv">36959</span>, <span class="dv">37637</span>, <span class="dv">38549</span>, <span class="dv">39726</span>, <span class="dv">41196</span>, <span class="dv">42271</span>, <span class="dv">43175</span>, <span class="dv">43984</span>, <span class="dv">44671</span>, <span class="dv">45737</span>, <span class="dv">46903</span>, <span class="dv">48324</span>, <span class="dv">49363</span>, <span class="dv">50336</span>, <span class="dv">51277</span>, <span class="dv">52188</span>, <span class="dv">53459</span>, <span class="dv">54849</span>, <span class="dv">56365</span>, <span class="dv">57805</span>, <span class="dv">58976</span>, <span class="dv">60111</span>, <span class="dv">61480</span>, <span class="dv">62643</span>, <span class="dv">64933</span>, <span class="dv">66627</span>, <span class="dv">68349</span>, <span class="dv">69976</span>, <span class="dv">71068</span>, <span class="dv">72128</span>, <span class="dv">73689</span>, <span class="dv">75400</span>, <span class="dv">77659</span>, <span class="dv">79339</span>, <span class="dv">80909</span>, <span class="dv">83073</span>, <span class="dv">84981</span>, <span class="dv">87848</span>, <span class="dv">91002</span>, <span class="dv">94009</span>, <span class="dv">96209</span>, <span class="dv">99157</span>, <span class="dv">102633</span>, <span class="dv">106460</span>, <span class="dv">110402</span>, <span class="dv">115844</span>, <span class="dv">120491</span>, <span class="dv">126399</span>, <span class="dv">130325</span>, <span class="dv">135218</span>, <span class="dv">140107</span>, <span class="dv">147332</span>, <span class="dv">152876</span>, <span class="dv">161565</span>, <span class="dv">169118</span>, <span class="dv">176555</span>, <span class="dv">182486</span>, <span class="dv">187580</span>, <span class="dv">195443</span>, <span class="dv">202237</span>, <span class="dv">208489</span>, <span class="dv">215694</span>, <span class="dv">222037</span>, <span class="dv">228453</span>, <span class="dv">234840</span>, <span class="dv">234840</span>, <span class="dv">240538</span>, <span class="dv">249560</span>, <span class="dv">258506</span>, <span class="dv">264300</span>, <span class="dv">267849</span>, <span class="dv">273014</span>, <span class="dv">279163</span>, <span class="dv">284510</span>, <span class="dv">290818</span>, <span class="dv">296399</span>, <span class="dv">301689</span>, <span class="dv">304740</span>, <span class="dv">309256</span>, <span class="dv">312755</span>, <span class="dv">316505</span>, <span class="dv">320935</span>, <span class="dv">324360</span>, <span class="dv">327378</span>, <span class="dv">329701</span>, <span class="dv">331949</span>)</span></code></pre></div>
 <ol style="list-style-type: lower-alpha">
 <li><p>Find the best fitting exponential function <span class="math inline">\(f(t) = a e^{k t}\)</span> for the number of COVID-19 cases in Minnesota since 31 July, 2020. Here <span class="math inline">\(t\)</span> is the number of days since 31 July.</p></li>
 <li><p>Run the following code to plot your function. This code assumes that your least squares solution is given by <code>xhat</code>. Does it look like a good fit?</p></li>
 </ol>
-<p><img src="math236_handbook_files/figure-html/unnamed-chunk-265-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-169-1.png" width="75%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="section-76" class="section level3">
 <h3><span class="header-section-number">29.5.9</span> </h3>
@@ -903,8 +903,8 @@ and so
 <div id="section-84" class="section level3">
 <h3><span class="header-section-number">29.9.5</span> </h3>
 <p>a .We will answer this one using RStudio.</p>
-<div class="sourceCode" id="cb400"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb400-1"><a href="quiz-4-review.html#cb400-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">4</span>))</span>
-<span id="cb400-2"><a href="quiz-4-review.html#cb400-2"></a><span class="kw">rref</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="quiz-4-review.html#cb407-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">4</span>))</span>
+<span id="cb407-2"><a href="quiz-4-review.html#cb407-2"></a><span class="kw">rref</span>(A)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    0    0    0
 ## [2,]    0    1    0    0
@@ -915,7 +915,7 @@ and so
 <ol start="2" style="list-style-type: lower-alpha">
 <li>We obtain a basis for <span class="math inline">\(W^{\perp}\)</span> by finding <span class="math inline">\(\mbox{Nul(A^{\top})}\)</span> So let’s row reduce <span class="math inline">\(A^{\top}\)</span></li>
 </ol>
-<div class="sourceCode" id="cb402"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb402-1"><a href="quiz-4-review.html#cb402-1"></a><span class="kw">rref</span>(<span class="kw">t</span>(A))</span></code></pre></div>
+<div class="sourceCode" id="cb409"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb409-1"><a href="quiz-4-review.html#cb409-1"></a><span class="kw">rref</span>(<span class="kw">t</span>(A))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]    1    0    0    0   -2
 ## [2,]    0    1    0    0    2
@@ -941,9 +941,9 @@ because <span class="math inline">\(\mathsf{u}_i \cdot \mathsf{u}_i =1\)</span> 
 <ol style="list-style-type: lower-alpha">
 <li></li>
 </ol>
-<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="quiz-4-review.html#cb404-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb404-2"><a href="quiz-4-review.html#cb404-2"></a>b  =<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb404-3"><a href="quiz-4-review.html#cb404-3"></a><span class="kw">rref</span>(<span class="kw">cbind</span>(A,b))</span></code></pre></div>
+<div class="sourceCode" id="cb411"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb411-1"><a href="quiz-4-review.html#cb411-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb411-2"><a href="quiz-4-review.html#cb411-2"></a>b  =<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb411-3"><a href="quiz-4-review.html#cb411-3"></a><span class="kw">rref</span>(<span class="kw">cbind</span>(A,b))</span></code></pre></div>
 <pre><code>##            b
 ## [1,] 1 0 0 0
 ## [2,] 0 1 0 0
@@ -954,34 +954,34 @@ because <span class="math inline">\(\mathsf{u}_i \cdot \mathsf{u}_i =1\)</span> 
 <li></li>
 </ol>
 <p>Here is the least squares calculation.</p>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="quiz-4-review.html#cb406-1"></a><span class="co">#solve the normal equation</span></span>
-<span id="cb406-2"><a href="quiz-4-review.html#cb406-2"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>b))</span></code></pre></div>
+<div class="sourceCode" id="cb413"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb413-1"><a href="quiz-4-review.html#cb413-1"></a><span class="co">#solve the normal equation</span></span>
+<span id="cb413-2"><a href="quiz-4-review.html#cb413-2"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>b))</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    2
 ## [2,]   -1
 ## [3,]    1</code></pre>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="quiz-4-review.html#cb408-1"></a><span class="co"># find the projection</span></span>
-<span id="cb408-2"><a href="quiz-4-review.html#cb408-2"></a>(<span class="dt">bhat =</span> A <span class="op">%*%</span><span class="st"> </span>xhat)</span></code></pre></div>
+<div class="sourceCode" id="cb415"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb415-1"><a href="quiz-4-review.html#cb415-1"></a><span class="co"># find the projection</span></span>
+<span id="cb415-2"><a href="quiz-4-review.html#cb415-2"></a>(<span class="dt">bhat =</span> A <span class="op">%*%</span><span class="st"> </span>xhat)</span></code></pre></div>
 <pre><code>##               [,1]
 ## [1,]  2.000000e+00
 ## [2,] -1.000000e+00
 ## [3,]  6.661338e-16
 ## [4,]  1.000000e+00</code></pre>
-<div class="sourceCode" id="cb410"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb410-1"><a href="quiz-4-review.html#cb410-1"></a><span class="co"># find the residual vector</span></span>
-<span id="cb410-2"><a href="quiz-4-review.html#cb410-2"></a>(<span class="dt">z =</span> b <span class="op">-</span><span class="st"> </span>bhat)</span></code></pre></div>
+<div class="sourceCode" id="cb417"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb417-1"><a href="quiz-4-review.html#cb417-1"></a><span class="co"># find the residual vector</span></span>
+<span id="cb417-2"><a href="quiz-4-review.html#cb417-2"></a>(<span class="dt">z =</span> b <span class="op">-</span><span class="st"> </span>bhat)</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    2
 ## [2,]    2
 ## [3,]   -2
 ## [4,]   -2</code></pre>
-<div class="sourceCode" id="cb412"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb412-1"><a href="quiz-4-review.html#cb412-1"></a><span class="co"># check that z is orthogonal to Col(A)</span></span>
-<span id="cb412-2"><a href="quiz-4-review.html#cb412-2"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>z</span></code></pre></div>
+<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="quiz-4-review.html#cb419-1"></a><span class="co"># check that z is orthogonal to Col(A)</span></span>
+<span id="cb419-2"><a href="quiz-4-review.html#cb419-2"></a><span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>z</span></code></pre></div>
 <pre><code>##               [,1]
 ## [1,] -8.881784e-16
 ## [2,]  0.000000e+00
 ## [3,]  0.000000e+00</code></pre>
-<div class="sourceCode" id="cb414"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb414-1"><a href="quiz-4-review.html#cb414-1"></a><span class="co"># measure the distance between bhat and b</span></span>
-<span id="cb414-2"><a href="quiz-4-review.html#cb414-2"></a><span class="kw">sqrt</span>( <span class="kw">t</span>(z) <span class="op">%*%</span><span class="st"> </span>z)</span></code></pre></div>
+<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="quiz-4-review.html#cb421-1"></a><span class="co"># measure the distance between bhat and b</span></span>
+<span id="cb421-2"><a href="quiz-4-review.html#cb421-2"></a><span class="kw">sqrt</span>( <span class="kw">t</span>(z) <span class="op">%*%</span><span class="st"> </span>z)</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    4</code></pre>
 <p>The projection is <span class="math inline">\(\hat{\mathsf{b}} = [2,-1,0,1]^{\top}\)</span>.
@@ -994,25 +994,25 @@ The residual is <span class="math inline">\(\mathsf{z} = [2,2,-2,-2]^{\top}\)</s
 ###</li>
 <li></li>
 </ol>
-<div class="sourceCode" id="cb416"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb416-1"><a href="quiz-4-review.html#cb416-1"></a>x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(covid.mn)</span>
-<span id="cb416-2"><a href="quiz-4-review.html#cb416-2"></a>y =<span class="st"> </span><span class="kw">log</span>(covid.mn)</span>
-<span id="cb416-3"><a href="quiz-4-review.html#cb416-3"></a></span>
-<span id="cb416-4"><a href="quiz-4-review.html#cb416-4"></a>A =<span class="st"> </span><span class="kw">cbind</span>(x<span class="op">^</span><span class="dv">0</span>, x)</span>
-<span id="cb416-5"><a href="quiz-4-review.html#cb416-5"></a></span>
-<span id="cb416-6"><a href="quiz-4-review.html#cb416-6"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y))</span></code></pre></div>
+<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="quiz-4-review.html#cb423-1"></a>x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(covid.mn)</span>
+<span id="cb423-2"><a href="quiz-4-review.html#cb423-2"></a>y =<span class="st"> </span><span class="kw">log</span>(covid.mn)</span>
+<span id="cb423-3"><a href="quiz-4-review.html#cb423-3"></a></span>
+<span id="cb423-4"><a href="quiz-4-review.html#cb423-4"></a>A =<span class="st"> </span><span class="kw">cbind</span>(x<span class="op">^</span><span class="dv">0</span>, x)</span>
+<span id="cb423-5"><a href="quiz-4-review.html#cb423-5"></a></span>
+<span id="cb423-6"><a href="quiz-4-review.html#cb423-6"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y))</span></code></pre></div>
 <pre><code>##         [,1]
 ##   8.66588980
 ## x 0.03138331</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li></li>
 </ol>
-<div class="sourceCode" id="cb418"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb418-1"><a href="quiz-4-review.html#cb418-1"></a>a =<span class="st"> </span><span class="kw">exp</span>(xhat[<span class="dv">1</span>])</span>
-<span id="cb418-2"><a href="quiz-4-review.html#cb418-2"></a>k =<span class="st"> </span>xhat[<span class="dv">2</span>]</span>
-<span id="cb418-3"><a href="quiz-4-review.html#cb418-3"></a></span>
-<span id="cb418-4"><a href="quiz-4-review.html#cb418-4"></a>f=<span class="cf">function</span>(y){a <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(k<span class="op">*</span>(y))}</span>
-<span id="cb418-5"><a href="quiz-4-review.html#cb418-5"></a></span>
-<span id="cb418-6"><a href="quiz-4-review.html#cb418-6"></a><span class="kw">plot</span>(x,<span class="kw">f</span>(x)<span class="op">+</span><span class="st"> </span>covid.start,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">3</span>,<span class="dt">ylab=</span><span class="st">&quot;new positive COVID-19 cases&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;days since July 31, 2020&quot;</span>, <span class="dt">main=</span><span class="st">&quot;best fit exponential function&quot;</span>)</span>
-<span id="cb418-7"><a href="quiz-4-review.html#cb418-7"></a><span class="kw">points</span>(x,covid.mn <span class="op">+</span><span class="st"> </span>covid.start,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">7</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb425"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb425-1"><a href="quiz-4-review.html#cb425-1"></a>a =<span class="st"> </span><span class="kw">exp</span>(xhat[<span class="dv">1</span>])</span>
+<span id="cb425-2"><a href="quiz-4-review.html#cb425-2"></a>k =<span class="st"> </span>xhat[<span class="dv">2</span>]</span>
+<span id="cb425-3"><a href="quiz-4-review.html#cb425-3"></a></span>
+<span id="cb425-4"><a href="quiz-4-review.html#cb425-4"></a>f=<span class="cf">function</span>(y){a <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(k<span class="op">*</span>(y))}</span>
+<span id="cb425-5"><a href="quiz-4-review.html#cb425-5"></a></span>
+<span id="cb425-6"><a href="quiz-4-review.html#cb425-6"></a><span class="kw">plot</span>(x,<span class="kw">f</span>(x)<span class="op">+</span><span class="st"> </span>covid.start,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">3</span>,<span class="dt">ylab=</span><span class="st">&quot;new positive COVID-19 cases&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;days since July 31, 2020&quot;</span>, <span class="dt">main=</span><span class="st">&quot;best fit exponential function&quot;</span>)</span>
+<span id="cb425-7"><a href="quiz-4-review.html#cb425-7"></a><span class="kw">points</span>(x,covid.mn <span class="op">+</span><span class="st"> </span>covid.start,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">7</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/q4-covid-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>The curve is a pretty good fit (unfortunately?). However, it does look like the additional restrictions of the last two weeks are slowing the COVID spread.</p>
 </div>
@@ -1021,22 +1021,22 @@ The residual is <span class="math inline">\(\mathsf{z} = [2,2,-2,-2]^{\top}\)</s
 <ol style="list-style-type: lower-alpha">
 <li></li>
 </ol>
-<div class="sourceCode" id="cb419"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb419-1"><a href="quiz-4-review.html#cb419-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">34</span>,<span class="dv">3</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">34</span>,<span class="dv">0</span>), <span class="kw">c</span>(<span class="dv">34</span>,<span class="op">-</span><span class="dv">34</span>,<span class="dv">74</span>,<span class="dv">34</span>),<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">34</span>,<span class="dv">3</span>))</span>
-<span id="cb419-2"><a href="quiz-4-review.html#cb419-2"></a>A</span></code></pre></div>
+<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="quiz-4-review.html#cb426-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">34</span>,<span class="dv">3</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">34</span>,<span class="dv">0</span>), <span class="kw">c</span>(<span class="dv">34</span>,<span class="op">-</span><span class="dv">34</span>,<span class="dv">74</span>,<span class="dv">34</span>),<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">34</span>,<span class="dv">3</span>))</span>
+<span id="cb426-2"><a href="quiz-4-review.html#cb426-2"></a>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    3    0   34    3
 ## [2,]    0    6  -34    0
 ## [3,]   34  -34   74   34
 ## [4,]    3    0   34    3</code></pre>
-<div class="sourceCode" id="cb421"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb421-1"><a href="quiz-4-review.html#cb421-1"></a>syst =<span class="st"> </span><span class="kw">eigen</span>(A)</span>
-<span id="cb421-2"><a href="quiz-4-review.html#cb421-2"></a></span>
-<span id="cb421-3"><a href="quiz-4-review.html#cb421-3"></a>(<span class="dt">P =</span> syst<span class="op">$</span>vectors)</span></code></pre></div>
+<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="quiz-4-review.html#cb428-1"></a>syst =<span class="st"> </span><span class="kw">eigen</span>(A)</span>
+<span id="cb428-2"><a href="quiz-4-review.html#cb428-2"></a></span>
+<span id="cb428-3"><a href="quiz-4-review.html#cb428-3"></a>(<span class="dt">P =</span> syst<span class="op">$</span>vectors)</span></code></pre></div>
 <pre><code>##            [,1]          [,2]          [,3] [,4]
 ## [1,] -0.2886751  4.082483e-01 -7.071068e-01  0.5
 ## [2,]  0.2886751  8.164966e-01 -3.295975e-15 -0.5
 ## [3,] -0.8660254 -3.330669e-16  7.771561e-16 -0.5
 ## [4,] -0.2886751  4.082483e-01  7.071068e-01  0.5</code></pre>
-<div class="sourceCode" id="cb423"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb423-1"><a href="quiz-4-review.html#cb423-1"></a><span class="kw">zapsmall</span>(P <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(P))</span></code></pre></div>
+<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="quiz-4-review.html#cb430-1"></a><span class="kw">zapsmall</span>(P <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(P))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    0    0    0
 ## [2,]    0    1    0    0
@@ -1051,12 +1051,12 @@ The residual is <span class="math inline">\(\mathsf{z} = [2,2,-2,-2]^{\top}\)</s
 <ol start="3" style="list-style-type: lower-alpha">
 <li></li>
 </ol>
-<div class="sourceCode" id="cb426"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb426-1"><a href="quiz-4-review.html#cb426-1"></a>v1 =<span class="st"> </span>syst<span class="op">$</span>vectors[,<span class="dv">1</span>]</span>
-<span id="cb426-2"><a href="quiz-4-review.html#cb426-2"></a>v2 =<span class="st"> </span>syst<span class="op">$</span>vectors[,<span class="dv">2</span>]</span>
-<span id="cb426-3"><a href="quiz-4-review.html#cb426-3"></a>v3 =<span class="st"> </span>syst<span class="op">$</span>vectors[,<span class="dv">3</span>]</span>
-<span id="cb426-4"><a href="quiz-4-review.html#cb426-4"></a>v4 =<span class="st"> </span>syst<span class="op">$</span>vectors[,<span class="dv">4</span>]</span>
-<span id="cb426-5"><a href="quiz-4-review.html#cb426-5"></a></span>
-<span id="cb426-6"><a href="quiz-4-review.html#cb426-6"></a>syst<span class="op">$</span>values[<span class="dv">1</span>] <span class="op">*</span><span class="st"> </span>v1 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v1) <span class="op">+</span><span class="st"> </span>syst<span class="op">$</span>values[<span class="dv">2</span>] <span class="op">*</span><span class="st"> </span>v2 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v2) <span class="op">+</span><span class="st"> </span>syst<span class="op">$</span>values[<span class="dv">3</span>] <span class="op">*</span><span class="st"> </span>v3 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v3) <span class="op">+</span><span class="st"> </span>syst<span class="op">$</span>values[<span class="dv">4</span>] <span class="op">*</span><span class="st"> </span>v4 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v4)</span></code></pre></div>
+<div class="sourceCode" id="cb433"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb433-1"><a href="quiz-4-review.html#cb433-1"></a>v1 =<span class="st"> </span>syst<span class="op">$</span>vectors[,<span class="dv">1</span>]</span>
+<span id="cb433-2"><a href="quiz-4-review.html#cb433-2"></a>v2 =<span class="st"> </span>syst<span class="op">$</span>vectors[,<span class="dv">2</span>]</span>
+<span id="cb433-3"><a href="quiz-4-review.html#cb433-3"></a>v3 =<span class="st"> </span>syst<span class="op">$</span>vectors[,<span class="dv">3</span>]</span>
+<span id="cb433-4"><a href="quiz-4-review.html#cb433-4"></a>v4 =<span class="st"> </span>syst<span class="op">$</span>vectors[,<span class="dv">4</span>]</span>
+<span id="cb433-5"><a href="quiz-4-review.html#cb433-5"></a></span>
+<span id="cb433-6"><a href="quiz-4-review.html#cb433-6"></a>syst<span class="op">$</span>values[<span class="dv">1</span>] <span class="op">*</span><span class="st"> </span>v1 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v1) <span class="op">+</span><span class="st"> </span>syst<span class="op">$</span>values[<span class="dv">2</span>] <span class="op">*</span><span class="st"> </span>v2 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v2) <span class="op">+</span><span class="st"> </span>syst<span class="op">$</span>values[<span class="dv">3</span>] <span class="op">*</span><span class="st"> </span>v3 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v3) <span class="op">+</span><span class="st"> </span>syst<span class="op">$</span>values[<span class="dv">4</span>] <span class="op">*</span><span class="st"> </span>v4 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v4)</span></code></pre></div>
 <pre><code>##               [,1]          [,2] [,3]         [,4]
 ## [1,]  3.000000e+00 -1.776357e-15   34 3.000000e+00
 ## [2,] -1.776357e-15  6.000000e+00  -34 5.595524e-14
@@ -1066,7 +1066,7 @@ The residual is <span class="math inline">\(\mathsf{z} = [2,2,-2,-2]^{\top}\)</s
 <li>We must remember to use the eigenvalues of largest magnitude: these are
 <span class="math inline">\(\lambda_1 = 108\)</span> and <span class="math inline">\(\lambda_4 = -28\)</span>.</li>
 </ol>
-<div class="sourceCode" id="cb428"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb428-1"><a href="quiz-4-review.html#cb428-1"></a>syst<span class="op">$</span>values[<span class="dv">1</span>] <span class="op">*</span><span class="st"> </span>v1 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v1)  <span class="op">+</span><span class="st"> </span>syst<span class="op">$</span>values[<span class="dv">4</span>] <span class="op">*</span><span class="st"> </span>v4 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v4)</span></code></pre></div>
+<div class="sourceCode" id="cb435"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb435-1"><a href="quiz-4-review.html#cb435-1"></a>syst<span class="op">$</span>values[<span class="dv">1</span>] <span class="op">*</span><span class="st"> </span>v1 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v1)  <span class="op">+</span><span class="st"> </span>syst<span class="op">$</span>values[<span class="dv">4</span>] <span class="op">*</span><span class="st"> </span>v4 <span class="op">%*%</span><span class="st"> </span><span class="kw">t</span>(v4)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    2   -2   34    2
 ## [2,]   -2    2  -34   -2
@@ -1088,7 +1088,7 @@ The residual is <span class="math inline">\(\mathsf{z} = [2,2,-2,-2]^{\top}\)</s
 <li><p>The 3D volume expands because the product of the singular values is greater than 1.</p></li>
 <li></li>
 </ol>
-<div class="sourceCode" id="cb430"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb430-1"><a href="quiz-4-review.html#cb430-1"></a><span class="fl">11.4</span> <span class="op">*</span><span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="fl">0.48</span>,<span class="fl">0.61</span>,<span class="fl">0.30</span>,<span class="fl">0.032</span>,<span class="fl">0.56</span>)) <span class="op">%*%</span><span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="fl">0.16</span>,<span class="op">-</span><span class="fl">0.98</span>,<span class="fl">0.062</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="quiz-4-review.html#cb437-1"></a><span class="fl">11.4</span> <span class="op">*</span><span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="fl">0.48</span>,<span class="fl">0.61</span>,<span class="fl">0.30</span>,<span class="fl">0.032</span>,<span class="fl">0.56</span>)) <span class="op">%*%</span><span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="fl">0.16</span>,<span class="op">-</span><span class="fl">0.98</span>,<span class="fl">0.062</span>))</span></code></pre></div>
 <pre><code>##          [,1]      [,2]      [,3]
 ## [1,] 0.875520 -5.362560 0.3392640
 ## [2,] 1.112640 -6.814920 0.4311480
@@ -1110,22 +1110,22 @@ The column space is the span of <span class="math inline">\([1,2,3,-1]^{\top}\)<
 </ul></li>
 <li></li>
 </ol>
-<div class="sourceCode" id="cb432"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb432-1"><a href="quiz-4-review.html#cb432-1"></a>A =<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">0</span>),<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">5</span>),<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">3</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>))</span>
-<span id="cb432-2"><a href="quiz-4-review.html#cb432-2"></a>B =<span class="st"> </span><span class="kw">rref</span>(A)</span>
-<span id="cb432-3"><a href="quiz-4-review.html#cb432-3"></a></span>
-<span id="cb432-4"><a href="quiz-4-review.html#cb432-4"></a>A</span></code></pre></div>
+<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="quiz-4-review.html#cb439-1"></a>A =<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">0</span>),<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">5</span>),<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">3</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>))</span>
+<span id="cb439-2"><a href="quiz-4-review.html#cb439-2"></a>B =<span class="st"> </span><span class="kw">rref</span>(A)</span>
+<span id="cb439-3"><a href="quiz-4-review.html#cb439-3"></a></span>
+<span id="cb439-4"><a href="quiz-4-review.html#cb439-4"></a>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]    1    3   -3    1    0
 ## [2,]    2    1    0    6    5
 ## [3,]    3    3   -3    6    3
 ## [4,]   -1    4   -3   -3   -1</code></pre>
-<div class="sourceCode" id="cb434"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb434-1"><a href="quiz-4-review.html#cb434-1"></a>B</span></code></pre></div>
+<div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="quiz-4-review.html#cb441-1"></a>B</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5]
 ## [1,]    1    0    0  2.5  1.5
 ## [2,]    0    1    0  1.0  2.0
 ## [3,]    0    0    1  1.5  2.5
 ## [4,]    0    0    0  0.0  0.0</code></pre>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="quiz-4-review.html#cb436-1"></a>(<span class="dt">Asvd =</span> <span class="kw">svd</span>(A))</span></code></pre></div>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="quiz-4-review.html#cb443-1"></a>(<span class="dt">Asvd =</span> <span class="kw">svd</span>(A))</span></code></pre></div>
 <pre><code>## $d
 ## [1] 1.170522e+01 7.291802e+00 1.953827e+00 1.048298e-15
 ## 
@@ -1143,7 +1143,7 @@ The column space is the span of <span class="math inline">\([1,2,3,-1]^{\top}\)<
 ## [3,]  0.2022409  0.62969638 -0.2863539  0.1988388
 ## [4,] -0.7526916  0.27463749  0.3096671  0.5095232
 ## [5,] -0.4758851  0.19080183 -0.7302360 -0.3852494</code></pre>
-<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="quiz-4-review.html#cb438-1"></a>(<span class="dt">Bsvd =</span> <span class="kw">svd</span>(B))</span></code></pre></div>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="quiz-4-review.html#cb445-1"></a>(<span class="dt">Bsvd =</span> <span class="kw">svd</span>(B))</span></code></pre></div>
 <pre><code>## $d
 ## [1] 4.649483 1.543473 1.000000 0.000000
 ## 
@@ -1161,35 +1161,35 @@ The column space is the span of <span class="math inline">\([1,2,3,-1]^{\top}\)<
 ## [3,] 0.1361833 -0.2665465  6.556101e-01 -0.04871373
 ## [4,] 0.6344264  0.5791090  6.938894e-17  0.49438789
 ## [5,] 0.7424586 -0.4948451 -5.551115e-17 -0.27714724</code></pre>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="quiz-4-review.html#cb440-1"></a><span class="co"># check that the singular values are different</span></span>
-<span id="cb440-2"><a href="quiz-4-review.html#cb440-2"></a>Asvd<span class="op">$</span>d</span></code></pre></div>
+<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="quiz-4-review.html#cb447-1"></a><span class="co"># check that the singular values are different</span></span>
+<span id="cb447-2"><a href="quiz-4-review.html#cb447-2"></a>Asvd<span class="op">$</span>d</span></code></pre></div>
 <pre><code>## [1] 1.170522e+01 7.291802e+00 1.953827e+00 1.048298e-15</code></pre>
-<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="quiz-4-review.html#cb442-1"></a>Bsvd<span class="op">$</span>d</span></code></pre></div>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="quiz-4-review.html#cb449-1"></a>Bsvd<span class="op">$</span>d</span></code></pre></div>
 <pre><code>## [1] 4.649483 1.543473 1.000000 0.000000</code></pre>
-<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="quiz-4-review.html#cb444-1"></a>Arow =<span class="st"> </span>Asvd<span class="op">$</span>v[,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span>
-<span id="cb444-2"><a href="quiz-4-review.html#cb444-2"></a>Acol =<span class="st"> </span>Asvd<span class="op">$</span>u[,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span>
-<span id="cb444-3"><a href="quiz-4-review.html#cb444-3"></a></span>
-<span id="cb444-4"><a href="quiz-4-review.html#cb444-4"></a>Brow =<span class="st"> </span>Bsvd<span class="op">$</span>v[,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span>
-<span id="cb444-5"><a href="quiz-4-review.html#cb444-5"></a>Bcol =<span class="st"> </span>Bsvd<span class="op">$</span>u[,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span>
-<span id="cb444-6"><a href="quiz-4-review.html#cb444-6"></a></span>
-<span id="cb444-7"><a href="quiz-4-review.html#cb444-7"></a><span class="co"># check that the rowspaces are the same</span></span>
-<span id="cb444-8"><a href="quiz-4-review.html#cb444-8"></a><span class="co"># this also means that the nullspaces are the same</span></span>
-<span id="cb444-9"><a href="quiz-4-review.html#cb444-9"></a><span class="kw">rref</span>(<span class="kw">cbind</span>(Arow, Brow))</span></code></pre></div>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="quiz-4-review.html#cb451-1"></a>Arow =<span class="st"> </span>Asvd<span class="op">$</span>v[,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span>
+<span id="cb451-2"><a href="quiz-4-review.html#cb451-2"></a>Acol =<span class="st"> </span>Asvd<span class="op">$</span>u[,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span>
+<span id="cb451-3"><a href="quiz-4-review.html#cb451-3"></a></span>
+<span id="cb451-4"><a href="quiz-4-review.html#cb451-4"></a>Brow =<span class="st"> </span>Bsvd<span class="op">$</span>v[,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span>
+<span id="cb451-5"><a href="quiz-4-review.html#cb451-5"></a>Bcol =<span class="st"> </span>Bsvd<span class="op">$</span>u[,<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]</span>
+<span id="cb451-6"><a href="quiz-4-review.html#cb451-6"></a></span>
+<span id="cb451-7"><a href="quiz-4-review.html#cb451-7"></a><span class="co"># check that the rowspaces are the same</span></span>
+<span id="cb451-8"><a href="quiz-4-review.html#cb451-8"></a><span class="co"># this also means that the nullspaces are the same</span></span>
+<span id="cb451-9"><a href="quiz-4-review.html#cb451-9"></a><span class="kw">rref</span>(<span class="kw">cbind</span>(Arow, Brow))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]       [,4] [,5]       [,6]
 ## [1,]    1    0    0 -0.8711504    0  0.4023226
 ## [2,]    0    1    0  0.3312215    0  0.9197649
 ## [3,]    0    0    1 -0.3624766    0 -0.1264565
 ## [4,]    0    0    0  0.0000000    1  0.1543445
 ## [5,]    0    0    0  0.0000000    0  0.0000000</code></pre>
-<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="quiz-4-review.html#cb446-1"></a><span class="kw">rref</span>(<span class="kw">cbind</span>(Brow, Arow))</span></code></pre></div>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="quiz-4-review.html#cb453-1"></a><span class="kw">rref</span>(<span class="kw">cbind</span>(Brow, Arow))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]       [,4]      [,5] [,6]
 ## [1,]    1    0    0 -0.8711504 0.3312215    0
 ## [2,]    0    1    0 -0.3453768 0.1113812    0
 ## [3,]    0    0    1  0.3490156 0.9369560    0
 ## [4,]    0    0    0  0.0000000 0.0000000    1
 ## [5,]    0    0    0  0.0000000 0.0000000    0</code></pre>
-<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="quiz-4-review.html#cb448-1"></a><span class="co"># check that the columnspaces are different</span></span>
-<span id="cb448-2"><a href="quiz-4-review.html#cb448-2"></a><span class="kw">rref</span>(<span class="kw">cbind</span>(Acol, Bcol))</span></code></pre></div>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="quiz-4-review.html#cb455-1"></a><span class="co"># check that the columnspaces are different</span></span>
+<span id="cb455-2"><a href="quiz-4-review.html#cb455-2"></a><span class="kw">rref</span>(<span class="kw">cbind</span>(Acol, Bcol))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]        [,5]      [,6]
 ## [1,]    1    0    0    0  2.77467300 -1.955659
 ## [2,]    0    1    0    0  0.45357378 -1.059136

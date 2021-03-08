@@ -59,7 +59,7 @@ rref(Ab)
 True indeed: $\b \not \in Col(\A)$.
 
 Now we compute the normal equations to see what they look like:
-```{r}
+```{r,echo=TRUE}
 t(A) %*% A
 t(A) %*% b
 ```
@@ -77,20 +77,20 @@ So we are going to instead solve the following **normal equations** instead of
 \end{equation}
 
 We can do this in the following nice, single R command
-```{r}
+```{r,echo=TRUE}
 (xhat = solve(t(A) %*% A, t(A) %*% b))
 ```
 To compute $\hat \b$ we use
-```{r}
+```{r,echo=TRUE}
 (bhat = A %*% xhat)
 ```
 And to get the residual, we use
-```{r}
+```{r,echo=TRUE}
 (r = b - bhat)
 sqrt(t(r) %*% r)
 ```
 We can also check that the residual is orthogonal to $Col(\A)$:
-```{r}
+```{r,echo=TRUE}
 t(A) %*% r
 ```
 
@@ -131,7 +131,7 @@ Here are some points that we'd like to fit to a linear function $y = a_0 + a_1 x
 ```{r quadplot1,fig.width=4.5, fig.height=4.5, echo=TRUE}
 x = c(1,2,3,4,5,6)
 y = c(7,2,1,3,7,7)
-plot(x,y,pch=19,ylim=c(0,8))
+plot(x,y,pch=19,ylim=c(0,10))
 grid()
 ```
 
@@ -167,13 +167,13 @@ $$
 ```{r,echo=TRUE}
 (xhat = solve(t(A) %*% A, t(A) %*% y))
 ```
-This tells us that the desired intercept is $a_0 = 2.8$ and the desired slope is $a_1 = 0.4856$.
+This tells us that the desired intercept is $a_0 = 2.8$, the desired slope is $a_1 = 0.4856$, and the linear model is $y = 2.8 + 0.4856x$.
 
 We can plot the points together with the solution using:
 ```{r quadplot2, fig.width=4.5, fig.height=4.5, echo=TRUE}
 
 #plot the original set of points
-plot(x,y,pch=19,xlim=c(0,7),ylim=c(0,8), main='the best-fit linear function')
+plot(x,y,pch=19,xlim=c(0,7),ylim=c(0,10), main='the best-fit linear function')
 
 # generate points for the fitted line and plot it
 tt = seq(1,6,len=100)  
@@ -260,7 +260,7 @@ Notice that our solution is now $y = 10.3 - 5.1393 x + 0.8036 x^2$. The linear t
 ```{r quadplot3, fig.width=4.5, fig.height=4.5, echo=TRUE}
 
 #plot the original set of points
-plot(x,y,pch=19,xlim=c(0,7),ylim=c(0,8), main='the best-fit quadratic function')
+plot(x,y,pch=19,xlim=c(0,7),ylim=c(0,10), main='the best-fit quadratic function')
 
 # generate points for the fitted line and plot it
 tt = seq(0,7,len=100)  
