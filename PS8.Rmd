@@ -15,7 +15,8 @@ require(pracma)
 
 # Problem Set 8
 
-Download the [Rmd source file  for this problem set](https://raw.githubusercontent.com/Tom-Halverson/math236_s21/blob/main/PS8.Rmd).
+Download the [Rmd source file  for this problem set](https://raw.githubusercontent.com/Tom-Halverson/math236_s21/main/PS8.Rmd).
+
 
 
 Upload a completed, knitted .html version of this file on Moodle. If you have collaborated with others on this assignment (encouraged), please include their names here (no penalty).
