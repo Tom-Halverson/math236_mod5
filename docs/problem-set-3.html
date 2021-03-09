@@ -196,9 +196,11 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="7.6" data-path="problem-set-7.html"><a href="problem-set-7.html#least-squares-solution-to-mathsfa-x-mathsfb"><i class="fa fa-check"></i><b>7.6</b> Least Squares Solution to <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="problem-set-8.html"><a href="problem-set-8.html"><i class="fa fa-check"></i><b>8</b> Problem Set 8</a><ul>
-<li class="chapter" data-level="8.1" data-path="problem-set-8.html"><a href="problem-set-8.html#projection-onto-a-subspace-without-an-orthogonal-basis"><i class="fa fa-check"></i><b>8.1</b> Projection onto a subspace without an orthogonal basis</a></li>
-<li class="chapter" data-level="8.2" data-path="problem-set-8.html"><a href="problem-set-8.html#least-squares-polynomials"><i class="fa fa-check"></i><b>8.2</b> Least-squares polynomials</a></li>
+<li class="chapter" data-level="8.1" data-path="problem-set-8.html"><a href="problem-set-8.html#subspace-projection"><i class="fa fa-check"></i><b>8.1</b> Subspace Projection</a></li>
+<li class="chapter" data-level="8.2" data-path="problem-set-8.html"><a href="problem-set-8.html#least-squares-polynomials"><i class="fa fa-check"></i><b>8.2</b> Least-Squares Polynomials</a></li>
 <li class="chapter" data-level="8.3" data-path="problem-set-8.html"><a href="problem-set-8.html#fuel-efficiency"><i class="fa fa-check"></i><b>8.3</b> Fuel Efficiency</a></li>
+<li class="chapter" data-level="8.4" data-path="problem-set-8.html"><a href="problem-set-8.html#fourier-analysis"><i class="fa fa-check"></i><b>8.4</b> Fourier Analysis</a></li>
+<li class="chapter" data-level="8.5" data-path="problem-set-8.html"><a href="problem-set-8.html#global-fossil-fuel-emissions"><i class="fa fa-check"></i><b>8.5</b> Global Fossil Fuel Emissions</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
 <li class="chapter" data-level="9" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>9</b> Important Definitions</a><ul>
@@ -629,11 +631,11 @@ G_4  &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
 <h2><span class="header-section-number">3.8</span> Rental Car</h2>
 <p>Solve this problem using R and turn in a markdown file knitted to .html.</p>
 <p>A group of Macalester alumni open a rental car company specializing in renting electric cars. As a start, they have opened offices in St. Paul, Rochester, and Duluth. Through market research they find that of the cars rented in St. Paul, 85% will get returned in St. Paul, 9% will get returned in Rochester, and 6% will get returned in Duluth. Of the cars rented in Rochester, 30% will get returned in St. Paul, 60% will get returned in Rochester, and 10% in Duluth. Of the cars rented in Duluth, 35% will get returned in St. Paul, 5% in Rochester, and 60% in Duluth. This information is represented in the matrix below.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="problem-set-3.html#cb1-1"></a>StP =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">85</span>,.<span class="dv">09</span>,.<span class="dv">06</span>)</span>
-<span id="cb1-2"><a href="problem-set-3.html#cb1-2"></a>Roch =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">30</span>,.<span class="dv">60</span>,.<span class="dv">10</span>)</span>
-<span id="cb1-3"><a href="problem-set-3.html#cb1-3"></a>Dul =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">35</span>,.<span class="dv">05</span>,.<span class="dv">60</span>) </span>
-<span id="cb1-4"><a href="problem-set-3.html#cb1-4"></a>M =<span class="st"> </span><span class="kw">cbind</span>(StP,Roch,Dul)</span>
-<span id="cb1-5"><a href="problem-set-3.html#cb1-5"></a>M</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="problem-set-3.html#cb2-1"></a>StP =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">85</span>,.<span class="dv">09</span>,.<span class="dv">06</span>)</span>
+<span id="cb2-2"><a href="problem-set-3.html#cb2-2"></a>Roch =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">30</span>,.<span class="dv">60</span>,.<span class="dv">10</span>)</span>
+<span id="cb2-3"><a href="problem-set-3.html#cb2-3"></a>Dul =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">35</span>,.<span class="dv">05</span>,.<span class="dv">60</span>) </span>
+<span id="cb2-4"><a href="problem-set-3.html#cb2-4"></a>M =<span class="st"> </span><span class="kw">cbind</span>(StP,Roch,Dul)</span>
+<span id="cb2-5"><a href="problem-set-3.html#cb2-5"></a>M</span></code></pre></div>
 <pre><code>##       StP Roch  Dul
 ## [1,] 0.85  0.3 0.35
 ## [2,] 0.09  0.6 0.05
@@ -649,9 +651,9 @@ G_4  &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
 <div id="adjacency-matrix" class="section level2">
 <h2><span class="header-section-number">3.9</span> Adjacency Matrix</h2>
 <p>You can do this problem in R or by hand. Consider the matrix <span class="math inline">\(A\)</span> defined here</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="problem-set-3.html#cb3-1"></a>A =<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>( <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> ,<span class="dv">0</span>), <span class="kw">c</span>(<span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span>, <span class="dv">0</span> ),<span class="kw">c</span>( <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span>, <span class="dv">0</span> ),</span>
-<span id="cb3-2"><a href="problem-set-3.html#cb3-2"></a>  <span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span>, <span class="dv">0</span> ),<span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span>, <span class="dv">1</span> ), <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
-<span id="cb3-3"><a href="problem-set-3.html#cb3-3"></a>A</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="problem-set-3.html#cb4-1"></a>A =<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>( <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> ,<span class="dv">0</span>), <span class="kw">c</span>(<span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span>, <span class="dv">0</span> ),<span class="kw">c</span>( <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span>, <span class="dv">0</span> ),</span>
+<span id="cb4-2"><a href="problem-set-3.html#cb4-2"></a>  <span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span>, <span class="dv">0</span> ),<span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span>, <span class="dv">1</span> ), <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb4-3"><a href="problem-set-3.html#cb4-3"></a>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
 ## [1,]    0    1    0    1    1    0
 ## [2,]    1    0    1    1    0    0

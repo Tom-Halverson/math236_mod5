@@ -196,9 +196,11 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="7.6" data-path="problem-set-7.html"><a href="problem-set-7.html#least-squares-solution-to-mathsfa-x-mathsfb"><i class="fa fa-check"></i><b>7.6</b> Least Squares Solution to <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="problem-set-8.html"><a href="problem-set-8.html"><i class="fa fa-check"></i><b>8</b> Problem Set 8</a><ul>
-<li class="chapter" data-level="8.1" data-path="problem-set-8.html"><a href="problem-set-8.html#projection-onto-a-subspace-without-an-orthogonal-basis"><i class="fa fa-check"></i><b>8.1</b> Projection onto a subspace without an orthogonal basis</a></li>
-<li class="chapter" data-level="8.2" data-path="problem-set-8.html"><a href="problem-set-8.html#least-squares-polynomials"><i class="fa fa-check"></i><b>8.2</b> Least-squares polynomials</a></li>
+<li class="chapter" data-level="8.1" data-path="problem-set-8.html"><a href="problem-set-8.html#subspace-projection"><i class="fa fa-check"></i><b>8.1</b> Subspace Projection</a></li>
+<li class="chapter" data-level="8.2" data-path="problem-set-8.html"><a href="problem-set-8.html#least-squares-polynomials"><i class="fa fa-check"></i><b>8.2</b> Least-Squares Polynomials</a></li>
 <li class="chapter" data-level="8.3" data-path="problem-set-8.html"><a href="problem-set-8.html#fuel-efficiency"><i class="fa fa-check"></i><b>8.3</b> Fuel Efficiency</a></li>
+<li class="chapter" data-level="8.4" data-path="problem-set-8.html"><a href="problem-set-8.html#fourier-analysis"><i class="fa fa-check"></i><b>8.4</b> Fourier Analysis</a></li>
+<li class="chapter" data-level="8.5" data-path="problem-set-8.html"><a href="problem-set-8.html#global-fossil-fuel-emissions"><i class="fa fa-check"></i><b>8.5</b> Global Fossil Fuel Emissions</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
 <li class="chapter" data-level="9" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>9</b> Important Definitions</a><ul>
@@ -489,21 +491,21 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <h1><span class="header-section-number">Section 17</span> Linear Dependence</h1>
 <p>In this activity, we will explore linear dependence and independence in the context of solving nonhomogeneous <span class="math inline">\(A x = b\)</span> and homogeneous equations <span class="math inline">\(A x = 0\)</span>. <a href="https://github.com/Tom-Halverson/math236_s21/blob/main/02-linear-dependence.Rmd">Download this Rmd file.</a></p>
 <p>Remember that we will use the <code>pracma</code> package to get the <code>rref</code> function, so we first load it in:</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="linear-dependence.html#cb70-1"></a><span class="kw">require</span>(<span class="st">&quot;pracma&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="linear-dependence.html#cb79-1"></a><span class="kw">require</span>(<span class="st">&quot;pracma&quot;</span>)</span></code></pre></div>
 <div id="example-1-a-7x9-integer-matrix" class="section level2">
 <h2><span class="header-section-number">17.1</span> Example 1: a 7x9 integer matrix</h2>
 <p>Here is a 7 x 9 coeefficient matrix that we will use. These commands define it and echo it back.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="linear-dependence.html#cb71-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(</span>
-<span id="cb71-2"><a href="linear-dependence.html#cb71-2"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">-2</span>, <span class="dv">-4</span>, <span class="dv">1</span>), </span>
-<span id="cb71-3"><a href="linear-dependence.html#cb71-3"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">-5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>), </span>
-<span id="cb71-4"><a href="linear-dependence.html#cb71-4"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">-1</span>,  <span class="dv">1</span>, <span class="dv">-3</span>, <span class="dv">-3</span>, <span class="dv">5</span>), </span>
-<span id="cb71-5"><a href="linear-dependence.html#cb71-5"></a>  <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-2</span>, <span class="dv">0</span>, <span class="dv">-1</span>, <span class="dv">2</span>, <span class="dv">-3</span>), </span>
-<span id="cb71-6"><a href="linear-dependence.html#cb71-6"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">-17</span>, <span class="dv">-29</span>,  <span class="dv">8</span>), </span>
-<span id="cb71-7"><a href="linear-dependence.html#cb71-7"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-4</span>, <span class="dv">3</span>), </span>
-<span id="cb71-8"><a href="linear-dependence.html#cb71-8"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">-4</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-3</span>, <span class="dv">-1</span>), </span>
-<span id="cb71-9"><a href="linear-dependence.html#cb71-9"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">-3</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">0</span>),</span>
-<span id="cb71-10"><a href="linear-dependence.html#cb71-10"></a>  <span class="kw">c</span>(<span class="dv">37</span>, <span class="dv">-10</span>, <span class="dv">-27</span>, <span class="dv">-29</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-24</span>))</span>
-<span id="cb71-11"><a href="linear-dependence.html#cb71-11"></a>A</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="linear-dependence.html#cb80-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(</span>
+<span id="cb80-2"><a href="linear-dependence.html#cb80-2"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">-2</span>, <span class="dv">-4</span>, <span class="dv">1</span>), </span>
+<span id="cb80-3"><a href="linear-dependence.html#cb80-3"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">-5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>), </span>
+<span id="cb80-4"><a href="linear-dependence.html#cb80-4"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">-1</span>,  <span class="dv">1</span>, <span class="dv">-3</span>, <span class="dv">-3</span>, <span class="dv">5</span>), </span>
+<span id="cb80-5"><a href="linear-dependence.html#cb80-5"></a>  <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-2</span>, <span class="dv">0</span>, <span class="dv">-1</span>, <span class="dv">2</span>, <span class="dv">-3</span>), </span>
+<span id="cb80-6"><a href="linear-dependence.html#cb80-6"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">-17</span>, <span class="dv">-29</span>,  <span class="dv">8</span>), </span>
+<span id="cb80-7"><a href="linear-dependence.html#cb80-7"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-4</span>, <span class="dv">3</span>), </span>
+<span id="cb80-8"><a href="linear-dependence.html#cb80-8"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">-4</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-3</span>, <span class="dv">-1</span>), </span>
+<span id="cb80-9"><a href="linear-dependence.html#cb80-9"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">-3</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">0</span>),</span>
+<span id="cb80-10"><a href="linear-dependence.html#cb80-10"></a>  <span class="kw">c</span>(<span class="dv">37</span>, <span class="dv">-10</span>, <span class="dv">-27</span>, <span class="dv">-29</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-24</span>))</span>
+<span id="cb80-11"><a href="linear-dependence.html#cb80-11"></a>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ## [1,]    3    5    3    4    0   -4    5    0   37
 ## [2,]    0   -5    5   -1   17   -1    3    5  -10
@@ -513,12 +515,12 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 ## [6,]   -4    1   -3    2  -29   -4   -3   -5    7
 ## [7,]    1    4    5   -3    8    3   -1    0  -24</code></pre>
 <p>And here is a vector b that we hope to use in solving A x = b.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="linear-dependence.html#cb73-1"></a>b =<span class="st"> </span><span class="kw">c</span>(<span class="dv">382</span>, <span class="dv">51</span>, <span class="dv">-321</span>, <span class="dv">-314</span>, <span class="dv">-86</span>, <span class="dv">-170</span>, <span class="dv">-153</span>)</span>
-<span id="cb73-2"><a href="linear-dependence.html#cb73-2"></a>b</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="linear-dependence.html#cb82-1"></a>b =<span class="st"> </span><span class="kw">c</span>(<span class="dv">382</span>, <span class="dv">51</span>, <span class="dv">-321</span>, <span class="dv">-314</span>, <span class="dv">-86</span>, <span class="dv">-170</span>, <span class="dv">-153</span>)</span>
+<span id="cb82-2"><a href="linear-dependence.html#cb82-2"></a>b</span></code></pre></div>
 <pre><code>## [1]  382   51 -321 -314  -86 -170 -153</code></pre>
 <p>You can augment A with b, and call it Ab, using <code>cbind</code>:</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="linear-dependence.html#cb75-1"></a>Ab =<span class="st"> </span><span class="kw">cbind</span>(A,b)</span>
-<span id="cb75-2"><a href="linear-dependence.html#cb75-2"></a>Ab</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="linear-dependence.html#cb84-1"></a>Ab =<span class="st"> </span><span class="kw">cbind</span>(A,b)</span>
+<span id="cb84-2"><a href="linear-dependence.html#cb84-2"></a>Ab</span></code></pre></div>
 <pre><code>##                                      b
 ## [1,]  3  5  3  4   0 -4  5  0  37  382
 ## [2,]  0 -5  5 -1  17 -1  3  5 -10   51
@@ -528,7 +530,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 ## [6,] -4  1 -3  2 -29 -4 -3 -5   7 -170
 ## [7,]  1  4  5 -3   8  3 -1  0 -24 -153</code></pre>
 <p>And row reduce using <code>rref</code></p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="linear-dependence.html#cb77-1"></a><span class="kw">rref</span>(Ab)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="linear-dependence.html#cb86-1"></a><span class="kw">rref</span>(Ab)</span></code></pre></div>
 <pre><code>##                            b
 ## [1,] 1 0 0 0  5 0 0 0 -2   8
 ## [2,] 0 1 0 0 -2 0 0 0  2  10
@@ -578,7 +580,7 @@ v1 \\ v2 \\ v3 \\ v4 \\ v5 \\ v6 \\ v7 \\ v8 \\ v9
 <div id="linearly-dependent-columns" class="section level3">
 <h3><span class="header-section-number">17.1.3</span> Linearly dependent columns</h3>
 <p>The columns of the matrix A are <em>linearly dependent.</em> You can see that in rref(A).</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="linear-dependence.html#cb79-1"></a><span class="kw">rref</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="linear-dependence.html#cb88-1"></a><span class="kw">rref</span>(A)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ## [1,]    1    0    0    0    5    0    0    0   -2
 ## [2,]    0    1    0    0   -2    0    0    0    2
@@ -602,18 +604,18 @@ c_9 \vec{a}_9.
 \]</span>
 <strong>Challenge</strong>: give a dependency relation that none of the other groups in the class have.</p>
 <p>This is telling us that there is some redundancy in the matrix A. Remove columns from A to get a new matrix M whose columns are <em>linearly independent.</em> You can do this by removing the appropriate columns from the code below:</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="linear-dependence.html#cb81-1"></a>M =<span class="st"> </span><span class="kw">cbind</span>(    <span class="co"># you need to edit this matrix</span></span>
-<span id="cb81-2"><a href="linear-dependence.html#cb81-2"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">-2</span>, <span class="dv">-4</span>, <span class="dv">1</span>), </span>
-<span id="cb81-3"><a href="linear-dependence.html#cb81-3"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">-5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>), </span>
-<span id="cb81-4"><a href="linear-dependence.html#cb81-4"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">-1</span>,  <span class="dv">1</span>, <span class="dv">-3</span>, <span class="dv">-3</span>, <span class="dv">5</span>), </span>
-<span id="cb81-5"><a href="linear-dependence.html#cb81-5"></a>  <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-2</span>, <span class="dv">0</span>, <span class="dv">-1</span>, <span class="dv">2</span>, <span class="dv">-3</span>), </span>
-<span id="cb81-6"><a href="linear-dependence.html#cb81-6"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">-17</span>, <span class="dv">-29</span>,  <span class="dv">8</span>), </span>
-<span id="cb81-7"><a href="linear-dependence.html#cb81-7"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-4</span>, <span class="dv">3</span>), </span>
-<span id="cb81-8"><a href="linear-dependence.html#cb81-8"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">-4</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-3</span>, <span class="dv">-1</span>), </span>
-<span id="cb81-9"><a href="linear-dependence.html#cb81-9"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">-3</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">0</span>), </span>
-<span id="cb81-10"><a href="linear-dependence.html#cb81-10"></a>  <span class="kw">c</span>(<span class="dv">37</span>, <span class="dv">-10</span>, <span class="dv">-27</span>, <span class="dv">-29</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-24</span>)</span>
-<span id="cb81-11"><a href="linear-dependence.html#cb81-11"></a>  )</span>
-<span id="cb81-12"><a href="linear-dependence.html#cb81-12"></a>M</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="linear-dependence.html#cb90-1"></a>M =<span class="st"> </span><span class="kw">cbind</span>(    <span class="co"># you need to edit this matrix</span></span>
+<span id="cb90-2"><a href="linear-dependence.html#cb90-2"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">-2</span>, <span class="dv">-4</span>, <span class="dv">1</span>), </span>
+<span id="cb90-3"><a href="linear-dependence.html#cb90-3"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">-5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>), </span>
+<span id="cb90-4"><a href="linear-dependence.html#cb90-4"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">-1</span>,  <span class="dv">1</span>, <span class="dv">-3</span>, <span class="dv">-3</span>, <span class="dv">5</span>), </span>
+<span id="cb90-5"><a href="linear-dependence.html#cb90-5"></a>  <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-2</span>, <span class="dv">0</span>, <span class="dv">-1</span>, <span class="dv">2</span>, <span class="dv">-3</span>), </span>
+<span id="cb90-6"><a href="linear-dependence.html#cb90-6"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">-17</span>, <span class="dv">-29</span>,  <span class="dv">8</span>), </span>
+<span id="cb90-7"><a href="linear-dependence.html#cb90-7"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-4</span>, <span class="dv">3</span>), </span>
+<span id="cb90-8"><a href="linear-dependence.html#cb90-8"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">-4</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-3</span>, <span class="dv">-1</span>), </span>
+<span id="cb90-9"><a href="linear-dependence.html#cb90-9"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">-3</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">0</span>), </span>
+<span id="cb90-10"><a href="linear-dependence.html#cb90-10"></a>  <span class="kw">c</span>(<span class="dv">37</span>, <span class="dv">-10</span>, <span class="dv">-27</span>, <span class="dv">-29</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-24</span>)</span>
+<span id="cb90-11"><a href="linear-dependence.html#cb90-11"></a>  )</span>
+<span id="cb90-12"><a href="linear-dependence.html#cb90-12"></a>M</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ## [1,]    3    5    3    4    0   -4    5    0   37
 ## [2,]    0   -5    5   -1   17   -1    3    5  -10
@@ -622,7 +624,7 @@ c_9 \vec{a}_9.
 ## [5,]   -2    3   -3   -1  -17   -1   -2   -1    4
 ## [6,]   -4    1   -3    2  -29   -4   -3   -5    7
 ## [7,]    1    4    5   -3    8    3   -1    0  -24</code></pre>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="linear-dependence.html#cb83-1"></a><span class="kw">rref</span>(M)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="linear-dependence.html#cb92-1"></a><span class="kw">rref</span>(M)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ## [1,]    1    0    0    0    5    0    0    0   -2
 ## [2,]    0    1    0    0   -2    0    0    0    2
@@ -632,24 +634,24 @@ c_9 \vec{a}_9.
 ## [6,]    0    0    0    0    0    0    1    0    6
 ## [7,]    0    0    0    0    0    0    0    1    0</code></pre>
 <p>Your matrix should now be square (7x7) with linearly independent columns. R has a build in solve command, <code>solve</code>, that works for matrices of this form (i.e., square with linearly independent columns). You can try it here. First you need to un-comment-out the solve command. I have it commented out right now, because it does not work with the matrix M (above) until you remove its redundancies.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="linear-dependence.html#cb85-1"></a><span class="co"># solve(M,b)</span></span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="linear-dependence.html#cb94-1"></a><span class="co"># solve(M,b)</span></span></code></pre></div>
 <p>Now, you should get a <em>unique</em> solution to the equation M x = b, since M has no free variables, and it should be one of the solutions to the original question A x = b. Which solution is it? That is, which of the many solutions to A x = b are you getting here (forw which values of the paramters?).</p>
 <p>Compare this with trying to use solve on the original equation A x = b with linearly dependent columns. The solve command in the next bit of code is commented out. Delete the comment command and try executing it.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="linear-dependence.html#cb86-1"></a><span class="co"># solve(A,b)</span></span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="linear-dependence.html#cb95-1"></a><span class="co"># solve(A,b)</span></span></code></pre></div>
 </div>
 </div>
 <div id="a-5-x-6-numerical-matrix" class="section level2">
 <h2><span class="header-section-number">17.2</span> A 5 x 6 Numerical Matrix</h2>
 <p>So far, all of the matrices we’ve worked with in this class have integer values. This is only so that the calulations are nice to do by hand. All of our theory works over the real numbers. Here we will look at a real matrix with numerical values, something you might find when dealing with real-world data.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="linear-dependence.html#cb87-1"></a>B =<span class="st"> </span><span class="kw">cbind</span>(</span>
-<span id="cb87-2"><a href="linear-dependence.html#cb87-2"></a>  <span class="kw">c</span>(<span class="fl">0.717</span>, <span class="fl">-0.274</span>, <span class="fl">0.365</span>, <span class="fl">0.482</span>, <span class="fl">-0.362</span>), </span>
-<span id="cb87-3"><a href="linear-dependence.html#cb87-3"></a>  <span class="kw">c</span>(<span class="fl">0.587</span>, <span class="fl">-0.545</span>, <span class="fl">0.5</span>, <span class="fl">-0.407</span>, <span class="fl">-0.597</span>), </span>
-<span id="cb87-4"><a href="linear-dependence.html#cb87-4"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.441</span>, <span class="fl">0.886</span>, <span class="fl">0.784</span>, <span class="fl">-0.831</span>, <span class="fl">-0.594</span>), </span>
-<span id="cb87-5"><a href="linear-dependence.html#cb87-5"></a>  <span class="kw">c</span>(<span class="fl">0.923</span>, <span class="fl">-0.466</span>, <span class="fl">0.222</span>, <span class="fl">0.867</span>, <span class="fl">0.493</span>), </span>
-<span id="cb87-6"><a href="linear-dependence.html#cb87-6"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.42</span>, <span class="fl">-0.745</span>, <span class="fl">-0.02</span>, <span class="fl">-0.44</span>, <span class="fl">0.209</span>), </span>
-<span id="cb87-7"><a href="linear-dependence.html#cb87-7"></a>  <span class="kw">c</span>(<span class="fl">0.621</span>, <span class="fl">0.049</span>, <span class="fl">-0.134</span>, <span class="fl">-0.844</span>, <span class="fl">-0.31</span>)</span>
-<span id="cb87-8"><a href="linear-dependence.html#cb87-8"></a>  )</span>
-<span id="cb87-9"><a href="linear-dependence.html#cb87-9"></a>B</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="linear-dependence.html#cb96-1"></a>B =<span class="st"> </span><span class="kw">cbind</span>(</span>
+<span id="cb96-2"><a href="linear-dependence.html#cb96-2"></a>  <span class="kw">c</span>(<span class="fl">0.717</span>, <span class="fl">-0.274</span>, <span class="fl">0.365</span>, <span class="fl">0.482</span>, <span class="fl">-0.362</span>), </span>
+<span id="cb96-3"><a href="linear-dependence.html#cb96-3"></a>  <span class="kw">c</span>(<span class="fl">0.587</span>, <span class="fl">-0.545</span>, <span class="fl">0.5</span>, <span class="fl">-0.407</span>, <span class="fl">-0.597</span>), </span>
+<span id="cb96-4"><a href="linear-dependence.html#cb96-4"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.441</span>, <span class="fl">0.886</span>, <span class="fl">0.784</span>, <span class="fl">-0.831</span>, <span class="fl">-0.594</span>), </span>
+<span id="cb96-5"><a href="linear-dependence.html#cb96-5"></a>  <span class="kw">c</span>(<span class="fl">0.923</span>, <span class="fl">-0.466</span>, <span class="fl">0.222</span>, <span class="fl">0.867</span>, <span class="fl">0.493</span>), </span>
+<span id="cb96-6"><a href="linear-dependence.html#cb96-6"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.42</span>, <span class="fl">-0.745</span>, <span class="fl">-0.02</span>, <span class="fl">-0.44</span>, <span class="fl">0.209</span>), </span>
+<span id="cb96-7"><a href="linear-dependence.html#cb96-7"></a>  <span class="kw">c</span>(<span class="fl">0.621</span>, <span class="fl">0.049</span>, <span class="fl">-0.134</span>, <span class="fl">-0.844</span>, <span class="fl">-0.31</span>)</span>
+<span id="cb96-8"><a href="linear-dependence.html#cb96-8"></a>  )</span>
+<span id="cb96-9"><a href="linear-dependence.html#cb96-9"></a>B</span></code></pre></div>
 <pre><code>##        [,1]   [,2]   [,3]   [,4]   [,5]   [,6]
 ## [1,]  0.717  0.587 -0.441  0.923 -0.420  0.621
 ## [2,] -0.274 -0.545  0.886 -0.466 -0.745  0.049
@@ -657,8 +659,8 @@ c_9 \vec{a}_9.
 ## [4,]  0.482 -0.407 -0.831  0.867 -0.440 -0.844
 ## [5,] -0.362 -0.597 -0.594  0.493  0.209 -0.310</code></pre>
 <p>and here is a vector d in <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="linear-dependence.html#cb89-1"></a>d =<span class="st"> </span><span class="kw">c</span>(<span class="fl">5.886</span>, <span class="fl">-4.001</span>, <span class="fl">3.701</span>, <span class="fl">-6.621</span>, <span class="fl">-2.199</span>)</span>
-<span id="cb89-2"><a href="linear-dependence.html#cb89-2"></a>d</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="linear-dependence.html#cb98-1"></a>d =<span class="st"> </span><span class="kw">c</span>(<span class="fl">5.886</span>, <span class="fl">-4.001</span>, <span class="fl">3.701</span>, <span class="fl">-6.621</span>, <span class="fl">-2.199</span>)</span>
+<span id="cb98-2"><a href="linear-dependence.html#cb98-2"></a>d</span></code></pre></div>
 <pre><code>## [1]  5.886 -4.001  3.701 -6.621 -2.199</code></pre>
 <p>Try answering some of these questions:</p>
 <ol style="list-style-type: lower-alpha">
@@ -672,33 +674,33 @@ c_9 \vec{a}_9.
 <div id="random-matrices" class="section level2">
 <h2><span class="header-section-number">17.3</span> Random Matrices</h2>
 <p>The following code generates a random 5 x 5 matrix. Every time you enter it, it will give you a new matrix. Use this to try to figure out how likely it is that a random square matrix has linearly dependent columns.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="linear-dependence.html#cb91-1"></a>R1 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">5</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">5</span>)</span>
-<span id="cb91-2"><a href="linear-dependence.html#cb91-2"></a>R1</span></code></pre></div>
-<pre><code>##           [,1]       [,2]       [,3]      [,4]       [,5]
-## [1,] 0.6099950 0.64765399 0.30944110 0.4512580 0.15498122
-## [2,] 0.1101230 0.05844237 0.29963995 0.7112407 0.17416460
-## [3,] 0.2317589 0.47762618 0.03718899 0.5648979 0.13384250
-## [4,] 0.3933876 0.91969713 0.14542373 0.4918740 0.05454166
-## [5,] 0.9920897 0.91099695 0.40888841 0.8473447 0.77355726</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="linear-dependence.html#cb100-1"></a>R1 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">5</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">5</span>)</span>
+<span id="cb100-2"><a href="linear-dependence.html#cb100-2"></a>R1</span></code></pre></div>
+<pre><code>##           [,1]      [,2]       [,3]       [,4]      [,5]
+## [1,] 0.7720351 0.2134755 0.78552037 0.65962445 0.2398716
+## [2,] 0.2987638 0.6703195 0.55138529 0.62181458 0.4572847
+## [3,] 0.2800287 0.8026492 0.15055933 0.08379173 0.2625593
+## [4,] 0.1103407 0.6794013 0.04844555 0.76815780 0.5108028
+## [5,] 0.3270988 0.6576372 0.28202282 0.31377540 0.4213978</code></pre>
 <p>Try the same using the following code that generates a random 5 x 6 matrix.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="linear-dependence.html#cb93-1"></a>R2 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">6</span>)</span>
-<span id="cb93-2"><a href="linear-dependence.html#cb93-2"></a>R2</span></code></pre></div>
-<pre><code>##           [,1]      [,2]       [,3]       [,4]      [,5]      [,6]
-## [1,] 0.9023226 0.8599097 0.77717658 0.73536140 0.9320395 0.8609557
-## [2,] 0.7040622 0.1751348 0.14374471 0.13259526 0.6346389 0.4653700
-## [3,] 0.7318917 0.1238974 0.06157504 0.01065895 0.7970411 0.8205893
-## [4,] 0.9359726 0.0318247 0.98430949 0.72745580 0.9732625 0.2651761
-## [5,] 0.8546422 0.6168547 0.97994034 0.62992469 0.2121268 0.3563830</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="linear-dependence.html#cb102-1"></a>R2 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">6</span>)</span>
+<span id="cb102-2"><a href="linear-dependence.html#cb102-2"></a>R2</span></code></pre></div>
+<pre><code>##           [,1]      [,2]       [,3]      [,4]       [,5]      [,6]
+## [1,] 0.7342906 0.8251631 0.04859112 0.9976449 0.72124543 0.6512805
+## [2,] 0.1202827 0.5805960 0.95578772 0.9933782 0.36145835 0.3780167
+## [3,] 0.9615340 0.3289082 0.50613936 0.8219457 0.06264627 0.5537371
+## [4,] 0.1752729 0.6079053 0.54672092 0.2987131 0.14522116 0.9246691
+## [5,] 0.3439524 0.8009834 0.28001879 0.7960423 0.36696811 0.9537653</code></pre>
 <p>Try the same using the following code that generates a random 5 x 4 matrix.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="linear-dependence.html#cb95-1"></a>R3 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">4</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)</span>
-<span id="cb95-2"><a href="linear-dependence.html#cb95-2"></a>R3</span></code></pre></div>
-<pre><code>##           [,1]      [,2]      [,3]      [,4]
-## [1,] 0.6728979 0.5465668 0.4121127 0.8095771
-## [2,] 0.8807802 0.5548480 0.6088351 0.4831066
-## [3,] 0.1249390 0.8388807 0.5599822 0.3595616
-## [4,] 0.7611879 0.2547401 0.7887107 0.8764692
-## [5,] 0.6169222 0.3124603 0.5077853 0.3306590</code></pre>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="linear-dependence.html#cb97-1"></a><span class="kw">rref</span>(R3)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="linear-dependence.html#cb104-1"></a>R3 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">4</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)</span>
+<span id="cb104-2"><a href="linear-dependence.html#cb104-2"></a>R3</span></code></pre></div>
+<pre><code>##           [,1]       [,2]        [,3]      [,4]
+## [1,] 0.7873912 0.73315883 0.007790788 0.8670207
+## [2,] 0.5894786 0.47027839 0.746920429 0.9283605
+## [3,] 0.2086218 0.85787268 0.116778931 0.4601455
+## [4,] 0.3799971 0.10381975 0.831888641 0.5035872
+## [5,] 0.2154792 0.03056306 0.498684693 0.9603201</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="linear-dependence.html#cb106-1"></a><span class="kw">rref</span>(R3)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    0    0    0
 ## [2,]    0    1    0    0
