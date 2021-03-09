@@ -491,7 +491,6 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <h1><span class="header-section-number">Section 8</span> Problem Set 8</h1>
 <p>Download the <a href="https://raw.githubusercontent.com/Tom-Halverson/math236_s21/main/PS8.Rmd">Rmd source file for this problem set</a>.</p>
 <p>Upload a completed, knitted .html version of this file on Moodle. If you have collaborated with others on this assignment (encouraged), please include their names here (no penalty).</p>
-<p><strong>Note:</strong> If you are using this PS 7 Template then you need to submit a PDF file.</p>
 <div id="subspace-projection" class="section level2">
 <h2><span class="header-section-number">8.1</span> Subspace Projection</h2>
 <p>Last week we learned how to project onto a subspace, but our method required that we have an orthogonal basis. Here we will see that our least-squares method allows us to project onto a subspace with any (not-necessarily-orthgoonal) basis. Consider the following subspace of <span class="math inline">\(\mathbb{R}^4\)</span>. We can turn it into a least-squares problem by making it the column space of a matrix <span class="math inline">\(A\)</span>. That is <span class="math inline">\(W = Col(A)\)</span>.
@@ -610,12 +609,43 @@ Find the coefficients <span class="math inline">\(a_0,a_1,a_2,a_3\)</span> and t
 ## Call:
 ## lm(formula = MPG ~ lbs + HP + Cyl)
 ## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.4669 -1.6011 -0.3246  1.0759  6.6231 
+## 
 ## Coefficients:
-## (Intercept)          lbs           HP          Cyl  
-##   49.644579    -0.008288    -0.073961     0.791590</code></pre>
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 49.644579   1.992433  24.917  &lt; 2e-16 ***
+## lbs         -0.008288   0.002316  -3.579  0.00106 ** 
+## HP          -0.073961   0.043862  -1.686  0.10091    
+## Cyl          0.791590   0.730326   1.084  0.28604    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.791 on 34 degrees of freedom
+## Multiple R-squared:  0.833,  Adjusted R-squared:  0.8183 
+## F-statistic: 56.55 on 3 and 34 DF,  p-value: 2.656e-13</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
-<li>Add the cars weight in tons to your model and solve <span class="math inline">\(mpg = a_0 + a_1 (lbs) + a_2 (HP) + a_3 (Cyl) + a_4 (tons).\)</span> Compare the coefficients you get with those that you got in part a. Give a short explanation of what you see using some of the linear algebra language that we have learned in the course.</li>
+<li><p>Add the cars weight in tons to your model and solve <span class="math inline">\(mpg = a_0 + a_1 (lbs) + a_2 (HP) + a_3 (Cyl) + a_4 (tons).\)</span> Compare the coefficients you get with those that you got in part a. Give a short explanation of what you see using some of the linear algebra language that we have learned in the course.</p></li>
+<li><p>The residual vector <span class="math inline">\(\mathsf{r}\)</span> measures the quality of fit of our model. But how do we turn this into a meaningful quantity? One method is to look at the <strong>coefficient of determination</strong>, which is more commonly refered to as the “<span class="math inline">\(R^2\)</span> value.”</p></li>
 </ol>
+<ul>
+<li><p>You can see the <span class="math inline">\(R^2\)</span> value of your fit in part (a) under the “Multiple R-squared” output in the linear model summary above.</p></li>
+<li><p>If <span class="math inline">\(\mathsf{y} = [ y_1, y_2, \ldots, y_n ]^{\top}\)</span> is our target vector with least-squares solution <span class="math inline">\(\hat{\mathsf{y}} = A \hat{\mathsf{x}}\)</span> and residual vector is <span class="math inline">\(\mathsf{r} = \mathsf{y} - \hat{\mathsf{y}}\)</span>. Let
+<span class="math display">\[
+a = \frac{1}{n} ( y_1 + y_2 + \cdots + y_n)
+\]</span>
+be the average or mean of the entries of target vector <span class="math inline">\(\mathsf{y}\)</span> and let <span class="math inline">\(\mathsf{y}^* = [a, a, \ldots, a]\)</span>. (We call this vector “y star”, so <code>ystar</code> would be a fine name in R.) The <span class="math inline">\(R^2\)</span> value is
+<span class="math display">\[
+R^2 = 1 - \frac{\| \mathsf{y} - \hat{\mathsf{y}} \|^2 }{\| \mathsf{y} - \mathsf{y}^* \|^2} = 1 - \frac{\| \mathsf{r} \|^2}{\| \mathsf{y} - \mathsf{y}^* \|^2}.
+\]</span></p></li>
+<li><p>The <span class="math inline">\(R^2\)</span> value is a number in <span class="math inline">\([0,1]\)</span>. The squared-length <span class="math inline">\(|| \mathsf{y} -\mathsf{y}^*||^2\)</span> is the total variance: that is, how much the data varies from the mean, and <span class="math inline">\(\frac{\| \mathsf{r} \|^2}{\| \mathsf{y} - \mathsf{y}^* \|^2}\)</span> tells us the fraction of the total variance that is explained by our model. Thus, if <span class="math inline">\(R^2\)</span> is near 1, then our model does a good job at “explaining” the behavior of <span class="math inline">\(\mathsf{y}\)</span> via a linear combination of the columns of <span class="math inline">\(A\)</span>.</p></li>
+<li><p><strong>To do</strong>: Find the <span class="math inline">\(R^2\)</span> value for our least squares solution to the cars data in part (a). Here are some helpful functions:
++ <code>mean(vec)</code> returns the mean (average) of the entries of the vector <code>vec</code>
++ <code>rep(a, n)</code> creates a constant vector of length <span class="math inline">\(n\)</span> where every entry is <span class="math inline">\(a\)</span>.
++ <code>Norm(vec)</code> from the <code>pracma</code> package returns the magnitude (Euclidean length) of the vector <code>vec</code>.
+To learn more, you should take STAT 155: Introduction to Statistical Modeling.</p></li>
+</ul>
 </div>
 <div id="fourier-analysis" class="section level2">
 <h2><span class="header-section-number">8.4</span> Fourier Analysis</h2>
