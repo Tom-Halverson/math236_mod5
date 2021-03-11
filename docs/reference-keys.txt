@@ -1,4 +1,4 @@
-tab:unnamed-chunk-2
+tab:unnamed-chunk-7
 eq:inconsistent
 eq:normal
 problem-set-1-a
@@ -271,12 +271,15 @@ section-72
 section-73
 section-74
 section-75
+one-to-one-and-onto
+a-4x5-matrix
+a-x-b
+watch-this
+solutions-to-practice-problems-3
 section-76
 section-77
 section-78
 section-79
-watch-this
-solutions-to-practice-problems-3
 section-80
 section-81
 section-82
@@ -285,6 +288,3 @@ section-84
 section-85
 section-86
 section-87
-section-88
-section-89
-section-90

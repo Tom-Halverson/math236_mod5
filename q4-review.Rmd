@@ -324,13 +324,13 @@ Decide if the statement is **T** = True or **F** = False, or  **I**  = there is 
 
 
 
-## Watch this! 
+### Watch this! 
 
 The answer to at least one question on Quiz 4 is contained in [this video](https://www.youtube.com/watch?v=O4KCoNvRi6Y).
 
 ## Solutions to Practice Problems
 
-```{r}
+```{r,warning=FALSE,echo=FALSE}
 require(pracma)
 ```
 
@@ -346,10 +346,13 @@ b. We have $\mathsf{v} - \mathsf{w} = \begin{bmatrix} -4 \\ -3 \\ -2 \end{bmatri
 $$
 \| \mathsf{v} - \mathsf{w}\|  = \sqrt{16+9+4} = \sqrt{29} 
 $$
+
 c. 
-$$ \cos \theta = \frac{\mathsf{v} \cdot \mathsf{w}}{\| \mathsf{v}  \| \, \|\mathsf{w} \| }
+$$ 
+\cos \theta = \frac{\mathsf{v} \cdot \mathsf{w}}{\| \mathsf{v}  \| \, \|\mathsf{w} \| }
 = \frac{5-2+3}{\sqrt{3} \, \sqrt{38} } = \frac{2\sqrt{3}}{\sqrt{38} }
 $$
+
 
 d. 
 $$
@@ -376,9 +379,12 @@ $$
 ###
 
  Here are a few ways to describe $\mbox{ker}(T)$.
-    + $\mbox{ker}(T) = \{ \mathsf{x} \in \mathbb{R}^n \mid \mathsf{x} \cdot \mathsf{u} = 0 \}$.
-    + $\mbox{ker}(T)$ is the set of vectors that are orthogonal to $\mathsf{u}$.
-    + Let $A$ be the $1 \times n$ matrix $\mathsf{u}^{\top}$. Then $\mbox{ker}(T)= \mbox{Nul}(A)$.
+ 
+a. $\mbox{ker}(T) = \{ \mathsf{x} \in \mathbb{R}^n \mid \mathsf{x} \cdot \mathsf{u} = 0 \}$.
+    
+b. $\mbox{ker}(T)$ is the set of vectors that are orthogonal to $\mathsf{u}$.
+    
+c. Let $A$ be the $1 \times n$ matrix $\mathsf{u}^{\top}$. Then $\mbox{ker}(T)= \mbox{Nul}(A)$.
 
 
 ###
@@ -480,22 +486,6 @@ rref(t(A))
 The vector  $\begin{bmatrix} 2 \\ -2 \\ -7 \\ 2 \\ 1\end{bmatrix}$ spans $W^{\perp}$
 
 
-###
-
-We will show that 
-$\| \mathsf{v} \|^2 =  ( \mathsf{v} \cdot \mathsf{u}_1)^2 + (\mathsf{v} \cdot \mathsf{u}_2)^2 + \cdots +(\mathsf{v} \cdot \mathsf{u}_n)^2.$
-
-Let's write $\mathsf{v}$ in terms of the orthonormal  basis: $\mathsf{v} = c_1 \mathsf{u}_1 + c_2 \mathsf{u}_2 + \cdots + c_n \mathsf{u}_n$. We then have 
-
-\begin{align}
-\| \mathsf{v} \|^2 &= \mathsf{v} \cdot \mathsf{v} \\
-&= (c_1 \mathsf{u}_1 + c_2 \mathsf{u}_2 + \cdots + c_n \mathsf{u}_n) \cdot (c_1 \mathsf{u}_1 + c_2 \mathsf{u}_2 + \cdots + c_n \mathsf{u}_n) \\
-&= c_1^2 + c_2 + \cdots + c_n^2
-\end{align}
-because $\mathsf{u}_i \cdot \mathsf{u}_i  =1$ and $\mathsf{u}_i \cdot \mathsf{u}_j=0$ for $i \neq j$. 
-
-Finally, we note that $\mathsf{v} \cdot \mathsf{u_i} = c_i$ using the same facts about the dot projects for the orthonormal basis. So we have verified the claim above.
-
 
 ###
 
@@ -538,6 +528,35 @@ c. The distance of between $\mathsf{b}$ and  $\hat{\mathsf{b}}$ is
 $$
 \| = \| \mathsf{z} \| = \sqrt{4+4+4+4} = \sqrt{16} = 4.
 $$
+
+###
+
+Can be done by hand or by R:
+```{r}
+A = cbind(c(1,1,1),c(2,2,-1))
+b = c(6,4,2)
+t(A)%*%A
+t(A)%*%b
+```
+
+a.  The normal equations are
+$$
+\begin{bmatrix} 3 & 3 \\ 3 & 9 \end{bmatrix}
+\begin{bmatrix} x_1 \\ x_2  \end{bmatrix} = 
+\begin{bmatrix} 12 \\ 18  \end{bmatrix}
+$$
+b. The least squares solution is
+```{r}
+(xhat = solve(t(A)%*%A,t(A)%*%b))
+```
+
+c. How close?
+```{r}
+bhat = A %*% xhat
+r = b - bhat
+sqrt(t(r)%*%r)
+```
+
 ###
 a. 
 
@@ -562,7 +581,6 @@ b.
 ```{r q4-covid, echo=TRUE}
 a = exp(xhat[1])
 k = xhat[2]
-
 f=function(y){a * exp(k*(y))}
 
 plot(x,f(x)+ covid.start,type="l",lwd=3,ylab="new positive COVID-19 cases", xlab="days since July 31, 2020", main="best fit exponential function")
