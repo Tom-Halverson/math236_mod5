@@ -238,32 +238,8 @@ points(x,covid.mn + covid.start,pch=20,cex=.7,col="red")
 ```
 
 
-###
 
-Consider the symmetric matrix 
-$$
-A = \begin{bmatrix}
-   3  &  0 & 34  &  3 \\
-   0  &  6 & -34  &  0 \\
-  34 & -34 &  74  & 34 \\
-   3  &  0  & 34  &  3
-\end{bmatrix}
-$$
-
-
-a. Use RStudio to find the eigenvalues $\lambda_1 > \lambda_2 > \lambda_3 > \lambda_4$ and their corresponding eigenvectors $\mathsf{v}_1, \mathsf{v}_2, \mathsf{v}_3, \mathsf{v}_3$. Confirm that these eigenvectors form an orthonormal set.
-
-b. Is the linear transformation $T(\mathsf{x}) = Ax$ invertible? How do you know?
-
-c. Confirm that 
-$$
-A = \lambda_{1} \mathsf{v}_1 \mathsf{v}_1^{\top} + \lambda_{2} \mathsf{v}_2 \mathsf{v}_2^{\top} + \lambda_{3} \mathsf{v}_3 \mathsf{v}_3^{\top} + \lambda_{4} \mathsf{v}_4 \mathsf{v}_4^{\top}.
-$$
-
-d. Use your answer in part (d) to find the best rank 2 approximation for $A$. (Be careful!)
-
-
-###
+### One-to-one and Onto
 
 Here is a matrix $A$ and its reduced row echelon form $B$
 $$
@@ -287,11 +263,9 @@ a. Find a basis for $\mbox{Nul}(A)$ and $\mbox{Col}(A)$.
 
 b. Is the linear transformation $T(\mathsf{x}) = A \mathsf{x}$ one-to-one? Onto?
 
-c. How is the SVD for $A$ related to the SVD for $B$? What properties will they share? What properties will be different? Make some conjectures.
 
-d. Now find the SVD of both $A$ and $B$, and test your conjectures. Compare the singular values, the right singular vectors and the left singular vectors. Be sure to compare each of the four fundamental subspaces: $\mbox{Nul}(M), \mbox{Col}(M), \mbox{Row}(M), \mbox{Nul}(M^{\top})$. 
+###  A 4x5 Matrix
 
-##  
 $\mathsf{A}$  is a $4 \times 5$ matrix and $b \in \mathbb{R}^4$. The augmented matrix $[\,\mathsf{A}\mid b\,]$ row reduces as shown here. 
 $$
 [\,\mathsf{A}\mid b\,] = 
@@ -332,7 +306,7 @@ c. These true-false questions refer to the coefficient matrix $\mathsf{A}$ above
 \newcommand{\0}{\vec{\mathbf{0}}}
 \newcommand{\RR}{\mathbb{R}}
 
-##  
+###  A x = b
 
 Suppose that  $\A$ is an $n \times n$ matrix and that $\x_1$ and $\x_2$ are two solutions to $\A x = \b$ with $\b \not= \0$ and $\x_1 \not= \x_2$.
 

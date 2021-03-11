@@ -1,19 +1,10 @@
----
-title: "Problem Set 8"
-author: "Your Name Here"
-date: "Due: Friday March 12 at noon CST"
-output:
-  html_document: default
----
 
-
+# Problem Set 8
 
 ```{r}
 require(pracma)
 ```
 
-
-# Problem Set 8
 
 Download the [Rmd source file  for this problem set](https://raw.githubusercontent.com/Tom-Halverson/math236_s21/main/PS8.Rmd).
 
