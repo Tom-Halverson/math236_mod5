@@ -463,7 +463,6 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="30.6.9" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-84"><i class="fa fa-check"></i><b>30.6.9</b> </a></li>
 <li class="chapter" data-level="30.6.10" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-85"><i class="fa fa-check"></i><b>30.6.10</b> </a></li>
 <li class="chapter" data-level="30.6.11" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-86"><i class="fa fa-check"></i><b>30.6.11</b> </a></li>
-<li class="chapter" data-level="30.6.12" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-87"><i class="fa fa-check"></i><b>30.6.12</b> </a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -550,8 +549,8 @@ Is there anything special about 2 in the definition? If it were replaced by anot
 <div id="column-and-null-space" class="section level2">
 <h2><span class="header-section-number">4.5</span> Column and Null Space</h2>
 <p>Find a basis for the column space <span class="math inline">\(Col(A)\)</span> and the null space <span class="math inline">\(Nul(A)\)</span> of the following matrix <span class="math inline">\(A\)</span> below</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="problem-set-4.html#cb6-1"></a>(<span class="dt">A =</span> <span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">-1</span>),<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">-2</span>),</span>
-<span id="cb6-2"><a href="problem-set-4.html#cb6-2"></a>           <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">-2</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>,  <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">-1</span>, <span class="dv">-3</span> )))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="problem-set-4.html#cb5-1"></a>(<span class="dt">A =</span> <span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">-1</span>),<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">-2</span>),</span>
+<span id="cb5-2"><a href="problem-set-4.html#cb5-2"></a>           <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">-2</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>,  <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">-1</span>, <span class="dv">-3</span> )))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
 ## [1,]    1    2    0    2    0   -1
 ## [2,]    1    2    1    1    0   -2
@@ -567,7 +566,7 @@ Is there anything special about 2 in the definition? If it were replaced by anot
 \begin{bmatrix} 1\\ 1\\ 1\\ 1\\ 1\end{bmatrix}. 
 \]</span>
 I searched online for ideas and one suggested that I make the matrix below and row reduce it.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="problem-set-4.html#cb8-1"></a>(<span class="dt">A =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">diag</span>(<span class="dv">5</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="problem-set-4.html#cb7-1"></a>(<span class="dt">A =</span> <span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">diag</span>(<span class="dv">5</span>)))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
 ## [1,]    5    4    1    1    0    0    0    0
 ## [2,]    4    4    1    0    1    0    0    0

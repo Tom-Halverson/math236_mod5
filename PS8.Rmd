@@ -54,7 +54,7 @@ P = A (A^T A)^{-1} A^T.
 $$
 Compute the matrix $P$, apply it to $b$, and see that you get the projected value $\hat b$.
 g. Compute $P^2$ and compare it to $P$. Explain why this happens.
-f. Use it to project `b2 = c(1,2,3,4)` onto $W$.
+f. Use $P$ to project the vector `b2 = c(1,2,3,4)` onto $W$.
 g. Find the eigenvalues of $P$. They are nice. Explain (briefly) where the eigenvectors of this matrix are in relation to $W$.
 
 

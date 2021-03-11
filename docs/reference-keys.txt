@@ -1,4 +1,4 @@
-tab:unnamed-chunk-7
+tab:unnamed-chunk-2
 eq:inconsistent
 eq:normal
 problem-set-1-a
@@ -287,4 +287,3 @@ section-83
 section-84
 section-85
 section-86
-section-87

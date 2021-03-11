@@ -463,7 +463,6 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="30.6.9" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-84"><i class="fa fa-check"></i><b>30.6.9</b> </a></li>
 <li class="chapter" data-level="30.6.10" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-85"><i class="fa fa-check"></i><b>30.6.10</b> </a></li>
 <li class="chapter" data-level="30.6.11" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-86"><i class="fa fa-check"></i><b>30.6.11</b> </a></li>
-<li class="chapter" data-level="30.6.12" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-87"><i class="fa fa-check"></i><b>30.6.12</b> </a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -560,12 +559,12 @@ This measure has the following nice properties:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Write a function <code>cosine_similarity</code> that takes as input two vectors <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span> and returns the value of <span class="math inline">\(\cos(\theta)\)</span> for the angle <span class="math inline">\(\theta\)</span> between <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span>. Below is a shell of the code that you need. Right now it always just returns 1.You need to fix that up. Demonstrate that your code works on some vectors in <span class="math inline">\(\mathbb{R}^5\)</span>. Use vectors that are orthogonal, closely aligned, and close to polar opposites.</li>
 </ol>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="problem-set-7.html#cb28-1"></a>cosine_similarity &lt;-<span class="st"> </span><span class="cf">function</span>(u, v) {</span>
-<span id="cb28-2"><a href="problem-set-7.html#cb28-2"></a>  <span class="co"># your code goes here!</span></span>
-<span id="cb28-3"><a href="problem-set-7.html#cb28-3"></a>  <span class="co"># find the cosine of the angle between u and v</span></span>
-<span id="cb28-4"><a href="problem-set-7.html#cb28-4"></a>  cosine =<span class="st"> </span><span class="dv">1</span></span>
-<span id="cb28-5"><a href="problem-set-7.html#cb28-5"></a>  <span class="kw">return</span> (cosine)</span>
-<span id="cb28-6"><a href="problem-set-7.html#cb28-6"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="problem-set-7.html#cb27-1"></a>cosine_similarity &lt;-<span class="st"> </span><span class="cf">function</span>(u, v) {</span>
+<span id="cb27-2"><a href="problem-set-7.html#cb27-2"></a>  <span class="co"># your code goes here!</span></span>
+<span id="cb27-3"><a href="problem-set-7.html#cb27-3"></a>  <span class="co"># find the cosine of the angle between u and v</span></span>
+<span id="cb27-4"><a href="problem-set-7.html#cb27-4"></a>  cosine =<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb27-5"><a href="problem-set-7.html#cb27-5"></a>  <span class="kw">return</span> (cosine)</span>
+<span id="cb27-6"><a href="problem-set-7.html#cb27-6"></a>}</span></code></pre></div>
 <ol start="2" style="list-style-type: lower-alpha">
 <li><p>In the file <a href="https://drive.google.com/open?id=1oN6-rlOBdDj7LLzzwFC4RGkKiLIUJDcV">US_Senate_s21.Rmd</a> you will find vectors of the voting record of the Senate in the 109th US Congress (2007-2008). You will see how to take the dot product of the voting record of two different senators. The dot product is always an integer. Explain what it counts. It is the number of something or possibly the difference of two things.</p></li>
 <li><p>Use your <code>cosine_similary</code> function to find the cosine similarity between every pair of the following senators:</p>
