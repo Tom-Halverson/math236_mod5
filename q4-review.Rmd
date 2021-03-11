@@ -100,7 +100,7 @@ a. Find $\| \mathsf{v} \|$ and $\| \mathsf{w} \|$.
 
 b. Find the distance between $\mathsf{v}$ and $\mathsf{w}$.
 
-c. Find the cosine of the angle between $\mathsf{v}$ and $\mathsf{v}$.
+c. Find the cosine of the angle between $\mathsf{v}$ and $\mathsf{w}$.
 
 d. Find $\mbox{proj}_{\mathsf{v}} \mathsf{w}$. 
 
@@ -600,7 +600,7 @@ Ax = b: solution coming
 
 ###
 
-Watch it!
+I hope you enjoyed the video.
 
 
 
