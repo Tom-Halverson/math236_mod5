@@ -7,7 +7,7 @@
 
 Our fourth quiz has two goals
 
-1. It will cover the new material from Sections 6.1-6.5 and 7.1
+1. It will cover the new material from Sections 6.1-6.5.
 2. It will have some comprehensive material. 
 
 The comprehensive material will not be tricky. My goal is to be sure that you understand the fundamentals of the course. 
@@ -52,7 +52,7 @@ Here are some terms and ideas that you should know:
 * Orthogonal complement of a subspace.
 * Orthogonal basis, orthonormal basis, orthogonal matrix.
 * Orthogonal projection, least squares solutions.
-* Orthogonal diagonalization of symmetric matrix
+
 
 ## Skills
 
