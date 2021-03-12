@@ -391,17 +391,18 @@ c. Let $A$ be the $1 \times n$ matrix $\mathsf{u}^{\top}$. Then $\mbox{ker}(T)= 
 
 We have $\mathsf{u}_1 \cdot \mathsf{v} = 2-2-4+2=-2$ and $\mathsf{u}_1 \cdot \mathsf{v} = 2-2+4-2=2$ so
 $$
-\hat{\mathsf{v}} = \mbox{proj}_W \mathsf{v} = -2 \mathsf{u}_1 + 2 \mathsf{u}_2 = 
-\begin{bmatrix}
+\hat{\mathsf{v}} = \mbox{proj}_W \mathsf{v} = - \mathsf{u}_1 +  \mathsf{u}_2 = 
+-\frac{1}{2} \begin{bmatrix}
 1 \\ -1 \\ -1 \\ 1 
 \end{bmatrix}
 +
+\frac{1}{2}
 \begin{bmatrix}
 1 \\ -1 \\ 1 \\ -1 
 \end{bmatrix}
 =
 \begin{bmatrix}
-2 \\ -2 \\ 0 \\ 0 
+0 \\ 0 \\ 1 \\ -1 
 \end{bmatrix}
 $$
 with residual vector 
@@ -412,14 +413,14 @@ $$
 \end{bmatrix}
 -
 \begin{bmatrix}
-2 \\ -2 \\ 0 \\ 0 
+0 \\ 0 \\ 1 \\ -1 
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 \\ 6 \\ 4 \\ 2 
+2 \\ 2 \\ 3 \\ 3 
 \end{bmatrix}
 $$
-and the distance is $\| \mathsf{z} \| = \sqrt{36 + 16 + 4} = \sqrt{56}$.
+and the distance is $\| \mathsf{z} \| = \sqrt{4+4+9+9} = \sqrt{26}$.
 
 ###
 
@@ -534,7 +535,7 @@ $$
 Can be done by hand or by R:
 ```{r}
 A = cbind(c(1,1,1),c(2,2,-1))
-b = c(6,4,2)
+b = c(6,4,-4)
 t(A)%*%A
 t(A)%*%b
 ```
@@ -543,7 +544,7 @@ a.  The normal equations are
 $$
 \begin{bmatrix} 3 & 3 \\ 3 & 9 \end{bmatrix}
 \begin{bmatrix} x_1 \\ x_2  \end{bmatrix} = 
-\begin{bmatrix} 12 \\ 18  \end{bmatrix}
+\begin{bmatrix} 6 \\ 24  \end{bmatrix}
 $$
 b. The least squares solution is
 ```{r}
@@ -554,6 +555,7 @@ c. How close?
 ```{r}
 bhat = A %*% xhat
 r = b - bhat
+t(r)%*%r
 sqrt(t(r)%*%r)
 ```
 

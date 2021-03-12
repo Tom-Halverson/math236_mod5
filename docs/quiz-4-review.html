@@ -677,7 +677,7 @@ x_1\\ x_2 \\ x_3
 <li><p>Find the best fitting exponential function <span class="math inline">\(f(t) = a e^{k t}\)</span> for the number of COVID-19 cases in Minnesota since 31 July, 2020. Here <span class="math inline">\(t\)</span> is the number of days since 31 July.</p></li>
 <li><p>Run the following code to plot your function. This code assumes that your least squares solution is given by <code>xhat</code>. Does it look like a good fit?</p></li>
 </ol>
-<p><img src="math236_handbook_files/figure-html/unnamed-chunk-181-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-365-1.png" width="75%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="one-to-one-and-onto" class="section level3">
 <h3><span class="header-section-number">30.5.9</span> One-to-one and Onto</h3>
@@ -810,17 +810,18 @@ is orthogonal to <span class="math inline">\(\mathsf{v}\)</span>.So an orthonorm
 <h3><span class="header-section-number">30.6.3</span> </h3>
 <p>We have <span class="math inline">\(\mathsf{u}_1 \cdot \mathsf{v} = 2-2-4+2=-2\)</span> and <span class="math inline">\(\mathsf{u}_1 \cdot \mathsf{v} = 2-2+4-2=2\)</span> so
 <span class="math display">\[
-\hat{\mathsf{v}} = \mbox{proj}_W \mathsf{v} = -2 \mathsf{u}_1 + 2 \mathsf{u}_2 = 
-\begin{bmatrix}
+\hat{\mathsf{v}} = \mbox{proj}_W \mathsf{v} = - \mathsf{u}_1 +  \mathsf{u}_2 = 
+-\frac{1}{2} \begin{bmatrix}
 1 \\ -1 \\ -1 \\ 1 
 \end{bmatrix}
 +
+\frac{1}{2}
 \begin{bmatrix}
 1 \\ -1 \\ 1 \\ -1 
 \end{bmatrix}
 =
 \begin{bmatrix}
-2 \\ -2 \\ 0 \\ 0 
+0 \\ 0 \\ 1 \\ -1 
 \end{bmatrix}
 \]</span>
 with residual vector
@@ -831,14 +832,14 @@ with residual vector
 \end{bmatrix}
 -
 \begin{bmatrix}
-2 \\ -2 \\ 0 \\ 0 
+0 \\ 0 \\ 1 \\ -1 
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 \\ 6 \\ 4 \\ 2 
+2 \\ 2 \\ 3 \\ 3 
 \end{bmatrix}
 \]</span>
-and the distance is <span class="math inline">\(\| \mathsf{z} \| = \sqrt{36 + 16 + 4} = \sqrt{56}\)</span>.</p>
+and the distance is <span class="math inline">\(\| \mathsf{z} \| = \sqrt{4+4+9+9} = \sqrt{26}\)</span>.</p>
 </div>
 <div id="section-79" class="section level3">
 <h3><span class="header-section-number">30.6.4</span> </h3>
@@ -972,23 +973,25 @@ The residual is <span class="math inline">\(\mathsf{z} = [2,2,-2,-2]^{\top}\)</s
 ## [1,]    3    3
 ## [2,]    3    9</code></pre>
 <pre><code>##      [,1]
-## [1,]   12
-## [2,]   18</code></pre>
+## [1,]    6
+## [2,]   24</code></pre>
 <ol style="list-style-type: lower-alpha">
 <li>The normal equations are
 <span class="math display">\[
 \begin{bmatrix} 3 &amp; 3 \\ 3 &amp; 9 \end{bmatrix}
 \begin{bmatrix} x_1 \\ x_2  \end{bmatrix} = 
-\begin{bmatrix} 12 \\ 18  \end{bmatrix}
+\begin{bmatrix} 6 \\ 24  \end{bmatrix}
 \]</span></li>
 <li>The least squares solution is</li>
 </ol>
 <pre><code>##      [,1]
-## [1,]    3
-## [2,]    1</code></pre>
+## [1,]   -1
+## [2,]    3</code></pre>
 <ol start="3" style="list-style-type: lower-alpha">
 <li>How close?</li>
 </ol>
+<pre><code>##      [,1]
+## [1,]    2</code></pre>
 <pre><code>##          [,1]
 ## [1,] 1.414214</code></pre>
 </div>
@@ -997,24 +1000,24 @@ The residual is <span class="math inline">\(\mathsf{z} = [2,2,-2,-2]^{\top}\)</s
 <ol style="list-style-type: lower-alpha">
 <li></li>
 </ol>
-<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="quiz-4-review.html#cb448-1"></a>x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(covid.mn)</span>
-<span id="cb448-2"><a href="quiz-4-review.html#cb448-2"></a>y =<span class="st"> </span><span class="kw">log</span>(covid.mn)</span>
-<span id="cb448-3"><a href="quiz-4-review.html#cb448-3"></a></span>
-<span id="cb448-4"><a href="quiz-4-review.html#cb448-4"></a>A =<span class="st"> </span><span class="kw">cbind</span>(x<span class="op">^</span><span class="dv">0</span>, x)</span>
-<span id="cb448-5"><a href="quiz-4-review.html#cb448-5"></a></span>
-<span id="cb448-6"><a href="quiz-4-review.html#cb448-6"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y))</span></code></pre></div>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="quiz-4-review.html#cb449-1"></a>x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(covid.mn)</span>
+<span id="cb449-2"><a href="quiz-4-review.html#cb449-2"></a>y =<span class="st"> </span><span class="kw">log</span>(covid.mn)</span>
+<span id="cb449-3"><a href="quiz-4-review.html#cb449-3"></a></span>
+<span id="cb449-4"><a href="quiz-4-review.html#cb449-4"></a>A =<span class="st"> </span><span class="kw">cbind</span>(x<span class="op">^</span><span class="dv">0</span>, x)</span>
+<span id="cb449-5"><a href="quiz-4-review.html#cb449-5"></a></span>
+<span id="cb449-6"><a href="quiz-4-review.html#cb449-6"></a>(<span class="dt">xhat =</span> <span class="kw">solve</span>(<span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>A, <span class="kw">t</span>(A) <span class="op">%*%</span><span class="st"> </span>y))</span></code></pre></div>
 <pre><code>##         [,1]
 ##   8.66588980
 ## x 0.03138331</code></pre>
 <ol start="2" style="list-style-type: lower-alpha">
 <li></li>
 </ol>
-<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="quiz-4-review.html#cb450-1"></a>a =<span class="st"> </span><span class="kw">exp</span>(xhat[<span class="dv">1</span>])</span>
-<span id="cb450-2"><a href="quiz-4-review.html#cb450-2"></a>k =<span class="st"> </span>xhat[<span class="dv">2</span>]</span>
-<span id="cb450-3"><a href="quiz-4-review.html#cb450-3"></a>f=<span class="cf">function</span>(y){a <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(k<span class="op">*</span>(y))}</span>
-<span id="cb450-4"><a href="quiz-4-review.html#cb450-4"></a></span>
-<span id="cb450-5"><a href="quiz-4-review.html#cb450-5"></a><span class="kw">plot</span>(x,<span class="kw">f</span>(x)<span class="op">+</span><span class="st"> </span>covid.start,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">3</span>,<span class="dt">ylab=</span><span class="st">&quot;new positive COVID-19 cases&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;days since July 31, 2020&quot;</span>, <span class="dt">main=</span><span class="st">&quot;best fit exponential function&quot;</span>)</span>
-<span id="cb450-6"><a href="quiz-4-review.html#cb450-6"></a><span class="kw">points</span>(x,covid.mn <span class="op">+</span><span class="st"> </span>covid.start,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">7</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="quiz-4-review.html#cb451-1"></a>a =<span class="st"> </span><span class="kw">exp</span>(xhat[<span class="dv">1</span>])</span>
+<span id="cb451-2"><a href="quiz-4-review.html#cb451-2"></a>k =<span class="st"> </span>xhat[<span class="dv">2</span>]</span>
+<span id="cb451-3"><a href="quiz-4-review.html#cb451-3"></a>f=<span class="cf">function</span>(y){a <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(k<span class="op">*</span>(y))}</span>
+<span id="cb451-4"><a href="quiz-4-review.html#cb451-4"></a></span>
+<span id="cb451-5"><a href="quiz-4-review.html#cb451-5"></a><span class="kw">plot</span>(x,<span class="kw">f</span>(x)<span class="op">+</span><span class="st"> </span>covid.start,<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">3</span>,<span class="dt">ylab=</span><span class="st">&quot;new positive COVID-19 cases&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;days since July 31, 2020&quot;</span>, <span class="dt">main=</span><span class="st">&quot;best fit exponential function&quot;</span>)</span>
+<span id="cb451-6"><a href="quiz-4-review.html#cb451-6"></a><span class="kw">points</span>(x,covid.mn <span class="op">+</span><span class="st"> </span>covid.start,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">7</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/q4-covid-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>The curve is a pretty good fit (unfortunately?). However, it does look like the additional restrictions of the last two weeks are slowing the COVID spread.</p>
 </div>
