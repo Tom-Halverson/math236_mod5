@@ -618,7 +618,8 @@ Find the coefficients <span class="math inline">\(a_0,a_1,a_2,a_3\)</span> and t
 ## HP          -0.073961   0.043862  -1.686  0.10091    
 ## Cyl          0.791590   0.730326   1.084  0.28604    
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 2.791 on 34 degrees of freedom
 ## Multiple R-squared:  0.833,  Adjusted R-squared:  0.8183 
@@ -648,7 +649,7 @@ To learn more, you should take STAT 155: Introduction to Statistical Modeling.</
 <div id="fourier-analysis" class="section level2">
 <h2><span class="header-section-number">8.4</span> Fourier Analysis</h2>
 <p>In Fourier analysis one uses trigonometric functions to model oscillatory behavior in data. These methods have important applications in the study of sound or video signals, financial data, medicine, and engineering (to mention just a few). For example, consider the following set of 200 data points.
-<img src="math236_handbook_files/figure-html/unnamed-chunk-212-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<img src="math236_handbook_files/figure-html/unnamed-chunk-28-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>A first Fourier approximation would fit a model of the form
 <span class="math display">\[
 f_1(t) = c_0 + c_1 \sin(t) + c_2 \cos(t).
@@ -671,7 +672,7 @@ Thus, we make the following matrix (we show here only the first 10 rows; there a
 ## [2,]  1.0207277
 ## [3,] -0.4486618</code></pre>
 <p>and plot the solution
-<img src="math236_handbook_files/figure-html/unnamed-chunk-215-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="math236_handbook_files/figure-html/unnamed-chunk-31-1.png" width="75%" style="display: block; margin: auto;" />
 Your task:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Update this to add the second Fourier coefficient terms by fitting the following function to the data. Plot your result.
@@ -718,7 +719,7 @@ where <span class="math inline">\(d=\log(a)\)</span> and <span class="math inlin
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="problem-set-8.html#cb42-1"></a>  f=<span class="cf">function</span>(y){a <span class="op">*</span><span class="st"> </span><span class="kw">exp</span>(k<span class="op">*</span>(y<span class="dv">-1750</span>))}</span>
 <span id="cb42-2"><a href="problem-set-8.html#cb42-2"></a>  <span class="kw">plot</span>(year,<span class="kw">f</span>(year),<span class="dt">type=</span><span class="st">&quot;l&quot;</span>,<span class="dt">lwd=</span><span class="dv">3</span>,<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">10000</span>),<span class="dt">ylab=</span><span class="st">&quot;emissions&quot;</span>, <span class="dt">main=</span><span class="st">&quot;best fit exponential function&quot;</span>)</span>
 <span id="cb42-3"><a href="problem-set-8.html#cb42-3"></a>  <span class="kw">points</span>(year,emissions,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span>.<span class="dv">7</span>,<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<p><img src="math236_handbook_files/figure-html/unnamed-chunk-217-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-33-1.png" width="75%" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>

@@ -1,0 +1,17 @@
+---
+title: "Untitled"
+author: "T. Halverson"
+date: "5/12/2021"
+output: html_document
+---
+
+# Sections
+
+$$
+\int_0^1 f(x) dx
+$$
+```{r}
+A = cbind(c(1,1),c(1,1))
+A
+```
+
