@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Section 5 Linear Systems in R | MATH 236: Linear Algebra</title>
   <meta name="description" content="This is the class activity manual for MATH 236 at Macalester College." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Section 5 Linear Systems in R | MATH 236: Linear Algebra" />
   <meta property="og:type" content="book" />
@@ -31,6 +31,7 @@
   
 <link rel="prev" href="week-2-learning-goals.html"/>
 
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -48,22 +49,23 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -83,7 +85,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -111,6 +113,7 @@ code span.vs { color: #008080; } /* VerbatimString */
 code span.wa { color: #008000; font-weight: bold; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="m236.css" type="text/css" />
 </head>
 
@@ -129,7 +132,8 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Problem Sets</b></span></li>
-<li class="chapter" data-level="1" data-path="problem-set-1.html"><a href="problem-set-1.html"><i class="fa fa-check"></i><b>1</b> Problem Set 1</a><ul>
+<li class="chapter" data-level="1" data-path="problem-set-1.html"><a href="problem-set-1.html"><i class="fa fa-check"></i><b>1</b> Problem Set 1</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="problem-set-1.html"><a href="problem-set-1.html#characterize-the-solution-set"><i class="fa fa-check"></i><b>1.1</b> Characterize the Solution Set</a></li>
 <li class="chapter" data-level="1.2" data-path="problem-set-1.html"><a href="problem-set-1.html#find-the-general-solution"><i class="fa fa-check"></i><b>1.2</b> Find the General Solution</a></li>
 <li class="chapter" data-level="1.3" data-path="problem-set-1.html"><a href="problem-set-1.html#elementary-row-operations-are-reversible"><i class="fa fa-check"></i><b>1.3</b> Elementary row operations are reversible</a></li>
@@ -137,25 +141,29 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="1.5" data-path="problem-set-1.html"><a href="problem-set-1.html#traffic-flow"><i class="fa fa-check"></i><b>1.5</b> Traffic Flow</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
-<li class="chapter" data-level="2" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>2</b> Important Definitions</a><ul>
+<li class="chapter" data-level="2" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>2</b> Important Definitions</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="important-definitions.html"><a href="important-definitions.html#vector-spaces"><i class="fa fa-check"></i><b>2.1</b> Vector Spaces</a></li>
 <li class="chapter" data-level="2.2" data-path="important-definitions.html"><a href="important-definitions.html#matrices"><i class="fa fa-check"></i><b>2.2</b> Matrices</a></li>
 <li class="chapter" data-level="2.3" data-path="important-definitions.html"><a href="important-definitions.html#orthogonality"><i class="fa fa-check"></i><b>2.3</b> Orthogonality</a></li>
 <li class="chapter" data-level="2.4" data-path="important-definitions.html"><a href="important-definitions.html#spectral-decompostion"><i class="fa fa-check"></i><b>2.4</b> Spectral Decompostion</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html"><i class="fa fa-check"></i><b>3</b> Week 1 Learning Goals</a><ul>
+<li class="chapter" data-level="3" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html"><i class="fa fa-check"></i><b>3</b> Week 1 Learning Goals</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#solving-linear-equations"><i class="fa fa-check"></i><b>3.1</b> Solving Linear Equations</a></li>
 <li class="chapter" data-level="3.2" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#rstudio"><i class="fa fa-check"></i><b>3.2</b> RStudio</a></li>
 <li class="chapter" data-level="3.3" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#vocabulary"><i class="fa fa-check"></i><b>3.3</b> Vocabulary</a></li>
 <li class="chapter" data-level="3.4" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#conceptual-thinking"><i class="fa fa-check"></i><b>3.4</b> Conceptual Thinking</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html"><i class="fa fa-check"></i><b>4</b> Week 2 Learning Goals</a><ul>
+<li class="chapter" data-level="4" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html"><i class="fa fa-check"></i><b>4</b> Week 2 Learning Goals</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#solution-sets-span-and-linear-independence"><i class="fa fa-check"></i><b>4.1</b> Solution Sets, Span and Linear Independence</a></li>
 <li class="chapter" data-level="4.2" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#vocabulary-1"><i class="fa fa-check"></i><b>4.2</b> Vocabulary</a></li>
 <li class="chapter" data-level="4.3" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#conceptual-thinking-1"><i class="fa fa-check"></i><b>4.3</b> Conceptual Thinking</a></li>
 </ul></li>
 <li class="part"><span><b>III Linear Algebra in R</b></span></li>
-<li class="chapter" data-level="5" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html"><i class="fa fa-check"></i><b>5</b> Linear Systems in R</a><ul>
+<li class="chapter" data-level="5" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html"><i class="fa fa-check"></i><b>5</b> Linear Systems in R</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#getting-started-with-r"><i class="fa fa-check"></i><b>5.1</b> Getting started with R</a></li>
 <li class="chapter" data-level="5.2" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#building-vectors-and-matrices"><i class="fa fa-check"></i><b>5.2</b> Building Vectors and Matrices</a></li>
 <li class="chapter" data-level="5.3" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-a-linear-system"><i class="fa fa-check"></i><b>5.3</b> Solving a Linear System</a></li>
@@ -182,9 +190,9 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="linear-systems-in-r" class="section level1">
+<div id="linear-systems-in-r" class="section level1" number="5">
 <h1><span class="header-section-number">Section 5</span> Linear Systems in R</h1>
-<div id="getting-started-with-r" class="section level2">
+<div id="getting-started-with-r" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Getting started with R</h2>
 <p>To use RStudio, you have two choices:</p>
 <ol style="list-style-type: decimal">
@@ -194,16 +202,17 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <p>Now, let’s learn how to use R to solve systems of linear equations! <a href="https://github.com/mathbeveridge/math236_f20/blob/main/01-linear-systems.Rmd">Download this Rmd file.</a> First, we will create vectors and matrices Then we will see how to create an augmented matrix and then apply Gaussian Elimination to obtain is reduced row echelon form.</p>
 <p>Gaussian elimination is performed by the <code>rref()</code> command. However, this command is not loaded into R by default. So we have have to tell RStudio to use the <strong>practical math</strong> package, which is known as <code>pracma</code>.
 So we need to run the following command once at the beginning of our session.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="linear-systems-in-r.html#cb1-1"></a><span class="kw">require</span>(pracma)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="linear-systems-in-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(pracma)</span></code></pre></div>
+<pre><code>## Loading required package: pracma</code></pre>
 </div>
-<div id="building-vectors-and-matrices" class="section level2">
+<div id="building-vectors-and-matrices" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Building Vectors and Matrices</h2>
 <p>A <strong>vector</strong> in R is a list of data. The simplest way to create a vector is to use the <code>c()</code> command. The letter ‘c’ is short for ‘combine these values into a vector.’ For example, we can make a vector <code>v</code> for the numbers 1,2,3 as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="linear-systems-in-r.html#cb2-1"></a>v=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb2-2"><a href="linear-systems-in-r.html#cb2-2"></a>v</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="linear-systems-in-r.html#cb3-1" aria-hidden="true" tabindex="-1"></a>v<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb3-2"><a href="linear-systems-in-r.html#cb3-2" aria-hidden="true" tabindex="-1"></a>v</span></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
 <p>Note that we had to ask R to display the value of <code>v</code>. This is because the assignment of <code>v</code> doesn’t echo the value to the console. But can see the value of <code>v</code> in the Environment tab in the upper right panel of RStudio. For example, run this command and then check to see that the value of <code>v</code> gets updated in the environment.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="linear-systems-in-r.html#cb4-1"></a>v=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="linear-systems-in-r.html#cb5-1" aria-hidden="true" tabindex="-1"></a>v<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span></code></pre></div>
 <p>It is interesting to note that <code>c()</code> returns a <strong>dimensionless vector</strong>. So
 you can treat a vector <code>c()</code> as either a row or a column when you construct a matrix. For example, suppose that we want to make the matrix
 <span class="math display">\[
@@ -214,21 +223,21 @@ A = \begin{bmatrix}
 \end{bmatrix}.
 \]</span>
 We could create this matrix by binding three row vectors:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="linear-systems-in-r.html#cb5-1"></a>A =<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">8</span>), <span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">27</span>))</span>
-<span id="cb5-2"><a href="linear-systems-in-r.html#cb5-2"></a>A</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="linear-systems-in-r.html#cb6-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">8</span>), <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">27</span>))</span>
+<span id="cb6-2"><a href="linear-systems-in-r.html#cb6-2" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    1    1
 ## [2,]    2    4    8
 ## [3,]    3    9   27</code></pre>
 <p>or we could bind three column vectors:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="linear-systems-in-r.html#cb7-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">9</span>), <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="dv">27</span>))</span>
-<span id="cb7-2"><a href="linear-systems-in-r.html#cb7-2"></a>A</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="linear-systems-in-r.html#cb8-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">9</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">8</span>,<span class="dv">27</span>))</span>
+<span id="cb8-2"><a href="linear-systems-in-r.html#cb8-2" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    1    1
 ## [2,]    2    4    8
 ## [3,]    3    9   27</code></pre>
 </div>
-<div id="solving-a-linear-system" class="section level2">
+<div id="solving-a-linear-system" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> Solving a Linear System</h2>
 Suppose that we want to solve the linear system
 <span class="math display">\[\begin{aligned}
@@ -252,20 +261,20 @@ b = \begin{bmatrix}
 \]</span>
 This is the same matrix <code>A</code> we defined above. Let’s define a vector b and use <code>cbind()</code> to create an augmented matrix which we will name <code>Ab</code>.
 (We could have just made the full augmented matrix from the start, but using <code>cbind</code> to add a column to a matrix is a skill we will use later in the course!)</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="linear-systems-in-r.html#cb9-1"></a>A</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="linear-systems-in-r.html#cb10-1" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    1    1
 ## [2,]    2    4    8
 ## [3,]    3    9   27</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="linear-systems-in-r.html#cb11-1"></a>b =<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">12</span>)</span>
-<span id="cb11-2"><a href="linear-systems-in-r.html#cb11-2"></a>Ab =<span class="st"> </span><span class="kw">cbind</span>(A,b)</span>
-<span id="cb11-3"><a href="linear-systems-in-r.html#cb11-3"></a>Ab</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="linear-systems-in-r.html#cb12-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">12</span>)</span>
+<span id="cb12-2"><a href="linear-systems-in-r.html#cb12-2" aria-hidden="true" tabindex="-1"></a>Ab <span class="ot">=</span> <span class="fu">cbind</span>(A,b)</span>
+<span id="cb12-3"><a href="linear-systems-in-r.html#cb12-3" aria-hidden="true" tabindex="-1"></a>Ab</span></code></pre></div>
 <pre><code>##              b
 ## [1,] 1 1  1  4
 ## [2,] 2 4  8  6
 ## [3,] 3 9 27 12</code></pre>
 <p>Now we use the <code>rref()</code> command to apply Gaussian Elimination to produce the reduced row echelon form. (And remember: we had to load this function into R by using the <code>require(pracma)</code> command above.)</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="linear-systems-in-r.html#cb13-1"></a><span class="kw">rref</span>(Ab)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="linear-systems-in-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rref</span>(Ab)</span></code></pre></div>
 <pre><code>##             b
 ## [1,] 1 0 0  7
 ## [2,] 0 1 0 -4
@@ -277,12 +286,12 @@ y&amp;=-4\\
 z&amp;=1
 \end{align}\]</span></p>
 <p>We can <strong>verify</strong> that our answer works by multiplying <span class="math inline">\(A\)</span> by one of the solutions above. Matrix multiplication uses the funny operation <code>%*%</code>.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="linear-systems-in-r.html#cb15-1"></a>A <span class="op">%*%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">7</span>,<span class="op">-</span><span class="dv">4</span>,<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="linear-systems-in-r.html#cb16-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="sc">-</span><span class="dv">4</span>,<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]    4
 ## [2,]    6
 ## [3,]   12</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="linear-systems-in-r.html#cb17-1"></a><span class="co">#A %*% c(1,2,3,0,0)</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="linear-systems-in-r.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#A %*% c(1,2,3,0,0)</span></span></code></pre></div>
 <p>Which matches our target
 <span class="math display">\[
 b = \begin{bmatrix}
@@ -291,7 +300,7 @@ b = \begin{bmatrix}
 \]</span>
 just as we had hoped.</p>
 </div>
-<div id="solving-another-linear-system" class="section level2">
+<div id="solving-another-linear-system" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Solving another Linear System</h2>
 <p>Now let’s find the solution set for the linear system
 <span class="math display">\[
@@ -315,15 +324,15 @@ which corresponds to augmented matrix
 \]</span></p>
 <p>This time, let’s just construct the augmented matrix direclty.</p>
 <p>Then we define the coefficient matrix <span class="math inline">\(A\)</span>. Here we use <code>cbind</code> to combine the vectors into the columns of a matrix named <span class="math inline">\(A\)</span>. You can use <code>rbind</code> if you want to combine the vectors into the rows of a matrix.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="linear-systems-in-r.html#cb18-1"></a>Ab =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>))</span>
-<span id="cb18-2"><a href="linear-systems-in-r.html#cb18-2"></a>Ab</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="linear-systems-in-r.html#cb19-1" aria-hidden="true" tabindex="-1"></a>Ab <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>),<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">4</span>,<span class="sc">-</span><span class="dv">2</span>))</span>
+<span id="cb19-2"><a href="linear-systems-in-r.html#cb19-2" aria-hidden="true" tabindex="-1"></a>Ab</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
 ## [1,]    1    0   -1   -1   -1   -2
 ## [2,]    2    1    2    1    5   10
 ## [3,]   -1    1    1    0    0    4
 ## [4,]    1    0   -1   -1   -1   -2</code></pre>
 <p>And now let’s row reduce to get RREF.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="linear-systems-in-r.html#cb20-1"></a><span class="kw">rref</span>(Ab)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="linear-systems-in-r.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rref</span>(Ab)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
 ## [1,]    1    0    0    0    1    1
 ## [2,]    0    1    0   -1   -1    2
@@ -339,46 +348,46 @@ which corresponds to augmented matrix
 \]</span></p>
 <p>and this is a “plane” in <span class="math inline">\(\mathbb{R}^5\)</span>. It is in <span class="math inline">\(\mathbb{R}^5\)</span> because these vectors have 5 coordinates. It is a plane because it is spanned by two vectors that are not on the same line.</p>
 </div>
-<div id="appendix-dimensionless-vectors-in-r" class="section level2">
+<div id="appendix-dimensionless-vectors-in-r" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> Appendix: Dimensionless Vectors in R</h2>
 <p>Let’s revisit the vector constructed by <code>cbind</code>. Above we called this a “dimensionless” vector because it can be used as a column vector or a row vector. In general, R will do its best to make sense of a dimensionless vector. In other words, it will promote <code>c()</code> to make an expression valid.</p>
 <p>For example, let <span class="math inline">\(A\)</span> be an <span class="math inline">\(n \times n\)</span> matrix, and let <span class="math inline">\(b\)</span> be a vector. The expression <span class="math inline">\(Av\)</span> is only defined when <span class="math inline">\(v\)</span> is a <span class="math inline">\(n \times 1\)</span> <strong>column vector</strong> and that <span class="math inline">\(wA\)</span> is only defined when <span class="math inline">\(w\)</span> is a <span class="math inline">\(1 \times n\)</span> ** row vector**. But let’s look at what happens when we use a dimensionless vector instead.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="linear-systems-in-r.html#cb22-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>))</span>
-<span id="cb22-2"><a href="linear-systems-in-r.html#cb22-2"></a>A</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="linear-systems-in-r.html#cb23-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>))</span>
+<span id="cb23-2"><a href="linear-systems-in-r.html#cb23-2" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1   -1    0
 ## [2,]    1    0    1
 ## [3,]    1    1   -1</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="linear-systems-in-r.html#cb24-1"></a>b =<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">11</span>)</span>
-<span id="cb24-2"><a href="linear-systems-in-r.html#cb24-2"></a>b</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="linear-systems-in-r.html#cb25-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">11</span>)</span>
+<span id="cb25-2"><a href="linear-systems-in-r.html#cb25-2" aria-hidden="true" tabindex="-1"></a>b</span></code></pre></div>
 <pre><code>## [1]  2  5 11</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="linear-systems-in-r.html#cb26-1"></a><span class="co"># A times b</span></span>
-<span id="cb26-2"><a href="linear-systems-in-r.html#cb26-2"></a>A <span class="op">%*%</span><span class="st"> </span>b</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="linear-systems-in-r.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A times b</span></span>
+<span id="cb27-2"><a href="linear-systems-in-r.html#cb27-2" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> b</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]   -3
 ## [2,]   13
 ## [3,]   -4</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="linear-systems-in-r.html#cb28-1"></a><span class="co"># b times A</span></span>
-<span id="cb28-2"><a href="linear-systems-in-r.html#cb28-2"></a>b <span class="op">%*%</span><span class="st"> </span>A</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="linear-systems-in-r.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># b times A</span></span>
+<span id="cb29-2"><a href="linear-systems-in-r.html#cb29-2" aria-hidden="true" tabindex="-1"></a>b <span class="sc">%*%</span> A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]   18    9   -6</code></pre>
 <p>Both of these multiplications worked! So R <strong>treated <code>b</code> as a column vector</strong> for the multiplication<code>A %*% b</code>. And then R <strong>treated <code>b</code> as a row vector</strong> for the multiplication <code>b %b% A</code>.</p>
 <p>So how do you make a true <strong>column vector</strong> or a true <strong>row vector</strong>? The answer is to use <code>cbind</code> and <code>rbind</code>! Here are some examples:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="linear-systems-in-r.html#cb30-1"></a><span class="co">#  dimensionless</span></span>
-<span id="cb30-2"><a href="linear-systems-in-r.html#cb30-2"></a>b =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
-<span id="cb30-3"><a href="linear-systems-in-r.html#cb30-3"></a>b</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="linear-systems-in-r.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  dimensionless</span></span>
+<span id="cb31-2"><a href="linear-systems-in-r.html#cb31-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb31-3"><a href="linear-systems-in-r.html#cb31-3" aria-hidden="true" tabindex="-1"></a>b</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="linear-systems-in-r.html#cb32-1"></a><span class="co"># column vector</span></span>
-<span id="cb32-2"><a href="linear-systems-in-r.html#cb32-2"></a>b.col =<span class="st"> </span><span class="kw">cbind</span>(b)</span>
-<span id="cb32-3"><a href="linear-systems-in-r.html#cb32-3"></a>b.col</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="linear-systems-in-r.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># column vector</span></span>
+<span id="cb33-2"><a href="linear-systems-in-r.html#cb33-2" aria-hidden="true" tabindex="-1"></a>b.col <span class="ot">=</span> <span class="fu">cbind</span>(b)</span>
+<span id="cb33-3"><a href="linear-systems-in-r.html#cb33-3" aria-hidden="true" tabindex="-1"></a>b.col</span></code></pre></div>
 <pre><code>##      b
 ## [1,] 1
 ## [2,] 2
 ## [3,] 3
 ## [4,] 4</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="linear-systems-in-r.html#cb34-1"></a><span class="co"># row vector</span></span>
-<span id="cb34-2"><a href="linear-systems-in-r.html#cb34-2"></a>b.row =<span class="st"> </span><span class="kw">rbind</span>(b)</span>
-<span id="cb34-3"><a href="linear-systems-in-r.html#cb34-3"></a>b.row</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="linear-systems-in-r.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># row vector</span></span>
+<span id="cb35-2"><a href="linear-systems-in-r.html#cb35-2" aria-hidden="true" tabindex="-1"></a>b.row <span class="ot">=</span> <span class="fu">rbind</span>(b)</span>
+<span id="cb35-3"><a href="linear-systems-in-r.html#cb35-3" aria-hidden="true" tabindex="-1"></a>b.row</span></code></pre></div>
 <pre><code>##   [,1] [,2] [,3] [,4]
 ## b    1    2    3    4</code></pre>
 
@@ -413,6 +422,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

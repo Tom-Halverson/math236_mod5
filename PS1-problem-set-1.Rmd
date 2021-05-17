@@ -2,10 +2,9 @@
 
 # Problem Set 1
 
-* Due: Tuesday January 26 by noon CST. 
-* Week 1 and Week 8 are half weeks, so those two assignments will be split in two and called Problem Sets 1A and 1B.
+* Due: Tuesday May 25 by midnight CST. 
 * Upload your solutions to problems 1--4 by writing them out by hand, scanning them to pdf using a scanning software such as AdobeScan, assembling them into a single PDF, and uploading it to  Moodle. 
-* Problem 1.5 is to be done using RStudio. To solve it, create an Rmarkdown file, knit it to .html, and upload the .html on Moodle along with the PDF for questions 1-4.
+* Problem 1.5 is to be done using RStudio. To solve it, create an Rmarkdown file, knit it to .html, and upload the .html on Moodle along with the PDF for questions 1-4. *There will be time to work on this problem in class on May 23-24.*
 
 ## Characterize the Solution Set
 

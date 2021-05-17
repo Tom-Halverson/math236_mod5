@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Section 1 Problem Set 1 | MATH 236: Linear Algebra</title>
   <meta name="description" content="This is the class activity manual for MATH 236 at Macalester College." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Section 1 Problem Set 1 | MATH 236: Linear Algebra" />
   <meta property="og:type" content="book" />
@@ -31,6 +31,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="important-definitions.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -48,22 +49,23 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -83,7 +85,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -111,6 +113,7 @@ code span.vs { color: #008080; } /* VerbatimString */
 code span.wa { color: #008000; font-weight: bold; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="m236.css" type="text/css" />
 </head>
 
@@ -129,7 +132,8 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Problem Sets</b></span></li>
-<li class="chapter" data-level="1" data-path="problem-set-1.html"><a href="problem-set-1.html"><i class="fa fa-check"></i><b>1</b> Problem Set 1</a><ul>
+<li class="chapter" data-level="1" data-path="problem-set-1.html"><a href="problem-set-1.html"><i class="fa fa-check"></i><b>1</b> Problem Set 1</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="problem-set-1.html"><a href="problem-set-1.html#characterize-the-solution-set"><i class="fa fa-check"></i><b>1.1</b> Characterize the Solution Set</a></li>
 <li class="chapter" data-level="1.2" data-path="problem-set-1.html"><a href="problem-set-1.html#find-the-general-solution"><i class="fa fa-check"></i><b>1.2</b> Find the General Solution</a></li>
 <li class="chapter" data-level="1.3" data-path="problem-set-1.html"><a href="problem-set-1.html#elementary-row-operations-are-reversible"><i class="fa fa-check"></i><b>1.3</b> Elementary row operations are reversible</a></li>
@@ -137,25 +141,29 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="1.5" data-path="problem-set-1.html"><a href="problem-set-1.html#traffic-flow"><i class="fa fa-check"></i><b>1.5</b> Traffic Flow</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
-<li class="chapter" data-level="2" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>2</b> Important Definitions</a><ul>
+<li class="chapter" data-level="2" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>2</b> Important Definitions</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="important-definitions.html"><a href="important-definitions.html#vector-spaces"><i class="fa fa-check"></i><b>2.1</b> Vector Spaces</a></li>
 <li class="chapter" data-level="2.2" data-path="important-definitions.html"><a href="important-definitions.html#matrices"><i class="fa fa-check"></i><b>2.2</b> Matrices</a></li>
 <li class="chapter" data-level="2.3" data-path="important-definitions.html"><a href="important-definitions.html#orthogonality"><i class="fa fa-check"></i><b>2.3</b> Orthogonality</a></li>
 <li class="chapter" data-level="2.4" data-path="important-definitions.html"><a href="important-definitions.html#spectral-decompostion"><i class="fa fa-check"></i><b>2.4</b> Spectral Decompostion</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html"><i class="fa fa-check"></i><b>3</b> Week 1 Learning Goals</a><ul>
+<li class="chapter" data-level="3" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html"><i class="fa fa-check"></i><b>3</b> Week 1 Learning Goals</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#solving-linear-equations"><i class="fa fa-check"></i><b>3.1</b> Solving Linear Equations</a></li>
 <li class="chapter" data-level="3.2" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#rstudio"><i class="fa fa-check"></i><b>3.2</b> RStudio</a></li>
 <li class="chapter" data-level="3.3" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#vocabulary"><i class="fa fa-check"></i><b>3.3</b> Vocabulary</a></li>
 <li class="chapter" data-level="3.4" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#conceptual-thinking"><i class="fa fa-check"></i><b>3.4</b> Conceptual Thinking</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html"><i class="fa fa-check"></i><b>4</b> Week 2 Learning Goals</a><ul>
+<li class="chapter" data-level="4" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html"><i class="fa fa-check"></i><b>4</b> Week 2 Learning Goals</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#solution-sets-span-and-linear-independence"><i class="fa fa-check"></i><b>4.1</b> Solution Sets, Span and Linear Independence</a></li>
 <li class="chapter" data-level="4.2" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#vocabulary-1"><i class="fa fa-check"></i><b>4.2</b> Vocabulary</a></li>
 <li class="chapter" data-level="4.3" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#conceptual-thinking-1"><i class="fa fa-check"></i><b>4.3</b> Conceptual Thinking</a></li>
 </ul></li>
 <li class="part"><span><b>III Linear Algebra in R</b></span></li>
-<li class="chapter" data-level="5" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html"><i class="fa fa-check"></i><b>5</b> Linear Systems in R</a><ul>
+<li class="chapter" data-level="5" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html"><i class="fa fa-check"></i><b>5</b> Linear Systems in R</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#getting-started-with-r"><i class="fa fa-check"></i><b>5.1</b> Getting started with R</a></li>
 <li class="chapter" data-level="5.2" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#building-vectors-and-matrices"><i class="fa fa-check"></i><b>5.2</b> Building Vectors and Matrices</a></li>
 <li class="chapter" data-level="5.3" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-a-linear-system"><i class="fa fa-check"></i><b>5.3</b> Solving a Linear System</a></li>
@@ -182,15 +190,14 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="problem-set-1" class="section level1">
+<div id="problem-set-1" class="section level1" number="1">
 <h1><span class="header-section-number">Section 1</span> Problem Set 1</h1>
 <ul>
-<li>Due: Tuesday January 26 by noon CST.</li>
-<li>Week 1 and Week 8 are half weeks, so those two assignments will be split in two and called Problem Sets 1A and 1B.</li>
+<li>Due: Tuesday May 25 by midnight CST.</li>
 <li>Upload your solutions to problems 1–4 by writing them out by hand, scanning them to pdf using a scanning software such as AdobeScan, assembling them into a single PDF, and uploading it to Moodle.</li>
-<li>Problem 1.5 is to be done using RStudio. To solve it, create an Rmarkdown file, knit it to .html, and upload the .html on Moodle along with the PDF for questions 1-4.</li>
+<li>Problem 1.5 is to be done using RStudio. To solve it, create an Rmarkdown file, knit it to .html, and upload the .html on Moodle along with the PDF for questions 1-4. <em>There will be time to work on this problem in class on May 23-24.</em></li>
 </ul>
-<div id="characterize-the-solution-set" class="section level2">
+<div id="characterize-the-solution-set" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Characterize the Solution Set</h2>
 <p>The following augmented matrices are in row echelon form. Decide whether the set of solutions is a point, line, plane, or the empty set in 3-space. Briefly justify your answer.</p>
 <ol style="list-style-type: lower-alpha">
@@ -200,7 +207,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li><p><span class="math inline">\(\left[ \begin{array}{ccc|c} 0 &amp; 1 &amp; 0 &amp; 6 \\ 0 &amp; 0 &amp; 1 &amp; -2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ \end{array} \right]\)</span></p></li>
 </ol>
 </div>
-<div id="find-the-general-solution" class="section level2">
+<div id="find-the-general-solution" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Find the General Solution</h2>
 <p>Each of the following matrices is the reduced row echelon form of the augmented matrix of a system of linear equations. Give the general solution to each system.</p>
 <ol style="list-style-type: lower-alpha">
@@ -209,7 +216,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li><p><span class="math inline">\(\left[ \begin{array}{cccc|c} 1 &amp; 4 &amp; 0 &amp; 0 &amp; -2 \\ 0 &amp; 0 &amp; 1 &amp; 7 &amp; 6\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ \end{array} \right]\)</span></p></li>
 </ol>
 </div>
-<div id="elementary-row-operations-are-reversible" class="section level2">
+<div id="elementary-row-operations-are-reversible" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Elementary row operations are reversible</h2>
 <p>In each case below, an elementary row operation turns the matrix <span class="math inline">\(A\)</span> into the matrix <span class="math inline">\(B\)</span>. For each of them,</p>
 <ul>
@@ -268,7 +275,7 @@ B=\left[
 \right]\]</span></p></li>
 </ol>
 </div>
-<div id="designer-parabolas" class="section level2">
+<div id="designer-parabolas" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Designer Parabolas</h2>
 <p>In each part below, set up and solve a linear system of equations to find <strong>all</strong> possible parabolas of the form
 <span class="math display">\[
@@ -281,7 +288,7 @@ that satisfy the given conditions. For full credit, please solve these by hand, 
 <li><p><span class="math inline">\(f(x)\)</span> passes through the <em>two</em> points: <span class="math inline">\((1,3)\)</span> and <span class="math inline">\((3,11)\)</span>.</p></li>
 </ol>
 </div>
-<div id="traffic-flow" class="section level2">
+<div id="traffic-flow" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> Traffic Flow</h2>
 <p>Below you find a section of one-way streets in downtown St Paul, where the arrows indicate traffic direction. The traffic control center has installed electronic sensors that count the numbers of vehicles passing through the 6 streets that lead into and out of this area. Assume that the total flow that enters each intersection equals the the total flow that leaves each intersection (we will ignore parking and staying).</p>
 <center>
@@ -328,6 +335,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
