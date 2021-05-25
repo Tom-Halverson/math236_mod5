@@ -1,0 +1,75 @@
+# (PART) Linear Algebra in R {-}
+
+# Class Examples
+
+## Day 5: Tuesday May 25
+```{r}
+require('pracma')
+```
+
+
+Give the parametric solution to $A x = b$ if 
+$$
+A=\left[
+\begin{array}{ccccc}
+ 1 & 1 & 1 & -1  \\
+ 1 & 0 & 3 & -1  \\
+ -1 & 1 & -5 & 1  \\
+ 1 & 2 & -1 & 1  \\
+\end{array}
+\right] \qquad \hbox{and}\qquad  b = \begin{bmatrix} 2 \\ 4 \\ -6 \\ 4 \end{bmatrix}. \hskip.5in
+$$
+```{r,echo=TRUE}
+A = cbind(c(1,1,-1,1),c(1,0,1,2),c(1,3,-5,-1),c(-1,-1,1,1))
+b = c(2,4,-6,4)
+Ab = cbind(A,b)
+A
+Ab
+rref(Ab)
+```
+a. Give the solution this $Ax=b$ problem in *parametric* form:
+
+$$
+\begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \end{bmatrix}
+= 
+\begin{bmatrix}  6 \\ -2 \\ 0 \\ 2 \end{bmatrix}
++ s \begin{bmatrix}  -3 \\ 2 \\ 1 \\ 0 \end{bmatrix}
+$$
+
+b. Let's make two different solutions. One with s = 0 and one with s = 1. They are
+
+```{r,echo=TRUE}
+x1 = c(6,-2,0,2)
+x2 = c(3,0,1,2)
+```
+
+And we check to see that they are solutions. Observe that we use the unfortunate notation `%*%` to multply a matrix times a vector, but also that we get b in both cases:
+```{r,echo=TRUE}
+A %*% x1
+A %*% x2
+```
+Notice that we get b for both.
+
+c. Now we look at the difference. It is a solution to the *homogeneous* equations A x = 0 as we see here:
+```{r,echo=TRUE}
+xh = x1 - x2
+A %*% xh
+```
+
+d. Are any of these vectors solutions to Ax=b?
+
+```{r,echo=TRUE}
+A %*% (x1 + x2)
+```
+No! (this is 2b)
+
+```{r,echo=TRUE}
+A %*% (1/2*x1 + 1/2* x2)
+```
+
+Yes! This is b
+
+```{r,echo=TRUE}
+A %*% (x1 + 2021 * xh)
+```
+Yes! This is b.

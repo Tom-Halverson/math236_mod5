@@ -1,4 +1,3 @@
-# (PART) Linear Algebra in R {-}
 
 # Linear Systems in R
 
