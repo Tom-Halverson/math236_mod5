@@ -1,0 +1,19 @@
+---
+title: "Day1.Rmd"
+author: "T. Halverson"
+date: "5/18/2021"
+output: html_document
+---
+
+```{r}
+x =  c(1,2,3,5)
+y = c(7,13,61,115)
+A = cbind(x^0,x,x^2,x^3)
+xhat=solve(A,y)
+t = seq(0,5,len=100)
+yy=xhat[1]+xhat[2]*t + xhat[3]*t^2 + xhat[4]*t^3
+plot(x,y,col='DodgerBlue',ylim=c(0,120),pch=19)
+lines(t,yy,col='orange')
+points(x,y,col='DodgerBlue',pch=19)
+```
+
