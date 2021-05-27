@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Exploring Linear Independence and Dependence</title>
   <meta name="description" content="Exploring Linear Independence and Dependence" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Exploring Linear Independence and Dependence" />
   <meta property="og:type" content="book" />
@@ -32,6 +32,7 @@
   
 
 
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,22 +50,23 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -84,7 +86,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -112,6 +114,7 @@ code span.vs { color: #008080; } /* VerbatimString */
 code span.wa { color: #008000; font-weight: bold; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="m236.css" type="text/css" />
 </head>
 
@@ -128,7 +131,8 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li><a href = "./">MATH 236: Linear Algebra</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="0.1" data-path=""><a href="#example-1-a-7x9-integer-matrix"><i class="fa fa-check"></i><b>0.1</b> Example 1: a 7x9 integer matrix</a><ul>
+<li class="chapter" data-level="0.1" data-path=""><a href="#example-1-a-7x9-integer-matrix"><i class="fa fa-check"></i><b>0.1</b> Example 1: a 7x9 integer matrix</a>
+<ul>
 <li class="chapter" data-level="0.1.1" data-path=""><a href="#solution-to-the-nonhomogeneous-equations-ax-b"><i class="fa fa-check"></i><b>0.1.1</b> Solution to the nonhomogeneous equations Ax = b</a></li>
 <li class="chapter" data-level="0.1.2" data-path=""><a href="#solution-to-the-nonhomogeneous-equations-ax-0"><i class="fa fa-check"></i><b>0.1.2</b> Solution to the nonhomogeneous equations Ax = 0</a></li>
 <li class="chapter" data-level="0.1.3" data-path=""><a href="#linearly-dependent-columns"><i class="fa fa-check"></i><b>0.1.3</b> Linearly dependent columns</a></li>
@@ -158,26 +162,26 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <div id="header">
 <h1 class="title">Exploring Linear Independence and Dependence</h1>
 <p class="author"><em>Your Name Here</em></p>
-<p class="date"><em>1/28/2021</em></p>
+<p class="date" style="margin-top: 1.5em;"><em>5/26/2021</em></p>
 </div>
-<p>In this R exploration, we will work on solving homogeneous <span class="math inline">\(A x = b\)</span> and nonhomogeneous equations <span class="math inline">\(A x = 0\)</span>, and we will look at the ideas of linear dependence and linear dependence. You will also get a little exposure to typesetting using the LaTeX features that are build into R markdown.</p>
+<p>In this R exploration, we will work on solving nonhomogeneous <span class="math inline">\(A x = b\)</span> and homogeneous equations <span class="math inline">\(A x = 0\)</span>, and we will look at the ideas of linear dependence and linear dependence. You will also get a little exposure to typesetting using the LaTeX features that are build into R markdown.</p>
 <p>Remember that we will use the <code>pracma</code> package to get the <code>rref</code> function, so we first load it in:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">require</span>(<span class="st">&quot;pracma&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(<span class="st">&quot;pracma&quot;</span>)</span></code></pre></div>
 <pre><code>## Loading required package: pracma</code></pre>
-<div id="example-1-a-7x9-integer-matrix" class="section level2">
+<div id="example-1-a-7x9-integer-matrix" class="section level2" number="0.1">
 <h2><span class="header-section-number">0.1</span> Example 1: a 7x9 integer matrix</h2>
-<p>Here is a 7 x 9 coeefficient matrix that we will use. These commands define it and echo it back.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>A =<span class="st"> </span><span class="kw">cbind</span>(</span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">-2</span>, <span class="dv">-4</span>, <span class="dv">1</span>), </span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">-5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>), </span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">-1</span>,  <span class="dv">1</span>, <span class="dv">-3</span>, <span class="dv">-3</span>, <span class="dv">5</span>), </span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-2</span>, <span class="dv">0</span>, <span class="dv">-1</span>, <span class="dv">2</span>, <span class="dv">-3</span>), </span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">-17</span>, <span class="dv">-29</span>,  <span class="dv">8</span>), </span>
-<span id="cb3-7"><a href="#cb3-7"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-4</span>, <span class="dv">3</span>), </span>
-<span id="cb3-8"><a href="#cb3-8"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">-4</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-3</span>, <span class="dv">-1</span>), </span>
-<span id="cb3-9"><a href="#cb3-9"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">-3</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">0</span>),</span>
-<span id="cb3-10"><a href="#cb3-10"></a>  <span class="kw">c</span>(<span class="dv">37</span>, <span class="dv">-10</span>, <span class="dv">-27</span>, <span class="dv">-29</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-24</span>))</span>
-<span id="cb3-11"><a href="#cb3-11"></a>A</span></code></pre></div>
+<p>Here is a 7 x 9 coefficient matrix that we will use. These commands define it and echo it back.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">1</span>), </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">5</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>), </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="sc">-</span><span class="dv">1</span>,  <span class="dv">1</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">5</span>), </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">3</span>), </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">17</span>, <span class="sc">-</span><span class="dv">29</span>,  <span class="dv">8</span>), </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">3</span>), </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>), </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">0</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">37</span>, <span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">27</span>, <span class="sc">-</span><span class="dv">29</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="sc">-</span><span class="dv">24</span>))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ## [1,]    3    5    3    4    0   -4    5    0   37
 ## [2,]    0   -5    5   -1   17   -1    3    5  -10
@@ -187,12 +191,12 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 ## [6,]   -4    1   -3    2  -29   -4   -3   -5    7
 ## [7,]    1    4    5   -3    8    3   -1    0  -24</code></pre>
 <p>And here is a vector b that we hope to use in solving A x = b.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>b =<span class="st"> </span><span class="kw">c</span>(<span class="dv">382</span>, <span class="dv">51</span>, <span class="dv">-321</span>, <span class="dv">-314</span>, <span class="dv">-86</span>, <span class="dv">-170</span>, <span class="dv">-153</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a>b</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">382</span>, <span class="dv">51</span>, <span class="sc">-</span><span class="dv">321</span>, <span class="sc">-</span><span class="dv">314</span>, <span class="sc">-</span><span class="dv">86</span>, <span class="sc">-</span><span class="dv">170</span>, <span class="sc">-</span><span class="dv">153</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>b</span></code></pre></div>
 <pre><code>## [1]  382   51 -321 -314  -86 -170 -153</code></pre>
 <p>You can augment A with b, and call it Ab, using <code>cbind</code>:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>Ab =<span class="st"> </span><span class="kw">cbind</span>(A,b)</span>
-<span id="cb7-2"><a href="#cb7-2"></a>Ab</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Ab <span class="ot">=</span> <span class="fu">cbind</span>(A,b)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Ab</span></code></pre></div>
 <pre><code>##                                      b
 ## [1,]  3  5  3  4   0 -4  5  0  37  382
 ## [2,]  0 -5  5 -1  17 -1  3  5 -10   51
@@ -202,7 +206,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 ## [6,] -4  1 -3  2 -29 -4 -3 -5   7 -170
 ## [7,]  1  4  5 -3   8  3 -1  0 -24 -153</code></pre>
 <p>And row reduce using <code>rref</code></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">rref</span>(Ab)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rref</span>(Ab)</span></code></pre></div>
 <pre><code>##                            b
 ## [1,] 1 0 0 0  5 0 0 0 -2   8
 ## [2,] 0 1 0 0 -2 0 0 0  2  10
@@ -211,7 +215,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 ## [5,] 0 0 0 0  0 1 0 0  0   6
 ## [6,] 0 0 0 0  0 0 1 0  6  61
 ## [7,] 0 0 0 0  0 0 0 1  0   8</code></pre>
-<div id="solution-to-the-nonhomogeneous-equations-ax-b" class="section level3">
+<div id="solution-to-the-nonhomogeneous-equations-ax-b" class="section level3" number="0.1.1">
 <h3><span class="header-section-number">0.1.1</span> Solution to the nonhomogeneous equations Ax = b</h3>
 <p>Write out the solution to Ax=b in <em>parametric</em> form using the following formatting. You just need to fill in the correct values of the vectors:
 <span class="math display">\[
@@ -232,7 +236,7 @@ v1 \\ v2 \\ v3 \\ v4 \\ v5 \\ v6 \\ v7 \\ v8 \\ v9
 the set of solutions to A x= b is a <em>line</em> in <span class="math inline">\(\mathbb{R}^3\)</span>.
 <center>
 </div>
-<div id="solution-to-the-nonhomogeneous-equations-ax-0" class="section level3">
+<div id="solution-to-the-nonhomogeneous-equations-ax-0" class="section level3" number="0.1.2">
 <h3><span class="header-section-number">0.1.2</span> Solution to the nonhomogeneous equations Ax = 0</h3>
 <p>Now, describe the set of solutions to the homogeneous equations A x = 0. Again, you can just edit this:
 <span class="math display">\[
@@ -251,10 +255,10 @@ v1 \\ v2 \\ v3 \\ v4 \\ v5 \\ v6 \\ v7 \\ v8 \\ v9
 <p>And describe, in words, the geometric relationship between the solutions to Ax=b and Ax=0.</p>
 <p>your answer here</p>
 </div>
-<div id="linearly-dependent-columns" class="section level3">
+<div id="linearly-dependent-columns" class="section level3" number="0.1.3">
 <h3><span class="header-section-number">0.1.3</span> Linearly dependent columns</h3>
 <p>The columns of the matrix A are <em>linearly dependent.</em> You can see that in rref(A).</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">rref</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rref</span>(A)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ## [1,]    1    0    0    0    5    0    0    0   -2
 ## [2,]    0    1    0    0   -2    0    0    0    2
@@ -278,18 +282,18 @@ c_9 \vec{a}_9.
 \]</span>
 <strong>Challenge</strong>: give a dependency relation that none of the other groups in the class have.</p>
 <p>This is telling us that there is some redundancy in the matrix A. Remove columns from A to get a new matrix M whose columns are <em>linearly independent.</em> You can do this by removing the appropriate columns from the code below:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>M =<span class="st"> </span><span class="kw">cbind</span>(    <span class="co"># you need to edit this matrix</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">-2</span>, <span class="dv">-4</span>, <span class="dv">1</span>), </span>
-<span id="cb13-3"><a href="#cb13-3"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">-5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>), </span>
-<span id="cb13-4"><a href="#cb13-4"></a>  <span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">-1</span>,  <span class="dv">1</span>, <span class="dv">-3</span>, <span class="dv">-3</span>, <span class="dv">5</span>), </span>
-<span id="cb13-5"><a href="#cb13-5"></a>  <span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-2</span>, <span class="dv">0</span>, <span class="dv">-1</span>, <span class="dv">2</span>, <span class="dv">-3</span>), </span>
-<span id="cb13-6"><a href="#cb13-6"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">-17</span>, <span class="dv">-29</span>,  <span class="dv">8</span>), </span>
-<span id="cb13-7"><a href="#cb13-7"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="dv">4</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-4</span>, <span class="dv">3</span>), </span>
-<span id="cb13-8"><a href="#cb13-8"></a>  <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">-4</span>, <span class="dv">-5</span>, <span class="dv">-2</span>, <span class="dv">-3</span>, <span class="dv">-1</span>), </span>
-<span id="cb13-9"><a href="#cb13-9"></a>  <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">-3</span>, <span class="dv">-2</span>, <span class="dv">-1</span>, <span class="dv">-5</span>, <span class="dv">0</span>), </span>
-<span id="cb13-10"><a href="#cb13-10"></a>  <span class="kw">c</span>(<span class="dv">37</span>, <span class="dv">-10</span>, <span class="dv">-27</span>, <span class="dv">-29</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">-24</span>)</span>
-<span id="cb13-11"><a href="#cb13-11"></a>  )</span>
-<span id="cb13-12"><a href="#cb13-12"></a>M</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">cbind</span>(    <span class="co"># you need to edit this matrix</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">1</span>), </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">5</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>), </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="sc">-</span><span class="dv">1</span>,  <span class="dv">1</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">5</span>), </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">3</span>), </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">17</span>, <span class="sc">-</span><span class="dv">29</span>,  <span class="dv">8</span>), </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="dv">3</span>), </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">4</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>), </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">0</span>), </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="dv">37</span>, <span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">27</span>, <span class="sc">-</span><span class="dv">29</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="sc">-</span><span class="dv">24</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>M</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ## [1,]    3    5    3    4    0   -4    5    0   37
 ## [2,]    0   -5    5   -1   17   -1    3    5  -10
@@ -298,7 +302,7 @@ c_9 \vec{a}_9.
 ## [5,]   -2    3   -3   -1  -17   -1   -2   -1    4
 ## [6,]   -4    1   -3    2  -29   -4   -3   -5    7
 ## [7,]    1    4    5   -3    8    3   -1    0  -24</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">rref</span>(M)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rref</span>(M)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
 ## [1,]    1    0    0    0    5    0    0    0   -2
 ## [2,]    0    1    0    0   -2    0    0    0    2
@@ -308,24 +312,24 @@ c_9 \vec{a}_9.
 ## [6,]    0    0    0    0    0    0    1    0    6
 ## [7,]    0    0    0    0    0    0    0    1    0</code></pre>
 <p>Your matrix should now be square (7x7) with linearly independent columns. R has a build in solve command, <code>solve</code>, that works for matrices of this form (i.e., square with linearly independent columns). You can try it here. First you need to un-comment-out the solve command. I have it commented out right now, because it does not work with the matrix M (above) until you remove its redundancies.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># solve(M,b)</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># solve(M,b)</span></span></code></pre></div>
 <p>Now, you should get a <em>unique</em> solution to the equation M x = b, since M has no free variables, and it should be one of the solutions to the original question A x = b. Which solution is it? That is, which of the many solutions to A x = b are you getting here (forw which values of the paramters?).</p>
 <p>Compare this with trying to use solve on the original equation A x = b with linearly dependent columns. The solve command in the next bit of code is commented out. Delete the comment command and try executing it.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># solve(A,b)</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># solve(A,b)</span></span></code></pre></div>
 </div>
 </div>
-<div id="a-5-x-6-numerical-matrix" class="section level2">
+<div id="a-5-x-6-numerical-matrix" class="section level2" number="0.2">
 <h2><span class="header-section-number">0.2</span> A 5 x 6 Numerical Matrix</h2>
 <p>So far, all of the matrices we’ve worked with in this class have integer values. This is only so that the calulations are nice to do by hand. All of our theory works over the real numbers. Here we will look at a real matrix with numerical values, something you might find when dealing with real-world data.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>B =<span class="st"> </span><span class="kw">cbind</span>(</span>
-<span id="cb19-2"><a href="#cb19-2"></a>  <span class="kw">c</span>(<span class="fl">0.717</span>, <span class="fl">-0.274</span>, <span class="fl">0.365</span>, <span class="fl">0.482</span>, <span class="fl">-0.362</span>), </span>
-<span id="cb19-3"><a href="#cb19-3"></a>  <span class="kw">c</span>(<span class="fl">0.587</span>, <span class="fl">-0.545</span>, <span class="fl">0.5</span>, <span class="fl">-0.407</span>, <span class="fl">-0.597</span>), </span>
-<span id="cb19-4"><a href="#cb19-4"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.441</span>, <span class="fl">0.886</span>, <span class="fl">0.784</span>, <span class="fl">-0.831</span>, <span class="fl">-0.594</span>), </span>
-<span id="cb19-5"><a href="#cb19-5"></a>  <span class="kw">c</span>(<span class="fl">0.923</span>, <span class="fl">-0.466</span>, <span class="fl">0.222</span>, <span class="fl">0.867</span>, <span class="fl">0.493</span>), </span>
-<span id="cb19-6"><a href="#cb19-6"></a>  <span class="kw">c</span>(<span class="op">-</span><span class="fl">0.42</span>, <span class="fl">-0.745</span>, <span class="fl">-0.02</span>, <span class="fl">-0.44</span>, <span class="fl">0.209</span>), </span>
-<span id="cb19-7"><a href="#cb19-7"></a>  <span class="kw">c</span>(<span class="fl">0.621</span>, <span class="fl">0.049</span>, <span class="fl">-0.134</span>, <span class="fl">-0.844</span>, <span class="fl">-0.31</span>)</span>
-<span id="cb19-8"><a href="#cb19-8"></a>  )</span>
-<span id="cb19-9"><a href="#cb19-9"></a>B</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>B <span class="ot">=</span> <span class="fu">cbind</span>(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.717</span>, <span class="sc">-</span><span class="fl">0.274</span>, <span class="fl">0.365</span>, <span class="fl">0.482</span>, <span class="sc">-</span><span class="fl">0.362</span>), </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.587</span>, <span class="sc">-</span><span class="fl">0.545</span>, <span class="fl">0.5</span>, <span class="sc">-</span><span class="fl">0.407</span>, <span class="sc">-</span><span class="fl">0.597</span>), </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.441</span>, <span class="fl">0.886</span>, <span class="fl">0.784</span>, <span class="sc">-</span><span class="fl">0.831</span>, <span class="sc">-</span><span class="fl">0.594</span>), </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.923</span>, <span class="sc">-</span><span class="fl">0.466</span>, <span class="fl">0.222</span>, <span class="fl">0.867</span>, <span class="fl">0.493</span>), </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.42</span>, <span class="sc">-</span><span class="fl">0.745</span>, <span class="sc">-</span><span class="fl">0.02</span>, <span class="sc">-</span><span class="fl">0.44</span>, <span class="fl">0.209</span>), </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">0.621</span>, <span class="fl">0.049</span>, <span class="sc">-</span><span class="fl">0.134</span>, <span class="sc">-</span><span class="fl">0.844</span>, <span class="sc">-</span><span class="fl">0.31</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>B</span></code></pre></div>
 <pre><code>##        [,1]   [,2]   [,3]   [,4]   [,5]   [,6]
 ## [1,]  0.717  0.587 -0.441  0.923 -0.420  0.621
 ## [2,] -0.274 -0.545  0.886 -0.466 -0.745  0.049
@@ -333,8 +337,8 @@ c_9 \vec{a}_9.
 ## [4,]  0.482 -0.407 -0.831  0.867 -0.440 -0.844
 ## [5,] -0.362 -0.597 -0.594  0.493  0.209 -0.310</code></pre>
 <p>and here is a vector d in <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>d =<span class="st"> </span><span class="kw">c</span>(<span class="fl">5.886</span>, <span class="fl">-4.001</span>, <span class="fl">3.701</span>, <span class="fl">-6.621</span>, <span class="fl">-2.199</span>)</span>
-<span id="cb21-2"><a href="#cb21-2"></a>d</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">5.886</span>, <span class="sc">-</span><span class="fl">4.001</span>, <span class="fl">3.701</span>, <span class="sc">-</span><span class="fl">6.621</span>, <span class="sc">-</span><span class="fl">2.199</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>d</span></code></pre></div>
 <pre><code>## [1]  5.886 -4.001  3.701 -6.621 -2.199</code></pre>
 <p>Try answering some of these questions:</p>
 <ol style="list-style-type: lower-alpha">
@@ -345,36 +349,36 @@ c_9 \vec{a}_9.
 <li>Remove redundancies from the columns of B to get a new matrix B2 and use solve to solve the equation B2 x = d. Which of the parametric solutions to you get.</li>
 </ol>
 </div>
-<div id="random-matrices" class="section level2">
+<div id="random-matrices" class="section level2" number="0.3">
 <h2><span class="header-section-number">0.3</span> Random Matrices</h2>
 <p>The following code generates a random 5 x 5 matrix. Every time you enter it, it will give you a new matrix. Use this to try to figure out how likely it is that a random square matrix has linearly dependent columns.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>R1 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">5</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">5</span>)</span>
-<span id="cb23-2"><a href="#cb23-2"></a>R1</span></code></pre></div>
-<pre><code>##           [,1]       [,2]      [,3]      [,4]      [,5]
-## [1,] 0.7803046 0.50778287 0.9778561 0.4252348 0.3508986
-## [2,] 0.9272057 0.81633435 0.1316651 0.3200483 0.8316673
-## [3,] 0.7531431 0.56387012 0.4501900 0.8686536 0.5370794
-## [4,] 0.1095114 0.09600104 0.3344335 0.9644025 0.9773503
-## [5,] 0.2220435 0.81240668 0.3913615 0.9506399 0.8910669</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>R1 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">runif</span>(<span class="dv">5</span><span class="sc">*</span><span class="dv">5</span>), <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">5</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>R1</span></code></pre></div>
+<pre><code>##           [,1]      [,2]      [,3]       [,4]      [,5]
+## [1,] 0.4996601 0.3501695 0.3212532 0.16066483 0.3526439
+## [2,] 0.9020216 0.6231570 0.4178230 0.02108062 0.6452386
+## [3,] 0.7639577 0.5059545 0.5906469 0.31226673 0.6500135
+## [4,] 0.8540275 0.9241060 0.2095023 0.07236043 0.8886912
+## [5,] 0.5205630 0.9264472 0.6281901 0.51496529 0.5866629</code></pre>
 <p>Try the same using the following code that generates a random 5 x 6 matrix.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>R2 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">6</span>)</span>
-<span id="cb25-2"><a href="#cb25-2"></a>R2</span></code></pre></div>
-<pre><code>##            [,1]      [,2]      [,3]      [,4]       [,5]      [,6]
-## [1,] 0.46381133 0.5479716 0.5288881 0.4384520 0.64871957 0.8166315
-## [2,] 0.03396629 0.4866958 0.8112221 0.3262261 0.30953529 0.4590293
-## [3,] 0.69978976 0.9781186 0.5354226 0.6097605 0.04956768 0.1570853
-## [4,] 0.56872338 0.4341499 0.7224858 0.2577536 0.11978832 0.7009269
-## [5,] 0.15395071 0.9446204 0.9305765 0.9615211 0.42838247 0.8544771</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>R2 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">runif</span>(<span class="dv">5</span><span class="sc">*</span><span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">6</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>R2</span></code></pre></div>
+<pre><code>##           [,1]      [,2]      [,3]      [,4]      [,5]        [,6]
+## [1,] 0.6629482 0.5886254 0.7121903 0.5902435 0.8405912 0.685310113
+## [2,] 0.8276489 0.4892586 0.9157248 0.4696784 0.3530114 0.478438400
+## [3,] 0.8016861 0.1177997 0.5130826 0.1249125 0.2147165 0.082400083
+## [4,] 0.7562832 0.2149092 0.2214328 0.6601390 0.4771854 0.001488332
+## [5,] 0.7377223 0.4362168 0.6838391 0.4090984 0.7450626 0.885450030</code></pre>
 <p>Try the same using the following code that generates a random 5 x 4 matrix.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>R3 =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">runif</span>(<span class="dv">5</span><span class="op">*</span><span class="dv">4</span>), <span class="dt">nrow =</span> <span class="dv">5</span>, <span class="dt">ncol =</span> <span class="dv">4</span>)</span>
-<span id="cb27-2"><a href="#cb27-2"></a>R3</span></code></pre></div>
-<pre><code>##            [,1]      [,2]      [,3]       [,4]
-## [1,] 0.27466965 0.9200500 0.8349469 0.21205127
-## [2,] 0.97220868 0.7448752 0.3268638 0.51696942
-## [3,] 0.04461283 0.1874633 0.9869200 0.97790323
-## [4,] 0.86648183 0.8057628 0.4420742 0.01531281
-## [5,] 0.74843183 0.2171090 0.7690662 0.81881835</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">rref</span>(R3)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>R3 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">runif</span>(<span class="dv">5</span><span class="sc">*</span><span class="dv">4</span>), <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">4</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>R3</span></code></pre></div>
+<pre><code>##             [,1]      [,2]      [,3]      [,4]
+## [1,] 0.716777730 0.5828848 0.9144014 0.0860685
+## [2,] 0.374273778 0.8357576 0.1896527 0.3096471
+## [3,] 0.002912104 0.2296440 0.8311604 0.9614405
+## [4,] 0.320636493 0.7963208 0.3845808 0.6254151
+## [5,] 0.440764630 0.9892590 0.9182095 0.5344497</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rref</span>(R3)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    0    0    0
 ## [2,]    0    1    0    0
@@ -412,6 +416,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
