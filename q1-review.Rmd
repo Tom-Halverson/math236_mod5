@@ -28,7 +28,6 @@ You should understand these concepts and be able to read and use these terms cor
 * The columns of $A$ are linearly independent if and only if $Ax=0$ only has the trivial solution
 * Understand Theorem 8 in Section 1.7: if you have more than $n$ vectors in $\mathbb{R}^n$ they must be linearly dependent.
 * linear transformation
-* one-to-one and onto
 * the matrix of a linear transformation
 
 
