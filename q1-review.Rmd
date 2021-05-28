@@ -5,7 +5,7 @@
 
 ## Overview
 
-Our first quiz covers sections 1.1 - 1.8 and part of 1.9 in Lay's book. This corresponds to Problem Sets 1 and 2. In 1.8 and 1.9, it will cover the definition of a linear transformation as well as one-to-one and onto, but it will not cover the matrix of a linear transformation.
+Our first quiz covers sections 1.1 - 1.8 and part of 1.9 in Lay's book. This corresponds to Problem Sets 1 and 2. In 1.8 and 1.9, it will cover the definition of a linear transformation as well as the matrix of a transformation, but it will not cover the one-to-one and onto (those ideas will be on quiz 2).
 
 
 ### Vocabulary and Concepts
@@ -29,9 +29,7 @@ You should understand these concepts and be able to read and use these terms cor
 * Understand Theorem 8 in Section 1.7: if you have more than $n$ vectors in $\mathbb{R}^n$ they must be linearly dependent.
 * linear transformation
 * one-to-one and onto
-* Understand Theorem 12 in Section 1.9 which states that 
-    + $T(x)=Ax$ is onto if and only if the column of $A$ span $\mathbb{R}^m$
-    + $T(x)=Ax$ is one-to-one if and only if the columns of $A$ are linearly independent.
+* the matrix of a linear transformation
 
 
 ### Skills
@@ -48,8 +46,8 @@ You should be able to perform these linear algebra tasks.
 * Find a dependence relation among a set of vectors
 * Decide if a set of vectors span $\mathbb{R}^n$
 * Manipulate matrix vector products using: $A(x + y) = Ax + Ay$ and $A(c x) = c A x$
-* Determine whether a linear transformation is one-to-one and/or onto
-
+* Determine if a function $T: \mathbb{R}^n \to \mathbb{R}^m$ is linear.
+* Find the matrix of a linear transformation $T$.
 
 ## Practice Problems
 
