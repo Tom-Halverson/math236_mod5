@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Section 3 Problem Set 3 | MATH 236: Linear Algebra</title>
   <meta name="description" content="This is the class activity manual for MATH 236 at Macalester College." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Section 3 Problem Set 3 | MATH 236: Linear Algebra" />
   <meta property="og:type" content="book" />
@@ -30,7 +30,8 @@
   
   
 <link rel="prev" href="problem-set-2.html"/>
-<link rel="next" href="problem-set-4.html"/>
+<link rel="next" href="important-definitions.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -48,22 +49,23 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -83,7 +85,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -111,6 +113,7 @@ code span.vs { color: #008080; } /* VerbatimString */
 code span.wa { color: #008000; font-weight: bold; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="m236.css" type="text/css" />
 </head>
 
@@ -129,340 +132,119 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Problem Sets</b></span></li>
-<li class="chapter" data-level="1" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html"><i class="fa fa-check"></i><b>1</b> Problem Set 1-A</a><ul>
-<li class="chapter" data-level="1.1" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#characterize-the-solution-set"><i class="fa fa-check"></i><b>1.1</b> Characterize the Solution Set</a></li>
-<li class="chapter" data-level="1.2" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#find-the-general-solution"><i class="fa fa-check"></i><b>1.2</b> Find the General Solution</a></li>
-<li class="chapter" data-level="1.3" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#elementary-row-operations-are-reversible"><i class="fa fa-check"></i><b>1.3</b> Elementary row operations are reversible</a></li>
-<li class="chapter" data-level="1.4" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#designer-parabolas"><i class="fa fa-check"></i><b>1.4</b> Designer Parabolas</a></li>
-<li class="chapter" data-level="1.5" data-path="problem-set-1-a.html"><a href="problem-set-1-a.html#traffic-flow"><i class="fa fa-check"></i><b>1.5</b> Traffic Flow</a></li>
+<li class="chapter" data-level="1" data-path="problem-set-1.html"><a href="problem-set-1.html"><i class="fa fa-check"></i><b>1</b> Problem Set 1</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="problem-set-1.html"><a href="problem-set-1.html#characterize-the-solution-set"><i class="fa fa-check"></i><b>1.1</b> Characterize the Solution Set</a></li>
+<li class="chapter" data-level="1.2" data-path="problem-set-1.html"><a href="problem-set-1.html#find-the-general-solution"><i class="fa fa-check"></i><b>1.2</b> Find the General Solution</a></li>
+<li class="chapter" data-level="1.3" data-path="problem-set-1.html"><a href="problem-set-1.html#elementary-row-operations-are-reversible"><i class="fa fa-check"></i><b>1.3</b> Elementary row operations are reversible</a></li>
+<li class="chapter" data-level="1.4" data-path="problem-set-1.html"><a href="problem-set-1.html#designer-parabolas"><i class="fa fa-check"></i><b>1.4</b> Designer Parabolas</a></li>
+<li class="chapter" data-level="1.5" data-path="problem-set-1.html"><a href="problem-set-1.html#traffic-flow"><i class="fa fa-check"></i><b>1.5</b> Traffic Flow</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="problem-set-2.html"><a href="problem-set-2.html"><i class="fa fa-check"></i><b>2</b> Problem Set 2</a><ul>
+<li class="chapter" data-level="2" data-path="problem-set-2.html"><a href="problem-set-2.html"><i class="fa fa-check"></i><b>2</b> Problem Set 2</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="problem-set-2.html"><a href="problem-set-2.html#parametric-vector-form"><i class="fa fa-check"></i><b>2.1</b> Parametric Vector Form</a></li>
 <li class="chapter" data-level="2.2" data-path="problem-set-2.html"><a href="problem-set-2.html#rref-for-a-linear-system"><i class="fa fa-check"></i><b>2.2</b> RREF for a linear system</a></li>
 <li class="chapter" data-level="2.3" data-path="problem-set-2.html"><a href="problem-set-2.html#rref-for-a-set-of-vectors"><i class="fa fa-check"></i><b>2.3</b> RREF for a set of vectors</a></li>
-<li class="chapter" data-level="2.4" data-path="problem-set-2.html"><a href="problem-set-2.html#removing-free-variable-columns-from-a-matrix"><i class="fa fa-check"></i><b>2.4</b> Removing free variable columns from a matrix</a></li>
-<li class="chapter" data-level="2.5" data-path="problem-set-2.html"><a href="problem-set-2.html#a-square-matrix"><i class="fa fa-check"></i><b>2.5</b> A square matrix</a></li>
-<li class="chapter" data-level="2.6" data-path="problem-set-2.html"><a href="problem-set-2.html#combining-solutions-to-a-mathsfx-mathsfb"><i class="fa fa-check"></i><b>2.6</b> Combining solutions to <span class="math inline">\(A \mathsf{x} = \mathsf{b}\)</span></a></li>
-<li class="chapter" data-level="2.7" data-path="problem-set-2.html"><a href="problem-set-2.html#a-balanced-diet"><i class="fa fa-check"></i><b>2.7</b> A Balanced Diet</a></li>
-<li class="chapter" data-level="2.8" data-path="problem-set-2.html"><a href="problem-set-2.html#missing-column"><i class="fa fa-check"></i><b>2.8</b> Missing Column</a></li>
-<li class="chapter" data-level="2.9" data-path="problem-set-2.html"><a href="problem-set-2.html#linear-system"><i class="fa fa-check"></i><b>2.9</b> Linear System</a></li>
+<li class="chapter" data-level="2.4" data-path="problem-set-2.html"><a href="problem-set-2.html#a-square-matrix"><i class="fa fa-check"></i><b>2.4</b> A square matrix</a></li>
+<li class="chapter" data-level="2.5" data-path="problem-set-2.html"><a href="problem-set-2.html#combining-solutions-to-a-mathsfx-mathsfb"><i class="fa fa-check"></i><b>2.5</b> Combining solutions to <span class="math inline">\(A \mathsf{x} = \mathsf{b}\)</span></a></li>
+<li class="chapter" data-level="2.6" data-path="problem-set-2.html"><a href="problem-set-2.html#a-balanced-diet"><i class="fa fa-check"></i><b>2.6</b> A Balanced Diet</a></li>
+<li class="chapter" data-level="2.7" data-path="problem-set-2.html"><a href="problem-set-2.html#missing-column"><i class="fa fa-check"></i><b>2.7</b> Missing Column</a></li>
+<li class="chapter" data-level="2.8" data-path="problem-set-2.html"><a href="problem-set-2.html#linear-system"><i class="fa fa-check"></i><b>2.8</b> Linear System</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="problem-set-3.html"><a href="problem-set-3.html"><i class="fa fa-check"></i><b>3</b> Problem Set 3</a><ul>
-<li class="chapter" data-level="3.1" data-path="problem-set-3.html"><a href="problem-set-3.html#properties-of-linear-transformations"><i class="fa fa-check"></i><b>3.1</b> Properties of Linear Transformations</a></li>
-<li class="chapter" data-level="3.2" data-path="problem-set-3.html"><a href="problem-set-3.html#partial-information-about-a-linear-transformation"><i class="fa fa-check"></i><b>3.2</b> Partial Information about a Linear Transformation</a></li>
-<li class="chapter" data-level="3.3" data-path="problem-set-3.html"><a href="problem-set-3.html#house-renovations"><i class="fa fa-check"></i><b>3.3</b> House Renovations</a></li>
-<li class="chapter" data-level="3.4" data-path="problem-set-3.html"><a href="problem-set-3.html#matrix-of-a-nonlinear-transformation"><i class="fa fa-check"></i><b>3.4</b> Matrix of a Nonlinear Transformation?</a></li>
-<li class="chapter" data-level="3.5" data-path="problem-set-3.html"><a href="problem-set-3.html#a-proof"><i class="fa fa-check"></i><b>3.5</b> A Proof</a></li>
-<li class="chapter" data-level="3.6" data-path="problem-set-3.html"><a href="problem-set-3.html#inner-and-outer-products"><i class="fa fa-check"></i><b>3.6</b> Inner and Outer Products</a></li>
-<li class="chapter" data-level="3.7" data-path="problem-set-3.html"><a href="problem-set-3.html#archaeological-seriation"><i class="fa fa-check"></i><b>3.7</b> Archaeological Seriation</a></li>
-<li class="chapter" data-level="3.8" data-path="problem-set-3.html"><a href="problem-set-3.html#rental-car"><i class="fa fa-check"></i><b>3.8</b> Rental Car</a></li>
-<li class="chapter" data-level="3.9" data-path="problem-set-3.html"><a href="problem-set-3.html#adjacency-matrix"><i class="fa fa-check"></i><b>3.9</b> Adjacency Matrix</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="problem-set-4.html"><a href="problem-set-4.html"><i class="fa fa-check"></i><b>4</b> Problem Set 4</a><ul>
-<li class="chapter" data-level="4.1" data-path="problem-set-4.html"><a href="problem-set-4.html#rainy-day-in-la"><i class="fa fa-check"></i><b>4.1</b> Rainy Day in LA</a></li>
-<li class="chapter" data-level="4.2" data-path="problem-set-4.html"><a href="problem-set-4.html#fibonacci-vectors"><i class="fa fa-check"></i><b>4.2</b> Fibonacci Vectors</a></li>
-<li class="chapter" data-level="4.3" data-path="problem-set-4.html"><a href="problem-set-4.html#vectors-rescaled"><i class="fa fa-check"></i><b>4.3</b> Vectors Rescaled</a></li>
-<li class="chapter" data-level="4.4" data-path="problem-set-4.html"><a href="problem-set-4.html#polynomial-vector-spaces"><i class="fa fa-check"></i><b>4.4</b> Polynomial Vector Spaces</a></li>
-<li class="chapter" data-level="4.5" data-path="problem-set-4.html"><a href="problem-set-4.html#column-and-null-space"><i class="fa fa-check"></i><b>4.5</b> Column and Null Space</a></li>
-<li class="chapter" data-level="4.6" data-path="problem-set-4.html"><a href="problem-set-4.html#extend-to-a-basis"><i class="fa fa-check"></i><b>4.6</b> Extend to a basis</a></li>
-<li class="chapter" data-level="4.7" data-path="problem-set-4.html"><a href="problem-set-4.html#getting-into-a-subspace"><i class="fa fa-check"></i><b>4.7</b> Getting Into a Subspace</a></li>
-<li class="chapter" data-level="4.8" data-path="problem-set-4.html"><a href="problem-set-4.html#a-vector-in-both-cola-and-nula"><i class="fa fa-check"></i><b>4.8</b> A Vector in Both Col(A) and Nul(A)</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="problem-set-5.html"><a href="problem-set-5.html"><i class="fa fa-check"></i><b>5</b> Problem Set 5</a><ul>
-<li class="chapter" data-level="5.1" data-path="problem-set-5.html"><a href="problem-set-5.html#a-tale-of-two-bases"><i class="fa fa-check"></i><b>5.1</b> A Tale of Two Bases</a></li>
-<li class="chapter" data-level="5.2" data-path="problem-set-5.html"><a href="problem-set-5.html#dimension"><i class="fa fa-check"></i><b>5.2</b> Dimension</a></li>
-<li class="chapter" data-level="5.3" data-path="problem-set-5.html"><a href="problem-set-5.html#determinant-properties"><i class="fa fa-check"></i><b>5.3</b> Determinant Properties</a></li>
-<li class="chapter" data-level="5.4" data-path="problem-set-5.html"><a href="problem-set-5.html#matrix-rank"><i class="fa fa-check"></i><b>5.4</b> Matrix Rank</a></li>
-<li class="chapter" data-level="5.5" data-path="problem-set-5.html"><a href="problem-set-5.html#a-tetrahedral-basis"><i class="fa fa-check"></i><b>5.5</b> A Tetrahedral Basis</a></li>
-<li class="chapter" data-level="5.6" data-path="problem-set-5.html"><a href="problem-set-5.html#eigenbasis"><i class="fa fa-check"></i><b>5.6</b> Eigenbasis</a></li>
-<li class="chapter" data-level="5.7" data-path="problem-set-5.html"><a href="problem-set-5.html#house-party"><i class="fa fa-check"></i><b>5.7</b> House Party</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="problem-set-6.html"><a href="problem-set-6.html"><i class="fa fa-check"></i><b>6</b> Problem Set 6</a><ul>
-<li class="chapter" data-level="6.1" data-path="problem-set-6.html"><a href="problem-set-6.html#rain-and-sunshine-revisited"><i class="fa fa-check"></i><b>6.1</b> Rain and Sunshine Revisited</a></li>
-<li class="chapter" data-level="6.2" data-path="problem-set-6.html"><a href="problem-set-6.html#the-square-root-of-a-matrix"><i class="fa fa-check"></i><b>6.2</b> The Square Root of a Matrix?</a></li>
-<li class="chapter" data-level="6.3" data-path="problem-set-6.html"><a href="problem-set-6.html#matrix-reconstruction"><i class="fa fa-check"></i><b>6.3</b> Matrix Reconstruction</a></li>
-<li class="chapter" data-level="6.4" data-path="problem-set-6.html"><a href="problem-set-6.html#coyotes-and-roadrunners"><i class="fa fa-check"></i><b>6.4</b> Coyotes and Roadrunners</a></li>
-<li class="chapter" data-level="6.5" data-path="problem-set-6.html"><a href="problem-set-6.html#same-eigenvectors"><i class="fa fa-check"></i><b>6.5</b> Same Eigenvectors</a></li>
-<li class="chapter" data-level="6.6" data-path="problem-set-6.html"><a href="problem-set-6.html#hunt-creek"><i class="fa fa-check"></i><b>6.6</b> Hunt Creek</a></li>
-<li class="chapter" data-level="6.7" data-path="problem-set-6.html"><a href="problem-set-6.html#glucose-insulin"><i class="fa fa-check"></i><b>6.7</b> Glucose-Insulin</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="problem-set-7.html"><a href="problem-set-7.html"><i class="fa fa-check"></i><b>7</b> Problem Set 7</a><ul>
-<li class="chapter" data-level="7.1" data-path="problem-set-7.html"><a href="problem-set-7.html#the-rise-of-moscow"><i class="fa fa-check"></i><b>7.1</b> The Rise of Moscow</a></li>
-<li class="chapter" data-level="7.2" data-path="problem-set-7.html"><a href="problem-set-7.html#orthogonal-complements"><i class="fa fa-check"></i><b>7.2</b> Orthogonal Complements</a></li>
-<li class="chapter" data-level="7.3" data-path="problem-set-7.html"><a href="problem-set-7.html#orthogonal-diagonalization"><i class="fa fa-check"></i><b>7.3</b> Orthogonal Diagonalization</a></li>
-<li class="chapter" data-level="7.4" data-path="problem-set-7.html"><a href="problem-set-7.html#cosine-similarity"><i class="fa fa-check"></i><b>7.4</b> Cosine Similarity</a></li>
-<li class="chapter" data-level="7.5" data-path="problem-set-7.html"><a href="problem-set-7.html#fibonacci-orthogonality"><i class="fa fa-check"></i><b>7.5</b> Fibonacci Orthogonality</a></li>
-<li class="chapter" data-level="7.6" data-path="problem-set-7.html"><a href="problem-set-7.html#least-squares-solution-to-mathsfa-x-mathsfb"><i class="fa fa-check"></i><b>7.6</b> Least Squares Solution to <span class="math inline">\(\mathsf{A} x = \mathsf{b}\)</span></a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="problem-set-8.html"><a href="problem-set-8.html"><i class="fa fa-check"></i><b>8</b> Problem Set 8</a><ul>
-<li class="chapter" data-level="8.1" data-path="problem-set-8.html"><a href="problem-set-8.html#subspace-projection"><i class="fa fa-check"></i><b>8.1</b> Subspace Projection</a></li>
-<li class="chapter" data-level="8.2" data-path="problem-set-8.html"><a href="problem-set-8.html#least-squares-polynomials"><i class="fa fa-check"></i><b>8.2</b> Least-Squares Polynomials</a></li>
-<li class="chapter" data-level="8.3" data-path="problem-set-8.html"><a href="problem-set-8.html#fuel-efficiency"><i class="fa fa-check"></i><b>8.3</b> Fuel Efficiency</a></li>
-<li class="chapter" data-level="8.4" data-path="problem-set-8.html"><a href="problem-set-8.html#fourier-analysis"><i class="fa fa-check"></i><b>8.4</b> Fourier Analysis</a></li>
-<li class="chapter" data-level="8.5" data-path="problem-set-8.html"><a href="problem-set-8.html#global-fossil-fuel-emissions"><i class="fa fa-check"></i><b>8.5</b> Global Fossil Fuel Emissions</a></li>
+<li class="chapter" data-level="3" data-path="problem-set-3.html"><a href="problem-set-3.html"><i class="fa fa-check"></i><b>3</b> Problem Set 3</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="problem-set-3.html"><a href="problem-set-3.html#section"><i class="fa fa-check"></i><b>3.0.1</b> </a></li>
+<li class="chapter" data-level="3.1" data-path="problem-set-3.html"><a href="problem-set-3.html#partial-information-about-a-linear-transformation"><i class="fa fa-check"></i><b>3.1</b> Partial Information about a Linear Transformation</a></li>
+<li class="chapter" data-level="3.2" data-path="problem-set-3.html"><a href="problem-set-3.html#house-renovations"><i class="fa fa-check"></i><b>3.2</b> House Renovations</a></li>
+<li class="chapter" data-level="3.3" data-path="problem-set-3.html"><a href="problem-set-3.html#matrix-of-a-nonlinear-transformation"><i class="fa fa-check"></i><b>3.3</b> Matrix of a Nonlinear Transformation?</a></li>
+<li class="chapter" data-level="3.4" data-path="problem-set-3.html"><a href="problem-set-3.html#a-proof"><i class="fa fa-check"></i><b>3.4</b> A Proof</a></li>
+<li class="chapter" data-level="3.5" data-path="problem-set-3.html"><a href="problem-set-3.html#inner-and-outer-products"><i class="fa fa-check"></i><b>3.5</b> Inner and Outer Products</a></li>
+<li class="chapter" data-level="3.6" data-path="problem-set-3.html"><a href="problem-set-3.html#archaeological-seriation"><i class="fa fa-check"></i><b>3.6</b> Archaeological Seriation</a></li>
+<li class="chapter" data-level="3.7" data-path="problem-set-3.html"><a href="problem-set-3.html#rental-car"><i class="fa fa-check"></i><b>3.7</b> Rental Car</a></li>
+<li class="chapter" data-level="3.8" data-path="problem-set-3.html"><a href="problem-set-3.html#adjacency-matrix"><i class="fa fa-check"></i><b>3.8</b> Adjacency Matrix</a></li>
 </ul></li>
 <li class="part"><span><b>II Concepts of Linear Algebra</b></span></li>
-<li class="chapter" data-level="9" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>9</b> Important Definitions</a><ul>
-<li class="chapter" data-level="9.1" data-path="important-definitions.html"><a href="important-definitions.html#vector-spaces"><i class="fa fa-check"></i><b>9.1</b> Vector Spaces</a></li>
-<li class="chapter" data-level="9.2" data-path="important-definitions.html"><a href="important-definitions.html#matrices"><i class="fa fa-check"></i><b>9.2</b> Matrices</a></li>
-<li class="chapter" data-level="9.3" data-path="important-definitions.html"><a href="important-definitions.html#orthogonality"><i class="fa fa-check"></i><b>9.3</b> Orthogonality</a></li>
-<li class="chapter" data-level="9.4" data-path="important-definitions.html"><a href="important-definitions.html#spectral-decompostion"><i class="fa fa-check"></i><b>9.4</b> Spectral Decompostion</a></li>
+<li class="chapter" data-level="4" data-path="important-definitions.html"><a href="important-definitions.html"><i class="fa fa-check"></i><b>4</b> Important Definitions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="important-definitions.html"><a href="important-definitions.html#vector-spaces"><i class="fa fa-check"></i><b>4.1</b> Vector Spaces</a></li>
+<li class="chapter" data-level="4.2" data-path="important-definitions.html"><a href="important-definitions.html#matrices"><i class="fa fa-check"></i><b>4.2</b> Matrices</a></li>
+<li class="chapter" data-level="4.3" data-path="important-definitions.html"><a href="important-definitions.html#orthogonality"><i class="fa fa-check"></i><b>4.3</b> Orthogonality</a></li>
+<li class="chapter" data-level="4.4" data-path="important-definitions.html"><a href="important-definitions.html#spectral-decompostion"><i class="fa fa-check"></i><b>4.4</b> Spectral Decompostion</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html"><i class="fa fa-check"></i><b>10</b> Week 1 Learning Goals</a><ul>
-<li class="chapter" data-level="10.1" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#solving-linear-equations"><i class="fa fa-check"></i><b>10.1</b> Solving Linear Equations</a></li>
-<li class="chapter" data-level="10.2" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#rstudio"><i class="fa fa-check"></i><b>10.2</b> RStudio</a></li>
-<li class="chapter" data-level="10.3" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#vocabulary"><i class="fa fa-check"></i><b>10.3</b> Vocabulary</a></li>
-<li class="chapter" data-level="10.4" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#conceptual-thinking"><i class="fa fa-check"></i><b>10.4</b> Conceptual Thinking</a></li>
+<li class="chapter" data-level="5" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html"><i class="fa fa-check"></i><b>5</b> Week 1 Learning Goals</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#solving-linear-equations"><i class="fa fa-check"></i><b>5.1</b> Solving Linear Equations</a></li>
+<li class="chapter" data-level="5.2" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#rstudio"><i class="fa fa-check"></i><b>5.2</b> RStudio</a></li>
+<li class="chapter" data-level="5.3" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#vocabulary"><i class="fa fa-check"></i><b>5.3</b> Vocabulary</a></li>
+<li class="chapter" data-level="5.4" data-path="week-1-learning-goals.html"><a href="week-1-learning-goals.html#conceptual-thinking"><i class="fa fa-check"></i><b>5.4</b> Conceptual Thinking</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html"><i class="fa fa-check"></i><b>11</b> Week 2 Learning Goals</a><ul>
-<li class="chapter" data-level="11.1" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#solution-sets-span-and-linear-independence"><i class="fa fa-check"></i><b>11.1</b> Solution Sets, Span and Linear Independence</a></li>
-<li class="chapter" data-level="11.2" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#vocabulary-1"><i class="fa fa-check"></i><b>11.2</b> Vocabulary</a></li>
-<li class="chapter" data-level="11.3" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#conceptual-thinking-1"><i class="fa fa-check"></i><b>11.3</b> Conceptual Thinking</a></li>
+<li class="chapter" data-level="6" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html"><i class="fa fa-check"></i><b>6</b> Week 2 Learning Goals</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#solution-sets-span-and-linear-independence"><i class="fa fa-check"></i><b>6.1</b> Solution Sets, Span and Linear Independence</a></li>
+<li class="chapter" data-level="6.2" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#vocabulary-1"><i class="fa fa-check"></i><b>6.2</b> Vocabulary</a></li>
+<li class="chapter" data-level="6.3" data-path="week-2-learning-goals.html"><a href="week-2-learning-goals.html#conceptual-thinking-1"><i class="fa fa-check"></i><b>6.3</b> Conceptual Thinking</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="week-3-learning-goals.html"><a href="week-3-learning-goals.html"><i class="fa fa-check"></i><b>12</b> Week 3 Learning Goals</a><ul>
-<li class="chapter" data-level="12.1" data-path="week-3-learning-goals.html"><a href="week-3-learning-goals.html#linear-transformations-and-matrix-inverses"><i class="fa fa-check"></i><b>12.1</b> Linear Transformations and Matrix Inverses</a></li>
-<li class="chapter" data-level="12.2" data-path="week-3-learning-goals.html"><a href="week-3-learning-goals.html#vocabulary-2"><i class="fa fa-check"></i><b>12.2</b> Vocabulary</a></li>
-<li class="chapter" data-level="12.3" data-path="week-3-learning-goals.html"><a href="week-3-learning-goals.html#conceptual-thinking-2"><i class="fa fa-check"></i><b>12.3</b> Conceptual Thinking</a></li>
+<li class="chapter" data-level="7" data-path="week-3-learning-goals.html"><a href="week-3-learning-goals.html"><i class="fa fa-check"></i><b>7</b> Week 3 Learning Goals</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="week-3-learning-goals.html"><a href="week-3-learning-goals.html#linear-transformations-and-matrix-inverses"><i class="fa fa-check"></i><b>7.1</b> Linear Transformations and Matrix Inverses</a></li>
+<li class="chapter" data-level="7.2" data-path="week-3-learning-goals.html"><a href="week-3-learning-goals.html#vocabulary-2"><i class="fa fa-check"></i><b>7.2</b> Vocabulary</a></li>
+<li class="chapter" data-level="7.3" data-path="week-3-learning-goals.html"><a href="week-3-learning-goals.html#conceptual-thinking-2"><i class="fa fa-check"></i><b>7.3</b> Conceptual Thinking</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="week-4-learning-goals.html"><a href="week-4-learning-goals.html"><i class="fa fa-check"></i><b>13</b> Week 4 Learning Goals</a><ul>
-<li class="chapter" data-level="13.1" data-path="week-4-learning-goals.html"><a href="week-4-learning-goals.html#vector-spaces-and-the-determinant"><i class="fa fa-check"></i><b>13.1</b> Vector Spaces and the Determinant</a></li>
-<li class="chapter" data-level="13.2" data-path="week-4-learning-goals.html"><a href="week-4-learning-goals.html#vocabulary-3"><i class="fa fa-check"></i><b>13.2</b> Vocabulary</a></li>
-<li class="chapter" data-level="13.3" data-path="week-4-learning-goals.html"><a href="week-4-learning-goals.html#conceptual-thinking-3"><i class="fa fa-check"></i><b>13.3</b> Conceptual Thinking</a></li>
+<li class="part"><span><b>III Linear Algebra in R</b></span></li>
+<li class="chapter" data-level="8" data-path="class-examples.html"><a href="class-examples.html"><i class="fa fa-check"></i><b>8</b> Class Examples</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="class-examples.html"><a href="class-examples.html#day-5-tuesday-may-25"><i class="fa fa-check"></i><b>8.1</b> Day 5: Tuesday May 25</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html"><i class="fa fa-check"></i><b>14</b> Week 5-6 Learning Goals</a><ul>
-<li class="chapter" data-level="14.1" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html#eigensystems"><i class="fa fa-check"></i><b>14.1</b> Eigensystems</a></li>
-<li class="chapter" data-level="14.2" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html#vocabulary-4"><i class="fa fa-check"></i><b>14.2</b> Vocabulary</a></li>
-<li class="chapter" data-level="14.3" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html#conceptual-thinking-4"><i class="fa fa-check"></i><b>14.3</b> Conceptual Thinking</a></li>
+<li class="chapter" data-level="9" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html"><i class="fa fa-check"></i><b>9</b> Linear Systems in R</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#getting-started-with-r"><i class="fa fa-check"></i><b>9.1</b> Getting started with R</a></li>
+<li class="chapter" data-level="9.2" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#building-vectors-and-matrices"><i class="fa fa-check"></i><b>9.2</b> Building Vectors and Matrices</a></li>
+<li class="chapter" data-level="9.3" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-a-linear-system"><i class="fa fa-check"></i><b>9.3</b> Solving a Linear System</a></li>
+<li class="chapter" data-level="9.4" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-another-linear-system"><i class="fa fa-check"></i><b>9.4</b> Solving another Linear System</a></li>
+<li class="chapter" data-level="9.5" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#appendix-dimensionless-vectors-in-r"><i class="fa fa-check"></i><b>9.5</b> Appendix: Dimensionless Vectors in R</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="week-7-8-learning-goals.html"><a href="week-7-8-learning-goals.html"><i class="fa fa-check"></i><b>15</b> Week 7-8 Learning Goals</a><ul>
-<li class="chapter" data-level="15.1" data-path="week-7-8-learning-goals.html"><a href="week-7-8-learning-goals.html#orthogonality-and-svd"><i class="fa fa-check"></i><b>15.1</b> Orthogonality and SVD</a></li>
-<li class="chapter" data-level="15.2" data-path="week-7-8-learning-goals.html"><a href="week-7-8-learning-goals.html#vocabulary-5"><i class="fa fa-check"></i><b>15.2</b> Vocabulary</a></li>
-<li class="chapter" data-level="15.3" data-path="week-7-8-learning-goals.html"><a href="week-7-8-learning-goals.html#conceptual-thinking-5"><i class="fa fa-check"></i><b>15.3</b> Conceptual Thinking</a></li>
+<li class="chapter" data-level="10" data-path="linear-dependence.html"><a href="linear-dependence.html"><i class="fa fa-check"></i><b>10</b> Linear Dependence</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="linear-dependence.html"><a href="linear-dependence.html#example-1-a-7x9-integer-matrix"><i class="fa fa-check"></i><b>10.1</b> Example 1: a 7x9 integer matrix</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="linear-dependence.html"><a href="linear-dependence.html#solution-to-the-nonhomogeneous-equations-ax-b"><i class="fa fa-check"></i><b>10.1.1</b> Solution to the nonhomogeneous equations Ax = b</a></li>
+<li class="chapter" data-level="10.1.2" data-path="linear-dependence.html"><a href="linear-dependence.html#solution-to-the-nonhomogeneous-equations-ax-0"><i class="fa fa-check"></i><b>10.1.2</b> Solution to the nonhomogeneous equations Ax = 0</a></li>
+<li class="chapter" data-level="10.1.3" data-path="linear-dependence.html"><a href="linear-dependence.html#linearly-dependent-columns"><i class="fa fa-check"></i><b>10.1.3</b> Linearly dependent columns</a></li>
 </ul></li>
-<li class="part"><span><b>III LineaR Algebra</b></span></li>
-<li class="chapter" data-level="16" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html"><i class="fa fa-check"></i><b>16</b> Linear Systems in R</a><ul>
-<li class="chapter" data-level="16.1" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#getting-started-with-r"><i class="fa fa-check"></i><b>16.1</b> Getting started with R</a></li>
-<li class="chapter" data-level="16.2" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#building-vectors-and-matrices"><i class="fa fa-check"></i><b>16.2</b> Building Vectors and Matrices</a></li>
-<li class="chapter" data-level="16.3" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-a-linear-system"><i class="fa fa-check"></i><b>16.3</b> Solving a Linear System</a></li>
-<li class="chapter" data-level="16.4" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#solving-another-linear-system"><i class="fa fa-check"></i><b>16.4</b> Solving another Linear System</a></li>
-<li class="chapter" data-level="16.5" data-path="linear-systems-in-r.html"><a href="linear-systems-in-r.html#appendix-dimensionless-vectors-in-r"><i class="fa fa-check"></i><b>16.5</b> Appendix: Dimensionless Vectors in R</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="linear-dependence.html"><a href="linear-dependence.html"><i class="fa fa-check"></i><b>17</b> Linear Dependence</a><ul>
-<li class="chapter" data-level="17.1" data-path="linear-dependence.html"><a href="linear-dependence.html#example-1-a-7x9-integer-matrix"><i class="fa fa-check"></i><b>17.1</b> Example 1: a 7x9 integer matrix</a><ul>
-<li class="chapter" data-level="17.1.1" data-path="linear-dependence.html"><a href="linear-dependence.html#solution-to-the-nonhomogeneous-equations-ax-b"><i class="fa fa-check"></i><b>17.1.1</b> Solution to the nonhomogeneous equations Ax = b</a></li>
-<li class="chapter" data-level="17.1.2" data-path="linear-dependence.html"><a href="linear-dependence.html#solution-to-the-nonhomogeneous-equations-ax-0"><i class="fa fa-check"></i><b>17.1.2</b> Solution to the nonhomogeneous equations Ax = 0</a></li>
-<li class="chapter" data-level="17.1.3" data-path="linear-dependence.html"><a href="linear-dependence.html#linearly-dependent-columns"><i class="fa fa-check"></i><b>17.1.3</b> Linearly dependent columns</a></li>
-</ul></li>
-<li class="chapter" data-level="17.2" data-path="linear-dependence.html"><a href="linear-dependence.html#a-5-x-6-numerical-matrix"><i class="fa fa-check"></i><b>17.2</b> A 5 x 6 Numerical Matrix</a></li>
-<li class="chapter" data-level="17.3" data-path="linear-dependence.html"><a href="linear-dependence.html#random-matrices"><i class="fa fa-check"></i><b>17.3</b> Random Matrices</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html"><i class="fa fa-check"></i><b>18</b> Matrix Multiplication</a></li>
-<li class="chapter" data-level="19" data-path="linear-transformations-of-a-house.html"><a href="linear-transformations-of-a-house.html"><i class="fa fa-check"></i><b>19</b> Linear Transformations of a House</a><ul>
-<li class="chapter" data-level="19.1" data-path="linear-transformations-of-a-house.html"><a href="linear-transformations-of-a-house.html#rotations"><i class="fa fa-check"></i><b>19.1</b> Rotations</a></li>
-<li class="chapter" data-level="19.2" data-path="linear-transformations-of-a-house.html"><a href="linear-transformations-of-a-house.html#expansion-and-contraction"><i class="fa fa-check"></i><b>19.2</b> Expansion and contraction</a></li>
-<li class="chapter" data-level="19.3" data-path="linear-transformations-of-a-house.html"><a href="linear-transformations-of-a-house.html#reflection"><i class="fa fa-check"></i><b>19.3</b> Reflection</a></li>
-<li class="chapter" data-level="19.4" data-path="linear-transformations-of-a-house.html"><a href="linear-transformations-of-a-house.html#shear-transformations"><i class="fa fa-check"></i><b>19.4</b> Shear Transformations</a></li>
-<li class="chapter" data-level="19.5" data-path="linear-transformations-of-a-house.html"><a href="linear-transformations-of-a-house.html#dimension-reduction"><i class="fa fa-check"></i><b>19.5</b> Dimension Reduction</a></li>
-<li class="chapter" data-level="19.6" data-path="linear-transformations-of-a-house.html"><a href="linear-transformations-of-a-house.html#your-turn"><i class="fa fa-check"></i><b>19.6</b> Your Turn</a></li>
-</ul></li>
-<li class="chapter" data-level="20" data-path="homogeneous-coordinates.html"><a href="homogeneous-coordinates.html"><i class="fa fa-check"></i><b>20</b> Homogeneous Coordinates</a><ul>
-<li class="chapter" data-level="20.1" data-path="homogeneous-coordinates.html"><a href="homogeneous-coordinates.html#translation"><i class="fa fa-check"></i><b>20.1</b> Translation</a></li>
-<li class="chapter" data-level="20.2" data-path="homogeneous-coordinates.html"><a href="homogeneous-coordinates.html#rotation-and-then-translation"><i class="fa fa-check"></i><b>20.2</b> Rotation and then Translation</a></li>
-<li class="chapter" data-level="20.3" data-path="homogeneous-coordinates.html"><a href="homogeneous-coordinates.html#your-turn-1"><i class="fa fa-check"></i><b>20.3</b> Your Turn</a><ul>
-<li class="chapter" data-level="20.3.1" data-path="homogeneous-coordinates.html"><a href="homogeneous-coordinates.html#translation-and-then-rotation"><i class="fa fa-check"></i><b>20.3.1</b> Translation and then Rotation</a></li>
-<li class="chapter" data-level="20.3.2" data-path="homogeneous-coordinates.html"><a href="homogeneous-coordinates.html#house-of-orange"><i class="fa fa-check"></i><b>20.3.2</b> House of Orange</a></li>
-<li class="chapter" data-level="20.3.3" data-path="homogeneous-coordinates.html"><a href="homogeneous-coordinates.html#house-party-1"><i class="fa fa-check"></i><b>20.3.3</b> House Party</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="21" data-path="eigenvectors.html"><a href="eigenvectors.html"><i class="fa fa-check"></i><b>21</b> Eigenvectors</a><ul>
-<li class="chapter" data-level="21.1" data-path="eigenvectors.html"><a href="eigenvectors.html#computing-eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>21.1</b> Computing Eigenvectors and Eigenvalues</a></li>
-<li class="chapter" data-level="21.2" data-path="eigenvectors.html"><a href="eigenvectors.html#diagonalization"><i class="fa fa-check"></i><b>21.2</b> Diagonalization</a></li>
-<li class="chapter" data-level="21.3" data-path="eigenvectors.html"><a href="eigenvectors.html#rental-car-example"><i class="fa fa-check"></i><b>21.3</b> Rental Car Example</a></li>
-<li class="chapter" data-level="21.4" data-path="eigenvectors.html"><a href="eigenvectors.html#northern-spotted-owl"><i class="fa fa-check"></i><b>21.4</b> Northern Spotted Owl</a><ul>
-<li class="chapter" data-level="21.4.1" data-path="eigenvectors.html"><a href="eigenvectors.html#the-dynamical-system"><i class="fa fa-check"></i><b>21.4.1</b> The Dynamical System</a></li>
-<li class="chapter" data-level="21.4.2" data-path="eigenvectors.html"><a href="eigenvectors.html#eigenanalysis"><i class="fa fa-check"></i><b>21.4.2</b> Eigenanalysis</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="22" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html"><i class="fa fa-check"></i><b>22</b> Dynamical Systems in 2D</a><ul>
-<li class="chapter" data-level="22.1" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#helper-function-to-plot-dynamical-systems"><i class="fa fa-check"></i><b>22.1</b> Helper Function to Plot Dynamical Systems</a></li>
-<li class="chapter" data-level="22.2" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#our-first-example"><i class="fa fa-check"></i><b>22.2</b> Our first example</a></li>
-<li class="chapter" data-level="22.3" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#checkpoint-question-for-today"><i class="fa fa-check"></i><b>22.3</b> CheckPoint Question for today</a></li>
-<li class="chapter" data-level="22.4" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#discussion-question-1"><i class="fa fa-check"></i><b>22.4</b> Discussion Question 1</a></li>
-<li class="chapter" data-level="22.5" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#discussion-question-2"><i class="fa fa-check"></i><b>22.5</b> Discussion Question 2</a></li>
-<li class="chapter" data-level="22.6" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#discussion-question-3"><i class="fa fa-check"></i><b>22.6</b> Discussion Question 3</a></li>
-<li class="chapter" data-level="22.7" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#discussion-question-4"><i class="fa fa-check"></i><b>22.7</b> Discussion Question 4</a></li>
-<li class="chapter" data-level="22.8" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#your-turn-2"><i class="fa fa-check"></i><b>22.8</b> Your Turn</a><ul>
-<li class="chapter" data-level="22.8.1" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#example-1"><i class="fa fa-check"></i><b>22.8.1</b> Example 1</a></li>
-<li class="chapter" data-level="22.8.2" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#example-2"><i class="fa fa-check"></i><b>22.8.2</b> Example 2</a></li>
-<li class="chapter" data-level="22.8.3" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#example-3"><i class="fa fa-check"></i><b>22.8.3</b> Example 3</a></li>
-<li class="chapter" data-level="22.8.4" data-path="dynamical-systems-in-2d.html"><a href="dynamical-systems-in-2d.html#example-4"><i class="fa fa-check"></i><b>22.8.4</b> Example 4</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="23" data-path="complex-eigenvalues.html"><a href="complex-eigenvalues.html"><i class="fa fa-check"></i><b>23</b> Complex Eigenvalues</a><ul>
-<li class="chapter" data-level="23.1" data-path="complex-eigenvalues.html"><a href="complex-eigenvalues.html#rotation-dilation"><i class="fa fa-check"></i><b>23.1</b> Rotation-Dilation</a><ul>
-<li class="chapter" data-level="23.1.1" data-path="complex-eigenvalues.html"><a href="complex-eigenvalues.html#example-1-1"><i class="fa fa-check"></i><b>23.1.1</b> Example 1</a></li>
-<li class="chapter" data-level="23.1.2" data-path="complex-eigenvalues.html"><a href="complex-eigenvalues.html#example-2-1"><i class="fa fa-check"></i><b>23.1.2</b> Example 2</a></li>
-<li class="chapter" data-level="23.1.3" data-path="complex-eigenvalues.html"><a href="complex-eigenvalues.html#example-3-1"><i class="fa fa-check"></i><b>23.1.3</b> Example 3</a></li>
-</ul></li>
-<li class="chapter" data-level="23.2" data-path="complex-eigenvalues.html"><a href="complex-eigenvalues.html#general-2x2-matrices-with-complex-eigenvalues"><i class="fa fa-check"></i><b>23.2</b> General 2x2 Matrices with Complex Eigenvalues</a></li>
-<li class="chapter" data-level="23.3" data-path="complex-eigenvalues.html"><a href="complex-eigenvalues.html#a-3d-example"><i class="fa fa-check"></i><b>23.3</b> A 3D example</a></li>
-</ul></li>
-<li class="chapter" data-level="24" data-path="network-centralities.html"><a href="network-centralities.html"><i class="fa fa-check"></i><b>24</b> Network Centralities</a><ul>
-<li class="chapter" data-level="24.1" data-path="network-centralities.html"><a href="network-centralities.html#graphs-and-networks"><i class="fa fa-check"></i><b>24.1</b> Graphs and Networks</a><ul>
-<li class="chapter" data-level="24.1.1" data-path="network-centralities.html"><a href="network-centralities.html#adjacency-matrices"><i class="fa fa-check"></i><b>24.1.1</b> Adjacency Matrices</a></li>
-<li class="chapter" data-level="24.1.2" data-path="network-centralities.html"><a href="network-centralities.html#graph-layouts"><i class="fa fa-check"></i><b>24.1.2</b> Graph Layouts</a></li>
-</ul></li>
-<li class="chapter" data-level="24.2" data-path="network-centralities.html"><a href="network-centralities.html#degree-centrality"><i class="fa fa-check"></i><b>24.2</b> Degree Centrality</a></li>
-<li class="chapter" data-level="24.3" data-path="network-centralities.html"><a href="network-centralities.html#goulds-index"><i class="fa fa-check"></i><b>24.3</b> Gould’s Index</a><ul>
-<li class="chapter" data-level="24.3.1" data-path="network-centralities.html"><a href="network-centralities.html#step-1-add-layovers"><i class="fa fa-check"></i><b>24.3.1</b> Step 1: Add Layovers</a></li>
-<li class="chapter" data-level="24.3.2" data-path="network-centralities.html"><a href="network-centralities.html#step-2-dynamical-system"><i class="fa fa-check"></i><b>24.3.2</b> Step 2: Dynamical System</a></li>
-<li class="chapter" data-level="24.3.3" data-path="network-centralities.html"><a href="network-centralities.html#step-4-eigen-analysis"><i class="fa fa-check"></i><b>24.3.3</b> Step 4: Eigen-analysis</a></li>
-<li class="chapter" data-level="24.3.4" data-path="network-centralities.html"><a href="network-centralities.html#step-5"><i class="fa fa-check"></i><b>24.3.4</b> Step 5</a></li>
-<li class="chapter" data-level="24.3.5" data-path="network-centralities.html"><a href="network-centralities.html#gould-index-summary"><i class="fa fa-check"></i><b>24.3.5</b> Gould Index Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="24.4" data-path="network-centralities.html"><a href="network-centralities.html#your-turn-the-rise-of-moscow"><i class="fa fa-check"></i><b>24.4</b> Your Turn: The Rise of Moscow</a></li>
-</ul></li>
-<li class="chapter" data-level="25" data-path="geometry-in-mathbbrn.html"><a href="geometry-in-mathbbrn.html"><i class="fa fa-check"></i><b>25</b> Geometry in <span class="math inline">\(\mathbb{R}^n\)</span></a><ul>
-<li class="chapter" data-level="25.1" data-path="geometry-in-mathbbrn.html"><a href="geometry-in-mathbbrn.html#dot-product"><i class="fa fa-check"></i><b>25.1</b> Dot Product</a></li>
-<li class="chapter" data-level="25.2" data-path="geometry-in-mathbbrn.html"><a href="geometry-in-mathbbrn.html#length-distance-angle"><i class="fa fa-check"></i><b>25.2</b> Length, Distance, Angle</a></li>
-<li class="chapter" data-level="25.3" data-path="geometry-in-mathbbrn.html"><a href="geometry-in-mathbbrn.html#orthogonal-complement"><i class="fa fa-check"></i><b>25.3</b> Orthogonal Complement</a></li>
-</ul></li>
-<li class="chapter" data-level="26" data-path="least-squares-approximation.html"><a href="least-squares-approximation.html"><i class="fa fa-check"></i><b>26</b> Least Squares Approximation</a><ul>
-<li class="chapter" data-level="26.1" data-path="least-squares-approximation.html"><a href="least-squares-approximation.html#introduction"><i class="fa fa-check"></i><b>26.1</b> Introduction</a></li>
-<li class="chapter" data-level="26.2" data-path="least-squares-approximation.html"><a href="least-squares-approximation.html#example-1-2"><i class="fa fa-check"></i><b>26.2</b> Example 1</a></li>
-<li class="chapter" data-level="26.3" data-path="least-squares-approximation.html"><a href="least-squares-approximation.html#template"><i class="fa fa-check"></i><b>26.3</b> Template</a></li>
-<li class="chapter" data-level="26.4" data-path="least-squares-approximation.html"><a href="least-squares-approximation.html#fitting-for-a-linear-function"><i class="fa fa-check"></i><b>26.4</b> Fitting for a Linear Function</a></li>
-<li class="chapter" data-level="26.5" data-path="least-squares-approximation.html"><a href="least-squares-approximation.html#fitting-for-a-quadratic-function"><i class="fa fa-check"></i><b>26.5</b> Fitting for a Quadratic Function</a></li>
+<li class="chapter" data-level="10.2" data-path="linear-dependence.html"><a href="linear-dependence.html#a-5-x-6-numerical-matrix"><i class="fa fa-check"></i><b>10.2</b> A 5 x 6 Numerical Matrix</a></li>
+<li class="chapter" data-level="10.3" data-path="linear-dependence.html"><a href="linear-dependence.html#random-matrices"><i class="fa fa-check"></i><b>10.3</b> Random Matrices</a></li>
 </ul></li>
 <li class="part"><span><b>IV Quiz Review</b></span></li>
-<li class="chapter" data-level="27" data-path="quiz-1-review.html"><a href="quiz-1-review.html"><i class="fa fa-check"></i><b>27</b> Quiz 1 Review</a><ul>
-<li class="chapter" data-level="27.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#overview"><i class="fa fa-check"></i><b>27.1</b> Overview</a><ul>
-<li class="chapter" data-level="27.1.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#vocabulary-and-concepts"><i class="fa fa-check"></i><b>27.1.1</b> Vocabulary and Concepts</a></li>
-<li class="chapter" data-level="27.1.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#skills"><i class="fa fa-check"></i><b>27.1.2</b> Skills</a></li>
+<li class="chapter" data-level="11" data-path="quiz-1-review.html"><a href="quiz-1-review.html"><i class="fa fa-check"></i><b>11</b> Quiz 1 Review</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#overview"><i class="fa fa-check"></i><b>11.1</b> Overview</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#vocabulary-and-concepts"><i class="fa fa-check"></i><b>11.1.1</b> Vocabulary and Concepts</a></li>
+<li class="chapter" data-level="11.1.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#skills"><i class="fa fa-check"></i><b>11.1.2</b> Skills</a></li>
 </ul></li>
-<li class="chapter" data-level="27.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#practice-problems"><i class="fa fa-check"></i><b>27.2</b> Practice Problems</a><ul>
-<li class="chapter" data-level="27.2.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section"><i class="fa fa-check"></i><b>27.2.1</b> </a></li>
-<li class="chapter" data-level="27.2.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-1"><i class="fa fa-check"></i><b>27.2.2</b> </a></li>
-<li class="chapter" data-level="27.2.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-2"><i class="fa fa-check"></i><b>27.2.3</b> </a></li>
-<li class="chapter" data-level="27.2.4" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-3"><i class="fa fa-check"></i><b>27.2.4</b> </a></li>
-<li class="chapter" data-level="27.2.5" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-4"><i class="fa fa-check"></i><b>27.2.5</b> </a></li>
-<li class="chapter" data-level="27.2.6" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-5"><i class="fa fa-check"></i><b>27.2.6</b> </a></li>
-<li class="chapter" data-level="27.2.7" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-6"><i class="fa fa-check"></i><b>27.2.7</b> </a></li>
-<li class="chapter" data-level="27.2.8" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-7"><i class="fa fa-check"></i><b>27.2.8</b> </a></li>
-<li class="chapter" data-level="27.2.9" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-8"><i class="fa fa-check"></i><b>27.2.9</b> </a></li>
+<li class="chapter" data-level="11.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#practice-problems"><i class="fa fa-check"></i><b>11.2</b> Practice Problems</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-1"><i class="fa fa-check"></i><b>11.2.1</b> </a></li>
+<li class="chapter" data-level="11.2.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-2"><i class="fa fa-check"></i><b>11.2.2</b> </a></li>
+<li class="chapter" data-level="11.2.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-3"><i class="fa fa-check"></i><b>11.2.3</b> </a></li>
+<li class="chapter" data-level="11.2.4" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-4"><i class="fa fa-check"></i><b>11.2.4</b> </a></li>
+<li class="chapter" data-level="11.2.5" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-5"><i class="fa fa-check"></i><b>11.2.5</b> </a></li>
+<li class="chapter" data-level="11.2.6" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-6"><i class="fa fa-check"></i><b>11.2.6</b> </a></li>
+<li class="chapter" data-level="11.2.7" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-7"><i class="fa fa-check"></i><b>11.2.7</b> </a></li>
+<li class="chapter" data-level="11.2.8" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-8"><i class="fa fa-check"></i><b>11.2.8</b> </a></li>
+<li class="chapter" data-level="11.2.9" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-9"><i class="fa fa-check"></i><b>11.2.9</b> </a></li>
 </ul></li>
-<li class="chapter" data-level="27.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#solutions-to-practice-problems"><i class="fa fa-check"></i><b>27.3</b> Solutions to Practice Problems</a><ul>
-<li class="chapter" data-level="27.3.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-9"><i class="fa fa-check"></i><b>27.3.1</b> </a></li>
-<li class="chapter" data-level="27.3.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-10"><i class="fa fa-check"></i><b>27.3.2</b> </a></li>
-<li class="chapter" data-level="27.3.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-11"><i class="fa fa-check"></i><b>27.3.3</b> </a></li>
-<li class="chapter" data-level="27.3.4" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-12"><i class="fa fa-check"></i><b>27.3.4</b> </a></li>
-<li class="chapter" data-level="27.3.5" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-13"><i class="fa fa-check"></i><b>27.3.5</b> </a></li>
-<li class="chapter" data-level="27.3.6" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-14"><i class="fa fa-check"></i><b>27.3.6</b> </a></li>
-<li class="chapter" data-level="27.3.7" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-15"><i class="fa fa-check"></i><b>27.3.7</b> </a></li>
-<li class="chapter" data-level="27.3.8" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-16"><i class="fa fa-check"></i><b>27.3.8</b> </a></li>
-<li class="chapter" data-level="27.3.9" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-17"><i class="fa fa-check"></i><b>27.3.9</b> </a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="28" data-path="quiz-2-review.html"><a href="quiz-2-review.html"><i class="fa fa-check"></i><b>28</b> Quiz 2 Review</a><ul>
-<li class="chapter" data-level="28.1" data-path="quiz-2-review.html"><a href="quiz-2-review.html#overview-1"><i class="fa fa-check"></i><b>28.1</b> Overview</a><ul>
-<li class="chapter" data-level="28.1.1" data-path="quiz-2-review.html"><a href="quiz-2-review.html#vocabulary-and-concepts-1"><i class="fa fa-check"></i><b>28.1.1</b> Vocabulary and Concepts</a></li>
-<li class="chapter" data-level="28.1.2" data-path="quiz-2-review.html"><a href="quiz-2-review.html#skills-1"><i class="fa fa-check"></i><b>28.1.2</b> Skills</a></li>
-</ul></li>
-<li class="chapter" data-level="28.2" data-path="quiz-2-review.html"><a href="quiz-2-review.html#practice-problems-1"><i class="fa fa-check"></i><b>28.2</b> Practice Problems</a><ul>
-<li class="chapter" data-level="28.2.1" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-18"><i class="fa fa-check"></i><b>28.2.1</b> </a></li>
-<li class="chapter" data-level="28.2.2" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-19"><i class="fa fa-check"></i><b>28.2.2</b> </a></li>
-<li class="chapter" data-level="28.2.3" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-20"><i class="fa fa-check"></i><b>28.2.3</b> </a></li>
-<li class="chapter" data-level="28.2.4" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-21"><i class="fa fa-check"></i><b>28.2.4</b> </a></li>
-<li class="chapter" data-level="28.2.5" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-22"><i class="fa fa-check"></i><b>28.2.5</b> </a></li>
-<li class="chapter" data-level="28.2.6" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-23"><i class="fa fa-check"></i><b>28.2.6</b> </a></li>
-<li class="chapter" data-level="28.2.7" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-24"><i class="fa fa-check"></i><b>28.2.7</b> </a></li>
-<li class="chapter" data-level="28.2.8" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-25"><i class="fa fa-check"></i><b>28.2.8</b> </a></li>
-<li class="chapter" data-level="28.2.9" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-26"><i class="fa fa-check"></i><b>28.2.9</b> </a></li>
-<li class="chapter" data-level="28.2.10" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-27"><i class="fa fa-check"></i><b>28.2.10</b> </a></li>
-<li class="chapter" data-level="28.2.11" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-28"><i class="fa fa-check"></i><b>28.2.11</b> </a></li>
-</ul></li>
-<li class="chapter" data-level="28.3" data-path="quiz-2-review.html"><a href="quiz-2-review.html#solutions-to-practice-problems-1"><i class="fa fa-check"></i><b>28.3</b> Solutions to Practice Problems</a><ul>
-<li class="chapter" data-level="28.3.1" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-29"><i class="fa fa-check"></i><b>28.3.1</b> </a></li>
-<li class="chapter" data-level="28.3.2" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-30"><i class="fa fa-check"></i><b>28.3.2</b> </a></li>
-<li class="chapter" data-level="28.3.3" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-31"><i class="fa fa-check"></i><b>28.3.3</b> </a></li>
-<li class="chapter" data-level="28.3.4" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-32"><i class="fa fa-check"></i><b>28.3.4</b> </a></li>
-<li class="chapter" data-level="28.3.5" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-33"><i class="fa fa-check"></i><b>28.3.5</b> </a></li>
-<li class="chapter" data-level="28.3.6" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-34"><i class="fa fa-check"></i><b>28.3.6</b> </a></li>
-<li class="chapter" data-level="28.3.7" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-35"><i class="fa fa-check"></i><b>28.3.7</b> </a></li>
-<li class="chapter" data-level="28.3.8" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-36"><i class="fa fa-check"></i><b>28.3.8</b> </a></li>
-<li class="chapter" data-level="28.3.9" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-37"><i class="fa fa-check"></i><b>28.3.9</b> </a></li>
-<li class="chapter" data-level="28.3.10" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-38"><i class="fa fa-check"></i><b>28.3.10</b> </a></li>
-<li class="chapter" data-level="28.3.11" data-path="quiz-2-review.html"><a href="quiz-2-review.html#section-39"><i class="fa fa-check"></i><b>28.3.11</b> </a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="29" data-path="quiz-3-review.html"><a href="quiz-3-review.html"><i class="fa fa-check"></i><b>29</b> Quiz 3 Review</a><ul>
-<li class="chapter" data-level="29.1" data-path="quiz-3-review.html"><a href="quiz-3-review.html#overview-2"><i class="fa fa-check"></i><b>29.1</b> Overview</a><ul>
-<li class="chapter" data-level="29.1.1" data-path="quiz-3-review.html"><a href="quiz-3-review.html#vocabulary-concepts-and-skills"><i class="fa fa-check"></i><b>29.1.1</b> Vocabulary, Concepts and Skills</a></li>
-</ul></li>
-<li class="chapter" data-level="29.2" data-path="quiz-3-review.html"><a href="quiz-3-review.html#practice-problems-2"><i class="fa fa-check"></i><b>29.2</b> Practice Problems</a><ul>
-<li class="chapter" data-level="29.2.1" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-40"><i class="fa fa-check"></i><b>29.2.1</b> </a></li>
-<li class="chapter" data-level="29.2.2" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-41"><i class="fa fa-check"></i><b>29.2.2</b> </a></li>
-<li class="chapter" data-level="29.2.3" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-42"><i class="fa fa-check"></i><b>29.2.3</b> </a></li>
-<li class="chapter" data-level="29.2.4" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-43"><i class="fa fa-check"></i><b>29.2.4</b> </a></li>
-<li class="chapter" data-level="29.2.5" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-44"><i class="fa fa-check"></i><b>29.2.5</b> </a></li>
-<li class="chapter" data-level="29.2.6" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-45"><i class="fa fa-check"></i><b>29.2.6</b> </a></li>
-<li class="chapter" data-level="29.2.7" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-46"><i class="fa fa-check"></i><b>29.2.7</b> </a></li>
-<li class="chapter" data-level="29.2.8" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-47"><i class="fa fa-check"></i><b>29.2.8</b> </a></li>
-<li class="chapter" data-level="29.2.9" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-48"><i class="fa fa-check"></i><b>29.2.9</b> </a></li>
-<li class="chapter" data-level="29.2.10" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-49"><i class="fa fa-check"></i><b>29.2.10</b> </a></li>
-<li class="chapter" data-level="29.2.11" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-50"><i class="fa fa-check"></i><b>29.2.11</b> </a></li>
-<li class="chapter" data-level="29.2.12" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-51"><i class="fa fa-check"></i><b>29.2.12</b> </a></li>
-<li class="chapter" data-level="29.2.13" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-52"><i class="fa fa-check"></i><b>29.2.13</b> </a></li>
-<li class="chapter" data-level="29.2.14" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-53"><i class="fa fa-check"></i><b>29.2.14</b> </a></li>
-</ul></li>
-<li class="chapter" data-level="29.3" data-path="quiz-3-review.html"><a href="quiz-3-review.html#solutions-to-practice-problems-2"><i class="fa fa-check"></i><b>29.3</b> Solutions to Practice Problems</a><ul>
-<li class="chapter" data-level="29.3.1" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-54"><i class="fa fa-check"></i><b>29.3.1</b> </a></li>
-<li class="chapter" data-level="29.3.2" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-55"><i class="fa fa-check"></i><b>29.3.2</b> </a></li>
-<li class="chapter" data-level="29.3.3" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-56"><i class="fa fa-check"></i><b>29.3.3</b> </a></li>
-<li class="chapter" data-level="29.3.4" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-57"><i class="fa fa-check"></i><b>29.3.4</b> </a></li>
-<li class="chapter" data-level="29.3.5" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-58"><i class="fa fa-check"></i><b>29.3.5</b> </a></li>
-<li class="chapter" data-level="29.3.6" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-59"><i class="fa fa-check"></i><b>29.3.6</b> </a></li>
-<li class="chapter" data-level="29.3.7" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-60"><i class="fa fa-check"></i><b>29.3.7</b> </a></li>
-<li class="chapter" data-level="29.3.8" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-61"><i class="fa fa-check"></i><b>29.3.8</b> </a></li>
-<li class="chapter" data-level="29.3.9" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-62"><i class="fa fa-check"></i><b>29.3.9</b> </a></li>
-<li class="chapter" data-level="29.3.10" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-63"><i class="fa fa-check"></i><b>29.3.10</b> </a></li>
-<li class="chapter" data-level="29.3.11" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-64"><i class="fa fa-check"></i><b>29.3.11</b> </a></li>
-<li class="chapter" data-level="29.3.12" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-65"><i class="fa fa-check"></i><b>29.3.12</b> </a></li>
-<li class="chapter" data-level="29.3.13" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-66"><i class="fa fa-check"></i><b>29.3.13</b> </a></li>
-<li class="chapter" data-level="29.3.14" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-67"><i class="fa fa-check"></i><b>29.3.14</b> </a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="30" data-path="quiz-4-review.html"><a href="quiz-4-review.html"><i class="fa fa-check"></i><b>30</b> Quiz 4 Review</a><ul>
-<li class="chapter" data-level="30.1" data-path="quiz-4-review.html"><a href="quiz-4-review.html#overview-3"><i class="fa fa-check"></i><b>30.1</b> Overview</a></li>
-<li class="chapter" data-level="30.2" data-path="quiz-4-review.html"><a href="quiz-4-review.html#vocabulary-concepts-and-skills-1"><i class="fa fa-check"></i><b>30.2</b> Vocabulary, Concepts and Skills</a></li>
-<li class="chapter" data-level="30.3" data-path="quiz-4-review.html"><a href="quiz-4-review.html#comprehensive-review"><i class="fa fa-check"></i><b>30.3</b> Comprehensive Review</a></li>
-<li class="chapter" data-level="30.4" data-path="quiz-4-review.html"><a href="quiz-4-review.html#skills-2"><i class="fa fa-check"></i><b>30.4</b> Skills</a></li>
-<li class="chapter" data-level="30.5" data-path="quiz-4-review.html"><a href="quiz-4-review.html#practice-problems-3"><i class="fa fa-check"></i><b>30.5</b> Practice Problems</a><ul>
-<li class="chapter" data-level="30.5.1" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-68"><i class="fa fa-check"></i><b>30.5.1</b> </a></li>
-<li class="chapter" data-level="30.5.2" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-69"><i class="fa fa-check"></i><b>30.5.2</b> </a></li>
-<li class="chapter" data-level="30.5.3" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-70"><i class="fa fa-check"></i><b>30.5.3</b> </a></li>
-<li class="chapter" data-level="30.5.4" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-71"><i class="fa fa-check"></i><b>30.5.4</b> </a></li>
-<li class="chapter" data-level="30.5.5" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-72"><i class="fa fa-check"></i><b>30.5.5</b> </a></li>
-<li class="chapter" data-level="30.5.6" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-73"><i class="fa fa-check"></i><b>30.5.6</b> </a></li>
-<li class="chapter" data-level="30.5.7" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-74"><i class="fa fa-check"></i><b>30.5.7</b> </a></li>
-<li class="chapter" data-level="30.5.8" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-75"><i class="fa fa-check"></i><b>30.5.8</b> </a></li>
-<li class="chapter" data-level="30.5.9" data-path="quiz-4-review.html"><a href="quiz-4-review.html#one-to-one-and-onto"><i class="fa fa-check"></i><b>30.5.9</b> One-to-one and Onto</a></li>
-<li class="chapter" data-level="30.5.10" data-path="quiz-4-review.html"><a href="quiz-4-review.html#a-4x5-matrix"><i class="fa fa-check"></i><b>30.5.10</b> A 4x5 Matrix</a></li>
-<li class="chapter" data-level="30.5.11" data-path="quiz-4-review.html"><a href="quiz-4-review.html#a-x-b"><i class="fa fa-check"></i><b>30.5.11</b> A x = b</a></li>
-<li class="chapter" data-level="30.5.12" data-path="quiz-4-review.html"><a href="quiz-4-review.html#watch-this"><i class="fa fa-check"></i><b>30.5.12</b> Watch this!</a></li>
-</ul></li>
-<li class="chapter" data-level="30.6" data-path="quiz-4-review.html"><a href="quiz-4-review.html#solutions-to-practice-problems-3"><i class="fa fa-check"></i><b>30.6</b> Solutions to Practice Problems</a><ul>
-<li class="chapter" data-level="30.6.1" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-76"><i class="fa fa-check"></i><b>30.6.1</b> </a></li>
-<li class="chapter" data-level="30.6.2" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-77"><i class="fa fa-check"></i><b>30.6.2</b> </a></li>
-<li class="chapter" data-level="30.6.3" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-78"><i class="fa fa-check"></i><b>30.6.3</b> </a></li>
-<li class="chapter" data-level="30.6.4" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-79"><i class="fa fa-check"></i><b>30.6.4</b> </a></li>
-<li class="chapter" data-level="30.6.5" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-80"><i class="fa fa-check"></i><b>30.6.5</b> </a></li>
-<li class="chapter" data-level="30.6.6" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-81"><i class="fa fa-check"></i><b>30.6.6</b> </a></li>
-<li class="chapter" data-level="30.6.7" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-82"><i class="fa fa-check"></i><b>30.6.7</b> </a></li>
-<li class="chapter" data-level="30.6.8" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-83"><i class="fa fa-check"></i><b>30.6.8</b> </a></li>
-<li class="chapter" data-level="30.6.9" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-84"><i class="fa fa-check"></i><b>30.6.9</b> </a></li>
-<li class="chapter" data-level="30.6.10" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-85"><i class="fa fa-check"></i><b>30.6.10</b> </a></li>
-<li class="chapter" data-level="30.6.11" data-path="quiz-4-review.html"><a href="quiz-4-review.html#section-86"><i class="fa fa-check"></i><b>30.6.11</b> </a></li>
+<li class="chapter" data-level="11.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#solutions-to-practice-problems"><i class="fa fa-check"></i><b>11.3</b> Solutions to Practice Problems</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-10"><i class="fa fa-check"></i><b>11.3.1</b> </a></li>
+<li class="chapter" data-level="11.3.2" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-11"><i class="fa fa-check"></i><b>11.3.2</b> </a></li>
+<li class="chapter" data-level="11.3.3" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-12"><i class="fa fa-check"></i><b>11.3.3</b> </a></li>
+<li class="chapter" data-level="11.3.4" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-13"><i class="fa fa-check"></i><b>11.3.4</b> </a></li>
+<li class="chapter" data-level="11.3.5" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-14"><i class="fa fa-check"></i><b>11.3.5</b> </a></li>
+<li class="chapter" data-level="11.3.6" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-15"><i class="fa fa-check"></i><b>11.3.6</b> </a></li>
+<li class="chapter" data-level="11.3.7" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-16"><i class="fa fa-check"></i><b>11.3.7</b> </a></li>
+<li class="chapter" data-level="11.3.8" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-17"><i class="fa fa-check"></i><b>11.3.8</b> </a></li>
+<li class="chapter" data-level="11.3.9" data-path="quiz-1-review.html"><a href="quiz-1-review.html#section-18"><i class="fa fa-check"></i><b>11.3.9</b> </a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -485,7 +267,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="problem-set-3" class="section level1">
+<div id="problem-set-3" class="section level1" number="3">
 <h1><span class="header-section-number">Section 3</span> Problem Set 3</h1>
 <ul>
 <li>Due: Tuesday February 9 by noon CST.</li>
@@ -494,67 +276,61 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li>You can download the <a href="https://github.com/Tom-Halverson/math236_f20/blob/main/PS3-problem-set-3.Rmd">Rmd source file for this problem set</a>.</li>
 </ul>
 <p>The Problem Set covers sections 1.8, 1.9, 2.1, 2.2.</p>
-<div id="properties-of-linear-transformations" class="section level2">
-<h2><span class="header-section-number">3.1</span> Properties of Linear Transformations</h2>
-<p>Here are the row reductions pf 4 matrices into reduced row echelon form.
-<span class="math display">\[
-\begin{array}{ll}
-A \longrightarrow \begin{bmatrix} 1 &amp; 0 &amp; 5 &amp; -3 &amp; 0\\ 0 &amp; 1 &amp; -2 &amp; 8  &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1  \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp;  0 \\ 0 &amp; 0 &amp; 0  &amp; 0 &amp;  0 \end{bmatrix} \qquad
-&amp; 
-B \longrightarrow \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix} 
-\\
-\\
-C \longrightarrow \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0  &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0  \\ 0 &amp; 0 &amp; 0 &amp;  1 \end{bmatrix}
-&amp;
-D \longrightarrow \begin{bmatrix} 1 &amp; 0 &amp; 0 &amp; 0  \\ 0 &amp; 1 &amp; 0  &amp; 0  \\ 0 &amp; 0 &amp; 1 &amp; 1   \end{bmatrix} 
-\end{array}
-\]</span></p>
-<p>In each case, if <span class="math inline">\(T_M\)</span> is the linear transformation given by the matrix product <span class="math inline">\(T_M(x) = M x\)</span>, where <span class="math inline">\(M\)</span> is the given matrix, then <span class="math inline">\(T_M: \mathbb{R}^n \to \mathbb{R}^m\)</span> is a transformation from domain <span class="math inline">\(\mathbb{R}^n\)</span> to codomain (aka target) <span class="math inline">\(\mathbb{R}^m\)</span>.</p>
-<p>Determine the appropriate values for <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span>, and decide whether <span class="math inline">\(T_M\)</span> is one-to-one and/or onto. Submit your answers in table form, as shown below.
-<span class="math display">\[
-\begin{array} {|c|c|c|c|c|} 
-\hline
-\text{transformation}  &amp;  n  &amp;  m &amp; \text{one-to-one?} &amp; \text{onto?} \\ \hline
-T_A &amp;\phantom{\Big\vert XX}&amp;\phantom{\Big\vert XX}&amp;&amp; \\ \hline
-T_B &amp;\phantom{\Big\vert XX}&amp;&amp;&amp; \\ \hline
-T_C &amp;\phantom{\Big\vert XX}&amp;&amp;&amp; \\ \hline
-T_D &amp;\phantom{\Big\vert XX}&amp;&amp;&amp; \\ \hline
-\end{array} \hskip5in
-\]</span></p>
+<div id="section" class="section level3" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> </h3>
+<p>In each case below, if the transformation is linear, then find is matrix.
+If it is not linear, then demonstrate that it is not linear by showing, with a specific example, that one of the properties of being linear is broken.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>The transformation <span class="math inline">\(T\)</span> is given by:
+<span class="math display">\[T \left( \begin{bmatrix}  x_1 \\ x_2 \\ \end{bmatrix}\right) = 
+\begin{bmatrix} x_1 + x_2 \\ 2 x_1 \\ -x_2 \\\end{bmatrix}.
+\]</span></p></li>
+<li><p>The transformation <span class="math inline">\(T\)</span> is given by:
+<span class="math display">\[T \left( \begin{bmatrix}  x_1 \\ x_2 \\ x_3 \end{bmatrix} \right)= 
+  \begin{bmatrix} x_1 + x_2 + x_3 \\  x_1 x_2 \\ -x_2 + 2 x_3 \end{bmatrix}.
+\]</span></p></li>
+<li><p>The transformation <span class="math inline">\(L: \mathbb{R}^2 \to \mathbb{R}^2\)</span> sends the shaded region on the left to the the shaded region on the right such that <span class="math inline">\(A\)</span> maps to <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> maps to <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> maps to <span class="math inline">\(C\)</span>, and <span class="math inline">\(D\)</span> maps to <span class="math inline">\(D\)</span>.</p></li>
+</ol>
+<p><img src="images/q1-blockA.png" style="width:30.0%" /> <span class="math inline">\(\qquad \qquad\)</span> <img src="images/q1-blockB.png" style="width:30.0%" /></p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>The transformation <span class="math inline">\(R: \mathbb{R}^2 \to \mathbb{R}^2\)</span> sends the shaded region on the left to the the shaded region on the right such that <span class="math inline">\(A\)</span> maps to <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> maps to <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> maps to <span class="math inline">\(C\)</span>, and <span class="math inline">\(D\)</span> maps to <span class="math inline">\(D\)</span>.</li>
+</ol>
+<p><img src="images/q1-blockA.png" style="width:30.0%" /> <span class="math inline">\(\qquad \qquad\)</span> <img src="images/q1-blockD.png" style="width:30.0%" /></p>
 </div>
-<div id="partial-information-about-a-linear-transformation" class="section level2">
-<h2><span class="header-section-number">3.2</span> Partial Information about a Linear Transformation</h2>
+<div id="partial-information-about-a-linear-transformation" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Partial Information about a Linear Transformation</h2>
 <p>We are given that <span class="math inline">\(T: \mathbb{R}^4 \rightarrow \mathbb{R}^3\)</span> is a linear transformation such that:
 <span class="math display">\[
 T\left(\begin{bmatrix} 3 \\ ~2~ \\ 1 \\ 2 \end{bmatrix} \right)=\begin{bmatrix}  ~2~ \\ 3 \\ 6 \end{bmatrix}
 \qquad\hbox{and}\qquad
 T\left(\begin{bmatrix}~~2 \\ -1 \\ 0 \\ -1 \end{bmatrix} \right)=\begin{bmatrix} 2 \\ ~0~  \\ 1 \end{bmatrix}.
 \]</span>
-If that is all we know about <span class="math inline">\(T\)</span>, then do we have enough information to compute the value of <span class="math inline">\(T\)</span> below?
-<span class="math display">\[T\left(\begin{bmatrix} 5 \\ 8 \\ ~3~ \\ 8 \end{bmatrix} \right) = \hskip5in\]</span>
-If yes, then compute it (showing how you do so). If no, then explain why not. Hint: try to write the third input vector as a linear combination of the first two.</p>
+Use this information to compute the value of <span class="math inline">\(T\)</span> below?
+<span class="math display">\[T\left(\begin{bmatrix} 5 \\ 8 \\ ~3~ \\ 8 \end{bmatrix} \right) = \hskip5in\]</span></p>
 </div>
-<div id="house-renovations" class="section level2">
-<h2><span class="header-section-number">3.3</span> House Renovations</h2>
-<p>Find the matrix of a linear transformation <span class="math inline">\(T: \mathbb{R}^2 \to \mathbb{R}^2\)</span> that performs the given transformation of my house. (Hint: use the base, the doorway and the peak of the roof as a guide.)</p>
-<ol style="list-style-type: decimal">
+<div id="house-renovations" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> House Renovations</h2>
+<p>Below are two linear transformations <span class="math inline">\(T: \mathbb{R}^2 \to \mathbb{R}^2\)</span> that transform my house as shown. Find the matrix of each of these transformations (hint: use the base, the doorway and the peak of the roof as a guide).</p>
+<ol style="list-style-type: lower-alpha">
 <li>Transformation #1</li>
 </ol>
 <p><img src="images/ps3-house1.png" style="width:40.0%" /> <span class="math inline">\(\qquad \qquad\)</span> <img src="images/ps3-house2.png" style="width:40.0%" /></p>
-<ol start="2" style="list-style-type: decimal">
+<ol start="2" style="list-style-type: lower-alpha">
 <li>Transformation #2</li>
 </ol>
 <p><img src="images/ps3-house1.png" style="width:40.0%" /> <span class="math inline">\(\qquad \qquad\)</span> <img src="images/ps3-house3.png" style="width:40.0%" /></p>
 </div>
-<div id="matrix-of-a-nonlinear-transformation" class="section level2">
-<h2><span class="header-section-number">3.4</span> Matrix of a Nonlinear Transformation?</h2>
+<div id="matrix-of-a-nonlinear-transformation" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Matrix of a Nonlinear Transformation?</h2>
 <p>This problem illustrates what happens if you try to make the matrix of a transformation that is not linear. Consider the transformation <span class="math inline">\(T\)</span> defined by
 <span class="math display">\[
 T \left( \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} \right)
 =
 \begin{bmatrix} x_1 + x_2^2 + x_3 \\ 2 x_2 + x_1 x_3 + 1 \\ 2 x_1 + 3 x_2 + x_3 \end{bmatrix}
-\]</span></p>
-<p>This is not a linear transformation. Let’s see what happens if we compute its matrix anyway. Compute <span class="math inline">\(T(\mathbf{e}_1)\)</span>, <span class="math inline">\(T(\mathbf{e}_2)\)</span>, and <span class="math inline">\(T(\mathbf{e}_3)\)</span>, and put the vectors you get in the columns of a matrix <span class="math inline">\(A\)</span>. Then compute the product below:
+\]</span>
+a. Show that this is not a linear transformation by demonstrating, with a specific example, that one of the rules of being linear is not true.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Now. let’s see what happens if we compute its matrix anyway. Compute <span class="math inline">\(T(\mathbf{e}_1)\)</span>, <span class="math inline">\(T(\mathbf{e}_2)\)</span>, and <span class="math inline">\(T(\mathbf{e}_3)\)</span>, and put the vectors you get in the columns of a matrix <span class="math inline">\(A\)</span>. Then compute the product below:
 <span class="math display">\[
 \underbrace{\begin{bmatrix} 
 \cdot &amp; \cdot &amp; \cdot \\
@@ -564,10 +340,11 @@ T \left( \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} \right)
 \begin{bmatrix} x_1 \\ x_ 2 \\ x_3 \end{bmatrix}
 = 
 \]</span>
-Explain how the result of this computation demonstrates that <span class="math inline">\(T\)</span> is not linear.</p>
+Explain how the result of this computation demonstrates that <span class="math inline">\(T\)</span> is not linear.</li>
+</ol>
 </div>
-<div id="a-proof" class="section level2">
-<h2><span class="header-section-number">3.5</span> A Proof</h2>
+<div id="a-proof" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> A Proof</h2>
 <p>Let <span class="math inline">\(T: \mathbb{R}^n \to \mathbb{R}^m\)</span> be a linear transformation. Suppose that <span class="math inline">\(\{v_1, v_2, v_3, v_4\}\)</span> is a linearly independent set of vectors in <span class="math inline">\(\mathbb{R}^n\)</span> but the set of images <span class="math inline">\(\{T(v_1), T(v_2), T(v_3), T(v_4)\}\)</span> is a linearly dependent set in <span class="math inline">\(\mathbb{R}^m\)</span>. In the following steps, you will prove that <span class="math inline">\(T\)</span> is not one-to-one.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Write out clearly, using the definition, what it means for <span class="math inline">\(\{v_1, v_2, v_3, v_4\}\)</span> to be linearly independent.</p></li>
@@ -576,8 +353,8 @@ Explain how the result of this computation demonstrates that <span class="math i
 <li><p>Explain why this tells us that <span class="math inline">\(T\)</span> is not one-to-one.</p></li>
 </ol>
 </div>
-<div id="inner-and-outer-products" class="section level2">
-<h2><span class="header-section-number">3.6</span> Inner and Outer Products</h2>
+<div id="inner-and-outer-products" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Inner and Outer Products</h2>
 <p>We can also think of vectors as matrix. A column vector is an <span class="math inline">\(n \times 1\)</span> matrix and a row vector is a <span class="math inline">\(1 \times n\)</span> matrix.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Compute the following products. These matrix products are called <em>inner products</em> (or dot products) of the vectors.</li>
@@ -607,8 +384,8 @@ b. Now compute the following products. These are called <em>outer products</em>.
 <li>Row reduce both of the matrices that you get in part b (this should be easy to do by hand,but you can use R if you want to). How many pivots do you get? Explain why you always get this number of pivots when you row reduce an outer product.</li>
 </ol>
 </div>
-<div id="archaeological-seriation" class="section level2">
-<h2><span class="header-section-number">3.7</span> Archaeological Seriation</h2>
+<div id="archaeological-seriation" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Archaeological Seriation</h2>
 <p>The matrix <span class="math inline">\(A\)</span> below is used in archaeological dating. Its rows correspond to four different grave sites <span class="math inline">\(G_1, G_2, G_3, G_4\)</span> and its columns correspond to five types of pottery<span class="math inline">\(P_1, P_2, P_3, P_4, P_5\)</span>. There is a 1 in position <span class="math inline">\(i\)</span>-<span class="math inline">\(j\)</span> if pottery type <span class="math inline">\(P_j\)</span> is found in grave <span class="math inline">\(G_i\)</span> (and a 0 otherwise).
 <span class="math display">\[
 A=\begin{array}{c|ccccc}
@@ -625,15 +402,15 @@ G_4  &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
 <li><p>Give the meaning of the <span class="math inline">\(i\)</span>-<span class="math inline">\(j\)</span> entry of <span class="math inline">\(\mathbf{G}\)</span> (the entry in row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span>). State clearly the meaning of this entry using complete sentences (or sentence) and explain why it has this meaning.</p></li>
 </ol>
 </div>
-<div id="rental-car" class="section level2">
-<h2><span class="header-section-number">3.8</span> Rental Car</h2>
+<div id="rental-car" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Rental Car</h2>
 <p>Solve this problem using R and turn in a markdown file knitted to .html.</p>
 <p>A group of Macalester alumni open a rental car company specializing in renting electric cars. As a start, they have opened offices in St. Paul, Rochester, and Duluth. Through market research they find that of the cars rented in St. Paul, 85% will get returned in St. Paul, 9% will get returned in Rochester, and 6% will get returned in Duluth. Of the cars rented in Rochester, 30% will get returned in St. Paul, 60% will get returned in Rochester, and 10% in Duluth. Of the cars rented in Duluth, 35% will get returned in St. Paul, 5% in Rochester, and 60% in Duluth. This information is represented in the matrix below.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="problem-set-3.html#cb1-1"></a>StP =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">85</span>,.<span class="dv">09</span>,.<span class="dv">06</span>)</span>
-<span id="cb1-2"><a href="problem-set-3.html#cb1-2"></a>Roch =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">30</span>,.<span class="dv">60</span>,.<span class="dv">10</span>)</span>
-<span id="cb1-3"><a href="problem-set-3.html#cb1-3"></a>Dul =<span class="st"> </span><span class="kw">c</span>(.<span class="dv">35</span>,.<span class="dv">05</span>,.<span class="dv">60</span>) </span>
-<span id="cb1-4"><a href="problem-set-3.html#cb1-4"></a>M =<span class="st"> </span><span class="kw">cbind</span>(StP,Roch,Dul)</span>
-<span id="cb1-5"><a href="problem-set-3.html#cb1-5"></a>M</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="problem-set-3.html#cb1-1" aria-hidden="true" tabindex="-1"></a>StP <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">85</span>,.<span class="dv">09</span>,.<span class="dv">06</span>)</span>
+<span id="cb1-2"><a href="problem-set-3.html#cb1-2" aria-hidden="true" tabindex="-1"></a>Roch <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">30</span>,.<span class="dv">60</span>,.<span class="dv">10</span>)</span>
+<span id="cb1-3"><a href="problem-set-3.html#cb1-3" aria-hidden="true" tabindex="-1"></a>Dul <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">35</span>,.<span class="dv">05</span>,.<span class="dv">60</span>) </span>
+<span id="cb1-4"><a href="problem-set-3.html#cb1-4" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">cbind</span>(StP,Roch,Dul)</span>
+<span id="cb1-5"><a href="problem-set-3.html#cb1-5" aria-hidden="true" tabindex="-1"></a>M</span></code></pre></div>
 <pre><code>##       StP Roch  Dul
 ## [1,] 0.85  0.3 0.35
 ## [2,] 0.09  0.6 0.05
@@ -646,12 +423,12 @@ G_4  &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
 <li><p>Does the starting distribution matter? Try 4 different starting distributions (with a total of 60 cars) and see what the final distribution looks like in each case. For one of your 4 starting distributions, try all 60 cars at one of the locations.</p></li>
 </ol>
 </div>
-<div id="adjacency-matrix" class="section level2">
-<h2><span class="header-section-number">3.9</span> Adjacency Matrix</h2>
+<div id="adjacency-matrix" class="section level2" number="3.8">
+<h2><span class="header-section-number">3.8</span> Adjacency Matrix</h2>
 <p>You can do this problem in R or by hand. Consider the matrix <span class="math inline">\(A\)</span> defined here</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="problem-set-3.html#cb3-1"></a>A =<span class="st"> </span><span class="kw">rbind</span>(<span class="kw">c</span>( <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> ,<span class="dv">0</span>), <span class="kw">c</span>(<span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span>, <span class="dv">0</span> ),<span class="kw">c</span>( <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span>, <span class="dv">0</span> ),</span>
-<span id="cb3-2"><a href="problem-set-3.html#cb3-2"></a>  <span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span>, <span class="dv">0</span> ),<span class="kw">c</span>( <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span>, <span class="dv">1</span> ), <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
-<span id="cb3-3"><a href="problem-set-3.html#cb3-3"></a>A</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="problem-set-3.html#cb3-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">c</span>( <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> ,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span>, <span class="dv">0</span> ),<span class="fu">c</span>( <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span>, <span class="dv">0</span> ),</span>
+<span id="cb3-2"><a href="problem-set-3.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>( <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span>, <span class="dv">0</span> ),<span class="fu">c</span>( <span class="dv">1</span> , <span class="dv">0</span> , <span class="dv">1</span> , <span class="dv">1</span> , <span class="dv">0</span>, <span class="dv">1</span> ), <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb3-3"><a href="problem-set-3.html#cb3-3" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
 ## [1,]    0    1    0    1    1    0
 ## [2,]    1    0    1    1    0    0
@@ -669,13 +446,16 @@ G_4  &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
 
 </div>
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
 <a href="problem-set-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="problem-set-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="important-definitions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -698,6 +478,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

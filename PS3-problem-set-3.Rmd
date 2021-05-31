@@ -9,34 +9,28 @@
 The Problem Set covers sections 1.8, 1.9, 2.1, 2.2.
 
 
-## Properties of Linear Transformations
-Here are the row reductions pf 4  matrices into reduced row echelon form.
-$$
-\begin{array}{ll}
-A \longrightarrow \begin{bmatrix} 1 & 0 & 5 & -3 & 0\\ 0 & 1 & -2 & 8  & 0 \\ 0 & 0 & 0 & 0 & 1  \\ 0 & 0 & 0 & 0 &  0 \\ 0 & 0 & 0  & 0 &  0 \end{bmatrix} \qquad
-& 
-B \longrightarrow \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 0 & 0 \end{bmatrix} 
-\\
-\\
-C \longrightarrow \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0  & 0 \\ 0 & 0 & 1 & 0  \\ 0 & 0 & 0 &  1 \end{bmatrix}
-&
-D \longrightarrow \begin{bmatrix} 1 & 0 & 0 & 0  \\ 0 & 1 & 0  & 0  \\ 0 & 0 & 1 & 1   \end{bmatrix} 
-\end{array}
+###
+
+In each case below, if the transformation is linear, then find is matrix.
+If it is not linear, then demonstrate that it is not linear by showing, with a specific example, that one of the properties of being linear is broken.  
+
+a. The transformation $T$ is given by:
+$$T \left( \begin{bmatrix}  x_1 \\ x_2 \\ \end{bmatrix}\right) = 
+\begin{bmatrix} x_1 + x_2 \\ 2 x_1 \\ -x_2 \\\end{bmatrix}.
 $$
 
-In each case, if $T_M$ is the linear transformation given by the matrix product $T_M(x) = M x$, where $M$ is the given matrix, then $T_M: \mathbb{R}^n \to \mathbb{R}^m$ is a transformation from domain $\mathbb{R}^n$ to codomain (aka target) $\mathbb{R}^m$. 
+b. The transformation $T$ is given by:
+$$T \left( \begin{bmatrix}  x_1 \\ x_2 \\ x_3 \end{bmatrix} \right)= 
+  \begin{bmatrix} x_1 + x_2 + x_3 \\  x_1 x_2 \\ -x_2 + 2 x_3 \end{bmatrix}.
+$$
 
-Determine the appropriate values for $n$ and $m$, and decide whether $T_M$ is one-to-one and/or onto. Submit your answers in table form, as shown below.
-$$
-\begin{array} {|c|c|c|c|c|} 
-\hline
-\text{transformation}  &  n  &  m & \text{one-to-one?} & \text{onto?} \\ \hline
-T_A &\phantom{\Big\vert XX}&\phantom{\Big\vert XX}&& \\ \hline
-T_B &\phantom{\Big\vert XX}&&& \\ \hline
-T_C &\phantom{\Big\vert XX}&&& \\ \hline
-T_D &\phantom{\Big\vert XX}&&& \\ \hline
-\end{array} \hskip5in
-$$
+c. The transformation $L: \mathbb{R}^2 \to \mathbb{R}^2$ sends the shaded region on the  left to the the shaded region on the right such that $A$ maps to $A$, $B$ maps to $B$, $C$ maps to $C$, and $D$ maps to $D$.
+
+![](images/q1-blockA.png){width=30%} $\qquad \qquad$ ![](images/q1-blockB.png){width=30%} 
+
+d. The transformation $R: \mathbb{R}^2 \to \mathbb{R}^2$ sends the shaded region on the  left to the the shaded region on the right such that $A$ maps to $A$, $B$ maps to $B$, $C$ maps to $C$, and $D$ maps to $D$.
+
+![](images/q1-blockA.png){width=30%} $\qquad \qquad$ ![](images/q1-blockD.png){width=30%}
 
 
 ## Partial Information about a Linear Transformation
@@ -47,26 +41,21 @@ T\left(\begin{bmatrix} 3 \\ ~2~ \\ 1 \\ 2 \end{bmatrix} \right)=\begin{bmatrix} 
 \qquad\hbox{and}\qquad
 T\left(\begin{bmatrix}~~2 \\ -1 \\ 0 \\ -1 \end{bmatrix} \right)=\begin{bmatrix} 2 \\ ~0~  \\ 1 \end{bmatrix}.
 $$
-If that is all we know about $T$, then do we have enough information to compute the value of $T$ below? 
+Use this information to compute the value of $T$ below? 
 $$T\left(\begin{bmatrix} 5 \\ 8 \\ ~3~ \\ 8 \end{bmatrix} \right) = \hskip5in$$
-If yes, then compute it (showing how you do so). If no, then explain why not. Hint: try to write the third input vector as a linear combination of the first two.
-
-
-
-
 
 
 
 ## House Renovations
 
-Find the matrix of a linear transformation $T: \mathbb{R}^2 \to \mathbb{R}^2$ that performs the given transformation of my house. (Hint: use the base, the doorway and the peak of the roof as a guide.)
+Below are two linear transformations $T: \mathbb{R}^2 \to \mathbb{R}^2$ that transform my house as shown. Find the matrix of each of these transformations (hint: use the base, the doorway and the peak of the roof as a guide).
 
-1. Transformation \#1
+a. Transformation \#1
 
 ![](images/ps3-house1.png){width=40%} $\qquad \qquad$ ![](images/ps3-house2.png){width=40%}
 
 
-2. Transformation \#2
+b. Transformation \#2
 
 ![](images/ps3-house1.png){width=40%} $\qquad \qquad$ ![](images/ps3-house3.png){width=40%}
 
@@ -80,8 +69,9 @@ T \left( \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} \right)
 =
 \begin{bmatrix} x_1 + x_2^2 + x_3 \\ 2 x_2 + x_1 x_3 + 1 \\ 2 x_1 + 3 x_2 + x_3 \end{bmatrix}
 $$
+a. Show that this is not a linear transformation by demonstrating, with a specific example, that one of the rules of being linear is not true.
 
-This is not a linear transformation. Let's see what happens if we compute its matrix anyway. Compute $T(\mathbf{e}_1)$, $T(\mathbf{e}_2)$, and $T(\mathbf{e}_3)$, and put the vectors you get in the columns of a matrix $A$. Then compute the product below:
+b. Now. let's see what happens if we compute its matrix anyway. Compute $T(\mathbf{e}_1)$, $T(\mathbf{e}_2)$, and $T(\mathbf{e}_3)$, and put the vectors you get in the columns of a matrix $A$. Then compute the product below:
 $$
 \underbrace{\begin{bmatrix} 
 \cdot & \cdot & \cdot \\
