@@ -15,7 +15,7 @@ a-balanced-diet
 missing-column
 linear-system
 problem-set-3
-section
+linear-transformations
 partial-information-about-a-linear-transformation
 house-renovations
 matrix-of-a-nonlinear-transformation
@@ -23,7 +23,6 @@ a-proof
 inner-and-outer-products
 archaeological-seriation
 rental-car
-adjacency-matrix
 important-definitions
 vector-spaces
 matrices
@@ -62,6 +61,7 @@ overview
 vocabulary-and-concepts
 skills
 practice-problems
+section
 section-1
 section-2
 section-3
@@ -70,8 +70,8 @@ section-5
 section-6
 section-7
 section-8
-section-9
 solutions-to-practice-problems
+section-9
 section-10
 section-11
 section-12
@@ -80,4 +80,3 @@ section-14
 section-15
 section-16
 section-17
-section-18

@@ -9,7 +9,7 @@
 The Problem Set covers sections 1.8, 1.9, 2.1, 2.2.
 
 
-###
+## Linear Transformations
 
 In each case below, if the transformation is linear, then find is matrix.
 If it is not linear, then demonstrate that it is not linear by showing, with a specific example, that one of the properties of being linear is broken.  
@@ -173,29 +173,6 @@ c. Write a for loop that applies M over and over again to see what happens to th
 d. Does the starting distribution matter? Try 4 different starting distributions (with a total of 60 cars) and see what the final distribution looks like in each case. For one of your 4 starting distributions, try all 60 cars at one of the locations.
 
 
-## Adjacency Matrix
-
-You can do this problem in R or by hand. Consider the matrix $A$ defined here
-```{r,echo=TRUE}
-A = rbind(c( 0 , 1 , 0 , 1 , 1 ,0), c(1 , 0 , 1 , 1 , 0, 0 ),c( 0 , 1 , 0 , 1 , 1, 0 ),
-  c( 1 , 1 , 1 , 0 , 1, 0 ),c( 1 , 0 , 1 , 1 , 0, 1 ), c(0, 0, 0, 0, 1, 0))
-A
-```
-
-This matrix represents the connections in the network diagram below. There is a 1 in position $(i,j)$ of the matrix if there is a connection (an edge) between vertex $i$ and vertex $j$ and there is a 0 if there is not.
-
-```{r,echo=FALSE}
-suppressPackageStartupMessages(library(igraph))
-g=graph_from_adjacency_matrix(A,mode='undirected')
-V(g)$label = c(1,2,3,4,5,6)
-plot(g)
-```
-
-a. Compute $A v$ where $v$ is the vector of all 1's. Explain what this new vector tells us about the graph.
-
-b. Compute $A^2 = A A$, the square of the matrix $A$.
-
-c. Look at the $(2,5)$ entry of $A^2$. Explain what this entry says about connections in the network. Do the same for the $(2,3)$ and the $(2,6)$ entry of $A^2$.
 
 
 

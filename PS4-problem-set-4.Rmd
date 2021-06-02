@@ -122,3 +122,27 @@ c. If $\mathsf{v}$ is **not** in  $S$ and $c$ is a  nonzero constant, can $c\mat
 Give a $3 \times 3$ matrix $A$ for which the vector $\mathsf{v} = \begin{bmatrix}3 \\ -2 \\ 5   \end{bmatrix}$ is in both $\mathrm{Col}(A)$ and $\mathrm{Nul}(A)$. Be sure to demonstrate that $\mathsf{v} \in \mathrm{Col}(A)$ and $\mathsf{v} \in \mathrm{Nul}(A)$.
 
 
+## Adjacency Matrix
+
+You can do this problem in R or by hand. Consider the matrix $A$ defined here
+```{r,echo=TRUE}
+A = rbind(c( 0 , 1 , 0 , 1 , 1 ,0), c(1 , 0 , 1 , 1 , 0, 0 ),c( 0 , 1 , 0 , 1 , 1, 0 ),
+  c( 1 , 1 , 1 , 0 , 1, 0 ),c( 1 , 0 , 1 , 1 , 0, 1 ), c(0, 0, 0, 0, 1, 0))
+A
+```
+
+This matrix represents the connections in the network diagram below. There is a 1 in position $(i,j)$ of the matrix if there is a connection (an edge) between vertex $i$ and vertex $j$ and there is a 0 if there is not.
+
+```{r,echo=FALSE}
+suppressPackageStartupMessages(library(igraph))
+g=graph_from_adjacency_matrix(A,mode='undirected')
+V(g)$label = c(1,2,3,4,5,6)
+plot(g)
+```
+
+a. Compute $A v$ where $v$ is the vector of all 1's. Explain what this new vector tells us about the graph.
+
+b. Compute $A^2 = A A$, the square of the matrix $A$.
+
+c. Look at the $(2,5)$ entry of $A^2$. Explain what this entry says about connections in the network. Do the same for the $(2,3)$ and the $(2,6)$ entry of $A^2$.
+
