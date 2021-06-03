@@ -1,15 +1,20 @@
 # Matrix Multiplication
 
-[Download this Rmd file from GitHub](https://github.com/Tom-Halverson/math236_s21/blob/main/03-matrix-multiplication.Rmd)
+[Download this Rmd file](https://drive.google.com/file/d/14qXUzU7m788Y32wEpfbTCswvBRSxDExU/view?usp=sharing)
 
 
-Here we will practice multiplying matrices in R. First, let's define a few matrices.I'm using a trick here. By putting the assignment in parentheses, it assigns the matrix and displays it.s
+In this activity, we will practice multiplying matrices in R. I hope you will work together in R, discussing and writing up your answers together. 
+
+Please, choose someone to **share their screen**, so that I can better see what you are doing and help out.
+
+
+First, let's define a few matrices.I'm using a trick here. By putting the assignment in parentheses, it both assigns the matrix *and* displays it.
 ```{r,echo=TRUE}
 (A = cbind(c(1,2,3),c(4,5,6),c(1,1,-1)))
 (B = cbind(c(1,-1,1),c(1,1,1),c(0,2,1)))
 (C = cbind(c(2,1,1),c(1,0,1),c(1,-3,1),c(3,2,1)))
 ```
-We multiply using the `%*%` command. As seen here:
+We multiply matrices using the `%*%` command. As seen here:
 
 ```{r,echo=TRUE}
 A %*% B
@@ -33,11 +38,11 @@ B %*% A
 
 ```
 
-4. The command `diag(n)` gives the n x n *identity matrix*. This is denoted $I_n$. For example, here is $I_3$. 
+4. The command `diag(n)` gives the n x n *identity matrix*. This is denoted $I_n$. For example, below is $I_3$. Compute $I_2$, $I_4$, and $I_5$ and be sure you all agree on what the identity matrix is.
 ```{r,echo=TRUE}
 diag(3)
 ```
-Compute $I_2$, $I_4$, and $I_5$ and be sure you all agree on what the identity matrix is. 
+ 
 
 5. Multiply the matrices A and B by the appropriately-sized identity matrix. Multiply  both ways, A I and I A, and agree upon what multiplying by the identity does.
 
@@ -51,7 +56,7 @@ Compute $I_2$, $I_4$, and $I_5$ and be sure you all agree on what the identity m
 
 ```
 
-7. Our topic for Thursday (tomorrow) is the inverse of a matrix. You  compute the inverse of the matrix A  with `solve(A)`. Try this
+7. Our topic for Monday is the inverse of a matrix. You  compute the inverse of the matrix A  with `solve(A)`. Try this
 ```{r,echo=TRUE}
 solve(B)
 B %*% solve(B)
@@ -60,15 +65,11 @@ B %*% solve(B)
 8. Multiply A by its inverse and look closely at the answer you get. 
 
 ```{r,echo=TRUE}
-solve(A)
-A %*% solve(A)
-```
-
-```{r,echo=TRUE}
 
 ```
 
-9. Some matrices do not have inverses. Try computing the inverse of the following matrices. We will discuss this tomorrow!
+
+9. Some matrices do not have inverses. Try computing the inverse of the following matrices. We will discuss this on Monday.
 
 ```{r,echo=TRUE}
 (M1 = cbind(c(3,5),c(-2,1)))
@@ -76,7 +77,41 @@ A %*% solve(A)
 (M3 = cbind(c(4,2),c(10,5)))
 ```
 
-10. Enter the matrix A in problem 3.7 in the homework. Then compute the matrix G which is A times its transpose. Discuss its meaning.
+## Homework 3.7
+
+Enter the matrix A in problem 3.7 in the homework. Then compute the matrix G which is A times its transpose. Discuss its meaning.
 
 
+## Homework 3.8
 
+Work on problem 3.8 in the homework. In this problem, you will write out a loop in R to apply a matrix over and over again. Here is an example for you to use to compare with. 
+
+First, define a vector $v$ and a matrix $A$ and multiply $Av$. 
+
+```{r,echo=TRUE}
+v = c(10,90)
+A = cbind(c(.9,.1),c(.5,.5))
+A %*% v
+```
+If we want to appy $A$ to $v$ again and again, we can keep multiplying by $A$:
+
+```{r,echo=TRUE}
+A %*% A %*% v
+A %*% A %*% A %*% v
+A %*% A %*% A %*% A %*% v
+```
+It is better to write a loop to do something like this. The following loop will multiply by A 10 times. Try changing the 10 to 4 (and compare with above). Try changing the 10 to 100.
+
+```{r,echo=TRUE}
+N = 10            # the number of times that we will multiply by A
+w = c(10,90)      # the starting value
+for (i in 1:N) {  # loop as the index i goes from 1 to N
+  w = A %*% w     # multiply Aw and replace w with this new vector
+}
+w                 # show the final value of w
+```
+
+
+## Homework 3.5
+
+Work on problem 3.5 in the homework. This does not use R but you can write out your answers here.

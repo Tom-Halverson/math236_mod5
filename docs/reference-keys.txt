@@ -56,6 +56,17 @@ solution-to-the-nonhomogeneous-equations-ax-0
 linearly-dependent-columns
 a-5-x-6-numerical-matrix
 random-matrices
+matrix-multiplication
+homework-3.7
+homework-3.8
+homework-3.5
+linear-transformations-of-a-house
+rotations
+expansion-and-contraction
+reflection
+shear-transformations
+dimension-reduction
+your-turn
 quiz-1-review
 overview
 vocabulary-and-concepts
