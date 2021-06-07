@@ -297,10 +297,10 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <div id="problem-set-4" class="section level1" number="4">
 <h1><span class="header-section-number">Section 4</span> Problem Set 4</h1>
 <ul>
-<li>Due: Wednesday February 17 by noon CST.</li>
+<li>Due: Tuesday June 15 by midnight CST.</li>
 <li>Upload your solutions to Moodle in a PDF.</li>
 <li>Please feel free to <strong>use RStudio for all row reductions.</strong></li>
-<li>You can download the <a href="https://github.com/Tom-Halverson/math236_s21/blob/main/PS4-problem-set-4.Rmd">Rmd source file for this problem set</a>.</li>
+<li>You can download the <a href="https://github.com/Tom-Halverson/math236_mod5/blob/main/PS4-problem-set-4.Rmd">Rmd source file for this problem set</a>.</li>
 </ul>
 <p>The Problem Set covers sections 2.2-2.3 on Matrix Inverses and 4.1-4.3 on Subspaces and Bases.</p>
 <div id="rainy-day-in-la" class="section level2" number="4.1">
@@ -335,19 +335,22 @@ This matrix works as follows: if the rain-sunshine probability today is (40, 60)
 <span class="math display">\[
 F  = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} ~\Bigg\vert~ \ x_3 = x_1 + x_2, x_4 = x_2 + x_3, x_5 = x_3 + x_4 \right\} \subseteq \mathbb{R}^5.   \hskip5in
 \]</span></p>
-<p>Find a basis for <span class="math inline">\(F\)</span>. Be sure to show that your vectors span <span class="math inline">\(F\)</span> and are linearly independent.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Show that <span class="math inline">\(F\)</span> is a subspace.</p></li>
+<li><p>Find a basis for <span class="math inline">\(F\)</span>. Show that your vectors span <span class="math inline">\(F\)</span> and are linearly independent.</p></li>
+</ol>
 </div>
 <div id="vectors-rescaled" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Vectors Rescaled</h2>
 <p>If the function <span class="math inline">\(T: \mathbb{R}^n \to \mathbb{R}^n\)</span> is a linear transformation, then show that the set below is a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>
 <span class="math display">\[
-E_2 = \{\ \vec{x} \in \mathbb{R}^n \mid T(\vec{x}) = 2 \vec{x} \}.
+E_2 = \{\ \vec{x} \in \mathbb{R}^n \mid T(\vec{x}) = 2021 \vec{x} \}.
 \]</span>
-Is there anything special about 2 in the definition? If it were replaced by another scalar, would it still be a subspace?</p>
+Is there anything special about 2021 in the definition? If it were replaced by another scalar, would it still be a subspace?</p>
 </div>
 <div id="column-and-null-space" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Column and Null Space</h2>
-<p>Find a basis for the column space <span class="math inline">\(Col(A)\)</span> and the null space <span class="math inline">\(Nul(A)\)</span> of the following matrix <span class="math inline">\(A\)</span> below</p>
+<p>Find a basis for the column space <span class="math inline">\(Col(A)\)</span> and the null space <span class="math inline">\(Nul(A)\)</span> of the matrix <span class="math inline">\(A\)</span> below</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="problem-set-4.html#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>),<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">2</span>),</span>
 <span id="cb3-2"><a href="problem-set-4.html#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">1</span>, <span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>,  <span class="dv">0</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">3</span> )))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
@@ -382,9 +385,9 @@ I searched online for ideas and one suggested that I make the matrix below and r
 <h2><span class="header-section-number">4.6</span> Getting Into a Subspace</h2>
 <p>Let <span class="math inline">\(S \subset \mathbb{R}^n\)</span> be a subspace and let <span class="math inline">\(\mathsf{v}, \mathsf{w} \in \mathbb{R}^n\)</span>. For each of the following statements, either give a specific example or explain why it cannot happen.</p>
 <ol style="list-style-type: lower-alpha">
-<li><p>If <span class="math inline">\(\mathsf{v}\)</span> is in <span class="math inline">\(S\)</span> but <span class="math inline">\(\mathsf{w}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span>, can <span class="math inline">\(\mathsf{v} + \mathsf{w}\)</span> be in <span class="math inline">\(S\)</span>?</p></li>
-<li><p>If <span class="math inline">\(\mathsf{v}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span> and <span class="math inline">\(\mathsf{w}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span>, can <span class="math inline">\(\mathsf{v} + \mathsf{w}\)</span> be in <span class="math inline">\(S\)</span>?</p></li>
 <li><p>If <span class="math inline">\(\mathsf{v}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span> and <span class="math inline">\(c\)</span> is a nonzero constant, can <span class="math inline">\(c\mathsf{v}\)</span> be in <span class="math inline">\(S\)</span>?</p></li>
+<li><p>If <span class="math inline">\(\mathsf{v}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span> and <span class="math inline">\(\mathsf{w}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span>, can <span class="math inline">\(\mathsf{v} + \mathsf{w}\)</span> be in <span class="math inline">\(S\)</span>?</p></li>
+<li><p>If <span class="math inline">\(\mathsf{v}\)</span> is in <span class="math inline">\(S\)</span> and <span class="math inline">\(\mathsf{w}\)</span> is <strong>not</strong> in <span class="math inline">\(S\)</span> can <span class="math inline">\(\mathsf{v} + \mathsf{w}\)</span> be in <span class="math inline">\(S\)</span>?</p></li>
 </ol>
 </div>
 <div id="a-vector-in-both-cola-and-nula" class="section level2" number="4.7">
