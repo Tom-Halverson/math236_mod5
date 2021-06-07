@@ -57,9 +57,11 @@ linearly-dependent-columns
 a-5-x-6-numerical-matrix
 random-matrices
 matrix-multiplication
-homework-3.7
-homework-3.8
-homework-3.5
+multiplying-matrices
+transpose
+identity-matrix
+writing-loops
+matrix-inverses
 linear-transformations-of-a-house
 rotations
 expansion-and-contraction
