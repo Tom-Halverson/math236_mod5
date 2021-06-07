@@ -23,6 +23,15 @@ a-proof
 inner-and-outer-products
 archaeological-seriation
 rental-car
+problem-set-4
+rainy-day-in-la
+fibonacci-vectors
+vectors-rescaled
+column-and-null-space
+extend-to-a-basis
+getting-into-a-subspace
+a-vector-in-both-cola-and-nula
+adjacency-matrix
 important-definitions
 vector-spaces
 matrices

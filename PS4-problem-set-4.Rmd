@@ -60,17 +60,6 @@ E_2 = \{\ \vec{x} \in \mathbb{R}^n \mid T(\vec{x}) = 2 \vec{x} \}.
 $$
 Is there anything special about 2 in the definition? If it were replaced by another scalar, would it still be a subspace?
 
-## Polynomial Vector Spaces
-
-This problem refers to the information about the vector space of polynomials $\mathcal{P}_n$ found in the Day 13 class notes. 
-
-Here are three subsets of $\mathcal{P}_4$. Decide if they are subspaces. In each case, if it is not a subspace, give examples using specific polynomials to show that one of the rules is broken, and if it is a subspace, show that the subspace rule holds for any two polynomials $p(x), q(x)$ and any constant $c \in \mathbb{R}$.
-
-a. $U = \{ p(x) \in \mathcal{P}_4 \mid p(1) = 0 \}$
-
-b. $V = \{ p(x) \in \mathcal{P}_4 \mid p(0) = 1 \}$
-
-c. $W= \{ p(x) \in \mathcal{P}_4 \mid p'(1) = 0 \}$
 
 ## Column and Null Space
 
@@ -98,6 +87,7 @@ a. Row reduce this matrix.
 b. Use the result to come up with a basis for $\mathbb{R}^5$ that includes my original 3 vectors
 
 c. Explain why this method works.
+
 
 ## Getting Into a Subspace
 
