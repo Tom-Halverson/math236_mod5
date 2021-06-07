@@ -215,9 +215,11 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 </ul></li>
 <li class="chapter" data-level="11" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html"><i class="fa fa-check"></i><b>11</b> Matrix Multiplication</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html#homework-3.7"><i class="fa fa-check"></i><b>11.1</b> Homework 3.7</a></li>
-<li class="chapter" data-level="11.2" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html#homework-3.8"><i class="fa fa-check"></i><b>11.2</b> Homework 3.8</a></li>
-<li class="chapter" data-level="11.3" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html#homework-3.5"><i class="fa fa-check"></i><b>11.3</b> Homework 3.5</a></li>
+<li class="chapter" data-level="11.1" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html#multiplying-matrices"><i class="fa fa-check"></i><b>11.1</b> Multiplying matrices</a></li>
+<li class="chapter" data-level="11.2" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html#transpose"><i class="fa fa-check"></i><b>11.2</b> Transpose</a></li>
+<li class="chapter" data-level="11.3" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html#identity-matrix"><i class="fa fa-check"></i><b>11.3</b> Identity Matrix</a></li>
+<li class="chapter" data-level="11.4" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html#writing-loops"><i class="fa fa-check"></i><b>11.4</b> Writing Loops</a></li>
+<li class="chapter" data-level="11.5" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html#matrix-inverses"><i class="fa fa-check"></i><b>11.5</b> Matrix Inverses</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="linear-transformations-of-a-house.html"><a href="linear-transformations-of-a-house.html"><i class="fa fa-check"></i><b>12</b> Linear Transformations of a House</a>
 <ul>
@@ -283,10 +285,9 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
             <section class="normal" id="section-">
 <div id="matrix-multiplication" class="section level1" number="11">
 <h1><span class="header-section-number">Section 11</span> Matrix Multiplication</h1>
-<p><a href="https://drive.google.com/file/d/14qXUzU7m788Y32wEpfbTCswvBRSxDExU/view?usp=sharing">Download this Rmd file</a></p>
-<p>In this activity, we will practice multiplying matrices in R. I hope you will work together in R, discussing and writing up your answers together.</p>
-<p>Please, choose someone to <strong>share their screen</strong>, so that I can better see what you are doing and help out.</p>
-<p>First, let’s define a few matrices.I’m using a trick here. By putting the assignment in parentheses, it both assigns the matrix <em>and</em> displays it.</p>
+<div id="multiplying-matrices" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Multiplying matrices</h2>
+<p>First, let’s define a few matrices. We use a trick here. By putting the assignment in parentheses, it both assigns the matrix <em>and</em> displays it.</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="matrix-multiplication.html#cb86-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>)))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    4    1
@@ -302,101 +303,154 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 ## [1,]    2    1    1    3
 ## [2,]    1    0   -3    2
 ## [3,]    1    1    1    1</code></pre>
-<p>We multiply matrices using the <code>%*%</code> command. As seen here:</p>
+<p>Multiply these matrices to get <span class="math inline">\(AB\)</span> using the <code>%*%</code> command. As seen here:</p>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="matrix-multiplication.html#cb92-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> B</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]   -2    6    9
 ## [2,]   -2    8   11
 ## [3,]   -4    8   11</code></pre>
-<p>Note that</p>
+<p>Note that <span class="math inline">\(BA\)</span> is not the same as <span class="math inline">\(AB\)</span>.</p>
 <div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="matrix-multiplication.html#cb94-1" aria-hidden="true" tabindex="-1"></a>B <span class="sc">%*%</span> A</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    3    9    2
 ## [2,]    7   13   -2
 ## [3,]    6   15    1</code></pre>
-<ol style="list-style-type: decimal">
-<li><p>What do these last two multiplications say about the matrix product AB and BA? This is a very important property (or, perhaps, lack of property) of matrix multiplication.</p></li>
-<li><p>Try multiplying BC and CB. What happens? And why?</p></li>
-<li><p>The <em>transpose</em> of a matrix is computed by <code>t(A)</code>. Compute the transpose of the matrices A, B, C and be sure that you all understand what it does.</p></li>
-<li><p>The command <code>diag(n)</code> gives the n x n <em>identity matrix</em>. This is denoted <span class="math inline">\(I_n\)</span>. For example, below is <span class="math inline">\(I_3\)</span>. Compute <span class="math inline">\(I_2\)</span>, <span class="math inline">\(I_4\)</span>, and <span class="math inline">\(I_5\)</span> and be sure you all agree on what the identity matrix is.</p></li>
-</ol>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="matrix-multiplication.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(<span class="dv">3</span>)</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    0    0
-## [2,]    0    1    0
-## [3,]    0    0    1</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li><p>Multiply the matrices A and B by the appropriately-sized identity matrix. Multiply both ways, A I and I A, and agree upon what multiplying by the identity does.</p></li>
-<li><p>Multiply C by an identity matrix I C and C I. You might need a different size on the left and on the right.</p></li>
-<li><p>Our topic for Monday is the inverse of a matrix. You compute the inverse of the matrix A with <code>solve(A)</code>. Try this</p></li>
-</ol>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="matrix-multiplication.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">solve</span>(B)</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3]
-## [1,] -0.5 -0.5    1
-## [2,]  1.5  0.5   -1
-## [3,] -1.0  0.0    1</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="matrix-multiplication.html#cb100-1" aria-hidden="true" tabindex="-1"></a>B <span class="sc">%*%</span> <span class="fu">solve</span>(B)</span></code></pre></div>
-<pre><code>##      [,1] [,2] [,3]
-## [1,]    1    0    0
-## [2,]    0    1    0
-## [3,]    0    0    1</code></pre>
-<ol start="8" style="list-style-type: decimal">
-<li><p>Multiply A by its inverse and look closely at the answer you get.</p></li>
-<li><p>Some matrices do not have inverses. Try computing the inverse of the following matrices. We will discuss this on Monday.</p></li>
-</ol>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="matrix-multiplication.html#cb102-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">M1 =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">1</span>)))</span></code></pre></div>
-<pre><code>##      [,1] [,2]
-## [1,]    3   -2
-## [2,]    5    1</code></pre>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="matrix-multiplication.html#cb104-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">M2 =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>),<span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>)))</span></code></pre></div>
-<pre><code>##      [,1] [,2]
-## [1,]    4    5
-## [2,]    3    4</code></pre>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="matrix-multiplication.html#cb106-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">M3 =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">5</span>)))</span></code></pre></div>
-<pre><code>##      [,1] [,2]
-## [1,]    4   10
-## [2,]    2    5</code></pre>
-<div id="homework-3.7" class="section level2" number="11.1">
-<h2><span class="header-section-number">11.1</span> Homework 3.7</h2>
-<p>Enter the matrix A in problem 3.7 in the homework. Then compute the matrix G which is A times its transpose. Discuss its meaning.</p>
+<p>That is, matrix multiplication is <strong>not commutative</strong>. It <em>can</em> be the case that <span class="math inline">\(AB\)</span> equals <span class="math inline">\(BA\)</span> but most if the time these are not equal.</p>
+<p>We can multiply <span class="math inline">\(BC\)</span> to get</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="matrix-multiplication.html#cb96-1" aria-hidden="true" tabindex="-1"></a>B <span class="sc">%*%</span> C</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    3    1   -2    5
+## [2,]    1    1   -2    1
+## [3,]    4    2   -1    6</code></pre>
+<p>But <span class="math inline">\(CB\)</span> does not make sense, since <span class="math inline">\(C\)</span> is 3 x 4 and <span class="math inline">\(B\)</span> is 3 x 3. The inner dimensions to not match. R tells us that the matrices are <em>non-conformable.</em></p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="matrix-multiplication.html#cb98-1" aria-hidden="true" tabindex="-1"></a> C <span class="sc">%*%</span> B</span></code></pre></div>
+<pre><code>## Error in C %*% B: non-conformable arguments</code></pre>
 </div>
-<div id="homework-3.8" class="section level2" number="11.2">
-<h2><span class="header-section-number">11.2</span> Homework 3.8</h2>
+<div id="transpose" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Transpose</h2>
+<p>The <em>transpose</em> of a matrix is computed by <code>t(A)</code>. For example</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="matrix-multiplication.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(A)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    1    1   -1</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="matrix-multiplication.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(B)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1   -1    1
+## [2,]    1    1    1
+## [3,]    0    2    1</code></pre>
+<p>Note that the transpose is <strong>order reversing</strong>. That is
+<span class="math display">\[
+(AB)^T = B^T A^T.
+\]</span>
+We can see that here</p>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   -2   -2   -4
+## [2,]    6    8    8
+## [3,]    9   11   11</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   -2   -2   -4
+## [2,]    6    8    8
+## [3,]    9   11   11</code></pre>
+</div>
+<div id="identity-matrix" class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> Identity Matrix</h2>
+<p>The command <code>diag(n)</code> gives the n x n <strong>identity matrix</strong>. This is denoted <span class="math inline">\(I_n\)</span>. For example, below are <span class="math inline">\(I_3\)</span>, <span class="math inline">\(I_4\)</span>, and <span class="math inline">\(I_5.\)</span></p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="matrix-multiplication.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    0    0
+## [2,]    0    1    0
+## [3,]    0    0    1</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="matrix-multiplication.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    0    0    0
+## [2,]    0    1    0    0
+## [3,]    0    0    1    0
+## [4,]    0    0    0    1</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="matrix-multiplication.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    0    0    0    0
+## [2,]    0    1    0    0    0
+## [3,]    0    0    1    0    0
+## [4,]    0    0    0    1    0
+## [5,]    0    0    0    0    1</code></pre>
+<p>The identity matrix has the same effect as multiplyng by 1. For example,</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="matrix-multiplication.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(<span class="dv">3</span>) <span class="sc">%*%</span> A</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    1
+## [2,]    2    5    1
+## [3,]    3    6   -1</code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="matrix-multiplication.html#cb114-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> <span class="fu">diag</span>(<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    1
+## [2,]    2    5    1
+## [3,]    3    6   -1</code></pre>
+</div>
+<div id="writing-loops" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Writing Loops</h2>
 <p>Work on problem 3.8 in the homework. In this problem, you will write out a loop in R to apply a matrix over and over again. Here is an example for you to use to compare with.</p>
 <p>First, define a vector <span class="math inline">\(v\)</span> and a matrix <span class="math inline">\(A\)</span> and multiply <span class="math inline">\(Av\)</span>.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="matrix-multiplication.html#cb108-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">90</span>)</span>
-<span id="cb108-2"><a href="matrix-multiplication.html#cb108-2" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(.<span class="dv">9</span>,.<span class="dv">1</span>),<span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>))</span>
-<span id="cb108-3"><a href="matrix-multiplication.html#cb108-3" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> v</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="matrix-multiplication.html#cb116-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">90</span>)</span>
+<span id="cb116-2"><a href="matrix-multiplication.html#cb116-2" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(.<span class="dv">9</span>,.<span class="dv">1</span>),<span class="fu">c</span>(.<span class="dv">5</span>,.<span class="dv">5</span>))</span>
+<span id="cb116-3"><a href="matrix-multiplication.html#cb116-3" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> v</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,]   54
 ## [2,]   46</code></pre>
 <p>If we want to appy <span class="math inline">\(A\)</span> to <span class="math inline">\(v\)</span> again and again, we can keep multiplying by <span class="math inline">\(A\)</span>:</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="matrix-multiplication.html#cb110-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> A <span class="sc">%*%</span> v</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="matrix-multiplication.html#cb118-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> A <span class="sc">%*%</span> v</span></code></pre></div>
 <pre><code>##      [,1]
 ## [1,] 71.6
 ## [2,] 28.4</code></pre>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="matrix-multiplication.html#cb112-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> A <span class="sc">%*%</span> A <span class="sc">%*%</span> v</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="matrix-multiplication.html#cb120-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> A <span class="sc">%*%</span> A <span class="sc">%*%</span> v</span></code></pre></div>
 <pre><code>##       [,1]
 ## [1,] 78.64
 ## [2,] 21.36</code></pre>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="matrix-multiplication.html#cb114-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> A <span class="sc">%*%</span> A <span class="sc">%*%</span> A <span class="sc">%*%</span> v</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="matrix-multiplication.html#cb122-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%*%</span> A <span class="sc">%*%</span> A <span class="sc">%*%</span> A <span class="sc">%*%</span> v</span></code></pre></div>
 <pre><code>##        [,1]
 ## [1,] 81.456
 ## [2,] 18.544</code></pre>
 <p>It is better to write a loop to do something like this. The following loop will multiply by A 10 times. Try changing the 10 to 4 (and compare with above). Try changing the 10 to 100.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="matrix-multiplication.html#cb116-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">10</span>            <span class="co"># the number of times that we will multiply by A</span></span>
-<span id="cb116-2"><a href="matrix-multiplication.html#cb116-2" aria-hidden="true" tabindex="-1"></a>w <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">90</span>)      <span class="co"># the starting value</span></span>
-<span id="cb116-3"><a href="matrix-multiplication.html#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) {  <span class="co"># loop as the index i goes from 1 to N</span></span>
-<span id="cb116-4"><a href="matrix-multiplication.html#cb116-4" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">=</span> A <span class="sc">%*%</span> w     <span class="co"># multiply Aw and replace w with this new vector</span></span>
-<span id="cb116-5"><a href="matrix-multiplication.html#cb116-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb116-6"><a href="matrix-multiplication.html#cb116-6" aria-hidden="true" tabindex="-1"></a>w                 <span class="co"># show the final value of w</span></span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="matrix-multiplication.html#cb124-1" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">10</span>            <span class="co"># the number of times that we will multiply by A</span></span>
+<span id="cb124-2"><a href="matrix-multiplication.html#cb124-2" aria-hidden="true" tabindex="-1"></a>w <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">90</span>)      <span class="co"># the starting value</span></span>
+<span id="cb124-3"><a href="matrix-multiplication.html#cb124-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) {  <span class="co"># loop as the index i goes from 1 to N</span></span>
+<span id="cb124-4"><a href="matrix-multiplication.html#cb124-4" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">=</span> A <span class="sc">%*%</span> w     <span class="co"># multiply Aw and replace w with this new vector</span></span>
+<span id="cb124-5"><a href="matrix-multiplication.html#cb124-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb124-6"><a href="matrix-multiplication.html#cb124-6" aria-hidden="true" tabindex="-1"></a>w                 <span class="co"># show the final value of w</span></span></code></pre></div>
 <pre><code>##          [,1]
 ## [1,] 83.32564
 ## [2,] 16.67436</code></pre>
 </div>
-<div id="homework-3.5" class="section level2" number="11.3">
-<h2><span class="header-section-number">11.3</span> Homework 3.5</h2>
-<p>Work on problem 3.5 in the homework. This does not use R but you can write out your answers here.</p>
+<div id="matrix-inverses" class="section level2" number="11.5">
+<h2><span class="header-section-number">11.5</span> Matrix Inverses</h2>
+<p>Give a square matrix</p>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   10   -6    1
+## [2,]   -2    1    0
+## [3,]   -7    5   -1</code></pre>
+<p>You find its inverse using <code>solve</code>:</p>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    1    1
+## [2,]    2    3    2
+## [3,]    3    8    2</code></pre>
+<pre><code>##              [,1]         [,2] [,3]
+## [1,] 1.000000e+00 0.000000e+00    0
+## [2,] 1.776357e-15 1.000000e+00    0
+## [3,] 3.552714e-15 1.776357e-15    1</code></pre>
+<p>Note that if you look closely at the last matrix, it is within round off error of the identity. For example, the number 1.776357 e-15 is 0.000000000000001776357. To make it look more like the identity, you can use the command <code>zapsmall</code>, which converts very small numbers like this to 0.</p>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    0    0
+## [2,]    0    1    0
+## [3,]    0    0    1</code></pre>
+<p>What happens if you try to invert a matrix that is not invertible. For example in the following matrix, the third column is the sum of the first two, so the columns are linearly dependent. If we try to inverti it</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="matrix-multiplication.html#cb130-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">10</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">7</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">6</span>,<span class="dv">1</span>,<span class="dv">5</span>),<span class="fu">c</span>(<span class="dv">4</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>))</span>
+<span id="cb130-2"><a href="matrix-multiplication.html#cb130-2" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   10   -6    4
+## [2,]   -2    1   -1
+## [3,]   -7    5   -2</code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="matrix-multiplication.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">solve</span>(A)</span></code></pre></div>
+<pre><code>## Error in solve.default(A): system is computationally singular: reciprocal condition number = 5.84328e-18</code></pre>
+<p>We get the error that the matrix is <strong>singular</strong>. This is another term for non-invertible.</p>
 
 </div>
 </div>
