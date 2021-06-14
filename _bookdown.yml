@@ -34,7 +34,7 @@ rmd_files: ["index.Rmd",
 # "10-digit-recognition.Rmd",
 # "12-image-compression.Rmd",
  "q1-review.Rmd", 
-# "q2-review.Rmd" , 
+ "q2-review.Rmd" , 
 # "q3-review.Rmd" , 
 # "q4-review.Rmd"
 ]

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 1 Problem Set 5 | PS5-problem-set-5.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 1 Problem Set 5 | PS5-problem-set-5.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 1 Problem Set 5 | PS5-problem-set-5.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="m236.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href = "./">MATH 236: Linear Algebra</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#problem-set-5"><i class="fa fa-check"></i><b>1</b> Problem Set 5</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#a-tale-of-two-bases"><i class="fa fa-check"></i><b>1.1</b> A Tale of Two Bases</a></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#dimension"><i class="fa fa-check"></i><b>1.2</b> Dimension</a></li>
+<li class="chapter" data-level="1.3" data-path=""><a href="#determinant-properties"><i class="fa fa-check"></i><b>1.3</b> Determinant Properties</a></li>
+<li class="chapter" data-level="1.4" data-path=""><a href="#matrix-rank"><i class="fa fa-check"></i><b>1.4</b> Matrix Rank</a></li>
+<li class="chapter" data-level="1.5" data-path=""><a href="#a-tetrahedral-basis"><i class="fa fa-check"></i><b>1.5</b> A Tetrahedral Basis</a></li>
+<li class="chapter" data-level="1.6" data-path=""><a href="#eigenbasis"><i class="fa fa-check"></i><b>1.6</b> Eigenbasis</a></li>
+<li class="chapter" data-level="1.7" data-path=""><a href="#house-party"><i class="fa fa-check"></i><b>1.7</b> House Party</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="problem-set-5" class="section level1" number="1">
+<h1><span class="header-section-number">Section 1</span> Problem Set 5</h1>
+<ul>
+<li>Due: Tuesday February 23 by 11:59am CST.</li>
+<li>Upload your solutions to Moodle in a PDF.</li>
+<li>Please feel free to <strong>use RStudio for all row reductions.</strong></li>
+<li>You can download the <a href="https://github.com/Tom-Halverson/math236_s21/blob/main/PS5-problem-set-5.Rmd">Rmd source file for this problem set</a>.</li>
+</ul>
+<p>The Problem Set covers sections 4.4, 4.5, 3.1, 5.1</p>
+<div id="a-tale-of-two-bases" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> A Tale of Two Bases</h2>
+<p>I recommend using R on this problem. Consider the subspace <span class="math inline">\(S\)</span> of <span class="math inline">\(\mathbb{R}^5\)</span> below.
+<span class="math display">\[
+S = \textsf{span}\left(
+\begin{bmatrix}
+ 1  \\
+ 1  \\
+ 1  \\
+ 1  \\
+ 2  \\
+\end{bmatrix},
+\begin{bmatrix}
+1  \\
+2  \\
+3  \\
+0  \\
+-1 \\
+\end{bmatrix},
+\begin{bmatrix}
+0  \\
+0  \\
+0 \\
+1  \\
+ 2  \\
+\end{bmatrix},
+\begin{bmatrix}
+ -1  \\
+ 1  \\
+ 3  \\
+ 0  \\
+ -2  \\
+\end{bmatrix},
+\begin{bmatrix}
+2 \\
+1 \\
+ 0 \\
+  1 \\
+ 3 \\
+\end{bmatrix}
+\right)
+\]</span></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>),<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>))</span></code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li><p>Give a basis of <span class="math inline">\(S\)</span> consisting of some or all of the vectors used to define <span class="math inline">\(S\)</span> above.</p></li>
+<li><p>Give a basis of <span class="math inline">\(S\)</span> that has the nice standard basis property (i.e., the 0s and 1s property).</p></li>
+<li><p>For the two vectors below, decide if they are in <span class="math inline">\(S\)</span>. If the vector is in <span class="math inline">\(S\)</span> then give its coordinates in each of your bases from parts (a) and (b). If you can do one of these “by hand” then explain how.
+<span class="math display">\[
+\mathbf{w} = \begin{bmatrix} 8 \\ 11 \\ 14 \\ 7 \\ 11 \end{bmatrix}, \qquad 
+\mathbf{v} = \begin{bmatrix} 3 \\ 3 \\ 3 \\ 1 \\ 1 \end{bmatrix}.
+\]</span></p></li>
+</ol>
+</div>
+<div id="dimension" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Dimension</h2>
+<p>Find the dimension of the subspace <span class="math inline">\(Z\)</span> of <span class="math inline">\(\mathbb{R}^5\)</span> of <em>zero-sum</em> vectors below
+<span class="math display">\[
+Z = \left\{
+\begin{bmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix}
+\ \Bigg\vert\ \  x_1 + x_2 + x_3 + x_4 + x_5 = 0\ 
+\right\}.
+\]</span></p>
+</div>
+<div id="determinant-properties" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Determinant Properties</h2>
+<p>Turn in an R-markdown file with your solution to this problem. You can compute determinants in R using the <code>det</code> command. Here you will explore some properties of determinants.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>),</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>)))</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    3    0   -1    1    2
+## [2,]    1    1   -1    1    1
+## [3,]   -2   -3   -2    3    1
+## [4,]    1    3    1    3    0
+## [5,]    1    3    0   -2    0</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li>Compute the determinant of <span class="math inline">\(A\)</span>.</li>
+<li>Compute the determinant of <span class="math inline">\(A^2\)</span>. How does it compare to <span class="math inline">\(det(A)\)</span>?</li>
+<li>Compute the determinant of <span class="math inline">\(A^{-1}\)</span>. How does it compare to <span class="math inline">\(det(A)\)</span>?</li>
+<li>Swap two rows of <span class="math inline">\(A\)</span> and then compute the determinant of the matrix that you get.</li>
+<li>Multiply the 4th row of the original matrix <span class="math inline">\(A\)</span> by 7 and then compute the determinant of the matrix you get. How does it compare to <span class="math inline">\(det(A)\)</span>?</li>
+<li>Compute the determinant of <span class="math inline">\(7A\)</span>. How does it compare to <span class="math inline">\(det(A)\)</span>?</li>
+<li>Let <span class="math inline">\(B\)</span> be the matrix below, and compute <span class="math inline">\(det(B)\)</span>, <span class="math inline">\(det(A B)\)</span>, and <span class="math inline">\(det(A) det(B)\)</span>.</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">B =</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>,<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">2</span>,<span class="dv">0</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">0</span>),</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">1</span>)))</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    2    1    1    1
+## [2,]    1    2    0    1   -1
+## [3,]   -2   -1   -2    0    1
+## [4,]    1    0    1    3    0
+## [5,]    1    0    0    1    1</code></pre>
+</div>
+<div id="matrix-rank" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Matrix Rank</h2>
+<p>Fill in the entries of the table with <strong>T</strong> = true or <strong>F</strong> = false or <strong>I</strong> = not enough information to know. (Hint: draw a “picture” of the RREF of <span class="math inline">\(\mathsf{A}\)</span> in each case).</p>
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+</style>
+<div class="col3">
+<p><strong>(a)</strong> <span class="math inline">\(\mathsf{A}\)</span> is invertible</p>
+<p><strong>(b)</strong> <span class="math inline">\(\mathsf{rref}(\mathsf{A}) = I\)</span></p>
+<p><strong>(c)</strong> <span class="math inline">\(\mathsf{A}\)</span> has 8 pivots</p>
+<p><strong>(d)</strong> <span class="math inline">\(\mathsf{A} \mathbf{0} = \mathbf{0}\)</span></p>
+<p><strong>(e)</strong> <span class="math inline">\(\mathsf{A} \mathsf{x} = \mathbf{0}\)</span> has more than one solution.</p>
+<p><strong>(f)</strong> <span class="math inline">\(T\)</span> is one-to-one</p>
+<p><strong>(g)</strong> <span class="math inline">\(T\)</span> is onto</p>
+<p><strong>(h)</strong> <span class="math inline">\(\mathsf{A} \mathsf{x} = \mathsf{b}\)</span> has at least one solution for all <span class="math inline">\(\mathsf{b} \in \mathbb{R}^8\)</span>.</p>
+<p><strong>(i)</strong> The columns of <span class="math inline">\(\mathsf{A}\)</span> span <span class="math inline">\(\mathbb{R}^8\)</span>.</p>
+<p><strong>(j)</strong> There is a vector <span class="math inline">\(\mathsf{b} \in \mathbb{R}^8\)</span> such that <span class="math inline">\(\mathsf{A} \mathsf{x} = \mathsf{b}\)</span> has no solutions.</p>
+<p><strong>(k)</strong> There is a vector <span class="math inline">\(\mathsf{b} \in \mathbb{R}^8\)</span> such that <span class="math inline">\(\mathsf{A} \mathsf{x} = \mathsf{b}\)</span> has infinitely many solutions.</p>
+<p><strong>(l)</strong> There is a vector <span class="math inline">\(\mathsf{b} \in \mathbb{R}^8\)</span> such that <span class="math inline">\(\mathsf{A} \mathsf{x} = \mathsf{b}\)</span> has exactly 17 solutions.</p>
+<p><strong>(m)</strong> There is a vector <span class="math inline">\(b \in \mathbb{R}^8\)</span> that can be written as a linear combination of the columns of <span class="math inline">\(\mathsf{A}\)</span> in more than one way.</p>
+<p><strong>(n)</strong> The rows of <span class="math inline">\(\mathsf{A}\)</span> span a 7 dimensional subspace of <span class="math inline">\(\mathbb{R}^8\)</span>.</p>
+<p><strong>(o)</strong> The columns of <span class="math inline">\(\mathsf{A}\)</span> are linearly independent.</p>
+<p><strong>(p)</strong> The rows of <span class="math inline">\(\mathsf{A}\)</span> are linearly independent</p>
+</div>
+<p><span class="math display">\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+&amp; T: \mathbb{R}^8 \to \mathbb{R}^8  &amp; T: \mathbb{R}^8 \to \mathbb{R}^8 &amp; T: \mathbb{R}^7 \to \mathbb{R}^8  &amp; T: \mathbb{R}^9 \to \mathbb{R}^8  \\
+&amp;  \text{$\mathsf{A}$  has rank 7} &amp; \text{$\mathsf{A}$ has rank 8} &amp; \text{$\mathsf{A}$  has rank 7} &amp;  \text{$\mathsf{A}$  has rank 8} \\
+\hline
+(a) &amp; &amp; &amp; &amp; \\ \hline
+(b) &amp; &amp; &amp; &amp; \\ \hline
+(c) &amp; &amp; &amp; &amp; \\ \hline
+(d) &amp; &amp; &amp; &amp; \\ \hline
+(e) &amp; &amp; &amp; &amp; \\ \hline
+(f) &amp; &amp; &amp; &amp; \\ \hline
+(g) &amp; &amp; &amp; &amp; \\ \hline
+(h) &amp; &amp; &amp; &amp; \\ \hline
+(i) &amp; &amp; &amp; &amp; \\ \hline
+(j) &amp; &amp; &amp; &amp; \\ \hline
+(k) &amp; &amp; &amp; &amp; \\ \hline
+(l) &amp; &amp; &amp; &amp; \\ \hline
+(m) &amp; &amp; &amp; &amp; \\ \hline
+(n) &amp; &amp; &amp; &amp; \\ \hline
+(o) &amp; &amp; &amp; &amp; \\ \hline
+(p) &amp; &amp; &amp; &amp; \\ \hline
+\end{array}
+\]</span></p>
+</div>
+<div id="a-tetrahedral-basis" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> A Tetrahedral Basis</h2>
+<p>In practice, we change bases because problems are computationally easier in another coordinate system or because we learn something by looking at a problem from the point of view of a different coordinate system. The following example illustrates this with ideas that arises both in chemistry and computer graphics. Below is the tetrahedral molecule methane, <span class="math inline">\(\mathsf{CH}_4\)</span>. Its coordinates can be described in 3-dimensional space by the vectors below.</p>
+<p><span class="math display">\[
+\mathsf{C}=\begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix},
+\mathsf{H}_1=\begin{bmatrix} 0 \\ 0 \\ \frac{3}{2\sqrt{6}} \end{bmatrix},
+\mathsf{H}_2=\begin{bmatrix}
+ -\frac{1}{2 \sqrt{3}} \\ -\frac{1}{2} \\ -\frac{1}{2 \sqrt{6}}
+\end{bmatrix},
+\mathsf{H}_3=\begin{bmatrix}
+ -\frac{1}{2 \sqrt{3}} \\ \frac{1}{2} \\ -\frac{1}{2 \sqrt{6}} 
+ \end{bmatrix},
+\mathsf{H}_4=\begin{bmatrix}
+ \frac{1}{\sqrt{3}} \\0 \\-\frac{1}{2 \sqrt{6}}
+ \end{bmatrix}
+\]</span></p>
+<p><img src="images/ps5-methane.png" style="width:35.0%" /></p>
+<p>Let <span class="math inline">\(\mathcal{M} = \{ \mathsf{H}_1, \mathsf{H}_2, \mathsf{H_3} \}\)</span>. Then <span class="math inline">\(\mathcal{M}\)</span> is a basis of <span class="math inline">\(\mathbb{R}^3\)</span>, which we will call the <strong>tetrahedral basis.</strong> You can see from the plot that these vectors are linearly independent (not all on the same plane)</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Express <span class="math inline">\(\mathsf{H}_4\)</span> in the tetrahedral basis. Hint: first compute <span class="math inline">\(\mathsf{H}_1+\mathsf{H}_2+\mathsf{H}_3+\mathsf{H}_4\)</span> using the coordinates above. You do not need to do any row reductions for this question.</p></li>
+<li><p>Give the change of basis matrix <span class="math inline">\(T\)</span> that converts from the tetrahedral basis <span class="math inline">\(\mathcal{M}\)</span> to the standard basis <span class="math inline">\(\mathcal{S}\)</span> and compute its inverse that converts from the standard basis back to <span class="math inline">\(\mathcal{M}\)</span>.</p></li>
+<li><p>Chemists are interested in symmetry operations. These are linear transformations such that the atom looks the same after the transformation as it did before. For example one such operation is rotation <span class="math inline">\(r_4\)</span> by 120<span class="math inline">\(^o\)</span> around the <span class="math inline">\(\mathsf{H}_4\)</span> axis. This rotation sends <span class="math inline">\(\mathsf{H}_1\)</span> to <span class="math inline">\(\mathsf{H}_3\)</span>, <span class="math inline">\(\mathsf{H}_3\)</span> to <span class="math inline">\(\mathsf{H}_2\)</span>, and <span class="math inline">\(\mathsf{H}_2\)</span> to <span class="math inline">\(\mathsf{H}_1\)</span>. Give the matrix of <span class="math inline">\(r_4\)</span> in the <span class="math inline">\(\mathcal{M}\)</span> basis.</p></li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>r4.M <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(r4.M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;H1&quot;</span>,<span class="st">&quot;H2&quot;</span>,<span class="st">&quot;H3&quot;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(r4.M) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;H1&quot;</span>,<span class="st">&quot;H2&quot;</span>,<span class="st">&quot;H3&quot;</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>r4.M</span></code></pre></div>
+<pre><code>##    H1 H2 H3
+## H1  0  0  0
+## H2  0  0  0
+## H3  0  0  0</code></pre>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>It is a pain to describe these transformations in the standard basis, but it is easy and elegant to do so in the methane basis. We can now use the change-of-basis matrix to get the matrix in the standard basis. Compute the rotation in the standard basis by multiplying out these matrices in R. Use your matrices from parts b and c.</li>
+</ol>
+<p><img src="images/ps5-change-basis-methane.png" style="width:100.0%" /></p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Give the matrix in the <span class="math inline">\(\mathcal{M}\)</span>-basis for the following symmetry transformations: (ii) The rotation <span class="math inline">\(r_2\)</span> around the <span class="math inline">\(\mathsf{H}_2\)</span> axis sending <span class="math inline">\(\mathsf{H}_1\)</span> to <span class="math inline">\(\mathsf{H}_3\)</span>, <span class="math inline">\(\mathsf{H}_3\)</span> to <span class="math inline">\(\mathsf{H}_4\)</span>, and <span class="math inline">\(\mathsf{H}_4\)</span> to <span class="math inline">\(\mathsf{H}_1\)</span>. (iii) The reflection <span class="math inline">\(\sigma_{1,2}\)</span> across the plane containing <span class="math inline">\(\mathsf{H}_1, \mathsf{H}_2,\)</span> and <span class="math inline">\(\mathsf{C}\)</span>. You do not need to give these in standard coordinates.</li>
+</ol>
+</div>
+<div id="eigenbasis" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Eigenbasis</h2>
+<p>Consider the matrix <span class="math inline">\(A\)</span> below
+<span class="math display">\[
+A = \frac{1}{3} 
+\begin{bmatrix}
+ -14 &amp; 13 &amp; -2 \\ 
+ -20 &amp; 19 &amp; -2 \\
+ -23 &amp; 19 &amp; 1 \\
+\end{bmatrix}
+\]</span>
+and consider the following set basis of <span class="math inline">\(\mathbb{R}^3\)</span> (you don’t have to check that it is a basis).
+<span class="math display">\[
+\mathcal{B} = \left\{ 
+v_1 = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, 
+v_2 = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix},
+v_3 = \begin{bmatrix} -1 \\ -1 \\ 2 \end{bmatrix} 
+\right\}
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>By hand, compute <span class="math inline">\(A v_1\)</span>, <span class="math inline">\(A v_2\)</span>, and <span class="math inline">\(A v_3\)</span> and see that each of these vectors is an eigenvector. From this, find the corresponding eigenvalues <span class="math inline">\(\lambda_1, \lambda_2, \lambda_3\)</span>. A basis consisting of eigenvectors of <span class="math inline">\(A\)</span> is called an <strong>eigenbasis</strong>. We will see that they often, but not always, exist.</p></li>
+<li><p>Let <span class="math inline">\(B\)</span> be the change of basis matrix from <span class="math inline">\(\mathcal{B}\)</span> to <span class="math inline">\(\mathcal{S}\)</span> (the standard basis), and compute the product <span class="math inline">\(B^{-1} A B\)</span>. You can use <code>R</code>. Just report the matrix <span class="math inline">\(B\)</span> and the matrix <span class="math inline">\(B^{-1} A B\)</span>. If you look closely at your answer, you should see something nice. Report what you see.</p></li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span> <span class="sc">*</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">14</span>,<span class="sc">-</span><span class="dv">20</span>,<span class="sc">-</span><span class="dv">23</span>),<span class="fu">c</span>(<span class="dv">13</span>,<span class="dv">19</span>,<span class="dv">19</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">1</span>))</span></code></pre></div>
+</div>
+<div id="house-party" class="section level2" number="1.7">
+<h2><span class="header-section-number">1.7</span> House Party</h2>
+<p>Here is a plot of the grey house and four other houses, colored cyan, red, gold, and purple Reproduce this image using homogeneous coordinates. See [Homogeneous Coordinates][Homogeneous Coordinates].</p>
+<p><img src="https://raw.githubusercontent.com/Tom-Halverson/math236_s21/main/images/04-house-party.png" style="width:70.0%" /></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="do">#############</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># your code for 3x3 matrices that create the transformed houses goes here </span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>A.red <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>A.purple <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>A.gold <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>A.cyan <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># you do not need to change this code</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>house <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">3</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">4</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">4</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">5</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">8</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">4</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span><span class="sc">/</span><span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>));</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(house[<span class="dv">1</span>,], house[<span class="dv">2</span>,], <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.5</span>,<span class="fl">2.5</span>),<span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">2.0</span>,<span class="fl">3.0</span>),,<span class="at">xlab=</span><span class="st">&quot;x&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;y&quot;</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="sc">-</span><span class="dv">4</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">v=</span><span class="sc">-</span><span class="dv">4</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">col=</span><span class="st">&quot;gray&quot;</span>, <span class="at">lty=</span><span class="st">&quot;dotted&quot;</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>house.gold <span class="ot">=</span> A.gold <span class="sc">%*%</span> house</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(house.gold[<span class="dv">1</span>,], house.gold[<span class="dv">2</span>,], <span class="at">col =</span> <span class="st">&quot;gold&quot;</span>, <span class="at">border =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>house.cyan <span class="ot">=</span> A.cyan <span class="sc">%*%</span> house</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(house.cyan[<span class="dv">1</span>,], house.cyan[<span class="dv">2</span>,], <span class="at">col =</span> <span class="st">&quot;cyan&quot;</span>, <span class="at">border =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>house.red <span class="ot">=</span> A.red <span class="sc">%*%</span> house</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(house.red[<span class="dv">1</span>,], house.red[<span class="dv">2</span>,], <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">border =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>house.purple<span class="ot">=</span> A.purple <span class="sc">%*%</span> house</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(house.purple[<span class="dv">1</span>,], house.purple[<span class="dv">2</span>,], <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>, <span class="at">border =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(house[<span class="dv">1</span>,], house[<span class="dv">2</span>,], <span class="at">col =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">border =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="PS5-problem-set-5_files/figure-html/unnamed-chunk-5-1.png" width="480" /></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+},
+"search": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
