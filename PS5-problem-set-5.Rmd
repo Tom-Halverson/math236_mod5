@@ -1,13 +1,13 @@
 
 # Problem Set 5
 
-* Due: Tuesday February 23 by 11:59am CST. 
+* Due: Tuesday June 22 by 11:59pm CST. 
 * Upload your solutions to Moodle in a PDF. 
 * Please feel free to **use RStudio for all row reductions.**
-* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_s21/blob/main/PS5-problem-set-5.Rmd).
+* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_mod5/blob/main/PS5-problem-set-5.Rmd).
 
 
-The Problem Set covers sections 4.4, 4.5, 3.1, 5.1 
+The Problem Set covers sections 4.4, 4.5, 3.1, homogeneous coordinates 
 
 
 ## A Tale of Two Bases
@@ -73,7 +73,7 @@ Find the dimension of the subspace $Z$ of $\mathbb{R}^5$ of *zero-sum* vectors b
 $$
 Z = \left\{
 \begin{bmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix}
-\ \Bigg\vert\ \  x_1 + x_2 + x_3 + x_4 + x_5 = 0\ 
+\ \Bigg\vert\ \  x_1 + x_2 + x_3 + x_4 + x_5 = 0, x_4 = 2 x_2 \ 
 \right\}.
 $$
 
@@ -242,7 +242,7 @@ v_3 = \begin{bmatrix} -1 \\ -1 \\ 2 \end{bmatrix}
 \right\}
 $$
 
-a. By hand, compute $A v_1$, $A v_2$, and $A v_3$ and see that each of these vectors is an eigenvector. From this, find the corresponding eigenvalues $\lambda_1, \lambda_2, \lambda_3$. A basis consisting of eigenvectors of $A$ is called an **eigenbasis**. We will see that they often, but not always, exist.
+a. By hand, or using R, compute $A v_1$, $A v_2$, and $A v_3$ and show that in each case $A v_i$ is a scalar multiple of $v_i$. Be sure to report the scalar in each case. 
 
 b. Let $B$ be the change of basis matrix from $\mathcal{B}$ to $\mathcal{S}$ (the standard basis), and compute the product $B^{-1} A B$. You can use `R`. Just report the matrix $B$ and the matrix $B^{-1} A B$. If you look closely at your answer, you should see something nice. Report what you see. 
 
