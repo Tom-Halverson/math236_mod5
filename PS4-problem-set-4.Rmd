@@ -58,7 +58,7 @@ $$
 
 If the function $T: \mathbb{R}^n \to \mathbb{R}^n$ is a linear transformation, then show that the set below is a subspace of $\mathbb{R}^n$
 $$
-E_2 = \{\ \vec{x} \in \mathbb{R}^n \mid T(\vec{x}) = 2021 \vec{x} \}.
+E_{2021} = \{\ \vec{x} \in \mathbb{R}^n \mid T(\vec{x}) = 2021 \vec{x} \}.
 $$
 Is there anything special about 2021 in the definition? If it were replaced by another scalar, would it still be a subspace?
 
