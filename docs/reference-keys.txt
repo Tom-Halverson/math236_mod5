@@ -1,4 +1,4 @@
-tab:unnamed-chunk-90
+tab:unnamed-chunk-2
 problem-set-1
 characterize-the-solution-set
 find-the-general-solution
@@ -48,7 +48,6 @@ coyotes-and-roadrunners
 same-eigenvectors
 hunt-creek
 glucose-insulin
-network-centrality
 important-definitions
 vector-spaces
 matrices

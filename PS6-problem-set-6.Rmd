@@ -243,6 +243,3 @@ a. Write out the eigenvalues in the form $\lambda = a \pm b i$ and the eigenvect
 
 a. Use this information to find the scaling factor $|\lambda|$ for this matrix and the angle of rotation $\arctan(b/a)$. Give your answer in degrees. Compare your answers from part (c) to the plots above to confirm that the system is doing what the eigenvalues predict.
 
-## Network Centrality
-
-coming!
