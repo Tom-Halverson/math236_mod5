@@ -321,7 +321,6 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="21.1.3" data-path="complex-eigenvalues.html"><a href="complex-eigenvalues.html#example-3-1"><i class="fa fa-check"></i><b>21.1.3</b> Example 3</a></li>
 </ul></li>
 <li class="chapter" data-level="21.2" data-path="complex-eigenvalues.html"><a href="complex-eigenvalues.html#general-2x2-matrices-with-complex-eigenvalues"><i class="fa fa-check"></i><b>21.2</b> General 2x2 Matrices with Complex Eigenvalues</a></li>
-<li class="chapter" data-level="21.3" data-path="complex-eigenvalues.html"><a href="complex-eigenvalues.html#a-3d-example"><i class="fa fa-check"></i><b>21.3</b> A 3D example</a></li>
 </ul></li>
 <li class="part"><span><b>IV Quiz Review</b></span></li>
 <li class="chapter" data-level="22" data-path="quiz-1-review.html"><a href="quiz-1-review.html"><i class="fa fa-check"></i><b>22</b> Quiz 1 Review</a>
@@ -448,7 +447,7 @@ where <span class="math inline">\(i = \sqrt{-1}\)</span>. These eigenvalues are 
 ## [1,]  0.9 -0.2
 ## [2,]  0.2  0.9</code></pre>
 <p>We look at its eigenvectors and eigenvalues and see that <span class="math inline">\(\lambda = .9 \pm .2 i\)</span>:</p>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="complex-eigenvalues.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="complex-eigenvalues.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 0.9+0.2i 0.9-0.2i
@@ -464,37 +463,37 @@ where <span class="math inline">\(i = \sqrt{-1}\)</span>. These eigenvalues are 
 \begin{bmatrix} 0.000 \\ .707 \end{bmatrix}  i
 \]</span>
 Now, let’s find the <strong>angle of rotation</strong>. We will use the <code>Arg</code> command which finds the angle (in radians) of a complex number. We also convert it to degrees here.</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="complex-eigenvalues.html#cb263-1" aria-hidden="true" tabindex="-1"></a>vals <span class="ot">=</span> <span class="fu">eigen</span>(A)<span class="sc">$</span>values</span>
-<span id="cb263-2"><a href="complex-eigenvalues.html#cb263-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">=</span> vals[<span class="dv">1</span>]</span>
-<span id="cb263-3"><a href="complex-eigenvalues.html#cb263-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Arg</span>(v1)  <span class="co"># gives the argument, or angle, of a complex number (in radians)</span></span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="complex-eigenvalues.html#cb262-1" aria-hidden="true" tabindex="-1"></a>vals <span class="ot">=</span> <span class="fu">eigen</span>(A)<span class="sc">$</span>values</span>
+<span id="cb262-2"><a href="complex-eigenvalues.html#cb262-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">=</span> vals[<span class="dv">1</span>]</span>
+<span id="cb262-3"><a href="complex-eigenvalues.html#cb262-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Arg</span>(v1)  <span class="co"># gives the argument, or angle, of a complex number (in radians)</span></span></code></pre></div>
 <pre><code>## [1] 0.2186689</code></pre>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="complex-eigenvalues.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Arg</span>(v1) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>pi) <span class="sc">*</span> <span class="dv">360</span> <span class="co"># convert to degrees</span></span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="complex-eigenvalues.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Arg</span>(v1) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>pi) <span class="sc">*</span> <span class="dv">360</span> <span class="co"># convert to degrees</span></span></code></pre></div>
 <pre><code>## [1] 12.52881</code></pre>
 <p>For good measure, we can compare with using the <code>arctan</code> function.</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="complex-eigenvalues.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">atan</span>(.<span class="dv">2</span><span class="sc">/</span>.<span class="dv">9</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="complex-eigenvalues.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">atan</span>(.<span class="dv">2</span><span class="sc">/</span>.<span class="dv">9</span>)  </span></code></pre></div>
 <pre><code>## [1] 0.2186689</code></pre>
 <p>Next we find the <strong>dilation/contraction factor</strong>. We can do so using the <code>Mod</code> command, which finds the “modulus” or absolute value or length of a complex number.</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="complex-eigenvalues.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Mod</span>(v1) <span class="co"># gives the length of a complex number</span></span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="complex-eigenvalues.html#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Mod</span>(v1) <span class="co"># gives the length of a complex number</span></span></code></pre></div>
 <pre><code>## [1] 0.9219544</code></pre>
 <p>And, again for good measure, we compare with using the Pythagorean theorem:</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="complex-eigenvalues.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(.<span class="dv">9</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> .<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="complex-eigenvalues.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(.<span class="dv">9</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> .<span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)  </span></code></pre></div>
 <pre><code>## [1] 0.9219544</code></pre>
 <p>Now, we observe the trajectory of a single point <span class="math inline">\((0,1)^T\)</span> under this matrix. In this picture you can see that it is contracting and rotating by 12.5 degrees. Note that 360/12.5 is about 29, and it takes 29 applications to go once around the circle. You can count them in the plot below. Furthermore, <span class="math inline">\((0.9219544)^29 =0.095\)</span> and after 29 applications the vector is about 1/10 of its original length.</p>
 <p><img src="math236_handbook_files/figure-html/unnamed-chunk-104-1.png" width="75%" style="display: block; margin: auto;" />
 We can also view this by looking at a plot of the x and y coordinates over time as the point (x,y) circles around in the xy-plane. Key point: complex eigenvalues lead to oscillating values of the individual coordinates</p>
 <p><img src="math236_handbook_files/figure-html/unnamed-chunk-105-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>We can also use <code>trajectory_plot</code> from <a href="dynamical-systems-in-2d.html#dynamical-systems-in-2d">Dynamical Systems in 2D</a> to watch what happens to a whole grid of points under this transformation. It is beautiful!</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="complex-eigenvalues.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">5</span>, <span class="at">plotmax=</span><span class="dv">5</span>, <span class="at">numpoints=</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="complex-eigenvalues.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">5</span>, <span class="at">plotmax=</span><span class="dv">5</span>, <span class="at">numpoints=</span><span class="dv">10</span>)</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/unnamed-chunk-107-1.png" width="75%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="example-2-1" class="section level3" number="21.1.2">
 <h3><span class="header-section-number">21.1.2</span> Example 2</h3>
 <p>Here is a second example of a rotation-dilation matrix, this time with <span class="math inline">\(a = .96\)</span> and <span class="math inline">\(b = .28\)</span>.</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="complex-eigenvalues.html#cb274-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(.<span class="dv">96</span>,.<span class="dv">28</span>),<span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">28</span>,.<span class="dv">96</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="complex-eigenvalues.html#cb273-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(.<span class="dv">96</span>,.<span class="dv">28</span>),<span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">28</span>,.<span class="dv">96</span>)))</span></code></pre></div>
 <pre><code>##      [,1]  [,2]
 ## [1,] 0.96 -0.28
 ## [2,] 0.28  0.96</code></pre>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="complex-eigenvalues.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="complex-eigenvalues.html#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 0.96+0.28i 0.96-0.28i
@@ -504,13 +503,13 @@ We can also view this by looking at a plot of the x and y coordinates over time 
 ## [1,] 0.7071068+0.0000000i 0.7071068+0.0000000i
 ## [2,] 0.0000000-0.7071068i 0.0000000+0.7071068i</code></pre>
 <p>We check the angle of rotation and the dilation factor</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="complex-eigenvalues.html#cb278-1" aria-hidden="true" tabindex="-1"></a>vals <span class="ot">=</span> <span class="fu">eigen</span>(A)<span class="sc">$</span>values</span>
-<span id="cb278-2"><a href="complex-eigenvalues.html#cb278-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">=</span> vals[<span class="dv">1</span>]</span>
-<span id="cb278-3"><a href="complex-eigenvalues.html#cb278-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Arg</span>(v1)  <span class="co"># gives the argument, or angle, of a complex number (in radians)</span></span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="complex-eigenvalues.html#cb277-1" aria-hidden="true" tabindex="-1"></a>vals <span class="ot">=</span> <span class="fu">eigen</span>(A)<span class="sc">$</span>values</span>
+<span id="cb277-2"><a href="complex-eigenvalues.html#cb277-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">=</span> vals[<span class="dv">1</span>]</span>
+<span id="cb277-3"><a href="complex-eigenvalues.html#cb277-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Arg</span>(v1)  <span class="co"># gives the argument, or angle, of a complex number (in radians)</span></span></code></pre></div>
 <pre><code>## [1] 0.2837941</code></pre>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="complex-eigenvalues.html#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Arg</span>(v1) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>pi) <span class="sc">*</span> <span class="dv">360</span> <span class="co"># convert to degrees</span></span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="complex-eigenvalues.html#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Arg</span>(v1) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>pi) <span class="sc">*</span> <span class="dv">360</span> <span class="co"># convert to degrees</span></span></code></pre></div>
 <pre><code>## [1] 16.2602</code></pre>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="complex-eigenvalues.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Mod</span>(v1)  <span class="co"># gives the length of a complex number</span></span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="complex-eigenvalues.html#cb281-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Mod</span>(v1)  <span class="co"># gives the length of a complex number</span></span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>Notice that the dilation factor is 1, which is seen in the following plots. Here are 21 iterations:</p>
 <p><img src="math236_handbook_files/figure-html/unnamed-chunk-110-1.png" width="75%" style="display: block; margin: auto;" /></p>
@@ -522,11 +521,11 @@ We can also view this by looking at a plot of the x and y coordinates over time 
 <div id="example-3-1" class="section level3" number="21.1.3">
 <h3><span class="header-section-number">21.1.3</span> Example 3</h3>
 <p>A third and final example.</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="complex-eigenvalues.html#cb284-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(.<span class="dv">99</span>,.<span class="dv">16</span>),<span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">16</span>,.<span class="dv">99</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="complex-eigenvalues.html#cb283-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">cbind</span>(<span class="fu">c</span>(.<span class="dv">99</span>,.<span class="dv">16</span>),<span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">16</span>,.<span class="dv">99</span>)))</span></code></pre></div>
 <pre><code>##      [,1]  [,2]
 ## [1,] 0.99 -0.16
 ## [2,] 0.16  0.99</code></pre>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="complex-eigenvalues.html#cb286-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="complex-eigenvalues.html#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 0.99+0.16i 0.99-0.16i
@@ -535,11 +534,11 @@ We can also view this by looking at a plot of the x and y coordinates over time 
 ##                       [,1]                  [,2]
 ## [1,]  0.0000000-0.7071068i  0.0000000+0.7071068i
 ## [2,] -0.7071068+0.0000000i -0.7071068+0.0000000i</code></pre>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="complex-eigenvalues.html#cb288-1" aria-hidden="true" tabindex="-1"></a>vals <span class="ot">=</span> <span class="fu">eigen</span>(A)<span class="sc">$</span>values</span>
-<span id="cb288-2"><a href="complex-eigenvalues.html#cb288-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">=</span> vals[<span class="dv">1</span>]</span>
-<span id="cb288-3"><a href="complex-eigenvalues.html#cb288-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Arg</span>(v1) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>pi) <span class="sc">*</span> <span class="dv">360</span> <span class="co"># convert to degrees</span></span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="complex-eigenvalues.html#cb287-1" aria-hidden="true" tabindex="-1"></a>vals <span class="ot">=</span> <span class="fu">eigen</span>(A)<span class="sc">$</span>values</span>
+<span id="cb287-2"><a href="complex-eigenvalues.html#cb287-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">=</span> vals[<span class="dv">1</span>]</span>
+<span id="cb287-3"><a href="complex-eigenvalues.html#cb287-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Arg</span>(v1) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>pi) <span class="sc">*</span> <span class="dv">360</span> <span class="co"># convert to degrees</span></span></code></pre></div>
 <pre><code>## [1] 9.180542</code></pre>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="complex-eigenvalues.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Mod</span>(v1)  <span class="co"># gives the length of a complex number</span></span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="complex-eigenvalues.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Mod</span>(v1)  <span class="co"># gives the length of a complex number</span></span></code></pre></div>
 <pre><code>## [1] 1.002846</code></pre>
 <p>We see that the dilation factor is <span class="math inline">\(r = 1.0028\)</span> and the angle of rotation is <span class="math inline">\(9.18\)</span> degrees. Here are 100 iterations.</p>
 <p><img src="math236_handbook_files/figure-html/unnamed-chunk-114-1.png" width="75%" style="display: block; margin: auto;" /></p>
@@ -607,52 +606,56 @@ Which we can see using R</p>
 <pre><code>##           [,1]       [,2]
 ## [1,] 0.9850000 -0.2611034
 ## [2,] 0.2611034  0.9850000</code></pre>
-</div>
-<div id="a-3d-example" class="section level2" number="21.3">
-<h2><span class="header-section-number">21.3</span> A 3D example</h2>
-<p>Here is the Northern Spotted Owl matrices from the [Eigenvalues] examples. We saw that it has one real and two complex eigenvalues:</p>
-<pre><code>## eigen() decomposition
-## $values
-## [1]  0.9835927+0.0000000i -0.0217964+0.2059185i
-## [3] -0.0217964-0.2059185i
-## 
-## $vectors
-##               [,1]                  [,2]
-## [1,] 0.31754239+0i  0.6820937+0.0000000i
-## [2,] 0.05811107+0i -0.0624124-0.5896338i
-## [3,] 0.94646180+0i -0.0450520+0.4256233i
-##                       [,3]
-## [1,]  0.6820937+0.0000000i
-## [2,] -0.0624124+0.5896338i
-## [3,] -0.0450520-0.4256233i</code></pre>
-<p>The eigenvalues are always listed in descending order by magnitude as we see here when we compute their modulus and arguments</p>
-<pre><code>## [1] 0.9835927 0.2070688 0.2070688</code></pre>
-<pre><code>## [1]   0.00000  96.04223 -96.04223</code></pre>
-<p>We can diagonalize this over the complex numbers.</p>
-<pre><code>##              [,1]                  [,2]
-## [1,] 0.9835927+0i  0.0000000+0.0000000i
-## [2,] 0.0000000+0i -0.0217964+0.2059185i
-## [3,] 0.0000000+0i  0.0000000+0.0000000i
-##                       [,3]
-## [1,]  0.0000000+0.0000000i
-## [2,]  0.0000000+0.0000000i
-## [3,] -0.0217964-0.2059185i</code></pre>
-<p>It has complex eigenvalues on the diagonal and requires using the complex vectors in our basis. Often, this is not what we want to do if our matrix has real entries and comes from a real-valued problem.</p>
-<p>Instead, let’s rotation-dilationalize this matrix. The block diagonalization consists of a 1x1 block of the real eigenvalue and a 2x2 block of the rotation-dilation part of the complex eigenvalues.</p>
-<pre><code>##            [,1]       [,2]        [,3]
-## [1,] 0.31754239  0.0000000  0.68209367
-## [2,] 0.05811107 -0.5896338 -0.06241245
-## [3,] 0.94646180  0.4256233 -0.04505202</code></pre>
-<pre><code>##           [,1]       [,2]       [,3]
-## [1,] 0.9835927  0.0000000  0.0000000
-## [2,] 0.0000000 -0.0217964 -0.2059185
-## [3,] 0.0000000  0.2059185 -0.0217964</code></pre>
-<p>In 3 dimensions, there the geometry is as follows:
-* there is one basis vector, corresponding to the real eigenvalue <span class="math inline">\(\lambda = 0.985\)</span>
-* there is a plane in which the system rotates by <span class="math inline">\(\theta = 96\)</span> degrees and contracts by <span class="math inline">\(r = 0.207\)</span>.
-* thus, the complex part dies off pretty quickly (<span class="math inline">\(r = 0.207\)</span>), and it converges to the dominant real eigenvector, which is also dying off but more slowly (<span class="math inline">\(r = 0.983\)</span>)</p>
-<p>We can see this in the traectory plot below. The oscillating part at the beginning comes from the complex eigenvalues as they quickly die off and the system converges to the dominant real eigenvector.</p>
-<p><img src="math236_handbook_files/figure-html/unnamed-chunk-124-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<!-- ## A 3D example -->
+<!-- Here is the Northern Spotted Owl matrices from the [Eigenvalues] examples. We saw that it has one real and two complex eigenvalues: -->
+<!-- ```{r} -->
+<!-- A = cbind(c(0,0.18,0),c(0,0,.71),c(0.33,0,0.94)) -->
+<!-- eigen(A) -->
+<!-- ``` -->
+<!-- The eigenvalues are always listed in descending order by magnitude as we see here when we compute their modulus and arguments -->
+<!-- ```{r} -->
+<!-- Mod(eigen(A)$values) -->
+<!-- Arg(eigen(A)$values)/(2 *pi)*360 -->
+<!-- ``` -->
+<!-- We can diagonalize this over the complex numbers.  -->
+<!-- ```{r} -->
+<!-- P = eigen(A)$vectors -->
+<!-- zapsmall(solve(P) %*% A %*% P) -->
+<!-- ``` -->
+<!-- It has complex eigenvalues on the diagonal and requires using the complex vectors in our basis. Often, this is not what we want to do if our matrix has real entries and comes from a real-valued problem.  -->
+<!-- Instead, let's rotation-dilationalize this matrix. The block diagonalization consists of a 1x1 block of the real eigenvalue and a 2x2 block of the rotation-dilation part of the complex eigenvalues. -->
+<!-- ```{r} -->
+<!-- vecs = eigen(A)$vectors -->
+<!-- P = Re(cbind(vecs[,1],Im(vecs[,2]),Re(vecs[,2]))) -->
+<!-- P -->
+<!-- zapsmall(solve(P) %*% A %*% P) -->
+<!-- ``` -->
+<!-- In 3 dimensions, there the geometry is as follows: -->
+<!-- * there is one basis vector, corresponding to the real eigenvalue $\lambda = 0.985$ -->
+<!-- * there is a plane in which the system rotates by $\theta = 96$ degrees and contracts by $r = 0.207$. -->
+<!-- * thus, the complex part dies off pretty quickly ($r = 0.207$), and it converges to the dominant real eigenvector, which is also dying off but more slowly ($r = 0.983$) -->
+<!-- We can see this in the traectory plot below. The oscillating part at the beginning comes from the complex eigenvalues as they quickly die off and the system converges to the dominant real eigenvector. -->
+<!-- ```{r,echo=FALSE,fig.width=7, fig.height=7} -->
+<!-- A = cbind(c(0,0.18,0),c(0,0,.71),c(0.33,0,0.94)) # the population dynamics matrix -->
+<!-- x0 = c(70,600,8) # the inital value -->
+<!-- N = 15  # iterate N=100 times -->
+<!-- X = matrix(0,nrow=nrow(A),ncol=N+1) # initialize an all 0 matrix to store values in -->
+<!-- X[,1] = x0 # the first column is the initial population -->
+<!-- for (i in 2:(N+1)) {  # loopn from 2 to N+1 -->
+<!--   X[,i] = A %*% X[,i-1] # Apply A to column i-1 and put the value in column i -->
+<!-- } -->
+<!-- tot = X[1,] + X[2,] + X[3,] -->
+<!-- t = seq(1,N+1) -->
+<!-- plot(t,X[1,],type='l',col='blue',ylim=c(0,800),ylab="population",xlab="year",main="Spotted Owl Population") -->
+<!-- points(t,X[1,],col='blue',pch=20,cex=.8) -->
+<!-- lines(t,X[2,],col='orange') -->
+<!-- points(t,X[2,],col='orange',pch=20,cex=.8) -->
+<!-- lines(t,X[3,],col='red') -->
+<!-- points(t,X[3,],col='red',pch=20,cex=.8) -->
+<!-- points(t,tot,col='black',pch=20,cex=.8) -->
+<!-- lines(t,tot,col='black') -->
+<!-- legend(8,750, legend=c("juvenile", "subadults", "adults","total"), col=c('blue','orange','red','black'), lty=1) -->
+<!-- ``` -->
 
 </div>
 </div>

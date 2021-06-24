@@ -197,6 +197,8 @@ c. You are seeking funding from the Michigan DNR to support a cleanup effort. As
 
 ## Glucose-Insulin
 
+This problem involves [Complex Eigenvalues]. There is a video for this for this coming Monday's class (see Moodle), and there will be time for you to discuss this in breakout rooms on Monday.
+
 The hormone insulin helps regulate glucose metabolism in your blood. The presene of insulin helps your body absorb excess glucose. Here $G_t$ (glucose) and $H_t$ (insulin) are measued as excess values (in mg per 100 ml of blood) above the steady state. 
 $$
 \begin{bmatrix} G_{t+1} \\ H_{t+1} \end{bmatrix}

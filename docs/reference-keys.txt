@@ -135,7 +135,6 @@ example-1-1
 example-2-1
 example-3-1
 general-2x2-matrices-with-complex-eigenvalues
-a-3d-example
 quiz-1-review
 overview
 vocabulary-and-concepts
