@@ -324,63 +324,63 @@ solve(P) %*% A %*% P
 ```
 
 
-## A 3D example
+<!-- ## A 3D example -->
 
-Here is the Northern Spotted Owl matrices from the [Eigenvalues] examples. We saw that it has one real and two complex eigenvalues:
+<!-- Here is the Northern Spotted Owl matrices from the [Eigenvalues] examples. We saw that it has one real and two complex eigenvalues: -->
 
-```{r}
-A = cbind(c(0,0.18,0),c(0,0,.71),c(0.33,0,0.94))
-eigen(A)
-```
+<!-- ```{r} -->
+<!-- A = cbind(c(0,0.18,0),c(0,0,.71),c(0.33,0,0.94)) -->
+<!-- eigen(A) -->
+<!-- ``` -->
 
-The eigenvalues are always listed in descending order by magnitude as we see here when we compute their modulus and arguments
-```{r}
-Mod(eigen(A)$values)
-Arg(eigen(A)$values)/(2 *pi)*360
-```
+<!-- The eigenvalues are always listed in descending order by magnitude as we see here when we compute their modulus and arguments -->
+<!-- ```{r} -->
+<!-- Mod(eigen(A)$values) -->
+<!-- Arg(eigen(A)$values)/(2 *pi)*360 -->
+<!-- ``` -->
 
 
 
-We can diagonalize this over the complex numbers. 
-```{r}
-P = eigen(A)$vectors
-zapsmall(solve(P) %*% A %*% P)
-```
-It has complex eigenvalues on the diagonal and requires using the complex vectors in our basis. Often, this is not what we want to do if our matrix has real entries and comes from a real-valued problem. 
+<!-- We can diagonalize this over the complex numbers.  -->
+<!-- ```{r} -->
+<!-- P = eigen(A)$vectors -->
+<!-- zapsmall(solve(P) %*% A %*% P) -->
+<!-- ``` -->
+<!-- It has complex eigenvalues on the diagonal and requires using the complex vectors in our basis. Often, this is not what we want to do if our matrix has real entries and comes from a real-valued problem.  -->
 
-Instead, let's rotation-dilationalize this matrix. The block diagonalization consists of a 1x1 block of the real eigenvalue and a 2x2 block of the rotation-dilation part of the complex eigenvalues.
+<!-- Instead, let's rotation-dilationalize this matrix. The block diagonalization consists of a 1x1 block of the real eigenvalue and a 2x2 block of the rotation-dilation part of the complex eigenvalues. -->
 
-```{r}
-vecs = eigen(A)$vectors
-P = Re(cbind(vecs[,1],Im(vecs[,2]),Re(vecs[,2])))
-P
-zapsmall(solve(P) %*% A %*% P)
-```
-In 3 dimensions, there the geometry is as follows:
-* there is one basis vector, corresponding to the real eigenvalue $\lambda = 0.985$
-* there is a plane in which the system rotates by $\theta = 96$ degrees and contracts by $r = 0.207$.
-* thus, the complex part dies off pretty quickly ($r = 0.207$), and it converges to the dominant real eigenvector, which is also dying off but more slowly ($r = 0.983$)
+<!-- ```{r} -->
+<!-- vecs = eigen(A)$vectors -->
+<!-- P = Re(cbind(vecs[,1],Im(vecs[,2]),Re(vecs[,2]))) -->
+<!-- P -->
+<!-- zapsmall(solve(P) %*% A %*% P) -->
+<!-- ``` -->
+<!-- In 3 dimensions, there the geometry is as follows: -->
+<!-- * there is one basis vector, corresponding to the real eigenvalue $\lambda = 0.985$ -->
+<!-- * there is a plane in which the system rotates by $\theta = 96$ degrees and contracts by $r = 0.207$. -->
+<!-- * thus, the complex part dies off pretty quickly ($r = 0.207$), and it converges to the dominant real eigenvector, which is also dying off but more slowly ($r = 0.983$) -->
 
-We can see this in the traectory plot below. The oscillating part at the beginning comes from the complex eigenvalues as they quickly die off and the system converges to the dominant real eigenvector.
+<!-- We can see this in the traectory plot below. The oscillating part at the beginning comes from the complex eigenvalues as they quickly die off and the system converges to the dominant real eigenvector. -->
 
-```{r,echo=FALSE,fig.width=7, fig.height=7}
-A = cbind(c(0,0.18,0),c(0,0,.71),c(0.33,0,0.94)) # the population dynamics matrix
-x0 = c(70,600,8) # the inital value
-N = 15  # iterate N=100 times
-X = matrix(0,nrow=nrow(A),ncol=N+1) # initialize an all 0 matrix to store values in
-X[,1] = x0 # the first column is the initial population
-for (i in 2:(N+1)) {  # loopn from 2 to N+1
-  X[,i] = A %*% X[,i-1] # Apply A to column i-1 and put the value in column i
-}
-tot = X[1,] + X[2,] + X[3,]
-t = seq(1,N+1)
-plot(t,X[1,],type='l',col='blue',ylim=c(0,800),ylab="population",xlab="year",main="Spotted Owl Population")
-points(t,X[1,],col='blue',pch=20,cex=.8)
-lines(t,X[2,],col='orange')
-points(t,X[2,],col='orange',pch=20,cex=.8)
-lines(t,X[3,],col='red')
-points(t,X[3,],col='red',pch=20,cex=.8)
-points(t,tot,col='black',pch=20,cex=.8)
-lines(t,tot,col='black')
-legend(8,750, legend=c("juvenile", "subadults", "adults","total"), col=c('blue','orange','red','black'), lty=1)
-```
+<!-- ```{r,echo=FALSE,fig.width=7, fig.height=7} -->
+<!-- A = cbind(c(0,0.18,0),c(0,0,.71),c(0.33,0,0.94)) # the population dynamics matrix -->
+<!-- x0 = c(70,600,8) # the inital value -->
+<!-- N = 15  # iterate N=100 times -->
+<!-- X = matrix(0,nrow=nrow(A),ncol=N+1) # initialize an all 0 matrix to store values in -->
+<!-- X[,1] = x0 # the first column is the initial population -->
+<!-- for (i in 2:(N+1)) {  # loopn from 2 to N+1 -->
+<!--   X[,i] = A %*% X[,i-1] # Apply A to column i-1 and put the value in column i -->
+<!-- } -->
+<!-- tot = X[1,] + X[2,] + X[3,] -->
+<!-- t = seq(1,N+1) -->
+<!-- plot(t,X[1,],type='l',col='blue',ylim=c(0,800),ylab="population",xlab="year",main="Spotted Owl Population") -->
+<!-- points(t,X[1,],col='blue',pch=20,cex=.8) -->
+<!-- lines(t,X[2,],col='orange') -->
+<!-- points(t,X[2,],col='orange',pch=20,cex=.8) -->
+<!-- lines(t,X[3,],col='red') -->
+<!-- points(t,X[3,],col='red',pch=20,cex=.8) -->
+<!-- points(t,tot,col='black',pch=20,cex=.8) -->
+<!-- lines(t,tot,col='black') -->
+<!-- legend(8,750, legend=c("juvenile", "subadults", "adults","total"), col=c('blue','orange','red','black'), lty=1) -->
+<!-- ``` -->
