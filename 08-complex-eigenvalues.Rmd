@@ -177,7 +177,7 @@ Mod(v1)  # gives the length of a complex number
 ```
 Notice that the dilation factor is 1, which is seen in the following plots. Here are 21 iterations:
 
-```{r,fig.height=4, fig.width=6}
+```{r,fig.height=5, fig.width=5}
 # plot
 N = 21
 start = c(1,0)
@@ -191,7 +191,7 @@ grid(nx=10,ny=10)
 ```
 
 And here are 200 iterations
-```{r,fig.height=4, fig.width=6}
+```{r,fig.height=5, fig.width=5}
 # plot
 N = 200
 start = c(1,0)
@@ -225,7 +225,7 @@ Mod(v1)  # gives the length of a complex number
 We see that the dilation factor is $r = 1.0028$ and the angle of rotation is $9.18$ degrees. Here are 100 iterations.
 
 
-```{r,fig.width=6, fig.height=4}
+```{r,fig.width=5, fig.height=5}
 # plot
 N = 100
 start = c(1,0)
@@ -272,7 +272,7 @@ Mod(v1)  # gives the length of a complex number
 ```
 
 A trajectory plot shows us that it is still rotating by 14.8 degrees and dilating by 1.019, but it is taking more of an elliptical pattern.
-```{r,fig.width=6, fig.height=4}
+```{r,fig.width=5, fig.height=5}
 A = cbind(c(1.19,0.29),c(-.38,.78))
 vecs = eigen(A)$vectors
 u = Re(vecs[,1])

@@ -2,7 +2,7 @@
 #  Network Centralities
 
 
-[Download this Rmd file](https://github.com/Tom-Halverson/math236_s21/blob/main/NetworkCentrality.Rmd)
+[Download this Rmd file](https://github.com/Tom-Halverson/math236_mod5/blob/main/NetworkCentrality.Rmd). You can cut and paste it into an Rmd file.
 
 
 In this example, we will use a package called `igraph`. To install it, you need to go to the packages window (bottom right), choose `install`, and search for and install `igraph` from the packages window.
@@ -10,10 +10,7 @@ In this example, we will use a package called `igraph`. To install it, you need 
 ```{r,message=FALSE, echo=TRUE}
 library(igraph)
 ```
-The igraph R package isn't all that well documented. Here are some places to look for documentation if you want to learn about other features. Let me know if you find any other good references:
-
-* http://kateto.net/netscix2016
-* http://igraph.org/r/doc/aaa-igraph-package.html
+The igraph R package isn't all that well documented. Here are some places to look for documentation if you want to learn about other features, but they are not be necessary: http://kateto.net/netscix2016, http://igraph.org/r/doc/aaa-igraph-package.html
 
 ## Graphs and Networks
 
@@ -23,13 +20,7 @@ Graphs consists of **vertices** and the **edges** between them. These edges are 
 
 Matrices are used to represent graphs and networks in a very direct way: we place a 1 in position $(i,j)$ of the **adjacency matrix** $A$ of the graph $G$, if there is an edge from vertex $i$ to vertex $j$ in $G$. Here is the adjacency matrix we will use today. 
 ```{r, echo=TRUE}
-A = rbind(
-  c(0,1,0,1,0,0,0,0,1,0,0,0), c(1,0,1,1,1,0,1,0,0,0,0,0),
-  c(0,1,0,0,1,0,0,0,0,0,0,0), c(1,1,0,0,0,1,0,1,0,0,0,0),
-  c(0,1,1,0,0,0,1,1,0,0,0,1), c(0,0,0,1,0,0,1,0,0,0,0,0),
-  c(0,1,0,0,1,1,0,1,0,0,0,0), c(0,0,0,1,1,0,1,0,0,1,1,0),
-  c(1,0,0,0,0,0,0,0,0,0,0,0), c(0,0,0,0,0,0,0,1,0,0,0,0),
-  c(0,0,0,0,0,0,0,1,0,0,0,0), c(0,0,0,0,1,0,0,0,0,0,0,0))
+A = rbind( c(0,1,0,1,0,0,0,0,1,0,0,0),c(1,0,1,1,1,0,1,0,0,0,0,0),c(0,1,0,0,1,0,0,0,0,0,0,0), c(1,1,0,0,0,1,0,1,0,0,0,0), c(0,1,1,0,0,0,1,1,0,0,0,1), c(0,0,0,1,0,0,1,0,0,0,0,0), c(0,1,0,0,1,1,0,1,0,0,0,0), c(0,0,0,1,1,0,1,0,0,1,1,0), c(1,0,0,0,0,0,0,0,0,0,0,0), c(0,0,0,0,0,0,0,1,0,0,0,0), c(0,0,0,0,0,0,0,1,0,0,0,0), c(0,0,0,0,1,0,0,0,0,0,0,0))
 A
 ```
 
@@ -42,48 +33,21 @@ plot(g, vertex.color='tan1', vertex.frame.color="dodgerblue")
 
 Observe that there is an edge from vertex $i$ to vertex $j$ if and only if there is a 1 in position $(i,j)$ in the matrix. 
 
-This network is the route map of a small airline. We will add vertex labels and change the vertex size:
+This network is the route map of a small airline. Here we will add the locations of the vertices, add vertex labels, and change the vertex size:
 
 ```{r, network2, fig.height=6, fig.width=6, echo=TRUE}
-airports = 
-  c("ATL","LAX","ORD","MSP","DEN","JFK","SFO","SEA","PHL","PDX","MDW","LGA")
+locations = rbind(c(20,0),c(-10,0),c(11,7),c(10,15),c(3,12),c(25,10),c(-10,10),c(-12,15),c(20,6),c(-15,12),c(12,4),c(25,13))
+airports = c("ATL","LAX","ORD","MSP","DEN","JFK","SFO","SEA","PHL","PDX","MDW","LGA")
 V(g)$label = airports
-plot(g,vertex.size=30, vertex.color='tan1', vertex.frame.color="dodgerblue")
-```
-
-### Graph Layouts
-
-There are a variety of graph layout algorithms which place the vertices in the plane. You can find many algorithms [in the igraph documentation](https://igraph.org/c/doc/igraph-Layout.html). For example, here is a layout on a circle
-
-```{r,  network3, fig.height=6, fig.width=6, echo=TRUE}
-coords = layout_in_circle(g)
-plot(g, layout=coords, vertex.size = 30,vertex.label.cex=0.85, vertex.color='tan1', vertex.frame.color="dodgerblue")
-```
-
-The **Fruchterman-Reingold algorithm** is one of the most popular graph vertex layout algorithms. It is a force-directed layout that tries to get a nice-looking graph where edges are similar in length and cross each other as little as possible. The algorithm simulates the graph as a physical system. Vertices are electrically charged particles that repulse each other when they get too close. The edges act as springs that attract connected vertices closer together. As a result, vertices are evenly distributed through the chart area. The resulting layout is intuitive: vertices which share more connections are closer to each other. 
-
-```{r, network4, fig.height=6, fig.width=6, echo=TRUE}
-coords = layout_with_fr(g)
-plot(g, layout=coords, vertex.size = 30, vertex.label.cex=0.85, vertex.color='tan1', vertex.frame.color="dodgerblue")
-```
-
-We can also choose to layout vertices by hand:
-
-```{r, network5, fig.height=6, fig.width=6, echo=TRUE}
-locations = rbind(
-  c(20,0),c(-10,0),c(11,7),c(10,15),c(3,12),c(25,10),
-  c(-10,10),c(-12,15),c(20,6),c(-15,12),c(12,4),c(25,13)
-)
 plot(g,vertex.size=20, layout=locations, vertex.label.cex=0.85, vertex.color='tan1', vertex.frame.color="dodgerblue")
 ```
 
 
 ## Degree Centrality
 
-
 If we are considering placing an office in one of our airport locations, we may want to chose the most **central** hub for that office. It turns out that there are many interesting **centrality measures** for networks. We will talk about two of them today.
 
-The simplest measure centrality is the **degree** of the vertex, or the number of edges connected to that vertex. We calculate the degree centralities from the adjacency matrix as follows:
+The simplest measure centrality is the **degree** of the vertex, or the number of edges connected to that vertex. We calculate the degree centralities from the adjacency matrix as follows. *You did this on Problem 4.8.*
 
 1. First make a vector $\mathsf{v}$ of all 1's; then 
 1. multiply $\mathsf{p} = A\mathsf{v}$ to get the degree proportions; and 
@@ -137,11 +101,8 @@ Here is what the corresponding network (with layovers) looks like. You can see w
 
 ```{r, networkB, fig.height=6, fig.width=6, echo=TRUE}
 g2=graph_from_adjacency_matrix(B,mode='undirected')
-airports = 
-  c("ATL","LAX","ORD","MSP","DEN","JFK","SFO","SEA","PHL","PDX","MDW","LGA")
 V(g2)$label = airports
-coords = layout_with_fr(g2)
-plot(g2, layout=coords, vertex.color='tan1', vertex.frame.color="dodgerblue")
+plot(g2, layout=locations, vertex.color='tan1', vertex.frame.color="dodgerblue")
 ```
 
 
