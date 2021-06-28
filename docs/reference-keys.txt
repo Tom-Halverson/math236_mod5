@@ -50,6 +50,15 @@ coyotes-and-roadrunners
 same-eigenvectors
 hunt-creek
 glucose-insulin
+problem-set-7
+orthogonal-complements
+cosine-similarity
+orthogonal-diagonalization
+fibonacci-orthogonality
+least-squares-solution-to-mathsfa-x-mathsfb
+least-squares-polynomials
+fuel-efficiency
+fourier-analysis
 important-definitions
 vector-spaces
 matrices

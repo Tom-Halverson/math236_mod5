@@ -1,76 +1,38 @@
 
 # Problem Set 7
 
-* Due: Tuesday March 09 by 11:59am CST. 
+* Last one! You can drop your lowest problem set, so if you are happy with 6 problem set scores you can drop this one. However, I recommend you work on and think about these problems, since these ideas will be on the final quiz.
+* Due: Wednesday July 07 by 11:59am CST (last day of class).
 * Upload your solutions to Moodle in a PDF. 
 * Please feel free to **use RStudio for all calculations, including row reduction, matrix multiplication, eigenvector calculation and inverse matrices.**
-* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_s21/blob/main/PS7-problem-set-7.Rmd).
+* You can download the [Rmd source file  for this problem set](https://github.com/Tom-Halverson/math236_mod5/blob/main/PS7-problem-set-7.Rmd).
 
-This problem set covers [Network Centralities] and Sections 6.1, 6.2, and 6.3 on Orthogonal Projections.
+This problem set covers [Network Centralities] and Sections 6.1, 6.2, 6.3, 6.5 on Orthogonal Projections.
 
 
-
-## The Rise of Moscow
-
-Here is a video I made in Module 1 explaining the [Airline Network](https://macalester.voicethread.com/myvoice/thread/15733200) example.
-
-If you collaborated on this one with classmates (and I hope you did), please include the names of the students that you worked with.
-
-Read [Network Centralities] and analyze the network of trade routes in medieval Russia given to you there.
-
-a. Create a vector containing the normalized Degree Centralities. See Section \@ref(degree-centrality) for help.
-
-a. Create a vector containing the Gould Index values. See Section \@ref(gould-index-summary) for help.
-
-a. Plot the network where the size of the vertices is determined by Gould's Index and the size of the label is determined by degree centrality.
-
-a. Create a data frame that contains Gould's Index and Degree Centralities. The rows should be labeled with the city names and the columns should be named by the centrality measures.  Sort according to Gould's Index.
-
-a. Use Gould's Index to decide whether Moscow's dominance was solely due to its geographic location.
-
-a. Compare the Gould's Index and Degree Centrality rankings and note any interesting findings. See Section \@ref(step-5) for help.
 
 
 ## Orthogonal Complements
 
+(Work on in class on Tuesday June 29)
 
 Here are two subspaces of $\mathbb{R}^5$ that we have seen before. (See PS4.2 and PS5.2)
 $$
 \begin{align}
-\mathsf{Z} & = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} \ \bigg\vert \ x_1 + x_2 + x_3 + x_4 + x_5 = 0 \right\}.
+\mathsf{Z} & = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} \ \bigg\vert \ x_1 + x_2 + x_3 + x_4 + x_5 = 0,  x_4 = 2 x_2 \right\}.
 \\
 \mathsf{F} & = \left\{ \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix} \ \bigg\vert \  x_3 =  x_1 + x_2, x_4 = x_2 + x_3, x_5 = x_3 + x_4 \right\}.
 \end{align}
 $$
 Find the orthogonal complement of each subspace in $\mathbb{R}^5$. For each example, compute $\dim(W) + \dim(W^\perp)$.
 
-## Orthogonal Diagonalization
 
-Recall that a square $n \times n$ matrix is symmetric when $A^{\top} = A$. We learned that the eigenvectors of a symmetric matrix form an orthogonal basis of $\mathbb{R}^n$. In this problem, you will confirm that this holds for the following symmetric matrix
-$$
-A = 
-\begin{bmatrix}
- 0 &  8 & 10 & -4 \\
- 8 & 4 & 28 & 6 \\
- 10 & 28 & 3 & -4 \\
- -4 & 6 & -4 & -7
-\end{bmatrix}. 
-$$
-
-a. Find the eigenvalues and eigenvectors of $A$.
-
-b. Confirm that the eigenvectors returned by R are an orthonormal set (do this in a single calculation).
-
-c. Express the vector $\mathsf{v} = \begin{bmatrix} 2 & -4 &  -9  & -2 \end{bmatrix}^{\top}$ as a linear combination of the eigenvectors. Use the fact that the eigenvectors are orthonormal. (Don't augment and row reduce.)
-
-d.  Let $P$ be the matrix of these normalized, orthogonal eigenvectors.
-Diagonalize $A$ using $P$. Just write out $A = P D P^{-1}$. Congratulations: you have **orthogonally diagonalized** the symmetric matrix $A$!
-
-**Turn in:** Your R code and the output for each part. For parts (c) and (d), you need to make it clear what your final answers are. 
 
 ## Cosine Similarity 
 
-In high dimensional space $\mathbb{R}^n$ a common measure of similarity between two vectors  is  **cosine similarity**:  the cosine of the angle $\theta$ between the vectors. We calculate this value as follows:
+(Work on in class on Tuesday June 29)
+
+In high dimensional space $\mathbb{R}^n$ a common measure of similarity between two vectors  is  **cosine similarity**:  the cosine of the angle $\theta$ between the vectors. We calculate this value as shown below. This formula was derived in the [pdf](https://drive.google.com/file/d/1L0hs5mHHw8YJYUFgqPqii0uGxgy-Rx31/view) for 5.1.
 $$
 \cos(\theta) = \frac{ \mathsf{u} \cdot \mathsf{v}} {\| \mathsf{u}\| \, \|\mathsf{v}\|} = \frac{ \mathsf{u} \cdot \mathsf{v}} {\sqrt{\mathsf{u} \cdot \mathsf{u}} \sqrt{\mathsf{v} \cdot \mathsf{v}}}.
 $$
@@ -97,7 +59,7 @@ cosine_similarity <- function(u, v) {
 ```
 
 
-b. In the file [US_Senate_s21.Rmd](https://drive.google.com/open?id=1oN6-rlOBdDj7LLzzwFC4RGkKiLIUJDcV) you will find vectors of the voting record of the Senate in the 109th US Congress (2007-2008). You will see how to take the dot product of the voting record of two different senators. The dot product is always an integer. Explain what it counts. It is the number of something or possibly the difference of two things.
+b. In the file [US_Senate_s21.Rmd](https://drive.google.com/file/d/1aQsAZx8v1YzOy3VqDX4ahSDCOhdkPk2D/view?usp=sharing) you will find vectors of the voting record of the Senate in the 109th US Congress (2007-2008). You will see how to take the dot product of the voting record of two different senators. The dot product is always an integer. Explain what it counts. It is the number of something or possibly the difference of two things.
 
 c. Use your `cosine_similary` function to find the cosine similarity between every pair of the following senators:
 
@@ -118,8 +80,35 @@ d. The senate majority leader of the 109th Congress was Bill Frist (R, TN), and 
     
     * Jim Jeffords (I, VT) was a Republican who became and Independent in 2001 and then caucused with the Democrats. How does your classifier handle Jeffords?
 
+## Orthogonal Diagonalization
+
+(Work on in class on Wednesday June 30)
+
+Recall that a square $n \times n$ matrix is symmetric when $A^{\top} = A$. We learned that the eigenvectors of a symmetric matrix form an orthogonal basis of $\mathbb{R}^n$. In this problem, you will confirm that this holds for the following symmetric matrix
+$$
+A = 
+\begin{bmatrix}
+ 0 &  8 & 10 & -4 \\
+ 8 & 4 & 28 & 6 \\
+ 10 & 28 & 3 & -4 \\
+ -4 & 6 & -4 & -7
+\end{bmatrix}. 
+$$
+
+a. Find the eigenvalues and eigenvectors of $A$.
+
+b. Confirm that the eigenvectors returned by R are an orthonormal set (do this in a single calculation).
+
+c. Express the vector $\mathsf{v} = \begin{bmatrix} 2 & -4 &  -9  & -2 \end{bmatrix}^{\top}$ as a linear combination of the eigenvectors. Use the fact that the eigenvectors are orthonormal. (Don't augment and row reduce.)
+
+d.  Let $P$ be the matrix of these normalized, orthogonal eigenvectors.
+Diagonalize $A$ using $P$. Just write out $A = P D P^{-1}$. Congratulations: you have **orthogonally diagonalized** the symmetric matrix $A$!
+
+**Turn in:** Your R code and the output for each part. For parts (c) and (d), you need to make it clear what your final answers are. 
 
 ## Fibonacci Orthogonality
+
+(Work on in class on Thursday July 1)
 
 In problem 1, you saw that the vector space of Fibonacci vectors $\mathsf{F} \subseteq \mathbb{R}^5$ is a 2-dimensional subspace of $\mathbb{R}^5$. 
 
@@ -148,6 +137,8 @@ d. Compute $||\mathsf{r}||$. This is the distance from $\mathsf{v}$ to $\mathsf{
 
 ## Least Squares Solution to $\mathsf{A} x = \mathsf{b}$
 
+(Work on in class on Tuesday July 6)
+
 Find the least-squares solution to the following inconsistent matrix equation $\mathsf{A} x  = \mathsf{b}$. 
 $$
 \left[
@@ -170,5 +161,147 @@ d. Get the projection $\hat{\mathsf{b}}$ of $\mathsf{b}$ onto $\mathrm{Col}(\mat
 e. Get the residual $\mathsf{r}  = \mathsf{b} - \hat{\mathsf{b}}$ and compute its length.
 
 
+## Least-Squares Polynomials
+
+(Work on in class on Tuesday July 6)
+
+Here is a quadratic least-squares polynomial fit to some data. Make a cubic, quartic, and quintic fit to this same data. Turn in a plot of each. Compute the length of the residual in each case. Which do you think is the best model of the data?
 
 
+```{r, echo=TRUE}
+x = c(1,2,3,4,5,6)
+y = c(7,2,1,3,7,7)
+(A = cbind(x^0,x,x^2))
+xhat = solve(t(A)%*%A,t(A)%*%y)
+yhat = A %*% xhat
+r = y - yhat
+t(r) %*% r
+```
+
+```{r ps8-quadplot, fig.width=4.5, fig.height=4.5, echo=FALSE}
+#plot the original set of points
+plot(x,y,pch=19,xlim=c(0,7),ylim=c(0,10), main='the best-fit quadratic function')
+# generate points for the fitted line and plot it
+tt = seq(0,7,len=100)  
+lines(tt,xhat[1]+xhat[2]*tt+xhat[3]*tt^2,col='blue')
+# add the residuals to the plot
+for (i in 1:length(x)) {
+  lines(c(x[i],x[i]),c(y[i],yhat[i]), col='red')
+}
+#add yhat to the plot
+points(x,yhat,pch=19,col='orange')
+#put the original points back on the plot last so we can see them 
+points(x,y,pch=19,col="black")
+grid()
+```
+
+## Fuel Efficiency
+
+(Work on  in class on Wednesday July 7)
+
+
+Below is a classic data set of fuel efficiency in 38 different automobiles.
+```{r}
+MPG=c(16.9,15.5,19.2,18.5,30,27.5,27.2,30.9,20.3,17,21.6,16.2,20.6,20.8,18.6,18.1,17,17.6,16.5,18.2,26.5,21.9,34.1,35.1,27.4,31.5,29.5,28.4,28.8,26.8,33.5,34.2,31.8,37.3,30.5,22,21.5,31.9)
+lbs=c( 3967.6,3689.14,3280.55,3585.4,1961.05,2329.6,2093,2029.3,2575.3,2857.4,2543.45,3103.1,3075.8,2793.7,3294.2,3103.1,3494.4,3389.75,3599.05,3485.3,2352.35,2648.1,1797.25,1742.65,2429.7,1810.9,1942.85,2429.7,2361.45,2457,2325.96,2002,1838.2,1938.3,1992.9,2561.65,2366,1925)
+HP= c(155,142,125,150,68,95,97,75,103,125,115,133,105,85,110,120,130,129,138,135,88,109,65,80,80,71,68,90,115,115,90,70,65,69,78,97,110,71)
+Cyl=c(8,8,8,8,4,4,4,4,5,6,4,6,6,6,6,6,8,8,8,8,4,6,4,4,4,4,4,4,6,6,4,4,4,4,4,6,4,4)
+Car = c("BuickEstateWagon", "FordCountrySquireWagon", "ChevyMalibuWagon", "ChryslerLeBaronWagon", "Chevette", "ToyotaCorona", "Datsun510", "DodgeOmni", "Audi5000", "Volvo240GL", "Saab99GLE", "Peugeot694SL", "BuickCenturySpecial", "MercuryZephyr", "DodgeAspen", "AMCConcordD/L", "ChevyCapriceClassic", "FordLTD", "MercuryGrandMarquis", "DodgeStRegis", "FordMustang4", "FordMustangGhia", "MazdaGLC", "DodgeColt", "AMCSpirit", "VWScirocco", "HondaAccordLX", "BuickSkylark", "ChevyCitation", "OldsOmega", "PontiacPhoenix", "PlymouthHorizon", "Datsun210", "FiatStrada", "VWDasher", "Datsun810", "BMW320i", "VWRabbit")
+df = data.frame(cbind(lbs,HP,Cyl,MPG)) #Convert to data frame
+rownames(df)=Car
+df
+```
+
+a. Fit a linear model of the form
+$$
+mpg = a_0 + a_1 lbs + a_2 HP + a_3 Cyl.
+$$
+Find the coefficients $a_0,a_1,a_2,a_3$ and the length of the residual. If you have taken Stat 155, you can see that we are doing the exact same thing by comparing your results with
+
+```{r}
+cars_lm = lm( MPG ~ lbs + HP + Cyl)
+summary(cars_lm)
+```
+b. Add the cars weight in tons to your model and solve $mpg = a_0 + a_1 (lbs) + a_2 (HP) + a_3 (Cyl) + a_4 (tons).$ Compare the coefficients you get with those that you got in part a. Give a short explanation of what you see using some of the linear algebra language that we have learned in the course. 
+```{r}
+tons =  c(1.98, 1.84, 1.64, 1.79, 0.98, 1.16, 1.05, 1.01, 1.29, 1.43, 1.27, 1.55, 1.54, 1.40, 1.65, 1.55, 1.75, 1.69, 1.80, 1.74, 1.18, 1.32, 0.90, 0.87, 1.21, 0.91,0.97, 1.21, 1.18, 1.23, 1.16, 1.00, 0.92, 0.97, 1.00, 1.28, 1.18, 0.96)
+```
+
+c. The residual vector $\mathsf{r}$ measures the quality of fit of our model. But how do we turn this into a meaningful quantity? One method is to look at the **coefficient of determination**, which is more commonly refered to as the "$R^2$ value." 
+
+* You can see the $R^2$ value of your fit in part (a) under the "Multiple R-squared" output in the linear model summary above. 
+
+* If $\mathsf{y} = [ y_1, y_2, \ldots, y_n ]^{\top}$ is our target vector with least-squares solution $\hat{\mathsf{y}} = A \hat{\mathsf{x}}$ and residual vector is $\mathsf{r} = \mathsf{y} - \hat{\mathsf{y}}$. Let 
+$$
+a = \frac{1}{n} ( y_1 + y_2 + \cdots + y_n)
+$$
+be the average or mean of the entries of target vector $\mathsf{y}$ and let $\mathsf{y}^* = [a, a, \ldots, a]$. (We call this vector "y star", so `ystar` would be a fine name in R.) The $R^2$ value is
+$$
+R^2 = 1 - \frac{\| \mathsf{y} - \hat{\mathsf{y}} \|^2 }{\| \mathsf{y} - \mathsf{y}^* \|^2} = 1 - \frac{\| \mathsf{r} \|^2}{\| \mathsf{y} - \mathsf{y}^* \|^2}.
+$$
+* The $R^2$ value is a number in $[0,1]$. The squared-length $|| \mathsf{y} -\mathsf{y}^*||^2$ is the total variance: that is, how much the data varies from the mean, and $\frac{\| \mathsf{r} \|^2}{\| \mathsf{y} - \mathsf{y}^* \|^2}$ tells us the fraction of the total variance that is explained by our model. Thus, if  $R^2$  is near 1, then our model does a good job at "explaining" the behavior of $\mathsf{y}$ via a linear combination of the columns of $A$. 
+
+ *   **To do**: Find the $R^2$ value for our least squares solution to the cars data in part (a). Here are some helpful functions:
+    + `mean(vec)` returns the mean (average) of the entries of the vector `vec`
+    + `rep(a, n)` creates a constant vector of length $n$ where every entry is $a$.
+    + `Norm(vec)` from the `pracma` package returns the magnitude (Euclidean length) of the vector `vec`.
+To learn more, you should take STAT 155: Introduction to Statistical Modeling.
+
+## Fourier Analysis
+
+(Work on in class on Wednesday July 7)
+
+In Fourier analysis one uses trigonometric functions to model oscillatory behavior in data. These methods have important applications in the study of sound or video signals, financial data, medicine, and engineering (to mention just a few). For example, consider the following set of 200 data points.
+```{r,echo=FALSE}
+t = xx = seq(0,19.9,.1)
+y = c(3.407646, 3.656257, 4.567893, 3.692689, 4.650019, 4.180795, 4.220037, 4.842083, 4.600134, 3.695645, 3.739377,
+4.807793, 4.290227, 4.351877, 4.659800, 4.706735, 4.603592, 4.657165, 5.135868, 4.486025, 4.644551, 4.624029,
+5.329163, 5.639380, 5.693772, 4.806000, 5.427808, 5.673742, 5.121300, 5.394885, 4.739374, 5.084819, 5.460250,
+4.578189, 4.612040, 4.534047, 4.201825, 4.290607, 3.887900, 3.349325, 3.660084, 3.200437, 2.490044, 2.720811,
+2.762054, 3.041436, 2.018788, 2.188567, 2.054767, 2.047622, 2.294727, 2.699933, 3.242642, 3.325224, 3.411680,
+2.590417, 3.118911, 2.916444, 3.081886, 4.100586, 4.210242, 3.835767, 3.546563, 4.456711, 3.970233, 4.128838,
+4.774915, 3.610540, 4.395443, 3.764436, 4.407476, 4.243399, 3.684473, 3.779193, 3.815080, 4.567609, 4.576654,
+4.774486, 4.847797, 3.970489, 4.631950, 4.535347, 5.292626, 4.844237, 5.243421, 4.949116, 4.824773, 4.830172,
+5.379016, 5.289537, 5.832770, 4.872205, 4.833122, 4.641696, 4.584196, 5.279393, 4.307142, 4.926093, 3.904820,
+3.748701, 3.460324, 3.726250, 3.636625, 3.896051, 3.505842, 2.723539, 3.432293, 2.788161, 2.873195, 2.347629,
+2.515592, 2.618861, 2.622653, 2.263514, 2.580999, 2.675959, 3.071311, 3.375476, 2.769042, 3.177973, 3.808895,
+3.088136, 3.101224, 3.828743, 4.070292, 4.477982, 3.982855, 4.213733, 4.396489, 4.036487, 4.475438, 4.534266,
+3.885322, 4.555555, 4.776902, 4.577201, 4.374555, 4.184732, 3.960706, 3.885492, 4.246883, 4.885794, 5.117945,
+4.213779, 4.734693, 5.359801, 4.680284, 5.586846, 4.995826, 5.074366, 4.647961, 4.935794, 5.074724, 5.092661,
+4.660553, 5.386633, 5.101599, 5.585815, 4.399249, 4.799980, 4.546865, 4.375893, 4.305302, 3.382458, 3.915698,
+2.980115, 3.711861, 3.260457, 2.493755, 2.267661, 2.994923, 2.447978, 2.093928, 2.379100, 2.836308, 2.904491,
+2.084674, 2.050629, 2.370026, 2.877150, 3.372492, 3.679573, 3.158224, 3.345067, 3.600110, 3.381230, 4.116003,
+3.785123, 4.519719, 3.966509, 3.808330, 4.551462, 3.838009, 3.758539, 3.816730, 4.618030, 3.926753, 4.593788,
+3.894390, 4.779126)
+plot(t,y,col="orange",xlim=c(0,20),ylim=c(2,6),pch=19)
+```
+
+A first Fourier approximation would fit a model of the form 
+$$
+f_1(t) = c_0 + c_1 \sin(t) + c_2 \cos(t).
+$$
+Thus, we make the following matrix (we show here only the first 10 rows; there are 200 rows).
+```{r}
+A = cbind(t^0, sin(t),cos(t))
+A[1:10,]
+```
+
+Now we solve the normal equations 
+```{r}
+(xhat = solve(t(A) %*% A, t(A) %*% y))
+```
+
+and plot the solution
+```{r,echo=FALSE}
+plot(t,y,col="orange",xlim=c(0,20),ylim=c(2,6),pch=19)
+tt = seq(0,20,len=1000)
+yy = xhat[1] + xhat[2]*sin(tt) + xhat[3]*cos(tt)
+points(tt,yy,type='l',col="blue")
+```
+Your task:
+
+a. Update this to add the second Fourier coefficient terms by fitting the following function to the data. Plot your result.
+$$
+f_2(t) = c_0 + c_1 \sin(t) + c_2 \cos(t) + c_3 \sin(2t) + c_4 \cos(2t)
+$$
+b. Compute the length of the residul vector for both the $f_1(t)$ and the $f_2(t)$ model. Which approximation looks better visually. That is, does the second approximation capture more of the shape of the data, or do you think that the first is a better model?
