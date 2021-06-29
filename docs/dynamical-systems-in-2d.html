@@ -467,55 +467,55 @@ The sequence <span class="math inline">\(\mathsf{x}_0,\mathsf{x}_1,\mathsf{x}_2,
 <div id="helper-function-to-plot-dynamical-systems" class="section level2" number="21.1">
 <h2><span class="header-section-number">21.1</span> Helper Function to Plot Dynamical Systems</h2>
 <p>Here is some special code, written by Professor Beveridge, that makes helpful plots. You need to <strong>execute this code chunk</strong> before the others.</p>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="dynamical-systems-in-2d.html#cb246-1" aria-hidden="true" tabindex="-1"></a>get_traj <span class="ot">&lt;-</span> <span class="cf">function</span>(mat, x0, num) {</span>
-<span id="cb246-2"><a href="dynamical-systems-in-2d.html#cb246-2" aria-hidden="true" tabindex="-1"></a>  traj <span class="ot">=</span> <span class="fu">cbind</span>(x0) </span>
-<span id="cb246-3"><a href="dynamical-systems-in-2d.html#cb246-3" aria-hidden="true" tabindex="-1"></a>  num</span>
-<span id="cb246-4"><a href="dynamical-systems-in-2d.html#cb246-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num) {</span>
-<span id="cb246-5"><a href="dynamical-systems-in-2d.html#cb246-5" aria-hidden="true" tabindex="-1"></a>    traj <span class="ot">=</span> <span class="fu">cbind</span>(traj, mat <span class="sc">%*%</span> traj[,<span class="fu">dim</span>(traj)[<span class="dv">2</span>]])</span>
-<span id="cb246-6"><a href="dynamical-systems-in-2d.html#cb246-6" aria-hidden="true" tabindex="-1"></a>    traj</span>
-<span id="cb246-7"><a href="dynamical-systems-in-2d.html#cb246-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb246-8"><a href="dynamical-systems-in-2d.html#cb246-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(traj)</span>
-<span id="cb246-9"><a href="dynamical-systems-in-2d.html#cb246-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb246-10"><a href="dynamical-systems-in-2d.html#cb246-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb246-11"><a href="dynamical-systems-in-2d.html#cb246-11" aria-hidden="true" tabindex="-1"></a>plot_traj <span class="ot">&lt;-</span> <span class="cf">function</span>(mat, x0, num) {</span>
-<span id="cb246-12"><a href="dynamical-systems-in-2d.html#cb246-12" aria-hidden="true" tabindex="-1"></a>  traj <span class="ot">=</span> <span class="fu">get_traj</span>(mat,x0,num)</span>
-<span id="cb246-13"><a href="dynamical-systems-in-2d.html#cb246-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">points</span>(traj[<span class="dv">1</span>,],traj[<span class="dv">2</span>,], <span class="at">pch=</span><span class="dv">20</span>, <span class="at">col=</span><span class="fu">rainbow</span>(<span class="fu">length</span>(traj)))</span>
-<span id="cb246-14"><a href="dynamical-systems-in-2d.html#cb246-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb246-15"><a href="dynamical-systems-in-2d.html#cb246-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb246-16"><a href="dynamical-systems-in-2d.html#cb246-16" aria-hidden="true" tabindex="-1"></a>trajectory_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(mat, <span class="at">t=</span><span class="dv">20</span>, <span class="at">datamax=</span><span class="dv">5</span>, <span class="at">plotmax=</span><span class="dv">10</span>, <span class="at">numpoints=</span><span class="dv">10</span>, <span class="at">showEigenspaces=</span><span class="cn">TRUE</span>) {</span>
-<span id="cb246-17"><a href="dynamical-systems-in-2d.html#cb246-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># initialize plot</span></span>
-<span id="cb246-18"><a href="dynamical-systems-in-2d.html#cb246-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">pty =</span> <span class="st">&quot;s&quot;</span>)</span>
-<span id="cb246-19"><a href="dynamical-systems-in-2d.html#cb246-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">0</span>),<span class="fu">c</span>(<span class="dv">0</span>),<span class="at">type=</span><span class="st">&quot;n&quot;</span>,</span>
-<span id="cb246-20"><a href="dynamical-systems-in-2d.html#cb246-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span>plotmax,plotmax),<span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span>plotmax,plotmax),</span>
-<span id="cb246-21"><a href="dynamical-systems-in-2d.html#cb246-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">&#39;x&#39;</span>, <span class="at">ylab=</span><span class="st">&#39;y&#39;</span>)</span>
-<span id="cb246-22"><a href="dynamical-systems-in-2d.html#cb246-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h=</span><span class="sc">-</span>plotmax<span class="sc">:</span>plotmax, <span class="at">v=</span><span class="sc">-</span>plotmax<span class="sc">:</span>plotmax, <span class="at">col=</span><span class="st">&quot;gray&quot;</span>)</span>
-<span id="cb246-23"><a href="dynamical-systems-in-2d.html#cb246-23" aria-hidden="true" tabindex="-1"></a>  mygrid <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x=</span><span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span>datamax, <span class="at">by =</span> <span class="dv">2</span><span class="sc">*</span>datamax<span class="sc">/</span>numpoints, <span class="at">l =</span> numpoints<span class="sc">+</span><span class="dv">1</span>),</span>
-<span id="cb246-24"><a href="dynamical-systems-in-2d.html#cb246-24" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y=</span><span class="fu">seq</span>(<span class="at">from =</span>  <span class="sc">-</span>datamax, <span class="at">by =</span> <span class="dv">2</span><span class="sc">*</span>datamax<span class="sc">/</span>numpoints, <span class="at">l =</span> numpoints<span class="sc">+</span><span class="dv">1</span>))</span>
-<span id="cb246-25"><a href="dynamical-systems-in-2d.html#cb246-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(mygrid)[<span class="dv">1</span>]) {</span>
-<span id="cb246-26"><a href="dynamical-systems-in-2d.html#cb246-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_traj</span>(mat,<span class="fu">c</span>(mygrid[i,<span class="dv">1</span>],mygrid[i,<span class="dv">2</span>]),t)</span>
-<span id="cb246-27"><a href="dynamical-systems-in-2d.html#cb246-27" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb246-28"><a href="dynamical-systems-in-2d.html#cb246-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (showEigenspaces) {</span>
-<span id="cb246-29"><a href="dynamical-systems-in-2d.html#cb246-29" aria-hidden="true" tabindex="-1"></a>    eigen <span class="ot">=</span> <span class="fu">eigen</span>(mat)</span>
-<span id="cb246-30"><a href="dynamical-systems-in-2d.html#cb246-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">#mylabel = cat(&#39;lambda=&#39;, eigen$values[1], &#39;and lambda=&#39;, eigen$values[2])</span></span>
-<span id="cb246-31"><a href="dynamical-systems-in-2d.html#cb246-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">#title(xlab=mylabel)</span></span>
-<span id="cb246-32"><a href="dynamical-systems-in-2d.html#cb246-32" aria-hidden="true" tabindex="-1"></a>    v1 <span class="ot">=</span> <span class="fu">zapsmall</span>(eigen<span class="sc">$</span>vectors[,<span class="dv">1</span>])</span>
-<span id="cb246-33"><a href="dynamical-systems-in-2d.html#cb246-33" aria-hidden="true" tabindex="-1"></a>    v2 <span class="ot">=</span> <span class="fu">zapsmall</span>(eigen<span class="sc">$</span>vectors[,<span class="dv">2</span>])</span>
-<span id="cb246-34"><a href="dynamical-systems-in-2d.html#cb246-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span> <span class="fu">class</span>(v1[<span class="dv">1</span>]) <span class="sc">==</span> <span class="st">&quot;complex&quot;</span>) {</span>
-<span id="cb246-35"><a href="dynamical-systems-in-2d.html#cb246-35" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (v1[<span class="dv">1</span>] <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb246-36"><a href="dynamical-systems-in-2d.html#cb246-36" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>)</span>
-<span id="cb246-37"><a href="dynamical-systems-in-2d.html#cb246-37" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
-<span id="cb246-38"><a href="dynamical-systems-in-2d.html#cb246-38" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">a=</span><span class="dv">0</span>,<span class="at">b=</span>v1[<span class="dv">2</span>]<span class="sc">/</span>v1[<span class="dv">1</span>], <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb246-39"><a href="dynamical-systems-in-2d.html#cb246-39" aria-hidden="true" tabindex="-1"></a>      } </span>
-<span id="cb246-40"><a href="dynamical-systems-in-2d.html#cb246-40" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb246-41"><a href="dynamical-systems-in-2d.html#cb246-41" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (v2[<span class="dv">1</span>] <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb246-42"><a href="dynamical-systems-in-2d.html#cb246-42" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>)</span>
-<span id="cb246-43"><a href="dynamical-systems-in-2d.html#cb246-43" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
-<span id="cb246-44"><a href="dynamical-systems-in-2d.html#cb246-44" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">a=</span><span class="dv">0</span>,<span class="at">b=</span>v2[<span class="dv">2</span>]<span class="sc">/</span>v2[<span class="dv">1</span>], <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb246-45"><a href="dynamical-systems-in-2d.html#cb246-45" aria-hidden="true" tabindex="-1"></a>      }   </span>
-<span id="cb246-46"><a href="dynamical-systems-in-2d.html#cb246-46" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb246-47"><a href="dynamical-systems-in-2d.html#cb246-47" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb246-48"><a href="dynamical-systems-in-2d.html#cb246-48" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb246-49"><a href="dynamical-systems-in-2d.html#cb246-49" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="dynamical-systems-in-2d.html#cb247-1" aria-hidden="true" tabindex="-1"></a>get_traj <span class="ot">&lt;-</span> <span class="cf">function</span>(mat, x0, num) {</span>
+<span id="cb247-2"><a href="dynamical-systems-in-2d.html#cb247-2" aria-hidden="true" tabindex="-1"></a>  traj <span class="ot">=</span> <span class="fu">cbind</span>(x0) </span>
+<span id="cb247-3"><a href="dynamical-systems-in-2d.html#cb247-3" aria-hidden="true" tabindex="-1"></a>  num</span>
+<span id="cb247-4"><a href="dynamical-systems-in-2d.html#cb247-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>num) {</span>
+<span id="cb247-5"><a href="dynamical-systems-in-2d.html#cb247-5" aria-hidden="true" tabindex="-1"></a>    traj <span class="ot">=</span> <span class="fu">cbind</span>(traj, mat <span class="sc">%*%</span> traj[,<span class="fu">dim</span>(traj)[<span class="dv">2</span>]])</span>
+<span id="cb247-6"><a href="dynamical-systems-in-2d.html#cb247-6" aria-hidden="true" tabindex="-1"></a>    traj</span>
+<span id="cb247-7"><a href="dynamical-systems-in-2d.html#cb247-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb247-8"><a href="dynamical-systems-in-2d.html#cb247-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(traj)</span>
+<span id="cb247-9"><a href="dynamical-systems-in-2d.html#cb247-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb247-10"><a href="dynamical-systems-in-2d.html#cb247-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb247-11"><a href="dynamical-systems-in-2d.html#cb247-11" aria-hidden="true" tabindex="-1"></a>plot_traj <span class="ot">&lt;-</span> <span class="cf">function</span>(mat, x0, num) {</span>
+<span id="cb247-12"><a href="dynamical-systems-in-2d.html#cb247-12" aria-hidden="true" tabindex="-1"></a>  traj <span class="ot">=</span> <span class="fu">get_traj</span>(mat,x0,num)</span>
+<span id="cb247-13"><a href="dynamical-systems-in-2d.html#cb247-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">points</span>(traj[<span class="dv">1</span>,],traj[<span class="dv">2</span>,], <span class="at">pch=</span><span class="dv">20</span>, <span class="at">col=</span><span class="fu">rainbow</span>(<span class="fu">length</span>(traj)))</span>
+<span id="cb247-14"><a href="dynamical-systems-in-2d.html#cb247-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb247-15"><a href="dynamical-systems-in-2d.html#cb247-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb247-16"><a href="dynamical-systems-in-2d.html#cb247-16" aria-hidden="true" tabindex="-1"></a>trajectory_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(mat, <span class="at">t=</span><span class="dv">20</span>, <span class="at">datamax=</span><span class="dv">5</span>, <span class="at">plotmax=</span><span class="dv">10</span>, <span class="at">numpoints=</span><span class="dv">10</span>, <span class="at">showEigenspaces=</span><span class="cn">TRUE</span>) {</span>
+<span id="cb247-17"><a href="dynamical-systems-in-2d.html#cb247-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># initialize plot</span></span>
+<span id="cb247-18"><a href="dynamical-systems-in-2d.html#cb247-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">pty =</span> <span class="st">&quot;s&quot;</span>)</span>
+<span id="cb247-19"><a href="dynamical-systems-in-2d.html#cb247-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot</span>(<span class="fu">c</span>(<span class="dv">0</span>),<span class="fu">c</span>(<span class="dv">0</span>),<span class="at">type=</span><span class="st">&quot;n&quot;</span>,</span>
+<span id="cb247-20"><a href="dynamical-systems-in-2d.html#cb247-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span>plotmax,plotmax),<span class="at">ylim=</span><span class="fu">c</span>(<span class="sc">-</span>plotmax,plotmax),</span>
+<span id="cb247-21"><a href="dynamical-systems-in-2d.html#cb247-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">xlab=</span><span class="st">&#39;x&#39;</span>, <span class="at">ylab=</span><span class="st">&#39;y&#39;</span>)</span>
+<span id="cb247-22"><a href="dynamical-systems-in-2d.html#cb247-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">abline</span>(<span class="at">h=</span><span class="sc">-</span>plotmax<span class="sc">:</span>plotmax, <span class="at">v=</span><span class="sc">-</span>plotmax<span class="sc">:</span>plotmax, <span class="at">col=</span><span class="st">&quot;gray&quot;</span>)</span>
+<span id="cb247-23"><a href="dynamical-systems-in-2d.html#cb247-23" aria-hidden="true" tabindex="-1"></a>  mygrid <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(<span class="at">x=</span><span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span>datamax, <span class="at">by =</span> <span class="dv">2</span><span class="sc">*</span>datamax<span class="sc">/</span>numpoints, <span class="at">l =</span> numpoints<span class="sc">+</span><span class="dv">1</span>),</span>
+<span id="cb247-24"><a href="dynamical-systems-in-2d.html#cb247-24" aria-hidden="true" tabindex="-1"></a>                      <span class="at">y=</span><span class="fu">seq</span>(<span class="at">from =</span>  <span class="sc">-</span>datamax, <span class="at">by =</span> <span class="dv">2</span><span class="sc">*</span>datamax<span class="sc">/</span>numpoints, <span class="at">l =</span> numpoints<span class="sc">+</span><span class="dv">1</span>))</span>
+<span id="cb247-25"><a href="dynamical-systems-in-2d.html#cb247-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">dim</span>(mygrid)[<span class="dv">1</span>]) {</span>
+<span id="cb247-26"><a href="dynamical-systems-in-2d.html#cb247-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_traj</span>(mat,<span class="fu">c</span>(mygrid[i,<span class="dv">1</span>],mygrid[i,<span class="dv">2</span>]),t)</span>
+<span id="cb247-27"><a href="dynamical-systems-in-2d.html#cb247-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb247-28"><a href="dynamical-systems-in-2d.html#cb247-28" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (showEigenspaces) {</span>
+<span id="cb247-29"><a href="dynamical-systems-in-2d.html#cb247-29" aria-hidden="true" tabindex="-1"></a>    eigen <span class="ot">=</span> <span class="fu">eigen</span>(mat)</span>
+<span id="cb247-30"><a href="dynamical-systems-in-2d.html#cb247-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">#mylabel = cat(&#39;lambda=&#39;, eigen$values[1], &#39;and lambda=&#39;, eigen$values[2])</span></span>
+<span id="cb247-31"><a href="dynamical-systems-in-2d.html#cb247-31" aria-hidden="true" tabindex="-1"></a>    <span class="co">#title(xlab=mylabel)</span></span>
+<span id="cb247-32"><a href="dynamical-systems-in-2d.html#cb247-32" aria-hidden="true" tabindex="-1"></a>    v1 <span class="ot">=</span> <span class="fu">zapsmall</span>(eigen<span class="sc">$</span>vectors[,<span class="dv">1</span>])</span>
+<span id="cb247-33"><a href="dynamical-systems-in-2d.html#cb247-33" aria-hidden="true" tabindex="-1"></a>    v2 <span class="ot">=</span> <span class="fu">zapsmall</span>(eigen<span class="sc">$</span>vectors[,<span class="dv">2</span>])</span>
+<span id="cb247-34"><a href="dynamical-systems-in-2d.html#cb247-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span> <span class="fu">class</span>(v1[<span class="dv">1</span>]) <span class="sc">==</span> <span class="st">&quot;complex&quot;</span>) {</span>
+<span id="cb247-35"><a href="dynamical-systems-in-2d.html#cb247-35" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (v1[<span class="dv">1</span>] <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb247-36"><a href="dynamical-systems-in-2d.html#cb247-36" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>)</span>
+<span id="cb247-37"><a href="dynamical-systems-in-2d.html#cb247-37" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb247-38"><a href="dynamical-systems-in-2d.html#cb247-38" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">a=</span><span class="dv">0</span>,<span class="at">b=</span>v1[<span class="dv">2</span>]<span class="sc">/</span>v1[<span class="dv">1</span>], <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb247-39"><a href="dynamical-systems-in-2d.html#cb247-39" aria-hidden="true" tabindex="-1"></a>      } </span>
+<span id="cb247-40"><a href="dynamical-systems-in-2d.html#cb247-40" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb247-41"><a href="dynamical-systems-in-2d.html#cb247-41" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (v2[<span class="dv">1</span>] <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb247-42"><a href="dynamical-systems-in-2d.html#cb247-42" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">v=</span><span class="dv">0</span>)</span>
+<span id="cb247-43"><a href="dynamical-systems-in-2d.html#cb247-43" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb247-44"><a href="dynamical-systems-in-2d.html#cb247-44" aria-hidden="true" tabindex="-1"></a>        <span class="fu">abline</span>(<span class="at">a=</span><span class="dv">0</span>,<span class="at">b=</span>v2[<span class="dv">2</span>]<span class="sc">/</span>v2[<span class="dv">1</span>], <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb247-45"><a href="dynamical-systems-in-2d.html#cb247-45" aria-hidden="true" tabindex="-1"></a>      }   </span>
+<span id="cb247-46"><a href="dynamical-systems-in-2d.html#cb247-46" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb247-47"><a href="dynamical-systems-in-2d.html#cb247-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb247-48"><a href="dynamical-systems-in-2d.html#cb247-48" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb247-49"><a href="dynamical-systems-in-2d.html#cb247-49" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="our-first-example" class="section level2" number="21.2">
 <h2><span class="header-section-number">21.2</span> Our first example</h2>
@@ -534,11 +534,11 @@ We get the most complete picture when we plot multiple trajectories at once. So 
 <li>the size of the plot</li>
 <li>the number of points along the side of the grid</li>
 </ul>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="dynamical-systems-in-2d.html#cb247-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">30</span> <span class="sc">*</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">31</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">29</span>))</span>
-<span id="cb247-2"><a href="dynamical-systems-in-2d.html#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">5</span>, <span class="at">plotmax=</span><span class="dv">15</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="dynamical-systems-in-2d.html#cb248-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">30</span> <span class="sc">*</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">31</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">29</span>))</span>
+<span id="cb248-2"><a href="dynamical-systems-in-2d.html#cb248-2" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">5</span>, <span class="at">plotmax=</span><span class="dv">15</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/dynsys1-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>This system is best understood by comparing what we see with the eigenvector and eigenvalues.</p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="dynamical-systems-in-2d.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="dynamical-systems-in-2d.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 1.1 0.9
@@ -552,8 +552,8 @@ We get the most complete picture when we plot multiple trajectories at once. So 
 <div id="checkpoint-question-for-today" class="section level2" number="21.3">
 <h2><span class="header-section-number">21.3</span> CheckPoint Question for today</h2>
 <p>Here is the checkpoint question for today (for which you found a closed-form solution).</p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="dynamical-systems-in-2d.html#cb250-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">110</span> <span class="sc">*</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">97</span>,<span class="sc">-</span><span class="dv">8</span>),<span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">123</span>))</span>
-<span id="cb250-2"><a href="dynamical-systems-in-2d.html#cb250-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="dynamical-systems-in-2d.html#cb251-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">110</span> <span class="sc">*</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">97</span>,<span class="sc">-</span><span class="dv">8</span>),<span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">123</span>))</span>
+<span id="cb251-2"><a href="dynamical-systems-in-2d.html#cb251-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 1.1 0.9
@@ -563,15 +563,15 @@ We get the most complete picture when we plot multiple trajectories at once. So 
 ## [1,] -0.2425356 -0.9486833
 ## [2,] -0.9701425 -0.3162278</code></pre>
 <p>And here is the corresponding plot of the dynamical system:</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="dynamical-systems-in-2d.html#cb252-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">110</span> <span class="sc">*</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">97</span>,<span class="sc">-</span><span class="dv">8</span>),<span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">123</span>))</span>
-<span id="cb252-2"><a href="dynamical-systems-in-2d.html#cb252-2" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">10</span>, <span class="at">datamax=</span><span class="dv">15</span>, <span class="at">plotmax=</span><span class="dv">25</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="dynamical-systems-in-2d.html#cb253-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">110</span> <span class="sc">*</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">97</span>,<span class="sc">-</span><span class="dv">8</span>),<span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">123</span>))</span>
+<span id="cb253-2"><a href="dynamical-systems-in-2d.html#cb253-2" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">10</span>, <span class="at">datamax=</span><span class="dv">15</span>, <span class="at">plotmax=</span><span class="dv">25</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/dynsys2-1.png" width="75%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="discussion-question-1" class="section level2" number="21.4">
 <h2><span class="header-section-number">21.4</span> Discussion Question 1</h2>
 <p>In class, we looked at a matrix with eigenvalues 1 and 1/2, and we plotted a trajectory starting at <span class="math inline">\((8,7)\)</span> by hand. Its eigensystem is shown here:</p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="dynamical-systems-in-2d.html#cb253-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.4</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.15</span>, <span class="fl">1.1</span>))</span>
-<span id="cb253-2"><a href="dynamical-systems-in-2d.html#cb253-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="dynamical-systems-in-2d.html#cb254-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.4</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.15</span>, <span class="fl">1.1</span>))</span>
+<span id="cb254-2"><a href="dynamical-systems-in-2d.html#cb254-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 1.0 0.5
@@ -581,14 +581,14 @@ We get the most complete picture when we plot multiple trajectories at once. So 
 ## [1,] -0.5547002 -0.9701425
 ## [2,] -0.8320503 -0.2425356</code></pre>
 <p>And here is a trajectory plot</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="dynamical-systems-in-2d.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">10</span>, <span class="at">plotmax=</span><span class="dv">15</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="dynamical-systems-in-2d.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">10</span>, <span class="at">plotmax=</span><span class="dv">15</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/dynsys4-1.png" width="75%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="discussion-question-2" class="section level2" number="21.5">
 <h2><span class="header-section-number">21.5</span> Discussion Question 2</h2>
 <p>Here the matrix has the same eigenvectors, but now the eigenvalues are 1.0 and 0.9. It’s a little easier to see when the smaller eigenvalue converges more slowly.</p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="dynamical-systems-in-2d.html#cb256-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">0.88</span>, <span class="fl">0.08</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.03</span>, <span class="fl">1.02</span>))</span>
-<span id="cb256-2"><a href="dynamical-systems-in-2d.html#cb256-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="dynamical-systems-in-2d.html#cb257-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">0.88</span>, <span class="fl">0.08</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.03</span>, <span class="fl">1.02</span>))</span>
+<span id="cb257-2"><a href="dynamical-systems-in-2d.html#cb257-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 1.0 0.9
@@ -597,14 +597,14 @@ We get the most complete picture when we plot multiple trajectories at once. So 
 ##            [,1]       [,2]
 ## [1,] -0.5547002 -0.9701425
 ## [2,] -0.8320503 -0.2425356</code></pre>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="dynamical-systems-in-2d.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">10</span>, <span class="at">plotmax=</span><span class="dv">15</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="dynamical-systems-in-2d.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">10</span>, <span class="at">plotmax=</span><span class="dv">15</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/dynsys5-1.png" width="75%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="discussion-question-3" class="section level2" number="21.6">
 <h2><span class="header-section-number">21.6</span> Discussion Question 3</h2>
 <p>Here the matrix has the same eigenvectors, but now the eigenvalues are 1.1 and 0.9.</p>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="dynamical-systems-in-2d.html#cb259-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">0.86</span>, <span class="fl">0.16</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.06</span>, <span class="fl">1.14</span>))</span>
-<span id="cb259-2"><a href="dynamical-systems-in-2d.html#cb259-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="dynamical-systems-in-2d.html#cb260-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">0.86</span>, <span class="fl">0.16</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.06</span>, <span class="fl">1.14</span>))</span>
+<span id="cb260-2"><a href="dynamical-systems-in-2d.html#cb260-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 1.1 0.9
@@ -613,14 +613,14 @@ We get the most complete picture when we plot multiple trajectories at once. So 
 ##            [,1]       [,2]
 ## [1,] -0.5547002 -0.9701425
 ## [2,] -0.8320503 -0.2425356</code></pre>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="dynamical-systems-in-2d.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">10</span>, <span class="at">plotmax=</span><span class="dv">15</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="dynamical-systems-in-2d.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">10</span>, <span class="at">plotmax=</span><span class="dv">15</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/dynsys6-1.png" width="75%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="discussion-question-4" class="section level2" number="21.7">
 <h2><span class="header-section-number">21.7</span> Discussion Question 4</h2>
 <p>Finally, here again the matrix has the same eigenvectors, but now the eigenvalues are 0.99 and 0.9.</p>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="dynamical-systems-in-2d.html#cb262-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">0.882</span>, <span class="fl">0.072</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.027</span>, <span class="fl">1.008</span>))</span>
-<span id="cb262-2"><a href="dynamical-systems-in-2d.html#cb262-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="dynamical-systems-in-2d.html#cb263-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="fl">0.882</span>, <span class="fl">0.072</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.027</span>, <span class="fl">1.008</span>))</span>
+<span id="cb263-2"><a href="dynamical-systems-in-2d.html#cb263-2" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 0.99 0.90
@@ -629,7 +629,7 @@ We get the most complete picture when we plot multiple trajectories at once. So 
 ##            [,1]       [,2]
 ## [1,] -0.5547002 -0.9701425
 ## [2,] -0.8320503 -0.2425356</code></pre>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="dynamical-systems-in-2d.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">50</span>, <span class="at">datamax=</span><span class="dv">10</span>, <span class="at">plotmax=</span><span class="dv">15</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="dynamical-systems-in-2d.html#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">50</span>, <span class="at">datamax=</span><span class="dv">10</span>, <span class="at">plotmax=</span><span class="dv">15</span>, <span class="at">numpoints=</span><span class="dv">5</span>)</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/dynsys7-1.png" width="75%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="your-turn-2" class="section level2" number="21.8">
@@ -649,10 +649,10 @@ We get the most complete picture when we plot multiple trajectories at once. So 
 </ul>
 <p>If your original plot is confusing, <strong>try changing the parameters</strong> (initial square size, plot size, number of grid points).</p>
 <p>Here is some code for you to adapt for the examples.</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="dynamical-systems-in-2d.html#cb265-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>),<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
-<span id="cb265-2"><a href="dynamical-systems-in-2d.html#cb265-2" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">5</span>, <span class="at">plotmax=</span><span class="dv">10</span>, <span class="at">numpoints=</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="dynamical-systems-in-2d.html#cb266-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>),<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb266-2"><a href="dynamical-systems-in-2d.html#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="fu">trajectory_plot</span>(A, <span class="at">t=</span><span class="dv">30</span>, <span class="at">datamax=</span><span class="dv">5</span>, <span class="at">plotmax=</span><span class="dv">10</span>, <span class="at">numpoints=</span><span class="dv">10</span>)</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/unnamed-chunk-106-1.png" width="75%" style="display: block; margin: auto;" /></p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="dynamical-systems-in-2d.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="dynamical-systems-in-2d.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(A)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
 ## [1] 1 1

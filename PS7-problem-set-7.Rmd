@@ -32,7 +32,7 @@ Find the orthogonal complement of each subspace in $\mathbb{R}^5$. For each exam
 
 (Work on in class on Tuesday June 29)
 
-In high dimensional space $\mathbb{R}^n$ a common measure of similarity between two vectors  is  **cosine similarity**:  the cosine of the angle $\theta$ between the vectors. We calculate this value as shown below. This formula was derived in the [pdf](https://drive.google.com/file/d/1L0hs5mHHw8YJYUFgqPqii0uGxgy-Rx31/view) for 5.1.
+In high dimensional space $\mathbb{R}^n$ a common measure of similarity between two vectors  is  **cosine similarity**:  the cosine of the angle $\theta$ between the vectors. We calculate this value as shown below. This formula was derived in the [video](https://drive.google.com/file/d/1L0hs5mHHw8YJYUFgqPqii0uGxgy-Rx31/view) for 5.1.
 $$
 \cos(\theta) = \frac{ \mathsf{u} \cdot \mathsf{v}} {\| \mathsf{u}\| \, \|\mathsf{v}\|} = \frac{ \mathsf{u} \cdot \mathsf{v}} {\sqrt{\mathsf{u} \cdot \mathsf{u}} \sqrt{\mathsf{v} \cdot \mathsf{v}}}.
 $$
