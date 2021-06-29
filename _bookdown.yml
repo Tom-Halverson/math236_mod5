@@ -14,7 +14,7 @@ rmd_files: ["index.Rmd",
  "w3-learning-goals.Rmd", 
  "w4-learning-goals.Rmd", 
  "w5-learning-goals.Rmd",
-# "w7-learning-goals.Rmd", 
+ "w7-learning-goals.Rmd", 
  "00-Class-Examples.Rmd",
  "01-linear-systems.Rmd",
  "02-linear-dependence.Rmd",  
@@ -34,7 +34,7 @@ rmd_files: ["index.Rmd",
 # "12-image-compression.Rmd",
  "q1-review.Rmd", 
  "q2-review.Rmd" , 
-# "q3-review.Rmd" , 
+ "q3-review.Rmd" , 
 # "q4-review.Rmd"
 ]
 delete_merged_file: true

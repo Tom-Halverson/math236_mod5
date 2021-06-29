@@ -56,7 +56,7 @@ I should understand and be able to explain the following **concepts**:
 * An eigenvalue $\lambda$ with $0 < | \lambda | < 1$ corresponds to contraction.
 * A complex  eigenvalue  corresponds  to a rotation in a 2D subspace.
 * The eigenspace for $\lambda$ is the subspace $E_\lambda = \mathrm{Nul}(A  - \lambda I)$.
-* A matrix is  not diagonalizable when it has complex eigenvalues.
+
 * A matrix is not diagonalizable when it has an eigenvalue whose algebraic mutiplicity is strictly larger than its geometrix multiplicity.
 
 * The long-term behavior of a  dynamical system is determined by its dominant eigenvalue and eigenvector.

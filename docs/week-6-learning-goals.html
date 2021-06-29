@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Section 3 Problem Set 3 | MATH 236: Linear Algebra</title>
+  <title>Section 13 Week 6 Learning Goals | MATH 236: Linear Algebra</title>
   <meta name="description" content="This is the class activity manual for MATH 236 at Macalester College." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Section 3 Problem Set 3 | MATH 236: Linear Algebra" />
+  <meta property="og:title" content="Section 13 Week 6 Learning Goals | MATH 236: Linear Algebra" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="Tom-Halverson/math236_s21" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Section 3 Problem Set 3 | MATH 236: Linear Algebra" />
+  <meta name="twitter:title" content="Section 13 Week 6 Learning Goals | MATH 236: Linear Algebra" />
   
   <meta name="twitter:description" content="This is the class activity manual for MATH 236 at Macalester College." />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="problem-set-2.html"/>
-<link rel="next" href="problem-set-4.html"/>
+<link rel="prev" href="week-4-learning-goals.html"/>
+<link rel="next" href="week-7-8-learning-goals.html"/>
 <script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -510,161 +510,60 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="problem-set-3" class="section level1" number="3">
-<h1><span class="header-section-number">Section 3</span> Problem Set 3</h1>
+<div id="week-6-learning-goals" class="section level1" number="13">
+<h1><span class="header-section-number">Section 13</span> Week 6 Learning Goals</h1>
+<p>Here are the knowledge and skills you should master by the end of the fifth and sixth weeks.</p>
+<div id="eigensystems" class="section level2" number="13.1">
+<h2><span class="header-section-number">13.1</span> Eigensystems</h2>
+<p>I should be able to do the following <strong>tasks</strong>:</p>
 <ul>
-<li>Due: Tuesday February 9 by noon CST.</li>
-<li>Upload your solutions to Moodle in a PDF.</li>
-<li>Please feel free to <strong>use RStudio for all row reductions.</strong></li>
-<li>You can download the <a href="https://github.com/Tom-Halverson/math236_f20/blob/main/PS3-problem-set-3.Rmd">Rmd source file for this problem set</a>.</li>
+<li><p>Check whether a given vector <span class="math inline">\(\mathsf{v}\)</span> is an eigenvector for square matrix <span class="math inline">\(A\)</span>.</p></li>
+<li><p>Find the eigenvalues of a matrix <span class="math inline">\(2 \times 2\)</span> matrix by hand, using the characteristic equation</p></li>
+<li><p>Find the eigenvalues of a triangular matix by inspection.</p></li>
+<li><p>Given the eigenvalues of matrix <span class="math inline">\(A\)</span>, find the eigenvectors by solving <span class="math inline">\((A - \lambda I) = \mathbf{0}\)</span>.</p></li>
+<li><p>Find the eigenvalues and eigenvectors of an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> using <code>eigen(A)</code> on RStudio.</p></li>
+<li><p>Determine whether a matrix is diagonalizable.</p></li>
+<li><p>Factor a diagonalizable <span class="math inline">\(n \times n\)</span> matrix as <span class="math inline">\(A = PDP^{-1}\)</span> where <span class="math inline">\(D\)</span> is a diagonal matrix of eigenvalues and <span class="math inline">\(P\)</span> is the matrix whose columns are the corresponding eignvectors.</p></li>
+<li><p>Compute matrix powers using the diagonalization.</p></li>
+<li><p>Use RStudio to find complex eigenvalues and eigenvectors of a square matrix.</p></li>
+<li><p>Factor a <span class="math inline">\(2 \times 2\)</span> scaling-rotation matrix as <span class="math inline">\(A = P C P^{-1}\)</span> where <span class="math inline">\(C\)</span> is a scaling-rotation matrix <span class="math inline">\(\begin{bmatrix} a &amp; -b \\ b &amp; a \end{bmatrix}\)</span> and <span class="math inline">\(P = [ \mathsf{w}, \mathsf{u}]\)</span> where <span class="math inline">\(\mathsf{v} = \mathsf{u} + i \mathsf{w}\)</span> is the eigenvector for <span class="math inline">\(\lambda = a + b i\)</span>.</p></li>
+<li><p>Find the angle of rotation and the scaling factor in a <span class="math inline">\(2 \times 2\)</span> matrix with complex eigenvalues.</p></li>
+<li><p>Use the dominant eigenvalue and dominant eigenvector to determine the long-term behavior of a dynamical system.</p></li>
+<li><p>Use eigenvalues to investigate a population modeled with a Leslie matrix.</p></li>
+<li><p>Give a close-formula for a dynamical system using the eigen decomposition of a matrix</p></li>
 </ul>
-<p>The Problem Set covers sections 1.8, 1.9, 2.1, 2.2.</p>
-<div id="linear-transformations" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Linear Transformations</h2>
-<p>In each case below, if the transformation is linear, then find is matrix.
-If it is not linear, then demonstrate that it is not linear by showing, with a specific example, that one of the properties of being linear is broken.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>The transformation <span class="math inline">\(T\)</span> is given by:
-<span class="math display">\[T \left( \begin{bmatrix}  x_1 \\ x_2 \\ \end{bmatrix}\right) = 
-\begin{bmatrix} x_1 + x_2 \\ 2 x_1 \\ -x_2 \\\end{bmatrix}.
-\]</span></p></li>
-<li><p>The transformation <span class="math inline">\(T\)</span> is given by:
-<span class="math display">\[T \left( \begin{bmatrix}  x_1 \\ x_2 \\ x_3 \end{bmatrix} \right)= 
-  \begin{bmatrix} x_1 + x_2 + x_3 \\  x_1 x_2 \\ -x_2 + 2 x_3 \end{bmatrix}.
-\]</span></p></li>
-<li><p>The transformation <span class="math inline">\(L: \mathbb{R}^2 \to \mathbb{R}^2\)</span> sends the shaded region on the left to the the shaded region on the right such that <span class="math inline">\(A\)</span> maps to <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> maps to <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> maps to <span class="math inline">\(C\)</span>, and <span class="math inline">\(D\)</span> maps to <span class="math inline">\(D\)</span>.</p></li>
-</ol>
-<p><img src="images/q1-blockA.png" style="width:30.0%" /> <span class="math inline">\(\qquad \qquad\)</span> <img src="images/q1-blockB.png" style="width:30.0%" /></p>
-<ol start="4" style="list-style-type: lower-alpha">
-<li>The transformation <span class="math inline">\(R: \mathbb{R}^2 \to \mathbb{R}^2\)</span> sends the shaded region on the left to the the shaded region on the right such that <span class="math inline">\(A\)</span> maps to <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> maps to <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> maps to <span class="math inline">\(C\)</span>, and <span class="math inline">\(D\)</span> maps to <span class="math inline">\(D\)</span>.</li>
-</ol>
-<p><img src="images/q1-blockA.png" style="width:30.0%" /> <span class="math inline">\(\qquad \qquad\)</span> <img src="images/q1-blockD.png" style="width:30.0%" /></p>
 </div>
-<div id="partial-information-about-a-linear-transformation" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Partial Information about a Linear Transformation</h2>
-<p>We are given that <span class="math inline">\(T: \mathbb{R}^4 \rightarrow \mathbb{R}^3\)</span> is a linear transformation such that:
-<span class="math display">\[
-T\left(\begin{bmatrix} 3 \\ ~2~ \\ 1 \\ 2 \end{bmatrix} \right)=\begin{bmatrix}  ~2~ \\ 3 \\ 6 \end{bmatrix}
-\qquad\hbox{and}\qquad
-T\left(\begin{bmatrix}~~2 \\ -1 \\ 0 \\ -1 \end{bmatrix} \right)=\begin{bmatrix} 2 \\ ~0~  \\ 1 \end{bmatrix}.
-\]</span>
-Use this information to compute the value of <span class="math inline">\(T\)</span> below?
-<span class="math display">\[T\left(\begin{bmatrix} 5 \\ 8 \\ ~3~ \\ 8 \end{bmatrix} \right) = \hskip5in\]</span></p>
+<div id="vocabulary-4" class="section level2" number="13.2">
+<h2><span class="header-section-number">13.2</span> Vocabulary</h2>
+<p>I should know and be able to use and explain the following <strong>terms</strong> or <strong>properties</strong>.</p>
+<ul>
+<li>eigenvalue, eigenvector and eigenspace</li>
+<li>characteristic equation</li>
+<li>diagonalizable matrix</li>
+<li>similar matrices</li>
+<li>algebraic multiplicity of an eigenvalue</li>
+<li>geometric multiplicity of an eigenvalue</li>
+<li>scaling-rotation matrix</li>
+<li>discrete dynamical system</li>
+<li>trajectory</li>
+<li>dominant eigenvalue and dominant eigenvector</li>
+<li>population model</li>
+<li>Leslie matrix</li>
+</ul>
 </div>
-<div id="house-renovations" class="section level2" number="3.3">
-<h2><span class="header-section-number">3.3</span> House Renovations</h2>
-<p>Below are two linear transformations <span class="math inline">\(T: \mathbb{R}^2 \to \mathbb{R}^2\)</span> that transform my house as shown. Find the matrix of each of these transformations (hint: use the base, the doorway and the peak of the roof as a guide).</p>
-<ol style="list-style-type: lower-alpha">
-<li>Transformation #1</li>
-</ol>
-<p><img src="images/ps3-house1.png" style="width:40.0%" /> <span class="math inline">\(\qquad \qquad\)</span> <img src="images/ps3-house2.png" style="width:40.0%" /></p>
-<ol start="2" style="list-style-type: lower-alpha">
-<li>Transformation #2</li>
-</ol>
-<p><img src="images/ps3-house1.png" style="width:40.0%" /> <span class="math inline">\(\qquad \qquad\)</span> <img src="images/ps3-house3.png" style="width:40.0%" /></p>
-</div>
-<div id="matrix-of-a-nonlinear-transformation" class="section level2" number="3.4">
-<h2><span class="header-section-number">3.4</span> Matrix of a Nonlinear Transformation?</h2>
-<p>This problem illustrates what happens if you try to make the matrix of a transformation that is not linear. Consider the transformation <span class="math inline">\(T\)</span> defined by
-<span class="math display">\[
-T \left( \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} \right)
-=
-\begin{bmatrix} x_1 + x_2^2 + x_3 \\ 2 x_2 + x_1 x_3 + 1 \\ 2 x_1 + 3 x_2 + x_3 \end{bmatrix}
-\]</span>
-a. Show that this is not a linear transformation by demonstrating, with a specific example, that one of the rules of being linear is not true.</p>
-<ol start="2" style="list-style-type: lower-alpha">
-<li>Now. let’s see what happens if we compute its matrix anyway. Compute <span class="math inline">\(T(\mathbf{e}_1)\)</span>, <span class="math inline">\(T(\mathbf{e}_2)\)</span>, and <span class="math inline">\(T(\mathbf{e}_3)\)</span>, and put the vectors you get in the columns of a matrix <span class="math inline">\(A\)</span>. Then compute the product below:
-<span class="math display">\[
-\underbrace{\begin{bmatrix} 
-\cdot &amp; \cdot &amp; \cdot \\
-\cdot &amp; \cdot &amp; \cdot \\
-\cdot &amp; \cdot &amp; \cdot \\
-\end{bmatrix}}_{A}
-\begin{bmatrix} x_1 \\ x_ 2 \\ x_3 \end{bmatrix}
-= 
-\]</span>
-Explain how the result of this computation demonstrates that <span class="math inline">\(T\)</span> is not linear.</li>
-</ol>
-</div>
-<div id="a-proof" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> A Proof</h2>
-<p>Let <span class="math inline">\(T: \mathbb{R}^n \to \mathbb{R}^m\)</span> be a linear transformation. Suppose that <span class="math inline">\(\{v_1, v_2, v_3, v_4\}\)</span> is a linearly independent set of vectors in <span class="math inline">\(\mathbb{R}^n\)</span> but the set of images <span class="math inline">\(\{T(v_1), T(v_2), T(v_3), T(v_4)\}\)</span> is a linearly dependent set in <span class="math inline">\(\mathbb{R}^m\)</span>. In the following steps, you will prove that <span class="math inline">\(T\)</span> is not one-to-one.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Write out clearly, using the definition, what it means for <span class="math inline">\(\{v_1, v_2, v_3, v_4\}\)</span> to be linearly independent.</p></li>
-<li><p>Write out clearly, using the definition, what it means for <span class="math inline">\(\{T(v_1), T(v_2), T(v_3), T(v_4)\}\)</span> to be linearly dependent.</p></li>
-<li><p>Use the definition of linear transformation and parts (a) and (b) above to argue that <span class="math inline">\(T(x) = \vec{0}\)</span> for some nonzero vector <span class="math inline">\(x \in \mathbb{R}^n\)</span>.</p></li>
-<li><p>Explain why this tells us that <span class="math inline">\(T\)</span> is not one-to-one.</p></li>
-</ol>
-</div>
-<div id="inner-and-outer-products" class="section level2" number="3.6">
-<h2><span class="header-section-number">3.6</span> Inner and Outer Products</h2>
-<p>We can also think of vectors as matrix. A column vector is an <span class="math inline">\(n \times 1\)</span> matrix and a row vector is a <span class="math inline">\(1 \times n\)</span> matrix.</p>
-<ol style="list-style-type: lower-alpha">
-<li>Compute the following products. These matrix products are called <em>inner products</em> (or dot products) of the vectors.</li>
-</ol>
-<p><span class="math display">\[
-\begin{bmatrix} 4 &amp; -1 &amp; 2 &amp; 3\end{bmatrix}
-\begin{bmatrix} 1 \\ 2 \\1  \\3  \\\end{bmatrix} = \hskip3in
-\]</span>
-<span class="math display">\[
-\begin{bmatrix} 4 &amp; -1 &amp; 2 &amp; 3\end{bmatrix}
-\begin{bmatrix} 1 \\ 1 \\1  \\1  \\\end{bmatrix} = \hskip3in
-\]</span>
-<span class="math display">\[
-\begin{bmatrix} 4 &amp; -1 &amp; 2 &amp; 3\end{bmatrix}
-\begin{bmatrix} 2 \\ 5 \\ 0  \\ -1  \\\end{bmatrix} = \hskip3in
-\]</span>
-b. Now compute the following products. These are called <em>outer products</em>.</p>
-<p><span class="math display">\[
-\begin{bmatrix} 1 \\ 2 \\1  \\3  \\\end{bmatrix}
-\begin{bmatrix} 1 &amp; -5 &amp; 2 &amp; 3\end{bmatrix} = \hskip3in
-\]</span></p>
-<p><span class="math display">\[
-\begin{bmatrix} 1 \\ 2 \\1  \\3  \\\end{bmatrix}
-\begin{bmatrix} 1 &amp; 1 &amp; 1 &amp; 1\end{bmatrix} =\hskip3in
-\]</span></p>
-<ol start="3" style="list-style-type: lower-alpha">
-<li>Row reduce both of the matrices that you get in part b (this should be easy to do by hand,but you can use R if you want to). How many pivots do you get? Explain why you always get this number of pivots when you row reduce an outer product.</li>
-</ol>
-</div>
-<div id="archaeological-seriation" class="section level2" number="3.7">
-<h2><span class="header-section-number">3.7</span> Archaeological Seriation</h2>
-<p>The matrix <span class="math inline">\(A\)</span> below is used in archaeological dating. Its rows correspond to four different grave sites <span class="math inline">\(G_1, G_2, G_3, G_4\)</span> and its columns correspond to five types of pottery<span class="math inline">\(P_1, P_2, P_3, P_4, P_5\)</span>. There is a 1 in position <span class="math inline">\(i\)</span>-<span class="math inline">\(j\)</span> if pottery type <span class="math inline">\(P_j\)</span> is found in grave <span class="math inline">\(G_i\)</span> (and a 0 otherwise).
-<span class="math display">\[
-A=\begin{array}{c|ccccc}
-&amp; P_1 &amp; P_2 &amp; P_3 &amp; P_4 &amp; P_5 \\
-\hline
- G_1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\
-G_2 &amp;  0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 \\
-G_3 &amp;  0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 \\
-G_4  &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
-\end{array}
-\]</span></p>
-<ol style="list-style-type: decimal">
-<li><p>Compute the matrix <span class="math inline">\(\mathbf{G} = A A^T\)</span>, where <span class="math inline">\(A^T\)</span> is the <em>transpose</em> of <span class="math inline">\(A\)</span>, meaning that the rows and columns have been interchanged.</p></li>
-<li><p>Give the meaning of the <span class="math inline">\(i\)</span>-<span class="math inline">\(j\)</span> entry of <span class="math inline">\(\mathbf{G}\)</span> (the entry in row <span class="math inline">\(i\)</span> and column <span class="math inline">\(j\)</span>). State clearly the meaning of this entry using complete sentences (or sentence) and explain why it has this meaning.</p></li>
-</ol>
-</div>
-<div id="rental-car" class="section level2" number="3.8">
-<h2><span class="header-section-number">3.8</span> Rental Car</h2>
-<p>Solve this problem using R and turn in a markdown file knitted to .html.</p>
-<p>A group of Macalester alumni open a rental car company specializing in renting electric cars. As a start, they have opened offices in St. Paul, Rochester, and Duluth. Through market research they find that of the cars rented in St. Paul, 85% will get returned in St. Paul, 9% will get returned in Rochester, and 6% will get returned in Duluth. Of the cars rented in Rochester, 30% will get returned in St. Paul, 60% will get returned in Rochester, and 10% in Duluth. Of the cars rented in Duluth, 35% will get returned in St. Paul, 5% in Rochester, and 60% in Duluth. This information is represented in the matrix below.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="problem-set-3.html#cb1-1" aria-hidden="true" tabindex="-1"></a>StP <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">85</span>,.<span class="dv">09</span>,.<span class="dv">06</span>)</span>
-<span id="cb1-2"><a href="problem-set-3.html#cb1-2" aria-hidden="true" tabindex="-1"></a>Roch <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">30</span>,.<span class="dv">60</span>,.<span class="dv">10</span>)</span>
-<span id="cb1-3"><a href="problem-set-3.html#cb1-3" aria-hidden="true" tabindex="-1"></a>Dul <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">35</span>,.<span class="dv">05</span>,.<span class="dv">60</span>) </span>
-<span id="cb1-4"><a href="problem-set-3.html#cb1-4" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">cbind</span>(StP,Roch,Dul)</span>
-<span id="cb1-5"><a href="problem-set-3.html#cb1-5" aria-hidden="true" tabindex="-1"></a>M</span></code></pre></div>
-<pre><code>##       StP Roch  Dul
-## [1,] 0.85  0.3 0.35
-## [2,] 0.09  0.6 0.05
-## [3,] 0.06  0.1 0.60</code></pre>
-<p>Such a matrix is called a <em>probability</em> matrix or a <em>stochastic</em> matrix because it contains numbers between 0 and 1 and each of its columns sum to 1.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>The owners are trying to use this data to estimate how much of their fleet will be at each location on average in the long run. Assume that initially they locate 20 cars in each city. This can be recorded by the vector <code>v0 = c(20,20,20)</code>. Apply, M to v0, call this vector v1, and explain, using how the matrix-vector product works, why v1 represents the number of cars at each location one day later (for simplicity, we assume that each rental is for 1 day).</p></li>
-<li><p>Now apply M to v1 and call it v2. This should represent the number of cars at each location 2 days later. Also compute the square of the matrix M and call it M2. Confirm that M2 times v0 is the same as M times v1.</p></li>
-<li><p>Write a for loop that applies M over and over again to see what happens to the distribution of cars in the long-run (we will learn how to do this in class but you can also probably just google it). Does this sequence stabilize or does it keep changing after each application? If it does stabilize, how long does it take to stabilize (to within 0.1 cars at each location).</p></li>
-<li><p>Does the starting distribution matter? Try 4 different starting distributions (with a total of 60 cars) and see what the final distribution looks like in each case. For one of your 4 starting distributions, try all 60 cars at one of the locations.</p></li>
-</ol>
+<div id="conceptual-thinking-4" class="section level2" number="13.3">
+<h2><span class="header-section-number">13.3</span> Conceptual Thinking</h2>
+<p>I should understand and be able to explain the following <strong>concepts</strong>:</p>
+<ul>
+<li><p>An eigenspace of <span class="math inline">\(A\)</span> is a subspace that is fixed under the linear transformation <span class="math inline">\(T(\mathsf{x}) = A \mathsf{x}\)</span>.</p></li>
+<li><p>An eigenvalue <span class="math inline">\(\lambda\)</span> with <span class="math inline">\(1 &lt;| \lambda |\)</span> corresponds to expansion.</p></li>
+<li><p>An eigenvalue <span class="math inline">\(\lambda\)</span> with <span class="math inline">\(0 &lt; | \lambda | &lt; 1\)</span> corresponds to contraction.</p></li>
+<li><p>A complex eigenvalue corresponds to a rotation in a 2D subspace.</p></li>
+<li><p>The eigenspace for <span class="math inline">\(\lambda\)</span> is the subspace <span class="math inline">\(E_\lambda = \mathrm{Nul}(A - \lambda I)\)</span>.</p></li>
+<li><p>A matrix is not diagonalizable when it has an eigenvalue whose algebraic mutiplicity is strictly larger than its geometrix multiplicity.</p></li>
+<li><p>The long-term behavior of a dynamical system is determined by its dominant eigenvalue and eigenvector.</p></li>
+<li><p>Population model predicts one of: long term growth, extinction, convergence to a stable population.</p></li>
+</ul>
 
 </div>
 </div>
@@ -673,8 +572,8 @@ G_4  &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
           </div>
         </div>
       </div>
-<a href="problem-set-2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="problem-set-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-4-learning-goals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week-7-8-learning-goals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -5,7 +5,18 @@
 
 ## Overview
 
-Our third quiz covers sections 5.1-5.3  and 5.5-5.6 in Lay's book. This corresponds to Problem Set 6 and the corresponding Edfinity questions.
+Our third quiz covers *eigenvectors* and *orthogonality*. This covers the following sections:
+
+* 5.1: Eigenvectors and eigenspaces
+* 5.2: Eigenvalues
+* 5.3: Eigenbasis and diagonalization
+* 5.5: Complex eigenvalues: rotation and dilation
+* 5.6: Dynamical systems
+
+* 6.1: Orthogonality: length, angle, distance, dot product, and the orthogonal complement
+* 6.2: Orthogonal sets and orthogonal matrices
+* 6.3: Orthogonal projections
+* 6.5: Least-squares projections
 
 The best way to study is to do practice problems. The Quiz will have calculation problems (like Edfinity) and more conceptual problems (like the problem sets). Here are some ways to practice:
 
@@ -18,7 +29,7 @@ The best way to study is to do practice problems. The Quiz will have calculation
 
 ### Vocabulary, Concepts and Skills
 
-See the [Week 5-6 Learning Goals](week-5-6-learning-goals) for the list of vocabulary, concepts and skills.
+See the [Week 5-6 Learning Goals](week-5-6-learning-goals) and the [Week 7-8 Learning Goals](week-7-8-learning-goals) for the list of vocabulary, concepts and skills. 
 
 
 
@@ -56,7 +67,13 @@ Let $A$ be a $2 \times 2$ matrix. We view $A$ as a linear transformation from $\
 a. $A$ maps all of $\mathbb{R}^2$  onto a line through the origin in $\mathbb{R}^2$.
 a. $A$ is a reflection  of $\mathbb{R}^2$ about a line through the origin
 a. $A$ is a reflection  of $\mathbb{R}^2$ through the origin
-a.  $A$ is a horizontal shear
+a.  $A$ is a horizontal shear of the form d form
+$$
+\begin{bmatrix} 1 & a \\ 0 & 1 \end{bmatrix}
+\begin{bmatrix} x \\ y \end{bmatrix}
+= \begin{bmatrix} x + a y \\ y \end{bmatrix}
+$$
+a. $A$ is the orthogonal projection onto the line $y = 5x$.
 
 
 
@@ -107,11 +124,13 @@ Here the diagonalization of a matrix:
 \right].
 $$
 
+
 a. Is the matrix $\mathsf{A}$  invertible?
 b. Find a nonzero vector in $\mathrm{Nul}(\mathsf{A})$ if one exists.
 c. Find a steady-state vector $\mathsf{v}$ such that $\mathsf{A} \mathsf{v} = \mathsf{v}$ if one exists.
 d. Give the coordinates of $\mathsf{v} = [1,2,3]^T$ in the eigenbasis without row reductions.
 e. Find a formula for $\mathsf{A}^{2020} \mathsf{v}$ if $\mathsf{v} = [1,2,3]^T$ in terms of the eigenbasis.
+
 
 
 
@@ -130,7 +149,7 @@ $$
 
 ###
 
-Using the matrix $B = = \begin{bmatrix} .97 & -.71 \\ .71 & .97 \end{bmatrix}$  and the starting vector $\mathsf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$, I plotted the points 
+Using the matrix $B = \begin{bmatrix} .97 & -.71 \\ .71 & .97 \end{bmatrix}$  and the starting vector $\mathsf{v} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$, I plotted the points 
 $$\mathsf{v}, B \mathsf{v}, B^2\mathsf{v}, B^3 \mathsf{v}, \ldots.$$ 
 I saw that these points are, roughly, going around in a circle. 
 
@@ -261,6 +280,134 @@ b. Is $2021 \vec v$ an eigenvector of $A$, and if so what is its eigenvalue?
 c. Is $\vec w$ an eigenvector of $A^2$, and if so what is its eigenvalue?
 
 d. Is $\vec v$ an eigenvector of $A - 2021 I_n$ and if so, what is its eigenvalue?
+
+
+
+###
+
+Let $\mathsf{v} =  \begin{bmatrix}1 \\ -1 \\ 1 \end{bmatrix}$ and $\mathsf{w}= \begin{bmatrix}5 \\ 2 \\ 3 \end{bmatrix}$.
+
+
+a. Find $\| \mathsf{v} \|$ and $\| \mathsf{w} \|$.
+
+
+
+b. Find the distance between $\mathsf{v}$ and $\mathsf{w}$.
+
+c. Find the cosine of the angle between $\mathsf{v}$ and $\mathsf{w}$.
+
+d. Find $\mbox{proj}_{\mathsf{v}} \mathsf{w}$. 
+
+e. Let $W=\mbox{span} (\mathsf{v}, \mathsf{w})$. Use the residual from the previous projection to create an orthonormal basis $\mathsf{u}_1, \mathsf{u}_2$ for $W$ such that $\mathsf{u}_1$ is a vector in the same direction as $\mathsf{v}$.
+
+
+###
+
+Let $\mathsf{u} \neq 0$ be a vector in $\mathbb{R}^n$. Define the function $T: \mathbb{R}^n \rightarrow \mathbb{R}^n$ by
+$T(\mathsf{x}) = \mbox{proj}_{\mathsf{u}} \mathsf{x}$. Recall that the kernel of $T$ is the subspace $\mbox{ker}(T) = \{ \mathsf{x} \in \mathbb{R}^n \mid T(x) = \mathbf{0} \}$. Describe  $\mbox{ker}(T)$ as explicitly as you can.
+
+
+
+
+### 
+
+ The vectors $\mathsf{u}_1, \mathsf{u}_2$  form an orthonormal basis of a subspace $W$ of $\mathbb{R}^4$. Find the projection of $\mathsf{v}$ onto $W$ and determine how close $\mathsf{v}$ is to $W$.
+$$
+\mathsf{u}_1 = \frac{1}{2}\begin{bmatrix} 1\\ -1\\ -1\\ 1 \end{bmatrix}, \quad
+\mathsf{u}_2 =  \frac{1}{2}\begin{bmatrix} 1\\ -1\\ 1\\ -1  \end{bmatrix}, \quad
+\mathsf{v} =  \begin{bmatrix}   2\\ 2\\ 4\\ 2 \end{bmatrix} 
+$$
+
+###
+
+
+
+Consider vectors 
+$\mathsf{v}_1 = \begin{bmatrix} 1 \\ 1 \\-1 \end{bmatrix}$ and 
+$\mathsf{v}_2= \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$ in $\mathbb{R}^3$.
+Let $W=\mbox{span}(\mathsf{v}_1, \mathsf{v}_2)$.
+
+a.  Show that $\mathsf{v}_1$ and $\mathsf{v}_2$ are orthogonal.
+
+b.  Find a basis for $W^{\perp}$.
+
+c. Use orthogonal projections to find the representation of 
+$\mathsf{y} = \begin{bmatrix} 8 \\ 0 \\ 2 \end{bmatrix}$ as
+$\mathsf{y} = \hat{\mathsf{y}} + \mathsf{z}$ where
+$\hat{\mathsf{y}} \in W$ and $\mathsf{z} \in W^{\perp}$.
+
+
+
+###
+Let $W$ be the span of the vectors
+$$
+\begin{bmatrix}
+1 \\ -2 \\ 1 \\ 0 \\1 
+\end{bmatrix}, \quad
+\begin{bmatrix}
+-1 \\ 3 \\ -1 \\ 1 \\ -1 
+\end{bmatrix}, \quad
+\begin{bmatrix}
+0 \\ 0 \\ 1 \\ 3 \\1 
+\end{bmatrix}, \quad
+\begin{bmatrix}
+0 \\ 2 \\ 0 \\ 0 \\4 
+\end{bmatrix}
+$$
+
+a. Find a basis for $W$. What is the dimension of this subspace?
+b. Find a basis for $W^{\perp}$
+
+
+
+###
+
+Consider the system $A \mathsf{x} = \mathsf{b}$ given by
+$$
+\begin{bmatrix}
+1 & 1 & 1 \\
+1 & 2 & -1 \\
+1 & 1 & -1 \\
+1 & 2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\ x_2 \\ x_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+4\\ 1 \\ -2 \\ -1
+\end{bmatrix}.
+$$
+
+a. Show that this system is inconsistent.
+b. Find the projected value $\hat{\mathsf{b}}$,  and the residual $\mathsf{z}$.
+c. How close is your approximate solution to the desired target vector?
+
+
+###
+
+Here is an inconsistent system of equations:
+$$
+\begin{bmatrix} 1 & 2 \\ 1 & 2 \\ 1 & -1 \end{bmatrix}
+ \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = 
+  \begin{bmatrix} 6\\ 4 \\ -4 \end{bmatrix} 
+$$
+
+a. State the normal equations for this problem (be sure to do all of the necessary matrix multiplications).
+
+b. Find the least squares solution to the problem.
+
+c. How close is your approximate solution to the desired target vector?
+
+
+### Watch this! 
+
+The answer to at least one question on Quiz 3 is contained in [this video](https://www.youtube.com/watch?v=O4KCoNvRi6Y).
+ 
+ 
+ 
+ 
+ 
  
 ## Solutions to Practice Problems
 
