@@ -84,7 +84,7 @@ d. The senate majority leader of the 109th Congress was Bill Frist (R, TN), and 
 
 (Work on in class on Wednesday June 30)
 
-Recall that a square $n \times n$ matrix is symmetric when $A^{\top} = A$. We learned that the eigenvectors of a symmetric matrix form an orthogonal basis of $\mathbb{R}^n$. In this problem, you will confirm that this holds for the following symmetric matrix
+Recall that a square $n \times n$ matrix is symmetric when $A^{\top} = A$. It is an amazing property that the eigenvectors of a symmetric matrix form an *orthogonal* basis of $\mathbb{R}^n$. In this problem, you will confirm that this holds for the following symmetric matrix,
 $$
 A = 
 \begin{bmatrix}
@@ -94,17 +94,25 @@ A =
  -4 & 6 & -4 & -7
 \end{bmatrix}. 
 $$
+```{r,echo=TRUE}
+A = cbind(c(0,8,10,-4),c(8,4,28,6),c(10,28,3,-4),c(-4,6,-4,-7))
+```
 
 a. Find the eigenvalues and eigenvectors of $A$.
 
-b. Confirm that the eigenvectors returned by R are an orthonormal set (do this in a single calculation).
+b. Let $P$ be the matrix of the eigenvectors output by R: `P = eigen(A)$vectors`. Confirm that these eigenvectors are an orthonormal set using a single matrix calculation.
 
-c. Express the vector $\mathsf{v} = \begin{bmatrix} 2 & -4 &  -9  & -2 \end{bmatrix}^{\top}$ as a linear combination of the eigenvectors. Use the fact that the eigenvectors are orthonormal. (Don't augment and row reduce.)
+c. Let $\mathsf{v} = \begin{bmatrix} 2 & -4 &  -9  & -2 \end{bmatrix}^{\top}$. Find the coordinates of $\mathsf{v}$ in the eigenbasis in 3 different ways:
+ 
+    i. Use the *transpose* of $P$. Recall that, in R, the transpose of a matrix is `t(A)`.
+    ii. Augment and row reduce.
+    iii. Use the dot product formula. Note that the command `v1 = P[,1]` will extract the first eigenvector from the matrix `P`.
 
-d.  Let $P$ be the matrix of these normalized, orthogonal eigenvectors.
-Diagonalize $A$ using $P$. Just write out $A = P D P^{-1}$. Congratulations: you have **orthogonally diagonalized** the symmetric matrix $A$!
 
-**Turn in:** Your R code and the output for each part. For parts (c) and (d), you need to make it clear what your final answers are. 
+d.  Diagonalize $A$ using $P$. To demonstrate this compute both $A= P D P^{-1}$ and $D =P^{-1} A P$.  Congratulations: you have **orthogonally diagonalized** the symmetric matrix $A$!
+
+**Turn in:** Your R code and the output for each part. 
+
 
 ## Fibonacci Orthogonality
 

@@ -237,11 +237,11 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="12.2" data-path="week-4-learning-goals.html"><a href="week-4-learning-goals.html#vocabulary-3"><i class="fa fa-check"></i><b>12.2</b> Vocabulary</a></li>
 <li class="chapter" data-level="12.3" data-path="week-4-learning-goals.html"><a href="week-4-learning-goals.html#conceptual-thinking-3"><i class="fa fa-check"></i><b>12.3</b> Conceptual Thinking</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="week-6-learning-goals.html"><a href="week-6-learning-goals.html"><i class="fa fa-check"></i><b>13</b> Week 6 Learning Goals</a>
+<li class="chapter" data-level="13" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html"><i class="fa fa-check"></i><b>13</b> Week 5-6 Learning Goals</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="week-6-learning-goals.html"><a href="week-6-learning-goals.html#eigensystems"><i class="fa fa-check"></i><b>13.1</b> Eigensystems</a></li>
-<li class="chapter" data-level="13.2" data-path="week-6-learning-goals.html"><a href="week-6-learning-goals.html#vocabulary-4"><i class="fa fa-check"></i><b>13.2</b> Vocabulary</a></li>
-<li class="chapter" data-level="13.3" data-path="week-6-learning-goals.html"><a href="week-6-learning-goals.html#conceptual-thinking-4"><i class="fa fa-check"></i><b>13.3</b> Conceptual Thinking</a></li>
+<li class="chapter" data-level="13.1" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html#eigensystems"><i class="fa fa-check"></i><b>13.1</b> Eigensystems</a></li>
+<li class="chapter" data-level="13.2" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html#vocabulary-4"><i class="fa fa-check"></i><b>13.2</b> Vocabulary</a></li>
+<li class="chapter" data-level="13.3" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html#conceptual-thinking-4"><i class="fa fa-check"></i><b>13.3</b> Conceptual Thinking</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="week-7-8-learning-goals.html"><a href="week-7-8-learning-goals.html"><i class="fa fa-check"></i><b>14</b> Week 7-8 Learning Goals</a>
 <ul>
@@ -582,7 +582,7 @@ This measure has the following nice properties:</p>
 <div id="orthogonal-diagonalization" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Orthogonal Diagonalization</h2>
 <p>(Work on in class on Wednesday June 30)</p>
-<p>Recall that a square <span class="math inline">\(n \times n\)</span> matrix is symmetric when <span class="math inline">\(A^{\top} = A\)</span>. We learned that the eigenvectors of a symmetric matrix form an orthogonal basis of <span class="math inline">\(\mathbb{R}^n\)</span>. In this problem, you will confirm that this holds for the following symmetric matrix
+<p>Recall that a square <span class="math inline">\(n \times n\)</span> matrix is symmetric when <span class="math inline">\(A^{\top} = A\)</span>. It is an amazing property that the eigenvectors of a symmetric matrix form an <em>orthogonal</em> basis of <span class="math inline">\(\mathbb{R}^n\)</span>. In this problem, you will confirm that this holds for the following symmetric matrix,
 <span class="math display">\[
 A = 
 \begin{bmatrix}
@@ -592,14 +592,19 @@ A =
  -4 &amp; 6 &amp; -4 &amp; -7
 \end{bmatrix}. 
 \]</span></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="problem-set-7.html#cb28-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="sc">-</span><span class="dv">4</span>),<span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">28</span>,<span class="dv">6</span>),<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">28</span>,<span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">6</span>,<span class="sc">-</span><span class="dv">4</span>,<span class="sc">-</span><span class="dv">7</span>))</span></code></pre></div>
 <ol style="list-style-type: lower-alpha">
 <li><p>Find the eigenvalues and eigenvectors of <span class="math inline">\(A\)</span>.</p></li>
-<li><p>Confirm that the eigenvectors returned by R are an orthonormal set (do this in a single calculation).</p></li>
-<li><p>Express the vector <span class="math inline">\(\mathsf{v} = \begin{bmatrix} 2 &amp; -4 &amp; -9 &amp; -2 \end{bmatrix}^{\top}\)</span> as a linear combination of the eigenvectors. Use the fact that the eigenvectors are orthonormal. (Don’t augment and row reduce.)</p></li>
-<li><p>Let <span class="math inline">\(P\)</span> be the matrix of these normalized, orthogonal eigenvectors.
-Diagonalize <span class="math inline">\(A\)</span> using <span class="math inline">\(P\)</span>. Just write out <span class="math inline">\(A = P D P^{-1}\)</span>. Congratulations: you have <strong>orthogonally diagonalized</strong> the symmetric matrix <span class="math inline">\(A\)</span>!</p></li>
+<li><p>Let <span class="math inline">\(P\)</span> be the matrix of the eigenvectors output by R: <code>P = eigen(A)$vectors</code>. Confirm that these eigenvectors are an orthonormal set using a single matrix calculation.</p></li>
+<li><p>Let <span class="math inline">\(\mathsf{v} = \begin{bmatrix} 2 &amp; -4 &amp; -9 &amp; -2 \end{bmatrix}^{\top}\)</span>. Find the coordinates of <span class="math inline">\(\mathsf{v}\)</span> in the eigenbasis in 3 different ways:</p>
+<ol style="list-style-type: lower-roman">
+<li>Use the <em>transpose</em> of <span class="math inline">\(P\)</span>. Recall that, in R, the transpose of a matrix is <code>t(A)</code>.</li>
+<li>Augment and row reduce.</li>
+<li>Use the dot product formula. Note that the command <code>v1 = P[,1]</code> will extract the first eigenvector from the matrix <code>P</code>.</li>
+</ol></li>
+<li><p>Diagonalize <span class="math inline">\(A\)</span> using <span class="math inline">\(P\)</span>. To demonstrate this compute both <span class="math inline">\(A= P D P^{-1}\)</span> and <span class="math inline">\(D =P^{-1} A P\)</span>. Congratulations: you have <strong>orthogonally diagonalized</strong> the symmetric matrix <span class="math inline">\(A\)</span>!</p></li>
 </ol>
-<p><strong>Turn in:</strong> Your R code and the output for each part. For parts (c) and (d), you need to make it clear what your final answers are.</p>
+<p><strong>Turn in:</strong> Your R code and the output for each part.</p>
 </div>
 <div id="fibonacci-orthogonality" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Fibonacci Orthogonality</h2>
@@ -654,9 +659,9 @@ Here are the steps you should follow:</p>
 <h2><span class="header-section-number">7.6</span> Least-Squares Polynomials</h2>
 <p>(Work on in class on Tuesday July 6)</p>
 <p>Here is a quadratic least-squares polynomial fit to some data. Make a cubic, quartic, and quintic fit to this same data. Turn in a plot of each. Compute the length of the residual in each case. Which do you think is the best model of the data?</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="problem-set-7.html#cb28-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span>
-<span id="cb28-2"><a href="problem-set-7.html#cb28-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">7</span>)</span>
-<span id="cb28-3"><a href="problem-set-7.html#cb28-3" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">cbind</span>(x<span class="sc">^</span><span class="dv">0</span>,x,x<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="problem-set-7.html#cb29-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span>
+<span id="cb29-2"><a href="problem-set-7.html#cb29-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">7</span>)</span>
+<span id="cb29-3"><a href="problem-set-7.html#cb29-3" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">cbind</span>(x<span class="sc">^</span><span class="dv">0</span>,x,x<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
 <pre><code>##        x   
 ## [1,] 1 1  1
 ## [2,] 1 2  4
@@ -664,10 +669,10 @@ Here are the steps you should follow:</p>
 ## [4,] 1 4 16
 ## [5,] 1 5 25
 ## [6,] 1 6 36</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="problem-set-7.html#cb30-1" aria-hidden="true" tabindex="-1"></a>xhat <span class="ot">=</span> <span class="fu">solve</span>(<span class="fu">t</span>(A)<span class="sc">%*%</span>A,<span class="fu">t</span>(A)<span class="sc">%*%</span>y)</span>
-<span id="cb30-2"><a href="problem-set-7.html#cb30-2" aria-hidden="true" tabindex="-1"></a>yhat <span class="ot">=</span> A <span class="sc">%*%</span> xhat</span>
-<span id="cb30-3"><a href="problem-set-7.html#cb30-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> y <span class="sc">-</span> yhat</span>
-<span id="cb30-4"><a href="problem-set-7.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(r) <span class="sc">%*%</span> r</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="problem-set-7.html#cb31-1" aria-hidden="true" tabindex="-1"></a>xhat <span class="ot">=</span> <span class="fu">solve</span>(<span class="fu">t</span>(A)<span class="sc">%*%</span>A,<span class="fu">t</span>(A)<span class="sc">%*%</span>y)</span>
+<span id="cb31-2"><a href="problem-set-7.html#cb31-2" aria-hidden="true" tabindex="-1"></a>yhat <span class="ot">=</span> A <span class="sc">%*%</span> xhat</span>
+<span id="cb31-3"><a href="problem-set-7.html#cb31-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> y <span class="sc">-</span> yhat</span>
+<span id="cb31-4"><a href="problem-set-7.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(r) <span class="sc">%*%</span> r</span></code></pre></div>
 <pre><code>##          [,1]
 ## [1,] 11.26429</code></pre>
 <p><img src="math236_handbook_files/figure-html/ps8-quadplot-1.png" width="75%" style="display: block; margin: auto;" /></p>
@@ -768,7 +773,7 @@ To learn more, you should take STAT 155: Introduction to Statistical Modeling.</
 <h2><span class="header-section-number">7.8</span> Fourier Analysis</h2>
 <p>(Work on in class on Wednesday July 7)</p>
 <p>In Fourier analysis one uses trigonometric functions to model oscillatory behavior in data. These methods have important applications in the study of sound or video signals, financial data, medicine, and engineering (to mention just a few). For example, consider the following set of 200 data points.
-<img src="math236_handbook_files/figure-html/unnamed-chunk-26-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<img src="math236_handbook_files/figure-html/unnamed-chunk-37-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>A first Fourier approximation would fit a model of the form
 <span class="math display">\[
 f_1(t) = c_0 + c_1 \sin(t) + c_2 \cos(t).
@@ -791,7 +796,7 @@ Thus, we make the following matrix (we show here only the first 10 rows; there a
 ## [2,]  1.0207277
 ## [3,] -0.4486618</code></pre>
 <p>and plot the solution
-<img src="math236_handbook_files/figure-html/unnamed-chunk-29-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="math236_handbook_files/figure-html/unnamed-chunk-40-1.png" width="75%" style="display: block; margin: auto;" />
 Your task:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Update this to add the second Fourier coefficient terms by fitting the following function to the data. Plot your result.

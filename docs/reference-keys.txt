@@ -1,4 +1,4 @@
-tab:unnamed-chunk-2
+tab:unnamed-chunk-12
 eq:inconsistent
 eq:normal
 problem-set-1
@@ -81,7 +81,7 @@ week-4-learning-goals
 vector-spaces-and-the-determinant
 vocabulary-3
 conceptual-thinking-3
-week-6-learning-goals
+week-5-6-learning-goals
 eigensystems
 vocabulary-4
 conceptual-thinking-4

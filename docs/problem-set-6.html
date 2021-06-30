@@ -237,11 +237,11 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="12.2" data-path="week-4-learning-goals.html"><a href="week-4-learning-goals.html#vocabulary-3"><i class="fa fa-check"></i><b>12.2</b> Vocabulary</a></li>
 <li class="chapter" data-level="12.3" data-path="week-4-learning-goals.html"><a href="week-4-learning-goals.html#conceptual-thinking-3"><i class="fa fa-check"></i><b>12.3</b> Conceptual Thinking</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="week-6-learning-goals.html"><a href="week-6-learning-goals.html"><i class="fa fa-check"></i><b>13</b> Week 6 Learning Goals</a>
+<li class="chapter" data-level="13" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html"><i class="fa fa-check"></i><b>13</b> Week 5-6 Learning Goals</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="week-6-learning-goals.html"><a href="week-6-learning-goals.html#eigensystems"><i class="fa fa-check"></i><b>13.1</b> Eigensystems</a></li>
-<li class="chapter" data-level="13.2" data-path="week-6-learning-goals.html"><a href="week-6-learning-goals.html#vocabulary-4"><i class="fa fa-check"></i><b>13.2</b> Vocabulary</a></li>
-<li class="chapter" data-level="13.3" data-path="week-6-learning-goals.html"><a href="week-6-learning-goals.html#conceptual-thinking-4"><i class="fa fa-check"></i><b>13.3</b> Conceptual Thinking</a></li>
+<li class="chapter" data-level="13.1" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html#eigensystems"><i class="fa fa-check"></i><b>13.1</b> Eigensystems</a></li>
+<li class="chapter" data-level="13.2" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html#vocabulary-4"><i class="fa fa-check"></i><b>13.2</b> Vocabulary</a></li>
+<li class="chapter" data-level="13.3" data-path="week-5-6-learning-goals.html"><a href="week-5-6-learning-goals.html#conceptual-thinking-4"><i class="fa fa-check"></i><b>13.3</b> Conceptual Thinking</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="week-7-8-learning-goals.html"><a href="week-7-8-learning-goals.html"><i class="fa fa-check"></i><b>14</b> Week 7-8 Learning Goals</a>
 <ul>
@@ -682,7 +682,7 @@ a_2(t)
 <span id="cb26-12"><a href="problem-set-6.html#cb26-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lines</span>(t,X[i,],<span class="at">col=</span>i)</span>
 <span id="cb26-13"><a href="problem-set-6.html#cb26-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">points</span>(t,X[i,],<span class="at">col=</span>i,<span class="at">pch=</span><span class="dv">20</span>,<span class="at">cex=</span>.<span class="dv">8</span>)}</span>
 <span id="cb26-14"><a href="problem-set-6.html#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">22</span>, <span class="dv">7600</span>, <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;Fingerlings (0-1)&quot;</span>, <span class="st">&quot;Yearlings  (1-2)&quot;</span>, <span class="st">&quot;Young Adults (2-3)&quot;</span>,<span class="st">&quot;Adults (3-4)&quot;</span>,<span class="st">&quot;Adults (4-5)&quot;</span>), <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">lty=</span><span class="dv">1</span>)</span></code></pre></div>
-<p><img src="math236_handbook_files/figure-html/unnamed-chunk-18-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-28-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Give the meaning of the values 37, 64, 82, 0.06, 0.28, 0.16, 0.08 that appear in this matrix.</p></li>
 <li><p>Compute the eigenvectors and eigenvalues of <span class="math inline">\(L\)</span> and relate what you find to population dynamics. In particular, use the eigen-information to</p></li>
@@ -710,9 +710,9 @@ a_2(t)
 \begin{bmatrix} 0.9 G_t - 0.4 H_t \\ 0.1 G_t + 0.9 H_t \end{bmatrix}
 \]</span></p>
 <p>Here is what happens if we start at <span class="math inline">\((1,0)\)</span> and iterate. That is we start with 1 unit excess glucose. Observe that the system spirals back to the steady state of <span class="math inline">\((0,0)\)</span>.
-<img src="math236_handbook_files/figure-html/unnamed-chunk-19-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<img src="math236_handbook_files/figure-html/unnamed-chunk-29-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>We can plot the indivdual glucose and insulin coordinates over time. These are the x and y coordinates of the points in the above plot. You see the insulin responding to the excess glucose, and then the glucose being absorbed by the presence of insulin, and so on …</p>
-<p><img src="math236_handbook_files/figure-html/unnamed-chunk-20-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<p><img src="math236_handbook_files/figure-html/unnamed-chunk-30-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>The key point here is that the spiraling in the (x,y) plane or oscillating in the (x,t) plane corresponds to the presence of <em>complex eigenvalues</em>. Your job is to perform an eigen-analysis of this problem:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Use R to find the eigenvalues and eigenvectors.</p></li>
