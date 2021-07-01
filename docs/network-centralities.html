@@ -524,19 +524,32 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <p>Matrices are used to represent graphs and networks in a very direct way: we place a 1 in position <span class="math inline">\((i,j)\)</span> of the <strong>adjacency matrix</strong> <span class="math inline">\(A\)</span> of the graph <span class="math inline">\(G\)</span>, if there is an edge from vertex <span class="math inline">\(i\)</span> to vertex <span class="math inline">\(j\)</span> in <span class="math inline">\(G\)</span>. Here is the adjacency matrix we will use today.</p>
 <div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="network-centralities.html#cb308-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">rbind</span>( <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>))</span>
 <span id="cb308-2"><a href="network-centralities.html#cb308-2" aria-hidden="true" tabindex="-1"></a>A</span></code></pre></div>
-<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
-##  [1,]    0    1    0    1    0    0    0    0    1     0     0     0
-##  [2,]    1    0    1    1    1    0    1    0    0     0     0     0
-##  [3,]    0    1    0    0    1    0    0    0    0     0     0     0
-##  [4,]    1    1    0    0    0    1    0    1    0     0     0     0
-##  [5,]    0    1    1    0    0    0    1    1    0     0     0     1
-##  [6,]    0    0    0    1    0    0    1    0    0     0     0     0
-##  [7,]    0    1    0    0    1    1    0    1    0     0     0     0
-##  [8,]    0    0    0    1    1    0    1    0    0     1     1     0
-##  [9,]    1    0    0    0    0    0    0    0    0     0     0     0
-## [10,]    0    0    0    0    0    0    0    1    0     0     0     0
-## [11,]    0    0    0    0    0    0    0    1    0     0     0     0
-## [12,]    0    0    0    0    1    0    0    0    0     0     0     0</code></pre>
+<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+##  [1,]    0    1    0    1    0    0    0    0    1
+##  [2,]    1    0    1    1    1    0    1    0    0
+##  [3,]    0    1    0    0    1    0    0    0    0
+##  [4,]    1    1    0    0    0    1    0    1    0
+##  [5,]    0    1    1    0    0    0    1    1    0
+##  [6,]    0    0    0    1    0    0    1    0    0
+##  [7,]    0    1    0    0    1    1    0    1    0
+##  [8,]    0    0    0    1    1    0    1    0    0
+##  [9,]    1    0    0    0    0    0    0    0    0
+## [10,]    0    0    0    0    0    0    0    1    0
+## [11,]    0    0    0    0    0    0    0    1    0
+## [12,]    0    0    0    0    1    0    0    0    0
+##       [,10] [,11] [,12]
+##  [1,]     0     0     0
+##  [2,]     0     0     0
+##  [3,]     0     0     0
+##  [4,]     0     0     0
+##  [5,]     0     0     1
+##  [6,]     0     0     0
+##  [7,]     0     0     0
+##  [8,]     1     1     0
+##  [9,]     0     0     0
+## [10,]     0     0     0
+## [11,]     0     0     0
+## [12,]     0     0     0</code></pre>
 <p>We make a graph from the adjacency matrix as follows:</p>
 <div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="network-centralities.html#cb310-1" aria-hidden="true" tabindex="-1"></a>g<span class="ot">=</span><span class="fu">graph_from_adjacency_matrix</span>(A,<span class="at">mode=</span><span class="st">&#39;undirected&#39;</span>)</span>
 <span id="cb310-2"><a href="network-centralities.html#cb310-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g, <span class="at">vertex.color=</span><span class="st">&#39;tan1&#39;</span>, <span class="at">vertex.frame.color=</span><span class="st">&quot;dodgerblue&quot;</span>)</span></code></pre></div>
@@ -612,19 +625,32 @@ B = A + I.
 \]</span>
 The <span class="math inline">\(n \times n\)</span> identity matrix in <code>R</code> is obtained by using <code>diag(n)</code>. Adding the identity gives a connection from a vertex to itself. This <strong>loop edge</strong> corresponds to staying at the current city during a layover.</p>
 <div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="network-centralities.html#cb317-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">B =</span> A <span class="sc">+</span> <span class="fu">diag</span>(<span class="fu">nrow</span>(A)))</span></code></pre></div>
-<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10] [,11] [,12]
-##  [1,]    1    1    0    1    0    0    0    0    1     0     0     0
-##  [2,]    1    1    1    1    1    0    1    0    0     0     0     0
-##  [3,]    0    1    1    0    1    0    0    0    0     0     0     0
-##  [4,]    1    1    0    1    0    1    0    1    0     0     0     0
-##  [5,]    0    1    1    0    1    0    1    1    0     0     0     1
-##  [6,]    0    0    0    1    0    1    1    0    0     0     0     0
-##  [7,]    0    1    0    0    1    1    1    1    0     0     0     0
-##  [8,]    0    0    0    1    1    0    1    1    0     1     1     0
-##  [9,]    1    0    0    0    0    0    0    0    1     0     0     0
-## [10,]    0    0    0    0    0    0    0    1    0     1     0     0
-## [11,]    0    0    0    0    0    0    0    1    0     0     1     0
-## [12,]    0    0    0    0    1    0    0    0    0     0     0     1</code></pre>
+<pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9]
+##  [1,]    1    1    0    1    0    0    0    0    1
+##  [2,]    1    1    1    1    1    0    1    0    0
+##  [3,]    0    1    1    0    1    0    0    0    0
+##  [4,]    1    1    0    1    0    1    0    1    0
+##  [5,]    0    1    1    0    1    0    1    1    0
+##  [6,]    0    0    0    1    0    1    1    0    0
+##  [7,]    0    1    0    0    1    1    1    1    0
+##  [8,]    0    0    0    1    1    0    1    1    0
+##  [9,]    1    0    0    0    0    0    0    0    1
+## [10,]    0    0    0    0    0    0    0    1    0
+## [11,]    0    0    0    0    0    0    0    1    0
+## [12,]    0    0    0    0    1    0    0    0    0
+##       [,10] [,11] [,12]
+##  [1,]     0     0     0
+##  [2,]     0     0     0
+##  [3,]     0     0     0
+##  [4,]     0     0     0
+##  [5,]     0     0     1
+##  [6,]     0     0     0
+##  [7,]     0     0     0
+##  [8,]     1     1     0
+##  [9,]     0     0     0
+## [10,]     1     0     0
+## [11,]     0     1     0
+## [12,]     0     0     1</code></pre>
 <p>Here is what the corresponding network (with layovers) looks like. You can see why we refer to these additional edges as “loops.” However, we usually do not draw the network with these added loops to keep the figure less cluttered.</p>
 <div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="network-centralities.html#cb319-1" aria-hidden="true" tabindex="-1"></a>g2<span class="ot">=</span><span class="fu">graph_from_adjacency_matrix</span>(B,<span class="at">mode=</span><span class="st">&#39;undirected&#39;</span>)</span>
 <span id="cb319-2"><a href="network-centralities.html#cb319-2" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(g2)<span class="sc">$</span>label <span class="ot">=</span> airports</span>
@@ -651,19 +677,32 @@ Here we calculate <span class="math inline">\(\mathsf{v}_1, \ldots, \mathsf{v}_{
 <span id="cb320-7"><a href="network-centralities.html#cb320-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(X) <span class="ot">=</span> airports</span>
 <span id="cb320-8"><a href="network-centralities.html#cb320-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(X) <span class="ot">=</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
 <span id="cb320-9"><a href="network-centralities.html#cb320-9" aria-hidden="true" tabindex="-1"></a>X</span></code></pre></div>
-<pre><code>##     0 1  2   3   4    5     6     7      8       9      10
-## ATL 1 4 17  76 347 1603  7442 34638 161411  752642 3510616
-## LAX 1 6 29 139 650 3044 14211 66352 309652 1445058 6743119
-## ORD 1 3 15  72 343 1614  7567 35389 165336  771972 3603377
-## MSP 1 5 24 109 507 2349 10936 50930 237450 1107376 5165837
-## DEN 1 6 28 132 621 2909 13611 63595 296984 1386347 6470458
-## JFK 1 3 13  63 294 1377  6418 29939 139617  651292 3038392
-## SFO 1 5 26 122 576 2692 12585 58748 274225 1279724 5971890
-## SEA 1 6 26 120 551 2563 11923 55591 259246 1209469 5642972
-## PHL 1 2  6  23  99  446  2049  9491  44129  205540  958182
-## PDX 1 2  8  34 154  705  3268 15191  70782  330028 1539497
-## MDW 1 2  8  34 154  705  3268 15191  70782  330028 1539497
-## LGA 1 2  8  36 168  789  3698 17309  80904  377888 1764235</code></pre>
+<pre><code>##     0 1  2   3   4    5     6     7      8       9
+## ATL 1 4 17  76 347 1603  7442 34638 161411  752642
+## LAX 1 6 29 139 650 3044 14211 66352 309652 1445058
+## ORD 1 3 15  72 343 1614  7567 35389 165336  771972
+## MSP 1 5 24 109 507 2349 10936 50930 237450 1107376
+## DEN 1 6 28 132 621 2909 13611 63595 296984 1386347
+## JFK 1 3 13  63 294 1377  6418 29939 139617  651292
+## SFO 1 5 26 122 576 2692 12585 58748 274225 1279724
+## SEA 1 6 26 120 551 2563 11923 55591 259246 1209469
+## PHL 1 2  6  23  99  446  2049  9491  44129  205540
+## PDX 1 2  8  34 154  705  3268 15191  70782  330028
+## MDW 1 2  8  34 154  705  3268 15191  70782  330028
+## LGA 1 2  8  36 168  789  3698 17309  80904  377888
+##          10
+## ATL 3510616
+## LAX 6743119
+## ORD 3603377
+## MSP 5165837
+## DEN 6470458
+## JFK 3038392
+## SFO 5971890
+## SEA 5642972
+## PHL  958182
+## PDX 1539497
+## MDW 1539497
+## LGA 1764235</code></pre>
 <p><strong>Discuss with your group:</strong> Each of the entries of the vector <span class="math inline">\(\mathsf{v}_{t}\)</span> in the columns of the table above corresponds to “a trip of length <span class="math inline">\(t\)</span>.” What kinds of trips does the <span class="math inline">\(i\)</span>th entry of <span class="math inline">\(\mathsf{v}_{t}\)</span> count? Here is how you can figure this out:</p>
 <ol style="list-style-type: decimal">
 <li>Compare the table of vectors with the picture of the network with layovers.</li>
@@ -682,19 +721,32 @@ Here we calculate <span class="math inline">\(\mathsf{v}_1, \ldots, \mathsf{v}_{
 <span id="cb322-8"><a href="network-centralities.html#cb322-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(X) <span class="ot">=</span> airports</span>
 <span id="cb322-9"><a href="network-centralities.html#cb322-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(X) <span class="ot">=</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span></span>
 <span id="cb322-10"><a href="network-centralities.html#cb322-10" aria-hidden="true" tabindex="-1"></a>X</span></code></pre></div>
-<pre><code>##     0          1          2          3          4          5          6          7          8
-## ATL 1 0.08695652 0.08173077 0.07916667 0.07773297 0.07708213 0.07674064 0.07657108 0.07647933
-## LAX 1 0.13043478 0.13942308 0.14479167 0.14560932 0.14637430 0.14654141 0.14667834 0.14671848
-## ORD 1 0.06521739 0.07211538 0.07500000 0.07683692 0.07761108 0.07802962 0.07823125 0.07833906
-## MSP 1 0.10869565 0.11538462 0.11354167 0.11357527 0.11295441 0.11277017 0.11258632 0.11250792
-## DEN 1 0.13043478 0.13461538 0.13750000 0.13911290 0.13988267 0.14035431 0.14058369 0.14071617
-## JFK 1 0.06521739 0.06250000 0.06562500 0.06586022 0.06621466 0.06618132 0.06618343 0.06615295
-## SFO 1 0.10869565 0.12500000 0.12708333 0.12903226 0.12944797 0.12977438 0.12986887 0.12993256
-## SEA 1 0.13043478 0.12500000 0.12500000 0.12343190 0.12324485 0.12294795 0.12288997 0.12283525
-## PHL 1 0.04347826 0.02884615 0.02395833 0.02217742 0.02144643 0.02112894 0.02098089 0.02090908
-## PDX 1 0.04347826 0.03846154 0.03541667 0.03449821 0.03390075 0.03369906 0.03358136 0.03353774
-## MDW 1 0.04347826 0.03846154 0.03541667 0.03449821 0.03390075 0.03369906 0.03358136 0.03353774
-## LGA 1 0.04347826 0.03846154 0.03750000 0.03763441 0.03793999 0.03813315 0.03826343 0.03833372
+<pre><code>##     0          1          2          3          4
+## ATL 1 0.08695652 0.08173077 0.07916667 0.07773297
+## LAX 1 0.13043478 0.13942308 0.14479167 0.14560932
+## ORD 1 0.06521739 0.07211538 0.07500000 0.07683692
+## MSP 1 0.10869565 0.11538462 0.11354167 0.11357527
+## DEN 1 0.13043478 0.13461538 0.13750000 0.13911290
+## JFK 1 0.06521739 0.06250000 0.06562500 0.06586022
+## SFO 1 0.10869565 0.12500000 0.12708333 0.12903226
+## SEA 1 0.13043478 0.12500000 0.12500000 0.12343190
+## PHL 1 0.04347826 0.02884615 0.02395833 0.02217742
+## PDX 1 0.04347826 0.03846154 0.03541667 0.03449821
+## MDW 1 0.04347826 0.03846154 0.03541667 0.03449821
+## LGA 1 0.04347826 0.03846154 0.03750000 0.03763441
+##              5          6          7          8
+## ATL 0.07708213 0.07674064 0.07657108 0.07647933
+## LAX 0.14637430 0.14654141 0.14667834 0.14671848
+## ORD 0.07761108 0.07802962 0.07823125 0.07833906
+## MSP 0.11295441 0.11277017 0.11258632 0.11250792
+## DEN 0.13988267 0.14035431 0.14058369 0.14071617
+## JFK 0.06621466 0.06618132 0.06618343 0.06615295
+## SFO 0.12944797 0.12977438 0.12986887 0.12993256
+## SEA 0.12324485 0.12294795 0.12288997 0.12283525
+## PHL 0.02144643 0.02112894 0.02098089 0.02090908
+## PDX 0.03390075 0.03369906 0.03358136 0.03353774
+## MDW 0.03390075 0.03369906 0.03358136 0.03353774
+## LGA 0.03793999 0.03813315 0.03826343 0.03833372
 ##              9         10
 ## ATL 0.07643081 0.07640399
 ## LAX 0.14674567 0.14675521
@@ -716,36 +768,63 @@ we know that dynamical systems converge to the <strong>dominant eigenvector</str
 <div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="network-centralities.html#cb324-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eigen</span>(B)</span></code></pre></div>
 <pre><code>## eigen() decomposition
 ## $values
-##  [1]  4.66618847  2.64207538  2.41909839  1.80037113  1.27260439  1.00000000  1.00000000
-##  [8]  0.49835918  0.02718633 -0.67732874 -0.92557189 -1.72298263
+##  [1]  4.66618847  2.64207538  2.41909839  1.80037113
+##  [5]  1.27260439  1.00000000  1.00000000  0.49835918
+##  [9]  0.02718633 -0.67732874 -0.92557189 -1.72298263
 ## 
 ## $vectors
-##              [,1]        [,2]        [,3]         [,4]        [,5]          [,6]
-##  [1,] -0.23401334  0.57249329 -0.03677166  0.289569576 -0.11347970  0.000000e+00
-##  [2,] -0.44971357  0.23508235  0.28327135 -0.009053428  0.29280642  2.626816e-16
-##  [3,] -0.24039858 -0.04730698  0.44304618  0.102332378  0.42192015 -1.576610e-16
-##  [4,] -0.34439328  0.35635470 -0.30954196 -0.120977575  0.09253829  4.851644e-01
-##  [5,] -0.43163295 -0.31276398  0.34545477  0.090957309 -0.17778914  1.198948e-16
-##  [6,] -0.20257820  0.10572025 -0.24645181 -0.612347635 -0.18646435 -5.005332e-18
-##  [7,] -0.39829657 -0.18275409 -0.04019741 -0.369127791 -0.14336929 -4.851644e-01
-##  [8,] -0.37630557 -0.32813461 -0.43931838  0.235004528  0.03236396 -1.021498e-16
-##  [9,] -0.06383014  0.34864008 -0.02591199  0.361794131 -0.41627977 -4.851644e-01
-## [10,] -0.10264218 -0.19982920 -0.30957570  0.293619448  0.11872135 -1.709709e-01
-## [11,] -0.10264218 -0.19982920 -0.30957570  0.293619448  0.11872135  1.709709e-01
-## [12,] -0.11773343 -0.19046871  0.24343257  0.113643916 -0.65218735  4.851644e-01
-##                [,7]        [,8]        [,9]         [,10]       [,11]        [,12]
-##  [1,]  0.000000e+00  0.17344569  0.19570619  6.653425e-01  0.08742351  0.026476499
-##  [2,]  1.203957e-16  0.27532162  0.33415547 -4.571765e-01 -0.14917762  0.397124122
-##  [3,] -4.434216e-17 -0.59911594 -0.08232149  1.379670e-01  0.40635541 -0.072909426
-##  [4,]  1.208947e-01 -0.01657232 -0.32336571 -2.621537e-01  0.02623868 -0.459495824
-##  [5,]  1.395385e-16  0.02521939 -0.25407199  2.257605e-01 -0.63328894 -0.198593023
-##  [6,] -9.291441e-17 -0.52296040  0.18953651  1.563407e-01 -0.22162883  0.307139725
-##  [7,] -1.208947e-01  0.27891061  0.13898200 -8.104161e-05  0.40052356 -0.376840313
-##  [8,] -3.393381e-17  0.08250644 -0.40482358  7.521122e-02  0.23285847  0.520458800
-##  [9,] -1.208947e-01 -0.34575674 -0.20117541 -3.966679e-01 -0.04540132 -0.009723345
-## [10,]  6.861261e-01 -0.16447314  0.41613681 -4.483988e-02 -0.12092951 -0.191135557
-## [11,] -6.861261e-01 -0.16447314  0.41613681 -4.483988e-02 -0.12092951 -0.191135557
-## [12,]  1.208947e-01 -0.05027381  0.26117231 -1.345953e-01  0.32888356  0.072932167</code></pre>
+##              [,1]        [,2]        [,3]         [,4]
+##  [1,] -0.23401334  0.57249329 -0.03677166  0.289569576
+##  [2,] -0.44971357  0.23508235  0.28327135 -0.009053428
+##  [3,] -0.24039858 -0.04730698  0.44304618  0.102332378
+##  [4,] -0.34439328  0.35635470 -0.30954196 -0.120977575
+##  [5,] -0.43163295 -0.31276398  0.34545477  0.090957309
+##  [6,] -0.20257820  0.10572025 -0.24645181 -0.612347635
+##  [7,] -0.39829657 -0.18275409 -0.04019741 -0.369127791
+##  [8,] -0.37630557 -0.32813461 -0.43931838  0.235004528
+##  [9,] -0.06383014  0.34864008 -0.02591199  0.361794131
+## [10,] -0.10264218 -0.19982920 -0.30957570  0.293619448
+## [11,] -0.10264218 -0.19982920 -0.30957570  0.293619448
+## [12,] -0.11773343 -0.19046871  0.24343257  0.113643916
+##              [,5]          [,6]          [,7]
+##  [1,] -0.11347970  0.000000e+00  0.000000e+00
+##  [2,]  0.29280642  2.626816e-16  1.203957e-16
+##  [3,]  0.42192015 -1.576610e-16 -4.434216e-17
+##  [4,]  0.09253829  4.851644e-01  1.208947e-01
+##  [5,] -0.17778914  1.198948e-16  1.395385e-16
+##  [6,] -0.18646435 -5.005332e-18 -9.291441e-17
+##  [7,] -0.14336929 -4.851644e-01 -1.208947e-01
+##  [8,]  0.03236396 -1.021498e-16 -3.393381e-17
+##  [9,] -0.41627977 -4.851644e-01 -1.208947e-01
+## [10,]  0.11872135 -1.709709e-01  6.861261e-01
+## [11,]  0.11872135  1.709709e-01 -6.861261e-01
+## [12,] -0.65218735  4.851644e-01  1.208947e-01
+##              [,8]        [,9]         [,10]       [,11]
+##  [1,]  0.17344569  0.19570619  6.653425e-01  0.08742351
+##  [2,]  0.27532162  0.33415547 -4.571765e-01 -0.14917762
+##  [3,] -0.59911594 -0.08232149  1.379670e-01  0.40635541
+##  [4,] -0.01657232 -0.32336571 -2.621537e-01  0.02623868
+##  [5,]  0.02521939 -0.25407199  2.257605e-01 -0.63328894
+##  [6,] -0.52296040  0.18953651  1.563407e-01 -0.22162883
+##  [7,]  0.27891061  0.13898200 -8.104161e-05  0.40052356
+##  [8,]  0.08250644 -0.40482358  7.521122e-02  0.23285847
+##  [9,] -0.34575674 -0.20117541 -3.966679e-01 -0.04540132
+## [10,] -0.16447314  0.41613681 -4.483988e-02 -0.12092951
+## [11,] -0.16447314  0.41613681 -4.483988e-02 -0.12092951
+## [12,] -0.05027381  0.26117231 -1.345953e-01  0.32888356
+##              [,12]
+##  [1,]  0.026476499
+##  [2,]  0.397124122
+##  [3,] -0.072909426
+##  [4,] -0.459495824
+##  [5,] -0.198593023
+##  [6,]  0.307139725
+##  [7,] -0.376840313
+##  [8,]  0.520458800
+##  [9,] -0.009723345
+## [10,] -0.191135557
+## [11,] -0.191135557
+## [12,]  0.072932167</code></pre>
 <p>For an adjacency matrix <span class="math inline">\(A\)</span>, the dominant eigenvector of <span class="math inline">\(B + I\)</span>, scaled to sum to 1, is called <strong>Gould’s Index</strong> of network centrality. Here we extract it, scale it to sum to 1, and we show that the dynamical system is converging to it.</p>
 <div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="network-centralities.html#cb326-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the dominant eigenvector</span></span>
 <span id="cb326-2"><a href="network-centralities.html#cb326-2" aria-hidden="true" tabindex="-1"></a>vecs <span class="ot">=</span> <span class="fu">eigen</span>(B)<span class="sc">$</span>vectors</span>
@@ -766,19 +845,32 @@ we know that dynamical systems converge to the <strong>dominant eigenvector</str
 <span id="cb326-17"><a href="network-centralities.html#cb326-17" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(Y) <span class="ot">=</span> airports</span>
 <span id="cb326-18"><a href="network-centralities.html#cb326-18" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(Y) <span class="ot">=</span> <span class="fu">cbind</span>(<span class="st">&quot;n=0&quot;</span>,<span class="st">&quot;n=1&quot;</span>,<span class="st">&quot;n=2&quot;</span>,<span class="st">&quot;n=10&quot;</span>,<span class="st">&quot;n=20&quot;</span>,<span class="st">&quot;n=30&quot;</span>,<span class="st">&quot;Gould&quot;</span>)</span>
 <span id="cb326-19"><a href="network-centralities.html#cb326-19" aria-hidden="true" tabindex="-1"></a>Y</span></code></pre></div>
-<pre><code>##            n=0        n=1        n=2       n=10       n=20       n=30      Gould
-## ATL 0.08333333 0.08695652 0.08173077 0.07640399 0.07637073 0.07637062 0.07637062
-## LAX 0.08333333 0.13043478 0.13942308 0.14675521 0.14676475 0.14676474 0.14676474
-## ORD 0.08333333 0.06521739 0.07211538 0.07842281 0.07845441 0.07845446 0.07845446
-## MSP 0.08333333 0.10869565 0.11538462 0.11242772 0.11239338 0.11239329 0.11239329
-## DEN 0.08333333 0.13043478 0.13461538 0.14082110 0.14086400 0.14086410 0.14086410
-## JFK 0.08333333 0.06521739 0.06250000 0.06612665 0.06611175 0.06611172 0.06611172
-## SFO 0.08333333 0.10869565 0.12500000 0.12997042 0.12998468 0.12998472 0.12998472
-## SEA 0.08333333 0.13043478 0.12500000 0.12281194 0.12280789 0.12280792 0.12280792
-## PHL 0.08333333 0.04347826 0.02884615 0.02085358 0.02083114 0.02083107 0.02083107
-## PDX 0.08333333 0.04347826 0.03846154 0.03350515 0.03349742 0.03349744 0.03349744
-## MDW 0.08333333 0.04347826 0.03846154 0.03350515 0.03349742 0.03349744 0.03349744
-## LGA 0.08333333 0.04347826 0.03846154 0.03839628 0.03842243 0.03842249 0.03842249</code></pre>
+<pre><code>##            n=0        n=1        n=2       n=10
+## ATL 0.08333333 0.08695652 0.08173077 0.07640399
+## LAX 0.08333333 0.13043478 0.13942308 0.14675521
+## ORD 0.08333333 0.06521739 0.07211538 0.07842281
+## MSP 0.08333333 0.10869565 0.11538462 0.11242772
+## DEN 0.08333333 0.13043478 0.13461538 0.14082110
+## JFK 0.08333333 0.06521739 0.06250000 0.06612665
+## SFO 0.08333333 0.10869565 0.12500000 0.12997042
+## SEA 0.08333333 0.13043478 0.12500000 0.12281194
+## PHL 0.08333333 0.04347826 0.02884615 0.02085358
+## PDX 0.08333333 0.04347826 0.03846154 0.03350515
+## MDW 0.08333333 0.04347826 0.03846154 0.03350515
+## LGA 0.08333333 0.04347826 0.03846154 0.03839628
+##           n=20       n=30      Gould
+## ATL 0.07637073 0.07637062 0.07637062
+## LAX 0.14676475 0.14676474 0.14676474
+## ORD 0.07845441 0.07845446 0.07845446
+## MSP 0.11239338 0.11239329 0.11239329
+## DEN 0.14086400 0.14086410 0.14086410
+## JFK 0.06611175 0.06611172 0.06611172
+## SFO 0.12998468 0.12998472 0.12998472
+## SEA 0.12280789 0.12280792 0.12280792
+## PHL 0.02083114 0.02083107 0.02083107
+## PDX 0.03349742 0.03349744 0.03349744
+## MDW 0.03349742 0.03349744 0.03349744
+## LGA 0.03842243 0.03842249 0.03842249</code></pre>
 </div>
 <div id="step-5" class="section level3" number="24.3.4">
 <h3><span class="header-section-number">24.3.4</span> Step 5</h3>

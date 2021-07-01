@@ -609,7 +609,7 @@ A =
 <div id="fibonacci-orthogonality" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Fibonacci Orthogonality</h2>
 <p>(Work on in class on Thursday July 1)</p>
-<p>In problem 1, you saw that the vector space of Fibonacci vectors <span class="math inline">\(\mathsf{F} \subseteq \mathbb{R}^5\)</span> is a 2-dimensional subspace of <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
+<p>In problem 4.2, you saw that the vector space of Fibonacci vectors <span class="math inline">\(\mathsf{F} \subseteq \mathbb{R}^5\)</span> is a 2-dimensional subspace of <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Below is an orthogonal basis of <span class="math inline">\(\mathsf{F}\)</span>. Check that the basis vectors <span class="math inline">\(\{\mathsf{f}_1, \mathsf{f}_2\}\)</span> are in <span class="math inline">\(\mathsf{F}\)</span> and are orthogonal.
 <span class="math display">\[
@@ -627,7 +627,7 @@ A =
 This formula requires that the basis be orthogonal.</p></li>
 <li><p>The <strong>residual vector</strong> is the vector <span class="math inline">\(\mathsf{r} = \mathsf{v} - \mathsf{p}\)</span>. Compute <span class="math inline">\(\mathsf{r}\)</span>.</p></li>
 <li><p>Show that <span class="math inline">\(\mathsf{r}\)</span> is orthogonal to <span class="math inline">\(\mathsf{f}_1\)</span> and <span class="math inline">\(\mathsf{f}_2\)</span>.</p></li>
-<li><p>Compute <span class="math inline">\(||\mathsf{r}||\)</span>. This is the distance from <span class="math inline">\(\mathsf{v}\)</span> to <span class="math inline">\(\mathsf{F}\)</span> (i.e., how far <span class="math inline">\(\mathsf{v}\)</span> is from being Fibonacci).</p></li>
+<li><p>Compute <span class="math inline">\(||\mathsf{r}||\)</span>. This is the distance from <span class="math inline">\(\mathsf{v}\)</span> to <span class="math inline">\(\mathsf{F}\)</span> (i.e., how far <span class="math inline">\(\mathsf{v}\)</span> is from being Fibonacci?).</p></li>
 </ol>
 </div>
 <div id="least-squares-solution-to-mathsfa-x-mathsfb" class="section level2" number="7.5">
@@ -742,7 +742,8 @@ Find the coefficients <span class="math inline">\(a_0,a_1,a_2,a_3\)</span> and t
 ## HP          -0.073961   0.043862  -1.686  0.10091    
 ## Cyl          0.791590   0.730326   1.084  0.28604    
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 2.791 on 34 degrees of freedom
 ## Multiple R-squared:  0.833,  Adjusted R-squared:  0.8183 
@@ -773,7 +774,7 @@ To learn more, you should take STAT 155: Introduction to Statistical Modeling.</
 <h2><span class="header-section-number">7.8</span> Fourier Analysis</h2>
 <p>(Work on in class on Wednesday July 7)</p>
 <p>In Fourier analysis one uses trigonometric functions to model oscillatory behavior in data. These methods have important applications in the study of sound or video signals, financial data, medicine, and engineering (to mention just a few). For example, consider the following set of 200 data points.
-<img src="math236_handbook_files/figure-html/unnamed-chunk-37-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<img src="math236_handbook_files/figure-html/unnamed-chunk-27-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>A first Fourier approximation would fit a model of the form
 <span class="math display">\[
 f_1(t) = c_0 + c_1 \sin(t) + c_2 \cos(t).
@@ -796,7 +797,7 @@ Thus, we make the following matrix (we show here only the first 10 rows; there a
 ## [2,]  1.0207277
 ## [3,] -0.4486618</code></pre>
 <p>and plot the solution
-<img src="math236_handbook_files/figure-html/unnamed-chunk-40-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="math236_handbook_files/figure-html/unnamed-chunk-30-1.png" width="75%" style="display: block; margin: auto;" />
 Your task:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Update this to add the second Fourier coefficient terms by fitting the following function to the data. Plot your result.
