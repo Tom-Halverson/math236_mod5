@@ -649,11 +649,11 @@ G_4  &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
 <h2><span class="header-section-number">3.8</span> Rental Car</h2>
 <p>Solve this problem using R and turn in a markdown file knitted to .html.</p>
 <p>A group of Macalester alumni open a rental car company specializing in renting electric cars. As a start, they have opened offices in St. Paul, Rochester, and Duluth. Through market research they find that of the cars rented in St. Paul, 85% will get returned in St. Paul, 9% will get returned in Rochester, and 6% will get returned in Duluth. Of the cars rented in Rochester, 30% will get returned in St. Paul, 60% will get returned in Rochester, and 10% in Duluth. Of the cars rented in Duluth, 35% will get returned in St. Paul, 5% in Rochester, and 60% in Duluth. This information is represented in the matrix below.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="problem-set-3.html#cb1-1" aria-hidden="true" tabindex="-1"></a>StP <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">85</span>,.<span class="dv">09</span>,.<span class="dv">06</span>)</span>
-<span id="cb1-2"><a href="problem-set-3.html#cb1-2" aria-hidden="true" tabindex="-1"></a>Roch <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">30</span>,.<span class="dv">60</span>,.<span class="dv">10</span>)</span>
-<span id="cb1-3"><a href="problem-set-3.html#cb1-3" aria-hidden="true" tabindex="-1"></a>Dul <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">35</span>,.<span class="dv">05</span>,.<span class="dv">60</span>) </span>
-<span id="cb1-4"><a href="problem-set-3.html#cb1-4" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">cbind</span>(StP,Roch,Dul)</span>
-<span id="cb1-5"><a href="problem-set-3.html#cb1-5" aria-hidden="true" tabindex="-1"></a>M</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="problem-set-3.html#cb2-1" aria-hidden="true" tabindex="-1"></a>StP <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">85</span>,.<span class="dv">09</span>,.<span class="dv">06</span>)</span>
+<span id="cb2-2"><a href="problem-set-3.html#cb2-2" aria-hidden="true" tabindex="-1"></a>Roch <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">30</span>,.<span class="dv">60</span>,.<span class="dv">10</span>)</span>
+<span id="cb2-3"><a href="problem-set-3.html#cb2-3" aria-hidden="true" tabindex="-1"></a>Dul <span class="ot">=</span> <span class="fu">c</span>(.<span class="dv">35</span>,.<span class="dv">05</span>,.<span class="dv">60</span>) </span>
+<span id="cb2-4"><a href="problem-set-3.html#cb2-4" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">cbind</span>(StP,Roch,Dul)</span>
+<span id="cb2-5"><a href="problem-set-3.html#cb2-5" aria-hidden="true" tabindex="-1"></a>M</span></code></pre></div>
 <pre><code>##       StP Roch  Dul
 ## [1,] 0.85  0.3 0.35
 ## [2,] 0.09  0.6 0.05

@@ -552,12 +552,12 @@ This measure has the following nice properties:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Write a function <code>cosine_similarity</code> that takes as input two vectors <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span> and returns the value of <span class="math inline">\(\cos(\theta)\)</span> for the angle <span class="math inline">\(\theta\)</span> between <span class="math inline">\(\mathsf{u}\)</span> and <span class="math inline">\(\mathsf{v}\)</span>. Below is a shell of the code that you need. Right now it always just returns 1.You need to fix that up. Demonstrate that your code works on some vectors in <span class="math inline">\(\mathbb{R}^5\)</span>. Use vectors that are orthogonal, closely aligned, and close to polar opposites.</li>
 </ol>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="problem-set-7.html#cb27-1" aria-hidden="true" tabindex="-1"></a>cosine_similarity <span class="ot">&lt;-</span> <span class="cf">function</span>(u, v) {</span>
-<span id="cb27-2"><a href="problem-set-7.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># your code goes here!</span></span>
-<span id="cb27-3"><a href="problem-set-7.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># find the cosine of the angle between u and v</span></span>
-<span id="cb27-4"><a href="problem-set-7.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  cosine <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb27-5"><a href="problem-set-7.html#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (cosine)</span>
-<span id="cb27-6"><a href="problem-set-7.html#cb27-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="problem-set-7.html#cb28-1" aria-hidden="true" tabindex="-1"></a>cosine_similarity <span class="ot">&lt;-</span> <span class="cf">function</span>(u, v) {</span>
+<span id="cb28-2"><a href="problem-set-7.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># your code goes here!</span></span>
+<span id="cb28-3"><a href="problem-set-7.html#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># find the cosine of the angle between u and v</span></span>
+<span id="cb28-4"><a href="problem-set-7.html#cb28-4" aria-hidden="true" tabindex="-1"></a>  cosine <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb28-5"><a href="problem-set-7.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (cosine)</span>
+<span id="cb28-6"><a href="problem-set-7.html#cb28-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <ol start="2" style="list-style-type: lower-alpha">
 <li><p>In the file <a href="https://drive.google.com/file/d/1aQsAZx8v1YzOy3VqDX4ahSDCOhdkPk2D/view?usp=sharing">US_Senate_s21.Rmd</a> you will find vectors of the voting record of the Senate in the 109th US Congress (2007-2008). You will see how to take the dot product of the voting record of two different senators. The dot product is always an integer. Explain what it counts. It is the number of something or possibly the difference of two things.</p></li>
 <li><p>Use your <code>cosine_similary</code> function to find the cosine similarity between every pair of the following senators:</p>
@@ -592,7 +592,7 @@ A =
  -4 &amp; 6 &amp; -4 &amp; -7
 \end{bmatrix}. 
 \]</span></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="problem-set-7.html#cb28-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="sc">-</span><span class="dv">4</span>),<span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">28</span>,<span class="dv">6</span>),<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">28</span>,<span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">6</span>,<span class="sc">-</span><span class="dv">4</span>,<span class="sc">-</span><span class="dv">7</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="problem-set-7.html#cb29-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="sc">-</span><span class="dv">4</span>),<span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">28</span>,<span class="dv">6</span>),<span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">28</span>,<span class="dv">3</span>,<span class="sc">-</span><span class="dv">4</span>),<span class="fu">c</span>(<span class="sc">-</span><span class="dv">4</span>,<span class="dv">6</span>,<span class="sc">-</span><span class="dv">4</span>,<span class="sc">-</span><span class="dv">7</span>))</span></code></pre></div>
 <ol style="list-style-type: lower-alpha">
 <li><p>Find the eigenvalues and eigenvectors of <span class="math inline">\(A\)</span>.</p></li>
 <li><p>Let <span class="math inline">\(P\)</span> be the matrix of the eigenvectors output by R: <code>P = eigen(A)$vectors</code>. Confirm that these eigenvectors are an orthonormal set using a single matrix calculation.</p></li>
@@ -609,7 +609,7 @@ A =
 <div id="fibonacci-orthogonality" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Fibonacci Orthogonality</h2>
 <p>(Work on in class on Thursday July 1)</p>
-<p>In problem 1, you saw that the vector space of Fibonacci vectors <span class="math inline">\(\mathsf{F} \subseteq \mathbb{R}^5\)</span> is a 2-dimensional subspace of <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
+<p>In problem 4.2, you saw that the vector space of Fibonacci vectors <span class="math inline">\(\mathsf{F} \subseteq \mathbb{R}^5\)</span> is a 2-dimensional subspace of <span class="math inline">\(\mathbb{R}^5\)</span>.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Below is an orthogonal basis of <span class="math inline">\(\mathsf{F}\)</span>. Check that the basis vectors <span class="math inline">\(\{\mathsf{f}_1, \mathsf{f}_2\}\)</span> are in <span class="math inline">\(\mathsf{F}\)</span> and are orthogonal.
 <span class="math display">\[
@@ -659,9 +659,9 @@ Here are the steps you should follow:</p>
 <h2><span class="header-section-number">7.6</span> Least-Squares Polynomials</h2>
 <p>(Work on in class on Tuesday July 6)</p>
 <p>Here is a quadratic least-squares polynomial fit to some data. Make a cubic, quartic, and quintic fit to this same data. Turn in a plot of each. Compute the length of the residual in each case. Which do you think is the best model of the data?</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="problem-set-7.html#cb29-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span>
-<span id="cb29-2"><a href="problem-set-7.html#cb29-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">7</span>)</span>
-<span id="cb29-3"><a href="problem-set-7.html#cb29-3" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">cbind</span>(x<span class="sc">^</span><span class="dv">0</span>,x,x<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="problem-set-7.html#cb30-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>)</span>
+<span id="cb30-2"><a href="problem-set-7.html#cb30-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">7</span>)</span>
+<span id="cb30-3"><a href="problem-set-7.html#cb30-3" aria-hidden="true" tabindex="-1"></a>(<span class="at">A =</span> <span class="fu">cbind</span>(x<span class="sc">^</span><span class="dv">0</span>,x,x<span class="sc">^</span><span class="dv">2</span>))</span></code></pre></div>
 <pre><code>##        x   
 ## [1,] 1 1  1
 ## [2,] 1 2  4
@@ -669,10 +669,10 @@ Here are the steps you should follow:</p>
 ## [4,] 1 4 16
 ## [5,] 1 5 25
 ## [6,] 1 6 36</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="problem-set-7.html#cb31-1" aria-hidden="true" tabindex="-1"></a>xhat <span class="ot">=</span> <span class="fu">solve</span>(<span class="fu">t</span>(A)<span class="sc">%*%</span>A,<span class="fu">t</span>(A)<span class="sc">%*%</span>y)</span>
-<span id="cb31-2"><a href="problem-set-7.html#cb31-2" aria-hidden="true" tabindex="-1"></a>yhat <span class="ot">=</span> A <span class="sc">%*%</span> xhat</span>
-<span id="cb31-3"><a href="problem-set-7.html#cb31-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> y <span class="sc">-</span> yhat</span>
-<span id="cb31-4"><a href="problem-set-7.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(r) <span class="sc">%*%</span> r</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="problem-set-7.html#cb32-1" aria-hidden="true" tabindex="-1"></a>xhat <span class="ot">=</span> <span class="fu">solve</span>(<span class="fu">t</span>(A)<span class="sc">%*%</span>A,<span class="fu">t</span>(A)<span class="sc">%*%</span>y)</span>
+<span id="cb32-2"><a href="problem-set-7.html#cb32-2" aria-hidden="true" tabindex="-1"></a>yhat <span class="ot">=</span> A <span class="sc">%*%</span> xhat</span>
+<span id="cb32-3"><a href="problem-set-7.html#cb32-3" aria-hidden="true" tabindex="-1"></a>r <span class="ot">=</span> y <span class="sc">-</span> yhat</span>
+<span id="cb32-4"><a href="problem-set-7.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(r) <span class="sc">%*%</span> r</span></code></pre></div>
 <pre><code>##          [,1]
 ## [1,] 11.26429</code></pre>
 <p><img src="math236_handbook_files/figure-html/ps8-quadplot-1.png" width="75%" style="display: block; margin: auto;" /></p>
@@ -773,7 +773,7 @@ To learn more, you should take STAT 155: Introduction to Statistical Modeling.</
 <h2><span class="header-section-number">7.8</span> Fourier Analysis</h2>
 <p>(Work on in class on Wednesday July 7)</p>
 <p>In Fourier analysis one uses trigonometric functions to model oscillatory behavior in data. These methods have important applications in the study of sound or video signals, financial data, medicine, and engineering (to mention just a few). For example, consider the following set of 200 data points.
-<img src="math236_handbook_files/figure-html/unnamed-chunk-37-1.png" width="75%" style="display: block; margin: auto;" /></p>
+<img src="math236_handbook_files/figure-html/unnamed-chunk-27-1.png" width="75%" style="display: block; margin: auto;" /></p>
 <p>A first Fourier approximation would fit a model of the form
 <span class="math display">\[
 f_1(t) = c_0 + c_1 \sin(t) + c_2 \cos(t).
@@ -796,7 +796,7 @@ Thus, we make the following matrix (we show here only the first 10 rows; there a
 ## [2,]  1.0207277
 ## [3,] -0.4486618</code></pre>
 <p>and plot the solution
-<img src="math236_handbook_files/figure-html/unnamed-chunk-40-1.png" width="75%" style="display: block; margin: auto;" />
+<img src="math236_handbook_files/figure-html/unnamed-chunk-30-1.png" width="75%" style="display: block; margin: auto;" />
 Your task:</p>
 <ol style="list-style-type: lower-alpha">
 <li>Update this to add the second Fourier coefficient terms by fitting the following function to the data. Plot your result.

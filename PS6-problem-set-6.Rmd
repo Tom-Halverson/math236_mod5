@@ -33,7 +33,7 @@ a. Write a loop in `R` that computes $A^{100}$. Do this as follows:
      i. Start with B = A
      ii. Loop 100 times: at each step in the loop, let B = A %*% B.
 
-Compare the answer that you get to your answer to part (b).
+Compare the answer that you get to your answer to part (d).
 
 
 
@@ -94,7 +94,7 @@ eigen(A)
 ```
 
 
-a. If $r_0 =  10$ roadrunners and $c_0 = 15$ coyotes are introduced to the area, then give \emph{closed formulas} for the population of coyotes $c_t$ and roadrunners $r_t$ after $t$ years.
+a. If $r_0 =  10$ roadrunners and $c_0 = 15$ coyotes are introduced to the area, then give **closed formulas** for the population of coyotes $c_t$ and roadrunners $r_t$ after $t$ years.
 
 a.  In the long-term, in this model, what is the ratio of roadrunners to coyotes?
 
@@ -199,7 +199,7 @@ c. You are seeking funding from the Michigan DNR to support a cleanup effort. As
 
 **This problem involves [Complex Eigenvalues]. There is a video for this for this coming Monday's class (see Moodle), and there will be time for you to discuss this in breakout rooms on Monday.**
 
-The hormone insulin helps regulate glucose metabolism in your blood. The presene of insulin helps your body absorb excess glucose. Here $G_t$ (glucose) and $H_t$ (insulin) are measued as excess values (in mg per 100 ml of blood) above the steady state. 
+The hormone insulin helps regulate glucose metabolism in your blood. The presene of insulin helps your body absorb excess glucose. Here $G_t$ (glucose) and $H_t$ (insulin) are measured as excess values (in mg per 100 ml of blood) above the steady state. 
 $$
 \begin{bmatrix} G_{t+1} \\ H_{t+1} \end{bmatrix}
 =
