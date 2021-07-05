@@ -186,16 +186,14 @@ r = y - yhat
 t(r) %*% r
 ```
 
-```{r ps8-quadplot, fig.width=4.5, fig.height=4.5, echo=FALSE}
+```{r ps8-quadplot, fig.width=4.5, fig.height=4.5, echo=TRUE}
 #plot the original set of points
 plot(x,y,pch=19,xlim=c(0,7),ylim=c(0,10), main='the best-fit quadratic function')
 # generate points for the fitted line and plot it
 tt = seq(0,7,len=100)  
 lines(tt,xhat[1]+xhat[2]*tt+xhat[3]*tt^2,col='blue')
 # add the residuals to the plot
-for (i in 1:length(x)) {
-  lines(c(x[i],x[i]),c(y[i],yhat[i]), col='red')
-}
+for (i in 1:length(x)) {lines(c(x[i],x[i]),c(y[i],yhat[i]), col='red')}
 #add yhat to the plot
 points(x,yhat,pch=19,col='orange')
 #put the original points back on the plot last so we can see them 

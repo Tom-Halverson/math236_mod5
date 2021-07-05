@@ -675,6 +675,18 @@ Here are the steps you should follow:</p>
 <span id="cb31-4"><a href="problem-set-7.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(r) <span class="sc">%*%</span> r</span></code></pre></div>
 <pre><code>##          [,1]
 ## [1,] 11.26429</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="problem-set-7.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plot the original set of points</span></span>
+<span id="cb33-2"><a href="problem-set-7.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x,y,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">7</span>),<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), <span class="at">main=</span><span class="st">&#39;the best-fit quadratic function&#39;</span>)</span>
+<span id="cb33-3"><a href="problem-set-7.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co"># generate points for the fitted line and plot it</span></span>
+<span id="cb33-4"><a href="problem-set-7.html#cb33-4" aria-hidden="true" tabindex="-1"></a>tt <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">7</span>,<span class="at">len=</span><span class="dv">100</span>)  </span>
+<span id="cb33-5"><a href="problem-set-7.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(tt,xhat[<span class="dv">1</span>]<span class="sc">+</span>xhat[<span class="dv">2</span>]<span class="sc">*</span>tt<span class="sc">+</span>xhat[<span class="dv">3</span>]<span class="sc">*</span>tt<span class="sc">^</span><span class="dv">2</span>,<span class="at">col=</span><span class="st">&#39;blue&#39;</span>)</span>
+<span id="cb33-6"><a href="problem-set-7.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co"># add the residuals to the plot</span></span>
+<span id="cb33-7"><a href="problem-set-7.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)) {<span class="fu">lines</span>(<span class="fu">c</span>(x[i],x[i]),<span class="fu">c</span>(y[i],yhat[i]), <span class="at">col=</span><span class="st">&#39;red&#39;</span>)}</span>
+<span id="cb33-8"><a href="problem-set-7.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="co">#add yhat to the plot</span></span>
+<span id="cb33-9"><a href="problem-set-7.html#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(x,yhat,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">col=</span><span class="st">&#39;orange&#39;</span>)</span>
+<span id="cb33-10"><a href="problem-set-7.html#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co">#put the original points back on the plot last so we can see them </span></span>
+<span id="cb33-11"><a href="problem-set-7.html#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="fu">points</span>(x,y,<span class="at">pch=</span><span class="dv">19</span>,<span class="at">col=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb33-12"><a href="problem-set-7.html#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div>
 <p><img src="math236_handbook_files/figure-html/ps8-quadplot-1.png" width="75%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="fuel-efficiency" class="section level2" number="7.7">
@@ -742,8 +754,7 @@ Find the coefficients <span class="math inline">\(a_0,a_1,a_2,a_3\)</span> and t
 ## HP          -0.073961   0.043862  -1.686  0.10091    
 ## Cyl          0.791590   0.730326   1.084  0.28604    
 ## ---
-## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 2.791 on 34 degrees of freedom
 ## Multiple R-squared:  0.833,  Adjusted R-squared:  0.8183 
