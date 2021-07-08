@@ -489,6 +489,14 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
 <li class="chapter" data-level="29.3.13" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-74"><i class="fa fa-check"></i><b>29.3.13</b> </a></li>
 <li class="chapter" data-level="29.3.14" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-75"><i class="fa fa-check"></i><b>29.3.14</b> </a></li>
 </ul></li>
+<li class="chapter" data-level="29.4" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-76"><i class="fa fa-check"></i><b>29.4</b> </a>
+<ul>
+<li class="chapter" data-level="29.4.1" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-77"><i class="fa fa-check"></i><b>29.4.1</b> </a></li>
+<li class="chapter" data-level="29.4.2" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-78"><i class="fa fa-check"></i><b>29.4.2</b> </a></li>
+<li class="chapter" data-level="29.4.3" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-79"><i class="fa fa-check"></i><b>29.4.3</b> </a></li>
+<li class="chapter" data-level="29.4.4" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-80"><i class="fa fa-check"></i><b>29.4.4</b> </a></li>
+<li class="chapter" data-level="29.4.5" data-path="quiz-3-review.html"><a href="quiz-3-review.html#section-81"><i class="fa fa-check"></i><b>29.4.5</b> </a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
@@ -690,7 +698,7 @@ A = \left[
 \end{array}\hskip5in
 \]</span></p>
 <ol style="list-style-type: lower-alpha">
-<li>Factor <span class="math inline">\(A=PCP^{-1}\)</span> where <span class="math inline">\(C\)</span> is a rotation-scaling matrix.</li>
+<li>Factor <span class="math inline">\(A=PCP^{-1}\)</span> where <span class="math inline">\(C\)</span> is a rotation-scaling matrix. <strong>You won’t have to do this part on the quiz.</strong></li>
 <li>What is the angle of rotation?</li>
 <li>What is the factor of dilation?</li>
 </ol>
@@ -1211,8 +1219,7 @@ Here are some R calculations to check the answer for (a) and to find the values 
 ## [2,]  0.8  0.0  0.0
 ## [3,]  0.0  0.9  0.8</code></pre>
 <div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="quiz-3-review.html#cb449-1" aria-hidden="true" tabindex="-1"></a>(<span class="at">vals =</span> <span class="fu">eigen</span>(L)<span class="sc">$</span>values)</span></code></pre></div>
-<pre><code>## [1]  1.0575217+0.0000000i -0.1287609+0.5057227i
-## [3] -0.1287609-0.5057227i</code></pre>
+<pre><code>## [1]  1.0575217+0.0000000i -0.1287609+0.5057227i -0.1287609-0.5057227i</code></pre>
 <div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="quiz-3-review.html#cb451-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Mod</span>(vals)</span></code></pre></div>
 <pre><code>## [1] 1.0575217 0.5218571 0.5218571</code></pre>
 <div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="quiz-3-review.html#cb453-1" aria-hidden="true" tabindex="-1"></a>vecs <span class="ot">=</span> <span class="fu">eigen</span>(L)<span class="sc">$</span>vectors</span>
@@ -1293,6 +1300,212 @@ Note that <span class="math inline">\(A\)</span> is invertible, 0 is not an eige
 <li><p><span class="math inline">\(A (2021 v) = 2021 A v = 2021 (-3) v = (-3) (2021 v)\)</span> so <span class="math inline">\(2021 v\)</span> is an eigenvector also of eigenvalue <span class="math inline">\(-3\)</span>.</p></li>
 <li><p><span class="math inline">\(A^2 w = A (A w) = A (5 w) = 5 (A w) = 5 (5 w) = 25 w\)</span>, so <span class="math inline">\(w\)</span> is an eigenvector of <span class="math inline">\(A^2\)</span> of eigenvalue 25.</p></li>
 <li><p><span class="math inline">\((A - 20201I_n)v = A v - 2021 I_n v = -3 v - 2021 v = -2024 v\)</span>, so <span class="math inline">\(v\)</span> is an eigenvector of <span class="math inline">\((A - 20201I_n)\)</span> of eigenvalue <span class="math inline">\(-2024\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div id="section-76" class="section level2" number="29.4">
+<h2><span class="header-section-number">29.4</span> </h2>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math display">\[\begin{align}
+\| \mathsf{v} \| &amp;= \sqrt{ \mathsf{v} \cdot \mathsf{v}} = \sqrt{1+1+1} = \sqrt{3} \\
+\| \mathsf{w} \| &amp;= \sqrt{ \mathsf{w} \cdot \mathsf{vw}} = \sqrt{25+4+9} = \sqrt{38} \\
+\end{align}\]</span></p></li>
+<li><p>We have <span class="math inline">\(\mathsf{v} - \mathsf{w} = \begin{bmatrix} -4 \\ -3 \\ -2 \end{bmatrix}\)</span> and so
+<span class="math display">\[
+\| \mathsf{v} - \mathsf{w}\|  = \sqrt{16+9+4} = \sqrt{29} 
+\]</span></p></li>
+<li><p><span class="math display">\[ 
+\cos \theta = \frac{\mathsf{v} \cdot \mathsf{w}}{\| \mathsf{v}  \| \, \|\mathsf{w} \| }
+= \frac{5-2+3}{\sqrt{3} \, \sqrt{38} } = \frac{2\sqrt{3}}{\sqrt{38} }
+\]</span></p></li>
+<li><p><span class="math display">\[
+\hat{\mathsf{w}} = \mbox{proj}_{\mathsf{v}} \mathsf{w} = \frac{\mathsf{v} \cdot \mathsf{w}}{ \mathsf{v} \cdot \mathsf{v} } \, \mathsf{v} = \frac{5-2+3}{1+1+1}  \mathsf{v}  = 2 \mathsf{v} = 
+\begin{bmatrix}
+2 \\ -2 \\ 2 
+\end{bmatrix}
+\]</span></p></li>
+<li><p>Using <span class="math inline">\(\hat{\mathsf{w}}\)</span> from the previous problem, we know that
+<span class="math display">\[
+\mathsf{z} = \mathsf{w} - \hat{\mathsf{w}} = \begin{bmatrix} 5 \\ 2 \\ 3 \end{bmatrix}  -  \begin{bmatrix} 2 \\ -2 \\ 2  \end{bmatrix} =
+\begin{bmatrix} 3 \\ 4 \\ 1  \end{bmatrix}
+\]</span>
+is orthogonal to <span class="math inline">\(\mathsf{v}\)</span>.So an orthonormal basis is
+<span class="math display">\[
+\frac{1}{\sqrt{3}} \begin{bmatrix}
+1 \\ -1 \\ 1
+\end{bmatrix} \quad \mbox{and} \quad
+\frac{1}{\sqrt{26}} \begin{bmatrix}
+3 \\ 4 \\ 1
+\end{bmatrix}
+\]</span></p></li>
+</ol>
+<div id="section-77" class="section level3" number="29.4.1">
+<h3><span class="header-section-number">29.4.1</span> </h3>
+<p>Here are a few ways to describe <span class="math inline">\(\mbox{ker}(T)\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\mbox{ker}(T) = \{ \mathsf{x} \in \mathbb{R}^n \mid \mathsf{x} \cdot \mathsf{u} = 0 \}\)</span>.</p></li>
+<li><p><span class="math inline">\(\mbox{ker}(T)\)</span> is the set of vectors that are orthogonal to <span class="math inline">\(\mathsf{u}\)</span>.</p></li>
+<li><p>Let <span class="math inline">\(A\)</span> be the <span class="math inline">\(1 \times n\)</span> matrix <span class="math inline">\(\mathsf{u}^{\top}\)</span>. Then <span class="math inline">\(\mbox{ker}(T)= \mbox{Nul}(A)\)</span>.</p></li>
+</ol>
+</div>
+<div id="section-78" class="section level3" number="29.4.2">
+<h3><span class="header-section-number">29.4.2</span> </h3>
+<p>We have <span class="math inline">\(\mathsf{u}_1 \cdot \mathsf{v} = 2-2-4+2=-2\)</span> and <span class="math inline">\(\mathsf{u}_1 \cdot \mathsf{v} = 2-2+4-2=2\)</span> so
+<span class="math display">\[
+\hat{\mathsf{v}} = \mbox{proj}_W \mathsf{v} = - \mathsf{u}_1 +  \mathsf{u}_2 = 
+-\frac{1}{2} \begin{bmatrix}
+1 \\ -1 \\ -1 \\ 1 
+\end{bmatrix}
++
+\frac{1}{2}
+\begin{bmatrix}
+1 \\ -1 \\ 1 \\ -1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ 0 \\ 1 \\ -1 
+\end{bmatrix}
+\]</span>
+with residual vector
+<span class="math display">\[
+\mathsf{z} = \mathsf{v} - \hat{\mathsf{v}}
+= \begin{bmatrix}
+2 \\ 2 \\ 4 \\ 2 
+\end{bmatrix}
+-
+\begin{bmatrix}
+0 \\ 0 \\ 1 \\ -1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 \\ 2 \\ 3 \\ 3 
+\end{bmatrix}
+\]</span>
+and the distance is <span class="math inline">\(\| \mathsf{z} \| = \sqrt{4+4+9+9} = \sqrt{26}\)</span>.</p>
+</div>
+<div id="section-79" class="section level3" number="29.4.3">
+<h3><span class="header-section-number">29.4.3</span> </h3>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(\mathsf{v}_1 \cdot \mathsf{v}_2 = 1 +2 - 3 =0\)</span>.</p></li>
+<li><p>We must find <span class="math inline">\(\mbox{Nul}(A)\)</span> where
+<span class="math inline">\(A = \begin{bmatrix} \mathsf{v}_1^{\top} \\ \mathsf{v}_2^{\top}\end{bmatrix}\)</span>.</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{bmatrix}
+1 &amp; 1 &amp; -1 \\
+1 &amp; 2 &amp; 3
+\end{bmatrix}
+\longrightarrow
+\begin{bmatrix}
+1 &amp; 1 &amp; -1 \\
+0 &amp; 1 &amp; 4
+\end{bmatrix}
+\longrightarrow
+\begin{bmatrix}
+1 &amp; 0 &amp; -5 \\
+0 &amp; 1 &amp; 4
+\end{bmatrix}
+\]</span>
+so the vector <span class="math inline">\(\begin{bmatrix} 5 \\ -4 \\ 1 \end{bmatrix}\)</span> is a basis for <span class="math inline">\(W^{\perp}\)</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>We have
+<span class="math display">\[\begin{align}
+\hat{\mathsf{y}} &amp;=
+\frac{\mathsf{y} \cdot \mathsf{v_1}}{\mathsf{v_1} \cdot \mathsf{v_1}} \, \mathsf{v_1} +
+\frac{\mathsf{y} \cdot \mathsf{v_2}}{\mathsf{v_2} \cdot \mathsf{v_2}} \, \mathsf{v_2}
+=
+\frac{8-2}{1+1+1} \mathsf{v_1} + \frac{8+6}{1+4+9} \mathsf{v_2} \\
+&amp;=
+2\mathsf{v_1} +\mathsf{v_2}
+= \begin{bmatrix} 2 \\ 2 \\ -2 \end{bmatrix} + \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
+= \begin{bmatrix} 3 \\ 4 \\ 1 \end{bmatrix}
+\end{align}\]</span>
+and so
+<span class="math display">\[
+\mathsf{z} = \mathsf{y} - \hat{\mathsf{y}}
+= \begin{bmatrix} 8 \\ 0 \\ 2 \end{bmatrix} - \begin{bmatrix} 3 \\ 4 \\ 1 \end{bmatrix}
+= \begin{bmatrix} 5 \\ -4 \\ 1 \end{bmatrix}.
+\]</span></li>
+</ol>
+</div>
+<div id="section-80" class="section level3" number="29.4.4">
+<h3><span class="header-section-number">29.4.4</span> </h3>
+<p>a .We will answer this one using RStudio.</p>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="quiz-3-review.html#cb455-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">4</span>))</span>
+<span id="cb455-2"><a href="quiz-3-review.html#cb455-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rref</span>(A)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    0    0    0
+## [2,]    0    1    0    0
+## [3,]    0    0    1    0
+## [4,]    0    0    0    1
+## [5,]    0    0    0    0</code></pre>
+<p>So we need all four vectors to span the column space.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>We obtain a basis for <span class="math inline">\(W^{\perp}\)</span> by finding <span class="math inline">\(\mbox{Nul(A^{\top})}\)</span> So let’s row reduce <span class="math inline">\(A^{\top}\)</span></li>
+</ol>
+<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="quiz-3-review.html#cb457-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rref</span>(<span class="fu">t</span>(A))</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    0    0    0   -2
+## [2,]    0    1    0    0    2
+## [3,]    0    0    1    0    7
+## [4,]    0    0    0    1   -2</code></pre>
+<p>The vector <span class="math inline">\(\begin{bmatrix} 2 \\ -2 \\ -7 \\ 2 \\ 1\end{bmatrix}\)</span> spans <span class="math inline">\(W^{\perp}\)</span></p>
+</div>
+<div id="section-81" class="section level3" number="29.4.5">
+<h3><span class="header-section-number">29.4.5</span> </h3>
+<ol style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="quiz-3-review.html#cb459-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">cbind</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>),<span class="fu">c</span>(<span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb459-2"><a href="quiz-3-review.html#cb459-2" aria-hidden="true" tabindex="-1"></a>b  <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>,<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb459-3"><a href="quiz-3-review.html#cb459-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rref</span>(<span class="fu">cbind</span>(A,b))</span></code></pre></div>
+<pre><code>##            b
+## [1,] 1 0 0 0
+## [2,] 0 1 0 0
+## [3,] 0 0 1 0
+## [4,] 0 0 0 1</code></pre>
+<p>There is a pivot in the last column of this augmented matrix, so this system is inconsistent.</p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p>Here is the least squares calculation.</p>
+<div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="quiz-3-review.html#cb461-1" aria-hidden="true" tabindex="-1"></a><span class="co">#solve the normal equation</span></span>
+<span id="cb461-2"><a href="quiz-3-review.html#cb461-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">xhat =</span> <span class="fu">solve</span>(<span class="fu">t</span>(A) <span class="sc">%*%</span> A, <span class="fu">t</span>(A) <span class="sc">%*%</span> b))</span></code></pre></div>
+<pre><code>##      [,1]
+## [1,]    2
+## [2,]   -1
+## [3,]    1</code></pre>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="quiz-3-review.html#cb463-1" aria-hidden="true" tabindex="-1"></a><span class="co"># find the projection</span></span>
+<span id="cb463-2"><a href="quiz-3-review.html#cb463-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">bhat =</span> A <span class="sc">%*%</span> xhat)</span></code></pre></div>
+<pre><code>##               [,1]
+## [1,]  2.000000e+00
+## [2,] -1.000000e+00
+## [3,]  6.661338e-16
+## [4,]  1.000000e+00</code></pre>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="quiz-3-review.html#cb465-1" aria-hidden="true" tabindex="-1"></a><span class="co"># find the residual vector</span></span>
+<span id="cb465-2"><a href="quiz-3-review.html#cb465-2" aria-hidden="true" tabindex="-1"></a>(<span class="at">z =</span> b <span class="sc">-</span> bhat)</span></code></pre></div>
+<pre><code>##      [,1]
+## [1,]    2
+## [2,]    2
+## [3,]   -2
+## [4,]   -2</code></pre>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="quiz-3-review.html#cb467-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check that z is orthogonal to Col(A)</span></span>
+<span id="cb467-2"><a href="quiz-3-review.html#cb467-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(A) <span class="sc">%*%</span> z</span></code></pre></div>
+<pre><code>##               [,1]
+## [1,] -8.881784e-16
+## [2,]  0.000000e+00
+## [3,]  0.000000e+00</code></pre>
+<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="quiz-3-review.html#cb469-1" aria-hidden="true" tabindex="-1"></a><span class="co"># measure the distance between bhat and b</span></span>
+<span id="cb469-2"><a href="quiz-3-review.html#cb469-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>( <span class="fu">t</span>(z) <span class="sc">%*%</span> z)</span></code></pre></div>
+<pre><code>##      [,1]
+## [1,]    4</code></pre>
+<p>The projection is <span class="math inline">\(\hat{\mathsf{b}} = [2,-1,0,1]^{\top}\)</span>.
+The residual is <span class="math inline">\(\mathsf{z} = [2,2,-2,-2]^{\top}\)</span></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>The distance of between <span class="math inline">\(\mathsf{b}\)</span> and <span class="math inline">\(\hat{\mathsf{b}}\)</span> is
+<span class="math display">\[
+\| = \| \mathsf{z} \| = \sqrt{4+4+4+4} = \sqrt{16} = 4.
+\]</span></li>
 </ol>
 
 </div>

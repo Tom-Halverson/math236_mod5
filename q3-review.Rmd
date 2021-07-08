@@ -206,7 +206,7 @@ A = \left[
 \end{array}\hskip5in
 $$ 
 
-a. Factor $A=PCP^{-1}$ where $C$ is a rotation-scaling matrix.
+a. Factor $A=PCP^{-1}$ where $C$ is a rotation-scaling matrix. **You won't have to do this part on the quiz.**
 a. What is the angle of rotation?
 a. What is the factor of dilation?
 
@@ -845,5 +845,197 @@ c. $A^2 w = A (A w) = A (5 w) = 5 (A w) = 5 (5 w) = 25 w$, so $w$ is an eigenvec
 
 d. $(A - 20201I_n)v = A v - 2021 I_n v = -3 v - 2021 v = -2024 v$, so $v$ is an eigenvector of $(A - 20201I_n)$ of eigenvalue $-2024$.
 
+## 
+
+a.
+\begin{align}
+\| \mathsf{v} \| &= \sqrt{ \mathsf{v} \cdot \mathsf{v}} = \sqrt{1+1+1} = \sqrt{3} \\
+\| \mathsf{w} \| &= \sqrt{ \mathsf{w} \cdot \mathsf{vw}} = \sqrt{25+4+9} = \sqrt{38} \\
+\end{align}
+
+b. We have $\mathsf{v} - \mathsf{w} = \begin{bmatrix} -4 \\ -3 \\ -2 \end{bmatrix}$ and so
+$$
+\| \mathsf{v} - \mathsf{w}\|  = \sqrt{16+9+4} = \sqrt{29} 
+$$
+
+c. 
+$$ 
+\cos \theta = \frac{\mathsf{v} \cdot \mathsf{w}}{\| \mathsf{v}  \| \, \|\mathsf{w} \| }
+= \frac{5-2+3}{\sqrt{3} \, \sqrt{38} } = \frac{2\sqrt{3}}{\sqrt{38} }
+$$
 
 
+d. 
+$$
+\hat{\mathsf{w}} = \mbox{proj}_{\mathsf{v}} \mathsf{w} = \frac{\mathsf{v} \cdot \mathsf{w}}{ \mathsf{v} \cdot \mathsf{v} } \, \mathsf{v} = \frac{5-2+3}{1+1+1}  \mathsf{v}  = 2 \mathsf{v} = 
+\begin{bmatrix}
+2 \\ -2 \\ 2 
+\end{bmatrix}
+$$
+e. Using $\hat{\mathsf{w}}$ from the previous problem, we know that 
+$$
+\mathsf{z} = \mathsf{w} - \hat{\mathsf{w}} = \begin{bmatrix} 5 \\ 2 \\ 3 \end{bmatrix}  -  \begin{bmatrix} 2 \\ -2 \\ 2  \end{bmatrix} =
+\begin{bmatrix} 3 \\ 4 \\ 1  \end{bmatrix}
+$$ 
+is orthogonal to $\mathsf{v}$.So an orthonormal basis is
+$$
+\frac{1}{\sqrt{3}} \begin{bmatrix}
+1 \\ -1 \\ 1
+\end{bmatrix} \quad \mbox{and} \quad
+\frac{1}{\sqrt{26}} \begin{bmatrix}
+3 \\ 4 \\ 1
+\end{bmatrix}
+$$
+
+###
+
+Here are a few ways to describe $\mbox{ker}(T)$.
+ 
+a. $\mbox{ker}(T) = \{ \mathsf{x} \in \mathbb{R}^n \mid \mathsf{x} \cdot \mathsf{u} = 0 \}$.
+    
+b. $\mbox{ker}(T)$ is the set of vectors that are orthogonal to $\mathsf{u}$.
+    
+c. Let $A$ be the $1 \times n$ matrix $\mathsf{u}^{\top}$. Then $\mbox{ker}(T)= \mbox{Nul}(A)$.
+
+###
+
+We have $\mathsf{u}_1 \cdot \mathsf{v} = 2-2-4+2=-2$ and $\mathsf{u}_1 \cdot \mathsf{v} = 2-2+4-2=2$ so
+$$
+\hat{\mathsf{v}} = \mbox{proj}_W \mathsf{v} = - \mathsf{u}_1 +  \mathsf{u}_2 = 
+-\frac{1}{2} \begin{bmatrix}
+1 \\ -1 \\ -1 \\ 1 
+\end{bmatrix}
++
+\frac{1}{2}
+\begin{bmatrix}
+1 \\ -1 \\ 1 \\ -1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\ 0 \\ 1 \\ -1 
+\end{bmatrix}
+$$
+with residual vector 
+$$
+\mathsf{z} = \mathsf{v} - \hat{\mathsf{v}}
+= \begin{bmatrix}
+2 \\ 2 \\ 4 \\ 2 
+\end{bmatrix}
+-
+\begin{bmatrix}
+0 \\ 0 \\ 1 \\ -1 
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 \\ 2 \\ 3 \\ 3 
+\end{bmatrix}
+$$
+and the distance is $\| \mathsf{z} \| = \sqrt{4+4+9+9} = \sqrt{26}$.
+
+###
+
+a. $\mathsf{v}_1 \cdot \mathsf{v}_2 = 1 +2 - 3 =0$.
+
+b. We must find $\mbox{Nul}(A)$ where 
+$A = \begin{bmatrix} \mathsf{v}_1^{\top} \\ \mathsf{v}_2^{\top}\end{bmatrix}$.
+
+$$
+\begin{bmatrix}
+1 & 1 & -1 \\
+1 & 2 & 3
+\end{bmatrix}
+\longrightarrow
+\begin{bmatrix}
+1 & 1 & -1 \\
+0 & 1 & 4
+\end{bmatrix}
+\longrightarrow
+\begin{bmatrix}
+1 & 0 & -5 \\
+0 & 1 & 4
+\end{bmatrix}
+$$
+so the vector $\begin{bmatrix} 5 \\ -4 \\ 1 \end{bmatrix}$ is a basis for $W^{\perp}$
+
+c. We have
+\begin{align}
+\hat{\mathsf{y}} &=
+\frac{\mathsf{y} \cdot \mathsf{v_1}}{\mathsf{v_1} \cdot \mathsf{v_1}} \, \mathsf{v_1} +
+\frac{\mathsf{y} \cdot \mathsf{v_2}}{\mathsf{v_2} \cdot \mathsf{v_2}} \, \mathsf{v_2}
+=
+\frac{8-2}{1+1+1} \mathsf{v_1} + \frac{8+6}{1+4+9} \mathsf{v_2} \\
+&=
+2\mathsf{v_1} +\mathsf{v_2}
+= \begin{bmatrix} 2 \\ 2 \\ -2 \end{bmatrix} + \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
+= \begin{bmatrix} 3 \\ 4 \\ 1 \end{bmatrix}
+\end{align}
+and so 
+$$
+\mathsf{z} = \mathsf{y} - \hat{\mathsf{y}}
+= \begin{bmatrix} 8 \\ 0 \\ 2 \end{bmatrix} - \begin{bmatrix} 3 \\ 4 \\ 1 \end{bmatrix}
+= \begin{bmatrix} 5 \\ -4 \\ 1 \end{bmatrix}.
+$$
+
+###
+
+a .We will answer this one using RStudio.
+
+```{r, echo=TRUE}
+
+A = cbind(c(1,-2,1,0,1), c(-1,3,-1,1,-1), c(0,0,1,3,1), c(0,2,0,0,4))
+rref(A)
+
+```
+So we need all four vectors to span the column space.
+  
+b. We obtain a basis for $W^{\perp}$ by finding $\mbox{Nul(A^{\top})}$ So let's row reduce $A^{\top}$
+
+```{r, echo=TRUE}
+rref(t(A))
+```
+
+The vector  $\begin{bmatrix} 2 \\ -2 \\ -7 \\ 2 \\ 1\end{bmatrix}$ spans $W^{\perp}$
+
+
+
+###
+
+a.
+
+```{r echo=TRUE}
+A = cbind(c(1,1,1,1), c(1,2,1,2),c(1,-1,-1,1))
+b  = c(4,1,-2,-1)
+rref(cbind(A,b))
+```
+
+There is a pivot in the last column of this augmented matrix, so this system is inconsistent.
+
+b.
+
+Here is the least squares calculation.
+
+```{r, echo=TRUE}
+#solve the normal equation
+(xhat = solve(t(A) %*% A, t(A) %*% b))
+
+# find the projection
+(bhat = A %*% xhat)
+
+# find the residual vector
+(z = b - bhat)
+
+# check that z is orthogonal to Col(A)
+t(A) %*% z
+
+# measure the distance between bhat and b
+sqrt( t(z) %*% z)
+
+```
+
+The projection is $\hat{\mathsf{b}} = [2,-1,0,1]^{\top}$. 
+The residual is $\mathsf{z} = [2,2,-2,-2]^{\top}$
+
+c. The distance of between $\mathsf{b}$ and  $\hat{\mathsf{b}}$ is 
+$$
+\| = \| \mathsf{z} \| = \sqrt{4+4+4+4} = \sqrt{16} = 4.
+$$
