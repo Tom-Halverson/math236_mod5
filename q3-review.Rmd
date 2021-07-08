@@ -240,10 +240,12 @@ a.  In the long-run, what is the distribution of wet and dry days?
 A population of female bison is split into three groups: juveniles who are
 less than one year old; yearlings between one and two years old; and adults who
 are older than two years. Each year,
-* 80% of the juveniles survive to become yearlings.
-* 90% of the yearlings survive to become adults.
-* 80% of the adults survive.
-* 40% of the adults give birth to a juvenile
+
+     * 80% of the juveniles survive to become yearlings.
+     * 90% of the yearlings survive to become adults.
+     * 80% of the adults survive.
+     * 40% of the adults give birth to a juvenile
+
 Let
 $\mathsf{x}_t = \begin{bmatrix} J_t  \\ Y_t \\ A_t \end{bmatrix}$ be the
 state of the system in year $t$.
@@ -651,44 +653,26 @@ A = \begin{bmatrix} 0.7 & 0.2 \\ 0.3 & 0.8 \end{bmatrix} =
 \begin{bmatrix} 0.2 & 0.2 \\ 0.6 & -0.4 \end{bmatrix}
 $$
 
-b. $\lim_{n \rightarrow \infty} A^n = \begin{bmatrix} 0.4 & 0.6 \\ 0.4 & 0.6 \end{bmatrix}$ because $\lambda=1$ is the dominant eigenvalue. So each column of $A$ convergence to vector in the eigenspace for the dominant eigenvalue. Basically, we treat each column of $A$ as a "starting vector" repeated multiplication by $A$ converges to the dominant eigenspace. Here are the details.
+b. We compute this as follows:
 
-Let $\mathsf{v}_1 = \begin{bmatrix} 2 \\ 3 \end{bmatrix}$ and $\mathsf{v}_2 = \begin{bmatrix} 1 \\ -1 \end{bmatrix}$. Let's see why we can treat each column $\mathsf{a}_1, \mathsf{a}_2$ of $A$ as a "starting vector." We can choose to view
-$$A^2 = A \begin{bmatrix} \mathsf{a}_1 &  \mathsf{a}_2  \end{bmatrix}  =  \begin{bmatrix} A \mathsf{a}_1 & A \mathsf{a}_2  \end{bmatrix}
-\quad \mbox{and} \quad 
-A^3 = A \begin{bmatrix} A \mathsf{a}_1 & A \mathsf{v}_2  \end{bmatrix} =  \begin{bmatrix} A^{2} \mathsf{a}_1 & A^{2} \mathsf{v}_2  \end{bmatrix}
 $$
-and in general
+A^n =  
+\begin{bmatrix} 2 & 1 \\ 3 & -1 \end{bmatrix}
+\begin{bmatrix} 1 & 0 \\ 0 & 0.5 \end{bmatrix}^n
+\begin{bmatrix} 0.2 & 0.2 \\ 0.6 & -0.4 \end{bmatrix}=
+\begin{bmatrix} 2 & 1 \\ 3 & -1 \end{bmatrix}
+\begin{bmatrix} 1^n & 0 \\ 0 & 0.5^n \end{bmatrix}
+\begin{bmatrix} 0.2 & 0.2 \\ 0.6 & -0.4 \end{bmatrix}
 $$
-A^{n} = \begin{bmatrix} A^{n-1} \mathsf{a}_1 & A^{n-1} \mathsf{a}_2  \end{bmatrix}.
+so
 $$
-Therefore
+\lim_{n\to \infty} A^n = 
+\begin{bmatrix} 2 & 1 \\ 3 & -1 \end{bmatrix}
+\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}
+\begin{bmatrix} 0.2 & 0.2 \\ 0.6 & -0.4 \end{bmatrix}
+=\begin{bmatrix} 0.4 & 0.4 \\ 0.6 & 0.6 \end{bmatrix}
 $$
-\lim_{n \rightarrow \infty} A^n = \lim_{n \rightarrow \infty} \begin{bmatrix} A^{n-1} \mathsf{a}_1 & A^{n-1} \mathsf{a}_2  \end{bmatrix}.
-$$
-  
-  
-So we need to write the columns of $A$ as linear combinations of the eigenvectors $\mathsf{v}_1, \mathsf{v}_2$.  For any constants $c_1, c_2$, we have
-$$
-\lim_{n \rightarrow \infty} A^n (c_1 \mathsf{v}_1 + c_2 \mathsf{v}_2) 
-= \lim_{n \rightarrow \infty} \left( c_1 A^n  \mathsf{v}_1 + c_2 A^n \mathsf{v}_2 \right)
-= \lim_{n \rightarrow \infty} \left( c_1   \mathsf{v}_1 + c_2 (0.5)^n \mathsf{v}_2 \right)
-= c_1   \mathsf{v}_1.
-$$
-So we need to find $c_1,c_2$ for each column of $A$. Let's use R Studio.
 
-```{r, echo=TRUE}
-a1 = c(.7,.3)
-a2 = c(.2,.8)
-P = cbind(c(2,3), c(1,-1))
-
-solve(P,a1)
-solve(P,a2)
-```
-In each case, $c_1 = 0.2$. Therefore
-$$
-\lim_{n \rightarrow \infty} A^n = \begin{bmatrix} 0.4 & 0.4 \\ 0.6 & 0.6 \end{bmatrix}.
-$$
 
 
 c. We need to find the coefficients for $x_0 = [25, 0]^{\top}$.
@@ -779,13 +763,15 @@ a. Here is the Leslie matrix, as well as some eigensystem computations.
 ```{r, echo=TRUE}
 L = cbind(c(0,.8,0),c(0,0,.9),c(.4,0,.8))
 L
+(vals = eigen(L)$values)
+Mod(vals)
 vecs = eigen(L)$vectors
 v = vecs[,1]
 Re(v/sum(v)) # get it to sum to 1 AND remove the 0 imaginary part
 ```
 
-b. The eigenvalues are $1.058, -0.129 \pm 0.506 i$.
-c. If we start outside of the span of the dominant eigenvalue, then the trajectory will wiggle with a mild oscillation with an overall growth trend of $1.058$, or $5.8\%$.
+b. The eigenvalues are $1.058, -0.129 \pm 0.506 i$.  The complex eigenvalues have length 0.52, so they shrink away pretty quickly.
+c. If we start outside of the span of the dominant eigenvalue, then the trajectory oscillate slightly until it settles into the direction of the dominant eigevector, with an overall growth trend of $1.058$, or $5.8\%$.
 d. The size of the herd grows. The proportions are $[0.227, 0.172, 0.601]$.
 
 ###
